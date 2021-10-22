@@ -1,3 +1,5 @@
+
+
 header {
   background: $header-bg;
   box-shadow: $box-shadow;
@@ -7,6 +9,15 @@ header {
   // height: 48px;
   border-top: 2px solid #ff6600;
   box-sizing: border-box;
+  .wrapper {
+    max-width: $wrapper-width;
+    margin: auto;
+    padding: 0;
+    min-width: 300px;
+    @media (max-width: 1000px) {
+      padding: 0 20px;
+    }  
+  }
   .logo {
     line-height: 32px;
     font-weight: lighter;
