@@ -2,6 +2,7 @@
 import ReactPlayer from 'react-player'
 // import Image from 'components/Elements/Image'
 import Image from 'next/image'
+import Link from 'components/Elements/Link'
 import DownloadFiles from 'components/Posts/DownloadFiles'
 
 function Downloads({ children }) {
@@ -13,9 +14,7 @@ function Heading({ children, id, level }) {
   const Comp = level === 2 ? 'h2' : 'h3'
   return (
     <Comp id={id}>
-      <a href={`#${id}`}>
-        {children}
-      </a>
+      <a href={`#${id}`}>{children}</a>
     </Comp>
   )
 }
@@ -23,7 +22,6 @@ function Heading({ children, id, level }) {
 function Video({ children, url }) {
   return <ReactPlayer url={url} />
 }
-
 
 function Img(props) {
   return (
@@ -33,11 +31,22 @@ function Img(props) {
   )
 }
 
+function LandingCTA({ children, href }) {
+  return (
+    <div className="center-text">
+      <Link href={href} className="btn btn-cta-landing">
+        {children}
+      </Link>
+    </div>
+  )
+}
+
 const components = {
   Heading,
   Downloads,
   Video,
-  Img
+  Img,
+  LandingCTA,
 }
 
 export default components

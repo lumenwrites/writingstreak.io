@@ -84,6 +84,7 @@ header {
     line-height: 24px;
     width: 32px;
     cursor: pointer;
+    color: $text-dim;
   }
   @media (max-width: 800px) {
     width: 56px;
@@ -93,6 +94,9 @@ header {
     }
     .open-button {
       display: block;
+      margin: auto;
+      margin-top: 10px;
+      text-align: center;
     }
     &.open {
       z-index: 15; // above dark-bg

@@ -21,20 +21,25 @@ export function parseFrontmatter(source) {
   return frontmatter
 }
 
-export async function renderMDX(text) {
+export async function renderMDX(text, doLinkHeadings=true) {
   const { content, data } = matter(text)
   const toc = []
+  let remarkPlugins = [
+    // withToc(toc)
+  ]
+  let rehypePlugins = [
+    rehypeSlug,
+    rehypeCodeTitles,
+    rehypePrism,
+  ]
+  // if (doLinkHeadings) {
+  //   const autolinkPlugin = [rehypeAutolinkHeadings, { properties: { className: ['header-link'] } }]
+  //   rehypePlugins.push(autolinkPlugin)
+  // }
+
   const serialized = await serialize(content, {
     // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [withToc(toc)],
-      rehypePlugins: [
-        rehypeSlug,
-        [rehypeAutolinkHeadings, { properties: { className: ['header-link'] } }],
-        rehypeCodeTitles,
-        rehypePrism,
-      ],
-    },
+    mdxOptions: { remarkPlugins, rehypePlugins },
     scope: data,
   })
   // console.log('source', serialized)

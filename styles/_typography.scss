@@ -33,6 +33,39 @@ h4 {
 h5 {
   font-size: 1em;
 }
+// Header links
+h1,
+h2,
+h3,
+h4,
+h5 {
+  position: relative;
+  .header-link {
+    margin-right: 10px;
+    visibility: hidden;
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: left;
+    height: 32px;
+  }
+  .header-link::after {
+    content: ' ';
+    font-weight: bold;
+  }
+  &:hover {
+    .header-link {
+      visibility: visible;
+    }
+  }
+  a {
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+
 p {
   margin-top: 1em;
 }

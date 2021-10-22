@@ -24,7 +24,7 @@ $footer-bg: #1a202a;
 // Small Elements
 $btn-bg: white;
 $btn-bg-hover: #eee;
-$btn-cta:#478dc0; //#DA552F;// #1977f2; //Facebook Blue
+$btn-cta:#ff6600; //#DA552F;// #1977f2; //Facebook Blue
 // $panel-bg: #343c4e;
 $border: #E3E8EE; //#464c61;
 $border-radius: 3px;
@@ -50,3 +50,4 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 @import "./_browse.scss";
 @import "./_post.scss";
 @import "./_subscribe.scss";
+@import "./_landing.scss"
