@@ -78,11 +78,24 @@ function getSections() {
 export async function getStaticProps({ params }) {
   const [sectionSlug, chapterSlug] = params.slug
   const sections = getSections()
-  const section = sections.filter((section) => section.slug == sectionSlug)[0]
+  const currentSectionIndex = sections.findIndex((section) => section.slug === sectionSlug)
+  const section = sections[currentSectionIndex]
+
   const currentChapterIndex = section.chapters.findIndex((chapter) => chapter.slug === chapterSlug)
   let chapter = section.chapters[currentChapterIndex]
   chapter.prev = section.chapters[currentChapterIndex - 1] || null
   chapter.next = section.chapters[currentChapterIndex + 1] || null
+  // Next/prev button between sections
+  // If this is the last chapter, but not the last section
+  if (!chapter.next && currentSectionIndex < sections.length - 1) {
+    const nextSection = sections[currentSectionIndex + 1]
+    chapter.next = nextSection.chapters[0] 
+  }
+  // If this is the first chapter, but not the first section
+  if (!chapter.prev && currentSectionIndex > 0) {
+    const prevSection = sections[currentSectionIndex - 1]
+    chapter.prev = prevSection.chapters[prevSection.chapters.length - 1]
+  }
   const chapterText = readFileSync(chapter.filepath, 'utf8')
   chapter.compiledMdx = await renderMDX(chapterText)
   // console.log(chapter.compiledMdx)

@@ -6,7 +6,7 @@ import Link from 'components/Elements/Link'
 import Layout from 'components/Layout/Layout'
 
 export default function index({ copy, frontmatter }) {
-  console.log(frontmatter)
+  // console.log(frontmatter)
   return (
     <>
       <div className="landing">
