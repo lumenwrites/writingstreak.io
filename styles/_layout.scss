@@ -10,7 +10,7 @@ header {
   .logo {
     line-height: 32px;
     font-weight: lighter;
-    width: 320px;
+    width: 250px;
     display: block;
     float: left;
     // margin: auto;
@@ -37,10 +37,15 @@ header {
   nav {
     float: right;
     height: 32px;
-    @media (max-width: 700px) {
+    @media (max-width: 500px) {
+      display: none; // for now just hiding it
       float: left;
       width: 100%;
       margin-top: 5px;
+      .btn-nav {
+        margin-left: 0;
+        margin-right: 10px;
+      }
       .dropdown {
         .menu-handle {
           float: left;
