@@ -97,6 +97,9 @@ header {
   //box-shadow: $box-shadow;
   border-right: 1px solid $border;
   z-index: 7; // above dark-bg, below header. Also above other content to have box-shadow working
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: overlay;
   @media (max-width: 800px) {
     display: none;
     &.open {
