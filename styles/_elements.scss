@@ -1,7 +1,7 @@
 .btn {
   display: inline-block; // so i can put it inside a div, float right, and they stay horizontal
   background-color: $btn-bg;
-  border: 1px solid $btn-bg; // border same color as bg, so it's invisible, but I can set its color in CTA
+  border: 1px solid $border; // border same color as bg, so it's invisible, but I can set its color in CTA
   line-height: 30px; // border impacts it
   padding: 0 8px;
   font-size: 1em; // for some reason it uses stylesheet's size by default

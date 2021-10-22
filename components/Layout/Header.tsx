@@ -10,22 +10,27 @@ export default function Header() {
   return (
     <header>
       <div className="wrapper">
-        <ToggleSidebarButton/>
+        <ToggleSidebarButton />
         <Link href="/" className="logo">
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />
           </div>
           Adventure Academy
         </Link>
+        <nav>
+          <a className="btn btn-nav" href="https://discord.gg/JZmXfWD85D">
+            Join Our Discord
+          </a>
+        </nav>
         {/* <nav> */}
-          {/* <Link href={`/about`} className="btn btn-nav">
+        {/* <Link href={`/about`} className="btn btn-nav">
             <FontAwesomeIcon icon={['fas', 'info-circle']} />
             About
           </Link>
           <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`subscribe`)}>
             Subscribe
           </a> */}
-          {/* <Tutorials /> */}
+        {/* <Tutorials /> */}
         {/* </nav> */}
         <div className="clearfix" />
       </div>
