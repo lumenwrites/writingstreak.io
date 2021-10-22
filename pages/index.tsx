@@ -19,13 +19,13 @@ export default function index({ copy, frontmatter }) {
             </Link>
           </div>
         </div>
-
         <div className="copy">
           <MDXRemote {...copy} components={MDXComponents} />
         </div>
       </div>
       <Head>
         <title>Adventure Academy</title>
+        {/* Take social meta from frontmatter. */}
       </Head>
     </>
   )

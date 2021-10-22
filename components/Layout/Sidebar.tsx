@@ -6,7 +6,7 @@ export default function Sidebar({ children }) {
   // console.log("[Sidebar] isOpen", isOpen)
   return (
     <>
-      <div className={`sidebar-collapsible sidebar-left ${isOpen ? 'open' : ''}`}>
+      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         {children}
       </div>
       <div className={`dark-bg ${isOpen ? 'open' : ''}`} onClick={toggleSidebar} />

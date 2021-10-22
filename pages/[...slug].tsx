@@ -3,18 +3,13 @@ import Head from 'next/head'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from 'components/Elements/MDXComponents'
 import Layout from 'components/Layout/Layout'
-import Sidebar from 'components/Layout/Sidebar'
 import PrevNext from 'components/Posts/PrevNext'
 import Chapters from 'components/Posts/Chapters'
 import config from 'config.json'
 
 export default function Page({ chapter, sections }) {
   return (
-    <Layout>
-      <Sidebar>
-        <Chapters sections={sections} />
-      </Sidebar>
-      <div className="main-content">
+    <Layout sidebarChildren={<Chapters sections={sections} />}>
         <div className="post">
           <MDXRemote {...chapter.compiledMdx} components={MDXComponents} />
           <PrevNext post={chapter} />
@@ -33,7 +28,6 @@ export default function Page({ chapter, sections }) {
           )} */}
           </Head>
         </div>
-      </div>
     </Layout>
   )
 }
@@ -89,13 +83,14 @@ export async function getStaticProps({ params }) {
   // If this is the last chapter, but not the last section
   if (!chapter.next && currentSectionIndex < sections.length - 1) {
     const nextSection = sections[currentSectionIndex + 1]
-    chapter.next = nextSection.chapters[0] 
+    chapter.next = nextSection.chapters[0]
   }
   // If this is the first chapter, but not the first section
   if (!chapter.prev && currentSectionIndex > 0) {
     const prevSection = sections[currentSectionIndex - 1]
     chapter.prev = prevSection.chapters[prevSection.chapters.length - 1]
   }
+  // Render MDX
   const chapterText = readFileSync(chapter.filepath, 'utf8')
   chapter.compiledMdx = await renderMDX(chapterText)
   // console.log(chapter.compiledMdx)

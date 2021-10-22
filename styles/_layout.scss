@@ -57,20 +57,38 @@ header {
 
 .layout {
   height: calc(100% - 48px); //minus header
+  max-width: $wrapper-width;
+  margin: auto;
+  display: flex;
   &.has-subnav {
     height: calc(100% - 54px - 32px);
   }
-  .content {
+  .sidebar {
+    // for flexbox
+    width: 300px;
+    min-width: 300px;
+    background-color: $sidebar-bg;
+    //box-shadow: $box-shadow;
+    border-right: 1px solid $border;
+    z-index: 7; // above dark-bg, below header. Also above other content to have box-shadow working
     height: 100%;
-    max-width: $wrapper-width;
-    margin: auto;
-    display: flex;
-    .main-content {
-      flex: auto;
-      height: 100%;
-      overflow-x: hidden;
-      overflow-y: overlay;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    @media (max-width: 800px) {
+      display: none;
+      &.open {
+        display: block;
+        position: fixed;
+        height: calc(100% - 48px);
+        width: 300px;
+      }
     }
+  }
+  .content {
+    flex: auto;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: overlay;
   }
 }
 
@@ -88,29 +106,7 @@ header {
     display: block;
   }
 }
-
-.sidebar-collapsible {
-  // for flexbox
-  width: 300px;
-  min-width: 300px;
-  background-color: $sidebar-bg;
-  //box-shadow: $box-shadow;
-  border-right: 1px solid $border;
-  z-index: 7; // above dark-bg, below header. Also above other content to have box-shadow working
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: overlay;
-  @media (max-width: 800px) {
-    display: none;
-    &.open {
-      display: block;
-      position: fixed;
-      height: calc(100% - 48px);
-      width: 300px;
-    }
-  }
-}
-
+// Under sidebar
 .dark-bg {
   position: fixed;
   top: 0;
