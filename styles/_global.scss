@@ -20,14 +20,15 @@ main {
   }
 }
 
+// only used in header now
 .wrapper {
   max-width: $wrapper-width;
   margin: auto;
   padding: 0 20px;
   min-width: 300px;
-  @media (max-width: 800px) {
-    padding: 0;
-  }
+  // @media (max-width: 800px) {
+  //   padding: 0;
+  // }
 }
 
 .page {

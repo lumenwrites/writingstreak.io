@@ -1,24 +1,32 @@
-import { useRouter } from 'next/router'
-import { useState } from 'react'
-import Link from 'components/Elements/Link'
+import { useSidebar } from 'context/SidebarContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Sidebar({ children }) {
-  const router = useRouter()
-  const [isOpen, setOpen] = useState(false)
+  const { isOpen, toggleSidebar } = useSidebar()
   // console.log("[Sidebar] isOpen", isOpen)
   return (
     <>
       <div className={`sidebar-collapsible sidebar-left ${isOpen ? 'open' : ''}`}>
-        <div className="open-button" onClick={() => setOpen((prev) => !prev)}>
-          <FontAwesomeIcon icon={['fas', 'bars']} />
-        </div>
-        <div className="close-button" onClick={() => setOpen((prev) => !prev)}>
-          <FontAwesomeIcon icon={['fas', 'times']} />
-        </div>
-        <div className="children">{children}</div>
+        {children}
       </div>
-      <div className={`dark-bg ${isOpen ? 'open' : ''}`} onClick={() => setOpen((prev) => !prev)} />
+      <div className={`dark-bg ${isOpen ? 'open' : ''}`} onClick={toggleSidebar} />
     </>
   )
+}
+
+export function ToggleSidebarButton() {
+  const { isOpen, toggleSidebar } = useSidebar()
+  if (isOpen) {
+    return (
+      <div className="toggle-sidebar-button" onClick={toggleSidebar}>
+        <FontAwesomeIcon icon={['fas', 'times']} />
+      </div>
+    )
+  } else {
+    return (
+      <div className="toggle-sidebar-button" onClick={toggleSidebar}>
+        <FontAwesomeIcon icon={['fas', 'bars']} />
+      </div>
+    )
+  }
 }

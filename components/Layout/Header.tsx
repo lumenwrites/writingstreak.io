@@ -2,14 +2,15 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { useModal } from 'context/ModalContext'
-
 import Link from 'components/Elements/Link'
+import { ToggleSidebarButton } from './Sidebar'
 
 export default function Header() {
   const { toggleModal } = useModal()
   return (
     <header>
       <div className="wrapper">
+        <ToggleSidebarButton/>
         <Link href="/" className="logo">
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />

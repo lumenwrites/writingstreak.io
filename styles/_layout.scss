@@ -60,11 +60,6 @@ header {
     max-width: $wrapper-width;
     margin: auto;
     display: flex;
-    .sidebar-left {
-      background-color: $sidebar-bg;
-      // box-shadow: $box-shadow;
-      border-right: 1px solid $border;
-    }
     .main-content {
       flex: auto;
       height: 100%;
@@ -74,49 +69,37 @@ header {
   }
 }
 
+// In Header
+.toggle-sidebar-button {
+  float: left;
+  margin-right: 20px;
+  cursor: pointer;
+  color: $text-dim;
+  font-size: 24px;
+  line-height: 32px;
+  width: 32px;
+  display: none;
+  @media (max-width: 800px) {
+    display: block;
+  }
+}
+
 .sidebar-collapsible {
   // for flexbox
   width: 300px;
   min-width: 300px;
-  .open-button, .close-button {
-    display: none;
-    font-size: 24px;
-    line-height: 24px;
-    width: 32px;
-    cursor: pointer;
-    color: $text-dim;
-  }
+  background-color: $sidebar-bg;
+  //box-shadow: $box-shadow;
+  border-right: 1px solid $border;
+  z-index: 7; // above dark-bg, below header. Also above other content to have box-shadow working
   @media (max-width: 800px) {
-    width: 56px;
-    min-width: 56px;
-    .children {
-      display: none;
-    }
-    .open-button {
-      display: block;
-      margin: auto;
-      margin-top: 10px;
-      text-align: center;
-    }
+    display: none;
     &.open {
-      z-index: 15; // above dark-bg
+      display: block;
       position: fixed;
       height: calc(100% - 48px);
       width: 300px;
-      .children {
-        display: initial;
-      }
-      .open-button {
-        display: none;
-      }
-      .close-button {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 10px;
-      }
     }
-
   }
 }
 
