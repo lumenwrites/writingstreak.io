@@ -1,0 +1,139 @@
+.post-grid {
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 130px;
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.no-results {
+  position: relative; // for flex-center to work
+  height: 200px;
+}
+
+.post-card {
+  background: $post-bg;
+  box-shadow: $box-shadow; // 0 1px 2px rgb(0 0 0 / 20%);
+  position: relative;
+  border-radius: $border-radius;
+  overflow: hidden;
+  padding-bottom: calc(28px + 2px); // footer height plus some extra padding
+  &.no-tags {
+    padding-bottom: 2px;
+  }
+  // https://github.com/vercel/next.js/issues/18637
+  .thumbnail img {
+    object-fit: cover !important;
+    cursor: pointer;
+  }
+  .description {
+    padding: 2px 10px 2px 10px;
+    color: white;
+    .title {
+      font-weight: bold;
+      color: white;
+      display: inline-block;
+    }
+    .draft {
+      background: #333b4f;
+      color: #667399;
+      border-radius: 2px;
+      padding: 1px 4px;
+      float: right;
+    }
+  }
+  .post-footer {
+    color: #384260;
+    font-size: 0.8em;
+    padding: 0px 10px 2px 10px;
+    border-top: 1px solid #384260;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 28px;
+    .tags {
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 4px 0px 2px 0px;
+      float: left;
+      .tag {
+        background: #333b4f;
+        color: $text-dim;
+        border-radius: 2px;
+        padding: 1px 4px;
+        margin-right: 2px;
+        display: inline-block;
+      }
+    }
+    .by {
+      float: right;
+      line-height: 24px; // Same as tags
+      .author {
+        color: #667399;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .page-num {
+    border-radius: $border-radius;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin: 0 2px;
+    background: $btn-bg;
+    border: 1px solid $btn-bg;
+    &.active,
+    &:hover {
+      border: 1px solid $border;
+      background: $btn-bg-hover;
+    }
+    &.disabled {
+      cursor: initial;
+      color: $text-dim;
+      opacity: 50%;
+      &:hover {
+        border: 1px solid $panel-bg;
+        background: $panel-bg;
+      }
+    }
+  }
+}
+
+
+
+.post-item {
+  margin-top: 10px;
+  background: $post-bg;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  padding: 20px;
+  h2 {
+    text-align: center;
+  }
+  .btn {
+    float: right;
+    padding: 5px;
+    background: #333c4e;
+    &:hover {
+      background: #384260;
+    }
+    border-radius: $border-radius;
+    color: white;
+    line-height: 20px;
+    svg {
+      float: right;
+      height: 20px;
+      margin-left: 5px;
+    }
+  }
+  
+}

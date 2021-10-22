@@ -1,0 +1,71 @@
+html,
+body {
+  color: $text;
+  background: $main-bg;
+  font-family: $main-font;
+  font-weight: 100;
+  margin: 0;
+  height: 100%;
+  font-size: 14px;
+}
+#__next {
+  height: 100%;
+}
+main {
+  overflow-x: hidden;
+  overflow-y: overlay;
+  height: calc(100% - 48px); //minus header minus footer
+  &.has-subnav {
+    height: calc(100% - 54px - 32px);
+  }
+}
+
+.wrapper {
+  max-width: $wrapper-width;
+  margin: auto;
+  padding: 0 20px;
+  min-width: 300px;
+  @media (max-width: 800px) {
+    padding: 0;
+  }
+}
+
+.page {
+  background: $post-bg;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 20px;
+  h1,
+  h2 {
+    text-align: center;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 12px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  cursor: -webkit-grabbing;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-thumb;
+  border: 2px solid transparent !important;
+  border-radius: 4px;
+  background-clip: content-box;
+}
+

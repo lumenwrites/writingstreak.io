@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("./fonts/OpenSans/OpenSans-Regular.ttf");
+    // For the "Ensure text remains visible during webfont load" Google PageInsights Suggestion
+    font-display: swap;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url("./fonts/OpenSans/OpenSans-Light.ttf");
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url("./fonts/OpenSans/OpenSans-Bold.ttf");
+    font-weight: bold;
+    font-display: swap;
+}
+
+// Main Font
+@font-face {
+    font-family: "muli";
+    src: url("./fonts/muli/Muli.ttf");
+    font-display: swap;
+}
+@font-face {
+    font-family: "muli";
+    src: url("./fonts/muli/Muli-Light.ttf");
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: "muli";
+    src: url("./fonts/muli/Muli-Bold.ttf");
+    font-weight: bold;
+    font-display: swap;
+}

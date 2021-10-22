@@ -1,0 +1,58 @@
+// Inline code
+code {
+  background: #1f2532;
+  padding: 2px 4px;
+  border-radius: $border-radius;
+}
+
+code[class*="language-"] {
+  display: block;
+  padding: 12px;
+  border-radius: $border-radius;
+  background: #1f2532;
+  overflow: scroll;
+}
+pre {
+  margin-top: 10px;
+}
+.rehype-code-title {
+  margin-top: 10px;
+}
+.rehype-code-title + pre {
+  margin-top: 0;
+  code {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.rehype-code-title {
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  border-width: 1px 1px 0;
+  border-color: $border;
+  background-color: #313c51;
+  padding: 12px;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+// GDScript Colors
+pre code {
+  .highlight-line {
+    background: #3fb9504d;
+  }
+  .token.function {
+    color: #57b3ff;
+  }
+  .token.keyword {
+    color: #ff7085;
+  }
+  .token.string {
+    color: #ffeca1;
+  }
+  .token.class-name {
+    color: #42ffc2;
+  }
+}

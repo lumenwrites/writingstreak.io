@@ -1,0 +1,86 @@
+
+.mailing-list {
+  margin-top: 10px;
+  padding: 20px;
+  background: $post-bg;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  .form {
+    margin-top: 5px;
+  }
+  input {
+    height: 30px;
+    float: left;
+    width: calc(100% - 100px - 35px - 35px); //
+    margin-top: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: none;
+    outline: none;
+    color: white;
+    background: #1a202a;
+    box-shadow: inset $box-shadow;
+    padding-left: 10px;
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $text-dim;
+      opacity: 1; /* Firefox */
+    }
+  }
+  .btn-subscribe {
+    height: 30px;
+    float: left;
+    width: 100px;
+    background: $orange;
+    border-radius: 0 $border-radius $border-radius 0;
+    color: white;
+    &.disabled {
+      cursor: default;
+      color: $text-dim;
+    }
+  }
+  .btn-square {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-left: 5px;
+    background: $orange;
+    color: white;
+    svg path {
+      fill: white;
+    }
+  }
+}
+.subscribe-modal {
+  input {
+    width: calc(100% - 100px);
+  }
+}
+.downloads-modal {
+  .files {
+    margin-top: 12px;
+    .file {
+      border: 1px solid rgb(102 115 153 / 30%); //$border;
+      margin-top: -1px;
+      line-height: 32px;
+      padding: 6px 12px;
+      .download {
+        float: right;
+        margin: 0;
+        height: 32px;
+        width: 140px;
+        text-decoration: none;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.post-card.ad-box {
+  padding-bottom: 2px;
+}

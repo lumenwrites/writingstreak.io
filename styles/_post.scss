@@ -1,0 +1,128 @@
+.post {
+  min-height: 100%;
+  padding: 20px;
+  background: $post-bg;
+  box-shadow: $box-shadow;
+}
+
+// Typography
+.post {
+  iframe {
+    width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    position: relative;
+    .header-link {
+      margin-right: 10px;
+      visibility: hidden;
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      text-align: left;
+      height: 32px;
+    }
+    .header-link::after {
+      content: ' ';
+      font-weight: bold;
+    }
+    &:hover {
+      .header-link {
+        visibility: visible;
+      }
+    }
+    a {
+      font-weight: normal;
+      text-decoration: none;
+    }
+  }
+  img {
+    max-width: 100%;
+    max-height: 400px; // for tall narrow images
+    margin: auto;
+    display: block;
+  }
+}
+// Elements
+.post {
+  .post-header {
+    margin: -20px -20px 0 -20px;
+  }
+  position: relative;
+  padding-bottom: calc(20px + 46px + 20px); // padding, height of prev-next, margin above prev-next
+  .prev-next {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+
+    margin-top: 5px;
+    .prev,
+    .next {
+      padding: 12px;
+      background: $btn-bg;
+      text-decoration: none;
+      &:hover {
+        background: $btn-bg-hover;
+      }
+      border-radius: $border-radius;
+      border: 1px solid $border;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: calc(50% - 2px);
+      line-height: 20px;
+      svg {
+        height: 20px;
+      }
+    }
+    .prev {
+      float: left;
+      text-align: right;
+      svg {
+        float: left;
+        margin-right: 5px;
+      }
+    }
+    .next {
+      float: right;
+      text-align: left;
+      svg {
+        float: right;
+        margin-left: 5px;
+      }
+    }
+    .blank {
+      flex: 0 0 50%;
+    }
+  }
+}
+.chapters {
+  .section {
+    .section-title {
+      margin-top: 20px;
+      border-bottom: 1px solid #f6f7f8;
+      padding: 8px 20px;
+      color: $text-subheading;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .chapter {
+      display: block;
+      border-bottom: 1px solid #f6f7f8;
+      padding: 8px 20px 8px 40px;
+      color: $text-dim;
+      &.active {
+        font-weight: bold;
+        border-left: 2px solid $orange;
+        color: $text-heading; //$text-link;
+        background: #FAFAFA;
+      }
+    }
+  }
+}

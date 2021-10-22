@@ -1,0 +1,413 @@
+.btn {
+  display: inline-block; // so i can put it inside a div, float right, and they stay horizontal
+  background-color: $btn-bg;
+  border: 1px solid $btn-bg; // border same color as bg, so it's invisible, but I can set its color in CTA
+  line-height: 30px; // border impacts it
+  padding: 0 8px;
+  font-size: 1em; // for some reason it uses stylesheet's size by default
+  border-radius: $border-radius;
+  cursor: pointer;
+  color: $text;
+  &:active,
+  &:focus {
+    color: $text;
+  }
+  svg {
+    margin-right: 5px;
+    color: $text-dim;
+    // path {
+    //   fill: $text;
+    // }
+  }
+
+  &:hover {
+    background: $btn-bg-hover;
+    color: $text;
+  }
+
+  &.disabled {
+    cursor: default;
+    color: $text-dim;
+  }
+
+  &.full-width {
+    display: block;
+    text-align: center;
+  }
+}
+
+.btn-cta {
+  border: 1px solid $btn-cta;
+  border: 1px solid #56b1fd; //#fd7084;
+  background: $btn-bg; //$btn-cta;
+  color: white;
+  // svg {
+  //   color: white;
+  // }
+  &:hover {
+    background: $btn-cta;
+    color: white;
+  }
+}
+
+.btn-large {
+  padding: 4px 16px;
+}
+
+.btn-nav {
+  margin-left: 12px;
+}
+
+.panel {
+  margin-top: 12px;
+  border-radius: 3px;
+  padding: 10px;
+  background: #333b4f;
+  order: 1px solid #667399;
+  color: #667399;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  .menu-handle {
+    cursor: pointer;
+    //width: 100%;
+    svg {
+      margin: 0;
+    }
+    border: 1px solid $border;
+  }
+  &:hover .menu {
+    display: block;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: calc(100% - 2px);
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: $panel-bg;
+    //border: 1px solid $border;
+    border-radius: 0 0 $border-radius $border-radius;
+    box-shadow: $box-shadow; // 0 1px 2px rgb(0 0 0 / 20%); //0 1px 4px rgba(0, 0, 0, 0.04);
+    &.left {
+      right: 0;
+      left: auto;
+    }
+    z-index: 20;
+
+    .item {
+      &.active {
+        color: $text;
+      }
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inherit; //otherwise there are weird margins for some reason?
+      cursor: pointer;
+      &:hover,
+      &.active {
+        background: $btn-bg-hover;
+        color: $text;
+      }
+    }
+    .btn {
+      margin: 0;
+      border-radius: 0;
+      border: none;
+    }
+  }
+}
+
+.modal-wrapper {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-card {
+  background: $modal-bg;
+  border-radius: 2px;
+  padding: 16px 32px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  width: calc(100% - 40px);
+  max-width: $modal-width;
+  &.narrow {
+    width: 400px;
+  }
+  &.nopadding {
+    padding: 0;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+  }
+  .google-login {
+    padding: 24px;
+    svg {
+      margin-right: 10px;
+    }
+  }
+  hr {
+    margin-top: 12px;
+  }
+  &.wide {
+    width: 100%;
+  }
+  z-index: 10;
+  position: absolute;
+  top: calc(48px + 4px); // header height + margin above images
+  max-height: calc(100% - 100px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  .close-button {
+    position: absolute;
+    right: 4px;
+    top: 0;
+    border: none;
+    background: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    svg path {
+      fill: $text;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-align: center;
+  }
+  input {
+    width: 100%;
+  }
+}
+
+.flex-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* center items vertically */
+  align-items: center;
+}
+
+/* Css magic that keeps images 16x9, background in the center. */
+.image-wrapper {
+  width: 100%;
+  position: relative;
+  &:after {
+    padding-top: 56.25%; /* 16:9 ratio */
+    display: block;
+    content: '';
+  }
+  .thumbnail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+
+    margin: 0;
+    border: none;
+    background-color: $panel-bg !important;
+  }
+}
+
+.square-image-wrapper {
+  width: 100%;
+  position: relative;
+  &:after {
+    padding-top: 100%; /* 1:1 ratio */
+    display: block;
+    content: '';
+  }
+  .thumbnail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+
+    margin: 0;
+    border: none;
+    background-color: $panel-bg !important;
+  }
+}
+
+// Inputs
+
+label {
+  display: block;
+  margin-top: 12px;
+  color: $text-dim;
+}
+
+input {
+  color: $text;
+  font-family: $main-font;
+  background: $input-bg;
+  font-size: 1em;
+  width: 100%;
+  margin-top: 12px;
+  height: 32px;
+  padding: 12px;
+  line-height: 24px;
+  // float: left;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  //border: 1px solid $border;
+  border-radius: $border-radius;
+  padding-left: 12px;
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: $main-font;
+    color: $text-placeholder;
+    font-weight: 100;
+    opacity: 1; /* Firefox */
+    opacity: 80%;
+  }
+}
+
+label + input {
+  margin-top: 0;
+}
+
+// hide arrows from number inputs
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  font-size: 1em; // need it for some reason
+  font-weight: 100;
+  color: $text;
+  font-family: $main-font;
+  background: $input-bg;
+  vertical-align: top; // fix space after textarea. https://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers
+  width: 100%;
+  border: none;
+  margin-top: 12px;
+  padding: 12px;
+  //border: 1px solid $border;
+  border-radius: $border-radius;
+  resize: none;
+  &:focus {
+    // border: none;
+    outline: none;
+  }
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $text-placeholder;
+    opacity: 1; /* Firefox */
+    opacity: 80%;
+  }
+}
+
+.message-panel {
+  padding: 10px;
+  margin-top: 10px;
+  &.error {
+    border: 1px solid #f02849;
+    background: #da542f3b;
+  }
+  &.success {
+    border: 1px solid #71f028;
+    background: #57da2f3b;
+  }
+}
+
+
+svg {
+  // Initially fontawesome icons are huge, before js loads. This should fix that.
+  width: 1em;
+}
+
+.notification {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background: #478dc0;
+  z-index: 100;
+  text-align: center;
+  opacity: 1;
+  .close-button {
+    float: right;
+    cursor: pointer;
+  }
+  &.fade {
+    opacity: 0;
+    transition: all 250ms linear; //  3s  <- the last value defines transition-delay
+  }
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.spinner-wrapper {
+  position: relative;
+  .spinner {
+    display: block;
+    float: left;
+    margin: 5px;
+    border: 4px solid rgba(255,255,255,0.25);// $input-bg;
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1.25s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+

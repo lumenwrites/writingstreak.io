@@ -1,0 +1,85 @@
+.subscribe-landing {
+  background: $main-bg;
+  // For some reason form's top margin pushes the whole body down,
+  // which adds a scrollbar. No idea why, but this fixes it.
+  position: absolute;
+  width: 100%;
+  .form-card {
+    box-shadow: $box-shadow;
+    max-width: 560px;
+    margin: auto;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 16px;
+    .header {
+      background: $header-bg;
+      border-radius: $border-radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding: 20px 40px;
+      .logo {
+        width: 90px;
+        height: 90px;
+        margin: auto;
+        margin-top: calc(-45px - 20px); // minus half height minus padding
+        margin-bottom: 10px;
+        padding: 6px;
+        border: 4px solid white;
+        background: #323c4e;
+        border-radius: 50%;
+      }
+      h1 {
+        font-weight: bold;
+      }
+      p {
+        margin-top: 0;
+      }
+    }
+    .description {
+      background: $post-bg;
+      border-radius: $border-radius;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      padding: 40px;
+      .form {
+        margin-top: 10px;
+        input {
+          padding: 20px;
+          float: left;
+          width: calc(100% - 100px); //
+          margin-top: 0;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border: none;
+          outline: none;
+          color: white;
+          background: #1a202a;
+          box-shadow: inset $box-shadow;
+          padding-left: 10px;
+          &::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $text-dim;
+            opacity: 1; /* Firefox */
+          }
+        }
+        .btn-subscribe {
+          height: 40px;
+          float: left;
+          width: 100px;
+          background: $orange;
+          border-radius: 0 $border-radius $border-radius 0;
+          color: white;
+          &.disabled {
+            cursor: default;
+            color: $text-dim;
+          }
+        }
+      }
+      .disclaimer {
+        margin-top: 10px;
+        font-size: 0.8em;
+        color: #3f4769;
+      }
+    }
+  }
+}

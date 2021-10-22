@@ -1,0 +1,139 @@
+header {
+  background: $header-bg;
+  box-shadow: $box-shadow;
+  z-index: 10;
+  position: relative; // so that box shadow stays on top
+  padding: 6px 0 8px 0; // 12px + 36px logo + 12px = total height of 56px
+  // height: 48px;
+  border-top: 2px solid #ff6600;
+  box-sizing: border-box;
+  .logo {
+    line-height: 32px;
+    font-weight: lighter;
+    width: 320px;
+    display: block;
+    // float: left;
+    // margin: auto;
+
+    font-family: $logo-font;
+    font-size: 22px;
+    color: $text;
+    font-weight: 100;
+    //text-transform: uppercase;
+    .logo-bold {
+      // letter-spacing: -1px;
+      font-weight: bold;
+    }
+    .logo-image,
+    .logo-image img {
+      width: 32px;
+      height: 32px;
+      float: left;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+  }
+
+  nav {
+    float: right;
+    height: 32px;
+    @media (max-width: 700px) {
+      float: left;
+      width: 100%;
+      margin-top: 5px;
+      .dropdown {
+        .menu-handle {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+.layout {
+  height: calc(100% - 48px); //minus header
+  &.has-subnav {
+    height: calc(100% - 54px - 32px);
+  }
+  .content {
+    height: 100%;
+    max-width: $wrapper-width;
+    margin: auto;
+    display: flex;
+    .sidebar-left {
+      background-color: $sidebar-bg;
+      // box-shadow: $box-shadow;
+      border-right: 1px solid $border;
+    }
+    .main-content {
+      flex: auto;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: overlay;
+    }
+  }
+}
+
+.sidebar-collapsible {
+  // for flexbox
+  width: 300px;
+  min-width: 300px;
+  .open-button, .close-button {
+    display: none;
+    font-size: 24px;
+    line-height: 24px;
+    width: 32px;
+    cursor: pointer;
+  }
+  @media (max-width: 800px) {
+    width: 56px;
+    min-width: 56px;
+    .children {
+      display: none;
+    }
+    .open-button {
+      display: block;
+    }
+    &.open {
+      z-index: 15; // above dark-bg
+      position: fixed;
+      height: calc(100% - 48px);
+      width: 300px;
+      .children {
+        display: initial;
+      }
+      .open-button {
+        display: none;
+      }
+      .close-button {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 10px;
+      }
+    }
+
+  }
+}
+
+.dark-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5; // above most things but below header
+  display: none;
+  &.open {
+    display: block;
+  }
+}
+
+footer {
+  background: #181d25;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  color: $text-dim;
+}

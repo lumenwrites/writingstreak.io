@@ -1,0 +1,107 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0.5em;
+  color: $text-heading;
+}
+h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  border-bottom: 1px solid #363e4d;
+  & + p {
+    // first pagagraph after the header
+    margin-top: 0;
+  }
+  & + img {
+    // first image after the header
+    margin-top: 10px;
+  }
+}
+h4 {
+  font-size: 1.2em;
+}
+h5 {
+  font-size: 1em;
+}
+p {
+  margin-top: 1em;
+}
+a {
+  cursor: pointer;
+  color: $text-link;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $text-link;
+  }
+  // svg path {
+  //   fill: $text-link;
+  // }
+}
+
+.post a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: $text;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+ul {
+  padding: 0;
+  margin-top: 1em;
+  margin-left:20px;
+}
+ol {
+  margin-top: 0.5em;
+}
+ol li {
+  margin-top: 0.2em;
+}
+hr {
+  border: none;
+  margin: 4px 0 4px 0;
+  border-top: 1px solid $border; 
+}
+
+blockquote {
+  border-left: 3px solid $border;
+  border-left: 3px solid #ff572f;
+  margin-top: 10px;
+  padding: 10px;
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  background-color: #353d4d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table,
+th,
+td {
+  border: 1px solid $border;
+  padding: 10px;
+}
+thead {
+  background: #f1f8ff;
+}
+tbody tr:nth-child(even) {
+  background: #f6f8fa;
+}
