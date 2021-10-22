@@ -1,31 +1,39 @@
 //@ts-nocheck
-import { MDXRemote } from 'next-mdx-remote'
 import Head from 'next/head'
-import Layout from 'components/Layout/Layout'
+import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from 'components/Elements/MDXComponents'
+import Layout from 'components/Layout/Layout'
 import Sidebar from 'components/Layout/Sidebar'
 import PrevNext from 'components/Posts/PrevNext'
 import Chapters from 'components/Posts/Chapters'
+import config from 'config.json'
 
 export default function Page({ chapter, sections }) {
-  // console.log(chapter, sections)
   return (
     <Layout>
       <Sidebar>
-        <Chapters sections={sections}/>
+        <Chapters sections={sections} />
       </Sidebar>
       <div className="main-content">
         <div className="post">
           <MDXRemote {...chapter.compiledMdx} components={MDXComponents} />
           <PrevNext post={chapter} />
-          {/* <Chapters toc={post.toc} chapters={chapters} /> */}
-          {/* <ChaptersFooter toc={post.toc} chapters={chapters} />
-        <Head>
-          <title>{post.frontmatter.title} | Godot Academy</title>
-        </Head> */}
+          <Head>
+            <title>
+              {chapter.title} | {config.title}
+            </title>
+            <meta property="og:title" content={`${chapter.title} | ${config.title}`} key="ogtitle" />
+            {/* <meta property="og:description" content={chapter.description} key="ogdesc" />
+          <meta name="twitter:description" content={post.frontmatter.description} />
+          {post.frontmatter.thumbnail && (
+            <>
+              <meta property="og:image" content={`${config.domain}${post.frontmatter.thumbnail}`} key="ogimage" />
+              <meta name="twitter:image" content={`${config.domain}${post.frontmatter.thumbnail}`} />
+            </>
+          )} */}
+          </Head>
         </div>
       </div>
-      {/* <SubscribeBox /> */}
     </Layout>
   )
 }
