@@ -106,12 +106,11 @@ header {
 // In Header
 .toggle-sidebar-button {
   float: left;
-  margin-right: 20px;
+  margin-right: 10px; // same as between the logo and title
   cursor: pointer;
   color: $text-dim;
   font-size: 24px;
   line-height: 32px;
-  width: 32px;
   display: none;
   @media (max-width: 800px) {
     display: block;
