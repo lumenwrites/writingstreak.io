@@ -39,6 +39,7 @@
 .btn-cta {
   background: $btn-cta;
   border: 1px solid $btn-cta;
+  height: 40px; // for spinner
   color: white;
   &:active,
   &:focus {
@@ -50,6 +51,12 @@
   &:hover {
     background: $btn-cta;
     color: white;
+  }
+  &.disabled {
+    cursor: default;
+    background: $text-dim;
+    border-color: $text-dim;
+    color: $text-dim;
   }
 }
 

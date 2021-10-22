@@ -1,5 +1,6 @@
 {
   "postsPerPage": 12,
+  "price": 20,
   "title": "Godot Academy",
   "domain": "https://godotacademy.io",
   "description": "Godot Tutorials, Articles, Assets, and Courses.",

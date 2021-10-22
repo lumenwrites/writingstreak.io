@@ -1,103 +1,96 @@
 // https://stripe.com/docs/stripe-js/react
 // Accept payments: https://stripe.com/docs/payments/accept-a-payment-charges
 // Stripe elements react: https://stripe.com/docs/stripe-js/react
-import { CardElement, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 
-// import { useAuth } from 'context/AuthContext'
 import { useModal } from 'context/ModalContext'
 import { useNotification } from 'context/NotificationContext'
 
-// import Error from 'components/Elements/Error'
+import Link from 'components/Elements/Link'
+import Spinner from 'components/Elements/Spinner'
+import MessagePanel from 'components/Elements/MessagePanel'
 import Modal from 'components/Elements/Modal'
 
 export default function PurchaseModal() {
-  const user = {}
-  const post = {}
   const router = useRouter()
-  const [loading, setLoading] = useState(false)
-  const { setNotification } = useNotification()
-  const { toggleModal } = useModal()
-  useEffect(() => {
-    if (router.query.paymentSuccessful) {
-      toggleModal('download-files')
-      setNotification('Payment Successful! Asset files are sent to your email.')
-    }
-  }, [])
-
   const stripe = useStripe()
   const elements = useElements()
-  // const { user } = useAuth()
-  const [error, setError] = useState('')
+  const { toggleModal } = useModal()
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState({ state: '', message: '' })
 
   async function testSuccessfulPayment(event) {
     event.preventDefault()
-    // Add the post to the user's library
-    // const { data } = await axios.post('/api/payments/purchase-post', { slug: post.slug })
-    window.location.href += '?paymentSuccessful=true'
+    setStatus({ state: 'loading', message: '' })
+    const { data } = await axios.post('/api/payments/get-payment-intent', { email })
+    console.log('data', data)
+    // setStatus({ state: 'loading', message: '' })
+    // window.location.href += '?paymentSuccessful=true'
   }
   const handleSubmit = async (event) => {
     event.preventDefault() // Block native form submission.
     if (!stripe || !elements) return // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
-    setLoading(true)
     // Create payment intent
-    const { data } = await axios.post('/api/payments/get-payment-intent', { slug: post.slug })
-    if (data.error) return setError(data.error) // just in case, no idea when it would trigger
+    const { data } = await axios.post('/api/payments/get-payment-intent')
+    if (data.error) return setStatus({ state: 'error', message: data.error })
     // Use payment intent to charge the card
     const result = await stripe.confirmCardPayment(data.paymentIntentSecert, {
       payment_method: {
         card: elements.getElement(CardElement),
-        billing_details: { email: user.email },
-        metadata: {
-          buyerEmail: user.email,
-          postId: post.id,
-        },
+        billing_details: { email },
+        metadata: { email },
       },
     })
     if (result.error) {
       console.log(result.error.message)
-      setError(result.error.message)
+      setStatus({ state: 'error', message: result.error.message })
       return
     }
     // The payment has been processed!
     if (result.paymentIntent.status === 'succeeded') {
       console.log('Successful payment!')
-      // Add the post to the user's library
-      const { data } = await axios.post('/api/payments/purchase-post', { slug: post.slug })
-      // Reload the page so that "Buy" button turns into the "Download" button.
-      window.location.href += '?paymentSuccessful=true'
-      // toggleModal("")
-      // TODO: Show a success message to your customer
-      // There's a risk of the customer closing the window before callback
-      // execution. Set up a webhook or plugin to listen for the
-      // payment_intent.succeeded event that handles any business critical
-      // post-payment actions.
+      setStatus({ state: 'success', message: `` })
+      // Add user's email to the database
+      // Show them "Thank you for your purchase" with a button taking them to the course
+      // Save a login cookie
     }
   }
-
+  if (status.state === 'success') {
+    return (
+      <Modal name={`purchase`} className={'login-modal narrow'}>
+        <h2>Purchase Successful!</h2>
+        <p>Thank you for buying this course!</p>
+        <Link href={`/section-slug/initial-setup`} className="btn btn-cta-landing" onClick={()=> toggleModal("")}>
+          Start Learning!
+        </Link>
+      </Modal>
+    )
+  }
   return (
     <Modal name={`purchase`} className={'login-modal narrow'}>
-      {/* <Error error={error} /> */}
       <h2>Adventure Writing Academy</h2>
-      <form onSubmit={handleSubmit}>
-      <input
+      <MessagePanel type={status.state} message={status.message} />
+      <form onSubmit={testSuccessfulPayment}>
+        <input
           placeholder="Your email..."
           name="email"
           autoComplete="on"
-          value={""}
-          onChange={()=>{}}
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value)
+          }}
+          disabled={status.state === 'loading'}
         />
         <div className="stripe-card">
           <CardElement options={cardElementOptions} />
         </div>
-        {loading ? (
-          <div className="btn btn-large btn-cta btn-spinner">
-            <div className="flex-center">
-              <div className="spinner" />
-            </div>
-          </div>
+        {status.state === 'loading' ? (
+          <button className="btn btn-cta btn-large disabled" disabled>
+            <Spinner />
+          </button>
         ) : (
           <button className="btn btn-cta btn-large" type="submit" disabled={!stripe}>
             Start Learning Now! ($20)

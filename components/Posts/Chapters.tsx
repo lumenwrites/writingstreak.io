@@ -15,7 +15,6 @@ export default function Chapters({ sections }) {
 function Section({ section }) {
   const router = useRouter()
   const [sectionSlug, chapterSlug] = router.query.slug
-  console.log(sectionSlug, chapterSlug)
 
   return (
     <div className="section">

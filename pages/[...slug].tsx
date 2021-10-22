@@ -53,7 +53,7 @@ export default function Page({ chapter, sections }) {
 import slugify from 'slugify'
 import { join } from 'path'
 import { readFileSync, readdirSync, lstatSync } from 'fs'
-import { parseFrontmatter, renderMDX } from 'api/mdx'
+import { parseFrontmatter, renderMDX } from 'backend/mdx'
 const contentdir = join(process.cwd(), 'content')
 
 function getSections() {

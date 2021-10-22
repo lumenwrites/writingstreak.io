@@ -3,13 +3,6 @@ import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from 'components/Elements/MDXComponents'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'components/Elements/Link'
-import PurchaseModal from 'components/Users/PurchaseModal'
-import LoginModal from 'components/Users/LoginModal'
-
-// https://stripe.com/docs/stripe-js/react#elements-provider
-import { Elements } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_CLIENT_SECRET)
 
 export default function index({ copy, frontmatter }) {
   // console.log(frontmatter)
@@ -32,10 +25,6 @@ export default function index({ copy, frontmatter }) {
           <MDXRemote {...copy} components={MDXComponents} />
         </div>
       </div>
-      <Elements stripe={stripePromise}>
-        <PurchaseModal />
-      </Elements>
-      <LoginModal/>
       <Head>
         <title>Adventure Academy</title>
         {/* Take social meta from frontmatter. */}
@@ -46,7 +35,7 @@ export default function index({ copy, frontmatter }) {
 
 import { join } from 'path'
 import { readFileSync } from 'fs'
-import { parseFrontmatter, renderMDX } from 'api/mdx'
+import { parseFrontmatter, renderMDX } from 'backend/mdx'
 const contentdir = join(process.cwd(), 'content')
 
 export async function getStaticProps() {
