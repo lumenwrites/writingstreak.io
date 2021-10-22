@@ -3,7 +3,13 @@ import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from 'components/Elements/MDXComponents'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'components/Elements/Link'
-import Layout from 'components/Layout/Layout'
+import PurchaseModal from 'components/Users/PurchaseModal'
+import LoginModal from 'components/Users/LoginModal'
+
+// https://stripe.com/docs/stripe-js/react#elements-provider
+import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_CLIENT_SECRET)
 
 export default function index({ copy, frontmatter }) {
   // console.log(frontmatter)
@@ -15,14 +21,21 @@ export default function index({ copy, frontmatter }) {
           <h2>Learn to Create Awesome Adventures for Tabletop Roleplaying Games</h2>
           <div className="centered">
             <Link href={frontmatter.ctaLink} className="btn btn-cta-landing">
-              Start Learning Now!
+              Start Learning Now! ($20)
             </Link>
+            <div className="btn btn-login">
+              Login
+            </div>
           </div>
         </div>
         <div className="copy">
           <MDXRemote {...copy} components={MDXComponents} />
         </div>
       </div>
+      <Elements stripe={stripePromise}>
+        <PurchaseModal />
+      </Elements>
+      <LoginModal/>
       <Head>
         <title>Adventure Academy</title>
         {/* Take social meta from frontmatter. */}

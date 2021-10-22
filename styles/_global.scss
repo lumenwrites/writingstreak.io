@@ -11,25 +11,6 @@ body {
 #__next {
   height: 100%;
 }
-main {
-  overflow-x: hidden;
-  overflow-y: overlay;
-  height: calc(100% - 48px); //minus header minus footer
-  &.has-subnav {
-    height: calc(100% - 54px - 32px);
-  }
-}
-
-// only used in header now
-.wrapper {
-  max-width: $wrapper-width;
-  margin: auto;
-  padding: 0 20px;
-  min-width: 300px;
-  // @media (max-width: 800px) {
-  //   padding: 0;
-  // }
-}
 
 .page {
   background: $post-bg;

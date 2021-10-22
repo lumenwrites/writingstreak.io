@@ -25,6 +25,7 @@ function Section({ section }) {
         return (
           <Link key={chapter.url} className={`chapter ${isActive ? "active" : ""}`} href={chapter.url}>
             {chapter.title}
+            <div className="preview">Free Preview</div>
           </Link>
         )
       })}

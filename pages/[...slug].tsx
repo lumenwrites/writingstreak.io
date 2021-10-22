@@ -1,5 +1,6 @@
 //@ts-nocheck
 import Head from 'next/head'
+import Link from 'components/Elements/Link'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from 'components/Elements/MDXComponents'
 import Layout from 'components/Layout/Layout'
@@ -10,15 +11,32 @@ import config from 'config.json'
 export default function Page({ chapter, sections }) {
   return (
     <Layout sidebarChildren={<Chapters sections={sections} />}>
-        <div className="post">
-          <MDXRemote {...chapter.compiledMdx} components={MDXComponents} />
-          <PrevNext post={chapter} />
-          <Head>
-            <title>
-              {chapter.title} | {config.title}
-            </title>
-            <meta property="og:title" content={`${chapter.title} | ${config.title}`} key="ogtitle" />
-            {/* <meta property="og:description" content={chapter.description} key="ogdesc" />
+      <div className="post">
+        <div className="content-locked">
+          <p>You need to purchase the course to view this content.</p>
+          <p>If you're already enrolled, you'll need to login.</p>
+
+          <a href={'/'} className="btn btn-cta-landing">
+            Enroll Now! ($20)
+          </a>
+          <div className="btn btn-login">Login</div>
+        </div>
+        {/* put meta here too */}
+      </div>
+    </Layout>
+  )
+
+  return (
+    <Layout sidebarChildren={<Chapters sections={sections} />}>
+      <div className="post">
+        <MDXRemote {...chapter.compiledMdx} components={MDXComponents} />
+        <PrevNext post={chapter} />
+        <Head>
+          <title>
+            {chapter.title} | {config.title}
+          </title>
+          <meta property="og:title" content={`${chapter.title} | ${config.title}`} key="ogtitle" />
+          {/* <meta property="og:description" content={chapter.description} key="ogdesc" />
           <meta name="twitter:description" content={post.frontmatter.description} />
           {post.frontmatter.thumbnail && (
             <>
@@ -26,8 +44,8 @@ export default function Page({ chapter, sections }) {
               <meta name="twitter:image" content={`${config.domain}${post.frontmatter.thumbnail}`} />
             </>
           )} */}
-          </Head>
-        </div>
+        </Head>
+      </div>
     </Layout>
   )
 }

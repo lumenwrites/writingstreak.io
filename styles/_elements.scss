@@ -57,8 +57,10 @@
   border: none;
   color: white;
   margin-top: 20px;
+  width: 220px;
   background: linear-gradient(to bottom, #ff6500, #f84200);
   padding: 10px 20px;
+  text-decoration: none;
   &:active,
   &:focus {
     color: white;
@@ -68,6 +70,7 @@
     color: white;
   }
 }
+
 
 .btn-large {
   padding: 4px 16px;
@@ -171,7 +174,7 @@
   width: calc(100% - 40px);
   max-width: $modal-width;
   &.narrow {
-    width: 400px;
+    width: 500px;
   }
   &.nopadding {
     padding: 0;
@@ -294,15 +297,12 @@ input {
   background: $input-bg;
   font-size: 1em;
   width: 100%;
-  margin-top: 12px;
+  margin-top: 10px;
   height: 32px;
   padding: 12px;
   line-height: 24px;
   // float: left;
-  border-radius: 0;
-  border: none;
-  outline: none;
-  //border: 1px solid $border;
+  border: 1px solid $border;
   border-radius: $border-radius;
   padding-left: 12px;
   &::placeholder {

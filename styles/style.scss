@@ -18,7 +18,7 @@ $subnav-bg: #E0E6EF;
 $sidebar-bg: white;
 $panel-bg:  #E0E6EF;
 $post-bg:   white;
-$modal-bg:  #262d3b;
+$modal-bg:  white;
 $footer-bg: #1a202a;
 
 // Small Elements
@@ -28,7 +28,7 @@ $btn-cta:#ff6600; //#DA552F;// #1977f2; //Facebook Blue
 // $panel-bg: #343c4e;
 $border: #E3E8EE; //#464c61;
 $border-radius: 3px;
-$input-bg: #181d29; //#262c3b; // lighter in header
+$input-bg: white; //#262c3b; // lighter in header
 //$input-bg-dark: #181d29; // darker in post
 $scrollbar-thumb: rgba(110, 110, 110, 0.2);
 //$success: #28f028; // #DA552F;
@@ -50,4 +50,5 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 @import "./_browse.scss";
 @import "./_post.scss";
 @import "./_subscribe.scss";
-@import "./_landing.scss"
+@import "./_landing.scss";
+@import "./_payments.scss";

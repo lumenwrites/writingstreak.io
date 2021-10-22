@@ -17,7 +17,30 @@
     display: block;
   }
 }
-// Elements
+// Purchase CTA
+.post .content-locked {
+  text-align: center;
+  border: 1px solid $border;
+  border-radius: $border-radius;
+  padding: 40px;
+
+  .btn-cta-landing {
+    // because post's link styles override this.
+    color: white;
+    text-decoration: none;
+  }
+  .btn-login {
+    display: block;
+    width: 220px;
+    margin: auto;
+    margin-top: 10px;
+    svg {
+      color: white;
+      margin-left: 10px;
+    }
+  }
+}
+
 .post {
   .post-header {
     margin: -20px -20px 0 -20px;
@@ -84,13 +107,29 @@
     .chapter {
       display: block;
       border-bottom: 1px solid #f6f7f8;
-      padding: 8px 20px 8px 40px;
+      padding: 8px 0px 8px 20px; // indentation on the right
       color: $text-dim;
       &.active {
         font-weight: bold;
         border-left: 2px solid $orange;
         color: $text-heading; //$text-link;
-        background: #FAFAFA;
+        background: #fafafa;
+      }
+      position: relative;
+      .preview {
+        position: absolute;
+        right: 10px;
+        top: 4px;
+        font-size: 0.8em;
+        height: 28px;
+        line-height: 28px;
+        background: #ff6600;
+        color: white;
+        background: #CAF5C9;
+        color: #0B825D;
+        padding: 0 8px;
+        border-radius: $border-radius;
+        font-weight: normal;
       }
     }
   }

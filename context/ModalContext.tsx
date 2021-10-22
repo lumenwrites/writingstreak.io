@@ -13,7 +13,7 @@ export function useModal() {
 // Wrap it around components that should have access to this context
 export function ModalContextProvider({ children }) {
   // This hook is used to actually save the modal state and change it
-  const [modal, setModal] = useState("subscribe1") // download-files subscribe post-create 1
+  const [modal, setModal] = useState("purchase") // download-files subscribe post-create 1
   
   function toggleModal(modalName) {
     if (modal === modalName) {
