@@ -11,7 +11,9 @@ async function signup(req, res) {
 
   try {
     const existingUser = await User.findOne({ email })
-    if (existingUser) return res.json({ error: "User with this email already exists." })
+    if (existingUser.hasPurchasedCourse) return res.json(
+      { error: "You have already purchased this course. Login to your account to access the content." }
+    )
     const user = await User.create({ email })
     const token = jwt.encode({ email }, process.env.JWT_SECRET)
     console.log('[api/users/signup] created user, sending token', user.email)

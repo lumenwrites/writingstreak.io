@@ -10,12 +10,16 @@ const UserSchema = new mongoose.Schema({
     // required: [true, 'Email is required.'],
     // maxlength: [20, 'Name cannot be longer than 20 characters'],
   },
+  hasPurchasedCourse: {
+    type: Boolean,
+    default: false
+  }
 })
 
 /* Send back to client only the fields I want from profile */
 UserSchema.methods.publicFields = function () {
-  const { email } = this
-  return { email }
+  const { email, hasPurchasedCourse } = this
+  return { email, hasPurchasedCourse }
 }
 
 const UserModel = mongoose.models.User || mongoose.model('User', UserSchema)

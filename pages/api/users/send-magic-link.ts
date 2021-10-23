@@ -4,6 +4,10 @@ import dbConnect from "backend/dbConnect"
 import User from "backend/models/User"
 import jwt from 'jwt-simple'
 
+// If the user with this email exists in the database, I send them a link with JWT.
+// /api/users/verify-magic-link takes token from the link, saves it into a cookie, redirects to the first chapter
+// pages run getUser(), which takes the token from the cookie, decodes it, sends back the email.
+// The ONLY time I check the user against the db is before sending an email. After that it's just putting it into a cookie.
 async function login(req, res) {
   const { email } = req.body
   if (!email || !email.trim()) return res.json({ error: 'Email is required.' })
@@ -17,7 +21,7 @@ async function login(req, res) {
     expirationDate.setHours(new Date().getHours() + 2)
     const authToken = jwt.encode({ email, expirationDate }, process.env.JWT_SECRET)
     // Email Token to the User
-    const loginLink = `http://localhost:3050/verify?authToken=${authToken}`
+    const loginLink = `http://localhost:3050/api/users/verify-magic-link?authToken=${authToken}`
     let message = `Click the link below to sign in to your account:<br/>`
     message += `<a href=${loginLink}>Log in!</a><br/>`
     message += `(This link will expire in 2 hours and can only be used once.)`

@@ -3,9 +3,13 @@ import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from 'components/Elements/MDXComponents'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'components/Elements/Link'
+import { useModal } from 'context/ModalContext'
+import Cookies from 'js-cookie'
 
-export default function index({ copy, frontmatter }) {
-  // console.log(frontmatter)
+export default function Landing({ copy, frontmatter }) {
+  const { toggleModal } = useModal()
+  console.log('index cookie', Cookies.get('token'))
+  if (Cookies.get('token')) window.location.href = "/section-slug/initial-setup"
   return (
     <>
       <div className="landing">
@@ -13,10 +17,10 @@ export default function index({ copy, frontmatter }) {
           <h1>Adventure Writing Academy</h1>
           <h2>Learn to Create Awesome Adventures for Tabletop Roleplaying Games</h2>
           <div className="centered">
-            <Link href={frontmatter.ctaLink} className="btn btn-cta-landing">
+            <div className="btn btn-cta-landing" onClick={() => toggleModal(`purchase`)}>
               Start Learning Now! ($20)
-            </Link>
-            <div className="btn btn-login">
+            </div>
+            <div className="btn btn-login" onClick={() => toggleModal(`login`)}>
               Login
             </div>
           </div>

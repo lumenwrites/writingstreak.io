@@ -1,8 +1,6 @@
-// import prisma from 'prisma/prismaClient'
-// import handler from "backend/handler"
-// import { sendEmail } from 'backend/sendgrid'
-
-// const stripe = require('stripe')(process.env.STRIPE_SECRET)
+import handler from "backend/handler"
+import { sendEmail } from 'backend/sendgrid'
+const stripe = require('stripe')(process.env.STRIPE_SECRET)
 
 async function webhooks(req, res) {
   const event = req.body
@@ -18,9 +16,10 @@ async function webhooks(req, res) {
   res.status(200).end()
 }
 
-// export default handler().post(webhooks)
+export default handler().post(webhooks)
 
 async function handleSuccessfulPayment(data) {
+  console.log('[webhooks] Payment successful', data)
   // Store the email in the database (just in case it didn't work right away)
   // Send "payment successful" email with a login link
   // Send me an email payment notification

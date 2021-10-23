@@ -37,8 +37,15 @@ export default function PurchaseModal() {
   }
   const handleSubmit = async (event) => {
     event.preventDefault() // Block native form submission.
-    if (!stripe || !elements) return // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
+    if (!stripe || !elements) return // Stripe.js has not loaded yet.
     setStatus({ state: 'loading', message: '' })
+    // Add user's email to the database
+    const { data: signupRes } = await axios.post('/api/users/signup', { email })
+    console.log('[PurchaseModal] Create user response', signupRes)
+    if (signupRes.error) return setStatus({ state: 'error', message: signupRes.error })
+    // Save a login cookie
+    Cookies.set('token', signupRes.token)
+
     // Create payment intent
     const { data } = await axios.post('/api/payments/get-payment-intent', { email })
     if (data.error) return setStatus({ state: 'error', message: data.error })
@@ -55,12 +62,6 @@ export default function PurchaseModal() {
     // The payment has been processed!
     if (paymentResponse.paymentIntent.status === 'succeeded') {
       console.log('Successful payment!')
-      // Add user's email to the database
-      const { data } = await axios.post('/api/users/signup', { email })
-      console.log('[PurchaseModal] Create user response', data)
-      if (data.error) return setStatus({ state: 'error', message: data.error })
-      // Save a login cookie
-      Cookies.set('token', data.token)
       // Show them "Thank you for your purchase" with a button taking them to the course
       setStatus({ state: 'success', message: `` })
     }
@@ -97,6 +98,9 @@ export default function PurchaseModal() {
         <SpinnerButton isLoading={status.state === 'loading'} type="submit" disabled={!stripe}>
           Start Learning Now! ($20)
         </SpinnerButton>
+        <div className="disclaimer">
+          <p>Secure payments powered by Stripe. 30-day money back guarantee.</p>
+        </div>
       </form>
     </Modal>
   )
