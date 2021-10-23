@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { join } from 'path'
 import { readFileSync, readdirSync, writeFileSync, lstatSync } from 'fs'
 import { parseFrontmatter, renderMDX } from 'backend/mdx'
