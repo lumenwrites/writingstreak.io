@@ -26,6 +26,7 @@ export async function processContent() {
       let chapter = {
         title: chapterFrontmatter.title,
         slug: chapterFrontmatter.slug,
+        preview: chapterFrontmatter.preview,
         url: `/${section.slug}/${chapterFrontmatter.slug}`, // used in prev-next and probably toc
         filepath: chapterFilepath,
         compiledMdx
@@ -63,7 +64,8 @@ export async function processContent() {
         return {
           title: chapter.title,
           slug: chapter.slug, // for "active" chapter
-          url: chapter.url
+          url: chapter.url,
+          preview: chapter.preview
         }
       })
     }

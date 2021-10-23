@@ -2,17 +2,17 @@
 import { useRouter } from 'next/router'
 import Link from 'components/Elements/Link'
 
-export default function Chapters({ sections }) {
+export default function Chapters({ sections, user }) {
   return (
     <div className="chapters">
       {sections.map((section) => (
-        <Section key={section.slug} section={section} />
+        <Section key={section.slug} section={section} user={user} />
       ))}
     </div>
   )
 }
 
-function Section({ section }) {
+function Section({ section, user }) {
   const router = useRouter()
   const [sectionSlug, chapterSlug] = router.query.slug
 
@@ -22,9 +22,9 @@ function Section({ section }) {
       {section.chapters.map((chapter) => {
         const isActive = section.slug === sectionSlug && chapter.slug === chapterSlug
         return (
-          <Link key={chapter.url} className={`chapter ${isActive ? "active" : ""}`} href={chapter.url}>
+          <Link key={chapter.url} className={`chapter ${isActive ? 'active' : ''}`} href={chapter.url}>
             {chapter.title}
-            <div className="preview">Free Preview</div>
+            {chapter.preview && <div className="preview">Free Preview</div>}
           </Link>
         )
       })}

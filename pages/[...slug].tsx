@@ -27,10 +27,10 @@ function Paywall() {
   )
 }
 
-export default function Page({ chapter, sections, user }) {
+export default function Page({ chapter, toc, user }) {
   return (
-    <Layout sidebarChildren={<Chapters sections={sections} />}>
-      {user ? (
+    <Layout sidebarChildren={<Chapters sections={toc} user={user} />}>
+      {user || chapter.preview ? (
         <div className="post">
           <MDXRemote {...chapter.compiledMdx} components={MDXComponents} />
           <PrevNext post={chapter} />
@@ -62,9 +62,9 @@ import toc from 'toc.json'
 import content from 'content.json'
 
 export async function getServerSideProps({ params, req }) {
-  // await processContent()
+  await processContent()
   const [sectionSlug, chapterSlug] = params.slug
   const user = await getUser(req)
   const chapter = content[sectionSlug].chapters[chapterSlug]
-  return { props: { chapter, sections: toc, user } }
+  return { props: { chapter, toc, user } }
 }

@@ -11,6 +11,6 @@ export async function getUser(req) {
   // const user = await User.findOne({ email: decodedToken.email })
   // console.log('[getUser] ssr user', user)
   // return user
-  console.log(decodedToken)
+  //console.log(decodedToken)
   return { email: decodedToken.email }
 }

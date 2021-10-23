@@ -110,6 +110,8 @@ header {
   cursor: pointer;
   color: $text-dim;
   font-size: 24px;
+  width: 24px; // icons are different widths
+  text-align: center;
   line-height: 32px;
   display: none;
   @media (max-width: 800px) {
