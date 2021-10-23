@@ -3,6 +3,7 @@
   "price": 20,
   "title": "Adventure Academy",
   "domain": "https://academy.rpgadventures.io",
+  "devDomain": "http://localhost:3050/",
   "description": "Godot Tutorials, Articles, Assets, and Courses.",
   "twitterCreator": "@lumenwrites",
   "twitterSite": "@GodotAcademy",

@@ -11,12 +11,12 @@ export default function Header() {
     <header>
       <div className="wrapper">
         <ToggleSidebarButton />
-        <Link href="/" className="logo">
+        <div className="logo">
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />
           </div>
           Adventure Academy
-        </Link>
+        </div>
         <nav>
           <a className="btn btn-nav" href="https://discord.gg/JZmXfWD85D">
             Join Our Discord

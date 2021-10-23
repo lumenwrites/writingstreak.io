@@ -10,7 +10,7 @@ export async function sendEmail({ subject, message, to }) {
     // text: message,
     html: message,
   }
-  console.log('Sending email', msg)
+  // console.log('Sending email') // ,msg
   try {
     const response = await sgMail.send(msg)
     console.log('Email sent', msg)

@@ -5,11 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'components/Elements/Link'
 import { useModal } from 'context/ModalContext'
 import Cookies from 'js-cookie'
+import toc from 'toc.json'
 
 export default function Landing({ copy, frontmatter }) {
   const { toggleModal } = useModal()
-  console.log('index cookie', Cookies.get('token'))
-  if (Cookies.get('token')) window.location.href = "/section-slug/initial-setup"
+  const firstChapterUrl = `/${toc[0].slug}/${toc[0].chapters[0].slug}`
+  if (Cookies.get('token')) window.location.href = firstChapterUrl
   return (
     <>
       <div className="landing">
