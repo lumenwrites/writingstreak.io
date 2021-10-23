@@ -3,7 +3,7 @@ import '../styles/style.scss'
 import 'components/Elements/FontawsomeSetup'
 
 import CombinedContextsProvider from 'context/CombinedContexts'
-import useAnalytics from 'hooks/useAnalytics'
+// import useAnalytics from 'hooks/useAnalytics'
 
 // Both modals have to be here, because they're useful in index.tsx as well as paywalled course pages
 // and index.tsx isn't wrapped in layout
@@ -16,14 +16,14 @@ import { loadStripe } from '@stripe/stripe-js'
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_CLIENT_SECRET)
 
 function App({ Component, pageProps }) {
-  useAnalytics()
+  // useAnalytics()
   return (
     <CombinedContextsProvider>
       <Component {...pageProps} />
-      <Elements stripe={stripePromise}>
+      {/* <Elements stripe={stripePromise}>
         <PurchaseModal />
       </Elements>
-      <LoginModal/>
+      <LoginModal/> */}
     </CombinedContextsProvider>
   )
 }
