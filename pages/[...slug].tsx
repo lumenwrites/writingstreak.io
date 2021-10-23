@@ -56,6 +56,7 @@ export default function Page({ chapter, sections, user }) {
   )
 }
 
+import { getUser } from '/pages/api/users/get-user'
 import { processContent } from 'backend/processContent'
 import toc from 'toc.json'
 import content from 'content.json'
@@ -63,22 +64,7 @@ import content from 'content.json'
 export async function getServerSideProps({ params, req }) {
   // await processContent()
   const [sectionSlug, chapterSlug] = params.slug
-  const user = true // await getUser(req)
+  const user = await getUser(req)
   const chapter = content[sectionSlug].chapters[chapterSlug]
   return { props: { chapter, sections: toc, user } }
 }
-
-// export async function getStaticPaths() {
-//   let allPaths = []
-//   getSections().map((section) => {
-//     section.chapters.map((chapter) => {
-//       // console.log(section.slug, chapter.slug)
-//       allPaths.push({ params: { slug: [section.slug, chapter.slug] } })
-//     })
-//   })
-//   // console.log(JSON.stringify(allPaths, null, 2))
-//   return {
-//     paths: allPaths,
-//     fallback: false,
-//   }
-// }

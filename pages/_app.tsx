@@ -20,10 +20,10 @@ function App({ Component, pageProps }) {
   return (
     <CombinedContextsProvider>
       <Component {...pageProps} />
-      {/* <Elements stripe={stripePromise}>
+      <Elements stripe={stripePromise}>
         <PurchaseModal />
       </Elements>
-      <LoginModal/> */}
+      <LoginModal/>
     </CombinedContextsProvider>
   )
 }
