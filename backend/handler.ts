@@ -15,4 +15,3 @@ export function onNoMatch(req, res) {
 export default function base() {
   return nextConnect({ onError, onNoMatch })
 }
-

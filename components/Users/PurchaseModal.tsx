@@ -5,14 +5,13 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 import { useModal } from 'context/ModalContext'
-import { useNotification } from 'context/NotificationContext'
-
-import Link from 'components/Elements/Link'
-import Spinner from 'components/Elements/Spinner'
-import MessagePanel from 'components/Elements/MessagePanel'
 import Modal from 'components/Elements/Modal'
+import Link from 'components/Elements/Link'
+import SpinnerButton from 'components/Elements/SpinnerButton'
+import MessagePanel from 'components/Elements/MessagePanel'
 
 export default function PurchaseModal() {
   const router = useRouter()
@@ -25,37 +24,45 @@ export default function PurchaseModal() {
   async function testSuccessfulPayment(event) {
     event.preventDefault()
     setStatus({ state: 'loading', message: '' })
-    const { data } = await axios.post('/api/payments/get-payment-intent', { email })
-    console.log('data', data)
-    // setStatus({ state: 'loading', message: '' })
+    console.log('Successful payment!')
+    // Add user's email to the database
+    const { data } = await axios.post('/api/users/signup', { email })
+    console.log('[PurchaseModal] Create user response', data)
+    if (data.error) return setStatus({ state: 'error', message: data.error })
+    // Save a login cookie
+    Cookies.set('token', data.token)
+    // Show them "Thank you for your purchase" with a button taking them to the course
+    setStatus({ state: 'success', message: `` })
     // window.location.href += '?paymentSuccessful=true'
   }
   const handleSubmit = async (event) => {
     event.preventDefault() // Block native form submission.
     if (!stripe || !elements) return // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
+    setStatus({ state: 'loading', message: '' })
     // Create payment intent
-    const { data } = await axios.post('/api/payments/get-payment-intent')
+    const { data } = await axios.post('/api/payments/get-payment-intent', { email })
     if (data.error) return setStatus({ state: 'error', message: data.error })
     // Use payment intent to charge the card
-    const result = await stripe.confirmCardPayment(data.paymentIntentSecert, {
+    const paymentResponse = await stripe.confirmCardPayment(data.paymentIntentSecert, {
       payment_method: {
         card: elements.getElement(CardElement),
+        // This adds an email into the "customer" column in the stripe payments dashboard
+        // But to pass email to webhook you have to do this in metadata when creating payment intend on backend (I think)
         billing_details: { email },
-        metadata: { email },
       },
     })
-    if (result.error) {
-      console.log(result.error.message)
-      setStatus({ state: 'error', message: result.error.message })
-      return
-    }
+    if (paymentResponse.error) return setStatus({ state: 'error', message: paymentResponse.error.message })
     // The payment has been processed!
-    if (result.paymentIntent.status === 'succeeded') {
+    if (paymentResponse.paymentIntent.status === 'succeeded') {
       console.log('Successful payment!')
-      setStatus({ state: 'success', message: `` })
       // Add user's email to the database
-      // Show them "Thank you for your purchase" with a button taking them to the course
+      const { data } = await axios.post('/api/users/signup', { email })
+      console.log('[PurchaseModal] Create user response', data)
+      if (data.error) return setStatus({ state: 'error', message: data.error })
       // Save a login cookie
+      Cookies.set('token', data.token)
+      // Show them "Thank you for your purchase" with a button taking them to the course
+      setStatus({ state: 'success', message: `` })
     }
   }
   if (status.state === 'success') {
@@ -63,7 +70,7 @@ export default function PurchaseModal() {
       <Modal name={`purchase`} className={'login-modal narrow'}>
         <h2>Purchase Successful!</h2>
         <p>Thank you for buying this course!</p>
-        <Link href={`/section-slug/initial-setup`} className="btn btn-cta-landing" onClick={()=> toggleModal("")}>
+        <Link href={`/section-slug/initial-setup`} className="btn btn-cta-landing" onClick={() => toggleModal('')}>
           Start Learning!
         </Link>
       </Modal>
@@ -73,7 +80,7 @@ export default function PurchaseModal() {
     <Modal name={`purchase`} className={'login-modal narrow'}>
       <h2>Adventure Writing Academy</h2>
       <MessagePanel type={status.state} message={status.message} />
-      <form onSubmit={testSuccessfulPayment}>
+      <form onSubmit={handleSubmit}>
         <input
           placeholder="Your email..."
           name="email"
@@ -87,15 +94,9 @@ export default function PurchaseModal() {
         <div className="stripe-card">
           <CardElement options={cardElementOptions} />
         </div>
-        {status.state === 'loading' ? (
-          <button className="btn btn-cta btn-large disabled" disabled>
-            <Spinner />
-          </button>
-        ) : (
-          <button className="btn btn-cta btn-large" type="submit" disabled={!stripe}>
-            Start Learning Now! ($20)
-          </button>
-        )}
+        <SpinnerButton isLoading={status.state === 'loading'} type="submit" disabled={!stripe}>
+          Start Learning Now! ($20)
+        </SpinnerButton>
       </form>
     </Modal>
   )
@@ -111,14 +112,13 @@ const cardElementOptions = {
       fontSmoothing: 'antialiased',
       padding: '12px',
       lineHeight: '32px',
-      border: '1px solid red',
       '::placeholder': {
         // color: '#464c61',
       },
     },
     complete: {
       fontSize: '16px',
-      color: 'white',
+      // color: 'white',
       // backgroundColor: '#181d29',
       fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: 'antialiased',

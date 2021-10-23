@@ -1,43 +1,50 @@
 import axios from 'axios'
-import Cookies from 'js-cookie'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import Modal from 'components/Elements/Modal'
-// import Error from 'components/Elements/Error'
 import { useModal } from 'context/ModalContext'
+import Modal from 'components/Elements/Modal'
+import SpinnerButton from 'components/Elements/SpinnerButton'
+import MessagePanel from 'components/Elements/MessagePanel'
 
 export default function LoginModal() {
-  const [error, setError] = useState('')
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState({ state: '', message: '' })
 
-  async function handleLogin(e) {
-    e.preventDefault()
-    const { email } = { email: ""}
-    const { data } = await axios.post('/api/users/login', { email })
+  async function handleLogin(event) {
+    event.preventDefault()
+    setStatus({ state: 'loading', message: '' })
+    const { data } = await axios.post('/api/users/send-magic-link', { email })
     console.log('[Login Modal] Login response', data)
-    if (data.error) return setError(data.error)
-    Cookies.set('token', data.token)
-    setError('')
+    if (data.error) return setStatus({ state: 'error', message: data.error })
+    setStatus({ state: 'success', message: `` })
   }
 
-  async function handleGoogleLogin() {}
+  if (status.state === 'success') {
+    return (
+      <Modal name={`login`} className={'login-modal narrow'}>
+        <h2>Check your inbox!</h2>
+        <p>Email is on its way!</p>
+        <p>Click the link we sent to <b>{email}</b> to sign in.</p>
+      </Modal>
+    )
+  }
 
   return (
     <Modal name={`login`} className={'login-modal narrow'}>
-      {/* <Error error={error} /> */}
       <h2>Login With Email</h2>
+      <MessagePanel type={status.state} message={status.message} />
       <p>Enter the email address associated with your account, and we’ll send a login link to your inbox.</p>
       <form onSubmit={handleLogin}>
         <input
           placeholder="Your email..."
           name="email"
           autoComplete="on"
-          value={""}
-          onChange={() => {}}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        <button className="btn btn-cta btn-large" type="submit">
+        <SpinnerButton isloading={status.state === 'loading'} type="submit">
           Login
-        </button>
+        </SpinnerButton>
       </form>
     </Modal>
   )
