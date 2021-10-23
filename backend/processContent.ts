@@ -26,7 +26,7 @@ export async function processContent() {
       let chapter = {
         title: chapterFrontmatter.title,
         slug: chapterFrontmatter.slug,
-        preview: chapterFrontmatter.preview,
+        preview: chapterFrontmatter.preview || false,
         url: `/${section.slug}/${chapterFrontmatter.slug}`, // used in prev-next and probably toc
         filepath: chapterFilepath,
         compiledMdx
@@ -82,6 +82,6 @@ export async function processContent() {
   // console.log(JSON.stringify(sections, null, 2))
   writeFileSync('content.json', JSON.stringify(content))
   writeFileSync('toc.json', JSON.stringify(toc))
+  return { content, toc }
 }
 
-processContent()
