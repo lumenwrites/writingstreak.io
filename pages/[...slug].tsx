@@ -61,7 +61,7 @@ import toc from 'toc.json'
 import content from 'content.json'
 
 export async function getServerSideProps({ params, req }) {
-  await processContent()
+  // await processContent()
   const [sectionSlug, chapterSlug] = params.slug
   const user = true // await getUser(req)
   const chapter = content[sectionSlug].chapters[chapterSlug]
