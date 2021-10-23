@@ -71,7 +71,6 @@ export async function getServerSideProps({ params, req }) {
     const chapter = content[sectionSlug].chapters[chapterSlug]
     return { props: { chapter, toc, user } }
   }
-  
   const chapter = content[sectionSlug].chapters[chapterSlug]
   return { props: { chapter, toc, user } }
 }

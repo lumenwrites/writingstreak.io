@@ -84,4 +84,3 @@ export async function processContent() {
   writeFileSync('toc.json', JSON.stringify(toc))
   return { content, toc }
 }
-

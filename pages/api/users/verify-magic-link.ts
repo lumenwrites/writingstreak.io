@@ -7,7 +7,6 @@ import toc from 'toc.json'
 const dev = process.env.NODE_ENV === 'development'
 
 async function verify(req, res) {
-  console.log("VERIFY")
   const { authToken } = req.query
   try {
     var { email } = jwt.decode(authToken, process.env.JWT_SECRET)
