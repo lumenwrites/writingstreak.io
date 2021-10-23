@@ -1,9 +1,11 @@
 //@ts-nocheck
 import slugify from 'slugify'
-import { join } from 'path'
+import { join, resolve } from 'path'
 import { readFileSync, readdirSync, lstatSync } from 'fs'
 import { parseFrontmatter, renderMDX } from 'backend/mdx'
-const contentdir = join(process.cwd(), 'content')
+
+// const contentdir = join(process.cwd(), 'content')
+const contentdir = resolve('./content')
 
 export function getSections() {
   let sections = []
