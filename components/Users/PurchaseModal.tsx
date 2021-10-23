@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import toc from 'toc.json'
 
 import { useModal } from 'context/ModalContext'
 import Modal from 'components/Elements/Modal'
@@ -21,31 +22,13 @@ export default function PurchaseModal() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState({ state: '', message: '' })
 
-  async function testSuccessfulPayment(event) {
-    event.preventDefault()
-    setStatus({ state: 'loading', message: '' })
-    console.log('Successful payment!')
-    // Add user's email to the database
-    const { data } = await axios.post('/api/users/signup', { email })
-    console.log('[PurchaseModal] Create user response', data)
-    if (data.error) return setStatus({ state: 'error', message: data.error })
-    // Save a login cookie
-    Cookies.set('token', data.token)
-    // Show them "Thank you for your purchase" with a button taking them to the course
-    setStatus({ state: 'success', message: `` })
-    // window.location.href += '?paymentSuccessful=true'
-  }
   const handleSubmit = async (event) => {
     event.preventDefault() // Block native form submission.
     if (!stripe || !elements) return // Stripe.js has not loaded yet.
     setStatus({ state: 'loading', message: '' })
-    // Add user's email to the database
-    const { data: signupRes } = await axios.post('/api/users/signup', { email })
-    console.log('[PurchaseModal] Create user response', signupRes)
-    if (signupRes.error) return setStatus({ state: 'error', message: signupRes.error })
-    // Save a login cookie
-    Cookies.set('token', signupRes.token)
-
+    // Check whether the user with this email has already made a purchase.
+    const { data: emailCheck } = await axios.post('/api/payments/check-valid-email', { email })
+    if (emailCheck.error) return setStatus({ state: 'error', message: emailCheck.error })
     // Create payment intent
     const { data } = await axios.post('/api/payments/get-payment-intent', { email })
     if (data.error) return setStatus({ state: 'error', message: data.error })
@@ -53,30 +36,30 @@ export default function PurchaseModal() {
     const paymentResponse = await stripe.confirmCardPayment(data.paymentIntentSecert, {
       payment_method: {
         card: elements.getElement(CardElement),
-        // This adds an email into the "customer" column in the stripe payments dashboard
-        // But to pass email to webhook you have to do this in metadata when creating payment intend on backend (I think)
-        billing_details: { email },
+        billing_details: { email }, // This adds an email into the "customer" column in dashboard
       },
     })
     if (paymentResponse.error) return setStatus({ state: 'error', message: paymentResponse.error.message })
-    // The payment has been processed!
     if (paymentResponse.paymentIntent.status === 'succeeded') {
-      console.log('Successful payment!')
-      // Show them "Thank you for your purchase" with a button taking them to the course
-      setStatus({ state: 'success', message: `` })
+      const { data } = await axios.post('/api/payments/purchase-successful', { email }) // Add user's email to the database
+      Cookies.set('token', data.token) // Save a login cookie
+      setStatus({ state: 'success', message: `` }) // Show them "Thank you for your purchase" modal
     }
   }
+
   if (status.state === 'success') {
+    const firstChapterUrl = `/${toc[0].slug}/${toc[0].chapters[0].slug}`
     return (
       <Modal name={`purchase`} className={'login-modal narrow'}>
         <h2>Purchase Successful!</h2>
         <p>Thank you for buying this course!</p>
-        <Link href={`/section-slug/initial-setup`} className="btn btn-cta-landing" onClick={() => toggleModal('')}>
+        <a href={firstChapterUrl} className="btn btn-cta-landing" onClick={() => toggleModal('')}>
           Start Learning!
-        </Link>
+        </a>
       </Modal>
     )
   }
+
   return (
     <Modal name={`purchase`} className={'login-modal narrow'}>
       <h2>Adventure Writing Academy</h2>
