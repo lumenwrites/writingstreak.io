@@ -78,7 +78,7 @@ export default function PurchaseModal() {
         <div className="stripe-card">
           <CardElement options={cardElementOptions} />
         </div>
-        <SpinnerButton isLoading={status.state === 'loading'} type="submit" disabled={!stripe}>
+        <SpinnerButton isloading={status.state === 'loading'} type="submit" disabled={!stripe}>
           Start Learning Now! ($20)
         </SpinnerButton>
         <div className="disclaimer">

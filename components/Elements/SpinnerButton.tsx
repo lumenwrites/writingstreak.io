@@ -1,5 +1,5 @@
 export default function SpinnerButton(props) {
-  const { isloading, children, type } = props
+  const { isloading, children, type, disabled } = props
   if (isloading) {
     return (
       <button className="btn btn-cta btn-large disabled" disabled>
@@ -12,8 +12,8 @@ export default function SpinnerButton(props) {
     )
   } else {
     return (
-      <button className="btn btn-cta btn-large" type={type}>
-        { children }
+      <button className="btn btn-cta btn-large" type={type} disabled={disabled}>
+        {children}
       </button>
     )
   }
