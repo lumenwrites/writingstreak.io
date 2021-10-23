@@ -3,6 +3,7 @@ import handler from "backend/handler"
 import dbConnect from "backend/dbConnect"
 import User from "backend/models/User"
 import jwt from 'jwt-simple'
+import config from 'config.json'
 
 // If the user with this email exists in the database, I send them a link with JWT.
 // /api/users/verify-magic-link takes token from the link, saves it into a cookie, redirects to the first chapter

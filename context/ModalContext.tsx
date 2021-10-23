@@ -13,7 +13,7 @@ export function useModal() {
 // Wrap it around components that should have access to this context
 export function ModalContextProvider({ children }) {
   // This hook is used to actually save the modal state and change it
-  const [modal, setModal] = useState("purchase") // purchase
+  const [modal, setModal] = useState("purchase1") // purchase
   
   function toggleModal(modalName) {
     if (modal === modalName) {
