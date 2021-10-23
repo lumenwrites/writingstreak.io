@@ -1,25 +1,20 @@
-import { sendEmail } from 'backend/sendgrid'
 import handler from "backend/handler"
-import dbConnect from "backend/dbConnect"
-import User from "backend/models/User"
 import jwt from 'jwt-simple'
+import { serialize } from 'cookie'
 
 async function verify(req, res) {
-  const { authToken } = req.body
+  const { authToken } = req.query
   try {
-    var { email, expirationDate } = jwt.decode(authToken, process.env.JWT_SECRET)
-    await dbConnect()
-    const existingUser = await User.findOne({ email })
-    // check if it hasn't expired
-    const token = jwt.encode({ email }, process.env.JWT_SECRET)
-    console.log('[api/users/verify-magic-link] Magic link is valid, returning token')
-    res.json({ token })
-    res.json({ message: "Magic link is valid!", token })
+    var { email } = jwt.decode(authToken, process.env.JWT_SECRET)
+    console.log("[verify-magic-link] user logged in", email)
+    res.setHeader('Set-Cookie', serialize('token', authToken, { path: '/' }));
+    res.writeHead(301, {Location: 'http://localhost:3050/section-slug/initial-setup'});
+    res.end()
   } catch (error) {
     console.log('[api/users/verify-magic-link] error', error)
     res.json({ error })
   }
 }
 
-export default handler().post(verify)
+export default handler().get(verify)
 
