@@ -20,6 +20,7 @@
     "@stripe/react-stripe-js": "^1.6.0",
     "@stripe/stripe-js": "^1.20.3",
     "axios": "^0.21.4",
+    "cookie": "^0.4.1",
     "gray-matter": "^4.0.3",
     "js-cookie": "^3.0.1",
     "jwt-simple": "^0.5.6",
