@@ -1,8 +1,5 @@
 ---
 title: Adventure Writing Academy
-description: Search engine description
-social: social/image/link
-ctaLink: /section-slug/initial-setup
 ---
 
 # What You Will Learn
