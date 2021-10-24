@@ -24,6 +24,8 @@ export default class MyDocument extends Document {
                 `,
             }}
           /> */}
+          {/* Plausible Analytiics */}
+          <script defer data-domain="academy.rpgadventures.io" src="https://plausible.io/js/plausible.js"></script>
         </Head>
         <body>
           <Main />
