@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import toc from 'toc.json'
+import toc from 'backend/json/adventure-academy/toc.json'
 
 import { useModal } from 'context/ModalContext'
 import Modal from 'components/Elements/Modal'

@@ -7,6 +7,6 @@ draft: false
 preview: true
 ---
 
-Here's what we'll make
+# Introduction
 
-CHANGE asdf
+Welcome to the course!

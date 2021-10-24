@@ -57,9 +57,8 @@ export default function Page({ chapter, toc, user }) {
 }
 
 import { getUser } from '/pages/api/users/get-user'
-import { processContent } from 'backend/processContent'
-import toc from 'toc.json'
-import content from 'content.json'
+import { processContent } from 'backend/json/processContent'
+import courses from 'backend/json/courses'
 
 export async function getServerSideProps({ params, req }) {
   const [sectionSlug, chapterSlug] = params.slug
@@ -71,6 +70,7 @@ export async function getServerSideProps({ params, req }) {
     const chapter = content[sectionSlug].chapters[chapterSlug]
     return { props: { chapter, toc, user } }
   }
+  const { toc, content } = courses["adventure-academy"]
   const chapter = content[sectionSlug].chapters[chapterSlug]
   return { props: { chapter, toc, user } }
 }

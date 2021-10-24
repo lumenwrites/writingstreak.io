@@ -14,8 +14,8 @@ const UserSchema = new mongoose.Schema({
 
 /* Send back to client only the fields I want from profile */
 UserSchema.methods.publicFields = function () {
-  const { email, hasPurchasedCourse } = this
-  return { email, hasPurchasedCourse }
+  const { email } = this
+  return { email }
 }
 
 const UserModel = mongoose.models.User || mongoose.model('User', UserSchema)

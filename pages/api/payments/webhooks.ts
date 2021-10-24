@@ -1,6 +1,6 @@
 import handler from "backend/handler"
-import dbConnect from "backend/dbConnect"
-import User from "backend/models/User"
+import dbConnect from "backend/database/dbConnect"
+import User from "backend/database/models/User"
 import jwt from 'jwt-simple'
 
 import { sendEmail } from 'backend/sendgrid'

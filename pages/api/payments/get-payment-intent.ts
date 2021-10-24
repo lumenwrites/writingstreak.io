@@ -9,7 +9,7 @@ async function getPaymentIntent(req, res) {
   console.log('[getPaymentIntent]', email)
   try {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 100, // config.price * 100,
+      amount: config.price * 100,
       currency: 'usd',
       payment_method_types: ['card'], //default
       metadata: { email },

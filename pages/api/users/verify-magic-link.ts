@@ -3,7 +3,7 @@ import jwt from 'jwt-simple'
 import { serialize } from 'cookie'
 
 import config from 'config.json'
-import toc from 'toc.json'
+import toc from 'backend/json/adventure-academy/toc.json'
 const dev = process.env.NODE_ENV === 'development'
 
 async function verify(req, res) {

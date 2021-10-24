@@ -1,8 +1,9 @@
 //@ts-nocheck
 import { join } from 'path'
 import { readFileSync, readdirSync, writeFileSync, lstatSync } from 'fs'
-import { parseFrontmatter, renderMDX } from 'backend/mdx'
-const contentdir = join(process.cwd(), 'content')
+import { parseFrontmatter, renderMDX } from 'backend/json/mdx'
+const contentdir = join(process.cwd(), 'content/adventure-academy')
+const jsondir = join(process.cwd(), 'backend/json/adventure-academy')
 
 export async function processContent() {
   let sections = []
@@ -80,7 +81,7 @@ export async function processContent() {
     content[section.slug] = section
   }
   // console.log(JSON.stringify(sections, null, 2))
-  writeFileSync('content.json', JSON.stringify(content))
-  writeFileSync('toc.json', JSON.stringify(toc))
+  writeFileSync(`${jsondir}/content.json`, JSON.stringify(content))
+  writeFileSync(`${jsondir}/toc.json`, JSON.stringify(toc))
   return { content, toc }
 }

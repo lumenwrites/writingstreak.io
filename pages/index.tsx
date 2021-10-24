@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'components/Elements/Link'
 import { useModal } from 'context/ModalContext'
 import Cookies from 'js-cookie'
-import toc from 'toc.json'
+import toc from 'backend/json/adventure-academy/toc.json'
 import Subscribe from 'components/Layout/SubscribeBox'
 
 export default function Landing({ copy, frontmatter }) {
@@ -42,8 +42,8 @@ export default function Landing({ copy, frontmatter }) {
 
 import { join } from 'path'
 import { readFileSync } from 'fs'
-import { parseFrontmatter, renderMDX } from 'backend/mdx'
-const contentdir = join(process.cwd(), 'content')
+import { parseFrontmatter, renderMDX } from 'backend/json/mdx'
+const contentdir = join(process.cwd(), 'content/adventure-academy')
 
 export async function getStaticProps() {
   const landingText = readFileSync(`${contentdir}/landing.md`, 'utf8')
