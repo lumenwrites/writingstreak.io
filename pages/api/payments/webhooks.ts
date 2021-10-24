@@ -10,7 +10,7 @@ const dev = process.env.NODE_ENV === 'development'
 
 async function webhooks(req, res) {
   const event = req.body
-  // console.log('[webhooks]', event)
+  console.log('[webhooks]', event)
   switch (event.type) {
     case 'payment_intent.succeeded':
       console.log('payment_intent.succeeded') // , event)
