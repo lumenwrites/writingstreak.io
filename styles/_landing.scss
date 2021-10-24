@@ -30,6 +30,10 @@
       color: white;
       margin-left: 10px;
     }
+    &:hover, &:active, &:focus {
+      background: rgba(238, 238, 238, 0.1);
+      color: white;
+    }
     @media (max-width: 500px) {
       display: block;
       position: static; // default
@@ -52,7 +56,7 @@
     color: white;
     margin-left: 10px;
   }
-  &:hover {
+  &:hover, &:active, &:focus {
     background: rgba(238, 238, 238, 0.1);
     color: white;
   }
