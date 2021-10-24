@@ -84,7 +84,3 @@ Orbis erat tot indulgens canisve loquor, adamante utve oderit bracchia pulsat,
 **viro dum ora**. Arguit miscenda, arma tibi cum Tartara Alcyone Melanchaetes
 genae tu iungere. Et patrem gemma! De maturus canos medius debellata novus, ad
 ipsaque iuncta, genua adspergine avis, terra.
-
----
-
-<LandingCTA href="/section-slug/initial-setup">Start Learning Now!</LandingCTA>

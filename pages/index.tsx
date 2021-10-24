@@ -43,6 +43,25 @@ export default function Landing({ copy, frontmatter, user }) {
         <div className="copy">
           <MDXRemote {...copy} components={MDXComponents} />
         </div>
+        <footer>
+          <div className="center-text">
+            {config.price === 0 || user ? (
+              <Link href={firstChapterUrl} className="btn btn-cta-landing">
+                Go To Course
+                <FontAwesomeIcon icon={['fas', 'arrow-right']} />
+              </Link>
+            ) : (
+              <>
+                <div className="btn btn-cta-landing" onClick={() => toggleModal(`purchase`)}>
+                  Start Learning Now! (${config.price})
+                </div>
+                <Link href={firstChapterUrl} className="btn btn-preview">
+                  Free Course Preview
+                </Link>
+              </>
+            )}
+          </div>
+        </footer>
       </div>
       {/* <Subscribe /> */}
     </>
@@ -67,6 +86,6 @@ export async function getServerSideProps({ req }) {
     writeFileSync(`${jsondir}/copy.json`, JSON.stringify(copy))
     return { props: { copy, user } }
   }
-  const { copy } = courses["adventure-academy"]
+  const { copy } = courses['adventure-academy']
   return { props: { copy, user } }
 }

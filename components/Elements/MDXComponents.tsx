@@ -32,6 +32,7 @@ function Img(props) {
   )
 }
 
+// Doesn't work if I want to show a different button to the logged in user
 function LandingCTA({ children, href }) {
   return (
     <div className="center-text">

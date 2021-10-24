@@ -38,18 +38,19 @@
       margin-top: 10px;
     }
   }
-  .btn-preview {
+}
+
+.btn-preview {
+  color: white;
+  border: 1px solid white;
+  background: none;
+  width: 240px;
+  display:block;
+  margin: auto;
+  margin-top: 10px;
+  svg {
     color: white;
-    border: 1px solid white;
-    background: none;
-    width: 240px;
-    display:block;
-    margin: auto;
-    margin-top: 10px;
-    svg {
-      color: white;
-      margin-left: 10px;
-    }
+    margin-left: 10px;
   }
 }
 
@@ -71,4 +72,18 @@
       text-align: center;
     }
   }
+  .btn-preview-footer {
+    color: $text;
+    border: 1px solid $border;
+    background: none;
+    width: 240px;
+    display:block;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+}
+footer {
+  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/illustrations/hermione.jpg')
+  background: #183144;
 }
