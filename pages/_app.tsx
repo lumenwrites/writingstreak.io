@@ -10,6 +10,7 @@ import CombinedContextsProvider from 'context/CombinedContexts'
 import LoginModal from 'components/Users/LoginModal'
 import PurchaseModal from 'components/Users/PurchaseModal'
 // import SubscribeModal from 'components/Layout/SubscribeModal'
+import DefaultHead from 'components/Layout/DefaultHead'
 
 // https://stripe.com/docs/stripe-js/react#elements-provider
 import { Elements } from '@stripe/react-stripe-js'
@@ -25,6 +26,7 @@ function App({ Component, pageProps }) {
         <PurchaseModal />
       </Elements>
       <LoginModal />
+      <DefaultHead />
       {/* <SubscribeModal/> */}
     </CombinedContextsProvider>
   )
