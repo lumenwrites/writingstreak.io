@@ -60,7 +60,7 @@ function Paywall() {
   )
 }
 
-import { getUser } from '/pages/api/users/get-user'
+import { getUser } from 'pages/api/users/get-user'
 import { processContent } from 'backend/json/processContent'
 import courses from 'backend/json/courses'
 

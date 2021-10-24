@@ -49,7 +49,7 @@ export default function Landing({ copy, frontmatter, user }) {
   )
 }
 
-import { getUser } from '/pages/api/users/get-user'
+import { getUser } from 'pages/api/users/get-user'
 import { join } from 'path'
 import { readFileSync } from 'fs'
 import { parseFrontmatter, renderMDX } from 'backend/json/mdx'
