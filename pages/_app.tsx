@@ -9,6 +9,7 @@ import CombinedContextsProvider from 'context/CombinedContexts'
 // and index.tsx isn't wrapped in layout
 import LoginModal from 'components/Users/LoginModal'
 import PurchaseModal from 'components/Users/PurchaseModal'
+// import SubscribeModal from 'components/Layout/SubscribeModal'
 
 // https://stripe.com/docs/stripe-js/react#elements-provider
 import { Elements } from '@stripe/react-stripe-js'
@@ -23,7 +24,8 @@ function App({ Component, pageProps }) {
       <Elements stripe={stripePromise}>
         <PurchaseModal />
       </Elements>
-      <LoginModal/>
+      <LoginModal />
+      {/* <SubscribeModal/> */}
     </CombinedContextsProvider>
   )
 }

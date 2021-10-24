@@ -98,7 +98,7 @@
   .section {
     .section-title {
       margin-top: 20px;
-      border-bottom: 1px solid #f6f7f8;
+      border-bottom: 1px solid $border-dim;
       padding: 8px 20px;
       color: $text-subheading;
       text-transform: uppercase;
@@ -106,14 +106,14 @@
     }
     .chapter {
       display: block;
-      border-bottom: 1px solid #f6f7f8;
+      border-bottom: 1px solid $border-dim;
       padding: 8px 0px 8px 20px; // indentation on the right
       color: $text-dim;
       &.active {
         font-weight: bold;
         border-left: 2px solid $orange;
         color: $text-heading; //$text-link;
-        background: #fafafa;
+        background: $active-bg;
       }
       position: relative;
       .preview {

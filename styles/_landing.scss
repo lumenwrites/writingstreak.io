@@ -25,6 +25,7 @@
     top: 20px;
     background: no-repeat;
     color: white;
+    border: 1px solid white;
     svg {
       color: white;
       margin-left: 10px;
@@ -40,7 +41,7 @@
 }
 
 .landing {
-  background: white;
+  background: $post-bg;
   max-width: 800px;
   margin: auto;
   .copy {

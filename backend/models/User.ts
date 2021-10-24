@@ -7,12 +7,8 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     index: true,
     lowercase: true,
-    // required: [true, 'Email is required.'],
+    required: [true, 'Email is required.'],
     // maxlength: [20, 'Name cannot be longer than 20 characters'],
-  },
-  hasPurchasedCourse: {
-    type: Boolean,
-    default: false
   }
 })
 

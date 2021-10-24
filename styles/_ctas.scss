@@ -1,5 +1,7 @@
-
 .mailing-list {
+  max-width: 800px;
+  margin: auto;
+
   margin-top: 10px;
   padding: 20px;
   background: $post-bg;
@@ -17,8 +19,8 @@
     border-bottom-right-radius: 0;
     border: none;
     outline: none;
-    color: white;
-    background: #1a202a;
+    color: $text;
+    background: $input-bg; //#1a202a;
     box-shadow: inset $box-shadow;
     padding-left: 10px;
     &::placeholder {

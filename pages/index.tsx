@@ -6,6 +6,7 @@ import Link from 'components/Elements/Link'
 import { useModal } from 'context/ModalContext'
 import Cookies from 'js-cookie'
 import toc from 'toc.json'
+import Subscribe from 'components/Layout/SubscribeBox'
 
 export default function Landing({ copy, frontmatter }) {
   const { toggleModal } = useModal()
@@ -30,6 +31,7 @@ export default function Landing({ copy, frontmatter }) {
           <MDXRemote {...copy} components={MDXComponents} />
         </div>
       </div>
+      {/* <Subscribe /> */}
       <Head>
         <title>Adventure Academy</title>
         {/* Take social meta from frontmatter. */}
