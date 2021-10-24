@@ -32,10 +32,6 @@ export default function Landing({ copy, frontmatter }) {
         </div>
       </div>
       {/* <Subscribe /> */}
-      <Head>
-        <title>Adventure Academy</title>
-        {/* Take social meta from frontmatter. */}
-      </Head>
     </>
   )
 }

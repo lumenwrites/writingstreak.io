@@ -43,14 +43,18 @@ export default function Page({ chapter, toc, user }) {
           {chapter.title} | {config.title}
         </title>
         <meta property="og:title" content={`${chapter.title} | ${config.title}`} key="ogtitle" />
-        {/* <meta property="og:description" content={chapter.description} key="ogdesc" />
-          <meta name="twitter:description" content={post.frontmatter.description} />
-          {post.frontmatter.thumbnail && (
-            <>
-              <meta property="og:image" content={`${config.domain}${post.frontmatter.thumbnail}`} key="ogimage" />
-              <meta name="twitter:image" content={`${config.domain}${post.frontmatter.thumbnail}`} />
-            </>
-          )} */}
+        {chapter.description && (
+          <>
+            <meta property="og:description" content={chapter.description} key="ogdesc" />
+            <meta name="twitter:description" content={chapter.description} />
+          </>
+        )}
+        {chapter.thumbnail && (
+          <>
+            <meta property="og:image" content={`${config.domain}${chapter.thumbnail}`} key="ogimage" />
+            <meta name="twitter:image" content={`${config.domain}${chapter.thumbnail}`} />
+          </>
+        )}
       </Head>
     </Layout>
   )
@@ -71,7 +75,7 @@ export async function getServerSideProps({ params, req }) {
     return { props: { chapter, toc, user } }
   }
 
-  const { toc, content } = courses["adventure-academy"]
+  const { toc, content } = courses['adventure-academy']
   const chapter = content[sectionSlug].chapters[chapterSlug]
   return { props: { chapter, toc, user } }
 }

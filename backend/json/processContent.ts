@@ -27,9 +27,11 @@ export async function processContent() {
       let chapter = {
         title: chapterFrontmatter.title,
         slug: chapterFrontmatter.slug,
-        preview: chapterFrontmatter.preview || false,
+        description: chapterFrontmatter.description || "",
+        thumbnail: chapterFrontmatter.thumbnail || null,
+        preview: chapterFrontmatter.preview || false, // free preview
+        draft: chapterFrontmatter.draft || false,
         url: `/${section.slug}/${chapterFrontmatter.slug}`, // used in prev-next and probably toc
-        filepath: chapterFilepath,
         compiledMdx
       }
       section.chapters.push(chapter)
@@ -66,7 +68,8 @@ export async function processContent() {
           title: chapter.title,
           slug: chapter.slug, // for "active" chapter
           url: chapter.url,
-          preview: chapter.preview
+          draft: chapter.draft,
+          preview: chapter.preview // for "free preview" tag
         }
       })
     }

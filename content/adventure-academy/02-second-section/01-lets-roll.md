@@ -3,7 +3,7 @@ title: Lets Roll
 slug: lets-roll
 description: Create your First 3D Game in Godot where the user plays as a bouncing ball.
 thumbnail: /illustrations/lets-roll/thumbnail.png
-draft: false
+draft: true
 ---
 
 

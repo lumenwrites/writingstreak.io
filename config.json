@@ -4,8 +4,8 @@
   "title": "Adventure Academy",
   "domain": "https://academy.rpgadventures.io",
   "devDomain": "http://localhost:3050/",
-  "description": "Godot Tutorials, Articles, Assets, and Courses.",
+  "description": "Learn to Create Awesome Adventures for Tabletop Roleplaying Games.",
   "twitterCreator": "@lumenwrites",
-  "twitterSite": "@GodotAcademy",
+  "twitterSite": "@lumenwrites",
   "previewImage": "https://godotacademy.io/social.png"
 }
