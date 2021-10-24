@@ -5,27 +5,33 @@ h4,
 h5 {
   margin-top: 0.5em;
   color: $text-heading;
+  & + p, & + ul, & + img {
+    // first pagagraph after the header
+    margin-top: 5px;
+  }
 }
 h1 {
   font-size: 1.8em;
   font-weight: bold;
+  // Gitbook
+  font-size: 32px;
+  font-weight: 700;
 }
 h2 {
   font-size: 1.6em;
   font-weight: 600;
+  // Gitbook
+  font-size: 24px;
+  font-weight: 700;
 }
 h3 {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
-  border-bottom: 1px solid #363e4d;
-  & + p {
-    // first pagagraph after the header
-    margin-top: 0;
-  }
-  & + img {
-    // first image after the header
-    margin-top: 10px;
-  }
+  color: $text-subheading;
+  // Gitbook
+  font-size: 16px;
+  font-weight: 700;
+  // border-bottom: 1px solid #363e4d;
 }
 h4 {
   font-size: 1.2em;
@@ -92,10 +98,13 @@ b,
 strong {
   font-weight: bold;
 }
+i, em {
+  font-style: italic;
+}
 ul {
   padding: 0;
   margin-top: 1em;
-  margin-left:20px;
+  margin-left: 20px;
 }
 ol {
   margin-top: 0.5em;
@@ -106,12 +115,12 @@ ol li {
 hr {
   border: none;
   margin: 4px 0 4px 0;
-  border-top: 1px solid $border; 
+  border-top: 1px solid $border;
 }
 
 blockquote {
-  border-left: 3px solid $border;
-  border-left: 3px solid #ff572f;
+  border-left: 3px solid $quote-border;
+  background: $quote-bg;
   margin-top: 10px;
   padding: 10px;
 
@@ -119,7 +128,7 @@ blockquote {
     margin-top: 0;
   }
 
-  background-color: #353d4d;
+
 }
 
 table {

@@ -11,7 +11,7 @@ import Subscribe from 'components/Layout/SubscribeBox'
 export default function Landing({ copy, frontmatter }) {
   const { toggleModal } = useModal()
   const firstChapterUrl = `/${toc[0].slug}/${toc[0].chapters[0].slug}`
-  if (Cookies.get('token')) window.location.href = firstChapterUrl
+  // if (Cookies.get('token')) window.location.href = firstChapterUrl
   return (
     <>
       <div className="landing">

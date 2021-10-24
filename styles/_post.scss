@@ -3,6 +3,7 @@
   padding: 20px;
   background: $post-bg;
   box-shadow: $box-shadow;
+  font-size: 16px;
 }
 
 // Typography
@@ -15,6 +16,11 @@
     max-height: 400px; // for tall narrow images
     margin: auto;
     display: block;
+  }
+  button {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
   }
 }
 // Purchase CTA
@@ -31,7 +37,7 @@
   }
   .btn-login {
     display: block;
-    width: 220px;
+    width: 240px;
     margin: auto;
     margin-top: 10px;
     svg {
@@ -44,6 +50,7 @@
 .post {
   .post-header {
     margin: -20px -20px 0 -20px;
+    width: calc(100% + 40px)!important; // important because I want to override react player's defaults
   }
   position: relative;
   padding-bottom: calc(20px + 46px + 20px); // padding, height of prev-next, margin above prev-next

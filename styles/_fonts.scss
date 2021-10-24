@@ -17,7 +17,7 @@
     font-display: swap;
 }
 
-// Main Font
+// Godot Font
 @font-face {
     font-family: "muli";
     src: url("./fonts/muli/Muli.ttf");
@@ -35,3 +35,23 @@
     font-weight: bold;
     font-display: swap;
 }
+
+// SF Pro
+// @font-face {
+//     font-family: "SF Pro";
+//     src: url("./fonts/SFPro/SF-Pro-Text-Regular.ttf");
+//     // For the "Ensure text remains visible during webfont load" Google PageInsights Suggestion
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: "SF Pro";
+//     src: url("./fonts/SFPro/SF-Pro-Text-Italic.ttf");
+//     font-style: italic;
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: "SF Pro";
+//     src: url("./fonts/SFPro/SF-Pro-Text-Bold.ttf");
+//     font-weight: bold;
+//     font-display: swap;
+// }

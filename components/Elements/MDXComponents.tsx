@@ -19,8 +19,9 @@ function Heading({ children, id, level }) {
   )
 }
 
-function Video({ children, url }) {
-  return <ReactPlayer url={url} />
+function Video(props) {
+  const { className, url } = props
+  return <ReactPlayer className={`video-responsive ${className}`} width="100%" height="100%" url={url} />
 }
 
 function Img(props) {

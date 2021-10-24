@@ -1,5 +1,6 @@
 
 // Typography
+$base-font-size: 14px;
 $main-font: "Open Sans";
 $logo-font: "Open Sans";
 $text: #3C4257;
@@ -21,6 +22,8 @@ $panel-bg:  #E0E6EF;
 $post-bg:   white;
 $modal-bg:  white;
 $footer-bg: #1a202a;
+$quote-bg: #fafafa;
+$quote-border: #ff6600;
 
 // Small Elements
 $btn-bg: white;
@@ -43,7 +46,7 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 
 
 
-// // Typography
+// // // Typography
 // $main-font: "Muli";
 // $logo-font: "Open Sans";
 // $text: white;
@@ -64,7 +67,8 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 // $footer-bg: #1a202a;
 // $post-bg:   #262d3b;
 // $sidebar-bg:   #262d3b;
-
+// $quote-bg: #353d4d;
+// $quote-border: #ff572f;
 // // Small Elements
 // $btn-bg: #333B4F; //#262d3b;
 // $btn-bg-hover: #384260;
@@ -73,7 +77,7 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 // // $panel-bg: #343c4e;
 // $border-width: 0;
 // $border: #667399; //#464c61;
-// $border-dim: #66739973;
+// $border-dim: #6673993a;
 // $border-radius: 3px;
 // $input-bg: #181d29; //#262c3b; // lighter in header
 // //$input-bg-dark: #181d29; // darker in post
