@@ -68,6 +68,10 @@
   background: linear-gradient(to bottom, #ff6500, #f84200);
   padding: 10px 20px;
   text-decoration: none;
+  svg {
+    margin-left: 10px;
+    color: white;
+  }
   &:active,
   &:focus {
     color: white;

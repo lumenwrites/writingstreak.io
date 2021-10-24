@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import toc from 'backend/json/adventure-academy/toc.json'
 import config from 'config.json'
 
@@ -55,7 +56,8 @@ export default function PurchaseModal() {
         <h2>Purchase Successful!</h2>
         <p>Thank you for buying this course!</p>
         <a href={firstChapterUrl} className="btn btn-cta-landing" onClick={() => toggleModal('')}>
-          Start Learning!
+          Go To Course
+          <FontAwesomeIcon icon={['fas', 'arrow-right']} />
         </a>
       </Modal>
     )

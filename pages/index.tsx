@@ -9,7 +9,7 @@ import Subscribe from 'components/Layout/SubscribeBox'
 import toc from 'backend/json/adventure-academy/toc.json'
 import config from 'config.json'
 
-export default function Landing({ copy, frontmatter }) {
+export default function Landing({ copy, frontmatter, user }) {
   const { toggleModal } = useModal()
   const firstChapterUrl = `/${toc[0].slug}/${toc[0].chapters[0].slug}`
   // if (Cookies.get('token')) window.location.href = firstChapterUrl
@@ -20,7 +20,12 @@ export default function Landing({ copy, frontmatter }) {
           <h1>Adventure Writing Academy</h1>
           <h2>Learn to Create Awesome Adventures for Tabletop Roleplaying Games</h2>
           <div className="centered">
-            {config.price > 0 ? (
+            {config.price === 0 || user ? (
+              <Link href={firstChapterUrl} className="btn btn-cta-landing">
+                Go To Course
+                <FontAwesomeIcon icon={['fas', 'arrow-right']} />
+              </Link>
+            ) : (
               <>
                 <div className="btn btn-cta-landing" onClick={() => toggleModal(`purchase`)}>
                   Start Learning Now! (${config.price})
@@ -32,10 +37,6 @@ export default function Landing({ copy, frontmatter }) {
                   Login
                 </div>
               </>
-            ) : (
-              <Link href={firstChapterUrl} className="btn btn-cta-landing">
-                Start Learning Now!
-              </Link>
             )}
           </div>
         </div>
@@ -48,14 +49,16 @@ export default function Landing({ copy, frontmatter }) {
   )
 }
 
+import { getUser } from '/pages/api/users/get-user'
 import { join } from 'path'
 import { readFileSync } from 'fs'
 import { parseFrontmatter, renderMDX } from 'backend/json/mdx'
 const contentdir = join(process.cwd(), 'content/adventure-academy')
 
-export async function getStaticProps() {
+export async function getServerSideProps({ req }) {
+  const user = await getUser(req)
   const landingText = readFileSync(`${contentdir}/landing.md`, 'utf8')
   const frontmatter = parseFrontmatter(landingText)
   const copy = await renderMDX(landingText, false)
-  return { props: { copy, frontmatter } }
+  return { props: { copy, frontmatter, user } }
 }
