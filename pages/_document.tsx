@@ -25,7 +25,8 @@ export default class MyDocument extends Document {
             }}
           /> */}
           {/* Plausible Analytiics */}
-          <script defer data-domain="academy.rpgadventures.io" src="https://plausible.io/js/plausible.js"></script>
+          {/* <script defer data-domain="academy.rpgadventures.io" src="https://plausible.io/js/plausible.js"></script> */}
+          {/* <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script> */}
         </Head>
         <body>
           <Main />

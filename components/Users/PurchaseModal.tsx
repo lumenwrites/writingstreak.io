@@ -4,6 +4,8 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+// https://plausible.io/docs/nextjs-integration
+import { usePlausible } from 'next-plausible'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -23,11 +25,13 @@ export default function PurchaseModal() {
   const { toggleModal } = useModal()
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState({ state: '', message: '' })
+  const plausible = usePlausible()
 
   const handleSubmit = async (event) => {
     event.preventDefault() // Block native form submission.
     if (!stripe || !elements) return // Stripe.js has not loaded yet.
     setStatus({ state: 'loading', message: '' })
+    plausible('puchaseAttempt')
     // Check whether the user with this email has already made a purchase.
     const { data: emailCheck } = await axios.post('/api/payments/check-valid-email', { email })
     if (emailCheck.error) return setStatus({ state: 'error', message: emailCheck.error })

@@ -4,6 +4,7 @@ import 'components/Elements/FontawsomeSetup'
 
 import CombinedContextsProvider from 'context/CombinedContexts'
 // import useAnalytics from 'hooks/useAnalytics'
+import PlausibleProvider from 'next-plausible'
 
 // Both modals have to be here, because they're useful in index.tsx as well as paywalled course pages
 // and index.tsx isn't wrapped in layout
@@ -20,15 +21,17 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_CLIENT_SECRET)
 function App({ Component, pageProps }) {
   // useAnalytics()
   return (
-    <CombinedContextsProvider>
-      <Component {...pageProps} />
-      <Elements stripe={stripePromise}>
-        <PurchaseModal />
-      </Elements>
-      <LoginModal />
-      <DefaultHead />
-      {/* <SubscribeModal/> */}
-    </CombinedContextsProvider>
+    <PlausibleProvider domain="academy.rpgadventures.io">
+      <CombinedContextsProvider>
+        <Component {...pageProps} />
+        <Elements stripe={stripePromise}>
+          <PurchaseModal />
+        </Elements>
+        <LoginModal />
+        <DefaultHead />
+        {/* <SubscribeModal/> */}
+      </CombinedContextsProvider>
+    </PlausibleProvider>
   )
 }
 
