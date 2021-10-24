@@ -62,18 +62,16 @@ import courses from 'backend/json/courses'
 
 export async function getServerSideProps({ params, req }) {
   const [sectionSlug, chapterSlug] = params.slug
-  console.log("params.slug", params.slug)
   const user = await getUser(req)
 
   if (process.env.NODE_ENV === 'development') {
     // regenerate content if I'm in dev
     const { content, toc } = await processContent()
-    console.log("section, chapter", sectionSlug, chapterSlug)
-    console.log("CONTENT", content)
     const chapter = content[sectionSlug].chapters[chapterSlug]
     return { props: { chapter, toc, user } }
   }
-  // const { toc, content } = courses["adventure-academy"]
-  // const chapter = content[sectionSlug].chapters[chapterSlug]
-  // return { props: { chapter, toc, user } }
+
+  const { toc, content } = courses["adventure-academy"]
+  const chapter = content[sectionSlug].chapters[chapterSlug]
+  return { props: { chapter, toc, user } }
 }

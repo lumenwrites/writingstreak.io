@@ -16,7 +16,12 @@ In this tutorial *I will walk* you through **creating your first** 3D game in Go
 
 (you can try playing it in browser [here](https://gotm.io/godotacademy/lets-roll)).
 
+---
+
 ## Prerequisites
+
+![](/illustrations/hermione.jpg)
+
 - You need to understand the [fundamentals of programming](https://www.youtube.com/watch?v=UcdwP1Q2UlU) (if/else, class, function, etc).
 - You need to be familiar with [Godot UI](https://docs.godotengine.org/en/stable/getting_started/step_by_step/intro_to_the_editor_interface.html) and some basic concepts like [scenes and nodes](https://docs.godotengine.org/en/stable/getting_started/step_by_step/scenes_and_nodes.html). You need to be able to create and save scenes, add nodes, edit node settings, connect [signals](https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html).
 
