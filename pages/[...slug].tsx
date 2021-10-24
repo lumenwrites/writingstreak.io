@@ -3,34 +3,16 @@ import Head from 'next/head'
 import Link from 'components/Elements/Link'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from 'components/Elements/MDXComponents'
+import { useModal } from 'context/ModalContext'
 import Layout from 'components/Layout/Layout'
 import PrevNext from 'components/Posts/PrevNext'
 import Chapters from 'components/Posts/Chapters'
 import config from 'config.json'
-import { useModal } from 'context/ModalContext'
-
-function Paywall() {
-  const { toggleModal } = useModal()
-  return (
-    <div className="post">
-      <div className="content-locked">
-        <p>You need to purchase the course to view this content.</p>
-        <p>If you&apos;re already enrolled, you&apos;ll need to login.</p>
-        <div className="btn btn-cta-landing" onClick={() => toggleModal(`purchase`)}>
-          Start Learning Now! ($20)
-        </div>
-        <div className="btn btn-login" onClick={() => toggleModal(`login`)}>
-          Login
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export default function Page({ chapter, toc, user }) {
   return (
     <Layout sidebarChildren={<Chapters sections={toc} user={user} />}>
-      {user || chapter.preview ? (
+      {user || chapter.preview || config.price === 0 ? (
         <div className="post">
           <MDXRemote {...chapter.compiledMdx} components={MDXComponents} />
           <PrevNext post={chapter} />
@@ -57,6 +39,24 @@ export default function Page({ chapter, toc, user }) {
         )}
       </Head>
     </Layout>
+  )
+}
+
+function Paywall() {
+  const { toggleModal } = useModal()
+  return (
+    <div className="post">
+      <div className="content-locked">
+        <p>You need to purchase the course to view this content.</p>
+        <p>If you&apos;re already enrolled, you&apos;ll need to login.</p>
+        <div className="btn btn-cta-landing" onClick={() => toggleModal(`purchase`)}>
+          Start Learning Now! (${config.price})
+        </div>
+        <div className="btn btn-login" onClick={() => toggleModal(`login`)}>
+          Login
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -35,7 +35,20 @@
       position: static; // default
       width: 240px;
       margin: auto;
-      margin-top: 20px;
+      margin-top: 10px;
+    }
+  }
+  .btn-preview {
+    color: white;
+    border: 1px solid white;
+    background: none;
+    width: 240px;
+    display:block;
+    margin: auto;
+    margin-top: 10px;
+    svg {
+      color: white;
+      margin-left: 10px;
     }
   }
 }

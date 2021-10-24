@@ -1,11 +1,10 @@
 {
-  "postsPerPage": 12,
   "price": 20,
   "title": "Adventure Academy",
-  "domain": "https://academy.rpgadventures.io",
-  "devDomain": "http://localhost:3050/",
   "description": "Learn to Create Awesome Adventures for Tabletop Roleplaying Games.",
   "twitterCreator": "@lumenwrites",
   "twitterSite": "@lumenwrites",
-  "previewImage": "https://godotacademy.io/social.png"
+  "previewImage": "https://godotacademy.io/social.png",
+  "domain": "https://academy.rpgadventures.io",
+  "devDomain": "http://localhost:3050/"
 }

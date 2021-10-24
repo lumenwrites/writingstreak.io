@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'components/Elements/Link'
 import { useModal } from 'context/ModalContext'
 import Cookies from 'js-cookie'
-import toc from 'backend/json/adventure-academy/toc.json'
 import Subscribe from 'components/Layout/SubscribeBox'
+import toc from 'backend/json/adventure-academy/toc.json'
+import config from 'config.json'
 
 export default function Landing({ copy, frontmatter }) {
   const { toggleModal } = useModal()
@@ -19,12 +20,23 @@ export default function Landing({ copy, frontmatter }) {
           <h1>Adventure Writing Academy</h1>
           <h2>Learn to Create Awesome Adventures for Tabletop Roleplaying Games</h2>
           <div className="centered">
-            <div className="btn btn-cta-landing" onClick={() => toggleModal(`purchase`)}>
-              Start Learning Now! ($20)
-            </div>
-            <div className="btn btn-login" onClick={() => toggleModal(`login`)}>
-              Login
-            </div>
+            {config.price > 0 ? (
+              <>
+                <div className="btn btn-cta-landing" onClick={() => toggleModal(`purchase`)}>
+                  Start Learning Now! (${config.price})
+                </div>
+                <Link href={firstChapterUrl} className="btn btn-preview">
+                  Free Course Preview
+                </Link>
+                <div className="btn btn-login" onClick={() => toggleModal(`login`)}>
+                  Login
+                </div>
+              </>
+            ) : (
+              <Link href={firstChapterUrl} className="btn btn-cta-landing">
+                Start Learning Now!
+              </Link>
+            )}
           </div>
         </div>
         <div className="copy">

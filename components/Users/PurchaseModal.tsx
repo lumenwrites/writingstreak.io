@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import toc from 'backend/json/adventure-academy/toc.json'
+import config from 'config.json'
 
 import { useModal } from 'context/ModalContext'
 import Modal from 'components/Elements/Modal'
@@ -79,7 +80,7 @@ export default function PurchaseModal() {
           <CardElement options={cardElementOptions} />
         </div>
         <SpinnerButton isloading={status.state === 'loading'} type="submit" disabled={!stripe}>
-          Start Learning Now! ($20)
+          Start Learning Now! (${config.price})
         </SpinnerButton>
         <div className="disclaimer">
           <p>Secure payments powered by Stripe. 30-day money back guarantee.</p>
@@ -92,22 +93,21 @@ export default function PurchaseModal() {
 const cardElementOptions = {
   style: {
     base: {
-      fontSize: '16px',
-      // color: 'white',
-      // backgroundColor: '#181d29',
-      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSize: '14px',
+      color: '#3C4257',
+      fontFamily: '"Open Sans","Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: 'antialiased',
       padding: '12px',
       lineHeight: '32px',
       '::placeholder': {
-        // color: '#464c61',
+        color: '#464c61',
       },
+      // backgroundColor: '#181d29',
     },
     complete: {
-      fontSize: '16px',
-      // color: 'white',
-      // backgroundColor: '#181d29',
-      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSize: '14px',
+      color: '#3C4257',
+      fontFamily: '"Open Sans","Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: 'antialiased',
       padding: '12px',
       lineHeight: '32px',

@@ -1,6 +1,7 @@
 //@ts-nocheck
 import { useRouter } from 'next/router'
 import Link from 'components/Elements/Link'
+import config from 'config.json'
 
 export default function Chapters({ sections, user }) {
   return (
@@ -16,7 +17,6 @@ function Section({ section, user }) {
   const router = useRouter()
   const [sectionSlug, chapterSlug] = router.query.slug
   const chapters = section.chapters.filter((chapter) => !chapter.draft)
-  console.log(chapters)
   return (
     <div className="section">
       <div className="section-title">{section.title}</div>
@@ -25,7 +25,7 @@ function Section({ section, user }) {
         return (
           <Link key={chapter.url} className={`chapter ${isActive ? 'active' : ''}`} href={chapter.url}>
             {chapter.title}
-            {chapter.preview && !user && <div className="preview">Free Preview</div>}
+            {chapter.preview && !user && config.price !== 0 && <div className="preview">Free Preview</div>}
           </Link>
         )
       })}
