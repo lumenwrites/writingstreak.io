@@ -21,7 +21,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_CLIENT_SECRET)
 function App({ Component, pageProps }) {
   // useAnalytics()
   return (
-    <PlausibleProvider domain="academy.rpgadventures.io">
+    <PlausibleProvider domain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_DOMAIN}>
       <CombinedContextsProvider>
         <Component {...pageProps} />
         <Elements stripe={stripePromise}>
