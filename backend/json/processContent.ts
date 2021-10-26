@@ -40,16 +40,17 @@ export async function processContent() {
       const chapterFilepath = `${sectionDirPath}/${chapterFilename}`
       const chapterText = readFileSync(chapterFilepath, 'utf8')
       const chapterFrontmatter = parseFrontmatter(chapterText)
-      const chapterSlug = chapterFrontmatter.slug || slugify(chapterFrontmatter.title, { lower: true, strict: true })
+      const chapterTitle = chapterFrontmatter.title || chapterFilename.substring(chapterFilename.indexOf(" ") + 1).replace(".md", "")
+      const chapterSlug = chapterFrontmatter.slug || slugify(chapterTitle, { lower: true, strict: true })
       const compiledMdx = await renderMDX(chapterText)
       let chapter = {
-        title: chapterFrontmatter.title,
+        title: chapterTitle,
         slug: chapterSlug,
         description: chapterFrontmatter.description || "",
         thumbnail: chapterFrontmatter.thumbnail || null,
         preview: chapterFrontmatter.preview || false, // free preview
         draft: chapterFrontmatter.draft || false,
-        url: `/${section.slug}/${chapterSlug}`, // used in prev-next and probably toc
+        url: `/${section.slug}/${chapterSlug}`, // used in prev-next and TOC
         compiledMdx
       }
       section.chapters.push(chapter)
