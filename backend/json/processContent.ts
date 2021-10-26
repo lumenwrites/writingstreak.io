@@ -1,7 +1,7 @@
 //@ts-nocheck
 import slugify from 'slugify'
 import { join } from 'path'
-import { readFileSync, readdirSync, writeFileSync, lstatSync } from 'fs'
+import { readFileSync, readdirSync, writeFileSync, lstatSync, existsSync } from 'fs'
 import { parseFrontmatter, renderMDX } from 'backend/json/mdx'
 const contentdir = "/Users/ray/Obsidian/Website/adventure-academy" // join(process.cwd(), 'content/adventure-academy')
 const jsondir = join(process.cwd(), 'backend/json/adventure-academy')
@@ -11,12 +11,28 @@ export async function processContent() {
   for (const dirName of readdirSync(contentdir)) {
     const sectionDirPath = join(contentdir, dirName)
     if (!lstatSync(sectionDirPath).isDirectory()) continue
-    const sectionIndexText = readFileSync(`${sectionDirPath}/_index.md`, 'utf8')
-    const sectionFrontmatter = parseFrontmatter(sectionIndexText)
+
+    // Skip folders inside of the .ignore file
+    if (existsSync(`${contentdir}/.ignore`)) {
+      const ignoreText = readFileSync(`${contentdir}/.ignore`, 'utf8')
+      const ignoreFolders = ignoreText.split('\n')
+      if (ignoreFolders.includes(dirName)) continue
+    }
+      
+    // Folder names start with a number, like 01, to conveniently order them in file system.
+    // Remove numbers to generate section title, slugify it to generaet slug
+    const dirTitle = dirName.substring(dirName.indexOf(" ") + 1)
     let section = {
-      title: sectionFrontmatter.title,
-      slug: sectionFrontmatter.slug || slugify(sectionFrontmatter.title, { lower: true, strict: true }),
+      title: dirTitle,
+      slug: slugify(dirTitle, { lower: true, strict: true }),
       chapters: [],
+    }
+    // If there's a file called _index.md inside the section folder - take the custom title/slug values from there
+    if (existsSync(`${sectionDirPath}/_index.md`)) {
+      const sectionIndexText = readFileSync(`${sectionDirPath}/_index.md`, 'utf8')
+      const sectionFrontmatter = parseFrontmatter(sectionIndexText)
+      section.title = sectionFrontmatter.title
+      section.slug = sectionFrontmatter.slug
     }
 
     for (const chapterFilename of readdirSync(sectionDirPath)) {
