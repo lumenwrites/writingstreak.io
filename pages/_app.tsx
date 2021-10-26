@@ -23,12 +23,12 @@ function App({ Component, pageProps }) {
   return (
     <PlausibleProvider domain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_DOMAIN}>
       <CombinedContextsProvider>
+        <DefaultHead />
         <Component {...pageProps} />
         <Elements stripe={stripePromise}>
           <PurchaseModal />
         </Elements>
         <LoginModal />
-        <DefaultHead />
         {/* <SubscribeModal/> */}
       </CombinedContextsProvider>
     </PlausibleProvider>
