@@ -73,7 +73,7 @@ import { join } from 'path'
 import { readFileSync, writeFileSync } from 'fs'
 import { parseFrontmatter, renderMDX } from 'backend/json/mdx'
 import courses from 'backend/json/courses'
-const contentdir = join(process.cwd(), 'content/adventure-academy')
+const contentdir = "/Users/ray/Obsidian/Website/adventure-academy" //join(process.cwd(), 'content/adventure-academy')
 const jsondir = join(process.cwd(), 'backend/json/adventure-academy')
 
 export async function getServerSideProps({ req }) {

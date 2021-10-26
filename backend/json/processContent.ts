@@ -1,8 +1,9 @@
 //@ts-nocheck
+import slugify from 'slugify'
 import { join } from 'path'
 import { readFileSync, readdirSync, writeFileSync, lstatSync } from 'fs'
 import { parseFrontmatter, renderMDX } from 'backend/json/mdx'
-const contentdir = join(process.cwd(), 'content/adventure-academy')
+const contentdir = "/Users/ray/Obsidian/Website/adventure-academy" // join(process.cwd(), 'content/adventure-academy')
 const jsondir = join(process.cwd(), 'backend/json/adventure-academy')
 
 export async function processContent() {
@@ -14,7 +15,7 @@ export async function processContent() {
     const sectionFrontmatter = parseFrontmatter(sectionIndexText)
     let section = {
       title: sectionFrontmatter.title,
-      slug: sectionFrontmatter.slug,
+      slug: sectionFrontmatter.slug || slugify(sectionFrontmatter.title, { lower: true, strict: true }),
       chapters: [],
     }
 
@@ -23,15 +24,16 @@ export async function processContent() {
       const chapterFilepath = `${sectionDirPath}/${chapterFilename}`
       const chapterText = readFileSync(chapterFilepath, 'utf8')
       const chapterFrontmatter = parseFrontmatter(chapterText)
+      const chapterSlug = chapterFrontmatter.slug || slugify(chapterFrontmatter.title, { lower: true, strict: true })
       const compiledMdx = await renderMDX(chapterText)
       let chapter = {
         title: chapterFrontmatter.title,
-        slug: chapterFrontmatter.slug,
+        slug: chapterSlug,
         description: chapterFrontmatter.description || "",
         thumbnail: chapterFrontmatter.thumbnail || null,
         preview: chapterFrontmatter.preview || false, // free preview
         draft: chapterFrontmatter.draft || false,
-        url: `/${section.slug}/${chapterFrontmatter.slug}`, // used in prev-next and probably toc
+        url: `/${section.slug}/${chapterSlug}`, // used in prev-next and probably toc
         compiledMdx
       }
       section.chapters.push(chapter)
