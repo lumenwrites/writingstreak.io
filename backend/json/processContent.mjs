@@ -57,7 +57,8 @@ export async function processContent() {
       }
       section.chapters.push(chapter)
     }
-    sections.push(section)
+    // Don't add section if all chapters are drafts
+    if (section.chapters.length > 0) sections.push(section)
   }
   // console.log(JSON.stringify(sections, null, 2))
   // console.log("NODE_ENV", process.env.NODE_ENV)
