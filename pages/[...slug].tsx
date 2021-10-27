@@ -68,12 +68,12 @@ export async function getServerSideProps({ params, req }) {
   const [sectionSlug, chapterSlug] = params.slug
   const user = await getUser(req)
 
-  if (process.env.NODE_ENV === 'development') {
-    // regenerate content if I'm in dev
-    const { content, toc } = await processContent()
-    const chapter = content[sectionSlug].chapters[chapterSlug]
-    return { props: { chapter, toc, user } }
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   // regenerate content if I'm in dev
+  //   const { content, toc } = await processContent()
+  //   const chapter = content[sectionSlug].chapters[chapterSlug]
+  //   return { props: { chapter, toc, user } }
+  // }
 
   const { toc, content } = courses['adventure-academy']
   const chapter = content[sectionSlug].chapters[chapterSlug]

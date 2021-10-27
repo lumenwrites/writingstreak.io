@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "backend/processContent.mjs", "backend/processContent.mjs"  ],
+, "backend/processContent.mjs", "backend/processContent.mjs", "backend/json/processContent.js", "backend/json/mdx.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -124,7 +124,7 @@
         background: $active-bg;
       }
       position: relative;
-      .preview {
+      .preview, .draft {
         position: absolute;
         right: 10px;
         top: 4px;
@@ -138,6 +138,10 @@
         padding: 0 8px;
         border-radius: $border-radius;
         font-weight: normal;
+      }
+      .draft {
+        background: $panel-bg;
+        color: $text-dim;
       }
     }
   }

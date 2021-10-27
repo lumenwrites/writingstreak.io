@@ -16,15 +16,16 @@ export default function Chapters({ sections, user }) {
 function Section({ section, user }) {
   const router = useRouter()
   const [sectionSlug, chapterSlug] = router.query.slug
-  const chapters = section.chapters.filter((chapter) => !chapter.draft)
+  // const chapters = section.chapters.filter((chapter) => !chapter.draft)
   return (
     <div className="section">
       <div className="section-title">{section.title}</div>
-      {chapters.map((chapter) => {
+      {section.chapters.map((chapter) => {
         const isActive = section.slug === sectionSlug && chapter.slug === chapterSlug
         return (
           <Link key={chapter.url} className={`chapter ${isActive ? 'active' : ''}`} href={chapter.url}>
             {chapter.title}
+            {chapter.draft && <div className="draft">Draft</div>}
             {chapter.preview && !user && config.price !== 0 && <div className="preview">Free Preview</div>}
           </Link>
         )
