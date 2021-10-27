@@ -111,4 +111,12 @@ export async function processContent() {
   return { content, toc }
 }
 
+async function processLanding() {
+    const landingText = readFileSync(`${contentdir}/landing.md`, 'utf8')
+    const frontmatter = parseFrontmatter(landingText)
+    const copy = await renderMDX(landingText, false)
+    writeFileSync(`${jsondir}/copy.json`, JSON.stringify(copy))
+}
+
 processContent()
+processLanding()
