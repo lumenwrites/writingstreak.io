@@ -5,12 +5,13 @@ code {
   border-radius: $border-radius;
 }
 
-code[class*="language-"] {
+pre code {
   display: block;
   padding: 12px;
   border-radius: $border-radius;
   background: #1f2532;
   overflow: scroll;
+  color: white;
 }
 pre {
   margin-top: 10px;
