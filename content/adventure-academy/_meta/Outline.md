@@ -9,7 +9,7 @@
 ## Adventure Brainstorming
 [[01 Exciting Premise]]
 [[02 Primary Objective]]
-[[03 Interesting Locations]]
+[[03 Setting and Locations]]
 [[04 Main Characters]]
 [[05 Key Plot Points]]
 [[06 Escalating Challenges]]

@@ -101,7 +101,7 @@ One of the best ways to make the Objective more interesting is to add some compl
 
 ---
 
-## Activity
+## Action Steps
 - Make a list of 5-10 possible goals for the players to pursue, add them to the Primary Objective section in your brainstorming tempalte. Select your favorite one.
 - List the things that make the goal difficult to accomplish.
 - List the reasons why the goal is important to the characters.
