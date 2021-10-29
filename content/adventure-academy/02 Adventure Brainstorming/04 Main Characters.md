@@ -4,10 +4,14 @@ draft: true
 
 Characters. Antagonist. Making them active, thats how you prevent the game from being on the rails. You use your own intelligence to simulate the antagonist and respond to players actions. Simple - character tropes, looks, name, roleplaying guide. Fancy 
 
+Hook Often it is established with the help of the Quest Giver character who sends the players on the adventure.
+
 What do they want?
 What secrets do they know?
 
 Active antagonist = interactive non railroady adventure.
+
+You can start with a goal ("Get Treasure") and then come up with an Antagonist ("Evil guy who wants to get it first"). Or you can start with an antagonist...
 
 ---
 

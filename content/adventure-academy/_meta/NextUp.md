@@ -2,6 +2,7 @@
 ## NextUp
 - Intro sections (minimal)
 - First few lessons.
+- Exciting Idea or Exciting Preimse?
 - Launch
 - Write an example adventure (or use one I already have). Sample adventure template.
 - What to say on the welcome page?

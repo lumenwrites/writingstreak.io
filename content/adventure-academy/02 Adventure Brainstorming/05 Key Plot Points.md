@@ -4,6 +4,8 @@ draft: true
 
 Plot points. Hook, Twist, Climax. Just explain what they are and how to be good at them.
 
+hook - send them towards the first scene
+
 ---
 
 ## Activity

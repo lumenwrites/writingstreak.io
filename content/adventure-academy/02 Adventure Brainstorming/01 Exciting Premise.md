@@ -1,7 +1,8 @@
-# Exciting Idea
+<!-- Exciting Premise -->
+# Exciting Premise
 First, I want to show you how to come up with exciting adventure ideas.
 
-## Four Components of the Idea
+## Four Components of the Premise
  A good adventure idea is usually based on one of the following four elements, or an interesting combination of them:
 - **Important Objective** - the problem your players will try to solve, or the goal they'll try to achieve.
 - **Interesting Setting** - world and locations where the adventure takes place, with a unique twist.

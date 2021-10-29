@@ -7,8 +7,8 @@
 [[04 Writing Process]]
 [[99 Setting up your Tools]]
 ## Adventure Brainstorming
-[[01 Exciting Idea]]
-[[02 Important Objective]]
+[[01 Exciting Premise]]
+[[02 Primary Objective]]
 [[03 Interesting Locations]]
 [[04 Main Characters]]
 [[05 Key Plot Points]]
