@@ -69,41 +69,41 @@ Build a library of these elements in your head (or collect the most interesting 
 ## Adapting Stories
 The easiest way to come up with an adventure idea is to just adapt one of your favorite stories, changing only the names/places, and possibly setting it in a fantasy world.
 
-> Alien in a Fantasy world.
+> **Alien in a Fantasy world**  
 Investigate the disappearances Stop the power-hungry cruel emperor who tries to build himself an army by breeding dangerous Xenomorph-like monsters.
 
-> Die Hard in a Magic Castle
+> **Die Hard in a Magic Castle**  
 Vampires took over the magic school, you're the only ones who can rescue their hostages before they get turned into vampires.
 
-> Honey I Shrunk The Kids
+> **Honey I Shrunk The Kids**  
 Evil witch poisons the players with a shrinking potion, they must escape and travel through her magic hut (now enormous) to the top shelf where the enlargement potion is stored.
 
 ## Recombining the Elements
 Combine two interesting ideas together to create something new, mix and match the tropes, putting them together in different ways (like playing with lego blocks):
 
-> Sentient Animals + Lord of the Rings
+> **Sentient Animals + Lord of the Rings**  
 Players play as mice who have stumbled upon The One Ring, and are now the humanity's last hope.
 
-> Rescue Mission + Scary Monster
+> **Rescue Mission + Scary Monster**  
 The players are hired by a cooky wizard to find and return his runaway pet. His pet is a zombie chimera made out of fury and rage.
 
-> Pirates + Floating Islands
+> **Pirates + Floating Islands**  
 Defend a floating pirate town (think Tortuga) being attacked by a massive flying ship of the Royal Navy, sent to “bring order and civilization to Fera Ley and put the pirate problem to rest”.
 
 
 ## Changing the Elements
 To change the element of the story you can reverse it (do the opposite), exaggerate it, or replace it with an entirely different one (idea from another movie for example).
 
-> Reverse the Goal: Rescue the Dragon from the Princess.
+> **Reverse the Goal: Rescue the Dragon from the Princess**  
 A cruel princess has kidnapped baby dragon's mom, and is forcing her to fight in a coliseum. Help to rescue the big mama dragon.
 
-> Reverse the Character: Evil Batman. 
+> **Reverse the Character: Evil Batman**  
 Protect the city from a ruthless high-tech vigilante driven by his misguided code of honor.
 
-> Change the Setting: Train Heist on a Zeppelin
+> **Change the Setting: Train Heist on a Zeppelin**  
 Rescue an innocent person being delivered by Zeppelin to serve her life-sentence in prison.
 
-> Exaggerate the Supernatural Element:
+> **Exaggerate the Supernatural Element**  
 Solve the disappearance of cows in a village where **everyone** is secretly a werewolf.
 
 ## Combining Your Own Ideas

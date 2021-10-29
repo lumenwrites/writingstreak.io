@@ -112,6 +112,10 @@ ol {
 ol li {
   margin-top: 0.2em;
 }
+li p {
+  margin-top: 0; // Sometimes it creates <p> inside of the li elements for some reason
+}
+
 hr {
   border: none;
   margin: 4px 0 4px 0;
