@@ -13,10 +13,12 @@
 - Don't forget to replace the social image once I have enough of a course to make a pretty screenshot.
 - Create word of mouth growth driver? At least have a section asking people to share. Possibly an incentive.
 - I'll have to license an image.
-## Small
-## Fast
-## Bug
-## Clean
+## To Improve
+- Improve Key Plot Points Climax section. What else is there to say?
+- Use more of my prompts as examples.
+- Write down the lesson conclusions, what you have accomplished this lesson?
+- Multiple climax resolutions?
+- Add a name for your adventure
 ## Question
 - Do I need a separate "storytelling theory" section? Or just put everything into the steps? Maybe just have intermittent chapters between the steps introducing the theory?
 ## Launch

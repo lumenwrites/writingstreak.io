@@ -16,14 +16,14 @@
 [[07 Intriguing Mysteries]]
 ## Adventure Writing
 [[01 Outline and Summary]]
-[[02 Descriptions and Dialogue]]
+[[03 Descriptions and Dialogue]]
 [[04 Community Feedback]]
 ## Playtesting
 [[05 Prep and Playtest]]
 ## Publishing
 [[07 Illustrations and Maps]]
-[[03 Design and Illustrations]]
-[[07 Publishing and Marketing]]
+[[06 Design and Illustrations]]
+[[07 Publishing]]
 ## Other
 [[99 Useful Links]]
 [[99 Misc]]

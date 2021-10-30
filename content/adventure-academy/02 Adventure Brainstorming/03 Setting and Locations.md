@@ -52,6 +52,8 @@ More on coming up with cool locations?
 Locations as Clues?
 -->
 
+
+
 ## Locations as Antagonists
 One great way to make locations more interesting is to think about the environmental threats and dangers the players may find in the location. That turns the location from a pretty backdrop into an active part of the story that requires some creativity to deal with.
 
@@ -60,12 +62,15 @@ One great way to make locations more interesting is to think about the environme
 - River of lava you must find a way to cross.
 - Crumbling temple you must escape.
 
- 
+<!-- 
+What important events have happened before the players arrived? What is the situation that caused the problem players are trying to solve?
+-->
+
 ---
 
 ## Action Steps
 - Choose a setting for your adventure, the general area where it is going to take place.
-- Come up with a fun and interesting twist on the setting. What makes it unusual?
-- Come up with locations. Choose where the adventure begins, where the climax takes place, and 3-5 places inbetween. What kind of dangers can each location present?
+- Come up with a fun and interesting twist on the setting. What are the 3 most interesting/unusual things about this region?
+- Come up with locations. Choose where the adventure begins, where the climax takes place, and 3-5 places inbetween. What kind of dangers or obstacles can each location present?
 - Optional: find some cool images that depict the setting.
 - Share your ideas in the `#settings-and-locations` channel.

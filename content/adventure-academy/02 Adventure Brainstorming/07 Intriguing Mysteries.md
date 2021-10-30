@@ -18,6 +18,7 @@ To make sure that players will be able to make progress through your adventure -
 
 Ask yourself:
 - What interesting information about this story can I hide instead of revealing it right away?
+- What key pieces of information do the players need to know to be able to make progress towards their goal, figure out what's going on, and complete their quest?
 - What are some ways the players could find out about this information?
 - How can the players obtain these clues?
 - To what scenes does the clue lead, which locations, encounters, or conversations does it unlock? 

@@ -3,6 +3,14 @@ draft: true
 ---
 
 ## Scene Descriptions
+
+## Character Descriptions
+Well, some characters will speak sometimes.
+It cant hurt to be able to write exactly what they say.
+Thats where clues and exposition can come in!
+Imagine speaking as character.
+
+
 ## Dialogue
 Fun flavorful details, jokes, interesting descriptions, metaphors - what would I say there? Defies description? Nah, I bet I can overanalyze this, or do away wih it. Picture yourself runnning the game with your friends, what would you say, how would you describe. Vivid descriptions, how do writers do this?
 
@@ -11,11 +19,7 @@ engage 5 senes,
 
 describing challenges, events, action scenes.engage all the 5 senses.
 
-## Character Descriptions
-Well, some characters will speak sometimes.
-It cant hurt to be able to write exactly what they say.
-Thats where clues and exposition can come in!
-Imagine speaking as character.
+
 
 ---
 
