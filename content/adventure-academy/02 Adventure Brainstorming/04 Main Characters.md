@@ -16,16 +16,16 @@ Here are some optional things you may want to consider:
 - Secrets they know.
 - Unique Powers/Spells/Items.
 
-
 The easiest way to come up with the physical appearance for a character is to find a well-suited illustration. Search websiets like [ArtStation](https://www.artstation.com/search?sort_by=likes&category_ids=65&medium_ids=1) and [Pinterest](https://www.pinterest.com/search/pins/?q=fantasy%20character%20design&rs=typed&term_meta[]=fantasy%7Ctyped&term_meta[]=character%7Ctyped&term_meta[]=design%7Ctyped) for things like "Fantasy Character Design", or visit [/r/ImaginaryLandscapes](https://www.reddit.com/r/ImaginaryCharacters/top/). Sometimes you want to search for something more specific, like "Evil Voodoo Shaman". Having a picture of your character will instantly give you most of the information you need to vividly describe or roleplay them.
 
 Personality is also easy - just take your favorite characters from TV and movies. To make your ideas more original you can:
-> Reverse their key character traits:
+> **Reverse their key character traits**:
 - Creepy and evil Hermione.
 - Shy and humble Joker.
 - Compassionate and Loving Dr House.
 - Well-meaning doofus Darth Vader who tries to do good but fails terribly.
-> Apply personality to a character you wouldn't expect:
+
+> **Apply personality to a character you wouldn't expect**:
 - The Supreme Holy Emperor with the personality of Homer Simpson.
 - Humble Peasant with the personality of Walter White.
 - Princess with the personality of Indiana Jones.
@@ -34,40 +34,78 @@ Personality is also easy - just take your favorite characters from TV and movies
 
 These methods make coming up with interesting characters very easy, and using a well known character or a celebrity as a reference (with some tweaks) makes it instantly obvious how to write and roleplay the character.
 
-## Main Antagonist
-Antagonist is the most important character by far, and they should be the most fleshed-out. That's where you should begin designing your cast.
+## Main Characters
+Use the Simplified Character Design method to design your cast of characters:
+- **Antagonist**  
+is the most important character by far, and they should be the most fleshed-out. They are the primary opposition to your player's Objective, their goals are the opposite of your players'. They will be the main source of obstacles for players to overcome, their desires and goals will often drive the story forward (or cause it to happen in the first place), and they should probably be the most interesting NPC in your adventure.
+- **Evil Minions**  
+are the Antagonist's servants, their goal is to serve the antagonist, Antagonist will often use them as primary tools to oppose the players. They can also be used to the players' advantage, they can be bribed or seduced to the heroes' side, intimidated into revealing some information or betraying their master, fooled, used as a disguise to infiltrate the evil lair, and so on.
+- **Quest Giver**  
+is the character that sends players on their adventure. They can ask players for help, hire them to do a job, send them on a mission, or otherwise manipulate them into a situation where they have to engage with the story.
+- **Allies**  
+are the other characters aligned with the heroes' goals. They can help them on their quest, narrate some exposition, serve as comic relief.
+- **Other NPCs**  
+Sometimes you need a witness to a crime, a bouncer guarding the place players need to get into, a neutral shop owner who can be persuaded to help players in exchange for some favor, etc.
 
-They will be the main source of obstacles for players to overcome, their desires and goals will often drive the story forward (or cause it to happen in the first place), and they should probably be the most interesting NPC in your adventure.
+Don't make the list of characters too long or too complicated, you don't need to design the minor unimportant NPCs the GM can improvise on the fly. Especially in a one-shot, 3-5 core characters is often all you need.
 
-In addition to the Simplified Character Design outlined above, for the antagonist you want to answer the following questions:
-- What is their goal? Why do they pursue it? What horrible thing will happen if they succeed?
-- What are the steps of their evil plan? How would it unfold if it was unopposed by the players? 
-- How will the players learn about the plan, and what could they do to disrupt and ultimately ruin it? How will the villain respond to these disruptions? 
-- What resources do they have to accomplish their goal, fight back against players, and get their plan back on track?
 
 <!-- You can start with a goal ("Get Treasure") and then come up with an Antagonist ("Evil guy who wants to get it first"). Or you can start with an antagonist... -->
 
-## Active Antagonist
- Making them active, thats how you prevent the game from being on the rails. You use your own intelligence to simulate the antagonist and respond to players actions.
-Active antagonist = interactive non railroady adventure.
-Find that article.
+## Antagonist-Driven Adventures
+Most of the time player's actions and choices drive the story forward, and NPCs are there to provide obstacles on their path (or sometimes help, reveal clues, etc). Players are active, NPCs are passive.
 
-## Other Important Cast Members
-- Quest Giver
-- Evil Minions
-- Allies
+Antagonist is the one NPC who's actions can drive the story forward. Making your antagonist Active is a great way to make sure that your adventure doesn't feel like it is "on the rails", like players just walk through the story laid out for them. When the players take actions, the world (the antagonist) is going to react. 
 
-Hook Often it is established with the help of the Quest Giver character who sends the players on the adventure Who will send the players on their adventure?.
+This will make the adventure more dynamic, the events can change in response to the players' actions. You don't have to always rely on the players to drive the story forward - they can be put on the defensive, forced to respond to villains's actions.
+
+When you're creating an antagonist-driven adventure, the Villain's evil plan is the plot of the adventure. Once you know what the Villain wants and the steps they're going to take to get it, you can figure out the series of challenges players must take on to stop them.
+
+In addition to the Simplified Character Design outlined above, for the Active Antagonist you want to answer the following questions:
+- What is their goal? Why do they pursue it? What horrible thing will happen if they succeed? 
+- What are the steps of their evil plan? How would the plot unfold if they were completely unopposed by the players? 
+- How will the players learn about the plan, when will the players' and the villain's goals collide for the first time? 
+- What could players do to disrupt and ultimately ruin the plan? How will the villain respond to these disruptions? 
+- What resources do they have to accomplish their goal, fight back against players, and get their plan back on track? What "moves" will they make to make life more difficult for the players?
+
+Unlike in written stories and computer games, in TTRPGs the antagonist is simulated using your actual human brain, so they can be truly creative and flexible. The Villain has a goal, they're going to pursue it, and intelligently respond to the players' attempts to thwart them. Players will attempt to interrupt them at every step, and the villain is going to fight back using all the powers and resources at their disposal.
+
+> **Active Villains can**:
+- Trick and manipulate the players.
+- Set up ambushes, lure players into traps.
+- Send minions after the heroes.
+- Flee, forcing the heroes to give chase.
+- Take hostages, kidnap or threaten innocent characters.
+- Seduce/intimidate players' allies to the dark side.
+- Bribe, persuade, or intimidate people in power.
+- Use their political power/influence.
+- Send double agents to infiltrate the players (traitors and spies).
+- Hire an assassin, bounty hunter, a rival team of adventurers.
+- Frame heroes for a crime.
+- Reveal heroes’ secrets.
+- Have a “dead man switch”.
+- Set up a ticking time-bomb.
+- Impersonate someone else.
+- Befriend and betray the heroes.
+- Plant falses clues, decoys.
+- Foster rivalries, mistrust, disorder
+- Create difficult moral dillemas for the heroes.
+- Take away (steal or destroy) a key resource heroes rely on.
+- Mislead everyone about their weaknesses.
+- Use heroes’ flaws/temptations/fears against them
+- Develop a good public image, make the public dislike the heroes.
+
+Not all adventures require an active antagoinst. Sometimes it's okay to just have an evil monster to defeat, a priceless artifact to heist, a dangerous environment to survive.
+
+But I hope you can see all the ways the adventure can become deeper and more interesting when the heroes are playing against an intelligent and proactive opponent.
 
 
 ---
 
 ## Action Steps
 - Come up with the main antagonist for your adventure. Choose their name, personality, occupation, and the main motivation. 
-- If your antagonist has an evil plan, list the steps of that plan.
-- If your antagonist has minions - choose their names and personalities.
-- Come up with a Quest Giver. Who will send the players on their adventure?
-- If there are any other important characters - list their names and personalities as well.
+- Design the other important characters in your adventure - Quest Giver, Minions, Allies, Neutral NPCs.
 - Optional: find some cool images to represent your characters.
+- Optional: If you want to design an Active Antagonist - figure out their evil plan and answer the other questions I've listed in this section.
 - Share your ideas in the `#developing-characters` channel.
 - Extra Credit: Find someone else's post in that channel and give them some helpful and constructive feedback. How would you improve on their character idea?

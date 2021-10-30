@@ -13,7 +13,7 @@
 [[04 Main Characters]]
 [[05 Key Plot Points]]
 [[06 Escalating Challenges]]
-[[07 Intriguing Leads]]
+[[07 Intriguing Mysteries]]
 ## Adventure Writing
 [[01 Outline and Summary]]
 [[02 Descriptions and Dialogue]]

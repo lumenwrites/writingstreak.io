@@ -81,8 +81,8 @@ Most of the time when you have any idea, it's possible to figure out what kind o
 
 <!-- Everything from the "Idea" book.  -->
 
-## Complications
-One of the best ways to make the Objective more interesting is to add some complication, difficulty, or a restriction to it:
+## Difficulties
+One of the best ways to make the Objective more interesting is to add some restriction to it that makes it more difficult:
 
 >
 - Problem must be solved using social/political means only.
@@ -97,7 +97,7 @@ One of the best ways to make the Objective more interesting is to add some compl
 - Players must do it under scrutiny/supervision, bound by strict rules/laws.
 - Target must be unharmed.
 
-(See the Adventure Prompts Tool for the full list of complications I was able to collect).
+(See the Adventure Prompts Tool for the full list of difficulties I was able to collect).
 
 ---
 

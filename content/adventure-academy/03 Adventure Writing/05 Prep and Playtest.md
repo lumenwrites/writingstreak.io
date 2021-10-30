@@ -4,6 +4,13 @@ draft: true
 
 Playtest the adventure, compile a list of new ideas you had during the playtest, things to improve, issues to fix.  
 
+Dont try to force the outcomes. Hold ideas lightly.
+Using Modular adventure.
+Try less. Just play.
+Do the obvious thing.
+Don't pretend, let your guard down. For real, not just breaking taboos but thingst thst push your buttons.
+Built on other player's ideas, dont shoot ideas down. Yes and. Dont negate what has been said, dont stop action from advancing.
+
 ## Organize the session.
 Find players on /r/lfg or on our server.
 

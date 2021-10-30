@@ -137,9 +137,16 @@ Use [advanced search](https://www.imdb.com/search/title/) to narrow them down by
 - [Adventure Lookup](https://adventurelookup.com/adventures)
 - [/r/WritingPrompts](https://www.reddit.com/r/WritingPrompts/)
 - [Big list of RPG plots](https://kimberleycresswell.files.wordpress.com/2012/12/the-big-list-of-rpg-plots.pdf)
-- [Follow RPG](http://www.lamemage.com/follow/)
- 
- <!-- 3 core elements (brandon sanderson vienn diagram) Plot, Characters, Setting/Idea. -->
+- [Follow RPG](http://www.lamemage.com/follow/).
+
+<!-- 
+
+3 core elements - brandon sanderson vienn diagram. Plot, Characters, Setting/Idea. 
+Bottom-Up ideas.
+A scene, a theme. What kind of core elements can that lead to?
+NPC or monster I want to use, something specific I want players to do.
+
+-->
  
 ---
 ## Action Steps

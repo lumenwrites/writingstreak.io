@@ -7,7 +7,7 @@
 
 ## Adventures
 - Lazy GM
-
+- [Villain as Plot](https://theangrygm.com/villains-and-plots-the-villain-as-plot/)
 ## My Posts
 - My brainstorming guides and reddit posts. my writing notes.
 - My notes.
@@ -17,5 +17,7 @@
 - [Brandon Sanderson - Write About Dragons](https://www.youtube.com/watch?v=zBBfC8FY70c&list=PLTT-Xb7kSZWWdgWGER_CroAif3-BxYRJH)
 - Idea book.
 
+## Prompts
+- [List of Plot Twists](https://tvtropes.org/pmwiki/pmwiki.php/Main/PlotTwist)
 ## Improv
 - Improv.

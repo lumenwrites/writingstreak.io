@@ -1,5 +1,9 @@
 # ToDo
 ## NextUp
+- There are 6 steps to writing, not 7. I can have one more.
+- Improve adventure hook section.
+- Improve Climax section.
+- Put more of the best of my collected prompts as examples.
 - Intro sections (minimal)
 - First few lessons.
 - Exciting Idea or Exciting Preimse?
@@ -8,6 +12,7 @@
 - What to say on the welcome page?
 - Don't forget to replace the social image once I have enough of a course to make a pretty screenshot.
 - Create word of mouth growth driver? At least have a section asking people to share. Possibly an incentive.
+- I'll have to license an image.
 ## Small
 ## Fast
 ## Bug
