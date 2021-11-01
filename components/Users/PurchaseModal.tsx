@@ -146,7 +146,7 @@ function DiscountOffers() {
         <li>Share it on social media.</li>
       </ul>
       <p>
-        Send an email to <b>lumenwrites@gmail.com</b> if you're interested!
+        Send an email to <b>lumenwrites@gmail.com</b> if you&apos;re interested!
       </p>
     </div>
   )
