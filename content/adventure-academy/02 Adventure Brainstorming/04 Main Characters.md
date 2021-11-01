@@ -18,6 +18,8 @@ Here are some optional things you may want to consider:
 
 The easiest way to come up with the physical appearance for a character is to find a well-suited illustration. Search websiets like [ArtStation](https://www.artstation.com/search?sort_by=likes&category_ids=65&medium_ids=1) and [Pinterest](https://www.pinterest.com/search/pins/?q=fantasy%20character%20design&rs=typed&term_meta[]=fantasy%7Ctyped&term_meta[]=character%7Ctyped&term_meta[]=design%7Ctyped) for things like "Fantasy Character Design", or visit [/r/ImaginaryLandscapes](https://www.reddit.com/r/ImaginaryCharacters/top/). Sometimes you want to search for something more specific, like "Evil Voodoo Shaman". Having a picture of your character will instantly give you most of the information you need to vividly describe or roleplay them.
 
+Give your NPC a mannerism - some verbal tic or physical action the GM can use in their performance.
+
 Personality is also easy - just take your favorite characters from TV and movies. To make your ideas more original you can:
 > **Reverse their key character traits**:
 - Creepy and evil Hermione.
@@ -33,6 +35,13 @@ Personality is also easy - just take your favorite characters from TV and movies
 - Paladin with the personality of Chandler Bing.
 
 These methods make coming up with interesting characters very easy, and using a well known character or a celebrity as a reference (with some tweaks) makes it instantly obvious how to write and roleplay the character.
+
+Give your characters a strong desire, an agenda. Characters that really want something are much easier to play, and much more fun to interact with. A convenient checklist:
+- What does the NPC want?
+- Do they have goals completely unrelated to the players?
+- What do players want from the NPC?
+- Are their goals in opposition or in alignment with the heroes' goals?
+- Why can't players get what they want through force? 
 
 ## Main Characters
 Use the Simplified Character Design method to design your cast of characters:
@@ -101,7 +110,6 @@ But I hope you can see all the ways the adventure can become deeper and more int
 
 
 ---
-
 ## Action Steps
 - Come up with the main antagonist for your adventure. Choose their name, personality, occupation, and the main motivation. 
 - Design the other important characters in your adventure - Quest Giver, Minions, Allies, Neutral NPCs.

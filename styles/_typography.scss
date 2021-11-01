@@ -7,7 +7,7 @@ h5 {
   color: $text-heading;
   & + p, & + ul, & + img {
     // first pagagraph after the header
-    margin-top: 5px;
+    margin-top: 0px;
   }
 }
 h1 {
