@@ -26,7 +26,17 @@ export default function PurchaseModal() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState({ state: '', message: '' })
   const plausible = usePlausible()
-
+  const [discount, setDiscount] = useState({ status: '', code: '' })
+  function discountChange(e) {
+    setDiscount((prev) => {
+      const code = e.target.value
+      let status = ''
+      if (code.length) {
+        status = ['free', 'halfprice2021'].includes(code) ? 'success' : 'fail'
+      }
+      return { status, code }
+    })
+  }
   const handleSubmit = async (event) => {
     event.preventDefault() // Block native form submission.
     if (!stripe || !elements) return // Stripe.js has not loaded yet.
@@ -35,8 +45,14 @@ export default function PurchaseModal() {
     // Check whether the user with this email has already made a purchase.
     const { data: emailCheck } = await axios.post('/api/payments/check-valid-email', { email })
     if (emailCheck.error) return setStatus({ state: 'error', message: emailCheck.error })
+    if (discount.code === 'free') {
+      const { data } = await axios.post('/api/payments/purchase-successful', { email }) // Add user's email to the database
+      Cookies.set('token', data.token) // Save a login cookie
+      setStatus({ state: 'success', message: `` }) // Show them "Thank you for your purchase" modal
+      return
+    }
     // Create payment intent
-    const { data } = await axios.post('/api/payments/get-payment-intent', { email })
+    const { data } = await axios.post('/api/payments/get-payment-intent', { email, discountCode: discount.code })
     if (data.error) return setStatus({ state: 'error', message: data.error })
     // Use payment intent to charge the card
     const paymentResponse = await stripe.confirmCardPayment(data.paymentIntentSecert, {
@@ -66,9 +82,11 @@ export default function PurchaseModal() {
       </Modal>
     )
   }
-
+  let price = config.price
+  if (discount.code === 'free') price = 0
+  if (discount.code === 'halfprice2021') price /= 2
   return (
-    <Modal name={`purchase`} className={'login-modal narrow'}>
+    <Modal name={`purchase`} className={'purchase-modal narrow'}>
       <h2>Adventure Writing Academy</h2>
       <MessagePanel type={status.state} message={status.message} />
       <form onSubmit={handleSubmit}>
@@ -82,17 +100,55 @@ export default function PurchaseModal() {
           }}
           disabled={status.state === 'loading'}
         />
-        <div className="stripe-card">
-          <CardElement options={cardElementOptions} />
-        </div>
+        <input
+          placeholder="Discount code..."
+          name="discount"
+          className={`discount ${discount.status}`}
+          value={discount.code}
+          onChange={discountChange}
+          disabled={status.state === 'loading'}
+        />
+        {discount.code !== 'free' && (
+          <div className="stripe-card">
+            <CardElement options={cardElementOptions} />
+          </div>
+        )}
         <SpinnerButton isloading={status.state === 'loading'} type="submit" disabled={!stripe}>
-          Start Learning Now! (${config.price})
+          Start Learning Now! (${price})
         </SpinnerButton>
         <div className="disclaimer">
           <p>Secure payments powered by Stripe. 30-day money back guarantee.</p>
         </div>
       </form>
+      <DiscountOffers />
     </Modal>
+  )
+}
+
+function DiscountOffers() {
+  return (
+    <div className="discount-offers">
+      <hr />
+      <h3>Get this Course at Half Prcie</h3>
+      <p>
+        To get a 50% discount code for this course - share it on social media, and send a link to your post to{' '}
+        <b>lumenwrites@gmail.com</b>
+      </p>
+      <p>In return, I will send you a discount code you can use to get this course at half price.</p>
+      <hr />
+      <h3>Get this Course for Free</h3>
+      <div className="disclaimer">(limited-time offer)</div>
+      <p>I will grant you free access to this course if you proimse to:</p>
+      <ul>
+        <li>Complete this course to the best of your ability.</li>
+        <li>Send me some constructive and thoughtful feedback.</li>
+        <li>Write an honest review of this course on your blog.</li>
+        <li>Share it on social media.</li>
+      </ul>
+      <p>
+        Send an email to <b>lumenwrites@gmail.com</b> if you're interested!
+      </p>
+    </div>
   )
 }
 

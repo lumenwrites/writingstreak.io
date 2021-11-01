@@ -4,6 +4,11 @@ Congratulations! You have completed the brainstorming part of your adventure wri
 
 For the rest of the course you will be using your Adventure Writing Template to outline, draft, and complete your adventure.
 
+## Come up with a Title
+It's time to name your adventure. Come up with an exciting title that grabs people's attention and evokes curiosity.
+
+Silly puns and pop culture references also work great.
+
 ## Summarize the Whole Story
 At the beginning of your template, write down a very short (2-4 sentences) summary of your adventure. Try to mention all the most important components of your idea:
 
@@ -70,6 +75,7 @@ The goal is to quickly go through the outlining/summarizing process and quickly 
 
 ---
 ## Activity
+- Come up with a title.
 - Write down a 2-4 sentence summary of your story.
 - Write down the list of scene headings, one for each plot point and challenge.
 - Write down 2-4 sentence summary of each scene. Where does the scene take place, who will the players encounter there, what challenges will they need to overcome?

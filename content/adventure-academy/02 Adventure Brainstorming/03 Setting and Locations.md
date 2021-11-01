@@ -11,7 +11,7 @@ One good way to do that is to think about settings you don't normally see in the
 Apply the same principles you have learned in the lesson on generating ideas - combine things that are not usually combined, reverse or exaggerate ideas, swap the concrete elements for something else.
 
 > 
-- Exotic locations: 
+- Exotic settings: 
 	- "Egyptian Pyramids" is better than "Typical Fantasy City".
 	- "Amazon Tribe Village", or a "Cliff-side Village" is better than "Generic Medieval Fantasy Village".
 	- "Fantasy Subway" is better than "Sewers Under the City".
@@ -32,6 +32,8 @@ Another great way to make a setting unique is to fill it with interesting inhabi
 - Typical fantasy village inhabited by Kobolds or Zombies. 
 - Typical fantasy city inhabited by Professional Assassins.
 - Typical fantasy dungeon inhabited by Scientists and Scholars.
+
+And, of course, you can combine both methods to make both the setting and it's i habitants unique and interesting.
 
 Finally, what I actually do in practice most of the time - just browse [ArtStation](https://www.artstation.com/search?sort_by=likes&category_ids=5&medium_ids=1), or search [Pinterest](https://www.pinterest.com/search/pins/?q=Fantasy%20Environment%20Design&rs=typed&term_meta[]=Fantasy%7Ctyped&term_meta[]=Environment%7Ctyped&term_meta[]=Design%7Ctyped) for things like "Fantasy Environment Design", or browse the [Imaginary Network](https://www.reddit.com/r/ImaginaryLandscapes/top/?sort=top&t=all) subreddits, and use a setting inspired by one of the images. You can find my collection of fun environments [here](https://www.artstation.com/lumenwrites/collections/119125).
 
@@ -62,8 +64,13 @@ One great way to make locations more interesting is to think about the environme
 - River of lava you must find a way to cross.
 - Crumbling temple you must escape.
 
+
 <!-- 
 What important events have happened before the players arrived? What is the situation that caused the problem players are trying to solve?
+opportunity to use powers
+environmental storytelling
+## Strategically Valuable Locations
+Locations can also be strategically useful to the players. The places they can use to set up an ambush, a barricade, 
 -->
 
 ---

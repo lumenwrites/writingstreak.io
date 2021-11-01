@@ -5,11 +5,14 @@ import config from 'config.json'
 const stripe = require('stripe')(process.env.STRIPE_SECRET)
 
 async function getPaymentIntent(req, res) {
-  const { email } = req.body
+  const { email, discountCode } = req.body
   console.log('[getPaymentIntent]', email)
+  let price = config.price
+  if (discountCode === "free") price = 0
+  if (discountCode === "halfprice2021") price /= 2
   try {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: config.price * 100,
+      amount: price * 100,
       currency: 'usd',
       payment_method_types: ['card'], //default
       metadata: { email },

@@ -15,7 +15,7 @@ Can you describe your creative process? How do you go about creating your advent
 
 **What are some of the most fun encounters you have created for players during your games?**
 
-**How can I learn to make my descriptions of action scenes and combat more awesome and exciting? Also, do you have any advice on generally creating vivid descriptions for NPCs and the world aroudn the players? **
+**How can I learn to make my descriptions of action scenes and combat more awesome and exciting? Also, do you have any advice on generally creating good vivid descriptions for NPCs and the world aroudn the players? **
 
 **Where do you find Public Domain / Creative Commons illustrations for your adventures?**
 

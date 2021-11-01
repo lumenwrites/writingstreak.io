@@ -1,7 +1,25 @@
-.stripe-card {
-  outline: 1px solid $border; // border adds to height here for some reason, but not for inputs
-  padding: 0 12px;
-  margin-top: 10px;
-  border-radius: $border-radius;
-  box-sizing: border-box;
+.purchase-modal {
+  .stripe-card {
+    outline: 1px solid $border; // border adds to height here for some reason, but not for inputs
+    padding: 0 12px;
+    margin-top: 10px;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+  }
+  .discount {
+    outline: none;
+    &.success {
+      border: 1px solid green;
+    }
+    &.fail {
+      border: 1px solid red;
+    }
+  }
+  .discount-offers {
+    // font-size: 0.85em;
+    color: #697386;
+    ul {
+      margin-top: 0;
+    }
+  }
 }

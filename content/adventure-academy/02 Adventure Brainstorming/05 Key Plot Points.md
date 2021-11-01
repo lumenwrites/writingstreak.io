@@ -114,7 +114,10 @@ This is where the heroes blow up the Death Star, drop the ring into Mount Doom, 
 
 You create the Climax by looking at your player's Primary Objective, and figuring out what is the ultimate action the players must take to accomplish it (and what makes this action difficult and dangerous), what challenge must they overcome to succeed.
 
-<!--  What awesome moment about this adventure will the players remember a year from now? -->
+<!--  
+What awesome moment about this adventure will the players remember a year from now?
+Multiple climax resolutions?
+-->
 
 ---
 
