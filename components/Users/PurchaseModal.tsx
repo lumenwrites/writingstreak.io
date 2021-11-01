@@ -46,7 +46,7 @@ export default function PurchaseModal() {
     const { data: emailCheck } = await axios.post('/api/payments/check-valid-email', { email })
     if (emailCheck.error) return setStatus({ state: 'error', message: emailCheck.error })
     if (discount.code === 'free') {
-      const { data } = await axios.post('/api/payments/purchase-successful', { email }) // Add user's email to the database
+      const { data } = await axios.post('/api/payments/purchase-successful', { email, discountCode: discount.code }) // Add user's email to the database
       Cookies.set('token', data.token) // Save a login cookie
       setStatus({ state: 'success', message: `` }) // Show them "Thank you for your purchase" modal
       return
@@ -63,7 +63,7 @@ export default function PurchaseModal() {
     })
     if (paymentResponse.error) return setStatus({ state: 'error', message: paymentResponse.error.message })
     if (paymentResponse.paymentIntent.status === 'succeeded') {
-      const { data } = await axios.post('/api/payments/purchase-successful', { email }) // Add user's email to the database
+      const { data } = await axios.post('/api/payments/purchase-successful', { email, discountCode: discount.code }) // Add user's email to the database
       Cookies.set('token', data.token) // Save a login cookie
       setStatus({ state: 'success', message: `` }) // Show them "Thank you for your purchase" modal
     }
