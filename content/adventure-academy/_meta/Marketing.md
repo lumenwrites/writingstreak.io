@@ -46,13 +46,13 @@ Hey guys! For the past year I've been writing one-page adventures and learning e
 
 Now I'm working on an adventure writing course, and I want to offer free coaching to a couple of novice GMs. I want to teach you everything I know and guide you through writing your story. I will show you how to brainstorm ideas, come up with plots/settings/characters/encounters, outline the adventures, write and playtest them. If all goes well, in a couple of weeks you will have created and published a one-shot adventure. 
 
-We will communicate over discord, I will write and send you the lectures, the students will share their progress and experience in the chat (and hopefully help each other and inspire each other as well). I will do my best to help you every step of the way, answer all of your questions, help you to stay motivated and accountable to keep working on this project. And you will give me some feedback that will help me to get better at teaching.
+We will communicate over discord, I will send you the lectures, the students will share their progress and experience in the chat (and hopefully help each other and inspire each other as well). I will do my best to help you every step of the way, answer all of your questions, help you to stay motivated and accountable to keep working on this project. And you will give me some feedback that will help me to get better at teaching.
 
 You don't need to have any experience with writing and storytelling (it's actually better if you don't, novice people will get the most value out of this course), but you do need to be curious and passionate about this, and willing to dedicate a little bit of time every day for a couple of weeks to the writing process.
 
-If that sounds interesting - send me a message, I'm `lumen#7925` on discord. We start on Monday, November 1st. 
+If that sounds interesting - send me a message, I'm `lumen#7925` on discord. We start next Monday, November 8th. 
 
-(Right now I can accept at most 3 students, but if all goes well and there's enough interest, I'll be happy to run the course again for more students.)
+(Right now I can accept up to 3 students, but if all goes well and there's enough interest - I'll be happy to run the course again for more students.)
 
 # Discord Launch
 Hey, @everyone!

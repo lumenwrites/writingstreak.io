@@ -1,22 +1,17 @@
 # ToDo
 ## NextUp
 - Finish the Descriptions lesson. I don't have much to say on my own, but I can do research. Brandon sanderson lectures, reddit replies, internet articles, screenwriting books.
-- Read through the StorytellingCollective, LazyGM, and Play Unsafe. Possibly also Write About Dragons, The Idea, Screenwriting for Hollywood, Writing Vivid Settings, Screenwriting Bible. Apply all the useful ideas.
+- Read through the StorytellingCollective, LazyGM, and Play Unsafe. My old reddit posts and writing notes. Possibly also Write About Dragons, The Idea, Screenwriting for Hollywood, Writing Vivid Settings, Screenwriting Bible, thealexandrian. Apply all the useful ideas.
 - Write an example adventure (or use one I already have). Sample adventure template.
 - Read through the whole course, obvious fixes/improvements.
 - Improve the landing page by swiping from storytellingcollective.
-Improve:
+## Improve
 - More examples from my prompts.
 - Improve Climax section, need more advice.
 - Exciting Idea or Exciting Preimse? Change template if premise makes more ssense.
 - What else to say on the welcome page? More intro sections?
 - Use Vivid Settings sensory examples in my descriptions chapter.
----
-Website:
-- Don't forget to replace the social image once I have enough of a course to make a pretty screenshot.
-To Improve:
---- 
-Launch/Market:
+## Launch/Market:
 - Share it on my server, ask for feedback.
 - Make a post on r/DnD, find a couple of students to go through the course.
 - See if I can convince the DMAcademy mods to let me make a post.
@@ -32,7 +27,7 @@ Launch/Market:
 - Don't forget to replace the social image once I have enough of a course to make a pretty screenshot.
 - I need read it and see whatever obvious emberassinf mistakes I can find, whatever improvements I can make.
 - Do the descriptions/dialogue chapter.
-- 
+
 ## To Improve
 - Improve Key Plot Points Climax section. What else is there to say?
 - Use more of my prompts as examples.

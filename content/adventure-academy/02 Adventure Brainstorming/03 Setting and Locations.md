@@ -35,6 +35,8 @@ Another great way to make a setting unique is to fill it with interesting inhabi
 
 And, of course, you can combine both methods to make both the setting and it's i habitants unique and interesting.
 
+You can also apply the same principles to make the physical aspects of the setting more unique (geography, flora and fauna, climate, magic, technology, etc.), and the culutural aspects (fashion, customs, politics, religion, occupations, history, and so on). Just don't overdo it, especially for a one-shot adventure - worldbuilding can get complicated, and you should keep things simple. One or two unique aspects of the setting is enough.
+
 Finally, what I actually do in practice most of the time - just browse [ArtStation](https://www.artstation.com/search?sort_by=likes&category_ids=5&medium_ids=1), or search [Pinterest](https://www.pinterest.com/search/pins/?q=Fantasy%20Environment%20Design&rs=typed&term_meta[]=Fantasy%7Ctyped&term_meta[]=Environment%7Ctyped&term_meta[]=Design%7Ctyped) for things like "Fantasy Environment Design", or browse the [Imaginary Network](https://www.reddit.com/r/ImaginaryLandscapes/top/?sort=top&t=all) subreddits, and use a setting inspired by one of the images. You can find my collection of fun environments [here](https://www.artstation.com/lumenwrites/collections/119125).
 
 ## Locations

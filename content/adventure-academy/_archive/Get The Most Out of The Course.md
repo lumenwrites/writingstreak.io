@@ -1,7 +1,9 @@
 # Get the Most out of this Course
 
 ## Learn by Doing
-It's important to take action and apply what you're learning. Don't just read through the course in one sitting - commit to writing an adventure. You will learn much better if you immediately apply the ideas you're learning into practice.
+It's important to take action and apply what you're learning. Don't just read through the course in one sitting - commit to writing an adventure.
+
+You will learn much better if you immediately apply the ideas you're learning into practice.
 
 ## Set an Attainable Goal
 Clearly define what you want to accomplish by the end of this course. When you're going through the course for the first time, I highly recommend you to aim to write a one-page adventure, like the ones you see on [our website](https://rpgadventures.io/).

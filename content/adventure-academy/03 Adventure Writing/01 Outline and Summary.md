@@ -1,3 +1,7 @@
+---
+preview: true
+---
+
 # Outline and Summary
 
 Congratulations! You have completed the brainstorming part of your adventure writing process! You have filled in your Brainstorming Template, and now you should have all the information you know in order to write the adventure. With all the ideas already in place, it will be surprisingly easy and rewarding.

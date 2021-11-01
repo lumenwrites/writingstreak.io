@@ -1,6 +1,9 @@
+---
+preview: true
+---
 # Writing Process
 ## Your Living Document
-We will write the adventure using the [Adventure Brainstorming Template](https://docs.google.com/document/d/1mPVfd9sONouEKwpdAtS88sE_KlKn5cX7ihFd_SK-aWY/).
+We will write our adventure using the [Adventure Brainstorming Template](https://docs.google.com/document/d/1mPVfd9sONouEKwpdAtS88sE_KlKn5cX7ihFd_SK-aWY/).
 
 <!--
 It contains the list of sections, one for each of the core elements of a well-crafted adventure:
@@ -16,21 +19,21 @@ It contains the list of sections, one for each of the core elements of a well-cr
 
 It contains the list of sections, one for each of the core elements of a well-crafted adventure. Under each of the sections you will find a list of the most important questions you need to answer about your adventure. These questions (along with the lessons in the course) will guide you through the process of developing your ideas.
 
-You will the Adventure Brainstorming Template as a **living document**, you will fill it with your ideas as you go through the course. Once it is complete, you will know everything you need in order to write a good adventure.
+You will use the Adventure Brainstorming Template as a living document, you will fill it with your ideas as you go through the course. Once it is complete, you will know everything you need in order to write a good adventure.
 
 Then you will use the [Adventure Writing Template](https://docs.google.com/document/d/1Gp9-HuYnKfAimRhyixlRmayoFpF6S4csSMcMAaEe8r0/) to outline and summarize everything you have brainstormed. This is where you will write the final draft of your adventure - put all the ideas together into a list of scenes that flow into each other, add up to an interesting story that makes sense.
 
 ## Follow the Action Steps
-Each lesson has a section called "Action Steps" - a check list of things you need to do to successfully complete it. Make sure that you complete all the steps before moving on to the next lesson. Once you complete all the Action Steps in this course, you will haev a complete adventure.
+Each lesson has a section called "Action Steps'' - a checklist of things you need to do to successfully complete it. Make sure that you complete all the steps before moving on to the next lesson. Once you complete all the Action Steps in this course, you will have a complete adventure.
 
 ## Ask Good  Questions
 The core process of brainstorming ideas and writing stories comes down to asking and answering questions. Asking good, specific questions is the best way to make sure that you won't get stuck in the writer's block, because it removes all confusion and ambiguity about what to do next, and gives you clear, attainable goals - you will always have a concrete, specific task to accomplish. Breaking down complex goals into small and clear steps is the best way to make them seem less confusing and intimidating.
 
-As you develop your ideas, you will always do always do one of two things - answering the next most important question on your list, or trying to figure out what are the next most important open questions that need to be added to your list. That way you'll never feel the vague sense of trying to write, but not knowing what to do, you'll never feel overwhelmed by the process. 
+As you develop your ideas, you will always do one of two things - answering the next most important question on your list, or trying to figure out what are the next most important open questions that need to be added to your list. That way you'll never feel the vague sense of trying to write, but not knowing what to do, you'll never feel overwhelmed by the process. 
 
 Most of the questions you will need to answer are universal for all adventures, I have written them down in the Brainstorming Template and in the Action Steps sections in this course. I'll be using these questions to guide you through the story writing process.
 
-Some of the questions will be specific to your story, they come up as you write your adventure - such as figuring out what is the next step of your villain's evil plan, how to describe a specific location, how to make one of your encounters more interesting, etc.
+Some of the questions will be specific to your story, they will come up as you write your adventure - such as figuring out what is the next step of your villain's evil plan, how to describe a specific location, how to make one of your encounters more interesting, etc.
 
 Whenever you feel confused about what to do next - try to make a list of the most important open questions you don't yet know how to answer. Make the questions as specific as possible, clearly define the exact problem you're facing. If you're not sure how - write down the list of things you already know about the story, and then the things you don't know will become apparent.
 
@@ -48,7 +51,7 @@ That's why all sections in the Brainstorming Template are made out of lists - fo
 ## Engage with the Community
 Talking to people, brainstorming ideas with them, asking for help and feedback, and giving help and feedback to others is one of the most powerful tools you can use to stay motivated, gain experience, learn from your peers, successfully complete your adventure, and become a better writer.
 
-Almost all Action Steps sections will have a prompt asking you to post something in the discord - discuss your ideas, share your work, ask for help and feedback. This is one of the most important and valuable parts of this process, so make sure to take advantage of it. Don't be shy to make posts about your progress - our community is friendly and encouraging, and will really help you on your journey.
+Almost all Action Steps sections will have a prompt asking you to post something in the discord - discuss your ideas, share your work, ask for help and feedback. This is one of the most important and valuable parts of this process, so make sure to take advantage of it. Don't be shy to make posts about your progress - our community is friendly and encouraging, and will be happy to help you on your journey.
 
 Also make sure to read the posts made by others and comment on them, help the other students who are going through this course. It will really help you to get better at coming up with new ideas and solving creative problems.
 
@@ -65,7 +68,7 @@ Try to make sure we have prepared everything that would be difficult to improvis
 
 If you notice something that’s missing or doesn’t make sense - bring it up so that we can figure it out together.
 
--   Use the Reddit's hivemind. If you get stuck - make a post on [/r/DMAcademy](https://www.reddit.com/r/DMAcademy) or [/r/DnDAdventureWriter](https://www.reddit.com/r/DnDAdventureWriter) and ask for help with brainstorming ideas or answering questions.
+-   Use Reddit's hivemind. If you get stuck - make a post on [/r/DMAcademy](https://www.reddit.com/r/DMAcademy) or [/r/DnDAdventureWriter](https://www.reddit.com/r/DnDAdventureWriter) and ask for help with brainstorming ideas or answering questions.
 
 
 Make a list of what you want from a tool like Notion. Be specific! Do you want to organize a project, take better notes, make a beautiful homepage for yourself, etc.? Knowing what you want from a project management tool helps you use a tool to the fullest.

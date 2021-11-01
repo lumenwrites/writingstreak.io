@@ -1,4 +1,6 @@
-<!-- Exciting Premise -->
+---
+preview: true
+---
 # Exciting Premise
 First, I want to show you how to come up with exciting adventure ideas.
 
@@ -10,7 +12,39 @@ First, I want to show you how to come up with exciting adventure ideas.
 - **Supernatural Element** - unusual magics, technologies, or creatures.
 <!--or mysteries-->
 
-Idea grow out of any one of these elements. Can you think of an exciting goal, setting, character, or a magic you would like to build your story around?
+Your idea can grow out of any one of these elements. Can you think of an exciting goal, setting, character, or a magic you would like to build your story around?
+
+> 
+- Setting + Supernatural: A lavish castle where all inhabitants have been mind controlled by the brain slugs.
+- Setting + Problem: A grotesque experiment has escaped from the mad scientist's laboratory.
+- Supernatural + Problem: A love potion has leaked into the water supply.
+- Supernatural + Goal: You have been hired to obtain a clock of hair from the elusive Sasquatch.
+- Character + Setting: Noble Paladin has arrived into the Pirate City to bring law and order.
+- Character + Problem: Socially awkward prince will lose his claim to the throne unless he finds a wife by next Friday.
+- Character + Supernatural: A pompous king has been turned into a Rat by his evil Vizier.
+
+### Bottom-Up ideas
+If you have an idea for some very specific part of the story (you want your players to fight a certain monster, visit a certain locaiton, find a specific magical artifact, etc.) - you can grow a story around that, expand the idea and see if it leads you to one or few of the core comopnents I've outlined above.
+
+>
+- I have a cool swamp battlemap:
+	- Setting: The Swamplands of No Return.
+	- Character: Swamp Witch who holds a Terrible Secret. 
+- I want my players to attend the King's feast:
+	- Problem: They learn that someone has poinsnoed the food.
+	- Supernatural: The cooked boar has left a ghost who is determined to ruin the feast.
+- I want my players to find the Scroll of Sweet Slithering Snakes:
+	- Character: It is being held by a brilliant, powerful, and extremely paranoid wizard.
+	- Setting: It has been lost in the Basilisk's lair.
+
+<!--
+Supernatural: Dancing lights luring adventures into the swamp.
+needs protection
+- Supernatural + Goal: The heroes have found a treasure map
+cooky inventor needs to train/deliver them to
+unlucky in love
+Bottom-up ideas.
+-->
 
 ## Blank Page vs Lego Blocks
 It is difficult and unnecessary to try to invent everything from scratch, just by staring at the blank page and trying to make something up by thinking really hard. I struggled with this a lot, it was one of the main causes of my writer's block.
