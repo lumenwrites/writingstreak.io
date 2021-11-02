@@ -214,4 +214,5 @@ NPC or monster I want to use, something specific I want players to do.
 - See if you can combine several of your ideas into something even more unique and interesting.
 - Write a 1-2 sentence summary of your favorite idea, write it down in the idea section of your Adventure Brainstorming Template. That's the adventure you'll be working on.
 - Post your list of ideas in the `#adventure-ideas` channel.
+- Optional exercise: Try to continue the lists of examples in this chapter, add 3-5 ideas to each of the lists. It will really help you to get a hang of the process, and will probably lead to a few more cool ideas.
 - Extra Credit: Find a post made by someone else in this channel, and give them constructive feedback on their ideas. See if you can build on top of their ideas, find a way to improve them, combine multiple ideas, take them in a new and unexpected direction.

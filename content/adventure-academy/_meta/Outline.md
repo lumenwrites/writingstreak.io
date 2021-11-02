@@ -6,10 +6,10 @@
 ## Adventure Brainstorming
 [[01 Exciting Premise]] - read, spellchecked, good enough.
 [[02 Primary Objective]] - read, spellchecked, good enough.
-[[03 Setting and Locations]]
-[[04 Main Characters]]
-[[05 Key Plot Points]]
-[[06 Escalating Challenges]]
+[[03 Setting and Locations]] - read, spellchecked, good enough.
+[[04 Main Characters]] - read, spellchecked, good enough.
+[[05 Key Plot Points]] - read, spellchecked, good enough.
+[[06 Escalating Challenges]] - read, spellchecked, good enough.
 [[07 Intriguing Mysteries]]
 ## Adventure Writing
 [[01 Outline and Summary]]

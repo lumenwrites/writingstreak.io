@@ -11,6 +11,7 @@
 - Exciting Idea or Exciting Preimse? Change template if premise makes more ssense.
 - What else to say on the welcome page? More intro sections?
 - Use Vivid Settings sensory examples in my descriptions chapter.
+- Write conclusions to make the chapters feel more complete?
 ## Launch/Market:
 - Share it on my server, ask for feedback.
 - Make a post on r/DnD, find a couple of students to go through the course.
@@ -27,7 +28,7 @@
 - Don't forget to replace the social image once I have enough of a course to make a pretty screenshot.
 - I need read it and see whatever obvious emberassinf mistakes I can find, whatever improvements I can make.
 - Do the descriptions/dialogue chapter.
-
+- Create an example of the active antagonist's plot.
 ## To Improve
 - Improve Key Plot Points Climax section. What else is there to say?
 - Use more of my prompts as examples.
@@ -44,6 +45,7 @@
 - Launch my sample adventure.
 ## Market
 ## Future
+- Active antagonist examples. 3 grim portents for their plan. Steps can be thwarted, then other steps will arise in their place.
 - Affinity Publisher adventure template.
 - Adventure checklist.
 - I'll have to license an image.

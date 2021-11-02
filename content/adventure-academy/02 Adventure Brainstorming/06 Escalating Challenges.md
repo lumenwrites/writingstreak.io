@@ -1,15 +1,15 @@
 # Escalating Challenges
-As we discussed before, stories are about problem solving. Now that we know the key plot points that can provide us the general story structure, we can figure out the rest of the plot by creating a series of escalating challenges the heroes have to overcome on their path to the goal.
+As we discussed before, stories are about problem solving. Now that we know the key plot points that can provide us with the general story structure, we can figure out the rest of the plot by creating a series of escalating challenges the heroes have to overcome on their path to the goal.
 
 ## Challenges are Sub-Goals
 Just like in real life, accomplishing a big and difficult goal involves achieving a number of smaller sub-goals. Primary Objective is the big overarching goal, which can be broken down into a series of smaller challenges. 
 
-Every scene the characters try solve a small problem, their successes take them closer to achieving their goal, the setbacks and complications take them farther away from that goal.
+Every scene the characters try to solve a small problem, their successes take them closer to achieving their goal, the setbacks and complications take them farther away from that goal.
 
 Imagine a todo list the heroes would write as they try to achieve their Objective, list a series of steps that can take them from where they are to where they need to be, and then figure out what makes each step difficult.
 
 > In order to Rescue the Princess we need to:
-- Follwo the clues to figure out what happened to the Princess, why did she disappear.
+- Follow the clues to figure out what happened to the Princess, why did she disappear.
 - Convince a cowardly Knight, the only person who knows where the dragon's lair is, to take us there.
 - Learn that the dragon can only be slayed using the legendary sword, which he keeps in his hoard.
 - Travel through the deadlands to the Dragon's Lair and face the dangers on our way there (defeat various beasts living there, survive heat and thirst, overcome traps laid by the dragon).
@@ -17,17 +17,18 @@ Imagine a todo list the heroes would write as they try to achieve their Objectiv
 - Sneak through the castle and stealthily acquire the sword before the dragon notices and kills is.
 - Slay the dragon while making sure the princess doesn't get hurt.
 
-Just like the goals are made out of sub-goals (which, in turn, are made out of even smaller sub-sub-goals), Primary Objective and Challenges are fundamentally the same, just the goals/problems of different scale.
+### Challenges are just small Objectives
+Just like the goals are made out of sub-goals (which, in turn, are made out of even smaller sub-sub-goals), the Primary Objective and the Challenges are fundamentally the same kind of thing, just the goals/problems of a different scale.
 
-A Primary Objective from a one adventure can serve as a Challenge in another - you can have a whole story about defending the village from a werewolf, or you can slay a werewolf as you walk through the forest on your way to some larger goal. 
+A Primary Objective from one adventure can serve as a Challenge in another - you can have a whole story about defending the village from a werewolf, or your heroes can slay a werewolf as they walk through the forest on their way to some larger goal. 
 
-And the other way around, many Challenges your players face can be turned into the whole adventures of their own. In a One-Shot, acquiring the Legendary Dragon-Killing Sword is one of the Challenges the players need to accomplish, but in a campaign about killing a dragon, acquiring this sword can be a whole adventure - just make the challenge more difficult and break it down into even smaller sub-challenges to use as a plot of that adventure.
+And the other way around, many Challenges your players face can be turned into a whole adventure of their own. In a One-Shot, acquiring the Legendary Dragon-Killing Sword is one of the Challenges the players need to accomplish, but in a campaign about killing a dragon, acquiring this sword can be a whole adventure - just make the challenge more difficult and break it down into even smaller sub-challenges to use as plot for that adventure.
 
-This is very useful to understand, because it means that you can apply everything you have learned about designing the Primary Objective to designing the challenges, and vice versa. If makes it much easier to generate ideas as well - you can use your Objective ideas (or ones taken from the movies) as challenges, and you can turn your challenges into bigger adventures (by making them more dramatic and difficult to accomplish).
+This is very useful to understand, because it means that you can apply everything you have learned about designing the Primary Objective to designing the challenges, and vice versa. It makes it much easier to generate ideas as well - you can use your Objective ideas (or ones taken from the movies) as challenges, and you can turn your challenges into bigger adventure ideas (by making them more dramatic and difficult to accomplish).
 
-> 
+> Using Objective Ideas as Challenges and vice versa:
 - Take a primary objective from Titanic (surviving a sinking ship), and use it as one of the challenges your heroes need to overcome on their path to the goal.
-- Take a small challenge from Harry Potter, let's say, stealing a Hippogrif, and make a whole adventure about performing the legendary Hippogrif heist.
+- Take a small challenge from Harry Potter, let's say, stealing a Hippogriff, and make a whole adventure about performing the legendary Hippogriff heist.
 
 # Types of Challenges
 You don't want your players to go from battle to battle, or from one trap-riddled corridor to another - it would get old pretty quickly. Try to mix a variety of different challenge types to make the experience more interesting.
@@ -44,7 +45,7 @@ I have organized some of the common and useful challenges I tend to see in stori
 - Invade or defend a location.
 - Complete or sabotage a project (for example, a ritual).
 - Race someone to the destination.
-- Destroy a dangerouns item or a location.
+- Destroy a dangerous item or a location.
 - Win a competition.
 
 > **Social**
@@ -76,10 +77,10 @@ I have organized some of the common and useful challenges I tend to see in stori
 - Gain control over the territory.
 - Track something/someone.
 - Deal with a natural disaster.
-- Clear a location of danger.
+- Clear the location of danger.
 
 > **Stealth**
-- Accomplish any of the other challenges stealithily, without being seen.
+- Accomplish any of the other challenges stealthily, without being seen.
 - Plan, prepare, and execute a heist.
 - Break into or break out of a location.
 - Infiltrate and spy, go undercover, impersonate someone.
@@ -91,14 +92,21 @@ I have organized some of the common and useful challenges I tend to see in stori
 - Get caught lying/cheating/sneaking.
 - Frame someone for a crime.
 
-## Villain's Moves
-In the last lesson we have learned that Villain's actions can serve as plot twists and complications, but they can also serve as regular challenges. Anything the Villain can do to make the life more difficult for the heroes is a challenge they must overcome.
+### Villain's Moves
+In the last lesson we have learned that Villain's actions can serve as plot twists and complications, but they can also serve as regular challenges. Anything the Villain can do to make life more difficult for the heroes is a challenge they must overcome.
 
 (see the list of Villain's moves in the Main Characters lesson).
+
+## Pacing and Rising Action
+Think of your adventure as a roller coaster - you want to have periods of rising tension, excited anticipation, intense action, and calm periods allowing the players to catch their breath in-between.
+
+Organize your challenges such that the level of threat, difficulty, stakes, and pace keep increasing throughout the adventure and reach their peak at the final climactic challenge.
+
+That will create the most engaging and memorable experience for your players.
 
 ---
 
 ## Activity
 - Make a list of 3-5 escalating challenges, the obstacles the players will need to overcome on their path. Try to use challenges of different types.
-- Make a list of things the Villain can do to make the life more difficult for the heroes.
+- Make a list of things the Villain can do to make life more difficult for the heroes.
 - Share your ideas in the `#designing-encounters` channel.
