@@ -8,31 +8,39 @@ First, I want to show you how to come up with exciting adventure ideas.
  A good adventure idea is usually based on one of the following four elements, or an interesting combination of them:
 - **Important Objective** - the problem your players will try to solve, or the goal they'll try to achieve.
 - **Interesting Setting** - world and locations where the adventure takes place, with a unique twist.
-- **Cool Characters** - really interesting antagonist the players will have to defeat, and, to a lesser extent, other characters they will meet.
+- **Cool Characters** - a really interesting antagonist the players will have to defeat, and, to a lesser extent, other characters they will meet.
 - **Supernatural Element** - unusual magics, technologies, or creatures.
 <!--or mysteries-->
 
 Your idea can grow out of any one of these elements. Can you think of an exciting goal, setting, character, or a magic you would like to build your story around?
 
+Take a look at some examples:
 > 
-- Setting + Supernatural: A lavish castle where all inhabitants have been mind controlled by the brain slugs.
-- Setting + Problem: A grotesque experiment has escaped from the mad scientist's laboratory.
-- Supernatural + Problem: A love potion has leaked into the water supply.
-- Supernatural + Goal: You have been hired to obtain a clock of hair from the elusive Sasquatch.
-- Character + Setting: Noble Paladin has arrived into the Pirate City to bring law and order.
-- Character + Problem: Socially awkward prince will lose his claim to the throne unless he finds a wife by next Friday.
-- Character + Supernatural: A pompous king has been turned into a Rat by his evil Vizier.
+- **Setting + Supernatural**:  
+A lavish castle where all inhabitants have been mind controlled by the brain slugs.
+- **Setting + Problem**:  
+A grotesque experiment has escaped from the mad scientist's laboratory.
+- **Supernatural + Problem**:  
+A love potion has leaked into the water supply.
+- **Supernatural + Goal**:  
+You have been hired to obtain a lock of hair from the elusive Sasquatch.
+- **Character + Setting**:  
+A noble Paladin has arrived into the Pirate City to bring law and order.
+- **Character + Problem**:  
+Socially awkward prince will lose his claim to the throne unless he finds a wife by next Friday.
+- **Character + Supernatural**:  
+A pompous King has been turned into a Rat by his evil Vizier.
 
 ### Bottom-Up ideas
-If you have an idea for some very specific part of the story (you want your players to fight a certain monster, visit a certain locaiton, find a specific magical artifact, etc.) - you can grow a story around that, expand the idea and see if it leads you to one or few of the core comopnents I've outlined above.
+If you have an idea for some very specific part of the story (you want your players to fight a certain monster, visit a certain location, find a specific magical artifact, etc.) - you can grow a story around that. Expand the idea and see if it leads you to one or few of the core components I've outlined above.
 
 >
-- I have a cool swamp battlemap:
+- I want my players to attend the King's feast:
+	- Problem: They learn that someone has poisoned the food.
+	- Supernatural: The cooked boar has left a ghost who is determined to ruin the feast.
+- I have a cool swamp battle-map:
 	- Setting: The Swamplands of No Return.
 	- Character: Swamp Witch who holds a Terrible Secret. 
-- I want my players to attend the King's feast:
-	- Problem: They learn that someone has poinsnoed the food.
-	- Supernatural: The cooked boar has left a ghost who is determined to ruin the feast.
 - I want my players to find the Scroll of Sweet Slithering Snakes:
 	- Character: It is being held by a brilliant, powerful, and extremely paranoid wizard.
 	- Setting: It has been lost in the Basilisk's lair.
@@ -49,16 +57,16 @@ Bottom-up ideas.
 ## Blank Page vs Lego Blocks
 It is difficult and unnecessary to try to invent everything from scratch, just by staring at the blank page and trying to make something up by thinking really hard. I struggled with this a lot, it was one of the main causes of my writer's block.
 
-Instead of staring into the emptiness of a blank page, creativity should feel like playing with lego blocks. You take existing ideas and tropes you're already familiar with, and try to recomine them in new ways, or change them and turn them into something new.
+Instead of staring into the emptiness of a blank page, creativity should feel like playing with lego blocks. You take existing ideas and tropes you're already familiar with, and try to recombine them in new ways, or change them and turn them into something new.
 
-## Picking Apart Stories
+### Picking Apart Stories
 You obtain the lego blocks to play with by picking apart your favorite stories - movies, TV shows, books, games, comics, and so on.
 
 Look through the list of interesting stories, and extract the idea components out of them:
 - What did the main character want in this story, is there an interesting problem they were trying to solve?
 - Does the story take place in an interesting setting?
 - What are some of the coolest, most memorable characters that you've seen in this story?
-- Does the story explore some interesting magics, or technologies, involve some supernatural creatures?
+- Does the story explore some interesting magics, or technologies, does it involve some supernatural creatures?
 
 Not all stories will have all the four elements, but in most of them at least one of these components is really strong:
 
@@ -86,7 +94,6 @@ Not all stories will have all the four elements, but in most of them at least on
 - Body Switching (Freaky Friday)
 - Mech Suit (Iron Man)
 
-
 or the combination of these components is really interesting or unexpected:
 
 > 
@@ -101,23 +108,33 @@ or the combination of these components is really interesting or unexpected:
 
 Build a library of these elements in your head (or collect the most interesting ones in a text file), and when it's time to create an adventure - assemble them into something you haven't seen before.
 
-## Adapting Stories
+> For example, let's take a few elements from the lists above and recombine them into something new:
+- **Romeo and Juliet + Bank Heist**  
+A love-struck teenager asks the players to help him commit a bank heist to impress the father of the girl he's in love with, a crime boss of a powerful mafia family.
+- **Sentient Animals + Ace Ventura**  
+A crazy druid with the personality of Ace Ventura leads his army of sentient flying squirrels to take revenge on the lumberjack village who's destroying his forest.
+- **Robot Rebellion + Hogwarts**  
+The animated suits of armor and the stone gargoyles have been hijacked by unknown magic and are wrecking havoc on a magic castle. The players must rescue the royal family from the castle that came alive.
+- **Titanic + Zombies**  
+A zombie outbreak on the ship leads to a catastrophe, players must survive on a sinking ship full of zombies.
+
+### Adapting Stories
 The easiest way to come up with an adventure idea is to just adapt one of your favorite stories, changing only the names/places, and possibly setting it in a fantasy world.
 
 > **Alien in a Fantasy world**  
-Investigate the disappearances Stop the power-hungry cruel emperor who tries to build himself an army by breeding dangerous Xenomorph-like monsters.
+Stop the cruel power-hungry emperor who tries to build himself an army by breeding dangerous Xenomorph-like monsters.
 
 > **Die Hard in a Magic Castle**  
 Vampires took over the magic school, you're the only ones who can rescue their hostages before they get turned into vampires.
 
 > **Honey I Shrunk The Kids**  
-Evil witch poisons the players with a shrinking potion, they must escape and travel through her magic hut (now enormous) to the top shelf where the enlargement potion is stored.
+Evil witch poisons the players with a shrinking potion, they must escape and travel through her (now enormous) magic hut to the top shelf where the enlargement potion is stored.
 
-## Recombining the Elements
+### Recombining the Elements
 Combine two interesting ideas together to create something new, mix and match the tropes, putting them together in different ways (like playing with lego blocks):
 
 > **Sentient Animals + Lord of the Rings**  
-Players play as mice who have stumbled upon The One Ring, and are now the humanity's last hope.
+Players play as mice who have stumbled upon The One Ring, and are now humanity's last hope.
 
 > **Rescue Mission + Scary Monster**  
 The players are hired by a cooky wizard to find and return his runaway pet. His pet is a zombie chimera made out of fury and rage.
@@ -126,16 +143,16 @@ The players are hired by a cooky wizard to find and return his runaway pet. His 
 Defend a floating pirate town (think Tortuga) being attacked by a massive flying ship of the Royal Navy, sent to “bring order and civilization to Fera Ley and put the pirate problem to rest”.
 
 
-## Changing the Elements
+### Changing the Elements
 To change the element of the story you can reverse it (do the opposite), exaggerate it, or replace it with an entirely different one (idea from another movie for example).
 
 > **Reverse the Goal: Rescue the Dragon from the Princess**  
-A cruel princess has kidnapped baby dragon's mom, and is forcing her to fight in a coliseum. Help to rescue the big mama dragon.
+A cruel princess has kidnapped the baby dragon's mom, and is forcing her to fight in a coliseum. Help to rescue the big mama dragon.
 
-> **Reverse the Character: Evil Batman**  
+> **Reverse the Key Character Trait: Evil Batman**  
 Protect the city from a ruthless high-tech vigilante driven by his misguided code of honor.
 
-> **Change the Setting: Train Heist on a Zeppelin**  
+> **Change the Setting: Typical Train Heist story, set on a Zeppelin**  
 Rescue an innocent person being delivered by Zeppelin to serve her life-sentence in prison.
 
 > **Exaggerate the Supernatural Element**  
@@ -144,7 +161,15 @@ Solve the disappearance of cows in a village where **everyone** is secretly a we
 ## Combining Your Own Ideas
 Make a list of 5-10 ideas using the methods above, and then combine/reverse/exaggerate some of *these* ideas to make something even more unique and interesting.
 
-## Use the Adventure Prompts Tool
+>
+- **Zombies on the Titanic + Ace Ventura**  
+The zombies have been released by a crazy zombie-rights activist who has steered the ship into the island where he's planning to build his own zombie utopia.
+- **Runaway Chimera + Pirates of the Floating Island**  
+Players must protect the escaped gargoyle (a protected species) from the crew of flying pirates who are determined to capture it.
+- **Shrinking Potion + The King's Feast**  
+King's enemies have added the shrinking potion into wine, and now players must help the king to fight off the rebellion despite being the size of an ant.
+
+## Using the Adventure Prompts Tool
 I have already done a lot of the work of collecting the interesting ideas, and building a tool that recombines them for you automatically.
 
 Try using the [Adventure Prompts Tool](https://perchance.org/adventure-prompts) - generate random prompts and try to pitch a few ideas based on the combinations of these elements.
@@ -152,8 +177,9 @@ Try using the [Adventure Prompts Tool](https://perchance.org/adventure-prompts) 
 It's a really fun game to play with your friends:
 - Take turns generating prompts.
 - Each person has two minutes to pitch a story based on the prompts they've received.
-- After everyone had a go, you vote on everyone's favorite pitch.
+- After everyone has a go, you vote on everyone's favorite pitch.
 
+<!-- 
 ## More Good Sources of Story Ideas
 Browse the lists of stories until you find an element that gets you excited, and build an adventure around it.
 
@@ -172,7 +198,7 @@ Use [advanced search](https://www.imdb.com/search/title/) to narrow them down by
 - [/r/WritingPrompts](https://www.reddit.com/r/WritingPrompts/)
 - [Big list of RPG plots](https://kimberleycresswell.files.wordpress.com/2012/12/the-big-list-of-rpg-plots.pdf)
 - [Follow RPG](http://www.lamemage.com/follow/).
-
+-->
 <!-- 
 
 3 core elements - brandon sanderson vienn diagram. Plot, Characters, Setting/Idea. 

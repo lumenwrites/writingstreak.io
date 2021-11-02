@@ -1,11 +1,11 @@
-[[landing]]
+[[landing]] - read, spellchecked, swiped, good enough.
 ## Introduction
 [[01 Welcome]] - read, spellchecked, good enough.
 [[04 Writing Process]] - read, spellchecked, good enough.
 [[99 Resources]] - read, spellchecked, good enough.
 ## Adventure Brainstorming
-[[01 Exciting Premise]]
-[[02 Primary Objective]]
+[[01 Exciting Premise]] - read, spellchecked, good enough.
+[[02 Primary Objective]] - read, spellchecked, good enough.
 [[03 Setting and Locations]]
 [[04 Main Characters]]
 [[05 Key Plot Points]]
