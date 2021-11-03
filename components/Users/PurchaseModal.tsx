@@ -17,6 +17,7 @@ import Modal from 'components/Elements/Modal'
 import Link from 'components/Elements/Link'
 import SpinnerButton from 'components/Elements/SpinnerButton'
 import MessagePanel from 'components/Elements/MessagePanel'
+import * as fbq from 'backend/fpixel'
 
 export default function PurchaseModal() {
   const router = useRouter()
@@ -41,7 +42,9 @@ export default function PurchaseModal() {
     event.preventDefault() // Block native form submission.
     if (!stripe || !elements) return // Stripe.js has not loaded yet.
     setStatus({ state: 'loading', message: '' })
+    // Analytics
     plausible('puchaseAttempt')
+    fbq.event('Purchase', { currency: 'USD', value: 40 })
     // Check whether the user with this email has already made a purchase.
     const { data: emailCheck } = await axios.post('/api/payments/check-valid-email', { email })
     if (emailCheck.error) return setStatus({ state: 'error', message: emailCheck.error })

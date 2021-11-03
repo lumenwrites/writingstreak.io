@@ -18,11 +18,16 @@ import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_CLIENT_SECRET)
 
+// Facebook pixel
+import FacebookPixel from 'components/Elements/FacebookPixel'
+import usePixel from 'hooks/usePixel'
+
 function App({ Component, pageProps }) {
-  // useAnalytics()
+  usePixel()
   return (
     <PlausibleProvider domain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_DOMAIN}>
       <CombinedContextsProvider>
+        <FacebookPixel/>
         <DefaultHead />
         <Component {...pageProps} />
         <Elements stripe={stripePromise}>

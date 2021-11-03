@@ -92,13 +92,19 @@ I have organized some of the common and useful challenges I tend to see in stori
 - Get caught lying/cheating/sneaking.
 - Frame someone for a crime.
 
+Like in a good spy movie, you want to combine those different challenge types in interesting ways:
+
+> An exciting chase scene ends at a old mansion and turns into an undercover mission with a bit of social intrigue, which then turns into a tense stealth mission with sneaking through corridors, evading the guards, exploring the secret rooms, to eventually reach a well-protected vault surrounded by a bunch of traps and perform the ultimate heist. After the heist the players may get caught and have to fight or talk their way out.
+
 ### Villain's Moves
 In the last lesson we have learned that Villain's actions can serve as plot twists and complications, but they can also serve as regular challenges. Anything the Villain can do to make life more difficult for the heroes is a challenge they must overcome.
 
 (see the list of Villain's moves in the Main Characters lesson).
 
+You can use Villain's actions as yet another challenge type to design into your adventure, or just improvise them during the game.
+
 ## Pacing and Rising Action
-Think of your adventure as a roller coaster - you want to have periods of rising tension, excited anticipation, intense action, and calm periods allowing the players to catch their breath in-between.
+Think of your adventure as a roller coaster - you want to have periods of rising tension, excited anticipation, intense action, and calm periods allowing the players to catch their breath in-between (calm periods of non-dramatic storytelling between the action are important, don't skip them!).
 
 Organize your challenges such that the level of threat, difficulty, stakes, and pace keep increasing throughout the adventure and reach their peak at the final climactic challenge.
 

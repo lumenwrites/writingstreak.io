@@ -71,6 +71,14 @@ I'd really love it if you could take a look at it and let me know what you think
 The course will stay free for the next couple of weeks, so that everyone in this community has a chance to check it out. After that I will launch it to the wider internet and start selling it, but I'll be happy to grant free lifetime access to anyone here who will take a look at it and send me some feedback.
 
 ## Phase
+Hi! Check this out, I'm working on a course where I wrote down everything I know about making adventures: [].
+
+Every chapter it has "Action Steps" that guide people through making an adventure, and also encourage them to go to the discord server and discuss each part of the adventure writing process. I think that if people like the course and end up actually following it, it'd be awesome for making this community active again.
+
+Also if it ends up being profitable, it'd pay for it's own ads and thus grow the community indefinitely.
+
+If you'll have some free time - it'd be really cool if you could take a look at the course and let me know what you think (but it's totally understandable if not).
+
 Hi! I have created a course where I wrote down everything I know about how to create adventures: https://academy.rpgadventures.io/
 
 I think if it's successful, it'd be a nice way to make some money, and it would also help me to grow the server (I explain to people the whole brainstorming process and invite them to participate).

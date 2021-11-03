@@ -10,7 +10,7 @@
 [[04 Main Characters]] - read, spellchecked, good enough.
 [[05 Key Plot Points]] - read, spellchecked, good enough.
 [[06 Escalating Challenges]] - read, spellchecked, good enough.
-[[07 Intriguing Mysteries]]
+[[07 Intriguing Mysteries]] - read, spellchecked, good enough.
 ## Adventure Writing
 [[01 Outline and Summary]]
 [[02 Answering Open Questions]]
