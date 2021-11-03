@@ -62,6 +62,8 @@ flower loving dwarf, grumpy elf.
 reverse their social satus
 -->
 
+If you find yourself struggling to come up with a name for a character, use one of the name generation websites like [this one](https://www.fantasynamegenerators.com/dnd-human-names.php). You can also use pop culture references, puns, and descriptive names ("Gregor the Dread", "Emperor Barkus Aurelius", "John Silver", "Elon Tusk").
+
 ## Main Characters
 Use the Simplified Character Design method to design your cast of characters:
 - **Antagonist**  

@@ -1,10 +1,9 @@
-
-<!-- dialogue doesn't make sense for adventures -->
-
 # Writing Descriptions
 Now that you have a solid summary and know exactly what happens in the story, it's time to create interesting and vivid descriptions that will make the players feel immersed in your story.
 
 In this lesson you'll see a number of tips that will make the most difference when it comes to improving your descriptions.
+
+<!-- dialogue doesn't make sense for adventures -->
 
 ## Use the text-box descriptions sparingly
 Most of the time the descriptions will be improvised by the GM, because looking through the adventure and reading a block of text for every scene would be very slow and tedious. 
@@ -29,28 +28,31 @@ Short words are better than long words, short sentences are better than long sen
 ## Write as you speak
 Write in your own voice. Picture yourself running the game for your friends, what would you say, how would you describe things?
 
-Don't use the words and sentences you wouldn't normally use. Don't try to make your prose beautiful, instead aim to make it clear and paint a vivid picture in the reader's mind.
+Don't use the words and sentences you wouldn't normally use. Avoid "purple prose" (needlessly ornate writing that draws attention to itself). Aim to make your writing clear and easy to read, aim to paint a vivid picture in the reader's mind.
 
-<!-- purple prose - writing so elaborate and ornate that it draws excessive attention to itself. -->
+<!--
+Don't try to make your prose beautiful, instead aim to make it clear and paint a vivid picture in the reader's mind.
+ Avoid "purple prose" - writing so elaborate and ornate that it draws excessive attention to itself. 
+-->
 
-Read your descriptions aloud to make sure that it's easy.
+Read your descriptions aloud.
 
 ## Imagine, then Describe 
-Try to use your imagination to picture a detailed image of the world around the players, and practice relaying what you see. 
+Use your imagination to picture a detailed image of the world around the players, and practice relaying what you see. 
 
 (this is also a great way to get better at improvising descriptions on the fly during the game - describe what you see in your mind's eye in response to players' actions.)
 
 ## Describe the World through the Heroes' eyes
-Describe the things players can directly perceive from their perspective (imagine a camera looking through their eyes).
+Describe the things the players can directly perceive from their perspective (imagine a camera looking through their eyes).
 
-Focus on things the players would pay the most attention to - don't describe the intricate mosaic on the walls when there's a gigantic poison-dripping spider monster in the middle of the room.
+Focus on the things the players would pay the most attention to - don't describe the intricate mosaic on the walls when there's a gigantic poison-dripping spider-monster in the middle of the room.
 
 Describe the world through the lense of the player character you're talking to - a horny barbarian, a paranoid thief, and a germaphobe wizard will notice different things when they walk into the bar.
 
 If you don't know who the player characters will be when you write your adventure - that's okay, just imagine the adventure from the players' perspective, try to understand what they're currently experiencing, and focus on that.
 
-## Use Details, Invoke all Senses
-The most useful description writing tip I have learned is that you don't have to describe the laundry list of everything the players can see, you just need to pick a couple of the most relevant, very specific details. 
+## Use Details and Invoke all Senses
+The most useful description writing tip I have learned is that you don't have to describe the laundry list of everything the players can see, you just need to pick a couple of the most relevant, extremely specific details. 
 
 This will make the players feel immersed. When a single detail evokes the experience you want - the players' minds will naturally fill in the rest of the details on their own, and your scene will come to life.
 
@@ -80,6 +82,7 @@ Avoid adverbs (words that modify verbs) and adjectives (words that modify nouns)
 - "He ran quickly" => "He sprinted", "he dashed"
 - "He was very angry" => "He was outraged"
 - "Small house" => "A shack"
+- "Green trees" => "Pines"
 
 <!--
 - "Old warrior" => "Veteran"
@@ -89,22 +92,25 @@ Avoid adverbs (words that modify verbs) and adjectives (words that modify nouns)
 
 Use active voice:
 >
-- "The boat has been destroyed by a hurricane" => "A hurricane destroyed the boat."
+- "The boat has been destroyed by a hurricane" => "A hurricane has destroyed the boat."
 - "The delicious brew was eaten" => "They ate the delicious brew"
 
 Show don't tell:
 >
-- "He looks frightened" => "He keeps jumping at loud noises and shaking uncontrollably."
 - "You enter a spooky forest." => "Thick fog covers the ground. You see cobwebs stretched across the tree branches and hear the shrieking of crows in the distance."
 - "It begins to rain" => "The sky darkens, you feel a few raindrops land on your skin. By the time you reach the house, your hair and clothes are soaking wet."
-- "He looked happy" => "He giggled as he frolicked around the meadow."
+- "He looks happy" => "He giggles as he frolics around the meadow"
+
+<!--
+- "He looks frightened" => "He keeps jumping at loud noises and shaking uncontrollably."
+-->
 
 Use (but don't overuse) analogies and figurative language:
 >
 - "Winter is cold." => "Winter grips your chests with its icy claws."
 - "He is angry" => "He burns with the rage of ten thousand suns."
 
-Note that the tips above mostly apply to the descriptions that are meant to be read out loud. When you're explaining to the GM what is going on in the scene - it's okay to use abstract language in order to quickly get to the point and convey ideas concisely.
+Note that the tips above mostly apply to the descriptions that are meant to be read out loud. When you're explaining to the GM what is going on in the scene - it's okay to use abstract language in order to quickly get to the point and convey your ideas concisely.
 
 <!--
 Describe movement - swishing of the curtains, rustling of leaves, snow falling through the air
@@ -114,18 +120,19 @@ Describe movement - swishing of the curtains, rustling of leaves, snow falling t
 -->
 
 ## Vary your sentence length
-Vary your sentence length to create rhythm:
-> This sentence has five words. Here are five more words. Five-word sentences are fine. But several together become monotonous. Listen to what is happening. The writing is getting boring. The sound of it drones. It’s like a stuck record. The ear demands some variety. Now listen. I vary the sentence length, and I create music. Music. The writing sings. It has a pleasant rhythm, a lilt, a harmony. I use short sentences. And I use sentences of medium length. And sometimes, when I am certain the reader is rested, I will engage him with a sentence of considerable length, a sentence that burns with energy and builds with all the impetus of a crescendo, the roll of the drums, the crash of the cymbals–sounds that say listen to this, it is important.
+Vary your sentence length to create rhythm. The best way to understand how is to read this famous quote:
+> This sentence has five words. Here are five more words. Five-word sentences are fine. But several together become monotonous. Listen to what is happening. The writing is getting boring. The sound of it drones. It’s like a stuck record. The ear demands some variety. Now listen. I vary the sentence length, and I create music. Music. The writing sings. It has a pleasant rhythm, a lilt, a harmony. I use short sentences. And I use sentences of medium length. And sometimes, when I am certain the reader is rested, I will engage him with a sentence of considerable length, a sentence that burns with energy and builds with all the impetus of a crescendo, the roll of the drums, the crash of the cymbals – sounds that say listen to this, it is important.
 
 <!--
 add jokes
-This doesn't apply when you're trying to convey information  about the to the GM quickly
 -->
 
 ## Manage the Learning Curve
-Don't throw a bunch of information (exposition, names, locations, concepts, etc.) at your readers/players at the same time - people will get bored, distracted, and start forgetting things. Reveal information in bits and pieces, as they become relevant.
+Don't throw a bunch of information (exposition, names, locations, concepts, etc.) at your readers/players at the same time - people will get bored, distracted, and start forgetting things.
 
-## Describing characters
+Reveal information in bits and pieces, as they become relevant.
+
+## Describing the characters
 In addition to all of the tips above, you want to describe more than just the character's physical appearance. Describe their mannerisms, behaviors, expressions and emotions.
 
 Does the character seem energetic or exhausted? Do they have an air of satisfaction in their work or are they just trying to get through the day? Are they looking at you kindly, menacingly, resentfully?

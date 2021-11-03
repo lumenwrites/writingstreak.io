@@ -14,9 +14,9 @@
 ## Adventure Writing
 [[01 Outline and Summary]] - read, spellchecked, good enough.
 [[02 Answering Open Questions]] - read, spellchecked, good enough.
-[[03 Writing Descriptions]]
-[[04 Community Feedback]]
-[[05 Prep and Playtest]]
+[[03 Writing Descriptions]] - read, spellchecked, good enough.
+[[04 Community Feedback]] - read, spellchecked, good enough.
+[[05 Prep and Playtest]] - read, spellchecked, good enough.
 [[06 Design and Illustrations]]
 [[07 Publishing]]
 

@@ -7,14 +7,16 @@ code {
 
 pre code {
   display: block;
-  padding: 12px;
+  padding: 20px;
   border-radius: $border-radius;
   background: #1f2532;
+  background: $panel-bg;
   overflow: scroll;
-  color: white;
+  // color: white;
 }
 pre {
   margin-top: 10px;
+  white-space: break-spaces;
 }
 .rehype-code-title {
   margin-top: 10px;

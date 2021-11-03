@@ -3,8 +3,6 @@ Now you have a clear summary of everything you know about the story, and a list 
 
 What you need to do next is go through the questions one by one, and try to figure out the answers. This process mostly involves just thinking, brainstorming and listing possible alternatives, and trying to make the story make sense.
 
-If you find yourself struggling to come up with a name for a character or a place, use one of the name generation websites like [this one](https://www.fantasynamegenerators.com/dnd-human-names.php). You can also use pop culture references, puns, and descriptive titles ("Gregor the Dread", "Emperor Barkus Aurelius", "Clearwater Village", "John Silver", "Elon Tusk").
-
 If you're struggling to come up with more creative ideas or fill in the plot holes - use the creative strategies outlined in the course. Use your knowledge of movies/books/games/etc, take ideas from your favorite stories for inspiration, make lists of possible alternatives. Then pick your favorite answer. Try to reverse/exaggerate your ideas, try to make unusual metaphors and associations. Browse inspiring images and Wikipedia articles.
 
 If you're struggling to find an answer to a question - try to make your question as specific as possible. The more precise you get, the more clearly you define and describe your problem, the easier it will be to figure out the answer. Before looking for the answer, try to describe and discuss the problem from all angles, list all the things relevant to the question that you already know.
