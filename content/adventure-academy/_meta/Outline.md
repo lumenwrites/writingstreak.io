@@ -12,9 +12,9 @@
 [[06 Escalating Challenges]] - read, spellchecked, good enough.
 [[07 Intriguing Mysteries]] - read, spellchecked, good enough.
 ## Adventure Writing
-[[01 Outline and Summary]]
-[[02 Answering Open Questions]]
-[[03 Descriptions and Dialogue]]
+[[01 Outline and Summary]] - read, spellchecked, good enough.
+[[02 Answering Open Questions]] - read, spellchecked, good enough.
+[[03 Writing Descriptions]]
 [[04 Community Feedback]]
 [[05 Prep and Playtest]]
 [[06 Design and Illustrations]]
@@ -41,7 +41,7 @@
 [[07 Intriguing Mysteries]]
 ## Adventure Writing
 [[01 Outline and Summary]]
-[[03 Descriptions and Dialogue]]
+[[03 Writing Descriptions]]
 [[04 Community Feedback]]
 ## Playtesting
 [[05 Prep and Playtest]]

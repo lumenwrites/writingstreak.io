@@ -11,14 +11,14 @@ Our goal is to paint a vivid picture in the GMs mind, so that when they're runni
 
 <!-- That's why I think it's better for us to learn writing descriptions from screenwriters rather than novelists.  -->
 
-Don't wax poetics. It's better to point out a few remarkable details that stand out the most than to write a flowery wall of text.
+Don't wax poetic. It's better to point out a few remarkable details that stand out the most than to write a flowery wall of text.
 
-Write as you speak. Picture yourself runnning the game for your friends, what would you say, how would you describe things?
+Write as you speak. Picture yourself running the game for your friends, what would you say, how would you describe things?
 
 ### Focus on what matters
 Use the text-box descriptions sparingly. Write them only for the most important scenes and characters. I recommend to prioritize the introduction the GM can read at the beginning of the adventure, the description of your antagonist, and the description of the set piece for the climax (but even these are optional).
 
-### World seen through the Heroe's eyes
+### World seen through the Hero's eyes
 Describe things from the perspective of the players, imagine a camera looking through their eyes. Show don't tell. 
 
 Try to get a detailed picture of the world around the players in your own imagination, and practice relaying what you see. It's also a great way to get better at describing things on the fly - describe what you see in your mind's eye in response to players' actions.

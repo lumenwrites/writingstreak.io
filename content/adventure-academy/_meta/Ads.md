@@ -1,0 +1,6 @@
+I'd need it to make sense financially.
+If there's like a 10% conversion rate(VERY optimistically, not realistic)...
+And the course is $20... Then each visitor would be worth $2 to me.
+If the conversions are more realistic 1%, it'd be worth 20 cents for me.
+They suggest 0.13...
+Sure, I can do 0.15.

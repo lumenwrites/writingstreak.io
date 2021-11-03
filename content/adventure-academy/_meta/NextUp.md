@@ -6,6 +6,7 @@
 - Read through the whole course, obvious fixes/improvements.
 - Improve the landing page by swiping from storytellingcollective.
 ## Improve
+- Move name generation from answering questions to characters
 - More examples from my prompts.
 - Improve Climax section, need more advice.
 - Exciting Idea or Exciting Preimse? Change template if premise makes more ssense.
