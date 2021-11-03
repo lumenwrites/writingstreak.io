@@ -1,9 +1,12 @@
 import Script from 'next/script'
+import * as fbq from 'backend/fpixel'
 
 export default function FacebookPixel() {
+  // console.log("Pixel ID", fbq.FB_PIXEL_ID)
   return (
     <Script
       strategy="afterInteractive"
+      id="facebook-pixel"
       dangerouslySetInnerHTML={{
         __html: `
         !function(f,b,e,v,n,t,s)
