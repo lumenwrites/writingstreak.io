@@ -1,6 +1,8 @@
 ## What You will Learn in this Course
 In this course you will learn a straightforward step-by-step process that will give you all the tools you need to create your own adventures for tabletop roleplaying games. 
 
+You will learn how to invent an unlimited number of adventure ideas, forever defeat the writer's block, expertly craft engaging stories, and take every aspect of your adventures to the next level.
+
 <!--
 At the end of this course you will have created a fun one-shot adventure you can run for your players or publish. You will also have an established creative process you can use to undertake more ambitious projects.
 
@@ -19,7 +21,7 @@ If you follow the instructions,
 - Gain the experience and confidence in your abilities to generate ideas and write stories.
 - Learn powerful tools to become a productive and prolific writer.
 
-You will learn how to invent an unlimited number of adventure ideas, forever defeat the writers' block, expertly craft engaging stories, and take every aspect of your adventures to the next level.
+
 
 <!-- , skill,  creative writing  -->
 
@@ -64,7 +66,7 @@ Playtest your module, gather feedback, and make data-driven improvements.
 All participants will receive a free, interactive digital workbook to guide their writing, for use on desktop or mobile devices.
 -->
 
-To summarize - this course will guide you through the story creation process step by step, provide the structure, deadlines, and the community support which will make sure that you can successfully complete your own adventure!
+To sum up - this course will guide you through the story creation process step by step, provide the structure, deadlines, and the community support which will make sure that you can successfully complete your own adventure!
 
 
 ## Why One-Shot Adventures?
