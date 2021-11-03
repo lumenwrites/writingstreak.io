@@ -4,7 +4,7 @@ Now you basically have a solid draft of your adventure, and all that's left is t
 ## Request Feedback
 The first step is to go to the communities once again, and ask for their thoughts, constructive criticism, feedback, and help with coming up with more ideas and improvements.
 
-Use the Reddit's hivemind. If you get stuck - make a post on [/r/DMAcademy](https://old.reddit.com/r/DMAcademy), [/r/DnDAdventureWriter](https://old.reddit.com/r/DnDAdventureWriter), and our `#writing-help-and-feedback` channel, and ask people for help.
+Use Reddit's hivemind. If you get stuck - make a post on [/r/DMAcademy](https://old.reddit.com/r/DMAcademy), [/r/DnDAdventureWriter](https://old.reddit.com/r/DnDAdventureWriter), and our `#writing-help-and-feedback` channel, and ask people for help.
 
 Here's a post template you can use to increase your chances of receiving quality feedback:
 ```
