@@ -1,6 +1,6 @@
 // Inline code
 code {
-  background: $panel-bg;
+  background: mix($quote-bg, $panel-bg, 50%);
   padding: 0px 4px;
   border-radius: $border-radius;
 }

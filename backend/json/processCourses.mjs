@@ -119,7 +119,7 @@ async function processLanding(courseDir) {
   const frontmatter = parseFrontmatter(landingText)
   const copy = await renderMDX(landingText, false)
   // writeFileSync(`${jsondir}/copy.json`, JSON.stringify(copy))
-  return copy
+  return { copy, frontmatter }
 }
 
 export async function processCourses() {
@@ -129,9 +129,9 @@ export async function processCourses() {
     if (!lstatSync(courseDirPath).isDirectory()) continue // ignore .DS_Store
     // console.log('courseDirPath', courseDirPath)
     const { sections, toc } = await processCourse(courseDirName)
-    const copy = await processLanding(courseDirPath)
+    const { copy, frontmatter } = await processLanding(courseDirPath)
     const firstChapterUrl = `/course/${courseDirName}/${toc[0].slug}/${toc[0].chapters[0].slug}`
-    const course = { sections, toc, copy, firstChapterUrl }
+    const course = { sections, toc, copy, frontmatter, firstChapterUrl }
     writeFileSync(`${jsondir}/${courseDirName}.json`, JSON.stringify(course))
     console.log('[processCourses] Success! Markdown courses converted to json.')
   }

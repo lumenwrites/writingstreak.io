@@ -27,7 +27,7 @@ export default function Subscribe() {
 
   return (
     <div className={`mailing-list`}>
-      Subscribe to our weekly newsletter, receive updates on new tutorials and courses:
+      Subscribe to our weekly newsletter, receive updates on new adventures and guides:
       <div className="form">
         <input
           ref={emailInput}
@@ -46,10 +46,10 @@ export default function Subscribe() {
             Subscribe
           </button>
         )}
-        <a className="btn-square" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/c/GodotAcademy">
-          <FontAwesomeIcon icon={['fab', 'youtube']} />
+        <a className="btn-square" target="_blank" rel="noopener noreferrer" href="https://twitter.com/lumenwrites">
+          <FontAwesomeIcon icon={['fab', 'twitter']} />
         </a>
-        <a className="btn-square" target="_blank" rel="noopener noreferrer" href="https://discord.gg/Wbzuk2JP8Y">
+        <a className="btn-square" target="_blank" rel="noopener noreferrer" href="https://discord.gg/UVNxeQE">
           <FontAwesomeIcon icon={['fab', 'discord']} />
         </a>
         <div className="clearfix" />

@@ -1,11 +1,11 @@
 {
-  "price": 40,
-  "title": "Adventure Academy",
-  "description": "Learn to Create Awesome Adventures for Tabletop Roleplaying Games.",
+  "price": 0,
+  "title": "RPG Adventures",
+  "description": "Awesome Adventures for Tabletop Roleplaying Games.",
   "twitterCreator": "@lumenwrites",
   "twitterSite": "@lumenwrites",
-  "previewImage": "https://academy.rpgadventures.io/social.png",
-  "domain": "https://academy.rpgadventures.io",
+  "previewImage": "https://rpgadventures.io/social.png",
+  "domain": "https://rpgadventures.io",
   "devDomain": "http://localhost:3050/",
   "contentdir": "/Users/ray/Obsidian/Website/rpgadventures"
 }

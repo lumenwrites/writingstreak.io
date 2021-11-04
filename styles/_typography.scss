@@ -7,28 +7,27 @@ h5 {
   color: $text-heading;
   & + p, & + ul, & + img {
     // first pagagraph after the header
-    margin-top: 0px;
+    margin-top: 5px;
   }
 }
-
+h1, h2, h3 {
+  font-family: $headings-font;
+}
 h1 {
   font-size: 32px;
   font-weight: 700;
-  text-align: center;
 }
 h2 {
   font-size: 24px;
   font-weight: 700;
-  text-align: center;
 }
 h3 {
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
   color: $text-subheading;
-  // Gitbook
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 700;
-  // border-bottom: 1px solid #363e4d;
+  border-bottom: 2px solid #ddd;
 }
 h4 {
   font-size: 1.2em;

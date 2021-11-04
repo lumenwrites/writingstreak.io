@@ -6,7 +6,7 @@
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
   font-size: 16px;
-
+  text-align: justify;
   // Elements
   .post-header {
     margin: -40px -40px 0 -40px;
@@ -81,7 +81,7 @@
       font-size: 1em;
       font-weight: bold;
       border: 1px solid $border;
-      background: $panel-bg;
+      background: $quote-bg;
       cursor: pointer;
       margin-top: 10px;
       padding: 4px 0;
@@ -95,14 +95,34 @@
     }
     .body {
       border: 1px solid $border;
-      background: $panel-bg;
+      background: $quote-bg;
       border-top: none;
-      padding: 20px;
-      p:first-of-type{
+      padding: 0 20px;
+      p:first-of-type, h1:first-of-type, h2:first-of-type, h3:first-of-type, h4:first-of-type{
           margin-top:0;
       }
     }
   }
+  .columns {
+    column-count: 2;
+    @media (max-width: 640px) {
+      column-count: 1;
+    }
+    column-gap: 40px;
+    .col {
+      break-inside: avoid;
+      > :first-child {
+        margin-top: 0;
+      }
+    }
+    .column-break {
+      break-after: column;
+      @media (max-width: 640px) {
+        break-after: auto;
+      }
+    }
+  }
+
 }
 .chapters {
   .section {
@@ -146,5 +166,10 @@
         color: $text-dim;
       }
     }
+  }
+}
+.page {
+  h1, h2 {
+    text-align: center;
   }
 }

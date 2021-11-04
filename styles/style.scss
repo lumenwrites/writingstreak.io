@@ -3,6 +3,7 @@
 $base-font-size: 14px;
 $main-font: "Open Sans";
 $logo-font: "RobotoSlab";
+$headings-font: "RobotoSlab";
 $text: #3C4257;
 $text-heading: #3C4257; // #1A1F35; // h1,h2,etc. text dark
 $text-subheading: #4E576A;
@@ -11,7 +12,7 @@ $text-dim: #697386; // for tags
 $text-link: #5469D4;
 
 // Big Elements
-$wrapper-width: 800px;
+$wrapper-width: 750px;
 $wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
 $modal-width: 700px;
 $main-bg:   #FAF4E9; // tan // #f1f2f5; // facebook neutral 

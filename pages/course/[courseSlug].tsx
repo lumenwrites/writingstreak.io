@@ -72,6 +72,20 @@ export default function Landing({ course, user }) {
       <Elements stripe={stripePromise}>
         <PurchaseModal successLink={course.firstChapterUrl} />
       </Elements>
+      <Head>
+        <title>
+          {course.frontmatter.title} | {config.title}
+        </title>
+        <meta property="og:title" content={`${course.frontmatter.title} | ${config.title}`} key="ogtitle" />
+        <meta property="og:description" content={course.frontmatter.description} key="ogdesc" />
+        <meta name="twitter:description" content={course.frontmatter.description} />
+        {course.frontmatter.thumbnail && (
+          <>
+            <meta property="og:image" content={`${config.domain}${course.frontmatter.thumbnail}`} key="ogimage" />
+            <meta name="twitter:image" content={`${config.domain}${course.frontmatter.thumbnail}`} />
+          </>
+        )}
+      </Head>
       {/* <Subscribe /> */}
     </Layout>
   )

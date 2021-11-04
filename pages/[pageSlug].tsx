@@ -11,7 +11,7 @@ export default function Page({ post }) {
   // console.log('post.frontmatter.thumbnail', `${config.domain}${post.frontmatter.thumbnail}`)
   return (
     <Layout>
-      <div className="page post adventure">
+      <div className="post page">
         <MDXRemote {...post.compiledMdx} components={MDXComponents} />
         <Head>
           <title>{post.title} | {config.title}</title>

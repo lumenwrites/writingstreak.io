@@ -1,3 +1,8 @@
+---
+title: Adventure Writing Academy
+description: Learn to Create Awesome Adventures for Tabletop Roleplaying Games.
+thumbnail: /img/social.png
+---
 ## What You will Learn in this Course
 In this course you will learn a straightforward step-by-step process that will give you all the tools you need to create your own adventures for tabletop roleplaying games. 
 

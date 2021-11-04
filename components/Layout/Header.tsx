@@ -46,12 +46,18 @@ function DropdownMenu() {
         Resources
       </Link>
       <div className="menu left">
-        <a className="btn item" href="https://discord.gg/JZmXfWD85D">
+        {/* <a className="btn item" target="_blank" href="https://discord.gg/JZmXfWD85D">
           Our Discord
-        </a>
+        </a> */}
+        <Link className="btn item" href={`/writers-room`}>
+          Writers&apos; Room
+        </Link>
         <Link className="btn item" href={`/course/adventure-academy`}>
           Adventure Academy
         </Link>
+        <a className="btn item" target="_blank" rel="noopener noreferrer" href="https://perchance.org/adventure-prompts">
+          Adventure Prompts
+        </a>
       </div>
     </div>
   )

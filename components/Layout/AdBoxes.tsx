@@ -16,7 +16,7 @@ export default function AdBoxes() {
         image={'/img/valley.jpg'}
       />
       <AdBox
-        title="Adventure Writer's Room"
+        title="Adventure Writers&apos; Room"
         description="Join our Discord community! We are a group of people who love creating adventures for tabletop roleplaying games, we help each other to brainstorm ideas and create stories for our players to enjoy."
         href="https://discord.gg/JZmXfWD85D"
         image={'/img/logo-book.png'}

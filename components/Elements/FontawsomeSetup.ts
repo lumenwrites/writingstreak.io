@@ -58,6 +58,7 @@ library.add(
   faSignInAlt,
   faYoutube,
   faDiscord,
+  faTwitter,
   faArrowRight,
   faCaretDown,
   faCaretRight,

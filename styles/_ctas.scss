@@ -21,7 +21,9 @@
     outline: none;
     color: $text;
     background: $input-bg; //#1a202a;
-    box-shadow: inset $box-shadow;
+    // box-shadow: inset $box-shadow;
+    border: 1px solid $border;
+    border-right:none;
     padding-left: 10px;
     &::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */

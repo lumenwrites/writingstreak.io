@@ -3,8 +3,6 @@ import Image from 'next/image'
 import slugify from 'slugify'
 
 export default function PostCard({ post }) {
-  const thumbnail = `/illustrations/lets-roll/thumbnail.png`
-  console.log(post.thumbnail)
   return (
     <div className={`post-card ${post.tags.length == 0 ? 'no-tags' : ''}`}>
       <Link className="thumbnail" href={post.url}>
