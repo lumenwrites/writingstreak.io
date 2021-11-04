@@ -33,19 +33,19 @@ export default function Page({ post }) {
   )
 }
 
-import posts from 'backend/json/posts/posts.json'
+import pages from 'backend/json/pages/pages.json'
 
 export async function getStaticProps({ params }) {
-  const post = posts.find((post) => post.slug == params.postSlug)
-  console.log('post', post.title)
-  return { props: { post } }
+  const page = pages.find((page) => page.slug == params.pageSlug)
+  console.log('[pageSlug]', page.title)
+  return { props: { post: page } }
 }
 
 export async function getStaticPaths() {
   // console.log('getStaticPaths', posts)
   return {
-    paths: posts.map((post) => ({
-      params: { postSlug: post.slug },
+    paths: pages.map((page) => ({
+      params: { pageSlug: page.slug },
     })),
     fallback: false,
   }
