@@ -15,7 +15,7 @@ export default function Chapters({ sections, user }) {
 
 function Section({ section, user }) {
   const router = useRouter()
-  const [sectionSlug, chapterSlug] = router.query.slug
+  const [courseSlug, sectionSlug, chapterSlug] = router.query.slug
   // const chapters = section.chapters.filter((chapter) => !chapter.draft)
   return (
     <div className="section">
