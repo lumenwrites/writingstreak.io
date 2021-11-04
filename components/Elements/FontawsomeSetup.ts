@@ -30,6 +30,8 @@ import {
   faInfoCircle,
   faSignInAlt,
   faArrowRight,
+  faCaretDown,
+  faCaretRight
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -57,4 +59,6 @@ library.add(
   faYoutube,
   faDiscord,
   faArrowRight,
+  faCaretDown,
+  faCaretRight,
 )

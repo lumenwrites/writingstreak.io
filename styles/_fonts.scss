@@ -16,10 +16,35 @@
     font-weight: bold;
     font-display: swap;
 }
+// RPGA Font
+@font-face {
+    font-family: "RobotoSlab";
+    src: url("./fonts/RobotoSlab/RobotoSlab-Black.ttf");
+    font-display: swap;
+}
+@font-face {
+    font-family: "RobotoSlab";
+    src: url("./fonts/RobotoSlab/RobotoSlab-Light.ttf");
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: "RobotoSlab";
+    src: url("./fonts/RobotoSlab/RobotoSlab-Bold.ttf");
+    font-weight: bold;
+    font-display: swap;
+}
+// For blockquotes
+@font-face {
+    font-family: "AlegreyaSans";
+    src: url("./fonts/AlegreyaSansSC/AlegreyaSansSC-Bold.ttf");
+    font-weight: bold;
+    font-display: swap;
+}
 
 // Godot Font
 @font-face {
-    font-family: "muli";
+    font-family: "RobotoSlab";
     src: url("./fonts/muli/Muli.ttf");
     font-display: swap;
 }

@@ -8,7 +8,7 @@ export default function browse({ posts }) {
     <Layout>
       <Browse posts={posts} />
       <SubscribeBox />
-      <AdBoxes/>
+      <AdBoxes/><br/>
     </Layout>
   )
 }

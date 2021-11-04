@@ -2,7 +2,7 @@
 // Typography
 $base-font-size: 14px;
 $main-font: "Open Sans";
-$logo-font: "Open Sans";
+$logo-font: "RobotoSlab";
 $text: #3C4257;
 $text-heading: #3C4257; // #1A1F35; // h1,h2,etc. text dark
 $text-subheading: #4E576A;
@@ -103,4 +103,6 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 @import "./_subscribe.scss";
 @import "./_landing.scss";
 @import "./_payments.scss";
-@import "./_ctas.scss"
+@import "./_ctas.scss";
+@import "./fonts/_phb-fonts.css";
+@import "./_adventures.scss";

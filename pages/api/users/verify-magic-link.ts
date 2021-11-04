@@ -3,7 +3,8 @@ import jwt from 'jwt-simple'
 import { serialize } from 'cookie'
 
 import config from 'config.json'
-import toc from 'backend/json/adventure-academy/toc.json'
+import content from 'backend/json/content'
+const {firstChapterUrl} = content.courses['academy']
 const dev = process.env.NODE_ENV === 'development'
 
 async function verify(req, res) {
@@ -14,7 +15,6 @@ async function verify(req, res) {
     // Save JWT from url into cookies
     res.setHeader('Set-Cookie', serialize('token', authToken, { path: '/' }))
     // Redirect to the first chapter of the course
-    const firstChapterUrl = `/${toc[0].slug}/${toc[0].chapters[0].slug}`
     const domain = dev ? config.devDomain : config.domain
     res.writeHead(302, {Location: `${domain}/${firstChapterUrl}`})
     res.end()

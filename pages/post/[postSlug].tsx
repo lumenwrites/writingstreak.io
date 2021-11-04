@@ -2,6 +2,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
 import SubscribeBox from 'components/Layout/SubscribeBox'
+import AdBoxes from 'components/Layout/AdBoxes'
 import MDXComponents from 'components/Elements/MDXComponents'
 import config from 'config.json'
 
@@ -10,7 +11,7 @@ export default function Post({ post }) {
   // console.log('post.frontmatter.thumbnail', `${config.domain}${post.frontmatter.thumbnail}`)
   return (
     <Layout>
-      <div className="page post">
+      <div className="page post adventure">
         <MDXRemote {...post.compiledMdx} components={MDXComponents} />
         <Head>
           <title>{post.title} | {config.title}</title>
@@ -25,7 +26,9 @@ export default function Post({ post }) {
           )}
         </Head>
       </div>
+      <AdBoxes />
       <SubscribeBox />
+      <br/>
     </Layout>
   )
 }

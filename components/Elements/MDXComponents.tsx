@@ -1,14 +1,39 @@
 // @ts-nocheck
+import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ReactPlayer from 'react-player'
 // import Image from 'components/Elements/Image'
 import Image from 'next/image'
 import Link from 'components/Elements/Link'
-import DownloadFiles from 'components/Posts/DownloadFiles'
+
+
+import Cookies from 'js-cookie'
+import { useModal } from 'context/ModalContext'
+
+import DownloadsModal from 'components/Layout/DownloadsModal'
 
 function Downloads({ children }) {
-  //console.log('Children:', children)
-  return <DownloadFiles files={children} />
+  const { toggleModal } = useModal()
+
+  function openModal() {
+    const subscribed = Cookies.get('subscribed')
+    if (subscribed) {
+      toggleModal('download-files')
+    } else {
+      toggleModal('subscribe')
+    }
+  }
+  if (!children) return null
+  return (
+    <div>
+      <button className="btn btn-cta download-project-files" onClick={openModal}>
+        Download Files
+      </button>
+      <DownloadsModal files={children} />
+    </div>
+  )
 }
+
 
 function Heading({ children, id, level }) {
   const Comp = level === 2 ? 'h2' : 'h3'
@@ -46,10 +71,33 @@ function LandingCTA({ children, href }) {
 function CharacterBox(props) {
   return (
     <div className="character-box">
-        {props.children}
+      <div className="token" style={{background: `url(${props.src})`, backgroundSize:"cover"}}/>
+      {/* <img src={props.src} /> */}
+      <div className="character-description">{props.children}</div>
+      {/* <div className="clearfix"/> */}
     </div>
   )
 }
+
+
+function Collapsible({ title, children }) {
+  const [expanded, setExpanded] = useState(false)
+  const header = (
+    <div className={`title ${expanded && 'expanded'}`} onClick={() => setExpanded(prev => !prev)}>
+      {expanded && <FontAwesomeIcon icon={["fas", "caret-down"]} />}
+      {!expanded && <FontAwesomeIcon icon={["fas", "caret-right"]} />}
+      {title}
+    </div>
+  )
+
+  return (
+    <div className="collapsible">
+      {header}
+      {expanded && <div className="body">{children}</div>}
+    </div>
+  )
+}
+
 
 const components = {
   Heading,
@@ -57,6 +105,8 @@ const components = {
   Video,
   Img,
   LandingCTA,
+  CharacterBox,
+  Collapsible,
 }
 
 export default components

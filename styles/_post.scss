@@ -49,9 +49,9 @@
 
 .post {
   .post-header {
-    margin: -20px -20px 0 -20px;
-    width: calc(100% + 40px)!important; // important because I want to override react player's defaults
-    max-width: calc(100% + 40px); // for images
+    margin: -40px -40px 0 -40px;
+    width: calc(100% + 80px)!important; // important because I want to override react player's defaults
+    max-width: calc(100% + 80px); // for images
   }
   position: relative;
   padding-bottom: calc(20px + 46px + 20px); // padding, height of prev-next, margin above prev-next
