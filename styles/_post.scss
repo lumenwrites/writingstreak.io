@@ -3,11 +3,16 @@
   padding: 40px;
   background: $post-bg;
   box-shadow: $box-shadow;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
   font-size: 16px;
-}
 
-// Typography
-.post {
+  // Elements
+  .post-header {
+    margin: -40px -40px 0 -40px;
+    width: calc(100% + 80px)!important; // important because I want to override react player's defaults
+    max-width: calc(100% + 80px); // for images
+  }
   iframe {
     width: 100%;
   }
@@ -22,37 +27,7 @@
     margin: auto;
     margin-top: 10px;
   }
-}
-// Purchase CTA
-.post .content-locked {
-  text-align: center;
-  border: 1px solid $border;
-  border-radius: $border-radius;
-  padding: 40px;
-
-  .btn-cta-landing {
-    // because post's link styles override this.
-    color: white;
-    text-decoration: none;
-  }
-  .btn-login {
-    display: block;
-    width: 240px;
-    margin: auto;
-    margin-top: 10px;
-    svg {
-      color: white;
-      margin-left: 10px;
-    }
-  }
-}
-
-.post {
-  .post-header {
-    margin: -40px -40px 0 -40px;
-    width: calc(100% + 80px)!important; // important because I want to override react player's defaults
-    max-width: calc(100% + 80px); // for images
-  }
+  // Prev-next
   position: relative;
   padding-bottom: calc(20px + 46px + 20px); // padding, height of prev-next, margin above prev-next
   .prev-next {
@@ -99,6 +74,33 @@
     }
     .blank {
       flex: 0 0 50%;
+    }
+  }
+  .collapsible {
+    .title {
+      font-size: 1em;
+      font-weight: bold;
+      border: 1px solid $border;
+      background: $panel-bg;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 4px 0;
+      &.expanded {
+        border-bottom: none; // 1px solid #e69a2867;
+      }
+      svg {
+        margin: 0 5px;
+        width: 16px !important;
+      }
+    }
+    .body {
+      border: 1px solid $border;
+      background: $panel-bg;
+      border-top: none;
+      padding: 20px;
+      p:first-of-type{
+          margin-top:0;
+      }
     }
   }
 }

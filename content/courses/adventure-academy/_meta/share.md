@@ -28,36 +28,12 @@ Boil prep down to things that matter the most,
 The less we prepare, the better our games will be
 
 # Description
-Briefer. brevity. - more impact, hold reader to story.
-Manage the learning curve, don't throw a bunch of names/concepts/exposition at them. Doll out information as it becomes relevant.
-
-Use Active voice
-
-Try to avoid using adverbs and adjectives, and find the right verb or noun instead.
-> 
-- “he walked quietly” is not as good as “he crept”.
-
-Use precise instead of generic ones.
 
 Pyramid of abstraction.
 Build a foundation of concrete language. You can add things that are more abstract.
 love dog golden retriever
 more concrete - pull down the pyramid. describe color, size, etc.
 easy to make it more concrete with more words.
-
-active voice, concrete descriptions.
-pain coarsed through him => he moved his arm and winced in pain
-
-
-Do multiple things. setting, tone, worldbuilding infodump.
-precise words.
-wooden bed => oak bed 
-big dog => shaggy rotweiler
-big sword => x machete
-scary sword rusty machete
-old sword =
-wretched hag => old woman
-lavish room => smelled of fine wine and gleam of emeralds
 evoke setting
 dog that has not yet been caught and eaten.
 evoke worldbuilding, character
@@ -65,23 +41,10 @@ well bred hunting hound, who would lose one of those?
 multiple senses - dog is whimpering and you catch a whiff of wet hair.
 and smelled wet.
 
-Show dont tell.
 
-More concrete
 Do more than one thing.
-5 senses. More than just 
-
-very mad is worse than irate. more words, less concrete.
-
-ground players in the world with concrete descriptions.
-to be.ieve that theres a big political problem, describe one small specific instance of it that impacts the characters.
-
-character wants something, they try to proactively get what they want, you explain just enough worldbuilding to explain what!s going on. explain things as they come up.
 
 # Setting
-Physical (everything that would exist if people werent involved) and Cultural.
-magic.
-Physical: geography, flora fauna, weather. All that can make setting more inique and interesting.
 
 # Dialogue
 Motivation. Make sure they're motivated internally, not by the plot.
@@ -93,21 +56,7 @@ objective - what writer wants out of the scene.
 writing dialogue doesnt make much sense in adventures does it.
 
 # Villains
-Dont make villains who are evil for evil sake.
-Give them opposite goals from hero, but justified motivations. They want to achieve something bad, but...
-Possible to identify with them.
-see where theyre coming from.
-legitemate threat, good at what he does.
-Competent, proactive, well defined motivations, know why theyre doing what theyre doing.
-everyones a hero of their own story.
-Have their own passions aside from just defeating the hero.
 
-- Friendlier landing page.
-- Swipe the Welcome chapter from Lazy DM
-
-
-
-Magic Systems
 
 #  Sample adventure
 

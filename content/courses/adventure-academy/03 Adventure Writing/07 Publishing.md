@@ -13,6 +13,10 @@ Once your adventure is published, you may want to share it with people.
 
 Share your adventure with your friends, on social media, and in our  `#finished-adventures` channel.
 
+<!--
+The best sdventures submitted to thst channel will be published on our website (with your permission, ifnyou want')
+-->
+
 If your adventure is free - you can share it on [/r/DMAcademy](https://www.reddit.com/r/DMAcademy/) and [/r/DnDBehindTheScreen](https://www.reddit.com/r/DnDBehindTheScreen/).
 
 Sharing your adventures on Reddit is one of the most effective ways to promote your work that I'm aware of - some of the adventures I wrote have gained thousands of upvotes and tens of thousands of views.

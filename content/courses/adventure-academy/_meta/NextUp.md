@@ -1,16 +1,10 @@
 # ToDo
 ## NextUp
-- Finish the Descriptions lesson. I don't have much to say on my own, but I can do research. Brandon sanderson lectures, reddit replies, internet articles, screenwriting books.
-- Read through the StorytellingCollective, LazyGM, and Play Unsafe. My old reddit posts and writing notes. Possibly also Write About Dragons, The Idea, Screenwriting for Hollywood, Writing Vivid Settings, Screenwriting Bible, thealexandrian. Apply all the useful ideas.
+- Read through the StorytellingCollective, Alexandrian. The Idea, Screenwriting for Hollywood, Writing Vivid Settings, Screenwriting Bible. Apply all the useful ideas.
 - Write an example adventure (or use one I already have). Sample adventure template.
-- Read through the whole course, obvious fixes/improvements.
-- Improve the landing page by swiping from storytellingcollective.
 ## Improve
-- Move name generation from answering questions to characters
-- More examples from my prompts.
 - Improve Climax section, need more advice.
 - Exciting Idea or Exciting Preimse? Change template if premise makes more ssense.
-- What else to say on the welcome page? More intro sections?
 - Use Vivid Settings sensory examples in my descriptions chapter.
 - Write conclusions to make the chapters feel more complete?
 ## Launch/Market:
@@ -19,6 +13,17 @@
 - See if I can convince the DMAcademy mods to let me make a post.
 - Run ads on subreddits.
 - Market using free adventures.
+
+
+# Done
+- LazyGM. My old reddit posts and writing notes. Write About Dragons.
+- Second pass. Read through the whole course, obvious fixes/improvements.
+- Finish the Descriptions lesson. I don't have much to say on my own, but I can do research. Brandon sanderson lectures, reddit replies, internet articles, screenwriting books.
+- Improve the landing page by swiping from storytellingcollective.
+- Move name generation from answering questions to characters
+- More examples from my prompts.
+
+
 ## NextUp
 - Improve Climax section.
 - Put more of the best of my collected prompts as examples.

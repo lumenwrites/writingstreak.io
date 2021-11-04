@@ -4,7 +4,7 @@ import { serialize } from 'cookie'
 
 import config from 'config.json'
 import content from 'backend/json/content'
-const {firstChapterUrl} = content.courses['academy']
+const {firstChapterUrl} = content.courses['adventure-academy']
 const dev = process.env.NODE_ENV === 'development'
 
 async function verify(req, res) {

@@ -1,9 +1,12 @@
-.adventure {
+.blog-post {
   background-color: #eee5ce;
   background: #EDE5CD;
   background-image: url(/img/paper_bg.jpg);
   box-shadow: 0 0 3px 1px rgb(0 0 0 / 20%);
   color: #160f0d;
+  a, b {
+    color: #160f0d;
+  }
   font-family: "BookSanity";
   h1, h2, h3, h4, h5 {
     font-family: "RobotoSlab";
@@ -82,15 +85,6 @@
     .character-description {
       // padding: 0 20px;
     }
-    img {
-      // float: left;
-      width: 100px;
-      height: 100px;
-      margin: 0;
-      margin-right: 20px;
-      border-radius: 50%;
-      border: 3px solid #ff6600;
-    }
     .token {
       width: 100px;
       height: 100px;
@@ -103,32 +97,15 @@
       background-size: cover;
     }
   }
-  
-}
-.collapsible {
-  .title {
-    font-size: 1em;
-    font-weight: bold;
-    border: 1px solid #9d743b;
-    background: #f9f7e6;
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 4px 0;
-    &.expanded {
-      border-bottom: none; // 1px solid #e69a2867;
+  .collapsible {
+    .title {
+      border: 1px solid #9d743b;
+      background: #f9f7e6;
     }
-    svg {
-      margin: 0 5px;
-      width: 16px !important;
-    }
-  }
-  .body {
-    border: 1px solid #9d743b;
-    border-top: none;
-    padding: 20px;
-    background: #f9f7e6;
-    p:first-of-type{
-        margin-top:0;
+    .body {
+      border: 1px solid #9d743b;
+      background: #f9f7e6;
     }
   }
 }
+

@@ -38,9 +38,10 @@ export async function getPosts() {
   return posts
 }
 
-async function processPosts() {
+export async function processPosts() {
   const posts = await getPosts()
   writeFileSync(`${jsondir}/posts.json`, JSON.stringify(posts))
+  console.log('[processPosts] Success! Markdown posts converted to json.')
 }
 
-processPosts()
+//processPosts()

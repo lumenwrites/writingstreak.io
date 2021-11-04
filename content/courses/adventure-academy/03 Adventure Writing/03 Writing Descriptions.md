@@ -63,8 +63,16 @@ A great way to make your descriptions more detailed is to include the details fr
 - To describe a cozy tavern - describe the crackling of the wood in the fireplace, the smell of the vegetable stew that's being served at the table next to them.
 - To describe a grizzled veteran warrior - describe the scratching sound his hand makes as he rubs it through a couple days worth of stubble, or the way his perfectly maintained sword contrasts with his dirty unkempt clothes.
 
+<!--
+- To make the players believe that there's a big political problem in the world - have them witness a small and specific injustice perpetrated against themselves or someone else.
+-->
+
 ## Use Precise Language
 To create immersive descriptions, try to make them more concrete and specific, less abstract.
+
+<!--
+ground players in the world with concrete descriptions.
+-->
 
 Use specific words instead of the generic ones:
 >
@@ -75,6 +83,7 @@ Use specific words instead of the generic ones:
 - "Very happy" => "Thrilled"
 - "Group of Orcs" => "Horde of Orcs"
 - "Old woman" => "Wretched hag"
+- "Big hairy dog" => "Shaggy Rottweiler"
 
 Avoid adverbs (words that modify verbs) and adjectives (words that modify nouns). Instead use stronger verbs and nouns:
 >
@@ -85,23 +94,27 @@ Avoid adverbs (words that modify verbs) and adjectives (words that modify nouns)
 - "Green trees" => "Pines"
 
 <!--
+- “he walked quietly” is not as good as “he crept”.
 - "Old warrior" => "Veteran"
 - "He was very annoyed" => "He was exasperated".
-- "He was very angry" => "He was outraged".
+- "He was very angry" => "He was outraged". irate
 -->
 
 Use active voice:
 >
 - "The boat has been destroyed by a hurricane" => "A hurricane has destroyed the boat."
 - "The delicious brew was eaten" => "They ate the delicious brew"
+- "The princess was rescued by a brave knight" => "The brave knight has rescued the princess"
 
 Show don't tell:
 >
 - "You enter a spooky forest." => "Thick fog covers the ground. You see cobwebs stretched across the tree branches and hear the shrieking of crows in the distance."
 - "It begins to rain" => "The sky darkens, you feel a few raindrops land on your skin. By the time you reach the house, your hair and clothes are soaking wet."
 - "He looks happy" => "He giggles as he frolics around the meadow"
+- "Pain coursed through him" => "He moved his arm and winced in pain."
 
 <!--
+lavish room => smelled of fine wine and gleam of emeralds
 - "He looks frightened" => "He keeps jumping at loud noises and shaking uncontrollably."
 -->
 
@@ -114,6 +127,7 @@ Note that the tips above mostly apply to the descriptions that are meant to be r
 
 <!--
 Describe movement - swishing of the curtains, rustling of leaves, snow falling through the air
+Think video rather than photograph.
 -->
 <!--
 > [Vivid Settings Book Example]
@@ -130,7 +144,7 @@ add jokes
 ## Manage the Learning Curve
 Don't throw a bunch of information (exposition, names, locations, concepts, etc.) at your readers/players at the same time - people will get bored, distracted, and start forgetting things.
 
-Reveal information in bits and pieces, as they become relevant.
+Reveal information in bits and pieces, as they become relevant. Explain the details of the world and its culture or magic when they come up (or when the players request them), not in advance.
 
 ## Describing the characters
 In addition to all of the tips above, you want to describe more than just the character's physical appearance. Describe their mannerisms, behaviors, expressions and emotions.

@@ -49,7 +49,7 @@ function DropdownMenu() {
         <a className="btn item" href="https://discord.gg/JZmXfWD85D">
           Our Discord
         </a>
-        <Link className="btn item" href={`/course/academy`}>
+        <Link className="btn item" href={`/course/adventure-academy`}>
           Adventure Academy
         </Link>
       </div>

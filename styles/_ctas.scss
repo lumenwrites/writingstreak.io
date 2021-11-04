@@ -83,6 +83,11 @@
   }
 }
 
-.post-card.ad-box {
-  padding-bottom: 2px;
+.showcase-boxes {
+  // padding-bottom: 20px; // space to the bottom of the page
+  .showcase-box {
+    // no tags
+    padding-bottom: 2px;
+  }
 }
+

@@ -12,24 +12,6 @@ body {
   height: 100%;
 }
 
-.page {
-  background: $post-bg;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
-  box-shadow: $box-shadow;
-  padding: 20px;
-  h1,
-  h2 {
-    text-align: center;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin-top: 12px;
-  }
-}
-
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

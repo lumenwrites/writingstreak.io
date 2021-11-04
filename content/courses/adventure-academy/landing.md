@@ -106,14 +106,15 @@ No more staring at a blank page in confusion. I mean, writing will still often b
 Following all the steps and answering all the questions gives you all the information you need to run a well-crafted adventure. You don't have to worry about missing anything important.
 - **Clarity and flow**  
 The most valuable part of my process is breaking down the adventure writing into a series of small, specific, attainable steps. No task is too complicated or overwhelming, every step has clear instructions. Accomplishing small tasks at the appropriate level of difficulty is how we get into the "flow", the state that makes writing fun and satisfying.
-- **Modular design**  
-As you follow my process, you will design your adventure in a way that gives you the flexibility to tweak and change the story in response to the players' actions. The adventures you create will not "railroad" players down to one specific path, they will feel interactive, players will feel like they have impact on the world and the outcome of the story. 
 -  **Prep what matters, don't prep what doesn't**  
 Spend your energy only on things that actually enhance the game, don't spend hours developing ideas that never get used.
 - **High prep or improv-heavy games**  
 This process works well for both low-prep improv-focused GMs, as well as for people who prefer more detailed prep. 
 
 <!--
+
+- **Modular design**  
+As you follow my process, you will design your adventure in a way that gives you the flexibility to tweak and change the story in response to the players' actions. The adventures you create will not "railroad" players down to one specific path, they will feel interactive, players will feel like they have impact on the world and the outcome of the story. 
 
 You start by creating the key information about your adventure, and improvise the core of the story in a few hours. You can expand  which you can build your improv on top of, and then you
 -  You can use this process to improvise an adventure from scratch in a few hours, or you can use it to write a well researched and fleshed-out story over several days or weeks. It can be scaled according to how much time you have and how much do you like to prep or improvise (although I do recommend to keep thigns simple and avoid over-prepping).

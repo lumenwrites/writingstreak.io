@@ -83,6 +83,20 @@ Don't make the list of characters too long or too complicated, you don't need to
 
 
 <!-- You can start with a goal ("Get Treasure") and then come up with an Antagonist ("Evil guy who wants to get it first"). Or you can start with an antagonist... -->
+<!--
+
+
+everyones a hero of their own story.
+Have their own passions aside from just defeating the hero.
+
+-->
+
+## Antagonist
+You want to make sure that your antagonist:
+- Has a **well-defined motivation** - you want your players to be able to understand why the villain is doing what he's doing.
+- Is **Relatable** - everyone is the hero in their own story. Don't make them evil for evil's sake. How do they justify their evil actions to themselves? How can you make the players identify with them?
+- Is **Threatening** - good villains are scary and difficult to defeat. They are good at what they do, they create a legitimate threat.
+- Is **Proactive** - the villain actively pursues his goals and adapts his plans when he sees resistance from the players, he doesn't just sit around and wait for players to come over and defeat him.
 
 ## Antagonist-Driven Adventures
 Most of the time the players' actions and choices drive the story forward, and NPCs are there to provide obstacles or help on their path. Players are active, NPCs are passive. Players want things and try to accomplish their goals, NPCs react to their actions. But there's one exception to this:

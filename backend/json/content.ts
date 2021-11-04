@@ -1,8 +1,8 @@
-import academy from './courses/academy.json'
+import academy from './courses/adventure-academy.json'
 
 const content = {
   courses: {
-    "academy": academy
+    "adventure-academy": academy
   }
 
 }

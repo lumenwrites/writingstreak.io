@@ -80,6 +80,9 @@ If you want to run the playtest multiple times - feel free to do that, every tim
 
 
 <!--
+feedback questionnaire
+You can also ask someone else to run your adventure, and play it as a player.
+
 give players the feedback form before the game begins
 Using Modular adventure.
 Try less. Just play.
