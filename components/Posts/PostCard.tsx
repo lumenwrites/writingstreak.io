@@ -6,7 +6,8 @@ export default function PostCard({ post }) {
   return (
     <div className={`post-card ${post.tags.length == 0 ? 'no-tags' : ''}`}>
       <Link className="thumbnail" href={post.url}>
-        <Image src={post.thumbnail} width={320} height={180} layout="responsive" />
+        {post.thumbnail && <Image src={post.thumbnail} width={320} height={180} layout="responsive" />}
+        {post.draft && <div className="draft">Draft</div>}
       </Link>
       <div className="description">
         <Link className="title" href={post.url}>

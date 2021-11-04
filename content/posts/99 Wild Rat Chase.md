@@ -2,7 +2,7 @@
 title: Wild Rat Chase
 description: In this adventure the players will meet the King who has been turned into a rat by his evil Vizier. They will need to overcome Vizier’s minions and reach the highest floor of Vizier's magical tower to acquire the wand that can turn the King back into a human.
 thumbnail: /illustrations/wild-rat-chase/dreamland.jpg
-draft: false
+draft: true
 tags: []
 ---
 

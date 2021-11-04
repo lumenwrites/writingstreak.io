@@ -7,9 +7,11 @@ import config from '../../config.json'
 export async function getPosts(postsdir) {
   let posts = []
   for (const postFileName of readdirSync(postsdir)) {
+    // console.log('Processing Post', postFileName)
     const postText = readFileSync(join(postsdir, postFileName), 'utf8')
     const frontmatter = parseFrontmatter(postText)
-    if (frontmatter.draft) continue // skip drafts
+    if (process.env.NODE_ENV === 'production' && frontmatter.draft) continue // skip drafts
+    if (!postFileName.includes(".md")) continue // skip .DS_Store
 
     const title = frontmatter.title || postFileName.substring(postFileName.indexOf(' ') + 1).replace('.md', '')
     const slug = frontmatter.slug || slugify(title, { lower: true, strict: true })
@@ -39,6 +41,7 @@ export async function processPosts() {
   const postsdir = join(config.contentdir, 'posts')
   const jsondir = join(process.cwd(), './backend/json/posts')
   const posts = await getPosts(postsdir)
+  // posts.map((post) => console.log(post.title, post.draft))
   writeFileSync(`${jsondir}/posts.json`, JSON.stringify(posts))
   console.log('[processPosts] Success! Markdown posts converted to json.')
 }
@@ -51,4 +54,5 @@ export async function processPages() {
   console.log('[processPosts] Success! Markdown pages converted to json.')
 }
 
+// getPosts(join(config.contentdir, 'posts'))
 //processPosts()
