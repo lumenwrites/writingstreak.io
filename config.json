@@ -6,5 +6,6 @@
   "twitterSite": "@lumenwrites",
   "previewImage": "https://academy.rpgadventures.io/social.png",
   "domain": "https://academy.rpgadventures.io",
-  "devDomain": "http://localhost:3050/"
+  "devDomain": "http://localhost:3050/",
+  "contentdir": "/Users/ray/Obsidian/Website/rpgadventures"
 }

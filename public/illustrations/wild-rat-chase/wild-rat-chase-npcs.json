@@ -1,0 +1,252 @@
+[
+  {
+    "type": "Villain",
+    "name": "Jafar",
+    "id": "Jafar",
+    "description": "King's Evil Vizier. Cunning and Ambitious. Tall slender figure, permanent sneer on his face, unless he's talking to someone above his station, then - obsequious smile.",
+    "image": "/adventures/wild-rat-chase/tokens/jafar.png",
+    "health": "18",
+    "energy": "18",
+    "attack": 4,
+    "powers": [
+      {
+        "title": "Small Fireball",
+        "description": "Sets stuff on fire. Hold in your hand as a light source.",
+        "ep": 3,
+        "xp": 3,
+        "damage": 3,
+        "category": "Elementalism",
+        "level": 0,
+        "school": "Elementalism (0)",
+        "section": "spells",
+        "id": "ovbzb9"
+      },
+      {
+        "title": "Shield",
+        "description": "Create a force field around a target creature or an object. Resists up to 8 damage.  Always has clean air inside. Lasts for an hour, or until it takes more than 8 damage.",
+        "ep": 6,
+        "xp": 6,
+        "category": "Abjuration",
+        "level": 1,
+        "school": "Abjuration (1)",
+        "section": "spells",
+        "id": "7s8bw8"
+      },
+      {
+        "title": "Embody fear",
+        "description": "The target person/creature see the image of whatever they fear the most.",
+        "ep": 9,
+        "xp": 9,
+        "category": "Illusionism",
+        "level": 2,
+        "school": "Illusionism (2)",
+        "section": "spells",
+        "id": "1xyg0k"
+      },
+      {
+        "title": "Major Illusion",
+        "description": "Create an object no larger than an elephant, complete with sounds, smells, movement.",
+        "ep": 12,
+        "xp": 12,
+        "category": "Illusionism",
+        "level": 3,
+        "school": "Illusionism (3)",
+        "section": "spells",
+        "id": "0sg3dj"
+      },
+      {
+        "title": "Charm Person",
+        "description": "The person regards you as their friend for 1 hour. When the spell ends, they know they’ve been charmed.",
+        "ep": 3,
+        "xp": 3,
+        "category": "Enchantment",
+        "level": 0,
+        "school": "Enchantment (0)",
+        "section": "spells",
+        "id": "iyj46o"
+      }
+    ]
+  },
+  {
+    "type": "Villain",
+    "name": "Gretchen",
+    "description": "A mean old hag, Jafar's partner in crime.",
+    "image": "/adventures/wild-rat-chase/tokens/gretchen.png",
+    "health": "10",
+    "energy": "10",
+    "attack": "3",
+    "powers": [
+      {
+        "title": "Electricute",
+        "description": "A bolt of lightning strikes it from the sky or from your hands, dealing damage and melting metallic objects.",
+        "ep": 6,
+        "xp": 6,
+        "damage": 3,
+        "category": "Elementalism",
+        "level": 1,
+        "school": "Elementalism (1)",
+        "section": "spells",
+        "id": "ipguvg"
+      },
+      {
+        "title": "Stun",
+        "description": "Stun the target creature for 1 minute. It's unable to move or do anything.",
+        "ep": 9,
+        "xp": 9,
+        "damage": 3,
+        "category": "Elementalism",
+        "level": 2,
+        "school": "Elementalism (2)",
+        "section": "spells",
+        "id": "7y75m8"
+      },
+      {
+        "title": "Darkness",
+        "description": "Create a field of magical darkness 10 meters in diameter.",
+        "ep": 3,
+        "xp": 3,
+        "category": "Illusionism",
+        "level": 0,
+        "school": "Illusionism (0)",
+        "section": "spells",
+        "id": "6oscq"
+      }
+    ],
+    "id": "xiz234"
+  },
+  {
+    "type": "Villain",
+    "name": "Pazuzu",
+    "description": "The Ungrateful Gargoyle. Gretchen's Minion.",
+    "image": "/adventures/wild-rat-chase/tokens/pazuzu.png",
+    "health": 10,
+    "energy": 10,
+    "attack": 4,
+    "powers": [
+      {
+        "title": "Petrify",
+        "description": "Turns a non-magical creature or an object (no larger than a barrel) you’re touching into stone for the next 5 minutes.",
+        "ep": 6,
+        "xp": 6,
+        "category": "Shapeshifting",
+        "level": 1,
+        "school": "Shapeshifting (1)",
+        "section": "spells",
+        "id": "k3pl2u"
+      }
+    ],
+    "id": "hm8kij"
+  },
+  {
+    "type": "Villain",
+    "name": "Guz",
+    "description": "Gretchen's Minion. Can be violent, stupid, but loyal to Gretchen. Easily tricked.",
+    "image": "/adventures/wild-rat-chase/tokens/guz.png",
+    "health": "15",
+    "energy": 10,
+    "attack": 4,
+    "powers": [
+      {
+        "title": "Body Builder",
+        "description": "You're as strong as a good bodybuilder. You can do what a good bodybuilder can do.\nLike lift and throw that big rock or tip over a cow.",
+        "ep": 3,
+        "xp": 3,
+        "category": "Physique",
+        "level": 0,
+        "school": "Physique (0)",
+        "section": "abilities",
+        "id": "mfsvq"
+      },
+      {
+        "title": "Reckless Attack",
+        "description": "Attack without concern for your life - deals double damage but makes you vulnerable to a counterattack.",
+        "ep": 9,
+        "xp": 9,
+        "category": "Warfare",
+        "level": 0,
+        "school": "Warfare (0)",
+        "section": "abilities",
+        "id": "8uutk"
+      },
+      {
+        "title": "Parry",
+        "description": "Deflect melee attack from an equally skilled opponent.",
+        "ep": 3,
+        "xp": 3,
+        "category": "Warfare",
+        "level": 0,
+        "school": "Warfare (0)",
+        "section": "abilities",
+        "id": "82rvx"
+      },
+      {
+        "title": "Whirldwind",
+        "description": "Allows you to make a melee attack to everyone within reach.",
+        "ep": 7,
+        "xp": 7,
+        "category": "Warfare",
+        "level": 2,
+        "school": "Warfare (2)",
+        "section": "abilities",
+        "id": "602ux"
+      },
+      {
+        "title": "Charge",
+        "description": "You charge in a straight line towards the selected enemy and smash into them. The enemy, everyone on your path, and everyone within reach gets knocked down, losing their next turn.",
+        "ep": 6,
+        "xp": 6,
+        "category": "Warfare",
+        "level": 2,
+        "school": "Warfare (2)",
+        "section": "abilities",
+        "id": "1rwp7l"
+      }
+    ],
+    "id": "usagqf"
+  },
+  {
+    "type": "Villain",
+    "name": "Guard",
+    "description": "Just a guard, doing his job.",
+    "image": "/NPCs/neutral/guard5.png",
+    "health": 10,
+    "energy": 10,
+    "attack": 4,
+    "powers": [
+      {
+        "title": "Reckless Attack",
+        "description": "Attack without concern for your life - deals double damage but makes you vulnerable to a counterattack.",
+        "ep": 9,
+        "xp": 9,
+        "category": "Warfare",
+        "level": 0,
+        "school": "Warfare (0)",
+        "section": "abilities",
+        "id": "s6i75u"
+      },
+      {
+        "title": "Parry",
+        "description": "Deflect melee attack from an equally skilled opponent.",
+        "ep": 3,
+        "xp": 3,
+        "category": "Warfare",
+        "level": 0,
+        "school": "Warfare (0)",
+        "section": "abilities",
+        "id": "hzi8k"
+      },
+      {
+        "title": "Knock Down",
+        "description": "You charge in a straight line towards the selected enemy and smash into them. The enemy gets knocked down, losing their next turn.",
+        "ep": 3,
+        "xp": 3,
+        "category": "Warfare",
+        "level": 0,
+        "school": "Warfare (0)",
+        "section": "abilities",
+        "id": "42i1ga"
+      }
+    ],
+    "id": "zh7u1h"
+  }
+]

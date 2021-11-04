@@ -9,7 +9,6 @@ import { usePlausible } from 'next-plausible'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import toc from 'backend/json/adventure-academy/toc.json'
 import config from 'config.json'
 
 import { useModal } from 'context/ModalContext'
@@ -19,7 +18,7 @@ import SpinnerButton from 'components/Elements/SpinnerButton'
 import MessagePanel from 'components/Elements/MessagePanel'
 import * as fbq from 'backend/fpixel'
 
-export default function PurchaseModal() {
+export default function PurchaseModal({ successLink }) {
   const router = useRouter()
   const stripe = useStripe()
   const elements = useElements()
@@ -73,12 +72,11 @@ export default function PurchaseModal() {
   }
 
   if (status.state === 'success') {
-    const firstChapterUrl = `/${toc[0].slug}/${toc[0].chapters[0].slug}`
     return (
       <Modal name={`purchase`} className={'login-modal narrow'}>
         <h2>Purchase Successful!</h2>
         <p>Thank you for buying this course!</p>
-        <a href={firstChapterUrl} className="btn btn-cta-landing" onClick={() => toggleModal('')}>
+        <a href={successLink} className="btn btn-cta-landing" onClick={() => toggleModal('')}>
           Go To Course
           <FontAwesomeIcon icon={['fas', 'arrow-right']} />
         </a>

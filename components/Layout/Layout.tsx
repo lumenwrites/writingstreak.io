@@ -1,12 +1,11 @@
 import Header from './Header'
 import Sidebar from 'components/Layout/Sidebar'
 
-export default function Layout({ children, sidebarChildren }) {
+export default function Layout({ children, sidebarChildren = [] }) {
   return (
     <>
-      <Header />
+      <Header className="header" />
       <div className="layout">
-        <Sidebar>{sidebarChildren}</Sidebar>
         <div className="content">{children}</div>
       </div>
     </>

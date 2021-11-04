@@ -1,6 +1,6 @@
 .post {
   min-height: 100%;
-  padding: 20px;
+  padding: 40px;
   background: $post-bg;
   box-shadow: $box-shadow;
   font-size: 16px;
@@ -13,7 +13,7 @@
   }
   img {
     max-width: 100%;
-    max-height: 400px; // for tall narrow images
+    max-height: 450px; // for tall narrow images
     margin: auto;
     display: block;
   }

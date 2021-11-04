@@ -5,22 +5,23 @@ import { useModal } from 'context/ModalContext'
 import Link from 'components/Elements/Link'
 import { ToggleSidebarButton } from './Sidebar'
 
-export default function Header() {
+export default function Header({ className }) {
   const { toggleModal } = useModal()
   return (
-    <header>
+    <header className={className}>
       <div className="wrapper">
         <ToggleSidebarButton />
         <Link href="/" className="logo">
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />
           </div>
-          Adventure Academy
+          adventures
         </Link>
         <nav>
-          <a className="btn btn-nav" href="https://discord.gg/JZmXfWD85D">
-            Join Our Discord
-          </a>
+          <Link href={`/`} className="btn btn-nav">
+            Browse
+          </Link>
+          <DropdownMenu />
         </nav>
         {/* <nav> */}
         {/* <Link href={`/about`} className="btn btn-nav">
@@ -30,7 +31,7 @@ export default function Header() {
           <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`subscribe`)}>
             Subscribe
           </a> */}
-        {/* <Tutorials /> */}
+        {/*  */}
         {/* </nav> */}
         <div className="clearfix" />
       </div>
@@ -38,21 +39,18 @@ export default function Header() {
   )
 }
 
-function Tutorials() {
+function DropdownMenu() {
   return (
     <div className="dropdown">
       <Link href="/" className="menu-handle btn right">
-        Tutorials
+        Resources
       </Link>
       <div className="menu left">
-        <Link href={`/tag/3d`} className="btn item">
-          3D
-        </Link>
-        <Link href={`/tag/3d`} className="btn item">
-          2D
-        </Link>
-        <Link href={`/tag/3d`} className="btn item">
-          Godot 101
+        <a className="btn item" href="https://discord.gg/JZmXfWD85D">
+          Our Discord
+        </a>
+        <Link className="btn item" href={`/course/academy`}>
+          Adventure Academy
         </Link>
       </div>
     </div>

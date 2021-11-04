@@ -4,21 +4,27 @@ import Link from 'components/Elements/Link'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from 'components/Elements/MDXComponents'
 import { useModal } from 'context/ModalContext'
-import Layout from 'components/Layout/Layout'
+import LayoutSidebar from 'components/Layout/LayoutSidebar'
 import PrevNext from 'components/Posts/PrevNext'
 import Chapters from 'components/Posts/Chapters'
 import config from 'config.json'
 
-export default function Page({ chapter, toc, user }) {
+// https://stripe.com/docs/stripe-js/react#elements-provider
+import PurchaseModal from 'components/Users/PurchaseModal'
+import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_CLIENT_SECRET)
+
+export default function Page({ chapter, toc, user, firstChapterUrl }) {
   return (
-    <Layout sidebarChildren={<Chapters sections={toc} user={user} />}>
+    <LayoutSidebar sidebarChildren={<Chapters sections={toc} user={user} />}>
       {user || chapter.preview || config.price === 0 ? (
         <div className="post">
           <MDXRemote {...chapter.compiledMdx} components={MDXComponents} />
           <PrevNext post={chapter} />
         </div>
       ) : (
-        <Paywall />
+          <Paywall firstChapterUrl={firstChapterUrl} />
       )}
       <Head>
         <title>
@@ -38,11 +44,11 @@ export default function Page({ chapter, toc, user }) {
           </>
         )}
       </Head>
-    </Layout>
+    </LayoutSidebar>
   )
 }
 
-function Paywall() {
+function Paywall({firstChapterUrl}) {
   const { toggleModal } = useModal()
   return (
     <div className="post">
@@ -56,26 +62,21 @@ function Paywall() {
           Login
         </div>
       </div>
+      <Elements stripe={stripePromise}>
+        <PurchaseModal successLink={firstChapterUrl} />
+      </Elements>
     </div>
   )
 }
 
 import { getUser } from 'pages/api/users/get-user'
-import { processContent } from 'backend/json/processContent'
-import courses from 'backend/json/courses'
+import content from 'backend/json/content'
 
 export async function getServerSideProps({ params, req }) {
-  const [sectionSlug, chapterSlug] = params.slug
+  const [courseSlug, sectionSlug, chapterSlug] = params.slug
+  // console.log('slug', params.slug)
   const user = await getUser(req)
-
-  // if (process.env.NODE_ENV === 'development') {
-  //   // regenerate content if I'm in dev
-  //   const { content, toc } = await processContent()
-  //   const chapter = content[sectionSlug].chapters[chapterSlug]
-  //   return { props: { chapter, toc, user } }
-  // }
-
-  const { toc, content } = courses['adventure-academy']
-  const chapter = content[sectionSlug].chapters[chapterSlug]
-  return { props: { chapter, toc, user } }
+  const { toc, sections, firstChapterUrl } = content.courses[courseSlug]
+  const chapter = sections[sectionSlug].chapters[chapterSlug]
+  return { props: { chapter, toc, user, firstChapterUrl } }
 }

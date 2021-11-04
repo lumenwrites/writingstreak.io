@@ -3,26 +3,27 @@ import slugify from 'slugify'
 import { join } from 'path'
 import { readFileSync, readdirSync, writeFileSync, lstatSync, existsSync } from 'fs'
 import { parseFrontmatter, renderMDX } from './mdx.mjs'
-const contentdir = "/Users/ray/Obsidian/Website/adventure-academy" // join(process.cwd(), 'content/adventure-academy')
-// const jsondir = join(process.cwd(), './adventure-academy')
-const jsondir = "/Users/ray/projects/adventureacademy/backend/json/adventure-academy"
+import config from '../../config.json'
+const contentdir = config.contentdir
+const jsondir = join(process.cwd(), './backend/json/courses')
 
-export async function processContent() {
+async function processCourse(courseDirName) {
+  const courseDir = join(contentdir, 'courses', courseDirName)
   let sections = []
-  for (const dirName of readdirSync(contentdir)) {
-    const sectionDirPath = join(contentdir, dirName)
+  for (const dirName of readdirSync(courseDir)) {
+    const sectionDirPath = join(courseDir, dirName)
     if (!lstatSync(sectionDirPath).isDirectory()) continue
 
     // Skip folders inside of the .ignore file
-    if (existsSync(`${contentdir}/.ignore`)) {
-      const ignoreText = readFileSync(`${contentdir}/.ignore`, 'utf8')
+    if (existsSync(`${courseDir}/.ignore`)) {
+      const ignoreText = readFileSync(`${courseDir}/.ignore`, 'utf8')
       const ignoreFolders = ignoreText.split('\n')
       if (ignoreFolders.includes(dirName)) continue
     }
-      
+
     // Folder names start with a number, like 01, to conveniently order them in file system.
     // Remove numbers to generate section title, slugify it to generaet slug
-    const dirTitle = dirName.substring(dirName.indexOf(" ") + 1)
+    const dirTitle = dirName.substring(dirName.indexOf(' ') + 1)
     let section = {
       title: dirTitle,
       slug: slugify(dirTitle, { lower: true, strict: true }),
@@ -42,18 +43,19 @@ export async function processContent() {
       const chapterText = readFileSync(chapterFilepath, 'utf8')
       const chapterFrontmatter = parseFrontmatter(chapterText)
       if (process.env.NODE_ENV === 'production' && chapterFrontmatter.draft) continue // skip the draft chapters
-      const chapterTitle = chapterFrontmatter.title || chapterFilename.substring(chapterFilename.indexOf(" ") + 1).replace(".md", "")
+      const chapterTitle =
+        chapterFrontmatter.title || chapterFilename.substring(chapterFilename.indexOf(' ') + 1).replace('.md', '')
       const chapterSlug = chapterFrontmatter.slug || slugify(chapterTitle, { lower: true, strict: true })
       const compiledMdx = await renderMDX(chapterText)
       let chapter = {
         title: chapterTitle,
         slug: chapterSlug,
-        description: chapterFrontmatter.description || "",
+        description: chapterFrontmatter.description || '',
         thumbnail: chapterFrontmatter.thumbnail || null,
         preview: chapterFrontmatter.preview || false, // free preview
         draft: chapterFrontmatter.draft || false,
-        url: `/${section.slug}/${chapterSlug}`, // used in prev-next and TOC
-        compiledMdx
+        url: `/course/${courseDirName}/${section.slug}/${chapterSlug}`, // used in prev-next and TOC
+        compiledMdx,
       }
       section.chapters.push(chapter)
     }
@@ -91,33 +93,50 @@ export async function processContent() {
           slug: chapter.slug, // for "active" chapter
           url: chapter.url,
           draft: chapter.draft,
-          preview: chapter.preview // for "free preview" tag
+          preview: chapter.preview, // for "free preview" tag
         }
-      })
+      }),
     }
   })
-  const content = {}
+  const namedSections = {} // { "sectionSlug": { chapters: { "chapterSlug": ... }} }
   for (const section of sections) {
     let chapters = {}
     for (const chapter of section.chapters) {
       chapters[chapter.slug] = chapter
     }
     section.chapters = chapters
-    content[section.slug] = section
+    namedSections[section.slug] = section
   }
   // console.log(JSON.stringify(sections, null, 2))
-  console.log("Generated Content", process.env.NODE_ENV)
-  writeFileSync(`${jsondir}/content.json`, JSON.stringify(content))
-  writeFileSync(`${jsondir}/toc.json`, JSON.stringify(toc))
-  return { content, toc }
+  // console.log('Generated Content', process.env.NODE_ENV)
+  // writeFileSync(`${jsondir}/content.json`, JSON.stringify(content))
+  // writeFileSync(`${jsondir}/toc.json`, JSON.stringify(toc))
+  return { sections: namedSections, toc }
 }
 
-async function processLanding() {
-    const landingText = readFileSync(`${contentdir}/landing.md`, 'utf8')
-    const frontmatter = parseFrontmatter(landingText)
-    const copy = await renderMDX(landingText, false)
-    writeFileSync(`${jsondir}/copy.json`, JSON.stringify(copy))
+async function processLanding(courseDir) {
+  const landingText = readFileSync(`${courseDir}/landing.md`, 'utf8')
+  const frontmatter = parseFrontmatter(landingText)
+  const copy = await renderMDX(landingText, false)
+  // writeFileSync(`${jsondir}/copy.json`, JSON.stringify(copy))
+  return copy
 }
 
-processContent()
-processLanding()
+async function processCourses() {
+  const coursesDir = join(contentdir, 'courses')
+  for (const courseDirName of readdirSync(coursesDir)) {
+    const courseDirPath = join(coursesDir, courseDirName)
+    if (!lstatSync(courseDirPath).isDirectory()) continue // ignore .DS_Store
+    // console.log('courseDirPath', courseDirPath)
+    const { sections, toc } = await processCourse(courseDirName)
+    const copy = await processLanding(courseDirPath)
+    const firstChapterUrl = `/course/${courseDirName}/${toc[0].slug}/${toc[0].chapters[0].slug}`
+    const course = { sections, toc, copy, firstChapterUrl }
+    writeFileSync(`${jsondir}/${courseDirName}.json`, JSON.stringify(course))
+    console.log('firstChapterUrl', course.firstChapterUrl)
+  }
+}
+
+processCourses()
+// processCourse()
+// processLanding()

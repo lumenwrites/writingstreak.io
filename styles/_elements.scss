@@ -88,7 +88,7 @@
 }
 
 .btn-nav {
-  margin-left: 12px;
+  margin-right: 10px;
 }
 
 .panel {
@@ -101,9 +101,10 @@
 }
 
 .dropdown {
-  display: inline-block;
+  // display: inline-block;
+  float: right; // inline block for some reason shifts buttons to the left
   position: relative;
-  width: 150px;
+  // width: 150px;
   .menu-handle {
     cursor: pointer;
     //width: 100%;
@@ -119,6 +120,7 @@
     display: none;
     position: absolute;
     width: 100%;
+    width: 150px;
     left: 0;
     right: 0;
     top: calc(100% - 2px);

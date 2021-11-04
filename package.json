@@ -9,8 +9,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "processContent:dev": "NODE_ENV=development nodemon --watch /Users/ray/Obsidian/Website/adventure-academy/ -e mjs,md ./backend/json/processContent.mjs",
-    "processContent:prod": "NODE_ENV=production node ./backend/json/processContent.mjs"
+    "processCourses:dev": "NODE_ENV=development nodemon --experimental-json-modules --watch /Users/ray/Obsidian/Website/rpgadventures/ -e mjs,md ./backend/json/processContent.mjs",
+    "processCourses:prod": "NODE_ENV=production node ./backend/json/processContent.mjs",
+    "processPosts:dev": "NODE_ENV=development nodemon --experimental-json-modules --watch /Users/ray/Obsidian/Website/rpgadventures/ -e mjs,md ./backend/json/processPosts.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

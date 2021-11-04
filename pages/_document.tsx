@@ -9,25 +9,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                    page_path: window.location.pathname,
-                  });
-                `,
-            }}
-          /> */}
-          {/* Plausible Analytiics */}
-          {/* <script defer data-domain="academy.rpgadventures.io" src="https://plausible.io/js/plausible.js"></script> */}
-          {/* <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script> */}
+          {/* Facebook Pixel */}
           <noscript>
             <img
               height="1"
@@ -40,11 +22,6 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* Clicky Analytics */}
-          <script async src="//static.getclicky.com/101338515.js"></script>
-          <noscript>
-            <img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101338515ns.gif" />
-          </noscript>
         </body>
       </Html>
     )

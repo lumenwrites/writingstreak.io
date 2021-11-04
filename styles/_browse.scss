@@ -30,10 +30,10 @@
   }
   .description {
     padding: 2px 10px 2px 10px;
-    color: white;
+    color: $text;
     .title {
       font-weight: bold;
-      color: white;
+      color: $text;
       display: inline-block;
     }
     .draft {
@@ -48,7 +48,7 @@
     color: #384260;
     font-size: 0.8em;
     padding: 0px 10px 2px 10px;
-    border-top: 1px solid #384260;
+    border-top: 1px solid $border;
     position: absolute;
     left: 0;
     right: 0;
@@ -60,7 +60,7 @@
       padding: 4px 0px 2px 0px;
       float: left;
       .tag {
-        background: #333b4f;
+        background: $panel-bg;
         color: $text-dim;
         border-radius: 2px;
         padding: 1px 4px;

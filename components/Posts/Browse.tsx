@@ -3,6 +3,7 @@ import PostCard from 'components/Posts/PostCard'
 
 
 const Browse = ({ posts }) => {
+  // console.log(posts)
   if (posts.length === 0) {
     return (
       <div className="no-results">

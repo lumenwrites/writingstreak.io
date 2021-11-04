@@ -43,6 +43,14 @@ function LandingCTA({ children, href }) {
   )
 }
 
+function CharacterBox(props) {
+  return (
+    <div className="character-box">
+        {props.children}
+    </div>
+  )
+}
+
 const components = {
   Heading,
   Downloads,

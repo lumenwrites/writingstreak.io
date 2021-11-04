@@ -18,6 +18,9 @@ header {
       padding: 0 20px;
     }  
   }
+  &.header-sidebar .wrapper {
+    max-width: $wrapper-sidebar-width;
+  }
   .logo {
     line-height: 32px;
     font-weight: lighter;
@@ -53,22 +56,23 @@ header {
       float: left;
       width: 100%;
       margin-top: 5px;
-      .btn-nav {
-        margin-left: 0;
-        margin-right: 10px;
-      }
-      .dropdown {
-        .menu-handle {
-          float: left;
-        }
-      }
     }
   }
 }
 
 .layout {
+  .content {
+    margin: auto;
+    max-width: $wrapper-width;
+    @media (max-width: 1000px) {
+      padding: 0 20px;
+    }
+  }
+}
+
+.layout-sidebar {
   height: calc(100% - 48px - 2px); //minus header height minus orange line
-  max-width: $wrapper-width;
+  max-width: $wrapper-sidebar-width;
   margin: auto;
   display: flex;
   &.has-subnav {
@@ -104,7 +108,11 @@ header {
 }
 
 // In Header
-.toggle-sidebar-button {
+.header .toggle-sidebar-button {
+  display:none;
+}
+
+.header-sidebar .toggle-sidebar-button {
   float: left;
   margin-right: 10px; // same as between the logo and title
   cursor: pointer;
