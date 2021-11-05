@@ -30,6 +30,7 @@ export default function Post({ post }) {
       </div>
       <AdBoxes />
       <SubscribeBox />
+      <br/>
     </Layout>
   )
 }
