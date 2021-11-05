@@ -73,7 +73,7 @@ export default function PurchaseModal({ successLink }) {
 
   if (status.state === 'success') {
     return (
-      <Modal name={`purchase`} className={'login-modal narrow'}>
+      <Modal name={`purchase`} className={'purchase-modal narrow'}>
         <h2>Purchase Successful!</h2>
         <p>Thank you for buying this course!</p>
         <a href={successLink} className="btn btn-cta-landing" onClick={() => toggleModal('')}>

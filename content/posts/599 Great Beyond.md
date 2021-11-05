@@ -2,7 +2,7 @@
 title: From The Great Beyond
 description: A Wild West town is being terrorized every night by the monsters from "the other side" - zombies, ghosts, huge sentient spiders, etc. The players must return The Golden Key to the abandoned Dwarven city to reseal the Gate the monsters are coming from.
 thumbnail: /illustrations/great-beyond/cover.png
-draft: true
+draft: false
 tags: []
 ---
 
@@ -95,13 +95,9 @@ In the portal room, the heroes will see an enormous Basilisk crawling out of the
 
 ---
 
-## Story Games
+This adventure was made by the [Adventure Writer's Room](https://rpgadventures.io/writers-room) community. We are a group of GMs who meet in the discord voice chat, and challenge ourselves to improvise a one-shot adventure in 2 hours. Our goal is to brainstorm fun ideas and improvise stories together in a chill, lighthearted, no-pressure environment. It works, it really helps with the writing, and it is super fun.
 
-This adventure was made by the [Story Games](https://discord.gg/gNrJJNMuyD) community. We have improvised this story from scratch, during our game. 
-
-We are a group of players who love improvisation and freeform roleplay. We create our characters, decide what adventure we want to go on, and then take turns GMing scenes for each other, trying to make up a fun story as we go. Think of it as a combination of freeform roleplay, brainstorming, and improv.
-
-If that sounds like fun - learn more about our games [here](https://rpgadventures.io/story-games), and come [play with us](https://discord.gg/gNrJJNMuyD)!
+We're looking for some friendly and creative people to join us!
 
 **Authors:** @Hearsay, @Maeloki, @RedFire, @lumen.
 

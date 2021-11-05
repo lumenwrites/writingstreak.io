@@ -2,7 +2,7 @@
 title: Harmony
 description: Players enter a happy village, where everyone turns out to be mind-controlled by brain-slugs. They will need to figure out what’s going on, deal with the increasingly hostile villagers, find the path towards the center of the slug’s hive-mind, and destroy it (or make peace with it).
 thumbnail: /illustrations/harmony/lake.jpg
-draft: true
+draft: false
 tags: []
 ---
 
@@ -111,3 +111,9 @@ The lake can be destroyed by pouring the bags of salt the Friendly Frank has bee
 
 ## Resolution
 Depending on what happens at the lake, Harmony can become the player's ally, or the villagers will thank and reward them for their liberation (except for the villagers who liked the symbiosis).
+
+---
+
+This adventure was made by the [Adventure Writer's Room](https://rpgadventures.io/writers-room) community. We are a group of GMs who meet in the discord voice chat, and challenge ourselves to improvise a one-shot adventure in 2 hours. Our goal is to brainstorm fun ideas and improvise stories together in a chill, lighthearted, no-pressure environment. It works, it really helps with the writing, and it is super fun.
+
+We're looking for some friendly and creative people to join us!

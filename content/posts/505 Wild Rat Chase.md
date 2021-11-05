@@ -2,7 +2,7 @@
 title: Wild Rat Chase
 description: In this adventure the players will meet the King who has been turned into a rat by his evil Vizier. They will need to overcome Vizier’s minions and reach the highest floor of Vizier's magical tower to acquire the wand that can turn the King back into a human.
 thumbnail: /illustrations/wild-rat-chase/dreamland.jpg
-draft: true
+draft: false
 tags: []
 ---
 
@@ -10,28 +10,8 @@ tags: []
 
 # Wild Rat Chase
 
-<CharacterBox src="/illustrations/wild-rat-chase/tokens/pazuzu.png">
-
-## Character Name
-	
-A gargoyle with a difficult personality. He will be circling the skies above the city, making it necessary for players to stay hidden as they make their way to the castle. 
-
-</CharacterBox>
-
-<Collapsible title="Creating your own Abilities">
-
-Give your character a profession and some talents, they will describe what your character is good at and give you advantage on rolls.
-
-</Collapsible>
-
 ## Summary
-Read aloud text:
-
-> ## Read Aloud Text
 In this adventure the players will meet a King who has been turned into a rat by his evil Vizier. They will need to reach the highest floor of Vizier's magical tower to acquire the magic wand that can turn the King back into a human. They will need to overcome Vizier’s minions and magical traps of his tower.
-
-> ## Second Read Aloud
-Text
 
 ## Outline
 - Characters **meet the rat** that gives them the scroll of Speak With Animals, explains the situation, and asks them for help.
@@ -48,11 +28,12 @@ Text
 
 The players begin on a ship, about to arrive at the port.
 
-> You have been sailing for several weeks now, your course is Cypress, the capital of Anglecynn, the biggest city on the whole continent. At this point you’re so tired of the ocean, you sincerely hope to never see a drop of water again in your life. Luckily, today is supposed to be the last day of your travels, you’re about to arrive.
-
-> You're sitting at an old grimy table, on a middle deck of a ship, waiting for the miserable journey to end.  A piratey-looking sailor, with eyepatches on both of his eyes, comes up to you, pours himself a mug full of rum, and drinks it down in one gulp, and asks “: “What brings you to Cypress, mateys? And what do you look like? I'm really out of the loop here.” He points, sadly, at his eyepatches.
-
-> (It’s time to introduce your characters)
+>
+You have been sailing for several weeks now, your course is Cypress, the capital of Anglecynn, the biggest city on the whole continent. At this point you’re so tired of the ocean, you sincerely hope to never see a drop of water again in your life. Luckily, today is supposed to be the last day of your travels, you’re about to arrive.
+>
+You're sitting at an old grimy table, on a middle deck of a ship, waiting for the miserable journey to end.  A piratey-looking sailor, with eyepatches on both of his eyes, comes up to you, pours himself a mug full of rum, and drinks it down in one gulp, and asks “: “What brings you to Cypress, mateys? And what do you look like? I'm really out of the loop here.” He points, sadly, at his eyepatches.
+>
+(It’s time to introduce your characters)
 
 ## We see land!
 
@@ -77,8 +58,6 @@ Description of the Port:
 > You arrive at the port, the ship docks, and you finally feel the firm ground underneath your feet. You see many sailors running down the gangway onto the bustling boardwalk. Some of them drop on their knees, crying, kissing the earth. It’s been a long time for these dudes. Many ships are in this port, people are walking around, delivering cargo to and from the ships, selling their wares.
 
 ## Meeting the Rat
-<div className="token"><img src="/illustrations/wild-rat-chase/tokens/rat.png"/></div> 
-
 
 Players encounter the rat:
 
@@ -90,29 +69,46 @@ Players read the scroll:
 
 ### Rat's Story
 
-The Rat tells players it's story. The King turns out to a bit of a self-important condescending impatient jerk, but still sympathetic enough to be worth helping (or he promises players much gold and favors).
+The Rat tells players it's story.
 
-> Once the spell is complete, you hear the Rat's frantic squeaking turns into comprehensible speech:
-- “...to you! Come on! Just read the damn scro…” the rat notices changes in your expression “Can you… Can you understand me now? Finally!”
-- Don't you see? Don't you get what is going on? Traitors! Backstabbers! Charlatans!
-- What am I? What am I? I'm the king of this bloody kingdom, that's who I am!! And you must help me! You're the only ones who can.
-- My vizier, Jafar, the treacherous bastard, has turned me into a rat and he's currently sitting on my throne ruling my kingdom! Consolidating power.
-- You must help me retrieve his wand of transfiguration, that's the only way to turn me back. He keeps it in his tower, the tower is in the castle.
+> Once the spell is complete, you hear the Rat's frantic squeaking turn into comprehensible speech:  
+“...to you! Come on! Just read the damn scro…” the rat notices changes in your expression “Can you… Can you understand me now? Finally!”
+<hr/>
+Don't you see? Don't you get what is going on? Traitors! Backstabbers! Charlatans!
+<hr/>
+What am I? What am I? I'm the king of this bloody kingdom, that's who I am!! And you must help me! You're the only ones who can.
+<hr/>
+My vizier, Jafar, the treacherous bastard, has turned me into a rat and he's currently sitting on my throne ruling my kingdom! Consolidating power.
+<hr/>
+You must help me retrieve his wand of transfiguration, that's the only way to turn me back. He keeps it in his tower, the tower is in the castle.
 
+The King attempts to command the players to rescue him, if that fails he will promise much gold and favors in return for their help.
+ 
+<CharacterBox src="/illustrations/wild-rat-chase/tokens/rat.png">
+
+## King Amathar
+Very pompous and self-important, he's used to sycophants and yes-men hanging on his every word and satisfying his every whim. Being turned into a rat did nothing to humble him, and he keeps being surprised and frustrated that people don't instantly follow his squeaky commands.
+
+He's pretty sure that he's the greatest, most beloved King that he's ever lived. Is he? Meh, he's alright. Not the most competent king who's ever lived, but better than Jafar, and just sympathetic enough to be worth helping.
+
+</CharacterBox>
 
 ## Meeting the Minions
 
-### Zug
-
-<div className="token"><img src="/illustrations/wild-rat-chase/tokens/guz.png"/></div> 
-
-Zug is a half-orc that was tasked with guarding the rat, and he's now really woried he'll be in trouble because the rat has escaped. He's simple but loyal (think Kronk from The Emperor's New Groove).
-
-> The rat is interrupted, and looks back behind it. "Oh no they're here!"
+> The rat is interrupted, and looks back behind it. "Oh no, they're here!"
 
 > You feel the earth underneath your feet slightly tremble and hear thud-thud-thud of heavy footsteps. You see a huge figure of a half-orc running towards you, his eyes locked on the rat. 
 
 > The first thing you notice about him is his huge heap of beautiful brown hair, it's like, what shampoo is this guy using to make it so magnificent? Anyway, the second thing is a huge club in his hand that half the size of your body. It seems to have a few blood stains and someone's teeth stuck to it. He stops a few paces away from you, panting, looks around, and notices the rat.
+
+Zug is searching for a Rat he accidentally let escape.
+
+<CharacterBox src="/illustrations/wild-rat-chase/tokens/guz.png">
+
+## Zug
+Zug is a half-orc that was tasked with guarding the rat, and he's now really worried he'll be in trouble because the rat has escaped. He's simple but loyal (think Kronk from The Emperor's New Groove).
+
+</CharacterBox>
 
 Zug will do his best to negotiate with the players, but if he senses it's not working he'll skip to violence:
 
@@ -121,33 +117,44 @@ Zug will do his best to negotiate with the players, but if he senses it's not wo
 - It is of great sent-ee-mental value to the Master. Negoni, netogi, negonitate!
 - I must get it, you see, Mr Jafar told me to guard it, Zug will be in so much trouble if he finds out it escaped.
 
-Players can fight him, or fool him, or even befriend him.
+Players can fight him, fool him, or even befriend him.
 
-### Gretchen
+Before the conversation begins to die down, the new character enters the scene:
 
-<div className="token"><img src="/illustrations/wild-rat-chase/tokens/gretchen.png"/></div> 
+<CharacterBox src="/illustrations/wild-rat-chase/tokens/gretchen.png">
 
-
+## Gretchen
 Angry old Hag, Jafar's main minion/partner. They both have blackmail on each other and they both owe favors to each other. She was the one who has found the wand and helped Jafar to execute his plan. Now she'll stop at nothing to get the King back. She's frail but really smart. (Izma from The Emperor's New Groove).
 
-> You see an old woman catching up with Guz. And when I say old I mean fucking OLD, like she was born before calcium was invented. She is surprisingly spry though.
-- Guz! What the hell are you doing? I'm, uh... I want to get the kin.. I mean rat, but they won't give it.
-So hit them on the head with a stick and take it!
-I was trying the, uh, diplomacy.
-Just get the rat you idiot!
-Okay…
+</CharacterBox>
+
+Gretchen is Zug's perpetually angry and disappointed boss who's here to lead the search and make sure that her minion doesn't screw up again.
+
+
+> You see an old woman catching up with Zug. And when I say old I mean fucking OLD, like she was born before calcium was invented. She is surprisingly spry though.
+- Zug! What the hell are you doing?
+- I'm, uh... I want to get the kin.. I mean rat, but they won't give it.
+- So hit them on the head with a stick and take it!
+- I was trying the, uh, diplomacy.
+- Just get the rat you idiot!
+- Okay…
 - Pazuzu! Where the hell are you, you useless animal! Get the rat, get the rat!
 - You kids, give me the rat! I don’t have time for your nonsense.
 
+High in the sky, the players will notice the third minion:
 
-### Pazuzu
-
-
-
-A gargoyle with a difficult personality. He will be circling the skies above the city, making it necessary for players to stay hidden as they make their way to the castle. 
 > You see a strange shadow flying high in the atmosphere. Too large for a bird, too small for a blimp. What is it? You have no idea. It circles around, ominously, then begins to descend in the direction of the hag.
 
-If the scene with Zug/Gretchen will take too long, he'll join the battle, try to capture the rat, and return it to the Vizier's tower. If the players escape before this happens, or defend the rat, the rat will be able to help them find the castle, give them tips, tell them about secret catacombs. Otherwise they'll need to make it to the tower on their own, and resquie a rat along with the wand.
+Pazuzu is here to provide aerial support to his cronies.
+
+<CharacterBox src="/illustrations/wild-rat-chase/tokens/pazuzu.png">
+
+## Pazuzu
+A gargoyle with a difficult personality. He will be circling the skies above the city, making it necessary for players to stay hidden as they make their way to the castle. 
+
+</CharacterBox>
+
+If the scene with Zug/Gretchen takes too long, he'll join the battle, try to capture the rat, and return it to the Vizier's tower. If the players escape before this happens, or defend the rat, the rat will be able to help them find the castle, give them tips, tell them about secret catacombs. Otherwise they'll need to make it to the tower on their own, and rescue the rat along with the wand.
 
 ## Cypress
 The rat will tell the players which way to go, the biggest challenge is to get through the city unseen from the sky.
@@ -195,10 +202,7 @@ The king may tell the players about the secret passege to the castle through the
 > You see small points of light glowing in the dark. As you come closer, you see it’s the eyes of a bunch of mean looking dog-sized rats.
 
 ## Tower
-<div className="token"><img src="/illustrations/wild-rat-chase/illustrations/05-wizard-tower-1.png"/></div> 
-
-<!-- <img style="width:125px;display:block;float:right;margin-left:10px;"
-src="/adventures/wild-rat-chase/tokens/05-wizard-tower-1.png"/> -->
+<img class="small frame" src="/illustrations/wild-rat-chase/illustrations/05-wizard-tower-1.png"/>
 
 After players make their way through the catacombs or through the gate, they see Jafar's tower:
 
@@ -207,16 +211,16 @@ After players make their way through the catacombs or through the gate, they see
 ### Tower Entrance
 The only way into the tower is through the giant metal gates. They are sealed by magic, they have no obvious lock, but they have a handle in the shape of a snake, and a bell.
 
+**Snake Handle**
 
-> ## Snake Handle
-You see a door handle in a shape of a snake. Small emerald eyes reflect the sky, making it seem almost alive.
+> You see a door handle in a shape of a snake. Small emerald eyes reflect the sky, making it seem almost alive.
 If the player touches the snake handle, it comes alive and bites them. Now they're poisoned, and will lose one HP per minute, until they find the antidote (Laboratory in the tower has a lot of potions).
 
 **Door Bell**
 
 Door bell answers in an autoresponder voice and lets them in:
 
-> Say "One" if you dare to request an audience with the Vizier. Say "Two" if you come bearing gifts for his lordship. Say "Three" if you feel unworthy to even be in his presence. Say "Four" if you and would like to take this opportunity to walk away before incurring his wrath. Say "Five" if you would like to proceed against your better judgement.
+> Say "One" if you dare to request an audience with the Vizier. Say "Two" if you come bearing gifts for his lordship. Say "Three" if you feel unworthy to even be in his presence. Say "Four" if you and would like to take this opportunity to walk away before incurring his wrath. Say "Five" if you would like to proceed against your better judgment.
 
 ### Reception
 The first floor has a receptionist (clay golem) sitting in the middle behind the table. Next to the walls are 5 large empty suits of armor - the security system. If the receptionist feels threatened, they can activate them, making them come alive and attack the players.
@@ -279,9 +283,6 @@ In the middle of the room is the portal gate:
 
 ## Transforming the King
 
-<div className="token"><img src="/illustrations/wild-rat-chase/tokens/king.png"/></div> 
-
-
 When the rat sees the wand:
 
 > The Rat jumps up and down on your shoulder, forgetting any shreds of the kingly dignity it had left, unable to contain it's excitement.
@@ -291,6 +292,16 @@ When a player activates the wand to transform the rat:
 > With the sound of thunder and lightning, the room fills with the blazing green light. Streams of mana and energy surround the Rat in a blinding whirlwind of light and power. You can barely see the shape of the Rat growing, changing. Surprised squeaks gradually lower in pitch, becoming shrieks and then grunts of a human.
 > As the magic and might begin to settle, you behold with your own eyes the majesty of the true king of this kingdom in his natural, human form.
 
+At last, the king is free.
+
+
+<CharacterBox src="/illustrations/wild-rat-chase/tokens/king.png">
+
+## King in his human form
+King turns into a human in all his grumpy and disheveled glory.
+
+</CharacterBox>
+
 ### Throne Room
 ![](/illustrations/wild-rat-chase/illustrations/throne-room.jpg)
 
@@ -298,13 +309,17 @@ If the players activate the portal gate, it will open a wormhole into the throne
 
 > After you finish your manipulations, the space inside the circle seems to disappear, as if the hole has been torn through the universe, and on the other side, you see the throne room, a tall slender man sitting on the throne, and a few dozen of guards around him.
 
+Jafar enjoys his time ruling the kingdom and ordering people around.
 
-### Jafar
+<CharacterBox src="/illustrations/wild-rat-chase/tokens/jafar.png">
 
-<div className="token"><img src="/illustrations/wild-rat-chase/tokens/jafar.png"/></div> 
+## Jafar
+Treacherous and obsequious Vizier. Extremely competent, probably more competent at running the kingdom than the King, but his intelligence is only used to further his own goals (Little Finger from Game of Thrones).
+
+</CharacterBox>
 
 
-Jafar looks surprised and shocked
+Jafar looks surprised and shocked.
 
 > "Your Majesty! I'm so happy to see you again! Everybody, rejoice, the lost king has returned!"
 
@@ -317,12 +332,17 @@ Once the Vizier has been defeated, the King will attempt to save face and take c
 
 > "Is the gratitude of the king not enough for you people? Fine!" The King snaps his fingers in the direction of one of his servants. "Ignacius, dash to the treasury, fetch us some of the finest \[whatever players ask\].
 
----
-
-This adventure was made by the [Adventure Writer's Room](https://rpgadventures.io/writers-room) community. We are a group of GMs who meet in the discord voice chat, and challenge ourselves to improvise a one-shot adventure in 2 hours. Our goal is to brainstorm fun ideas and improvise stories together in a chill, lighthearted, no-pressure environment. It works, it really helps with the writing, and it is super fun.
-
-We're looking for some friendly and creative people to join us!
+<br/>
 
 ---
 
 See the playtest of this adventure [here](https://www.youtube.com/watch?v=Cn9vV_wHpY4).
+
+<CourseCTA/>
+
+<!--
+This adventure was made by the [Adventure Writer's Room](https://rpgadventures.io/writers-room) community. We are a group of GMs who meet in the discord voice chat, and challenge ourselves to improvise a one-shot adventure in 2 hours. Our goal is to brainstorm fun ideas and improvise stories together in a chill, lighthearted, no-pressure environment. It works, it really helps with the writing, and it is super fun.
+
+We're looking for some friendly and creative people to join us!
+---
+-->

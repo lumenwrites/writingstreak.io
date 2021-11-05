@@ -10,7 +10,7 @@ export default function DownloadsModal({ files }) {
         {files.map((f) => (
           <div className="file" key={f.url}>
             <span className="file-name">{f.name}</span>
-            <a className="btn download" href={`${f.url}`}>
+            <a className="btn download" target="_blank" rel="noopener noreferrer" href={`${f.url}`}>
               <FontAwesomeIcon icon={['fas', 'download']} />
               Download
             </a>

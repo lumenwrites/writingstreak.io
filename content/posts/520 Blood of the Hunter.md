@@ -11,7 +11,11 @@ tags: []
 # Blood of the Hunter
 
 ## Summary
-Die Hard in Hogwarts. The Academy of Arcane Arts and Adventures has been taken over by the group of vampires. They seek Valery McClane, the daughter of the Vampire Hunter. Her father has cursed the vampire clan, turning them mortal, and only drinking her blood can undo the curse. The vampires have tricked a student into disabling the school’s defenses, opened the portal into the Main Hall, mind-controlled the teachers, and are now searching for Valery, and taking the students through the portal into the clan’s lair - the dark tower. The players will need to infiltrate the castle taken over by the vampires, awaken the security djinn to protect the students, and then pursue the vampires through the portal to rescue the kidnapped ones. 
+Die Hard in Hogwarts. The Academy of Arcane Arts and Adventures has been taken over by the group of vampires. They seek Valery McClane, the daughter of the Vampire Hunter. Her father has cursed the vampire clan, turning them mortal, and only drinking her blood can undo the curse.
+
+The vampires have tricked a student into disabling the school’s defenses, opened the portal into the Main Hall, mind-controlled the teachers, and are now searching for Valery, and taking the students through the portal into the clan’s lair - the dark tower. 
+
+The players will need to infiltrate the castle taken over by the vampires, awaken the security djinn to protect the students, and then pursue the vampires through the portal to rescue the kidnapped ones. 
 
 ## Characters
 
@@ -129,9 +133,6 @@ Closing the portal or killing Veronica Sharp will lift the hypnosis from the pro
 
 This adventure was made by the [Adventure Writer's Room](https://rpgadventures.io/writers-room) community. We are a group of GMs who meet in the discord voice chat, and challenge ourselves to improvise a one-shot adventure in 2 hours. Our goal is to brainstorm fun ideas and improvise stories together in a chill, lighthearted, no-pressure environment. It works, it really helps with the writing, and it is super fun. We're looking for some friendly and creative people to join us!
 
-### Authors
-- [lumen](https://lumenwrites.com)
-- @bdadkins 
-- @ClydeFrog278 
+**Authors:** Lumen, bdadkins, ClydeFrog278 .
 
 

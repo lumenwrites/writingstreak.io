@@ -17,7 +17,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_CLIENT_SECRET)
 
 export default function Landing({ course, user }) {
   const { toggleModal } = useModal()
-  console.log('firstChapterUrl', course.firstChapterUrl)
+  // console.log('firstChapterUrl', course.firstChapterUrl)
   // if (Cookies.get('token')) window.location.href = firstChapterUrl
   return (
     <Layout>
@@ -96,7 +96,7 @@ import content from 'backend/json/content'
 
 export async function getServerSideProps({ params, req }) {
   const user = await getUser(req)
-  console.log('params.courseSlug', params.courseSlug)
+  // console.log('params.courseSlug', params.courseSlug)
   const course = content.courses[params.courseSlug]
   return { props: { course, user } }
 }

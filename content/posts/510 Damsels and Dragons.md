@@ -13,13 +13,6 @@ tags: []
 ## Summary
 The players meet a child dragon, he's crying because an Evil Princess has kidnapped his mom. The players will need to set her free from the Coliseum where she is forced to fight monsters and gladiators for public's entertainment.
 
-## PDF Files
-You can download this adventure in a PDF format (including a printable version):
-<Downloads>
-{{ name: "Damsels and Dragons Colorful.pdf", url: "/files/lets-roll/lets-roll-assets.zip"}}
-{{ name: "Damsels and Dragons Printable.pdf", url: "/files/lets-roll/lets-roll-final.zip"}}
-</Downloads>
-
 ## Stroll through the Forest
 ![](/illustrations/damsels-and-dragons/forest.jpg)
 The players walk through the forest, and hear the sad roars in the distance. 
@@ -36,7 +29,7 @@ When the players approach, they'll see that the roars are coming from a crying c
 
 The dragon's name is Kimba, and he's uncharacteristically low-spirited today.
 
-<CharacterBox src="/illustrations/damsels-and-dragons/kimba.jpg">
+<CharacterBox src="/illustrations/damsels-and-dragons/kimba.jpg" frame>
 
 ## Kimba
 Young dragon, like an 8 year old kid (think Simba, or Russel from "Up").
@@ -164,10 +157,7 @@ Kimba and Malinda are reunited and happy. Malinda will bestow valuable treasure 
 
 See the playtest of this adventure [here](https://www.youtube.com/watch?v=FOEiZ2ZV230).
 
----
-
-**Want to learn how to create adventures like this one?**  
-I have created an [adventure writing course](/course/adventure-academy) where I share everything I know about creating adventures. Check it out to learn an easy to follow step-by-step process for creating adventures like this one.
+<CourseCTA/>
 
 <!--
 This adventure was made by the [Adventure Writer's Room](https://rpgadventures.io/writers-room) community. We are a group of GMs who meet in the discord voice chat, and challenge ourselves to improvise a one-shot adventure in 2 hours. Our goal is to brainstorm fun ideas and improvise stories together in a chill, lighthearted, no-pressure environment. It works, it really helps with the writing, and it is super fun.

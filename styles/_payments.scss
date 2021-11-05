@@ -1,4 +1,12 @@
 .purchase-modal {
+  .btn-cta-landing {
+    font-size: 14px;
+  }
+  // Now purchase modal is embedded in post, and In eed to undo post styling.
+  a {
+    color: white;
+    text-decoration: none;
+  }
   .stripe-card {
     outline: 1px solid $border; // border adds to height here for some reason, but not for inputs
     padding: 0 12px;

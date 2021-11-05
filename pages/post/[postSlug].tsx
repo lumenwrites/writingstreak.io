@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
 import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
+import CourseCTA from 'components/Elements/CourseCTA'
 import MDXComponents from 'components/Elements/MDXComponents'
 import config from 'config.json'
 
@@ -11,6 +12,7 @@ export default function Post({ post }) {
     <Layout>
       <div className="post blog-post">
         <MDXRemote {...post.compiledMdx} components={MDXComponents} />
+        {/* <CourseCTA/> */}
         <Head>
           <title>
             {post.title} | {config.title}

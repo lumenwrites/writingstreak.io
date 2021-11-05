@@ -12,6 +12,7 @@
     margin: -40px -40px 0 -40px;
     width: calc(100% + 80px)!important; // important because I want to override react player's defaults
     max-width: calc(100% + 80px); // for images
+    max-height: none;
   }
   iframe {
     width: 100%;

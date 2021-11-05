@@ -2,7 +2,7 @@
 title: Steamtooth Gambit
 description: The merfolk city has been taken, and their princess has been kidnapped by the ruthless gnomish submarine pirate in a plot to get the Trident of the Sea. The players will need to help the merfolk people to liberate their palace, chase the Captain Steamtooth’s submarine, and defeat him and his kraken in order to rescue the princess.
 thumbnail: /illustrations/steamtooth-gambit/merfolk-city.jpg
-draft: true
+draft: false	
 tags: []
 ---
 
@@ -129,8 +129,6 @@ Once the Captain Steamtooth and the Kraken have been defeated, the players can r
 
 This adventure was made by the [Adventure Writer's Room](https://rpgadventures.io/writers-room) community. We are a group of GMs who meet in the discord voice chat, and challenge ourselves to improvise a one-shot adventure in 2 hours. Our goal is to brainstorm fun ideas and improvise stories together in a chill, lighthearted, no-pressure environment. It works, it really helps with the writing, and it is super fun. We're looking for some friendly and creative people to join us!
 
-### Authors
-- [lumen](https://lumenwrites.com)
-- @Krysiskeyblade#1979 
-- @jgaylord87 (he/him)#4665
+**Authors:** Lumen, Krysiskeyblade, jgaylord87  
+**Art:** [Dino Riders](https://ww.artstation.com/artwork/3dlke2) by Saad Irfan.
 

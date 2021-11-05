@@ -1,53 +1,59 @@
 .blog-post {
   background-color: #eee5ce;
-  background: #EDE5CD;
+  background: #ede5cd;
   background-image: url(/img/paper_bg.jpg);
   box-shadow: 0 0 3px 1px rgb(0 0 0 / 20%);
   color: #160f0d;
-  a, b {
+  padding: 40px;
+  a,
+  b {
     color: #160f0d;
   }
-  font-family: "BookSanity";
-  h1, h2, h3, h4, h5 {
-    font-family: "RobotoSlab";
-    color: #58190D;
+  font-family: 'BookSanity';
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'RobotoSlab';
+    color: #58190d;
   }
-  h1, h2 {
+  h1,
+  h2 {
     text-align: center;
   }
   h3 {
     border-bottom: 2px solid #c9ad6a;
   }
   b {
-
   }
   hr {
-    border-top: 1px solid #58190D;
+    border-top: 1px solid #58190d;
   }
   .download-project-files {
     box-shadow: $box-shadow;
-    border: 2px solid #58190D;
-    color: #58190D;
-    font-family: "RobotoSlab";
+    border: 2px solid #58190d;
+    color: #58190d;
+    font-family: 'RobotoSlab';
     background: #f9f7e6;
     font-weight: bold;
   }
   .downloads-modal {
     background: #f9f7e6;
-    color: #58190D;
+    color: #58190d;
     .files {
       .file {
-        border: 1px solid #58190D;
+        border: 1px solid #58190d;
         border: none;
         border-bottom: 1px solid #58190d57; //#58190D;
         .download {
           border: 1px solid #58190d57; //#58190D;
-          color: #58190D;
-          font-family: "RobotoSlab";
+          color: #58190d;
+          font-family: 'RobotoSlab';
           background: white;
           font-weight: bold;
           svg {
-            color: #58190D;
+            color: #58190d;
           }
         }
       }
@@ -55,26 +61,27 @@
   }
 
   blockquote {
-    background: #F9F7E7;
+    background: #f9f7e7;
     // border-left: 4px solid #3B3533;
     // border-right: 4px solid #3B3533;
     border-style: solid;
     border-width: 7px;
-    border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA8CAMAAADG+c2+AAAAM1BMVEUAAAAAAAAAAAAkAAA1GwA0GgA5GgA5GwA4HgA7HgA5HgA7HgA7HwA7HgA8HgA7HgA8HwDn6RpAAAAAEHRSTlMAAQcHMDExQ1ZW1dXY3t7+02zZCAAAAKNJREFUWMPt2LEOwyAMBNCkSXGpKfb/f20G3AGUiWOJdNlueYrt6di2J3xHrmZF9mVCdnd3T/NgCO+ItUWdB0P4RrQWfR4chOVggUcu/cgCH0X6o+ynuivg3QjIAm8FggQJEiRIkCBBggQJEoTApO56An15EFIrVgJ4vaAtlnlwEKKbGrLATlgOxg9XeORfv9IMH+Xzb7tSzGo+gL7chNcjXpUulIwXVrjWS+0AAAAASUVORK5CYII=) 12 stretch;
+    border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA8CAMAAADG+c2+AAAAM1BMVEUAAAAAAAAAAAAkAAA1GwA0GgA5GgA5GwA4HgA7HgA5HgA7HgA7HwA7HgA8HgA7HgA8HwDn6RpAAAAAEHRSTlMAAQcHMDExQ1ZW1dXY3t7+02zZCAAAAKNJREFUWMPt2LEOwyAMBNCkSXGpKfb/f20G3AGUiWOJdNlueYrt6di2J3xHrmZF9mVCdnd3T/NgCO+ItUWdB0P4RrQWfR4chOVggUcu/cgCH0X6o+ynuivg3QjIAm8FggQJEiRIkCBBggQJEoTApO56An15EFIrVgJ4vaAtlnlwEKKbGrLATlgOxg9XeORfv9IMH+Xzb7tSzGo+gL7chNcjXpUulIwXVrjWS+0AAAAASUVORK5CYII=)
+      12 stretch;
     border-image-outset: 4px;
     box-shadow: 0 0 6px #faf7ea;
     h2 {
-      color: #3B3533;
+      color: #3b3533;
       font-weight: bold;
-      font-family: "AlegreyaSans";
+      font-family: 'AlegreyaSans';
       font-size: 1.2em;
       text-align: left;
     }
   }
   .character-box {
     display: flex;
-    background-color: #FEF1DA;
-    border-top: 4px solid #E69928;
+    background-color: #fef1da;
+    border-top: 4px solid #e69928;
     padding: 10px;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
@@ -96,8 +103,10 @@
       margin: 0;
       margin-right: 20px;
       border-radius: 50%;
-      border: 3px solid #ff6600;
       background-size: cover;
+    }
+    .frame {
+      border: 3px solid #ff6600;
     }
   }
   .collapsible {
@@ -110,5 +119,37 @@
       background: #f9f7e6;
     }
   }
+  .frame {
+    border: 2px solid #c9ad6a;
+    border-radius: 10px;
+  }
+  .small {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .left {
+    float: left;
+    margin: 20px;
+  }
+  .right {
+    float: right;
+    margin: 20px;
+  }
+  .adventure-academy-cta {
+    h3 {
+      border-bottom: none;
+      margin: 0;
+    }
+    padding: 10px 15px;
+    background: #f9f7e6;
+    border: 2px solid #e79828;
+    margin-top: 10px;
+  }
+  // For old adventures
+  .token {
+    width: 150px;
+    margin: auto;
+    margin-top: 10px;
+    display: block;
+  }
 }
-
