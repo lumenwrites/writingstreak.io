@@ -186,6 +186,11 @@
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   width: $modal-width;
   max-width: 100%;
+  // purchase modal is under the post, need to undo posts's styling
+  font-size: 14px;
+  h3 {
+    border-bottom: none;
+  }
   &.narrow {
     width: 500px;
   }
