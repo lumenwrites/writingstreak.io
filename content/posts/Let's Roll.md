@@ -96,11 +96,12 @@ From the assets folder drag the `pixar-ball.obj` model onto the scene and reset 
 
 Assign a new material to the `pixar-ball` node:
 
-<img className="narrow" src="/illustrations/lets-roll/09-assign-ball-material.png"/>
+<!-- <img className="narrow" src="/illustrations/lets-roll/09-assign-ball-material.png"/> -->
 
 From the `res://assets/textures` folder drag the `pixar-ball.png` texture into the material's albedo texture slot:
 
-<img className="narrow" src="/illustrations/lets-roll/10-assign-ball-texture.png"/>
+<!-- <img className="narrow" src="/illustrations/lets-roll/10-assign-ball-texture.png"/> -->
+
 
 Set the material's `roughness` to 0.4, which will add a nice highlight to the ball making it shinier.
 

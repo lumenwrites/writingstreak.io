@@ -6,6 +6,7 @@ import rehypeSlug from 'rehype-slug' // adds id's to headers so you could link t
 import rehypeCodeTitles from 'rehype-code-titles' // allows you to show folder names above code blocks
 import rehypeAutolinkHeadings from 'rehype-autolink-headings' // turns headers into links
 import rehypePrism from 'rehype-prism-plus' // syntax highlighting, allows you to highlight code lines
+import imageSize from 'rehype-img-size'
 
 export function parseFrontmatter(source) {
   const { data } = matter(source)
@@ -28,6 +29,8 @@ export async function renderMDX(text, doLinkHeadings=true) {
     rehypeSlug,
     rehypeCodeTitles,
     rehypePrism,
+    // https://ironeko.com/posts/how-to-use-next-js-image-with-markdown-or-mdx
+    // [imageSize, { dir: "public" }]
   ]
   if (doLinkHeadings) {
     const autolinkPlugin = [rehypeAutolinkHeadings, { properties: { className: ['header-link'] } }]
