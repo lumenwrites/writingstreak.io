@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
 import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
-import CourseCTA from 'components/Elements/CourseCTA'
 import MDXComponents from 'components/Elements/MDXComponents'
 import config from 'config.json'
 
