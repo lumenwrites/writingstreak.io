@@ -5,29 +5,35 @@ h4,
 h5 {
   margin-top: 0.5em;
   color: $text-heading;
-  & + p, & + ul, & + img {
+  & + p,
+  & + ul,
+  & + img {
     // first pagagraph after the header
     margin-top: 5px;
   }
 }
-h1, h2, h3 {
-  font-family: $headings-font;
+h1,
+h2 {
+  text-align: center;
 }
+h1,
+h2,
+h3 {
+  font-family: $headings-font;
+  font-weight: bold;
+}
+
 h1 {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 1.5em;
 }
 h2 {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 1.35em;
 }
 h3 {
   font-size: 1.2em;
-  font-weight: bold;
+  border-bottom: 1px solid $border;
   color: $text-subheading;
-  font-size: 1em;
-  font-weight: 700;
-  border-bottom: 2px solid #ddd;
+  font-weight: bold;
 }
 h4 {
   font-size: 1.2em;
@@ -94,7 +100,8 @@ b,
 strong {
   font-weight: bold;
 }
-i, em {
+i,
+em {
   font-style: italic;
 }
 ul {
@@ -127,8 +134,6 @@ blockquote {
   :first-child {
     margin-top: 0;
   }
-
-
 }
 
 table {

@@ -28,7 +28,7 @@ export default function Post({ post }) {
           )}
         </Head>
       </div>
-      <AdBoxes />
+      {/* <AdBoxes /> */}
       <SubscribeBox />
       <br/>
     </Layout>

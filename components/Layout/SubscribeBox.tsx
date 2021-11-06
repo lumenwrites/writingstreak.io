@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MessagePanel from 'components/Elements/MessagePanel'
 import Spinner from 'components/Elements/Spinner'
+import config from 'config.json'
 
 export default function Subscribe() {
   const emailInput = useRef(null)
@@ -27,7 +28,7 @@ export default function Subscribe() {
 
   return (
     <div className={`mailing-list`}>
-      Subscribe to our weekly newsletter, receive updates on new adventures and guides:
+      {config.subscribeCTA}
       <div className="form">
         <input
           ref={emailInput}
@@ -46,10 +47,13 @@ export default function Subscribe() {
             Subscribe
           </button>
         )}
-        <a className="btn-square" target="_blank" rel="noopener noreferrer" href="https://twitter.com/lumenwrites">
-          <FontAwesomeIcon icon={['fab', 'twitter']} />
+        <a className="btn-square" target="_blank" rel="noopener noreferrer" href={config.subscribeYoutubeLink}>
+          <FontAwesomeIcon icon={['fab', 'youtube']} />
         </a>
-        <a className="btn-square" target="_blank" rel="noopener noreferrer" href="https://discord.gg/UVNxeQE">
+        {/* <a className="btn-square" target="_blank" rel="noopener noreferrer" href={config.subscribeTwitterLink}>
+          <FontAwesomeIcon icon={['fab', 'twitter']} />
+        </a> */}
+        <a className="btn-square" target="_blank" rel="noopener noreferrer" href={config.subscribeDiscordLink}>
           <FontAwesomeIcon icon={['fab', 'discord']} />
         </a>
         <div className="clearfix" />

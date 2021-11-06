@@ -22,7 +22,8 @@
     color: $text;
     background: $input-bg; //#1a202a;
     // box-shadow: inset $box-shadow;
-    border: 1px solid $border;
+    // border: 1px solid $border;
+    border: 1px solid $input-border;
     border-right:none;
     padding-left: 10px;
     &::placeholder {
@@ -93,3 +94,14 @@
   }
 }
 
+.course-cta {
+  h3 {
+    border-bottom: none;
+    margin: 0;
+    text-align: center;
+  }
+  padding: 20px;
+  background: $btn-bg;
+  border: 1px solid $border;
+  margin-top: 10px;
+}

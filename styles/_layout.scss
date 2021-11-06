@@ -6,8 +6,6 @@ header {
   z-index: 10;
   position: relative; // so that box shadow stays on top
   padding: 8px 0; // 12px + 36px logo + 12px = total height of 56px
-  // height: 48px;
-  border-top: 2px solid #ff6600;
   box-sizing: border-box;
   .wrapper {
     max-width: $wrapper-width;
@@ -30,11 +28,9 @@ header {
     font-family: $logo-font;
     font-size: 22px;
     color: $text;
-    // font-weight: 100;
-    // font-weight:bold;
-    //text-transform: uppercase;
+    text-transform: uppercase;
     .logo-bold {
-      // letter-spacing: -1px;
+      letter-spacing: -1px;
       font-weight: bold;
     }
     .logo-image,
@@ -55,6 +51,9 @@ header {
       float: left;
       width: 100%;
       margin-top: 5px;
+    }
+    .btn-cta {
+      height:auto;
     }
   }
 }
@@ -82,8 +81,8 @@ header {
     width: 300px;
     min-width: 300px;
     background-color: $sidebar-bg;
-    //box-shadow: $box-shadow;
-    border-right: 1px solid $border;
+    box-shadow: $box-shadow;
+    border-right: 1px solid $border-dim;
     z-index: 7; // above dark-bg, below header. Also above other content to have box-shadow working
     height: 100%;
     overflow-x: hidden;

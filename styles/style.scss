@@ -1,9 +1,8 @@
-
 // Typography
 $base-font-size: 14px;
 $main-font: "Open Sans";
-$logo-font: "RobotoSlab";
-$headings-font: "RobotoSlab";
+$logo-font: "Open Sans";
+$headings-font: "Open Sans";
 $text: #3C4257;
 $text-heading: #3C4257; // #1A1F35; // h1,h2,etc. text dark
 $text-subheading: #4E576A;
@@ -20,76 +19,81 @@ $header-bg: white;
 $subnav-bg: #E0E6EF;
 $sidebar-bg: white;
 $active-bg: #fafafa;
+$quote-bg: #fafafa;
+$quote-border: #ff6600;
 $panel-bg:  #E0E6EF;
+$code-bg: mix($quote-bg, $panel-bg, 50%); // #f5f5f5;
 $post-bg:   white;
 $modal-bg:  white;
 $footer-bg: #1a202a;
-$quote-bg: #fafafa;
-$quote-border: #ff6600;
+
 
 // Small Elements
 $btn-bg: white;
 $btn-bg-hover: #eee;
 $btn-cta:#ff6600; //#DA552F;// #1977f2; //Facebook Blue
-// $panel-bg: #343c4e;
-$border-width: 1px;
 $border: #E3E8EE; //#464c61;
 $border-dim: #f6f7f8;
 $border-radius: 3px;
 $input-bg: white; //#262c3b; // lighter in header
+$input-border: $border;
 //$input-bg-dark: #181d29; // darker in post
 $scrollbar-thumb: rgba(110, 110, 110, 0.2);
-//$success: #28f028; // #DA552F;
-// $success-bg: #65da2f3b;
 // Colors
 $orange: #DA552F;
 $blue: #478dc0;
 $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 
 
+// Dark Theme
+// Typography
+$base-font-size: 14px;
+$main-font: "Muli";
+$headings-font: "Muli";
+$logo-font: "Open Sans";
+$text: white;
+$text-heading: white;
+$text-subheading: white;
+$text-placeholder: #464c61; // for inputs
+$text-dim: #667399; // for tags
+$text-link: #478dc0;
 
-// // // Typography
-// $main-font: "Muli";
-// $logo-font: "Open Sans";
-// $text: white;
-// $text-heading: white; // h1,h2,etc.
-// $text-subheading: white; // h1,h2,etc.
-// $text-placeholder: #464c61; // for inputs
-// $text-dim: #667399; // for tags
-// $text-link: #478dc0;
+// Big Elements
+$wrapper-width: 750px;
+$wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
+$modal-width: 700px;
+$main-bg:   #202631;
+$modal-bg:  #262d3b;
+$header-bg: #333B4F;
+$subnav-bg: #333B4F;
+$sidebar-bg: #262d3b;
+$active-bg: #384260; // active sidebar element
+$panel-bg:  #333B4F;
+$footer-bg: #1a202a;
+$post-bg:   #262d3b;
+$quote-bg: #353d4d;
+$quote-border: #ff572f;
 
-// // Big Elements
-// $wrapper-width: 1000px; // 960px;
-// $modal-width: 700px;
-// $main-bg:   #202631; // tan // #f1f2f5; // facebook neutral 
-// $modal-bg:  #262d3b;
-// $header-bg: #333B4F;
-// $subnav-bg: #333B4F;
-// $panel-bg:  #333B4F;
-// $footer-bg: #1a202a;
-// $post-bg:   #262d3b;
-// $sidebar-bg:   #262d3b;
-// $quote-bg: #353d4d;
-// $quote-border: #ff572f;
-// // Small Elements
-// $btn-bg: #333B4F; //#262d3b;
-// $btn-bg-hover: #384260;
-// $active-bg: #333B4F;
-// $btn-cta:#478dc0; //#DA552F;// #1977f2; //Facebook Blue
-// // $panel-bg: #343c4e;
-// $border-width: 0;
-// $border: #667399; //#464c61;
-// $border-dim: #6673993a;
-// $border-radius: 3px;
-// $input-bg: #181d29; //#262c3b; // lighter in header
-// //$input-bg-dark: #181d29; // darker in post
-// $scrollbar-thumb: #383d4c; //rgba(110, 110, 110, 0.2)
-// //$success: #28f028; // #DA552F;
-// // $success-bg: #65da2f3b;
-// // Colors
-// $orange: #DA552F;
-// $blue: #478dc0;
-// $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
+// Small Elements
+$btn-bg: #333B4F;
+$btn-bg-hover: #384260;
+$btn-cta:#478dc0;
+$panel-bg: #343c4e;
+$code-bg: #1f2532;
+$border: #667399; //#464c61;
+$border-dim: #32384d60;
+$border-width: 1px;
+$border-radius: 3px;
+$input-bg: #181d29; 
+$input-border: $input-bg;
+//$input-bg-dark: #181d29; // darker in post //#262c3b; // lighter in header
+$scrollbar-thumb: #383d4c;
+$footer-bg: #181D29;
+
+// Colors
+$orange: #DA552F;
+$blue: #478dc0;
+$box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 
 @import "./_fonts.scss";
 @import "./_reset.scss";
@@ -105,5 +109,4 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 @import "./_landing.scss";
 @import "./_payments.scss";
 @import "./_ctas.scss";
-@import "./fonts/_phb-fonts.css";
-@import "./_adventures.scss";
+

@@ -12,7 +12,7 @@ export default function AdBoxes() {
       <AdBox
         title="Adventure Writing Academy"
         description="Learn to Create Awesome Adventures for Tabletop Roleplaying Games! Read the course that summarizes everything I have learned about creating adventures."
-        href="/course/adventure-academy"
+        href="/course/first-person-shooter"
         image={'/img/valley.jpg'}
       />
       <AdBox

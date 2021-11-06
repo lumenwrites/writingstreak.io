@@ -1,22 +1,19 @@
 // Inline code
 code {
-  background: mix($quote-bg, $panel-bg, 50%);
+  background: $code-bg;
   padding: 0px 4px;
   border-radius: $border-radius;
 }
 
-pre code {
+code[class*="language-"] {
   display: block;
-  padding: 20px;
+  padding: 12px;
   border-radius: $border-radius;
-  background: #1f2532;
-  background: $panel-bg;
+  background: $code-bg;
   overflow: scroll;
-  // color: white;
 }
 pre {
   margin-top: 10px;
-  white-space: break-spaces;
 }
 .rehype-code-title {
   margin-top: 10px;

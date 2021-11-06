@@ -10,7 +10,20 @@ import Cookies from 'js-cookie'
 import { useModal } from 'context/ModalContext'
 
 import DownloadsModal from 'components/Layout/DownloadsModal'
-import CourseCTA from './CourseCTA'
+
+function CourseCTA() {
+  return (
+    <div className="course-cta">
+      <h3>Learn to create a First Person Shooter in Godot</h3>
+      <p>
+        Step-by-step guide to creating your own FPS game from scratch using Godot Engine. I have created an{' '}
+        <Link href="/course/adventure-academy">adventure writing course</Link> where I share everything I know about
+        creating adventures. Check it out to learn an easy to follow step-by-step process for creating awesome
+        adventures for roleplaying games.
+      </p>
+    </div>
+  )
+}
 
 function Downloads({ children, emailgate = false }) {
   const { toggleModal } = useModal()
@@ -45,7 +58,11 @@ function Heading({ children, id, level }) {
 
 function Video(props) {
   const { className, url } = props
-  return <ReactPlayer className={`video-responsive ${className}`} width="100%" height="100%" url={url} />
+  return (
+    <div className={className}>
+      <ReactPlayer className={`video-responsive`} controls width="100%" height="100%" url={url} />
+    </div>
+  )
 }
 
 function Img(props) {
@@ -70,7 +87,12 @@ function LandingCTA({ children, href }) {
 function CharacterBox(props) {
   return (
     <div className="character-box">
-      {props.src && <div className={`token ${props.frame ? 'frame':''}`} style={{ background: `url(${props.src})`, backgroundSize: 'cover' }} />}
+      {props.src && (
+        <div
+          className={`token ${props.frame ? 'frame' : ''}`}
+          style={{ background: `url(${props.src})`, backgroundSize: 'cover' }}
+        />
+      )}
       {/* <img src={props.src} /> */}
       <div className="character-description">{props.children}</div>
       {/* <div className="clearfix"/> */}

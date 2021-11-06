@@ -23,8 +23,8 @@ export default function Landing({ course, user }) {
     <Layout>
       <div className="landing">
         <div className="cta-header">
-          <h1>Adventure Writing Academy</h1>
-          <h2>Learn to Create Awesome Adventures for Tabletop Roleplaying Games</h2>
+          <h1>{course.frontmatter.title}</h1>
+          <h2>{course.frontmatter.description}</h2>
           <div className="centered">
             {config.price === 0 || user ? (
               <Link href={course.firstChapterUrl} className="btn btn-cta-landing">

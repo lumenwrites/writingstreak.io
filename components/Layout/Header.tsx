@@ -15,13 +15,18 @@ export default function Header({ className }) {
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />
           </div>
-          adventures
+          <span className="logo-bold">godot</span>academy
         </Link>
         <nav>
           <Link href={`/`} className="btn btn-nav">
-            Browse
+            Tutorials
           </Link>
-          <DropdownMenu />
+          {/* 
+          <div className="btn btn-nav btn-cta" onClick={()=> toggleModal('subscribe')}>
+            Subscribe
+          </div>
+           */}
+          {/* <DropdownMenu /> */}
         </nav>
         {/* <nav> */}
         {/* <Link href={`/about`} className="btn btn-nav">
@@ -49,11 +54,11 @@ function DropdownMenu() {
         {/* <a className="btn item" target="_blank" href="https://discord.gg/JZmXfWD85D">
           Our Discord
         </a> */}
-        <Link className="btn item" href={`/writers-room`}>
-          Writers&apos; Room
+        <Link className="btn item" href={`/`}>
+          Tutorials
         </Link>
-        <Link className="btn item" href={`/course/adventure-academy`}>
-          Adventure Academy
+        <Link className="btn item" href={`/course/first-person-shooter`}>
+          FPS Course
         </Link>
         <a className="btn item" target="_blank" rel="noopener noreferrer" href="https://perchance.org/adventure-prompts">
           Adventure Prompts

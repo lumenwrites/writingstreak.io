@@ -19,7 +19,7 @@ export default function Page({ chapter, toc, user, firstChapterUrl }) {
   return (
     <LayoutSidebar sidebarChildren={<Chapters sections={toc} user={user} />}>
       {user || chapter.preview || config.price === 0 ? (
-        <div className="post chapter">
+        <div className="post course-post">
           <MDXRemote {...chapter.compiledMdx} components={MDXComponents} />
           <PrevNext post={chapter} />
         </div>

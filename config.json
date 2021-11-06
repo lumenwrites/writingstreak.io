@@ -1,11 +1,15 @@
 {
   "price": 40,
-  "title": "RPG Adventures",
-  "description": "Awesome Adventures for Tabletop Roleplaying Games.",
+  "title": "Godot Academy",
+  "description": "Godot Tutorials, Articles, Assets, and Courses.",
   "twitterCreator": "@lumenwrites",
   "twitterSite": "@lumenwrites",
-  "previewImage": "https://rpgadventures.io/img/social.jpg",
-  "domain": "https://rpgadventures.io",
+  "previewImage": "https://godotacademy.io/social.png",
+  "domain": "https://godotacademy.io",
   "devDomain": "http://localhost:3050/",
-  "contentdir": "/Users/ray/Obsidian/Website/rpgadventures"
+  "contentdir": "/Users/ray/Obsidian/Website/godotacademy",
+  "subscribeCTA": "Subscribe to my weekly newsletter, receive updates on new tutorials and courses:",
+  "subscribeTwitterLink": "https://twitter.com/lumenwrites",
+  "subscribeDiscordLink": "https://discord.gg/Wbzuk2JP8Y",
+  "subscribeYoutubeLink": "https://www.youtube.com/c/GodotAcademy"
 }

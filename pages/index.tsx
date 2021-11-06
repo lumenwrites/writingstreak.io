@@ -1,14 +1,17 @@
 import Layout from 'components/Layout/Layout'
-import Browse from 'components/Posts/Browse'
+import PostGrid from 'components/Posts/PostGrid'
+import PostFeed from 'components/Posts/PostFeed'
 import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
 
 export default function browse({ posts }) {
   return (
     <Layout>
-      <Browse posts={posts} />
+      {/* <PostGrid posts={posts} /> */}
+      <PostFeed posts={posts} />
       <SubscribeBox />
-      <AdBoxes/><br/>
+      {/* <AdBoxes/> */}
+      <br/>
     </Layout>
   )
 }

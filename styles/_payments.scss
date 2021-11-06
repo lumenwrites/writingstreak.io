@@ -8,7 +8,8 @@
     text-decoration: none;
   }
   .stripe-card {
-    outline: 1px solid $border; // border adds to height here for some reason, but not for inputs
+    background: #181d29;
+    outline: 1px solid $input-bg; //$border; // border adds to height here for some reason, but not for inputs
     padding: 0 12px;
     margin-top: 10px;
     border-radius: $border-radius;
@@ -25,7 +26,10 @@
   }
   .discount-offers {
     // font-size: 0.85em;
-    color: #697386;
+    color: $text-dim;
+    h3 {
+      color: $text-dim;
+    }
     ul {
       margin-top: 0;
     }

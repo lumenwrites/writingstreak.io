@@ -1,8 +1,8 @@
-import academy from './courses/adventure-academy.json'
+import fps from './courses/first-person-shooter.json'
 
 const content = {
   courses: {
-    "adventure-academy": academy
+    "first-person-shooter": fps
   }
 
 }
