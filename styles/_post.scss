@@ -14,6 +14,14 @@
     max-width: calc(100% + 80px); // for images
     max-height: none;
   }
+  @media (max-width: 640px) {
+    padding: 20px;
+    .post-header {
+      margin: -20px -20px 0 -20px;
+      width: calc(100% + 40px)!important; // important because I want to override react player's defaults
+      max-width: calc(100% + 40px); // for images
+    }
+  }
   iframe {
     width: 100%;
   }

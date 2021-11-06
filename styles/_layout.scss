@@ -12,12 +12,16 @@ header {
     margin: auto;
     padding: 0;
     min-width: 300px;
-    @media (max-width: 1000px) {
+    // When screen size reaches the edges of content, I want some space between screen edges and elements in the header
+    @media (max-width: $wrapper-width) {
       padding: 0 20px;
     }  
   }
   &.header-sidebar .wrapper {
     max-width: $wrapper-sidebar-width;
+    @media (max-width: $wrapper-sidebar-width) {
+      padding: 0 20px;
+    } 
   }
   .logo {
     line-height: 32px;
@@ -47,13 +51,16 @@ header {
     float: right;
     height: 32px;
     @media (max-width: 500px) {
-      display: none; // for now just hiding it
+      // display: none; // for now just hiding it
       float: left;
       width: 100%;
       margin-top: 5px;
-    }
-    .btn-cta {
-      height:auto;
+      .btn-nav {
+        float: left;
+      }
+      .dropdown {
+        float: left;
+      }
     }
   }
 }
@@ -63,7 +70,7 @@ header {
     margin: auto;
     max-width: $wrapper-width;
     @media (max-width: 1000px) {
-      padding: 0 20px;
+      // padding: 0 20px;
     }
   }
 }
