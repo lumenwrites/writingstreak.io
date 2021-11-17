@@ -65,20 +65,8 @@ function Video(props) {
   )
 }
 
-// https://ironeko.com/posts/how-to-use-next-js-image-with-markdown-or-mdx
-// https://nextjs.org/docs/api-reference/next/image#layout
-// layout="fill" objectFit="contain"
-// layout="responsive"
-// layout="intrinsic"
 function img(props) {
   return <img {...props}/>
-  return (
-    <div className={`image ${props.className}`}>
-      {/* <Image className="next-image" {...props} layout="responsive" loading="lazy"/> */}
-      <Image src={props.src} layout="fill" objectFit="contain" loading="lazy" />
-      {/* <Image {...props} layout="responsive" loading="lazy" /> */}
-    </div>
-  )
 }
 
 // Doesn't work if I want to show a different button to the logged in user

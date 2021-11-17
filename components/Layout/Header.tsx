@@ -15,7 +15,7 @@ export default function Header({ className }) {
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />
           </div>
-          <span className="logo-bold">godot</span>academy
+          <span className="logo-bold">lumen</span>writes
         </Link>
         <nav>
           <Link href={`/`} className="btn btn-nav">

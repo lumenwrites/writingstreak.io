@@ -46,54 +46,54 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 
 
 // Dark Theme
-// Typography
-$base-font-size: 14px;
-$main-font: "Muli";
-$headings-font: "Muli";
-$logo-font: "Open Sans";
-$text: white;
-$text-heading: white;
-$text-subheading: white;
-$text-placeholder: #464c61; // for inputs
-$text-dim: #667399; // for tags
-$text-link: #478dc0;
+// // Typography
+// $base-font-size: 14px;
+// $main-font: "Muli";
+// $headings-font: "Muli";
+// $logo-font: "Open Sans";
+// $text: white;
+// $text-heading: white;
+// $text-subheading: white;
+// $text-placeholder: #464c61; // for inputs
+// $text-dim: #667399; // for tags
+// $text-link: #478dc0;
 
-// Big Elements
-$wrapper-width: 750px;
-$wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
-$modal-width: 700px;
-$main-bg:   #202631;
-$modal-bg:  #262d3b;
-$header-bg: #333B4F;
-$subnav-bg: #333B4F;
-$sidebar-bg: #262d3b;
-$active-bg: #384260; // active sidebar element
-$panel-bg:  #333B4F;
-$footer-bg: #1a202a;
-$post-bg:   #262d3b;
-$quote-bg: #353d4d;
-$quote-border: #ff572f;
+// // Big Elements
+// $wrapper-width: 750px;
+// $wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
+// $modal-width: 700px;
+// $main-bg:   #202631;
+// $modal-bg:  #262d3b;
+// $header-bg: #333B4F;
+// $subnav-bg: #333B4F;
+// $sidebar-bg: #262d3b;
+// $active-bg: #384260; // active sidebar element
+// $panel-bg:  #333B4F;
+// $footer-bg: #1a202a;
+// $post-bg:   #262d3b;
+// $quote-bg: #353d4d;
+// $quote-border: #ff572f;
 
-// Small Elements
-$btn-bg: #333B4F;
-$btn-bg-hover: #384260;
-$btn-cta:#478dc0;
-$panel-bg: #343c4e;
-$code-bg: #1f2532;
-$border: #667399; //#464c61;
-$border-dim: #32384d60;
-$border-width: 1px;
-$border-radius: 3px;
-$input-bg: #181d29; 
-$input-border: $input-bg;
-//$input-bg-dark: #181d29; // darker in post //#262c3b; // lighter in header
-$scrollbar-thumb: #383d4c;
-$footer-bg: #181D29;
+// // Small Elements
+// $btn-bg: #333B4F;
+// $btn-bg-hover: #384260;
+// $btn-cta:#478dc0;
+// $panel-bg: #343c4e;
+// $code-bg: #1f2532;
+// $border: #667399; //#464c61;
+// $border-dim: #32384d60;
+// $border-width: 1px;
+// $border-radius: 3px;
+// $input-bg: #181d29; 
+// $input-border: $input-bg;
+// //$input-bg-dark: #181d29; // darker in post //#262c3b; // lighter in header
+// $scrollbar-thumb: #383d4c;
+// $footer-bg: #181D29;
 
-// Colors
-$orange: #DA552F;
-$blue: #478dc0;
-$box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
+// // Colors
+// $orange: #DA552F;
+// $blue: #478dc0;
+// $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 
 @import "./_fonts.scss";
 @import "./_reset.scss";

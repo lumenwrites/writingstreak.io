@@ -12,7 +12,6 @@ export async function getPosts(postsdir) {
     const frontmatter = parseFrontmatter(postText)
     if (process.env.NODE_ENV === 'production' && frontmatter.draft) continue // skip drafts
     if (!postFileName.includes(".md")) continue // skip .DS_Store
-
     const title = frontmatter.title || postFileName.substring(postFileName.indexOf(' ') + 1).replace('.md', '')
     const slug = frontmatter.slug || slugify(title, { lower: true, strict: true })
     const url = frontmatter.directLink || `/post/${slug}`
@@ -32,7 +31,7 @@ export async function getPosts(postsdir) {
       compiledMdx,
     }
     posts.push(post)
-    console.log('[processPosts] processed:', post.title)
+    console.log('Processed post:', post.title)
   }
   return posts
 }
