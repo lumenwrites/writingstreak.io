@@ -115,7 +115,21 @@ ol {
 }
 ol li {
   margin-top: 0.2em;
+  margin-left: 1em;
 }
+// Magic that makes ordered list numbers left-aligned
+// https://stackoverflow.com/questions/33219983/left-align-ol-numbers-with-the-heading-in-the-same-column
+// ol {
+//   list-style: none;
+//   padding: 0;
+// }
+// ol li {
+//   counter-increment: step-counter;
+// }
+// ol li:before {
+//   content: counter(step-counter)". ";
+// }
+
 li p {
   margin-top: 0; // Sometimes it creates <p> inside of the li elements for some reason
 }

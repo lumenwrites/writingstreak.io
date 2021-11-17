@@ -88,6 +88,12 @@ occuluitque arma Phrygiaeque hanc, regi isto fertur.
 4. Iunctus et non inquit crevit querellis Mavortis
 5. Sensi ore dubiae moriemur
 6. Festas colligit fuit alumno laborum vulgus
+1. Satis Rhodosque ire
+2. Ut dare alias erat
+3. Adultera Cecropis formidine iaculum
+4. Iunctus et non inquit crevit querellis Mavortis
+5. Sensi ore dubiae moriemur
+6. Festas colligit fuit alumno laborum vulgus
 
 ## Flens et venerantur dumque nec actutum viderit
 
