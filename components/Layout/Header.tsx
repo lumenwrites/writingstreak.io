@@ -19,7 +19,13 @@ export default function Header({ className }) {
         </Link>
         <nav>
           <Link href={`/`} className="btn btn-nav">
-            Tutorials
+            Blog
+          </Link>
+          <Link href={`/projects`} className="btn btn-nav">
+            My Projects
+          </Link>
+          <Link href={`/about`} className="btn btn-nav">
+            About
           </Link>
           {/* 
           <div className="btn btn-nav btn-cta" onClick={()=> toggleModal('subscribe')}>
@@ -60,7 +66,12 @@ function DropdownMenu() {
         <Link className="btn item" href={`/course/first-person-shooter`}>
           FPS Course
         </Link>
-        <a className="btn item" target="_blank" rel="noopener noreferrer" href="https://perchance.org/adventure-prompts">
+        <a
+          className="btn item"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://perchance.org/adventure-prompts"
+        >
           Adventure Prompts
         </a>
       </div>

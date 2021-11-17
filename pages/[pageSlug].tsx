@@ -26,7 +26,7 @@ export default function Page({ post }) {
           )}
         </Head>
       </div>
-      <AdBoxes />
+      {/* <AdBoxes /> */}
       <SubscribeBox />
       <br/>
     </Layout>

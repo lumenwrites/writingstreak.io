@@ -19,7 +19,7 @@ $header-bg: white;
 $subnav-bg: #E0E6EF;
 $sidebar-bg: white;
 $active-bg: #fafafa;
-$quote-bg: #fafafa;
+$quote-bg: #FCF2EF; // #fafafa;
 $quote-border: #ff6600;
 $panel-bg:  #E0E6EF;
 $code-bg: mix($quote-bg, $panel-bg, 50%); // #f5f5f5;
@@ -109,4 +109,4 @@ $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 @import "./_landing.scss";
 @import "./_payments.scss";
 @import "./_ctas.scss";
-
+@import "./_projects.scss";

@@ -1,3 +1,5 @@
+import Link from 'components/Elements/Link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { MDXRemote } from 'next-mdx-remote'
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
@@ -11,6 +13,26 @@ export default function Post({ post }) {
     <Layout>
       <div className="post blog-post">
         <MDXRemote {...post.compiledMdx} components={MDXComponents} />
+        {/* Footer */}
+        {post.tags.length ? (
+          <div className="post-footer">
+            <div className="tags">
+              {post.tags.map((tag) => (
+                <Link className="tag" key={tag.slug} href={`/tag/${tag.slug}`}>
+                  {tag.name}
+                </Link>
+              ))}
+              {post.draft && <div className="tag draft">Draft</div>}
+              {post.comments && (
+                <a href={post.comments} className="tag comments">
+                  <FontAwesomeIcon icon={['fas', 'comment-alt']} />
+                  Comments
+                </a>
+              )}
+              <div className="clearfix" />
+            </div>
+          </div>
+        ) : null}
         {/* <CourseCTA/> */}
         <Head>
           <title>
@@ -19,17 +41,13 @@ export default function Post({ post }) {
           <meta property="og:title" content={`${post.title} | ${config.title}`} key="ogtitle" />
           <meta property="og:description" content={post.description} key="ogdesc" />
           <meta name="twitter:description" content={post.description} />
-          {post.thumbnail && (
-            <>
-              <meta property="og:image" content={`${config.domain}${post.thumbnail}`} key="ogimage" />
-              <meta name="twitter:image" content={`${config.domain}${post.thumbnail}`} />
-            </>
-          )}
+          {post.thumbnail && <meta property="og:image" content={`${config.domain}${post.thumbnail}`} key="ogimage" />}
+          {post.twitter && <meta name="twitter:image" content={`${config.domain}${post.twitter}`} />}
         </Head>
       </div>
       {/* <AdBoxes /> */}
       <SubscribeBox />
-      <br/>
+      <br />
     </Layout>
   )
 }

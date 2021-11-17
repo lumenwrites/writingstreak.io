@@ -18,7 +18,7 @@
     padding: 20px;
     .post-header {
       margin: -20px -20px 0 -20px;
-      width: calc(100% + 40px)!important; // important because I want to override react player's defaults
+      width: calc(100% + 40px) !important; // important because I want to override react player's defaults
       max-width: calc(100% + 40px); // for images
     }
   }
@@ -71,7 +71,7 @@
       border-top: none;
       padding: 0 20px;
       *:first-child {
-        margin-top:0;
+        margin-top: 0;
       }
     }
   }
@@ -94,8 +94,44 @@
       }
     }
   }
-
+  position: relative;
+  .post-footer {
+    color: #384260;
+    font-size: 0.8em;
+    padding: 0px 40px 0px 40px;
+    border-top: 1px solid $border-dim;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30px;
+    .tags {
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 4px 0px 2px 0px;
+      float: left;
+      width: 100%;
+      .tag {
+        background: $panel-bg;
+        color: $text-dim;
+        border-radius: 2px;
+        padding: 1px 4px;
+        margin-right: 2px;
+        display: inline-block;
+        font-weight: normal;
+        text-decoration: none;
+        svg {
+          margin-right: 5px;
+        }
+      }
+      .draft,
+      .comments {
+        float: right;
+      }
+    }
+  }
 }
+
 .course-post {
   // Prev-next
   position: relative;
@@ -169,7 +205,8 @@
         background: $active-bg;
       }
       position: relative;
-      .preview, .draft {
+      .preview,
+      .draft {
         position: absolute;
         right: 10px;
         top: 4px;
@@ -178,8 +215,8 @@
         line-height: 28px;
         background: #ff6600;
         color: white;
-        background: #CAF5C9;
-        color: #0B825D;
+        background: #caf5c9;
+        color: #0b825d;
         padding: 0 8px;
         border-radius: $border-radius;
         font-weight: normal;
@@ -192,7 +229,8 @@
   }
 }
 .page {
-  h1, h2 {
+  h1,
+  h2 {
     text-align: center;
   }
 }

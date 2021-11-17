@@ -20,6 +20,7 @@ import {
   faArrowUp,
   faEye,
   faComments,
+  faCommentAlt,
   faImage,
   faTrashAlt,
   faChevronLeft,
@@ -62,4 +63,5 @@ library.add(
   faArrowRight,
   faCaretDown,
   faCaretRight,
+  faCommentAlt,
 )

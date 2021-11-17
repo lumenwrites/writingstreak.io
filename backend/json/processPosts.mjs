@@ -12,7 +12,12 @@ export async function getPosts(postsdir) {
     const frontmatter = parseFrontmatter(postText)
     if (process.env.NODE_ENV === 'production' && frontmatter.draft) continue // skip drafts
     if (!postFileName.includes(".md")) continue // skip .DS_Store
-    const title = frontmatter.title || postFileName.substring(postFileName.indexOf(' ') + 1).replace('.md', '')
+    let titleFromFilename = postFileName.replace('.md', '')
+    // If the file name starts with a number (like 999, used for ordering), remove it
+    if (!isNaN(parseInt(titleFromFilename.split(' ')[0]))) {
+      titleFromFilename = titleFromFilename.substring(postFileName.indexOf(' ') + 1)
+    }
+    const title = frontmatter.title || titleFromFilename
     const slug = frontmatter.slug || slugify(title, { lower: true, strict: true })
     const url = frontmatter.directLink || `/post/${slug}`
     const tags = frontmatter.tags.map((tag) => ({
@@ -27,6 +32,8 @@ export async function getPosts(postsdir) {
       tags,
       description: frontmatter.description || '',
       thumbnail: frontmatter.thumbnail || null,
+      twitter: frontmatter.twitter || frontmatter.thumbnail || null,
+      comments: frontmatter.comments || null,
       draft: frontmatter.draft || false,
       compiledMdx,
     }
