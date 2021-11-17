@@ -1,3 +1,4 @@
+import Link from 'components/Elements/Link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function About() {
@@ -34,10 +35,10 @@ export default function About() {
               <FontAwesomeIcon icon={['fab', 'github']} />
               GitHub
             </a>
-            <a href="/files/Vladislav%20Podchufarov%20CV.pdf" target="_blank" rel="noopener noreferrer">
+            <Link href="/files/Vladislav%20Podchufarov%20CV.pdf" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={['fas', 'poll-h']} />
               Resume
-            </a>
+            </Link>
             {/* <a href="https://www.linkedin.com/in/lumenwrites" className="fab fa-linkedin-in cv" target="_blank"></a> */}
             {/* <a href="https://angel.co/u/lumenwrites" className="fab fa-angellist cv" target="_blank"></a> */}
           </div>
