@@ -5,7 +5,7 @@
   "twitterCreator": "@lumenwrites",
   "twitterSite": "@lumenwrites",
   "previewImage": "https://lumenwrites.com/img/social.png",
-  "domain": "https://lumenwrites.com",
+  "domain": "https://lumenwrites-com.vercel.app",
   "devDomain": "http://localhost:3050/",
   "contentdir": "/Users/ray/Obsidian/Website/websites/lumenwrites",
   "subscribeCTA": "Subscribe to my weekly newsletter, receive updates on new posts:",
