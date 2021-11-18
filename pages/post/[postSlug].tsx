@@ -42,8 +42,8 @@ export default function Post({ post }) {
           <meta name="twitter:title" content={`${post.title}`} key="ogtitle" />
           <meta property="og:description" content={post.description} key="ogdesc" />
           <meta name="twitter:description" content={post.description} />
-          {post.thumbnail && <meta property="og:image" content={`${config.domain}${post.thumbnail}`} key="ogimage" />}
-          {post.twitter && <meta name="twitter:image" content={`${config.domain}${post.twitter}`} />}
+          {post.thumbnail && <meta property="og:image" content={`${config.domain}${post.social}`} key="ogimage" />}
+          {post.twitter && <meta name="twitter:image" content={`${config.domain}${post.social}`} />}
         </Head>
       </div>
       {/* <AdBoxes /> */}

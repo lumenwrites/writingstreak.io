@@ -2,7 +2,7 @@
 title: Write Evergreen Atomic Posts
 slug: evergreen-atomic-posts
 description: Turn your notes into posts that are useful, easy to write, easy to discover,  fun to read, and add up to productive output.
-twitter: /illustrations/post/evergreen-atomic-posts/twitter.png
+social: /illustrations/post/evergreen-atomic-posts/social.png
 tags: ["Writing", "Obsidian"]
 comments: https://old.reddit.com/r/writing/comments/qwrdxv/write_evergreen_atomic_posts/
 draft: false

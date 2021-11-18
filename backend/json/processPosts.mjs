@@ -32,7 +32,7 @@ export async function getPosts(postsdir) {
       tags,
       description: frontmatter.description || '',
       thumbnail: frontmatter.thumbnail || null,
-      twitter: frontmatter.twitter || frontmatter.thumbnail || null,
+      social: frontmatter.social || frontmatter.thumbnail || null,
       comments: frontmatter.comments || null,
       draft: frontmatter.draft || false,
       compiledMdx,
