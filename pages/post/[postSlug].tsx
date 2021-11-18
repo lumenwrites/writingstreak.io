@@ -36,10 +36,10 @@ export default function Post({ post }) {
         {/* <CourseCTA/> */}
         <Head>
           <title>
-            {post.title} | {config.title}
+            {post.title}
           </title>
-          <meta property="og:title" content={`${post.title} | ${config.title}`} key="ogtitle" />
-          <meta property="twitter:title" content={`${post.title} | ${config.title}`} key="ogtitle" />
+          <meta property="og:title" content={`${post.title}`} key="ogtitle" />
+          <meta name="twitter:title" content={`${post.title}`} key="ogtitle" />
           <meta property="og:description" content={post.description} key="ogdesc" />
           <meta name="twitter:description" content={post.description} />
           {post.thumbnail && <meta property="og:image" content={`${config.domain}${post.thumbnail}`} key="ogimage" />}
