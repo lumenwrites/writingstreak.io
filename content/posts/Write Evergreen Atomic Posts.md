@@ -72,6 +72,5 @@ Organize notes by concept. Two different books about the same thing - one note.
 [Andy Matuschak on taking Evergreen Notes](https://publish.obsidian.md/andymatuschak/Andy+Matuschak/Evergreen+notes).
 > 
 The entire note’s ideas can then be referenced using that handle (see [Concept handles, after Alexander](https://publish.obsidian.md/andymatuschak/Andy+Matuschak/Concept+handles%2C+after+Alexander)).
-
 ## Related Posts
 -->
