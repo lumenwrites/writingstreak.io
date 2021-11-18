@@ -39,6 +39,8 @@ Atomic Posts add up to larger projects - you can combine multiple posts into lon
 
 Finally, Atomic Posts are better for social media marketing - multiple short posts tend to do better than one big one.
 
+## Resources
+Learn more at [Andy Matuschak's blog](https://publish.obsidian.md/andymatuschak/Andy+Matuschak/Evergreen+notes).
 
 <!--
 complete at any time
