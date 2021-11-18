@@ -3,13 +3,13 @@ h2,
 h3,
 h4,
 h5 {
-  margin-top: 0.5em;
+  margin-top: 1em;
   color: $text-heading;
   & + p,
   & + ul,
   & + img {
     // first pagagraph after the header
-    margin-top: 2px;
+    margin-top: 5px;
   }
 }
 h1,
@@ -143,7 +143,7 @@ hr {
 blockquote {
   border-left: 3px solid $quote-border;
   background: $quote-bg;
-  margin-top: 10px;
+  margin-top: 1em;
   padding: 10px;
 
   :first-child {

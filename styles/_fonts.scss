@@ -1,3 +1,26 @@
+// Inter
+// https://typeshare.co/g/seanoliver
+// https://www.reddit.com/r/YouShouldKnow/comments/83w56m/ysk_that_there_is_a_professional_looking_typeface/
+// https://www.reddit.com/r/web_design/comments/arkc1k/best_looking_fonts_not_many_know_about/
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter/Inter-Regular.ttf");
+    // For the "Ensure text remains visible during webfont load" Google PageInsights Suggestion
+    font-display: swap;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter/Inter-Light.ttf");
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter/Inter-Bold.ttf");
+    font-weight: bold;
+    font-display: swap;
+}
+
 @font-face {
     font-family: "Open Sans";
     src: url("./fonts/OpenSans/OpenSans-Regular.ttf");
@@ -17,21 +40,21 @@
     font-display: swap;
 }
 
-// Main Font
-@font-face {
-    font-family: "Muli";
-    src: url("./fonts/muli/Muli.ttf");
-    font-display: swap;
-}
-@font-face {
-    font-family: "Muli";
-    src: url("./fonts/muli/Muli-Light.ttf");
-    font-weight: 100;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Muli";
-    src: url("./fonts/muli/Muli-Bold.ttf");
-    font-weight: bold;
-    font-display: swap;
-}
+// Main Godot Font
+// @font-face {
+//     font-family: "Muli";
+//     src: url("./fonts/muli/Muli.ttf");
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: "Muli";
+//     src: url("./fonts/muli/Muli-Light.ttf");
+//     font-weight: 100;
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: "Muli";
+//     src: url("./fonts/muli/Muli-Bold.ttf");
+//     font-weight: bold;
+//     font-display: swap;
+// }

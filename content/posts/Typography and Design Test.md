@@ -9,7 +9,7 @@ comments: https://old.reddit.com/r/lumenwrites/
 draft: false
 ---
 
-<img className="post-header" src="/img/valley-cropped.png" />
+<!-- <img className="post-header" src="/img/valley-cropped.png" /> -->
 
 # Typography and Design Test
 
