@@ -1,14 +1,17 @@
+[[How To Guide]]
+Clearly articulate to readers how to do something specific, in a step-by-step format.
+Is this a "How To" article? Then it should be organized in steps (Step 1, Step 2, etc...).  
+
+[[Mistakes & Lessons]]
+Frame a problem, explain why it matters, then tell a story of what was learned as a result.
+Is this a "Mistakes" Twitter thread? Then it should be organized in mistakes (Mistake #1, Mistake #2, etc...).
+Is this a "Lessons Learned" essay? Then it should be organized in lessons (Lesson #1, Lesson #2, etc...).  
+
 ![[Grocery List]]
 This template is an easy way to compress a lot of different types of information and tips into a coherent Atomic Essay.
 
 [[5 Main Points]]
 Walking the reader through a specific idea? Use this template to organize your thoughts into a coherent roadmap.
-
-[[How To Guide]]
-Clearly articulate to readers how to do something specific, in a step-by-step format.
-
-[[Mistakes & Lessons]]
-Frame a problem, explain why it matters, then tell a story of what was learned as a result.
 
 [[Category POV]]
 Educate readers in new ways, and help them see the world through your point of view.
