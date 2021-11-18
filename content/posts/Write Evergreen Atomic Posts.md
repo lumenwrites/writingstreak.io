@@ -42,6 +42,8 @@ Finally, Atomic Posts are better for social media marketing - multiple short pos
 ## Resources
 Learn more at [Andy Matuschak's blog](https://publish.obsidian.md/andymatuschak/Andy+Matuschak/Evergreen+notes).
 
+There's a similar idea of creating [Atomic Essays](https://www.ship30for30.com/post/how-to-start-writing-online-the-ship-30-for-30-ultimate-guide), which I also found very helpful and useful.
+
 <!--
 complete at any time
 refactoring (writing like coding, writing like startup)
