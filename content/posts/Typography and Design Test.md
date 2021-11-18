@@ -9,6 +9,8 @@ comments: https://old.reddit.com/r/lumenwrites/
 draft: false
 ---
 
+<img className="post-header" src="/img/valley-cropped.png" />
+
 # Typography and Design Test
 
 **Information abundance is causing cognitive overload, but time is limited. Curation of content helps Twitterers manage their information intake.**

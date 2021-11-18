@@ -1,6 +1,6 @@
 .post {
   min-height: 100%;
-  padding: 40px;
+  padding: 20px 40px 50px 40px; // 30px footer + 20px
   background: $post-bg;
   box-shadow: $box-shadow;
   border-bottom-left-radius: $border-radius;
@@ -9,7 +9,7 @@
   text-align: justify;
   // Elements
   .post-header {
-    margin: -40px -40px 0 -40px;
+    margin: -20px -40px 0 -40px;
     // width: calc(100% + 80px)!important; // important because I want to override react player's defaults
     max-width: calc(100% + 80px); // for images
     max-height: none;
