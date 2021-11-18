@@ -13,10 +13,21 @@
     // width: calc(100% + 80px)!important; // important because I want to override react player's defaults
     max-width: calc(100% + 80px); // for images
     max-height: none;
+    @media (max-width: 640px) {
+      margin: -20px -20px 0 -20px;
+      width: calc(100% + 40px) !important; // important because I want to override react player's defaults
+      max-width: calc(100% + 40px); // for images
+    }
   }
   .h1-header {
     padding: 40px;
     margin: -20px -40px 0 -40px;
+    @media (max-width: 640px) {
+      margin: -20px -20px 0 -20px;
+      width: calc(100% + 40px) !important; // important because I want to override react player's defaults
+      max-width: calc(100% + 40px); // for images
+    }
+    
     & + * {
       margin-top: 20px;
     }
@@ -26,13 +37,13 @@
     }
     &.blue {
       background: #23284b;
-      background-color: #4158d0;      
+      background-color: #4158d0;
       background-image: linear-gradient(184deg, rgba(39, 103, 187, 1) 10.4%, rgba(16, 72, 144, 1) 87.7%);
       color: white;
     }
     &.red {
       background: #ba2b27;
-      background: linear-gradient(15deg,#93291e,#ba2b27);
+      background: linear-gradient(15deg, #93291e, #ba2b27);
       color: white;
     }
     &.purple {
@@ -43,11 +54,6 @@
 
   @media (max-width: 640px) {
     padding: 20px 20px 50px 20px; // 30px footer + 20px
-    .post-header {
-      margin: -20px -20px 0 -20px;
-      width: calc(100% + 40px) !important; // important because I want to override react player's defaults
-      max-width: calc(100% + 40px); // for images
-    }
   }
   @media (max-width: 640px) {
     text-align: unset;
