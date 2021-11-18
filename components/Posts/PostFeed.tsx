@@ -1,7 +1,7 @@
 // @ts-nocheck
 import Link from 'components/Elements/Link'
 
-function PostCard({ post }) {
+export function PostCard({ post }) {
   return (
     <div className={`post-card ${post.tags.length == 0 ? 'no-tags' : ''}`}>
       <div className="description">

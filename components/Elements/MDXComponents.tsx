@@ -25,6 +25,10 @@ function CourseCTA() {
   )
 }
 
+function RelatedPost({ href, children }) {
+  return <Link href={href} className={`related-post`}>{children}</Link>
+}
+
 function Downloads({ children, emailgate = false }) {
   const { toggleModal } = useModal()
 
@@ -66,7 +70,7 @@ function Video(props) {
 }
 
 function img(props) {
-  return <img {...props}/>
+  return <img {...props} />
 }
 
 // Doesn't work if I want to show a different button to the logged in user
@@ -123,6 +127,7 @@ const components = {
   CharacterBox,
   Collapsible,
   CourseCTA,
+  RelatedPost,
 }
 
 export default components

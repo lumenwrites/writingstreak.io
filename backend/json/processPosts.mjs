@@ -11,7 +11,7 @@ export async function getPosts(postsdir) {
     const postText = readFileSync(join(postsdir, postFileName), 'utf8')
     const frontmatter = parseFrontmatter(postText)
     if (process.env.NODE_ENV === 'production' && frontmatter.draft) continue // skip drafts
-    if (!postFileName.includes(".md")) continue // skip .DS_Store
+    if (!postFileName.includes('.md')) continue // skip .DS_Store
     let titleFromFilename = postFileName.replace('.md', '')
     // If the file name starts with a number (like 999, used for ordering), remove it
     if (!isNaN(parseInt(titleFromFilename.split(' ')[0]))) {
@@ -35,10 +35,25 @@ export async function getPosts(postsdir) {
       social: frontmatter.social || frontmatter.thumbnail || null,
       comments: frontmatter.comments || null,
       draft: frontmatter.draft || false,
+      relatedPosts: frontmatter.relatedPosts || null,
       compiledMdx,
     }
     posts.push(post)
     console.log('Processed post:', post.title)
+  }
+  for (const post of posts) {
+    if (!post.relatedPosts) continue
+    const relatedPosts = []
+    for (const relatedSlug of post.relatedPosts) {
+      const relatedPost = posts.find((p) => p.slug === relatedSlug)
+      if (!relatedPost) {
+        console.log(`Couldn't find the related post with slug ${relatedSlug} `)
+        continue
+      }
+      const { title, slug, url, description, tags } = relatedPost
+      relatedPosts.push({ title, slug, url, description, tags })
+    }
+    post.relatedPosts = relatedPosts
   }
   return posts
 }

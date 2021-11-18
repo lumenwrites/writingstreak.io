@@ -4,6 +4,7 @@ slug: evergreen-atomic-posts
 description: Turn your notes into posts that are useful, easy to write, easy to discover,  fun to read, and add up to productive output.
 social: /illustrations/post/evergreen-atomic-posts/social.png
 tags: ["Writing", "Obsidian"]
+relatedPosts: ["writing-like-product"]
 comments: https://old.reddit.com/r/writing/comments/qwrdxv/write_evergreen_atomic_posts/
 draft: false
 ---
@@ -29,13 +30,13 @@ Atomic Posts are easy to write:
 - They're brief, so you're less likely to get overwhelmed and procrastinate out of fear of doing the work.
 - Daily posts contribute to your writing habit, posting a micro essay every day is an easier habit to develop than working on big long-term projects.
 - Publishing regularly is satisfying and gives you instant feedback from your readers, so you can get better at writing by interacting with your audience.
-- They help you to avoid perfectionism. Since they're meant to evolve, your first version of the post doesn't have to be perfect. 
+- They help you to avoid perfectionism. Since they're meant to evolve, your first version of the post doesn't have to be perfect. The first version of the post is just your first attempt at expressing your idea, which will improve overtime as your knowledge and skill grows.
 
 Atomic Posts are easy to read:
 - It's easier and more satisfying to read something short and insightful than to struggle through a long article. 
 - Since they're interlinked, they can lead your readers down the rabbithole of your writing. Somehow reading through a lot of easily digestible and insightful posts feels more engaging.
 
-Atomic Posts add up to larger projects - you can combine multiple posts into longer articles, books, or courses.
+Atomic Posts make you prolific because they add up to larger projects. You can create value in small unintimidating chunks (atomic posts), and then assemble multiple posts into longer articles, books, or courses.
 
 Finally, Atomic Posts are better for social media marketing - multiple short posts tend to do better than one big one.
 
@@ -45,6 +46,21 @@ Learn more at [Andy Matuschak's blog](https://publish.obsidian.md/andymatuschak/
 There's a similar idea of creating [Atomic Essays](https://www.ship30for30.com/post/how-to-start-writing-online-the-ship-30-for-30-ultimate-guide), which I also found very helpful and useful.
 
 <!--
+## Related Posts
+<RelatedPost href="">
+
+## Writing Like Coding
+
+</RelatedPost>
+
+<RelatedPost href="">
+
+## On Writing Well
+A collection of tips on writing clearly.
+
+</RelatedPost>
+
+
 complete at any time
 refactoring (writing like coding, writing like startup)
 

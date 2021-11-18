@@ -27,7 +27,7 @@
       width: calc(100% + 40px) !important; // important because I want to override react player's defaults
       max-width: calc(100% + 40px); // for images
     }
-    
+
     & + * {
       margin-top: 20px;
     }
@@ -166,8 +166,35 @@
       }
     }
   }
+  // For the MDX component, not used anymore
+  .related-post {
+    display: block;
+    margin-top: 1em;
+    padding: 10px 20px;
+    background: $btn-bg;
+    text-decoration: none;
+    border-radius: $border-radius;
+    border: 1px solid $border;
+    font-size: 14px;
+    &:hover {
+      background: $btn-bg-hover;
+    }
+    h2 {
+      text-align: left;
+      margin: 0;
+      font-size: 1em;
+    }
+    p {
+      font-weight: normal; // Not sure why it's bold by default
+    }
+  }
 }
-
+.related-posts {
+  h2 {
+    text-align: left;
+    font-size: 1em;
+  }
+}
 .course-post {
   // Prev-next
   position: relative;

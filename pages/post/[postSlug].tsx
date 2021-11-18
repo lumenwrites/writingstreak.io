@@ -13,31 +13,10 @@ export default function Post({ post }) {
     <Layout>
       <div className="post blog-post">
         <MDXRemote {...post.compiledMdx} components={MDXComponents} />
-        {/* Footer */}
-        {post.tags.length ? (
-          <div className="post-footer">
-            <div className="tags">
-              {post.tags.map((tag) => (
-                <Link className="tag" key={tag.slug} href={`/tag/${tag.slug}`}>
-                  {tag.name}
-                </Link>
-              ))}
-              {post.draft && <div className="tag draft">Draft</div>}
-              {post.comments && (
-                <a href={post.comments} className="tag comments">
-                  <FontAwesomeIcon icon={['fas', 'comment-alt']} />
-                  Comments
-                </a>
-              )}
-              <div className="clearfix" />
-            </div>
-          </div>
-        ) : null}
+        <PostFooter post={post} />
         {/* <CourseCTA/> */}
         <Head>
-          <title>
-            {post.title}
-          </title>
+          <title>{post.title}</title>
           <meta property="og:title" content={`${post.title}`} key="ogtitle" />
           <meta name="twitter:title" content={`${post.title}`} key="ogtitle" />
           <meta property="og:description" content={post.description} key="ogdesc" />
@@ -48,8 +27,45 @@ export default function Post({ post }) {
       </div>
       {/* <AdBoxes /> */}
       <SubscribeBox />
+      <RelatedPosts post={post} />
       <br />
     </Layout>
+  )
+}
+import PostCard from 'components/Posts/PostCard'
+
+function RelatedPosts({ post }) {
+  if (!post.relatedPosts) return null
+  return (
+    <div className="related-posts">
+      <h2>Related Posts: </h2>
+      {post.relatedPosts.map((p) => (
+        <PostCard key={p.slug} post={p} />
+      ))}
+    </div>
+  )
+}
+
+function PostFooter({ post }) {
+  if (!post.tags) return null
+  return (
+    <div className="post-footer">
+      <div className="tags">
+        {post.tags.map((tag) => (
+          <Link className="tag" key={tag.slug} href={`/tag/${tag.slug}`}>
+            {tag.name}
+          </Link>
+        ))}
+        {post.draft && <div className="tag draft">Draft</div>}
+        {post.comments && (
+          <a href={post.comments} className="tag comments">
+            <FontAwesomeIcon icon={['fas', 'comment-alt']} />
+            Comments
+          </a>
+        )}
+        <div className="clearfix" />
+      </div>
+    </div>
   )
 }
 
