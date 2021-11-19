@@ -35,7 +35,7 @@ export default function Post({ post }) {
 import PostCard from 'components/Posts/PostCard'
 
 function RelatedPosts({ post }) {
-  if (!post.relatedPosts) return null
+  if (!post.relatedPosts || !post.relatedPosts.length) return null
   return (
     <div className="related-posts">
       <h2>Related Posts: </h2>

@@ -5,7 +5,7 @@ description: Turn your notes into posts that are useful, easy to write, easy to 
 social: /illustrations/post/evergreen-atomic-posts/social.png
 tags: ["Writing", "Obsidian"]
 relatedPosts: ["writing-like-product"]
-comments: https://old.reddit.com/r/writing/comments/qwrdxv/write_evergreen_atomic_posts/
+comments: https://www.reddit.com/r/lumenwrites/comments/qx28xf/write_evergreen_atomic_posts/
 draft: false
 ---
 

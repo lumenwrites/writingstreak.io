@@ -2,8 +2,9 @@
 title:
 slug:
 description: 
-social: 
-tags: ["", ""]
+social: /illustrations/post/<post-slug>/social.png
+tags: [""]
+relatedPosts: [""]
 comments: 
 draft: false
 ---

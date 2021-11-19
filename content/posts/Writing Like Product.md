@@ -5,7 +5,7 @@ description: When you're writing blog posts or courses, think of yourself as a s
 social: /illustrations/post/writing-like-product/social.png
 tags: ["Writing"]
 relatedPosts: ["evergreen-atomic-posts"]
-comments: 
+comments: https://www.reddit.com/r/lumenwrites/comments/qx29r3/writing_like_product/
 draft: false
 ---
 
@@ -29,7 +29,7 @@ One level of abstraction higher, you can also think of your **writing system** a
 
 Competently **market your writing**, actively promote what you wrote. In startups, marketing is just as important as building a good product. Learn to find people interested in your product, create titles and thumbnails that make people want to read what you wrote. Develop an article launching/marketing plan, a post promotion system you can gradually tweak and improve, and then proactively follow these steps (as opposed to haphazardly sharing your stuff on social media).
 
-**Care about the design**. The design of your posts is important, make it beautiful, attractive, readable. Do everything in your power to avoid wasting your readers' time (that would be equivalent of building a good UX for your product).
+**Care about the design**. The design of your posts is important, make it beautiful, attractive, readable. Do everything in your power to avoid wasting your readers' time (that would be equivalent to building a good UX for your product).
 
 # References
 [Very helpful thread by Dickie Bush](https://twitter.com/dickiebush/status/1384160201457037314)

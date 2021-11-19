@@ -7,7 +7,8 @@ h5 {
   color: $text-heading;
   & + p,
   & + ul,
-  & + img {
+  & + img,
+  & + blockquote {
     // first pagagraph after the header
     margin-top: 5px;
   }
@@ -32,7 +33,7 @@ h2 {
 h3 {
   font-size: 1.2em;
   border-bottom: 1px solid $border;
-  color: $text-subheading;
+  // color: $text-subheading;
   font-weight: bold;
 }
 h4 {
