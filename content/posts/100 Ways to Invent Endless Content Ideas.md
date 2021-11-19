@@ -4,7 +4,7 @@ slug: endless-ideas
 description: This is my collection of the ways to come up with an unlimited number of ideas for your blog posts, youtube videos, podcast episodes, articles, and so on.
 social: /illustrations/post/<post-slug>/social.png
 tags: ["Writing", "Ideas"]
-relatedPosts: [""]
+relatedPosts: ["value-arbitrage"]
 comments: 
 draft: false
 ---
