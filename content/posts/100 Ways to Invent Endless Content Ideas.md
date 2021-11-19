@@ -1,7 +1,7 @@
 ---
 title: Ways to Invent Endless Content Ideas
 slug: endless-ideas
-description: This is my collection of the ways to come up with an unlimited number of ideas for your blog posts, youtube videos, podcast episodes, articles, and so on.
+description: This is my collection of ways to come up with an unlimited number of ideas for your blog posts, youtube videos, podcast episodes, articles, and so on.
 social: /illustrations/post/endless-ideas/social.png
 tags: ["Writing", "Ideas"]
 relatedPosts: ["value-arbitrage"]
@@ -11,7 +11,7 @@ draft: false
 
 <h1 className="h1-header orange">Ways to Invent Endless Content Ideas</h1>
 
-This is my collection of the ways to come up with an unlimited number of ideas for your blog posts, youtube videos, podcast episodes, articles, and so on.
+This is my collection of ways to come up with an unlimited number of ideas for your blog posts, youtube videos, podcast episodes, articles, and so on.
 
 ### Project-based ideas
 Work on interesting projects, pursue challenging goals, solve problems and overcome obstacles on your path. This inevitably leads to original insights and epiphanies you can share with people.
