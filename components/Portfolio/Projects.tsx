@@ -21,6 +21,14 @@ export default function Projects() {
           <p>Godot Engine tutorials and courses.</p>
         </ProjectCard>
         <ProjectCard
+          title="Godot Assets"
+          href={'https://godotassets.io'}
+          img={'/projects/godotassets.jpg'}
+          tags={['next.js', 'react', 'aws', 'prisma', 'vercel', 'stripe']}
+        >
+          <p>A marketplace for Godot assets.</p>
+        </ProjectCard>
+        <ProjectCard
           title="RPG Adventures"
           href={'https://rpgadventures.io'}
           img={'/projects/rpgadventures.jpg'}
@@ -33,22 +41,6 @@ export default function Projects() {
             </a>
             .
           </p>
-        </ProjectCard>
-        <ProjectCard
-          title="Godot Assets"
-          href={'https://godotassets.io'}
-          img={'/projects/godotassets.jpg'}
-          tags={['next.js', 'react', 'aws', 'prisma', 'vercel', 'stripe']}
-        >
-          <p>A marketplace for Godot assets.</p>
-        </ProjectCard>
-        <ProjectCard
-          title="Digital Art"
-          href={'http://artstation.com/lumenwrites'}
-          img={'/projects/digital-art.png'}
-          tags={['houdini', 'maya', 'photoshop', 'affinity']}
-        >
-          <p>Digital Art I&apos;m creating.</p>
         </ProjectCard>
 
         <ProjectCard
@@ -66,6 +58,15 @@ export default function Projects() {
           tags={['react', 'redux', 'node', 'express']}
         >
           <p>A mind-mapping tool for writers, an app for collecting and organizing knowledge.</p>
+        </ProjectCard>
+
+        <ProjectCard
+          title="Digital Art"
+          href={'http://artstation.com/lumenwrites'}
+          img={'/projects/digital-art.png'}
+          tags={['houdini', 'maya', 'photoshop', 'affinity']}
+        >
+          <p>Digital Art I&apos;m creating.</p>
         </ProjectCard>
 
         {/* <ProjectCard

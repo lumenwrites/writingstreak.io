@@ -81,13 +81,13 @@
   .wrapper {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 5px;
   }
   .project {
     flex-basis: calc(33.333% - 10px);
     margin: 5px;
     box-sizing: border-box;
     background: white;
-    border: 1px solid rgba(98, 24, 24, 0.2);
     box-shadow: $box-shadow;
     border-radius: $border-radius;
     overflow: hidden;
@@ -104,7 +104,7 @@
       font-weight: bold;
     }
     .description {
-      padding: 10px;
+      padding: 5px 10px;
       h2 {
         margin: 0;
       }

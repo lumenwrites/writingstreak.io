@@ -4,7 +4,7 @@ export default function ProjectCard({ title, href, img, children, tags }) {
   return (
     <div className="project image-wrapper-square">
       <a href={href} target="_blank" rel="noopener noreferrer">
-        <Image src={img} width={160} height={90} layout="responsive" objectFit="cover" />
+        <Image src={img} width={130} height={90} layout="responsive" objectFit="cover" />
       </a>
       <div className="description">
         <a href={href} target="_blank" rel="noopener noreferrer" className="title">
