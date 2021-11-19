@@ -76,10 +76,10 @@ Some good examples - [GameFromScratch](https://www.youtube.com/c/gamefromscratch
 ### Analysis
 Take an already existing and successful product and explain how it's been made, what makes it successful. [Every Frame a Painting](https://www.youtube.com/c/everyframeapainting) makes video essays analyzing movies, [Game Maker's Toolkit](https://www.youtube.com/c/MarkBrownGMT/videos?view=0&sort=p&flow=grid) analyze the mechanics of popular games.
 
+<!--
 ### Share more ideas
 Did I miss anything? Share more ideas in the comments or email them to me (lumenwrites@gmail.com).
 
-<!--
 ### Creative writing is out of scope of this post (link to fiction ideas), but if you're writing fiction or comedy, you can invent many ideas just by making them up.
 
 startup ideas
