@@ -13,6 +13,7 @@
     margin-top: 10px;
     .description {
       padding: 10px 20px;
+      padding-bottom: 5px;
       .title {
         font-size: 1.2em;
       }
@@ -22,7 +23,12 @@
       }
     }
     .post-footer {
-      padding: 0px 20px 2px 20px;
+      // padding: 5px 20px; // post footer is 28px, tags are 16px, so padding should be 6+6+16=28. But 5 looks better for some reason.
+      height: 29px; // border pushes it down for some reason.
+      padding: 0 20px;
+      background: #fafafa;
+      display: flex;
+      align-items: center;
       .tags {
         width: 100%;
         .draft {
@@ -90,7 +96,6 @@
     .tags {
       white-space: nowrap;
       overflow: hidden;
-      padding: 4px 0px 2px 0px;
       float: left;
       .tag {
         background: $panel-bg;

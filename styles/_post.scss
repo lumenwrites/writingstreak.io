@@ -35,6 +35,11 @@
       background-image: linear-gradient(45deg, #d31f4d, #fab41e);
       color: white;
     }
+    &.orange-pattern {
+      background: url('/img/orange-triangles.jpg'), linear-gradient(45deg, #d31f4d, #fab41e);
+      background-size: cover;
+      color: white;
+    }
     &.blue {
       background: #23284b;
       background-color: #4158d0;

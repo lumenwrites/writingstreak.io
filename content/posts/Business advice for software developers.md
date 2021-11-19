@@ -2,12 +2,12 @@
 description: My favorite takeaways from an amazing Ask HN thread where technical founders shared the most important things they have learned from building a business.
 social: /illustrations/post/business-advice-for-software-developers/social.png
 tags: ["Startup"]
-relatedPosts: [""]
+relatedPosts: ["invent-the-future-from-the-future"]
 comments: 
-draft: false
+draft:
 ---
 
-<h1 className="h1-header orange">Business advice for software developers</h1>
+<h1 className="h1-header orange-pattern">Business advice for software developers</h1>
 
 Today I want to share with you my favorite takeaways from an amazing [Ask HN thread](https://news.ycombinator.com/item?id=14146850) where technical founders have shared the most important things they have learned from building a business.
 
