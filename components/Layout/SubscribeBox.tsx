@@ -50,12 +50,12 @@ export default function Subscribe() {
         <a className="btn-square" target="_blank" rel="noopener noreferrer" href={config.subscribeYoutubeLink}>
           <FontAwesomeIcon icon={['fab', 'youtube']} />
         </a>
-        {/* <a className="btn-square" target="_blank" rel="noopener noreferrer" href={config.subscribeTwitterLink}>
+        <a className="btn-square" target="_blank" rel="noopener noreferrer" href={config.subscribeTwitterLink}>
           <FontAwesomeIcon icon={['fab', 'twitter']} />
-        </a> */}
-        <a className="btn-square" target="_blank" rel="noopener noreferrer" href={config.subscribeDiscordLink}>
-          <FontAwesomeIcon icon={['fab', 'discord']} />
         </a>
+        {/* <a className="btn-square" target="_blank" rel="noopener noreferrer" href={config.subscribeDiscordLink}>
+          <FontAwesomeIcon icon={['fab', 'discord']} />
+        </a> */}
         <div className="clearfix" />
         <MessagePanel type={form.state} message={form.message} />
       </div>

@@ -27,7 +27,7 @@ header {
   .logo {
     line-height: 32px;
     font-weight: lighter;
-    width: 250px;
+    width: 200px;
     display: block;
     float: left;
     font-family: $logo-font;
@@ -58,6 +58,8 @@ header {
       margin-top: 5px;
       .btn-nav {
         float: left;
+        margin-left: 0;
+        margin-right:10px;
       }
       .dropdown {
         float: left;
