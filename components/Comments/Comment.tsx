@@ -42,7 +42,7 @@ export default function Comment({ comment }) {
         {showReplyForm && <CommentForm />}
         <div className="replies">
           {comment.children.map((reply) => (
-            <Comment comment={reply} />
+            <Comment key={reply.id} comment={reply} />
           ))}
         </div>
       </div>

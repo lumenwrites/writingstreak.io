@@ -8,18 +8,21 @@ export const comments = [
     postSlug: '',
     parentId: '',
     ip: '123',
+    id: "asdf",
     children: [
       {
         username: 'User 2',
         body: 'Lorem ipsum dolor sit amet.',
         upvotes: 5,
         downvotes: 0,
+        id: "asdf",
         children: [
           {
             username: 'User 3',
             body: 'Lorem ipsum dolor sit amet.',
             upvotes: 5,
             downvotes: 0,
+            id: "asdf",
             children: []
           },
           {
@@ -27,6 +30,7 @@ export const comments = [
             body: 'Lorem ipsum dolor sit amet.',
             upvotes: 5,
             downvotes: 0,
+            id: "asdf",
             children: []
           },
         ]
@@ -36,6 +40,7 @@ export const comments = [
         body: 'Lorem ipsum dolor sit amet.',
         upvotes: 5,
         downvotes: 0,
+        id: "asdf",
         children: []
       },
     ]
@@ -45,6 +50,7 @@ export const comments = [
     body: 'Lorem ipsum dolor sit amet.',
     upvotes: 5,
     downvotes: 0,
+    id: "asdf",
     children: []
   },
   {
@@ -52,6 +58,7 @@ export const comments = [
     body: 'Lorem ipsum dolor sit amet.',
     upvotes: 5,
     downvotes: 0,
+    id: "asdf",
     children: []
   },
 ]

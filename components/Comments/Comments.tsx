@@ -8,7 +8,7 @@ export default function Comments() {
       <h2>Comments</h2>
       <CommentForm />
       {comments.map((comment) => (
-        <Comment comment={comment} />
+        <Comment key={comment.id} comment={comment} />
       ))}
     </div>
   )
