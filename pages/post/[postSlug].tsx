@@ -7,6 +7,7 @@ import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
 import MDXComponents from 'components/Elements/MDXComponents'
 import config from 'config.json'
+import Comments from 'components/Comments/Comments'
 
 export default function Post({ post }) {
   return (
@@ -28,6 +29,7 @@ export default function Post({ post }) {
       {/* <AdBoxes /> */}
       <SubscribeBox />
       <RelatedPosts post={post} />
+      {/* <Comments/> */}
       <br />
     </Layout>
   )
@@ -38,7 +40,7 @@ function RelatedPosts({ post }) {
   if (!post.relatedPosts || !post.relatedPosts.length) return null
   return (
     <div className="related-posts">
-      <h2>Related Posts: </h2>
+      <h2>Related Posts</h2>
       {post.relatedPosts.map((p) => (
         <PostCard key={p.slug} post={p} />
       ))}
@@ -47,7 +49,7 @@ function RelatedPosts({ post }) {
 }
 
 function PostFooter({ post }) {
-  if (!post.tags) return null
+  if (!post.tags || !post.tags.length) return null
   return (
     <div className="post-footer">
       <div className="tags">

@@ -1,0 +1,88 @@
+.comments {
+  margin-top: 10px;
+  padding: 20px;
+  background: $post-bg;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  h2 {
+    text-align: left;
+    font-size: 1em;
+    margin-top: 0;
+  }
+  .comment {
+    margin-top: 10px;
+    display: flex;
+    .collapse {
+      flex-basis: 20px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $panel-bg;
+      cursor: pointer;
+      &:hover {
+        color: #acbacf;
+        .collapse-line {
+          background: #acbacf;
+        }
+      }
+      svg {
+        height: 17px; // same as username height
+      }
+      .collapse-line {
+        width: 2px;
+        margin-top: -2px;
+        height: calc(100% - 2px);
+        background: $panel-bg;
+      }
+    }
+    .elements-wrapper {
+      flex-basis: 100%;
+      .footer {
+        button {
+          font-weight: bold;
+          margin-right: 10px;
+          color: $text-dim;
+          &:hover {
+            color: $text;
+          }
+          svg {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  .comment-form {
+    margin-top: 10px;
+    border-radius: $border-radius;
+    overflow: hidden;
+    textarea {
+      border-bottom: none;
+      border-radius: 0;
+      margin: 0;
+      // background: #fafafa;
+    }
+    .inputs {
+      width: calc(100% - 100px); // minus submit button width
+    }
+    input {
+      float: left;
+      margin: 0;
+      width: 50%;
+      border-radius: 0;
+      border-right: none;
+      // background: #fafafa;
+    }
+    .btn {
+      width: 100px;
+      background: $btn-cta;
+      border: 1px solid $btn-cta;
+      color: white;
+      border-radius: 0;
+      height: 32px;
+      padding: 0;
+    }
+  }
+}

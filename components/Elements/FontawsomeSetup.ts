@@ -18,11 +18,14 @@ import {
   faBook,
   faEdit,
   faArrowUp,
+  faArrowDown,
   faEye,
   faComments,
   faCommentAlt,
   faImage,
   faTrashAlt,
+  faChevronUp,
+  faChevronDown,
   faChevronLeft,
   faChevronRight,
   faDownload,
@@ -32,7 +35,11 @@ import {
   faSignInAlt,
   faArrowRight,
   faCaretDown,
-  faCaretRight
+  faCaretRight,
+  faPlusSquare,
+  faMinusSquare,
+  faThumbsUp,
+  faThumbsDown,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -46,6 +53,7 @@ library.add(
   faBook,
   faEdit,
   faArrowUp,
+  faArrowDown,
   faEye,
   faComments,
   faImage,
@@ -64,4 +72,8 @@ library.add(
   faCaretDown,
   faCaretRight,
   faCommentAlt,
+  faPlusSquare,
+  faMinusSquare,
+  faThumbsUp,
+  faThumbsDown,
 )

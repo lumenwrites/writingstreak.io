@@ -55,6 +55,10 @@
       background-image: linear-gradient(-165deg, rgba(201, 37, 107, 1) 15.4%, rgba(116, 16, 124, 1) 74.7%);
       color: white;
     }
+    &.indie-hackers {
+      background-image: linear-gradient(-45deg,#e052a0,#f15c41);
+      color: white;
+    }
   }
 
   @media (max-width: 640px) {
@@ -138,6 +142,7 @@
   position: relative;
   .post-footer {
     color: #384260;
+    background: #fafafa;
     font-size: 0.8em;
     padding: 0px 40px 0px 40px;
     border-top: 1px solid $border-dim;
@@ -195,6 +200,14 @@
   }
 }
 .related-posts {
+  margin-top: 10px;
+  background: $post-bg;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  padding: 20px;
+  h2 {
+    margin: 0;
+  }
   h2 {
     text-align: left;
     font-size: 1em;
