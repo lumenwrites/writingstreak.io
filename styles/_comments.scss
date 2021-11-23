@@ -70,7 +70,7 @@
     input {
       float: left;
       margin: 0;
-      width: 50%;
+      width: 50%; // calc(100% / 3);
       border-radius: 0;
       border-right: none;
       // background: #fafafa;
@@ -83,6 +83,20 @@
       border-radius: 0;
       height: 32px;
       padding: 0;
+    }
+    &.loggedin {
+      textarea {
+        border-radius: $border-radius;
+        border: 1px solid $input-border;
+      }
+      input {
+        display: none;
+      }
+      .btn {
+        float: right;
+        border-radius: $border-radius;
+        margin-top: 5px;
+      }
     }
   }
 }

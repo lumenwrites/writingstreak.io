@@ -1,13 +1,26 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CommentForm from './CommentForm'
+
+
 export default function Comment({ comment }) {
   const [expanded, setExpanded] = useState(true)
   const [showReplyForm, setShowReplyForm] = useState(false)
+  const commentRef = useRef(null)
+
+  function toggleCollapsed() {
+    setExpanded((prev) => !prev)
+    if (!isElementInViewport(commentRef.current)) {
+      // If I click on a collapse-line, but the top of the comment is above the top of the screen
+      // console.log('Comment is out of view, scroll up to it.')
+      commentRef.current.scrollIntoView()
+    }
+  }
+
   if (!expanded) {
     return (
-      <div className="comment">
-        <div className="collapse" onClick={() => setExpanded((prev) => !prev)}>
+      <div className="comment" ref={commentRef}>
+        <div className="collapse" onClick={toggleCollapsed}>
           <FontAwesomeIcon icon={['fas', 'plus-square']} />
           <div className="collapse-line"></div>
         </div>
@@ -18,8 +31,8 @@ export default function Comment({ comment }) {
     )
   }
   return (
-    <div className="comment">
-      <div className="collapse" onClick={() => setExpanded((prev) => !prev)}>
+    <div className="comment" ref={commentRef}>
+      <div className="collapse" onClick={toggleCollapsed}>
         <FontAwesomeIcon icon={['fas', 'minus-square']} />
         <div className="collapse-line"></div>
       </div>
@@ -47,5 +60,16 @@ export default function Comment({ comment }) {
         </div>
       </div>
     </div>
+  )
+}
+
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect()
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    // rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) /* or $(window).height() */ &&
+    rect.top + 30 <= (window.innerHeight || document.documentElement.clientHeight) /* or $(window).height() */ &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
   )
 }

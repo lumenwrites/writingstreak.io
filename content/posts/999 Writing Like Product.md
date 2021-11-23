@@ -5,7 +5,7 @@ description: When you're writing blog posts or courses, think of yourself as a s
 social: /illustrations/post/writing-like-product/social.png
 tags: ["Writing"]
 relatedPosts: ["evergreen-atomic-posts"]
-comments:
+comments: https://twitter.com/lumenwrites/status/1461464185364172804
 draft: false
 ---
 

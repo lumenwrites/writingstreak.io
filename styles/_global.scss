@@ -1,3 +1,9 @@
+html {
+  // For automatically smoothly scrolling to comments (and headers!)
+  // Doesn't seem to impact mouse scrolling
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   color: $text;

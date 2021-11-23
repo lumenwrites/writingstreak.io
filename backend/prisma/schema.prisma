@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String @id @default(cuid()) // cuid and uuid are the same, but cuid is shorter
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  username      String @unique
+  email         String @unique
+
+  //https://www.prisma.io/docs/concepts/components/prisma-schema/relations/one-to-many-relations
+  // comments field will not appear in the DB. Comment will have my foreign key stored in its authorId field.
+  comments Comment[] @relation("UserComments")
+  // https://www.prisma.io/docs/concepts/components/prisma-schema/relations/many-to-many-relations
+  // Many users can vote on one comment, one user can vote on many comments
+  // M-n relations are stored in separate relational tables.
+  // You can define those explicitly if you want to store extra data about the relation, or automatically as I do here
+  // I just define a list here and a list in the Comment and prisma will take care of it
+  // @relation isn't required unless you need to disambigurate - since both upvoted and downvoted relate to Comment, prisma needs the names.
+  upvotedComments Comment[] @relation("UserUpvoted")
+  downvotedComments Comment[] @relation("UserDownvoted")
+}
+
+model Comment {
+  id String @id @default(cuid())
+  postSlug String
+  body String
+
+  // Author
+  author User @relation("UserComments", fields: [authorId], references: [id])
+  authorId String // In the field authorId we will store [id] of the User
+
+  // Parent
+  // https://www.prisma.io/docs/concepts/components/prisma-schema/relations/self-relations
+  // https://www.prisma.io/docs/concepts/components/prisma-schema/relations/self-relations#one-to-many-self-relations
+  // https://stackoverflow.com/questions/68841406/prisma-model-self-referencing-one-to-many
+  parentId String?
+  parent Comment? @relation("ParentChildren", fields: [parentId], references: [id])
+  children Comment[] @relation("ParentChildren")
+
+  // Upvoters and downvoters
+  upvoters User[] @relation("UserUpvoted")
+  downvoters User[] @relation("UserDownvoted")
+
+  approved Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

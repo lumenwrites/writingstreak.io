@@ -5,7 +5,7 @@ description: This is my collection of ways to come up with an unlimited number o
 social: /illustrations/post/endless-ideas/social.png
 tags: ["Writing", "Ideas"]
 relatedPosts: ["value-arbitrage"]
-comments: 
+comments: https://twitter.com/lumenwrites/status/1461555951035637765
 draft: false
 ---
 

@@ -3,7 +3,7 @@ description: My favorite takeaways from an amazing Ask HN thread where technical
 social: /illustrations/post/business-advice-for-software-developers/social.png
 tags: ["Startup"]
 relatedPosts: ["invent-the-future-from-the-future"]
-comments: 
+comments: https://twitter.com/lumenwrites/status/1461491884325494793
 draft:
 ---
 

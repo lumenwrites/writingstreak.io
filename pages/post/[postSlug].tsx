@@ -60,8 +60,12 @@ function PostFooter({ post }) {
         ))}
         {post.draft && <div className="tag draft">Draft</div>}
         {post.comments && (
-          <a href={post.comments} className="tag comments">
-            <FontAwesomeIcon icon={['fas', 'comment-alt']} />
+          <a href={post.comments} className="tag post-comments" target="_blank" rel="noopener noreferrer">
+            {post.comments.includes("twitter") ? (
+              <FontAwesomeIcon icon={['fab', 'twitter']} />
+            ): (
+              <FontAwesomeIcon icon={['fas', 'comment-alt']} />
+            )}
             Comments
           </a>
         )}

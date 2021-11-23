@@ -151,10 +151,11 @@
     right: 0;
     bottom: 0;
     height: 30px;
+    display: flex;
+    align-items: center;
     .tags {
       white-space: nowrap;
       overflow: hidden;
-      padding: 4px 0px 2px 0px;
       float: left;
       width: 100%;
       .tag {
@@ -162,7 +163,7 @@
         color: $text-dim;
         border-radius: 2px;
         padding: 1px 4px;
-        margin-right: 2px;
+        margin-right: 5px;
         display: inline-block;
         font-weight: normal;
         text-decoration: none;
@@ -171,8 +172,10 @@
         }
       }
       .draft,
-      .comments {
+      .post-comments {
         float: right;
+        margin-right: 0;
+        margin-left: 5px;
       }
     }
   }

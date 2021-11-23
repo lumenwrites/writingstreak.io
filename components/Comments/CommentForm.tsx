@@ -21,11 +21,12 @@ export default function CommentForm() {
   return (
     <>
       <MessagePanel type={status.state} message={status.message} />
-      <form className="comment-form" onSubmit={handleSubmit}>
+      <form className="comment-form loggedin1" onSubmit={handleSubmit}>
         <TextareaAutosize placeholder="Write your comment..." value={body} onChange={onChange} />
         <div className="inputs">
           <input placeholder="Name..." disabled={status.state === 'loading'}></input>
           <input placeholder="Email..." disabled={status.state === 'loading'}></input>
+          {/* <input placeholder="Website (optional)..." disabled={status.state === 'loading'}></input> */}
         </div>
         <SpinnerButton isloading={status.state === 'loading'} type="submit">
           Comment
