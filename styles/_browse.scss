@@ -31,8 +31,10 @@
       align-items: center;
       .tags {
         width: 100%;
-        .draft {
+        .draft, .post-comments {
           float: right;
+          margin-right: 0;
+          margin-left: 2px;
         }
       }
     }

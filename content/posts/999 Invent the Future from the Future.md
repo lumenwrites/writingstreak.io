@@ -3,7 +3,7 @@ description: My key takeaways from “How to Invent the Future”, a brilliant l
 social: /illustrations/post/invent-the-future-from-the-future/social.png
 tags: ["Startup", "Ideas"]
 relatedPosts: ["value-arbitrage", "business-advice-for-software-developers"]
-comments: 
+comments: https://twitter.com/lumenwrites/status/1463250099438555151
 draft: false
 ---
 

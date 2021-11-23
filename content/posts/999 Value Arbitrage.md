@@ -3,7 +3,7 @@ description: Generate value and ideas by cross-applying patterns between the dif
 social: /illustrations/post/value-arbitrage/social.png
 tags: ["Startup", "Ideas"]
 relatedPosts: []
-comments: 
+comments: https://twitter.com/lumenwrites/status/1463250944821538819
 draft: false
 ---
 

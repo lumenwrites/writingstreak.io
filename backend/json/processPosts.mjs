@@ -20,10 +20,13 @@ export async function getPosts(postsdir) {
     const title = frontmatter.title || titleFromFilename
     const slug = frontmatter.slug || slugify(title, { lower: true, strict: true })
     const url = frontmatter.directLink || `/post/${slug}`
-    const tags = frontmatter.tags.map((tag) => ({
+    let tags = frontmatter.tags.map((tag) => ({
       name: tag,
       slug: slugify(tag, { lower: true }),
     }))
+    if (frontmatter.draft) {
+      tags.unshift({ name: "Draft", slug: "draft"}) // add to the beginning
+    }
     const compiledMdx = await renderMDX(postText)
     const post = {
       title,
@@ -34,7 +37,6 @@ export async function getPosts(postsdir) {
       thumbnail: frontmatter.thumbnail || null,
       social: frontmatter.social || frontmatter.thumbnail || null,
       comments: frontmatter.comments || null,
-      draft: frontmatter.draft || false,
       relatedPosts: frontmatter.relatedPosts || null,
       compiledMdx,
     }

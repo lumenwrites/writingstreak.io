@@ -1,9 +1,11 @@
 // @ts-nocheck
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'components/Elements/Link'
 
 export function PostCard({ post }) {
+  const showFooter = post.tags.length || post.comments
   return (
-    <div className={`post-card ${post.tags.length == 0 ? 'no-tags' : ''}`}>
+    <div className={`post-card ${!showFooter ? 'no-tags' : ''}`}>
       <div className="description">
         <Link className="title" href={post.url}>
           {post.title}
@@ -11,7 +13,7 @@ export function PostCard({ post }) {
         <div className="summary">{post.description}</div>
       </div>
       {/* Footer */}
-      {post.tags.length ? (
+      {showFooter ? (
         <div className="post-footer">
           <div className="tags">
             {post.tags.map((tag) => (
@@ -19,7 +21,16 @@ export function PostCard({ post }) {
                 {tag.name}
               </Link>
             ))}
-            {post.draft && <div className="tag draft">Draft</div>}
+            {post.comments && (
+              <a href={post.comments} className="tag post-comments" target="_blank" rel="noopener noreferrer">
+                {post.comments.includes('twitter') ? (
+                  <FontAwesomeIcon icon={['fab', 'twitter']} />
+                ) : (
+                  <FontAwesomeIcon icon={['fas', 'comment-alt']} />
+                )}
+                Comments
+              </a>
+            )}
             <div className="clearfix" />
           </div>
         </div>
@@ -27,7 +38,6 @@ export function PostCard({ post }) {
     </div>
   )
 }
-
 
 const Browse = ({ posts }) => {
   // console.log(posts)
