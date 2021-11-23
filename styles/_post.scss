@@ -5,6 +5,7 @@
   box-shadow: $box-shadow;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
+  overflow: hidden; // hide rounded footer corners
   font-size: 17px;
   text-align: justify;
   // Elements
@@ -141,41 +142,15 @@
   }
   position: relative;
   .post-footer {
-    color: #384260;
-    background: #fafafa;
-    font-size: 0.8em;
     padding: 0px 40px 0px 40px;
-    border-top: 1px solid $border-dim;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 30px;
-    display: flex;
-    align-items: center;
     .tags {
-      white-space: nowrap;
-      overflow: hidden;
-      float: left;
-      width: 100%;
       .tag {
-        background: $panel-bg;
-        color: $text-dim;
-        border-radius: 2px;
-        padding: 1px 4px;
-        margin-right: 5px;
-        display: inline-block;
+        // Undo a styling
         font-weight: normal;
         text-decoration: none;
         svg {
           margin-right: 5px;
         }
-      }
-      .draft,
-      .post-comments {
-        float: right;
-        margin-right: 0;
-        margin-left: 5px;
       }
     }
   }
