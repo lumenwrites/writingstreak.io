@@ -13,7 +13,7 @@
   .post-card {
     margin-top: 10px;
     .description {
-      padding: 10px 20px;
+      padding: 10px 10px;
       padding-bottom: 5px;
       .title {
         font-size: 1.2em;
@@ -34,7 +34,7 @@
   right: 0;
   bottom: 0;
   height: 29px; // 1px border makes a difference for some reason
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 11px;
   color: #384260;
   background: #fafafa;
@@ -56,9 +56,9 @@
       padding: 0px 8px;
       // for twitter icon before comments
       svg {
-        margin-right: 2px;
+        margin-right: 4px;
       }
-      &.post-comments {
+      &.right {
         float: right;
         margin-right: 0;
         margin-left: 2px;
@@ -79,6 +79,7 @@
   border-radius: $border-radius;
   overflow: hidden;
   padding-bottom: calc(28px + 2px); // footer height plus some extra padding
+  display: flex;
   &.no-tags {
     padding-bottom: 2px;
   }

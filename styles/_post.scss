@@ -1,6 +1,9 @@
 .post {
   min-height: 100%;
-  padding: 20px 40px 50px 40px; // 30px footer + 20px
+  padding: 40px 60px 50px 60px; // 30px footer + 20px
+  @media (max-width: 640px) {
+    padding: 20px 10px 40px 10px; // 30px footer + 20px
+  }
   background: $post-bg;
   box-shadow: $box-shadow;
   border-bottom-left-radius: $border-radius;
@@ -9,10 +12,13 @@
   font-size: 17px;
   text-align: justify;
   // Elements
+  :first-child {
+    margin-top:0;
+  }
   .post-header {
-    margin: -20px -40px 0 -40px;
+    margin: -40px -60px 0 -60px;
     // width: calc(100% + 80px)!important; // important because I want to override react player's defaults
-    max-width: calc(100% + 80px); // for images
+    max-width: calc(100% + 120px); // for images
     max-height: none;
     @media (max-width: 640px) {
       margin: -20px -20px 0 -20px;
@@ -20,51 +26,49 @@
       max-width: calc(100% + 40px); // for images
     }
   }
-  .h1-header {
-    padding: 40px;
-    margin: -20px -40px 0 -40px;
-    @media (max-width: 640px) {
-      margin: -20px -20px 0 -20px;
-      width: calc(100% + 40px) !important; // important because I want to override react player's defaults
-      max-width: calc(100% + 40px); // for images
-    }
+  // .h1-header {
+  //   padding: 40px 60px;
+  //   margin: -40px -60px 30px -60px;
+  //   @media (max-width: 640px) {
+  //     margin: -20px -20px 0 -20px;
+  //     width: calc(100% + 40px) !important; // important because I want to override react player's defaults
+  //     max-width: calc(100% + 40px); // for images
+  //   }
 
-    & + * {
-      margin-top: 20px;
-    }
-    &.orange {
-      background-image: linear-gradient(45deg, #d31f4d, #fab41e);
-      color: white;
-    }
-    &.orange-pattern {
-      background: url('/img/orange-triangles.jpg'), linear-gradient(45deg, #d31f4d, #fab41e);
-      background-size: cover;
-      color: white;
-    }
-    &.blue {
-      background: #23284b;
-      background-color: #4158d0;
-      background-image: linear-gradient(184deg, rgba(39, 103, 187, 1) 10.4%, rgba(16, 72, 144, 1) 87.7%);
-      color: white;
-    }
-    &.red {
-      background: #ba2b27;
-      background: linear-gradient(15deg, #93291e, #ba2b27);
-      color: white;
-    }
-    &.purple {
-      background-image: linear-gradient(-165deg, rgba(201, 37, 107, 1) 15.4%, rgba(116, 16, 124, 1) 74.7%);
-      color: white;
-    }
-    &.indie-hackers {
-      background-image: linear-gradient(-45deg,#e052a0,#f15c41);
-      color: white;
-    }
-  }
+  //   & + * {
+  //     margin-top: 20px;
+  //   }
+  //   &.orange {
+  //     background-image: linear-gradient(45deg, #d31f4d, #fab41e);
+  //     color: white;
+  //   }
+  //   &.orange-pattern {
+  //     background: url('/img/orange-triangles.jpg'), linear-gradient(45deg, #d31f4d, #fab41e);
+  //     background-size: cover;
+  //     color: white;
+  //   }
+  //   &.blue {
+  //     background: #23284b;
+  //     background-color: #4158d0;
+  //     background-image: linear-gradient(184deg, rgba(39, 103, 187, 1) 10.4%, rgba(16, 72, 144, 1) 87.7%);
+  //     color: white;
+  //   }
+  //   &.red {
+  //     background: #ba2b27;
+  //     background: linear-gradient(15deg, #93291e, #ba2b27);
+  //     color: white;
+  //   }
+  //   &.purple {
+  //     background-image: linear-gradient(-165deg, rgba(201, 37, 107, 1) 15.4%, rgba(116, 16, 124, 1) 74.7%);
+  //     color: white;
+  //   }
+  //   &.indie-hackers {
+  //     background-image: linear-gradient(-45deg,#e052a0,#f15c41);
+  //     color: white;
+  //   }
+  // }
 
-  @media (max-width: 640px) {
-    padding: 20px 20px 50px 20px; // 30px footer + 20px
-  }
+
   @media (max-width: 640px) {
     text-align: unset;
   }
@@ -142,7 +146,6 @@
   }
   position: relative;
   .post-footer {
-    padding: 0px 40px 0px 40px;
     .tags {
       .tag {
         // Undo a styling
@@ -176,19 +179,23 @@
 }
 .related-posts {
   margin-top: 10px;
-  background: $post-bg;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
-  padding: 20px;
+  // background: $post-bg;
+  // box-shadow: $box-shadow;
+  // border-radius: $border-radius;
+  // padding: 20px;
+  .post-card {
+    margin-top: 5px;
+  }
   h2 {
     margin: 0;
+    padding: 0 10px;
   }
   h2 {
     text-align: left;
     font-size: 1em;
-    @media (max-width: $wrapper-width) {
-      padding: 0 20px;
-    }
+    // @media (max-width: $wrapper-width) {
+    //   padding: 0 20px;
+    // }
   }
 }
 .course-post {
@@ -287,9 +294,4 @@
     }
   }
 }
-.page {
-  h1,
-  h2 {
-    text-align: center;
-  }
-}
+

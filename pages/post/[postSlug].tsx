@@ -7,6 +7,7 @@ import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
 import MDXComponents from 'components/Elements/MDXComponents'
 import config from 'config.json'
+import PostFooter from 'components/Posts/PostFooter'
 import Comments from 'components/Comments/Comments'
 
 export default function Post({ post }) {
@@ -27,9 +28,9 @@ export default function Post({ post }) {
         </Head>
       </div>
       {/* <AdBoxes /> */}
-      <SubscribeBox />
-      <RelatedPosts post={post} />
-      {/* <Comments/> */}
+      {/* <SubscribeBox /> */}
+      {/* <RelatedPosts post={post} /> */}
+      <Comments/>
       <br />
     </Layout>
   )
@@ -44,33 +45,6 @@ function RelatedPosts({ post }) {
       {post.relatedPosts.map((p) => (
         <PostCard key={p.slug} post={p} />
       ))}
-    </div>
-  )
-}
-
-function PostFooter({ post }) {
-  if (!post.tags || !post.tags.length) return null
-  return (
-    <div className="post-footer">
-      <div className="tags">
-        {post.tags.map((tag) => (
-          <Link className="tag" key={tag.slug} href={`/tag/${tag.slug}`}>
-            {tag.name}
-          </Link>
-        ))}
-        {post.draft && <div className="tag draft">Draft</div>}
-        {post.comments && (
-          <a href={post.comments} className="tag post-comments" target="_blank" rel="noopener noreferrer">
-            {post.comments.includes("twitter") ? (
-              <FontAwesomeIcon icon={['fab', 'twitter']} />
-            ): (
-              <FontAwesomeIcon icon={['fas', 'comment-alt']} />
-            )}
-            Comments
-          </a>
-        )}
-        <div className="clearfix" />
-      </div>
     </div>
   )
 }

@@ -1,12 +1,10 @@
-
-
 header {
   background: $header-bg;
   box-shadow: $box-shadow;
   z-index: 10;
   position: relative; // so that box shadow stays on top
   padding: 8px 0; // 12px + 36px logo + 12px = total height of 56px
-  border-top: 2px solid #ff6600;
+  // border-top: 2px solid #ff6600;
   box-sizing: border-box;
   .wrapper {
     max-width: $wrapper-width;
@@ -16,16 +14,16 @@ header {
     // When screen size reaches the edges of content, I want some space between screen edges and elements in the header
     @media (max-width: $wrapper-width) {
       padding: 0 20px;
-    }  
+    }
   }
   &.header-sidebar .wrapper {
     max-width: $wrapper-sidebar-width;
     @media (max-width: $wrapper-sidebar-width) {
       padding: 0 20px;
-    } 
+    }
   }
   .logo {
-    line-height: 32px;
+    line-height: 28px;
     font-weight: lighter;
     width: 200px;
     display: block;
@@ -43,7 +41,7 @@ header {
       width: 32px;
       height: 32px;
       float: left;
-      margin-right: 10px;
+      margin-right: 5px;
       border-radius: 50%;
     }
   }
@@ -51,6 +49,12 @@ header {
   nav {
     float: right;
     height: 32px;
+    .sorting {
+      .menu,
+      .menu-handle {
+        width: 70px;
+      }
+    }
     @media (max-width: 500px) {
       // display: none; // for now just hiding it
       float: left;
@@ -59,7 +63,7 @@ header {
       .btn-nav {
         float: left;
         margin-left: 0;
-        margin-right:10px;
+        margin-right: 10px;
       }
       .dropdown {
         float: left;
@@ -67,7 +71,100 @@ header {
     }
   }
 }
-
+.tag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  h1 {
+    display: flex;
+    align-items: center;
+  }
+  border-top: 3px solid $btn-cta;
+  .btn {
+    margin-left: 10px;
+  }
+}
+.subnav {
+  // margin-top: 10px;
+  padding: 4px; //  10px 10px;
+  background: white;
+  background: #fafaf9; // $post-bg;
+  .wrapper {
+    max-width: $wrapper-width;
+    margin: auto;
+  }
+  box-shadow: $box-shadow;
+  // border-radius: $border-radius;
+  .sorting,
+  .period {
+    .btn-nav {
+      margin: 0;
+      margin-right: 5px;
+    }
+    .menu,
+    .menu-handle {
+      width: 70px;
+      .item {
+        margin: 0;
+      }
+    }
+  }
+  .period {
+    .menu,
+    .menu-handle {
+      width: 80px;
+    }
+  }
+  .btn {
+    margin-right: 5px;
+    float: left;
+    &.active {
+      background: #697485;
+      color: white;
+      svg {
+        color: white;
+      }
+    }
+  }
+  .separator {
+    border-right: 1px solid $border;
+    height: 100%;
+    width: 0;
+    margin: 4px 5px 4px 0;
+    float: left;
+    height: 24px;
+  }
+  .select-tag {
+    width: 120px;
+    margin-right: 5px;
+    .menu {
+      width: 120px;
+    }
+    .btn-nav {
+      margin: 0;
+    }
+    input {
+      margin: 0;
+    }
+  }
+  .search-wrapper {
+    width: 200px;
+    float: right;
+    position: relative;
+    input {
+      margin-top: 0;
+      background: #f6f7f8;
+    }
+    svg {
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 7px);
+      color: rgba($text-dim, 0.5);
+    }
+  }
+}
 .layout {
   .content {
     margin: auto;
@@ -79,7 +176,7 @@ header {
 }
 
 .layout-sidebar {
-  height: calc(100% - 48px - 2px); //minus header height minus orange line
+  height: calc(100% - 48px); //  - 2px minus header height minus orange line
   max-width: $wrapper-sidebar-width;
   margin: auto;
   display: flex;
@@ -117,7 +214,7 @@ header {
 
 // In Header
 .header .toggle-sidebar-button {
-  display:none;
+  display: none;
 }
 
 .header-sidebar .toggle-sidebar-button {

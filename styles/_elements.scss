@@ -39,15 +39,15 @@
 .btn-cta {
   background: $btn-cta;
   border: 1px solid $btn-cta;
-  height: 40px; // for spinner
+  // height: 40px; // for spinner
   color: white;
   &:active,
   &:focus {
     color: white;
   }
-  // svg {
-  //   color: white;
-  // }
+  svg {
+    color: white;
+  }
   &:hover {
     background: $btn-cta;
     color: white;
@@ -90,6 +90,9 @@
 
 .btn-nav {
   margin-left: 10px;
+  svg {
+    margin-right: 5px;
+  }
 }
 
 .panel {
@@ -101,17 +104,23 @@
   color: #667399;
 }
 
+.card {
+  margin-top: 10px;
+  padding: 10px;
+  background: $post-bg;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  h1, h2, h3 {
+    margin: 0;
+  }
+}
 .dropdown {
   // display: inline-block;
-  float: right; // inline block for some reason shifts buttons to the left
+  float: left; // inline block for some reason shifts buttons to the left
   position: relative;
   // width: 150px;
   .menu-handle {
     cursor: pointer;
-    //width: 100%;
-    svg {
-      margin: 0;
-    }
     border: 1px solid $border;
   }
   &:hover .menu {

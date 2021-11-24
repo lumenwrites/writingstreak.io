@@ -19,13 +19,13 @@ export default function Comment({ comment }) {
 
   if (!expanded) {
     return (
-      <div className="comment" ref={commentRef}>
-        <div className="collapse" onClick={toggleCollapsed}>
+      <div className="comment collapsed" ref={commentRef}  onClick={toggleCollapsed}>
+        <div className="collapse">
           <FontAwesomeIcon icon={['fas', 'plus-square']} />
           <div className="collapse-line"></div>
         </div>
         <div className="elements-wrapper">
-          <h2 className="username">{comment.username}</h2>
+          <h2 className="username">{comment.username}</h2> + 14 replies
         </div>
       </div>
     )
@@ -44,10 +44,10 @@ export default function Comment({ comment }) {
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />
             {comment.upvotes}
           </button>
-          <button>
+          {/* <button>
             <FontAwesomeIcon icon={['fas', 'arrow-down']} />
             {comment.downvotes}
-          </button>
+          </button> */}
           <button onClick={() => setShowReplyForm((prev) => !prev)}>Reply</button>
           {/* <button>Edit</button> */}
           {/* <button>Delete</button> */}

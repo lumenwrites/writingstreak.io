@@ -7,7 +7,8 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 // import { fab } from "@fortawesome/free-brands-svg-icons"
 // library.add(fas, far, fab)
 
-import { faGoogle, faTwitter, faYoutube, faDiscord } from "@fortawesome/free-brands-svg-icons"
+import { faGoogle, faTwitter, faYoutube, faDiscord, faSlackHash, faHotjar } from "@fortawesome/free-brands-svg-icons"
+import { faCalendar as farCalendar } from "@fortawesome/free-regular-svg-icons"
 import {
   faBars,
   faUpload,
@@ -40,6 +41,15 @@ import {
   faMinusSquare,
   faThumbsUp,
   faThumbsDown,
+  faHeart,
+  faHashtag,
+  faTag,
+  faClock,
+  faSearch,
+  faCalendar,
+  faCalendarAlt,
+  faCalendarDay,
+  faCalendarWeek,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -58,6 +68,20 @@ library.add(
   faComments,
   faImage,
   faTrashAlt,
+  faChevronUp,
+  faChevronDown,
+  faHeart,
+  faUser,
+  faHashtag,
+  faTag,
+  faSlackHash,
+  faHotjar,
+  faClock,
+  faSearch,
+  faCalendar,
+  faCalendarAlt,
+  faCalendarDay,
+  faCalendarWeek,
   faChevronLeft,
   faChevronRight,
   faDownload,
@@ -76,4 +100,5 @@ library.add(
   faMinusSquare,
   faThumbsUp,
   faThumbsDown,
+  farCalendar,
 )
