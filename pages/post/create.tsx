@@ -10,7 +10,7 @@ import Layout from 'components/Layout/Layout'
 import TagsInput from 'components/Posts/TagsInput'
 import MessagePanel from 'components/Elements/MessagePanel'
 
-export default function create() {
+export default function PostCreate() {
   const router = useRouter()
   const emptyInputs = { title: '', body: '' }
   const { inputs, handleChange, setValue, clearForm } = useForm(emptyInputs)
