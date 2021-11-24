@@ -28,9 +28,9 @@ export default function Post({ post }) {
         </Head>
       </div>
       {/* <AdBoxes /> */}
-      {/* <SubscribeBox /> */}
-      {/* <RelatedPosts post={post} /> */}
-      <Comments/>
+      <SubscribeBox />
+      <RelatedPosts post={post} />
+      {/* <Comments/> */}
       <br />
     </Layout>
   )
