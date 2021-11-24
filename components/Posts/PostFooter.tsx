@@ -12,18 +12,28 @@ export default function PostFooter({ post }) {
           </Link>
         ))}
         <div className="right">
-          <a className="tag">
+          {post.comments && (
+            <a href={post.comments} className="tag post-comments" target="_blank" rel="noopener noreferrer">
+              {post.comments.includes('twitter') ? (
+                <FontAwesomeIcon icon={['fab', 'twitter']} />
+              ) : (
+                <FontAwesomeIcon icon={['fas', 'comment-alt']} />
+              )}
+              Comments
+            </a>
+          )}
+          {/* <a className="tag">
             <FontAwesomeIcon icon={['fas', 'user']} />
             lumenwrites
-          </a>
-          <a className="tag">
+          </a> */}
+          {/* <a className="tag">
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />
             157
-          </a>
-          <a href={post.comments} className="tag" target="_blank" rel="noopener noreferrer">
+          </a> */}
+          {/* <a href={post.comments} className="tag" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={['fas', 'comment-alt']} />
             28
-          </a>
+          </a> */}
         </div>
         <div className="clearfix" />
       </div>

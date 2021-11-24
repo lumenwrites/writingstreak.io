@@ -6,13 +6,18 @@ import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
 import Subnav from 'components/Layout/Subnav'
 import TagHeader from 'components/Layout/TagHeader'
+import HomeHeader from 'components/CTAs/HomeHeader'
+import Pagination from 'components/Posts/Pagination'
 
 export default function browse({ posts }) {
   return (
-    <Layout subnav={<Subnav />}>
-      {/* <PostGrid posts={posts} /> */}
+    <Layout>
+      {/* <HomeHeader /> */}
       {/* <TagHeader/> */}
+      {/* <Subnav /> */}
+      {/* <PostGrid posts={posts} /> */}
       <PostFeed posts={posts} />
+      {/* <Pagination postCount={123}/> */}
       <SubscribeBox />
       {/* <AdBoxes/> */}
       <br />

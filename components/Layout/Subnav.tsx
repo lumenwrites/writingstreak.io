@@ -3,8 +3,8 @@ import Link from 'components/Elements/Link'
 
 export default function Subnav() {
   return (
-    <div className="subnav">
-      <div className="wrapper">
+    <div className="subnav-wrapper">
+      <div className="subnav">
         <div className="dropdown sorting">
           <Link className="menu-handle btn btn-nav" href={`/`}>
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />

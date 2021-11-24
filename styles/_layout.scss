@@ -77,6 +77,7 @@ header {
   align-items: center;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  border-radius: 0;
   h1 {
     display: flex;
     align-items: center;
@@ -86,17 +87,20 @@ header {
     margin-left: 10px;
   }
 }
+.subnav-wrapper {
+  max-width: $wrapper-width;
+  margin: auto;
+  margin-top: 0px;
+}
 .subnav {
   // margin-top: 10px;
   padding: 4px; //  10px 10px;
   background: white;
   background: #fafaf9; // $post-bg;
-  .wrapper {
-    max-width: $wrapper-width;
-    margin: auto;
-  }
   box-shadow: $box-shadow;
-  // border-radius: $border-radius;
+  border-radius: $border-radius;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   .sorting,
   .period {
     .btn-nav {
