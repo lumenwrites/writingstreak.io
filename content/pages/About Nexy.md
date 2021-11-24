@@ -1,0 +1,2 @@
+# Nexy
+Nexy is a community of makers - startup founders, writers, online teachers, developers, artists. This is the place to share your knowledge, showcase what you create, exchange feedback, grow your audience.
