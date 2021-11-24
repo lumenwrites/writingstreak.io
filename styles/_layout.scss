@@ -4,7 +4,7 @@ header {
   z-index: 10;
   position: relative; // so that box shadow stays on top
   padding: 8px 0; // 12px + 36px logo + 12px = total height of 56px
-  // border-top: 2px solid #ff6600;
+  border-top: 2px solid #ff6600;
   box-sizing: border-box;
   .wrapper {
     max-width: $wrapper-width;
@@ -180,7 +180,7 @@ header {
 }
 
 .layout-sidebar {
-  height: calc(100% - 48px); //  - 2px minus header height minus orange line
+  height: calc(100% - 48px - 2px); //   minus header height minus orange line
   max-width: $wrapper-sidebar-width;
   margin: auto;
   display: flex;

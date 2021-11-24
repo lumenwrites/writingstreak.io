@@ -58,8 +58,10 @@
       svg {
         margin-right: 4px;
       }
-      &.right {
-        float: right;
+    }
+    .right {
+      float: right;
+      .tag {
         margin-right: 0;
         margin-left: 2px;
       }

@@ -13,7 +13,7 @@ export default function PostFooter({ post }) {
         ))}
         <div className="right">
           {post.comments && (
-            <a href={post.comments} className="tag post-comments" target="_blank" rel="noopener noreferrer">
+            <a href={post.comments} className="tag" target="_blank" rel="noopener noreferrer">
               {post.comments.includes('twitter') ? (
                 <FontAwesomeIcon icon={['fab', 'twitter']} />
               ) : (
