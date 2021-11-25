@@ -8,7 +8,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 // library.add(fas, far, fab)
 
 import { faGoogle, faTwitter, faYoutube, faDiscord, faSlackHash, faHotjar } from "@fortawesome/free-brands-svg-icons"
-import { faCalendar as farCalendar } from "@fortawesome/free-regular-svg-icons"
+import { faBell, faCalendar as farCalendar } from "@fortawesome/free-regular-svg-icons"
 import {
   faBars,
   faUpload,
@@ -101,4 +101,6 @@ library.add(
   faThumbsUp,
   faThumbsDown,
   farCalendar,
+  faBell,
+  faInfoCircle
 )

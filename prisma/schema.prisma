@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String @id @default(cuid()) // cuid and uuid are the same, but cuid is shorter
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  trusted Boolean @default(false) // So that I could manually approve users if I want
+
+  username      String @unique
+  email         String @unique
+  password String
+
+  posts Post[] @relation("UserPosts")
+  upvotedPosts Post[] @relation("UserUpvotedPosts")
+  downvotedPosts Post[] @relation("UserDownvotedPosts")
+
+
+  comments Comment[] @relation("UserComments")
+  upvotedComments Comment[] @relation("UserUpvotedComments")
+  downvotedComments Comment[] @relation("UserDownvotedComments")
+}
+
+model Post {
+  id String @id @default(cuid())
+  slug String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  published Boolean  @default(false)
+  canonicalUrl String
+
+  title String
+  body String
+
+  author User @relation("UserPosts", fields: [authorId], references: [id])
+  authorId String // In the field authorId we will store [id] of the User
+  sequence Sequence? @relation("SequencePosts", fields: [sequenceId], references: [id])
+  sequenceId String?
+  tags Tag[]
+  
+  comments Comment[] @relation("PostComments")
+
+  rank Float @default(0)
+  views Int @default(0)
+  upvoters User[] @relation("UserUpvotedPosts")
+  downvoters User[] @relation("UserDownvotedPosts")
+}
+
+model Comment {
+  id String @id @default(cuid())
+  body String
+
+  // Author. One user, many comments.
+  //https://www.prisma.io/docs/concepts/components/prisma-schema/relations/one-to-many-relations
+  author User @relation("UserComments", fields: [authorId], references: [id])
+  authorId String // In the field authorId we will store [id] of the User
+  
+  // Commented under this post
+  post Post @relation("PostComments", fields: [postId], references: [id])
+  postId String
+
+  // Upvoters and downvoters. Many to many.
+  // https://www.prisma.io/docs/concepts/components/prisma-schema/relations/many-to-many-relations
+  upvoters User[] @relation("UserUpvotedComments")
+  downvoters User[] @relation("UserDownvotedComments")
+
+  // Parent comment.
+  // https://www.prisma.io/docs/concepts/components/prisma-schema/relations/self-relations
+  // https://www.prisma.io/docs/concepts/components/prisma-schema/relations/self-relations#one-to-many-self-relations
+  // https://stackoverflow.com/questions/68841406/prisma-model-self-referencing-one-to-many
+  parentId String?
+  parent Comment? @relation("ParentChildren", fields: [parentId], references: [id])
+  children Comment[] @relation("ParentChildren")
+
+  approved Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+
+// Many to many relations:
+// https://www.prisma.io/docs/support/help-articles/working-with-many-to-many-relations
+model Tag {
+  id String @id @default(cuid())
+  posts Post[]
+  name String
+  slug String @unique
+}
+
+model Sequence {
+  id String @id @default(cuid())
+  posts Post[] @relation("SequencePosts")
+  name String
+  slug String @unique
+}

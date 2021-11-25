@@ -95,8 +95,25 @@
 }
 
 .showcase-boxes {
+  
   // padding-bottom: 20px; // space to the bottom of the page
   .showcase-box {
+    padding: 0;
+    margin-top: 0;
+    border-radius: $border-radius;
+    overflow: hidden;
+    a {
+      color: $text;
+    }
+    .description {
+      padding: 2px 10px 2px 10px;
+      color: $text;
+      .title {
+        font-weight: bold;
+        color: $text;
+        display: inline-block;
+      }
+    }
     // no tags
     padding-bottom: 2px;
   }

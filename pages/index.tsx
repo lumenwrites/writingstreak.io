@@ -12,14 +12,13 @@ import Pagination from 'components/Posts/Pagination'
 export default function browse({ posts }) {
   return (
     <Layout>
-      {/* <HomeHeader /> */}
-      {/* <TagHeader/> */}
-      {/* <Subnav /> */}
-      {/* <PostGrid posts={posts} /> */}
+      <HomeHeader />
+      <TagHeader/>
+      <Subnav />
       <PostFeed posts={posts} />
-      {/* <Pagination postCount={123}/> */}
-      <SubscribeBox />
-      {/* <AdBoxes/> */}
+      <Pagination postCount={123}/>
+      {/* <SubscribeBox /> */}
+      <AdBoxes/>
       <br />
     </Layout>
   )

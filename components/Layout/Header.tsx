@@ -18,26 +18,17 @@ export default function Header({ className }) {
           nexy
         </Link>
         <nav>
-          {/* <Link href={`/`} className="btn btn-nav">
-            Browse
-          </Link> */}
-          {/* <Link href={`/post/create`} className="btn btn-nav">
+          <Link href={`/post/create`} className="btn btn-nav">
             Create Post
-          </Link> */}
-          {/* <Link href={`/post/create`} className="btn btn-nav">
-            <Image src="/img/avatar.png" width={32} height={32} />
-          </Link> */}
+          </Link>
           {/* <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`login`)}>
             <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
             Login
           </a> */}
-          <Link href={`/projects`} className="btn btn-nav">
-            My Projects
-          </Link>
-          <Link href={`/about`} className="btn btn-nav">
-            About
-          </Link>
-          {/* <DropdownMenu /> */}
+          <div className="notifications" onClick={() => toggleModal(`login`)}>
+            <FontAwesomeIcon icon={['far', 'bell']} />
+          </div>
+          <DropdownMenu />
         </nav>
         {/* <nav> */}
         {/* <Link href={`/about`} className="btn btn-nav">
@@ -57,23 +48,22 @@ export default function Header({ className }) {
 
 function DropdownMenu() {
   return (
-    <div className="dropdown sorting">
-      <Link href="/" className="menu-handle btn btn-nav">
-        <FontAwesomeIcon icon={['fab', 'hotjar']} />
-        Hot
+    <div className="dropdown">
+      <Link href="/" className="avatar">
+        <Image src="/img/avatar.png" width={32} height={32} />
       </Link>
       <div className="menu left">
         <Link className="btn item" href={`/`}>
-          <FontAwesomeIcon icon={['fab', 'hotjar']} />
-          Hot
+          <FontAwesomeIcon icon={['fas', 'cog']} />
+          Settings
         </Link>
         <Link className="btn item" href={`/`}>
-          <FontAwesomeIcon icon={['fas', 'arrow-up']} />
-          Top
+          <FontAwesomeIcon icon={['fas', 'info-circle']} />
+          About
         </Link>
         <Link className="btn item" href={`/`}>
-          <FontAwesomeIcon icon={['fas', 'clock']} />
-          New
+          <FontAwesomeIcon icon={['fas', 'sign-out-alt']} />
+          Logout
         </Link>
       </div>
     </div>

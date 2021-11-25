@@ -27,10 +27,10 @@ export default function Post({ post }) {
           {post.social && <meta name="twitter:image" content={`${config.domain}${post.social}`} />}
         </Head>
       </div>
-      {/* <AdBoxes /> */}
-      <SubscribeBox />
-      <RelatedPosts post={post} />
-      {/* <Comments/> */}
+      <AdBoxes />
+      {/* <SubscribeBox /> */}
+      {/* <RelatedPosts post={post} /> */}
+      <Comments/>
       <br />
     </Layout>
   )
