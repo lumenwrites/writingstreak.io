@@ -95,6 +95,11 @@
     margin-right: 5px;
   }
 }
+// for bold orange <a> link in the "Log in to comment" prompt
+.link-cta {
+  font-weight: bold;
+  text-decoration: underline;
+}
 
 .panel {
   margin-top: 12px;
