@@ -82,7 +82,7 @@ model Comment {
   parent Comment? @relation("ParentChildren", fields: [parentId], references: [id])
   children Comment[] @relation("ParentChildren")
 
-  approved Boolean  @default(true)
+  approved Boolean  @default(true) // do I need that now?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

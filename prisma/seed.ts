@@ -3,7 +3,7 @@ import { PrismaClient, Prisma } from '@prisma/client'
 import { hash } from 'bcryptjs'
 import slugify from 'slugify'
 import { users, sequences, tags, posts, comments } from './seeddata'
-import processedMarkdownPosts from 'backend/json/posts/posts.json'
+import processedMarkdownPosts from '../backend/json/out/posts.json'
 
 const prisma = new PrismaClient()
 
@@ -23,20 +23,25 @@ async function main() {
     console.log(`Created user ${createdUser.username} with id: ${createdUser.id}`)
   }
   for (let sequence of sequences) {
-    sequence.id = sequence.slug
-    const createdSequence = await prisma.sequence.create({ data: sequence })
+    const createdSequence = await prisma.sequence.create({
+      data: {
+        id: sequence.slug,
+        name: sequence.name,
+        slug: sequence.slug
+      }
+    })
     console.log(`Created sequence: ${createdSequence.slug}`)
   }
   let postIds = [] // When I create a comment, I connect it to post id
   for (let markdownPost of processedMarkdownPosts) {
     // post.slug = slugify(post.title, { lower: true, strict: true })
-    for (let tag of post.tags) {
-      tag.id = tag.slug
+    for (let tag of markdownPost.tags) {
       // Create tag if it doesn't exist
       const createdTag = await prisma.tag.upsert({
-        where: { id: tag.id },
+        where: { slug: tag.slug },
         update: {},
         create: {
+          id: tag.slug,
           name: tag.name,
           slug: tag.slug,
         },
@@ -59,8 +64,9 @@ async function main() {
           { id: userIds[Math.floor(Math.random() * userIds.length)] }
         ]
       },
+      sequence: { connect: { id: 'startup-notes' } },
       // Connect to the tags I've just created
-      tags: { connect: post.tags.map(tag => ({ id: tag.slug })) },
+      tags: { connect: markdownPost.tags.map(tag => ({ id: tag.slug })) },
       rank: Math.random(),
       views: Math.floor(Math.random() * 100),
     }
@@ -68,6 +74,24 @@ async function main() {
     const createdPost = await prisma.post.create({ data: post })
     postIds.push(createdPost.id)
     console.log(`Created post: ${createdPost.slug}`)
+  }
+  for (let seedComment of comments) {
+    const comment = {
+      id: seedComment.id, // so that I could connect child comments to it
+      body: seedComment.body,
+      parent: seedComment.parentId ? { connect: { id: seedComment.parentId } } : undefined,
+      author: { connect: { id: userIds[Math.floor(Math.random() * userIds.length)] } },
+      post: { connect: { id: postIds[0] } },
+      // Random upvoters
+      upvoters: {
+        connect: [
+          { id: userIds[Math.floor(Math.random() * userIds.length)] },
+          { id: userIds[Math.floor(Math.random() * userIds.length)] }
+        ]
+      },
+    }
+    const createdComment = await prisma.comment.create({ data: comment })
+    console.log(`Created comment: ${createdComment.id}. Parent: ${seedComment.parentId}`)
   }
   console.log(`Seeding finished.`)
 }
