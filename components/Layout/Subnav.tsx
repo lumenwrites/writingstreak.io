@@ -3,8 +3,8 @@ import Link from 'components/Elements/Link'
 
 export default function Subnav() {
   return (
-    <div className="subnav-wrapper">
-      <div className="subnav">
+    <div className="subnav">
+      <div className="subnav-wrapper">
         <div className="dropdown sorting">
           <Link className="menu-handle btn btn-nav" href={`/`}>
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />
@@ -53,16 +53,12 @@ export default function Subnav() {
             </Link>
           </div>
         </div>
-        {/* <div className="separator" /> */}
+        {/* <div className="separator" /> 
         <Link className="btn item" href={`/`}>
           <FontAwesomeIcon icon={['fas', 'times']} />
           Writing
         </Link>
         <div className="dropdown select-tag">
-          {/* <Link className="btn item" href={`/`}>
-            <FontAwesomeIcon icon={['fas', 'times']} />
-            Writing
-          </Link> */}
           <input placeholder="Select tag..."></input>
           <div className="menu">
             <Link className="btn item" href={`/`}>
@@ -79,7 +75,7 @@ export default function Subnav() {
             </Link>
           </div>
         </div>
-
+*/}
         <div className="search-wrapper">
           <FontAwesomeIcon icon={['fas', 'search']} />
           <input className="search" placeholder="Search..."></input>

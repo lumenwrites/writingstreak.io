@@ -9,6 +9,10 @@ export async function getPosts({ username, published, tagSlug, searchString, ski
   // Filter by tag
   const tagFilter = tagSlug ? {
     tags: { some: { slug: tagSlug } }
+    // AND: [
+    //   { tags: { some: { slug: 'writing' } } } ,
+    //   { tags: { some: { slug: 'ideas' } } }
+    // ]
   } : {}
   // Search through posts
   const search = searchString ? {
@@ -19,7 +23,7 @@ export async function getPosts({ username, published, tagSlug, searchString, ski
       { author: { username: { contains: searchString, mode: "insensitive", } } },
     ],
   } : {}
-  
+
   const allFilters = {
     authorId: author?.id,
     published: published,

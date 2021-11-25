@@ -11,6 +11,7 @@ export default function PostFooter({ post }) {
             {tag.name}
           </Link>
         ))}
+        {/* 
         <div className="right">
           <a className="tag">
             <FontAwesomeIcon icon={['fas', 'user']} />
@@ -20,11 +21,13 @@ export default function PostFooter({ post }) {
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />
             157
           </a>
+           
           <a href={post.comments} className="tag" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={['fas', 'comment-alt']} />
             28
           </a>
         </div>
+*/}
         <div className="clearfix" />
       </div>
     </div>

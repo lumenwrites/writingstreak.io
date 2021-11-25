@@ -10,7 +10,7 @@ export async function getPosts(postsdir) {
     // console.log('Processing Post', postFileName)
     const postText = readFileSync(join(postsdir, postFileName), 'utf8')
     const { data: frontmatter, content } = matter(postText)
-    if (process.env.NODE_ENV === 'production' && frontmatter.draft) continue // skip drafts
+    if (frontmatter.draft) continue // skip drafts
     if (!postFileName.includes('.md')) continue // skip .DS_Store
     let titleFromFilename = postFileName.replace('.md', '')
     // If the file name starts with a number (like 999, used for ordering), remove it

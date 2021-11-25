@@ -1,39 +1,34 @@
 import Layout from 'components/Layout/Layout'
 import PostFeed from 'components/Posts/PostFeed'
 import AdBoxes from 'components/Layout/AdBoxes'
+import Subnav from 'components/Layout/Subnav'
+import Pagination from 'components/Posts/Pagination'
+import TagHeader from 'components/Layout/TagHeader'
 
 export default function browse({ posts }) {
   return (
     <Layout>
+      {/* <TagHeader /> */}
+      {/* <Subnav /> */}
       <PostFeed posts={posts} />
-      {/* <AdBoxes /> */}
-      <br/>
+      {/* <Pagination postCount={123}/> */}
+      {/* <AdBoxes/> */}
+      <br />
     </Layout>
   )
 }
 
-import posts from 'backend/json/out/posts.json'
+import { getPosts } from 'prisma/api/posts/get-posts'
+import config from 'config.json'
 
-export async function getStaticProps({ params }) {
-  const filteredPosts = posts.filter(({ tags }) => {
-    return tags.find((tag) => tag.slug === params.tagSlug)
+export async function getServerSideProps({ req, query }) {
+  const { posts, postCount } = await getPosts({
+    published: true,
+    searchString: query.search,
+    username: query.username,
+    tagSlug: query.tagSlug,
+    skip: config.postsPerPage * (parseInt(query.page?.toString()) - 1 || 0),
+    take: config.postsPerPage,
   })
-  return { props: { posts: filteredPosts } }
-}
-
-export async function getStaticPaths() {
-  let allTagSlugs = []
-  posts.map((post) => {
-    post.tags.map((tag) => {
-      if (!allTagSlugs.includes(tag.slug)) {
-        allTagSlugs.push(tag.slug)
-      }
-    })
-  })
-  return {
-    paths: allTagSlugs.map((tagSlug) => ({
-      params: { tagSlug },
-    })),
-    fallback: false,
-  }
+  return { props: { posts, postCount } }
 }
