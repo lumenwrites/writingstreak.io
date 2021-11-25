@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
-import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
 import config from 'config.json'
 
@@ -25,13 +24,12 @@ export default function Page({ post }) {
         </Head>
       </div>
       {/* <AdBoxes /> */}
-      <SubscribeBox />
       <br/>
     </Layout>
   )
 }
 
-import pages from 'backend/json/pages/pages.json'
+import pages from 'backend/json/out/pages.json'
 
 export async function getStaticProps({ params }) {
   const page = pages.find((page) => page.slug == params.pageSlug)

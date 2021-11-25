@@ -2,7 +2,6 @@ import Link from 'components/Elements/Link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
-import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
 import config from 'config.json'
 import PostFooter from 'components/Posts/PostFooter'
@@ -31,19 +30,6 @@ export default function Post({ post }) {
       <Comments/>
       <br />
     </Layout>
-  )
-}
-import PostCard from 'components/Posts/PostCard'
-
-function RelatedPosts({ post }) {
-  if (!post.relatedPosts || !post.relatedPosts.length) return null
-  return (
-    <div className="related-posts">
-      <h2>Related Posts</h2>
-      {post.relatedPosts.map((p) => (
-        <PostCard key={p.slug} post={p} />
-      ))}
-    </div>
   )
 }
 

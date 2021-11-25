@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
-import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
 import config from 'config.json'
 
@@ -23,7 +22,6 @@ export default function Post({ post }) {
         )}
       </Head>
       <AdBoxes />
-      <SubscribeBox />
     </div>
   )
 }

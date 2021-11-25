@@ -1,5 +1,4 @@
 import Header from './Header'
-import Sidebar from 'components/Layout/Sidebar'
 
 export default function Layout({ children, subnav = null }) {
   return (
