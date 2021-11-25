@@ -11,16 +11,10 @@ import LoginModal from 'components/Users/LoginModal'
 import SubscribeModal from 'components/Layout/SubscribeModal'
 import DefaultHead from 'components/Layout/DefaultHead'
 
-// Facebook pixel
-import FacebookPixel from 'components/Elements/FacebookPixel'
-import usePixel from 'hooks/usePixel'
-
 function App({ Component, pageProps }) {
-  usePixel()
   return (
     <PlausibleProvider domain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_DOMAIN}>
       <CombinedContextsProvider>
-        <FacebookPixel/>
         <DefaultHead />
         <Component {...pageProps} />
         <LoginModal />

@@ -24,8 +24,6 @@ export default function browse({ posts }) {
   )
 }
 
-import posts from 'backend/json/posts/posts.json'
-
 export async function getStaticProps() {
-  return { props: { posts } }
+  return { props: { posts: [] } }
 }

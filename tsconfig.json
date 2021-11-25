@@ -21,13 +21,18 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "backend/processContent.mjs", "backend/processContent.mjs", "backend/json/processContent.js", "backend/json/mdx.js"  ],
+    "**/*.tsx",
+    "backend/processContent.mjs",
+    "backend/processContent.mjs",
+    "backend/json/processContent.js",
+    "backend/json/mdx.js"
+  ],
   "exclude": [
     "node_modules"
   ]
