@@ -41,7 +41,7 @@ export default function Comment({ comment }) {
         <div className="footer">
           <button>
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />
-            {comment.upvotes}
+            {comment.upvoters.length}
           </button>
           {/* <button>
             <FontAwesomeIcon icon={['fas', 'arrow-down']} />
