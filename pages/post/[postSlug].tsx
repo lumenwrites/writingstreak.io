@@ -1,11 +1,9 @@
 import Link from 'components/Elements/Link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { MDXRemote } from 'next-mdx-remote'
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
 import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
-import MDXComponents from 'components/Elements/MDXComponents'
 import config from 'config.json'
 import PostFooter from 'components/Posts/PostFooter'
 import Comments from 'components/Comments/Comments'
@@ -14,7 +12,7 @@ export default function Post({ post }) {
   return (
     <Layout>
       <div className="post blog-post">
-        <MDXRemote {...post.compiledMdx} components={MDXComponents} />
+        {post.body}
         <PostFooter post={post} />
         {/* <CourseCTA/> */}
         <Head>
@@ -49,7 +47,7 @@ function RelatedPosts({ post }) {
   )
 }
 
-import posts from 'backend/json/posts/posts.json'
+import posts from 'backend/json/out/posts.json'
 
 export async function getStaticProps({ params }) {
   const post = posts.find((post) => post.slug == params.postSlug)

@@ -1,9 +1,7 @@
-import { MDXRemote } from 'next-mdx-remote'
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
 import SubscribeBox from 'components/Layout/SubscribeBox'
 import AdBoxes from 'components/Layout/AdBoxes'
-import MDXComponents from 'components/Elements/MDXComponents'
 import config from 'config.json'
 
 export default function Page({ post }) {
@@ -12,7 +10,7 @@ export default function Page({ post }) {
   return (
     <Layout>
       <div className="post page">
-        <MDXRemote {...post.compiledMdx} components={MDXComponents} />
+        {post.body}
         <Head>
           <title>{post.title} | {config.title}</title>
           <meta property="og:title" content={`${post.title} | ${config.title}`} key="ogtitle" />

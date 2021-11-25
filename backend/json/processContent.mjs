@@ -60,4 +60,5 @@ export async function processPages() {
   console.log('[processPosts] Success! Markdown pages converted to json.')
 }
 
-processPosts()
+await processPosts()
+await processPages()
