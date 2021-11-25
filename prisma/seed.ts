@@ -3,6 +3,7 @@ import { PrismaClient, Prisma } from '@prisma/client'
 import { hash } from 'bcryptjs'
 import slugify from 'slugify'
 import { users, sequences, tags, posts, comments } from './seeddata'
+import processedMarkdownPosts from 'backend/json/posts/posts.json'
 
 const prisma = new PrismaClient()
 
@@ -26,22 +27,44 @@ async function main() {
     const createdSequence = await prisma.sequence.create({ data: sequence })
     console.log(`Created sequence: ${createdSequence.slug}`)
   }
-  for (let tag of tags) {
-    tag.id = tag.slug
-    const createdTag = await prisma.tag.create({ data: tag })
-    console.log(`Created tag: ${createdTag.slug}`)
-  }
   let postIds = [] // When I create a comment, I connect it to post id
-  for (let post of posts) {
-    post.published = true
-    post.slug = slugify(post.title, { lower: true, strict: true })
-    post.canonicalUrl = `https://lumenwrites.io/post/${post.slug}`
-    post.author = { connect: { id: userIds[Math.floor(Math.random() * userIds.length)] } } // userIds[0]
-    
-    post.upvoters = { connect: [{ id: userIds[Math.floor(Math.random() * userIds.length)] }] } // userIds[0]
-    post.rank = Math.random()
-    post.views = Math.floor(Math.random() * 100)
-    
+  for (let markdownPost of processedMarkdownPosts) {
+    // post.slug = slugify(post.title, { lower: true, strict: true })
+    for (let tag of post.tags) {
+      tag.id = tag.slug
+      // Create tag if it doesn't exist
+      const createdTag = await prisma.tag.upsert({
+        where: { id: tag.id },
+        update: {},
+        create: {
+          name: tag.name,
+          slug: tag.slug,
+        },
+      })
+      console.log(`Created tag: ${createdTag.slug}`)
+    }
+    const post = {
+      slug: markdownPost.slug,
+      canonicalUrl: `https://lumenwrites.io/post/${markdownPost.slug}`,
+      published: true,
+      title: markdownPost.title,
+      body: markdownPost.body,
+      description: markdownPost.description,
+      // Random author
+      author: { connect: { id: userIds[Math.floor(Math.random() * userIds.length)] } }, // userIds[0]
+      // Random upvoters
+      upvoters: {
+        connect: [
+          { id: userIds[Math.floor(Math.random() * userIds.length)] },
+          { id: userIds[Math.floor(Math.random() * userIds.length)] }
+        ]
+      },
+      // Connect to the tags I've just created
+      tags: { connect: post.tags.map(tag => ({ id: tag.slug })) },
+      rank: Math.random(),
+      views: Math.floor(Math.random() * 100),
+    }
+
     const createdPost = await prisma.post.create({ data: post })
     postIds.push(createdPost.id)
     console.log(`Created post: ${createdPost.slug}`)

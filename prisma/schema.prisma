@@ -37,6 +37,7 @@ model Post {
 
   title String
   body String
+  description String
 
   author User @relation("UserPosts", fields: [authorId], references: [id])
   authorId String // In the field authorId we will store [id] of the User
@@ -50,6 +51,9 @@ model Post {
   views Int @default(0)
   upvoters User[] @relation("UserUpvotedPosts")
   downvoters User[] @relation("UserDownvotedPosts")
+
+  // Thumbnail
+  // Social image
 }
 
 model Comment {
