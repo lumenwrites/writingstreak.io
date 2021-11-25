@@ -11,9 +11,8 @@ export default function Post({ post }) {
   return (
     <Layout>
       <div className="post blog-post">
-        {post.body}
+        {/* {post.body} */}
         <PostFooter post={post} />
-        {/* <CourseCTA/> */}
         <Head>
           <title>{post.title}</title>
           <meta property="og:title" content={`${post.title}`} key="ogtitle" />
@@ -24,27 +23,16 @@ export default function Post({ post }) {
           {post.social && <meta name="twitter:image" content={`${config.domain}${post.social}`} />}
         </Head>
       </div>
-      <AdBoxes />
-      {/* <SubscribeBox /> */}
-      {/* <RelatedPosts post={post} /> */}
-      <Comments/>
+      {/* <AdBoxes /> */}
+      <Comments post={post}/>
       <br />
     </Layout>
   )
 }
 
-import posts from 'backend/json/out/posts.json'
+import { getPost } from 'prisma/api/posts/get-post'
 
-export async function getStaticProps({ params }) {
-  const post = posts.find((post) => post.slug == params.postSlug)
+export async function getServerSideProps({ params }) {
+  const post = await getPost({ slug: params.postSlug })
   return { props: { post } }
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: posts.map((post) => ({
-      params: { postSlug: post.slug },
-    })),
-    fallback: false,
-  }
 }

@@ -7,7 +7,7 @@ export default function Comment({ comment }) {
   const [expanded, setExpanded] = useState(true)
   const [showReplyForm, setShowReplyForm] = useState(false)
   const commentRef = useRef(null)
-
+  console.log('Comment', comment)
   function toggleCollapsed() {
     setExpanded((prev) => !prev)
     if (!isElementInViewport(commentRef.current)) {
@@ -37,7 +37,7 @@ export default function Comment({ comment }) {
         <div className="collapse-line"></div>
       </div>
       <div className="elements-wrapper">
-        <h2 className="username">{comment.username}</h2>
+        <h2 className="username">{comment.author.username}</h2>
         <div className="body">{comment.body}</div>
         <div className="footer">
           <button>
@@ -53,11 +53,11 @@ export default function Comment({ comment }) {
           {/* <button>Delete</button> */}
         </div>
         {showReplyForm && <CommentForm />}
-        <div className="replies">
+        {/* <div className="replies">
           {comment.children.map((reply) => (
             <Comment key={reply.id} comment={reply} />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   )
