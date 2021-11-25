@@ -8,8 +8,7 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.post-feed,
-.related-posts {
+.post-feed {
   .post-card {
     margin-top: 10px;
     .description {
@@ -82,9 +81,6 @@
   overflow: hidden;
   padding-bottom: calc(28px + 2px); // footer height plus some extra padding
   display: flex;
-  &.no-tags {
-    padding-bottom: 2px;
-  }
   .thumbnail {
     // https://github.com/vercel/next.js/issues/18637
     img {

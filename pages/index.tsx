@@ -21,8 +21,17 @@ export default function browse({ posts }) {
   )
 }
 
-import posts from 'backend/json/out/posts.json'
+import { getPosts } from 'prisma/api/posts/get-posts'
+import config from 'config.json'
 
-export async function getStaticProps() {
-  return { props: { posts } }
+export async function getServerSideProps({ req, query }) {
+  const { posts, postCount } = await getPosts({
+    published: true,
+    searchString: query.search,
+    tagSlug: query.tagSlug,
+    username: query.username,
+    skip: config.postsPerPage * (parseInt(query.page?.toString()) - 1 || 0),
+    take: config.postsPerPage,
+  })
+  return { props: { posts, postCount } }
 }

@@ -1,7 +1,8 @@
 html {
   // For automatically smoothly scrolling to comments (and headers!)
   // Doesn't seem to impact mouse scrolling
-  scroll-behavior: smooth;
+  // Doesnt work because it impacts clicking on posts
+  // scroll-behavior: smooth;
 }
 
 html,

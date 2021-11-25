@@ -1,21 +1,4 @@
-// @ts-nocheck
-import Link from 'components/Elements/Link'
-import PostFooter from './PostFooter'
-
-export function PostCard({ post }) {
-  const showFooter = post.tags.length || post.comments
-  return (
-    <div className={`post-card ${!showFooter ? 'no-tags' : ''}`}>
-      <div className="description">
-        <Link className="title" href={post.url}>
-          {post.title}
-        </Link>
-        <div className="summary">{post.description}</div>
-      </div>
-      <PostFooter post={post} />
-    </div>
-  )
-}
+import PostCard from "./PostCard"
 
 const Browse = ({ posts }) => {
   // console.log(posts)

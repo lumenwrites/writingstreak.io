@@ -28,6 +28,7 @@
     "@stripe/react-stripe-js": "^1.6.0",
     "@stripe/stripe-js": "^1.21.1",
     "axios": "^0.24.0",
+    "babel-plugin-superjson-next": "^0.4.2",
     "bcryptjs": "^2.4.3",
     "cookie": "^0.4.1",
     "gray-matter": "^4.0.3",
@@ -43,7 +44,8 @@
     "sass": "^1.43.5",
     "sharp": "^0.29.3",
     "slugify": "^1.6.3",
-    "stripe": "^8.191.0"
+    "stripe": "^8.191.0",
+    "superjson": "^1.8.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.10",

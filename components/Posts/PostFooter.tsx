@@ -12,16 +12,6 @@ export default function PostFooter({ post }) {
           </Link>
         ))}
         <div className="right">
-          {/* {post.comments && (
-            <a href={post.comments} className="tag" target="_blank" rel="noopener noreferrer">
-              {post.comments.includes('twitter') ? (
-                <FontAwesomeIcon icon={['fab', 'twitter']} />
-              ) : (
-                <FontAwesomeIcon icon={['fas', 'comment-alt']} />
-              )}
-              Comments
-            </a>
-          )} */}
           <a className="tag">
             <FontAwesomeIcon icon={['fas', 'user']} />
             lumenwrites
