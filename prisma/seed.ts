@@ -2,7 +2,7 @@
 import { PrismaClient, Prisma } from '@prisma/client'
 import { hash } from 'bcryptjs'
 import slugify from 'slugify'
-import { users, sequences, tags, posts, comments } from './seeddata'
+import { users, sequences, tags, posts, comments, positiveComments, thankfulReplies } from './seeddata'
 import processedMarkdownPosts from '../backend/json/out/posts.json'
 
 const prisma = new PrismaClient()
@@ -81,13 +81,52 @@ async function main() {
     postIds.push(createdPost.id)
     console.log(`Created post: ${createdPost.slug}`)
   }
-  for (let seedComment of comments) {
+  let comments = []
+  let posComs = [...positiveComments]
+  posComs = posComs.sort(() => Math.random() - 0.5) // shuffle
+  postIds = postIds.sort(() => Math.random() - 0.5) // shuffle
+  for (let userId of userIds.slice(1,userIds.length)) {
+    for (let postId of postIds) {
+      if (Math.random() > 0.5) continue
+      if (posComs.length === 0) continue
+      const randomPositiveComment = posComs.pop() // positiveComments[Math.floor(Math.random() * positiveComments.length)]
+      // console.log('Comment', positiveComment)
+      const comment = {
+        id: slugify(randomPositiveComment.substring(0, 20), { lower: true, strict: true }),
+        body: randomPositiveComment,
+        parent: undefined, // seedComment.parentId ? { connect: { id: seedComment.parentId } } : undefined,
+        author: { connect: { id: userId } }, // seedComment.author ? seedComment.author : { connect: { id: randomUser } },
+        post: { connect: { id: postId } }, // postIds[0] 
+        // Random upvoters
+        upvoters: {
+          connect: [
+            { id: userIds[Math.floor(Math.random() * userIds.length)] },
+            { id: userIds[Math.floor(Math.random() * userIds.length)] }
+          ]
+        },
+      }
+      const createdComment = await prisma.comment.create({ data: comment })
+      console.log(`Created comment: ${createdComment.id} on post ${postId} from ${userId}.`) // Parent: ${createdComment.parentId}
+      comments.push({
+        id: createdComment.id,
+        postId: postId
+      })
+    }
+  }
+
+  let replies = [...thankfulReplies]
+  replies = replies.sort(() => Math.random() - 0.5) // shuffle
+  for (let userComment of comments) {
+    if (Math.random() < 0.25) continue
+    if (replies.length == 0) continue
+    const randomThankfulReply = replies.pop() // [Math.floor(Math.random() * thankfulReplies.length)]
+    // console.log('randomThankfulReply', randomThankfulReply, replies)
     const comment = {
-      id: seedComment.id, // so that I could connect child comments to it
-      body: seedComment.body,
-      parent: seedComment.parentId ? { connect: { id: seedComment.parentId } } : undefined,
-      author: seedComment.author ? seedComment.author : { connect: { id: userIds[Math.floor(Math.random() * userIds.length - 1) + 1] } },
-      post: { connect: { id: postIds[0] } },
+      id: slugify(randomThankfulReply.substring(0, 20), { lower: true, strict: true }),
+      body: randomThankfulReply,
+      parent: { connect: { id: userComment.id } },
+      author: { connect: { id: 'lumen' } }, // seedComment.author ? seedComment.author : { connect: { id: randomUser } },
+      post: { connect: { id: userComment.postId } }, // postIds[0] 
       // Random upvoters
       upvoters: {
         connect: [
@@ -97,7 +136,7 @@ async function main() {
       },
     }
     const createdComment = await prisma.comment.create({ data: comment })
-    console.log(`Created comment: ${createdComment.id}. Parent: ${seedComment.parentId}`)
+    console.log(`Created reply: ${createdComment.id}. Parent: ${createdComment.parentId}`)
   }
   console.log(`Seeding finished.`)
 }

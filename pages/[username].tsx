@@ -4,6 +4,7 @@ import AdBoxes from 'components/CTAs/AdBoxes'
 import Subnav from 'components/Layout/Subnav'
 import Pagination from 'components/Posts/Pagination'
 import ProfileHeader from 'components/Users/ProfileHeader'
+import SubscribeBox from 'components/CTAs/SubscribeBox'
 
 export default function browse({ posts }) {
   return (
@@ -13,6 +14,7 @@ export default function browse({ posts }) {
       <PostFeed posts={posts} />
       {/* <Pagination postCount={123}/> */}
       {/* <AdBoxes/> */}
+      <SubscribeBox/>
       <br />
     </Layout>
   )

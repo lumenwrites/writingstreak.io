@@ -9,7 +9,7 @@ export default function ProfileHeader() {
       </div>
       <h1>lumen</h1>
       <div className="bio">
-        Startup Founder, Web Developer, Writer. Developer of this website. I write things that gratify my intellectual
+        Startup Founder, Web Developer, Writer. Created this website. I write things that gratify my intellectual
         curiosity. I'm curious about startups, tech, webdev, gamedev, rationality, creativity, and writing.
       </div>
       <div className="clearfix" />
