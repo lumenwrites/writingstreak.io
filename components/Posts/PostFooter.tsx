@@ -12,10 +12,10 @@ export default function PostFooter({ post }) {
           </Link>
         ))}
         <div className="right">
-          {/* <a className="tag">
+          <Link href={`/${post.author.username}`} className="tag">
             <FontAwesomeIcon icon={['fas', 'user']} />
-            lumenwrites
-          </a> */}
+            {post.author.username}
+          </Link>
           {/* <a className="tag">
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />
             157

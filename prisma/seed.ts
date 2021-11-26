@@ -16,8 +16,13 @@ async function main() {
   await prisma.user.deleteMany()
 
   let userIds = [] // When I create a post, I connect it to a user id
-  for (let user of users) {
-    user.password = await hash(user.password, 10)
+  for (let seedUser of users) {
+    const user = {
+      id: seedUser.username,
+      username: seedUser.username,
+      email: seedUser.email,
+      password: await hash(seedUser.password, 10),
+    }
     const createdUser = await prisma.user.create({ data: user })
     userIds.push(createdUser.id)
     console.log(`Created user ${createdUser.username} with id: ${createdUser.id}`)
@@ -49,6 +54,7 @@ async function main() {
       console.log(`Created tag: ${createdTag.slug}`)
     }
     const post = {
+      id: markdownPost.slug,
       slug: markdownPost.slug,
       canonicalUrl: `https://lumenwrites.io/post/${markdownPost.slug}`,
       published: true,
@@ -56,7 +62,7 @@ async function main() {
       body: markdownPost.body,
       description: markdownPost.description,
       // Random author
-      author: { connect: { id: userIds[Math.floor(Math.random() * userIds.length)] } }, // userIds[0]
+      author: { connect: { id: userIds[0] } }, // userIds[Math.floor(Math.random() * userIds.length)]
       // Random upvoters
       upvoters: {
         connect: [
@@ -80,7 +86,7 @@ async function main() {
       id: seedComment.id, // so that I could connect child comments to it
       body: seedComment.body,
       parent: seedComment.parentId ? { connect: { id: seedComment.parentId } } : undefined,
-      author: { connect: { id: userIds[Math.floor(Math.random() * userIds.length)] } },
+      author: seedComment.author ? seedComment.author : { connect: { id: userIds[Math.floor(Math.random() * userIds.length - 1) + 1] } },
       post: { connect: { id: postIds[0] } },
       // Random upvoters
       upvoters: {

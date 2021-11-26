@@ -7,6 +7,9 @@ CREATE TABLE "User" (
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
+    "bio" TEXT NOT NULL,
+    "website" TEXT NOT NULL,
+    "twitter" TEXT NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -21,10 +24,11 @@ CREATE TABLE "Post" (
     "canonicalUrl" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "body" TEXT NOT NULL,
-    "seriesId" TEXT,
+    "description" TEXT NOT NULL,
     "authorId" TEXT NOT NULL,
-    "views" INTEGER NOT NULL DEFAULT 0,
+    "sequenceId" TEXT,
     "rank" DOUBLE PRECISION NOT NULL DEFAULT 0,
+    "views" INTEGER NOT NULL DEFAULT 0,
 
     CONSTRAINT "Post_pkey" PRIMARY KEY ("id")
 );
@@ -53,12 +57,12 @@ CREATE TABLE "Tag" (
 );
 
 -- CreateTable
-CREATE TABLE "Series" (
+CREATE TABLE "Sequence" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
 
-    CONSTRAINT "Series_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Sequence_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -104,7 +108,7 @@ CREATE UNIQUE INDEX "Post_slug_key" ON "Post"("slug");
 CREATE UNIQUE INDEX "Tag_slug_key" ON "Tag"("slug");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Series_slug_key" ON "Series"("slug");
+CREATE UNIQUE INDEX "Sequence_slug_key" ON "Sequence"("slug");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "_UserUpvotedPosts_AB_unique" ON "_UserUpvotedPosts"("A", "B");
@@ -137,10 +141,10 @@ CREATE UNIQUE INDEX "_PostToTag_AB_unique" ON "_PostToTag"("A", "B");
 CREATE INDEX "_PostToTag_B_index" ON "_PostToTag"("B");
 
 -- AddForeignKey
-ALTER TABLE "Post" ADD CONSTRAINT "Post_seriesId_fkey" FOREIGN KEY ("seriesId") REFERENCES "Series"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "Post" ADD CONSTRAINT "Post_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Post" ADD CONSTRAINT "Post_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Post" ADD CONSTRAINT "Post_sequenceId_fkey" FOREIGN KEY ("sequenceId") REFERENCES "Sequence"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Comment" ADD CONSTRAINT "Comment_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

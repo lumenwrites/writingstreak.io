@@ -1,0 +1,57 @@
+.profile-header {
+  @extend .card;
+  position: relative;
+  padding-bottom: calc(29px + 10px);
+  .avatar {
+    float: left;
+    margin-right: 10px;
+    img {
+      border-radius: $border-radius;
+    }
+  }
+  h1 {
+    text-align: left;
+  }
+  .profile-footer {
+    width: 100%;
+    // display: flex;
+    // align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 29px; // 1px border makes a difference for some reason
+    padding: 0 10px;
+    font-size: 11px;
+    color: #384260;
+    background: #fafafa;
+    border-top: 1px solid $border-dim;
+    .social-links {
+      float: right;
+      display: flex;
+      align-items: center;
+      height: 28px;
+      .social-link {
+        display: flex;
+        align-items: center;
+        float: left;
+        margin-left: 15px;
+        color: $text-dim;
+        svg {
+          margin-right: 2px;
+        }
+      }
+      .tag {
+        display: flex;
+        align-items: center;
+        background: $panel-bg;
+        color: $text-dim;
+        background: $btn-cta;
+        color: white;
+        border-radius: 2px;
+        height: 20px;
+        padding: 0px 8px;
+      }
+    }
+  }
+}

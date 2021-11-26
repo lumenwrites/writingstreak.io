@@ -8,7 +8,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 // library.add(fas, far, fab)
 
 import { faGoogle, faTwitter, faYoutube, faDiscord, faSlackHash, faHotjar } from "@fortawesome/free-brands-svg-icons"
-import { faBell, faCalendar as farCalendar } from "@fortawesome/free-regular-svg-icons"
+import { faBell, faCalendar as farCalendar, faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import {
   faBars,
   faUpload,
@@ -50,6 +50,7 @@ import {
   faCalendarAlt,
   faCalendarDay,
   faCalendarWeek,
+  faGlobeAmericas,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -102,5 +103,7 @@ library.add(
   faThumbsDown,
   farCalendar,
   faBell,
-  faInfoCircle
+  faInfoCircle,
+  faGlobeAmericas,
+  faEnvelope,
 )
