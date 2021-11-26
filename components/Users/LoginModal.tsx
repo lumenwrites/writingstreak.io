@@ -9,10 +9,10 @@ import { useModal } from 'context/ModalContext'
 import { useAuth } from 'context/AuthContext'
 import useForm from 'hooks/useForm'
 
-const defaultJoinInputs = { username: 'user3', email: 'user3@gmail.com', password: 'pass3' }
-const defaultLoginInputs = { email: 'user3@gmail.com', password: 'pass3' }
-// const defaultJoinInputs = { username: '', email: '', password: '' }
-// const defaultLoginInputs = { email: '', password: '' }
+// const defaultJoinInputs = { username: 'user3', email: 'user3@gmail.com', password: 'pass3' }
+// const defaultLoginInputs = { email: 'user3@gmail.com', password: 'pass3' }
+const defaultJoinInputs = { username: '', email: '', password: '' }
+const defaultLoginInputs = { email: '', password: '' }
 
 export default function LoginModal() {
   const { inputs: joinInputs, handleChange: joinChange, clearForm: clearJoin } = useForm(defaultJoinInputs)

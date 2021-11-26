@@ -43,10 +43,10 @@ export default function Comment({ comment, post, setComments }) {
         <h2 className="username">{comment.author.username}</h2>
         <div className="body" dangerouslySetInnerHTML={{ __html: comment.body }} />
         <div className="footer">
-          <button>
+          {/* <button>
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />
             {comment.upvoters.length}
-          </button>
+          </button> */}
           {/* <button>
             <FontAwesomeIcon icon={['fas', 'arrow-down']} />
             {comment.downvotes}

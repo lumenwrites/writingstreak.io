@@ -19,7 +19,7 @@ export default function Header({ className }) {
           nexy
         </Link>
         <nav>
-          {user && (
+          {user?.username && (
             <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`submit-post`)}>
               Submit Post
             </a>
