@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CommentForm from './CommentForm'
+import ReactMarkdown from 'react-markdown'
 
-
-export default function Comment({ comment }) {
+export default function Comment({ comment, post }) {
   const [expanded, setExpanded] = useState(true)
   const [showReplyForm, setShowReplyForm] = useState(false)
   const commentRef = useRef(null)
@@ -18,13 +18,14 @@ export default function Comment({ comment }) {
 
   if (!expanded) {
     return (
-      <div className="comment collapsed" ref={commentRef}  onClick={toggleCollapsed}>
+      <div className="comment collapsed" ref={commentRef} onClick={toggleCollapsed}>
         <div className="collapse">
           <FontAwesomeIcon icon={['fas', 'plus-square']} />
           <div className="collapse-line"></div>
         </div>
         <div className="elements-wrapper">
-          <h2 className="username">{comment.username}</h2> + 14 replies
+          <h2 className="username">{comment.author.username}</h2>
+          {/* + 14 replies */}
         </div>
       </div>
     )
@@ -37,7 +38,9 @@ export default function Comment({ comment }) {
       </div>
       <div className="elements-wrapper">
         <h2 className="username">{comment.author.username}</h2>
-        <div className="body">{comment.body}</div>
+        <div className="body">
+          <ReactMarkdown children={comment.body} skipHtml={true} />
+        </div>
         <div className="footer">
           <button>
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />
@@ -51,10 +54,10 @@ export default function Comment({ comment }) {
           {/* <button>Edit</button> */}
           {/* <button>Delete</button> */}
         </div>
-        {showReplyForm && <CommentForm />}
+        {showReplyForm && <CommentForm post={post} parent={comment} />}
         <div className="replies">
           {comment.children?.map((reply) => (
-            <Comment key={reply.id} comment={reply} />
+            <Comment key={reply.id} comment={reply} post={post} />
           ))}
         </div>
       </div>

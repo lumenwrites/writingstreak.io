@@ -45,9 +45,14 @@ function processComments(comments) {
   let processedComments = []
   for (let comment of comments) {
     if (!comment.parentId) {
-      comment.children = comments.filter(c => c.parentId === comment.id)
-      processedComments.push(comment)
+      processedComments.push(commentToTree(comment, comments))
     }
   }
   return processedComments
+}
+
+function commentToTree(parent, allComments) {
+  parent.children = allComments.filter(c => c.parentId === parent.id)
+  parent.children.map(child => commentToTree(child, allComments))
+  return parent
 }

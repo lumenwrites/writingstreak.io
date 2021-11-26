@@ -31,6 +31,7 @@
     "babel-plugin-superjson-next": "^0.4.2",
     "bcryptjs": "^2.4.3",
     "cookie": "^0.4.1",
+    "cuid": "^2.1.8",
     "gray-matter": "^4.0.3",
     "js-cookie": "^3.0.1",
     "jwt-simple": "^0.5.6",
