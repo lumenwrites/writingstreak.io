@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Link from 'components/Elements/Link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
