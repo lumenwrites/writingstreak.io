@@ -1,5 +1,6 @@
 // @ts-nocheck
 import prisma from 'prisma/prismaClient'
+import { markdownToHtml } from 'backend/markdown'
 
 export async function getPost({ slug }) {
   let post = await prisma.post.findUnique({
@@ -35,6 +36,16 @@ export async function getPost({ slug }) {
       },
     }
   })
+  post.body = await markdownToHtml(post.body)
+  let renderedComments = []
+  for (let comment of post.comments) {
+    const renderedComment = {
+      ...comment,
+      body: await markdownToHtml(comment.body)
+    }
+    renderedComments.push(renderedComment)
+  }
+  post.comments = renderedComments
   return post
 }
 

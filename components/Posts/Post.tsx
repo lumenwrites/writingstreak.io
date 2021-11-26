@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
-import AdBoxes from 'components/Layout/AdBoxes'
+import AdBoxes from 'components/CTAs/AdBoxes'
 import config from 'config.json'
 
 export default function Post({ post }) {

@@ -1,6 +1,6 @@
 import Layout from 'components/Layout/Layout'
 import PostFeed from 'components/Posts/PostFeed'
-import AdBoxes from 'components/Layout/AdBoxes'
+import AdBoxes from 'components/CTAs/AdBoxes'
 import Subnav from 'components/Layout/Subnav'
 import Pagination from 'components/Posts/Pagination'
 import TagHeader from 'components/Layout/TagHeader'

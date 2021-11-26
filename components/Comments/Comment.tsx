@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CommentForm from './CommentForm'
-import ReactMarkdown from 'react-markdown'
+import { markdownToHtml } from 'backend/markdown'
 
 export default function Comment({ comment, post, setComments }) {
   const router = useRouter()
@@ -41,9 +41,7 @@ export default function Comment({ comment, post, setComments }) {
       </div>
       <div className="elements-wrapper">
         <h2 className="username">{comment.author.username}</h2>
-        <div className="body">
-          <ReactMarkdown children={comment.body} skipHtml={true} />
-        </div>
+        <div className="body" dangerouslySetInnerHTML={{ __html: comment.body }} />
         <div className="footer">
           <button>
             <FontAwesomeIcon icon={['fas', 'arrow-up']} />

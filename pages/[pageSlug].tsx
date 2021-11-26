@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
-import AdBoxes from 'components/Layout/AdBoxes'
+import AdBoxes from 'components/CTAs/AdBoxes'
 import config from 'config.json'
 
 export default function Page({ post }) {
@@ -9,9 +9,11 @@ export default function Page({ post }) {
   return (
     <Layout>
       <div className="post page">
-        {post.body}
+        <div dangerouslySetInnerHTML={{ __html: post.body }} />
         <Head>
-          <title>{post.title} | {config.title}</title>
+          <title>
+            {post.title} | {config.title}
+          </title>
           <meta property="og:title" content={`${post.title} | ${config.title}`} key="ogtitle" />
           <meta property="og:description" content={post.description} key="ogdesc" />
           <meta name="twitter:description" content={post.description} />
@@ -24,15 +26,17 @@ export default function Page({ post }) {
         </Head>
       </div>
       {/* <AdBoxes /> */}
-      <br/>
+      <br />
     </Layout>
   )
 }
 
 import pages from 'backend/json/out/pages.json'
+import { markdownToHtml } from 'backend/markdown'
 
 export async function getStaticProps({ params }) {
-  const page = pages.find((page) => page.slug == params.pageSlug)
+  let page = pages.find((page) => page.slug == params.pageSlug)
+  page.body = await markdownToHtml(page.body)
   console.log('[pageSlug]', page.title)
   return { props: { post: page } }
 }
