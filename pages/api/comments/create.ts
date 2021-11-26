@@ -14,6 +14,18 @@ async function createComment(req, res) {
         post: { connect: { id: postId } },
         parent: parentId ? { connect: { id: parentId } } : undefined,
       },
+      include: {
+        author: {
+          select: {
+            username: true
+          }
+        },
+        upvoters: {
+          select: {
+            username: true
+          }
+        }
+      }
     })
     res.json({ createdComment })
   } catch (error) {

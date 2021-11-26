@@ -35,24 +35,6 @@ export async function getPost({ slug }) {
       },
     }
   })
-  post.comments = processComments(post.comments)
   return post
 }
 
-// Flat comments to tree
-function processComments(comments) {
-  console.log('Process comments', comments)
-  let processedComments = []
-  for (let comment of comments) {
-    if (!comment.parentId) {
-      processedComments.push(commentToTree(comment, comments))
-    }
-  }
-  return processedComments
-}
-
-function commentToTree(parent, allComments) {
-  parent.children = allComments.filter(c => c.parentId === parent.id)
-  parent.children.map(child => commentToTree(child, allComments))
-  return parent
-}

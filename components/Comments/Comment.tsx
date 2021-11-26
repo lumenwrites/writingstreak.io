@@ -1,9 +1,12 @@
+import { useRouter } from 'next/router'
 import { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CommentForm from './CommentForm'
 import ReactMarkdown from 'react-markdown'
 
-export default function Comment({ comment, post }) {
+export default function Comment({ comment, post, setComments }) {
+  const router = useRouter()
+  const doHighlight = router.query.commentId?.toString() === comment.id
   const [expanded, setExpanded] = useState(true)
   const [showReplyForm, setShowReplyForm] = useState(false)
   const commentRef = useRef(null)
@@ -18,7 +21,7 @@ export default function Comment({ comment, post }) {
 
   if (!expanded) {
     return (
-      <div className="comment collapsed" ref={commentRef} onClick={toggleCollapsed}>
+      <div className="comment collapsed" id={comment.id} ref={commentRef} onClick={toggleCollapsed}>
         <div className="collapse">
           <FontAwesomeIcon icon={['fas', 'plus-square']} />
           <div className="collapse-line"></div>
@@ -31,7 +34,7 @@ export default function Comment({ comment, post }) {
     )
   }
   return (
-    <div className="comment" ref={commentRef}>
+    <div className={`comment ${doHighlight ? "highlight" : ""}`} id={comment.id} ref={commentRef}>
       <div className="collapse" onClick={toggleCollapsed}>
         <FontAwesomeIcon icon={['fas', 'minus-square']} />
         <div className="collapse-line"></div>
@@ -54,10 +57,10 @@ export default function Comment({ comment, post }) {
           {/* <button>Edit</button> */}
           {/* <button>Delete</button> */}
         </div>
-        {showReplyForm && <CommentForm post={post} parent={comment} />}
+        {showReplyForm && <CommentForm post={post} parent={comment} setComments={setComments} setShowReplyForm={setShowReplyForm} />}
         <div className="replies">
           {comment.children?.map((reply) => (
-            <Comment key={reply.id} comment={reply} post={post} />
+            <Comment key={reply.id} comment={reply} post={post} setComments={setComments} />
           ))}
         </div>
       </div>

@@ -9,15 +9,15 @@ import PostFooter from 'components/Posts/PostFooter'
 import Comments from 'components/Comments/Comments'
 
 import ReactMarkdown from 'react-markdown'
-import rehypeSlug from 'rehype-slug' // adds id's to headers so you could link to them
-import rehypeCodeTitles from 'rehype-code-titles' // allows you to show folder names above code blocks
-import rehypeAutolinkHeadings from 'rehype-autolink-headings' // turns headers into links
-import rehypePrism from 'rehype-prism-plus' // syntax highlighting, allows you to highlight code lines
+// import rehypeSlug from 'rehype-slug' // adds id's to headers so you could link to them
+// import rehypeCodeTitles from 'rehype-code-titles' // allows you to show folder names above code blocks
+// import rehypeAutolinkHeadings from 'rehype-autolink-headings' // turns headers into links
+// import rehypePrism from 'rehype-prism-plus' // syntax highlighting, allows you to highlight code lines
 const rehypePlugins = [
-  rehypeSlug,
-  rehypeCodeTitles,
-  rehypePrism,
-  [rehypeAutolinkHeadings, { properties: { className: ['header-link'] } }]
+  // rehypeSlug,
+  // rehypeCodeTitles,
+  // rehypePrism,
+  // [rehypeAutolinkHeadings, { properties: { className: ['header-link'] } }]
 ]
 
 export default function Post({ post }) {

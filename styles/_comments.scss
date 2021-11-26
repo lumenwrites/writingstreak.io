@@ -11,8 +11,12 @@
   }
   .comment {
     margin-top: 5px;
-    padding: 5px 0;
     display: flex;
+    .body {
+      & > *:first-child {
+        margin-top: 0;
+      }
+    }
     .collapse {
       flex-basis: 20px;
       flex-grow: 0;
@@ -43,6 +47,7 @@
       background: #f9f9f9;
       color: $text-dim;
       cursor: pointer;
+      padding: 5px 0;
       &:hover {
         svg {
           color: #acbacf;
@@ -57,6 +62,10 @@
         color: #acbacf;
         color: $text-dim;
       }
+    }
+    &.highlight {
+      background: $quote-bg;
+      border-radius: $border-radius;
     }
     .elements-wrapper {
       flex-basis: 100%;
