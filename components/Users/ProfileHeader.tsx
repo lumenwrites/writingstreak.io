@@ -14,16 +14,16 @@ export default function ProfileHeader() {
       </div>
       <div className="clearfix" />
       <div className="profile-footer">
-        <div className="social-links">
-          <div className="social-link">
+        <div className="bio-links">
+          <a href={"mailto:lumenwrites@gmail.com"} className="bio-link">
             <FontAwesomeIcon icon={['fas', 'envelope']} />
             lumenwrites@gmail.com
-          </div>
-          <a className="social-link" href="https://lumenwrites.dev">
+          </a>
+          <a className="bio-link" href="https://lumenwrites.dev" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={['fas', 'globe-americas']} />
             lumenwrites.dev
           </a>
-          <a className="social-link" href="https://lumenwrites.dev">
+          <a className="bio-link" href="https://lumenwrites.dev" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={['fab', 'twitter']} />
             {/* @lumenwrites */}
           </a>
