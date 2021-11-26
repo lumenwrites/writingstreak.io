@@ -8,6 +8,7 @@ import PlausibleProvider from 'next-plausible'
 // Both modals have to be here, because they're useful in index.tsx as well as paywalled course pages
 // and index.tsx isn't wrapped in layout
 import LoginModal from 'components/Users/LoginModal'
+import SubmitPostModal from 'components/CTAs/SubmitPostModal'
 import DefaultHead from 'components/Layout/DefaultHead'
 
 function App({ Component, pageProps }) {
@@ -17,6 +18,7 @@ function App({ Component, pageProps }) {
         <DefaultHead />
         <Component {...pageProps} />
         <LoginModal />
+        <SubmitPostModal/>
       </CombinedContextsProvider>
     </PlausibleProvider>
   )

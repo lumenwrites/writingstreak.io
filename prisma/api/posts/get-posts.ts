@@ -43,6 +43,12 @@ export async function getPosts({ username, published, tagSlug, searchString, ski
             username: true
           }
         },
+        // Just for the comment counter
+        comments: {
+          select: {
+            id: true
+          }
+        }
       }
     }),
     prisma.post.count({ where: allFilters })

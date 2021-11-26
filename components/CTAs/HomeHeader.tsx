@@ -5,7 +5,7 @@ export default function HomeHeader() {
     <div className="home-header card">
       <h1>Nexy is a Community of Makers</h1>
       <span className="tagline">This is the place for people who make things - startup founders, developers, writers, online teachers, youtubers, artists, and many more.</span>
-      <p>Here you can share your knowledge, connect with other creators, exchange feedback and advice, grow your audience, and showcase your projects. Building with other creators will help you grow further, get better at your craft, and increase your chances of success.</p>
+      <p>Here you can share your knowledge, connect with other creators, exchange feedback and advice, grow your audience, and showcase your projects. Building with other creators will help you grow further, get better at your craft, and increase your chances of success. </p>
       <button className="btn btn-cta">Create Account</button>
       <button className="btn">Login</button>
     </div>

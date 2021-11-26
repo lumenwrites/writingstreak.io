@@ -3,7 +3,8 @@ import Link from 'components/Elements/Link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
 import Layout from 'components/Layout/Layout'
-import AdBoxes from 'components/Layout/AdBoxes'
+import SubscribeBox from 'components/CTAs/SubscribeBox'
+import AdBoxes from 'components/CTAs/AdBoxes'
 import config from 'config.json'
 import PostFooter from 'components/Posts/PostFooter'
 import Comments from 'components/Comments/Comments'
@@ -39,6 +40,7 @@ export default function Post({ post }) {
         </Head>
       </div>
       {/* <AdBoxes /> */}
+      <SubscribeBox/>
       <Comments post={post}/>
       <br />
     </Layout>

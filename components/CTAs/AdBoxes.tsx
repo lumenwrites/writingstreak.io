@@ -28,8 +28,7 @@ export default function AdBoxes() {
 var AdBox = ({ title, description, href, image }) => {
   // showcase-box because when it's named ad-box it gets blocked by ad blockers
   return (
-    <a className="card showcase-box" href={href} target="_blank" rel="noopener noreferrer">
-      
+    <a className="post-card showcase-box" href={href} target="_blank" rel="noopener noreferrer">
       <Image src={image} width={320} height={180} layout="responsive" objectFit="cover" />
       {/* <div className="image-wrapper">
         <div className="thumbnail" style={{ background: `url('${image}')` }} />

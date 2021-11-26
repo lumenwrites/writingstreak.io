@@ -11,7 +11,7 @@ export default function Comments({ post }) {
     comment?.scrollIntoView()
   }, [comments])
   return (
-    <div className="comments">
+    <div className="comments" id="comments">
       <h2>Comments</h2>
       <CommentForm post={post} parent={null} setComments={setComments} />
       {processComments(comments).map((comment) => (

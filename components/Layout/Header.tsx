@@ -2,10 +2,13 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { useModal } from 'context/ModalContext'
+import { useAuth } from 'context/AuthContext'
 import Link from 'components/Elements/Link'
 
 export default function Header({ className }) {
   const { toggleModal } = useModal()
+  const { user } = useAuth()
+
   return (
     <header className={className}>
       <div className="wrapper">
@@ -16,7 +19,16 @@ export default function Header({ className }) {
           nexy
         </Link>
         <nav>
-                    {/* <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`login`)}>
+          {user && (
+            <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`submit-post`)}>
+              Submit Post
+            </a>
+          )}
+          <Link href={`/about`} className="btn btn-nav">
+            {/* <FontAwesomeIcon icon={['fas', 'info-circle']} /> */}
+            About
+          </Link>
+          {/* <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`login`)}>
             <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
             Login
           </a> */}
@@ -30,16 +42,6 @@ export default function Header({ className }) {
           <DropdownMenu />
           */}
         </nav>
-        {/* <nav> */}
-        {/* <Link href={`/about`} className="btn btn-nav">
-            <FontAwesomeIcon icon={['fas', 'info-circle']} />
-            About
-          </Link>
-          <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`subscribe`)}>
-            Subscribe
-          </a> */}
-        {/*  */}
-        {/* </nav> */}
         <div className="clearfix" />
       </div>
     </header>

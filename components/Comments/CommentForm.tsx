@@ -54,7 +54,7 @@ export default function CommentForm({ post, parent, setComments, setShowReplyFor
       <MessagePanel type={status.state} message={status.message} />
       <form className="comment-form loggedin1" onSubmit={handleSubmit}>
         <TextareaAutosize placeholder="Write your comment..." value={body} onChange={onChange} />
-        <SpinnerButton isloading={status.state === 'loading'} type="submit">
+        <SpinnerButton className="btn btn-cta" isloading={status.state === 'loading'} type="submit">
           Comment
         </SpinnerButton>
         <div className="clearfix" />
