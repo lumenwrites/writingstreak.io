@@ -7,9 +7,9 @@ CREATE TABLE "User" (
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "bio" TEXT NOT NULL,
-    "website" TEXT NOT NULL,
-    "twitter" TEXT NOT NULL,
+    "bio" TEXT,
+    "website" TEXT,
+    "twitter" TEXT,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -28,6 +28,7 @@ CREATE TABLE "Post" (
     "authorId" TEXT NOT NULL,
     "sequenceId" TEXT,
     "rank" DOUBLE PRECISION NOT NULL DEFAULT 0,
+    "score" INTEGER NOT NULL DEFAULT 0,
     "views" INTEGER NOT NULL DEFAULT 0,
 
     CONSTRAINT "Post_pkey" PRIMARY KEY ("id")

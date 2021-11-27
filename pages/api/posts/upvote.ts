@@ -1,3 +1,4 @@
+//@ts-nocheck
 import prisma from 'prisma/prismaClient'
 import handler from "backend/handler"
 
