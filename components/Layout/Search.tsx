@@ -9,13 +9,13 @@ export default function Search() {
 
   function search(e) {
     if (!(e.key == 'Enter' || !e.key)) return // search on enter or on search-button click
-    let { search, page, postSlug, ...originalQuery } = router.query
-    // console.log('query', router.query, originalQuery, router.pathname)
+    let { search, page, ...baseQuery } = router.query
+    // console.log('query', router.query, baseQuery, router.pathname)
     if (searchString.length === 0) {
-      router.push({ query: originalQuery })
+      router.push({ query: baseQuery })
       return
     }
-    router.push({ query: { ...originalQuery, search: searchString }, pathname: '/' })
+    router.push({ query: { ...baseQuery, search: searchString } })
   }
 
   return (
