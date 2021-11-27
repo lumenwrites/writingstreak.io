@@ -38,9 +38,9 @@ async function main() {
     console.log(`Created sequence: ${createdSequence.slug}`)
   }
   let postIds = [] // When I create a comment, I connect it to post id
-  let daysAgo = 1
+  let i = 0
   for (let markdownPost of processedMarkdownPosts) {
-    daysAgo += 1
+    i += 1
     // post.slug = slugify(post.title, { lower: true, strict: true })
     for (let tag of markdownPost.tags) {
       // Create tag if it doesn't exist
@@ -61,7 +61,7 @@ async function main() {
     const post = {
       id: markdownPost.slug,
       slug: markdownPost.slug,
-      createdAt: pastDate(daysAgo),
+      createdAt: pastDate(i),
       canonicalUrl: `https://lumenwrites.io/post/${markdownPost.slug}`,
       published: true,
       title: markdownPost.title,
@@ -75,7 +75,7 @@ async function main() {
       sequence: { connect: { id: 'startup-notes' } },
       // Connect to the tags I've just created
       tags: { connect: markdownPost.tags.map(tag => ({ id: tag.slug })) },
-      rank: Math.random(),
+      rank: 1000 - i, // Posts are manually sorted. // Math.random(),
       views: Math.floor(Math.random() * 100),
     }
 
