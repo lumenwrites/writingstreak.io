@@ -14,7 +14,8 @@
     "generate": "npm run copyContent && npm run processContent:prod",
     "copyContent": "rm -rf ./content && mkdir ./content && cp -R ~/Obsidian/Website/websites/lumenwrites/ ./content",
     "processContent:prod": "NODE_ENV=production node --experimental-json-modules ./backend/json/processContent.mjs",
-    "processContent:dev": "NODE_ENV=development nodemon --experimental-json-modules --watch /Users/ray/Obsidian/Website/websites/lumenwrites/ -e mjs,md ./backend/json/processContent.mjs"
+    "processContent:dev": "NODE_ENV=development nodemon --experimental-json-modules --watch /Users/ray/Obsidian/Website/websites/lumenwrites/ -e mjs,md ./backend/json/processContent.mjs",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
