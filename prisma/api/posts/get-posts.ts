@@ -2,7 +2,7 @@
 import prisma from 'prisma/prismaClient'
 
 export async function getPosts({ username, published, tagSlug, searchString, sort, skip, take }) {
-  console.log('Get posts')
+  console.log(`Get posts. Sorting: ${sort}`)
   // Filter posts by user (to show them on their profile)
   let author
   if (username) author = await prisma.user.findUnique({ where: { username } })

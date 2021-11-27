@@ -38,7 +38,9 @@ async function main() {
     console.log(`Created sequence: ${createdSequence.slug}`)
   }
   let postIds = [] // When I create a comment, I connect it to post id
+  let daysAgo = 1
   for (let markdownPost of processedMarkdownPosts) {
+    daysAgo += 1
     // post.slug = slugify(post.title, { lower: true, strict: true })
     for (let tag of markdownPost.tags) {
       // Create tag if it doesn't exist
@@ -53,24 +55,23 @@ async function main() {
       })
       console.log(`Created tag: ${createdTag.slug}`)
     }
+    const randomScore = Math.floor(Math.random() * 5)
+    userIds = userIds.sort(() => Math.random() - 0.5) // shuffle
+    const upvoters = userIds.slice(0, randomScore).map((userId) => ({ id: userId }))
     const post = {
       id: markdownPost.slug,
       slug: markdownPost.slug,
+      createdAt: pastDate(daysAgo),
       canonicalUrl: `https://lumenwrites.io/post/${markdownPost.slug}`,
       published: true,
       title: markdownPost.title,
       body: markdownPost.body,
       description: markdownPost.description,
       // Random author
-      author: { connect: { id: userIds[0] } }, // userIds[Math.floor(Math.random() * userIds.length)]
+      author: { connect: { id: 'lumen' } }, // userIds[Math.floor(Math.random() * userIds.length)]
       // Random upvoters
-      score: Math.floor(Math.random() * 500),
-      upvoters: {
-        connect: [
-          { id: userIds[Math.floor(Math.random() * userIds.length)] },
-          { id: userIds[Math.floor(Math.random() * userIds.length)] }
-        ]
-      },
+      score: randomScore,
+      upvoters: { connect: upvoters },
       sequence: { connect: { id: 'startup-notes' } },
       // Connect to the tags I've just created
       tags: { connect: markdownPost.tags.map(tag => ({ id: tag.slug })) },
@@ -86,7 +87,8 @@ async function main() {
   let posComs = [...positiveComments]
   posComs = posComs.sort(() => Math.random() - 0.5) // shuffle
   postIds = postIds.sort(() => Math.random() - 0.5) // shuffle
-  for (let userId of userIds.slice(1,userIds.length)) {
+  const commenterIds = userIds.filter(id => id !== 'lumen')
+  for (let userId of commenterIds) {
     for (let postId of postIds) {
       if (Math.random() > 0.5) continue
       if (posComs.length === 0) continue
@@ -153,3 +155,12 @@ main()
   .finally(async () => {
     await prisma.$disconnect()
   })
+
+function pastDate(daysAgo) {
+  var date = new Date();
+  var pastDate = new Date(date.getTime() - (daysAgo * 24 * 60 * 60 * 1000));
+  var day = pastDate.getDate();
+  var month = pastDate.getMonth() + 1;
+  var year = pastDate.getFullYear();
+  return pastDate
+}

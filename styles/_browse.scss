@@ -66,6 +66,12 @@
       }
     }
   }
+  .upvote {
+    margin-top: 0;
+    &.upvoted {
+      color: $btn-cta;
+    }
+  }
 }
 
 .no-results {
