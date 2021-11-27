@@ -65,7 +65,7 @@
 }
 
 .landing {
-  background: $post-bg;
+  background: var(--post-bg);
   max-width: 800px;
   margin: auto;
   .copy {
@@ -84,8 +84,8 @@
     }
   }
   .btn-preview-footer {
-    color: $text;
-    border: 1px solid $border;
+    color: var(--text);
+    border: 1px solid var(--border);
     background: none;
     width: 240px;
     display:block;
@@ -96,5 +96,5 @@
 }
 footer {
   // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/illustrations/hermione.jpg')
-  background: $footer-bg;
+  background: var(--footer-bg);
 }

@@ -1,20 +1,20 @@
 .edit {
-  background: $post-bg;
-  box-shadow: $box-shadow;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
+  background: var(--post-bg);
+  box-shadow: var(--box-shadow);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
   padding: 20px;
   .btn {
     margin-top: 10px;
   }
   .tags-input {
-    color: $text;
-    background: $input-bg;
+    color: var(--text);
+    background: var(--input-bg);
     width: 100%;
     margin-top: 12px;
     height: 32px;
-    border: 1px solid $border;
-    border-radius: $border-radius;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
     display: flex;
     .tags {
       overflow: hidden;
@@ -27,30 +27,30 @@
     .tag {
       white-space: nowrap;
       margin: 2px;
-      background: $panel-bg;
+      background: var(--panel-bg);
       //font-size: 0.8em;
       height: 26px;
       line-height: 26px;
       padding: 0 5px;
       cursor: pointer;
-      border-radius: $border-radius;
+      border-radius: var(--border-radius);
 
       svg {
         margin: 0 2px 0 5px;
         //font-size: 0.8em;
-        color: $text-dim;
+        color: var(--text-dim);
       }
     }
     input {
       margin: 0;
       border: none;
       //font-size: 0.8em;
-      //outline: 1px solid $border;
+      //outline: 1px solid var(--border);
       height: 30px;
       &::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
-        font-family: $main-font;
-        color: $text-placeholder;
+        font-family: var(--main-font);
+        color: var(--text-placeholder);
         font-weight: 100;
         opacity: 1; /* Firefox */
         opacity: 80%;
@@ -58,7 +58,7 @@
     }
     &::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: $text-dim;
+      color: var(--text-placeholder);
       // font-weight: 100;
       opacity: 1; /* Firefox */
       opacity: 80%;
@@ -71,12 +71,12 @@
       //account for borders
       left: -1px;
       right: -1px;
-      //border: 1px solid $border;
-      border-radius: 0 0 $border-radius $border-radius;
+      //border: 1px solid var(--border);
+      border-radius: 0 0 var(--border-radius);
       max-height: 200px;
       overflow: hidden;
       overflow-y: auto;
-      background-color: $panel-bg;
+      background-color: var(--panel-bg);
       box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
       .tag-item {
         padding: 4px 12px;
@@ -84,15 +84,15 @@
         //font-size: 0.8em;
         // float: left;
         // margin: 2px;
-        // background: $panel-bg;
+        // background: var(--panel-bg);
         // height: 26px;
         // line-height: 26px;
         // padding: 0 5px;
-        // border-radius: $border-radius;
+        // border-radius: var(--border-radius);
         &:hover,
         &.active {
-          background: $btn-bg-hover;
-          color: $text;
+          background: var(--btn-bg-hover);
+          color: var(--text);
         }
       }
       display: none;

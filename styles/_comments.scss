@@ -1,9 +1,9 @@
 .comments {
   margin-top: 10px;
   padding: 20px;
-  background: $post-bg;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
+  background: var(--post-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
   h2 {
     text-align: left;
     font-size: 1em;
@@ -24,12 +24,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: $panel-bg;
+      color: var(--panel-bg);
       cursor: pointer;
       &:hover {
-        color: #acbacf;
+        color: var(--text-placeholder);
         .collapse-line {
-          background: #acbacf;
+          background: var(--text-placeholder);
         }
       }
       svg {
@@ -39,33 +39,33 @@
         width: 2px;
         margin-top: -2px;
         height: calc(100% - 2px);
-        background: $panel-bg;
+        background: var(--panel-bg);
       }
     }
     &.collapsed {
       background: #fafafa;
-      background: #f9f9f9;
-      color: $text-dim;
+      background: var(--post-footer-bg);
+      color: var(--text-dim);
       cursor: pointer;
       padding: 5px 0;
       &:hover {
         svg {
-          color: #acbacf;
+          color: var(--text-placeholder);
         }
         .collapse-line {
-          background: #acbacf;
+          background: var(--text-placeholder);
         }
       }
       .username {
         display: inline-block;
-        color: #717171; //$text-dim;
+        color: #717171; //var(--text-dim);
         color: #acbacf;
-        color: $text-dim;
+        color: var(--text-dim);
       }
     }
     &.highlight {
-      background: $quote-bg;
-      border-radius: $border-radius;
+      background: var(--quote-bg);
+      border-radius: var(--border-radius);
     }
     .elements-wrapper {
       flex-basis: 100%;
@@ -73,9 +73,9 @@
         button {
           font-weight: bold;
           margin-right: 10px;
-          color: $text-dim;
+          color: var(--text-dim);
           &:hover {
-            color: $text;
+            color: var(--text);
           }
           svg {
             margin-right: 5px;
@@ -88,13 +88,14 @@
     margin-top: 5px;
     textarea {
       margin-top: 0;
+      background: var(--input-bg-dark);
     }
     .btn {
       margin-top: 5px;
       float: right;
       width: 100px;
-      background: $btn-cta;
-      border: 1px solid $btn-cta;
+      background: var(--btn-cta);
+      border: 1px solid var(--btn-cta);
       color: white;
       height: 32px;
       padding: 0;

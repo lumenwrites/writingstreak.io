@@ -1,24 +1,24 @@
 header {
-  background: $header-bg;
-  box-shadow: $box-shadow;
+  background: var(--header-bg);
+  box-shadow: var(--box-shadow);
   z-index: 10;
   position: relative; // so that box shadow stays on top
   padding: 8px 0; // 12px + 36px logo + 12px = total height of 56px
-  border-top: 2px solid #ff6600;
+  border-top: var(--decoration-line);
   box-sizing: border-box;
   .wrapper {
-    max-width: $wrapper-width;
+    max-width: var(--wrapper-width);
     margin: auto;
     padding: 0;
     min-width: 300px;
     // When screen size reaches the edges of content, I want some space between screen edges and elements in the header
-    @media (max-width: $wrapper-width) {
+    @media (max-width: var(--wrapper-width) ){
       padding: 0 20px;
     }
   }
   &.header-sidebar .wrapper {
-    max-width: $wrapper-sidebar-width;
-    @media (max-width: $wrapper-sidebar-width) {
+    max-width: var(--wrapper-sidebar-width);
+    @media (max-width: var(--wrapper-sidebar-width) ){
       padding: 0 20px;
     }
   }
@@ -28,9 +28,9 @@ header {
     width: 200px;
     display: block;
     float: left;
-    font-family: $logo-font;
+    font-family: var(--logo-font);
     font-size: 22px;
-    color: $text;
+    color: var(--text);
     // text-transform: uppercase;
     .logo-bold {
       letter-spacing: -1px;
@@ -62,13 +62,13 @@ header {
     .avatar {
       float: left;
       margin-left: 10px;
-      // border: 1px solid $border;
-      // border-radius: $border-radius;
+      // border: 1px solid var(--border);
+      // border-radius: var(--border-radius);
       width: 32px;
       height: 32px;
     }
     .notifications {
-      color: $text;
+      color: var(--text);
       font-size: 20px;
       width: 32px;
       height: 32px;
@@ -77,8 +77,8 @@ header {
       justify-content: center;
       float: left;
       margin-left: 10px;
-      border: 1px solid $border;
-      border-radius: $border-radius;
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
     }
     @media (max-width: 500px) {
       // display: none; // for now just hiding it
@@ -101,7 +101,7 @@ header {
   padding: 20px;
   background-image: linear-gradient(45deg, #d31f4d, #fab41e);
   .wrapper {
-    max-width: $wrapper-width;
+    max-width: var(--wrapper-width);
     margin: auto;
     // display: flex;
     // align-items: center;
@@ -122,19 +122,14 @@ header {
   }
 }
 .subnav-wrapper {
-  max-width: $wrapper-width;
+  max-width: var(--wrapper-width);
   margin: auto;
   margin-top: 0px;
 }
 .subnav {
-  // margin-top: 10px;
-  padding: 4px; //  10px 10px;
-  background: white;
-  background: #fafaf9; // $post-bg;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  padding: 4px;
+  background: var(--subnav-bg);
+  box-shadow: var(--box-shadow);
   .sorting,
   .period {
     .btn-nav {
@@ -167,7 +162,7 @@ header {
     }
   }
   .separator {
-    border-right: 1px solid $border;
+    border-right: 1px solid var(--border);
     height: 100%;
     width: 0;
     margin: 4px 5px 4px 0;
@@ -193,7 +188,12 @@ header {
     position: relative;
     input {
       margin-top: 0;
-      background: #f6f7f8;
+      background: var(--subnav-bg);
+      border: 1px solid var(--input-border-subnav);
+      &:focus {
+        background: var(--input-bg-subnav);
+        outline: none;
+      }
     }
     .search-button {
       position: absolute;
@@ -201,10 +201,13 @@ header {
       width: 24px;
       height: 24px;
       top: calc(50% - 12px);
-      color: rgba($text-dim, 0.5);
+      color: var(--text-placeholder);
+      opacity: 0.5;
       border-radius: 50%;
       &:hover {
-        background: $border;
+        color: var(--text-dim);
+        background: var(--panel-bg);
+        opacity: 1;
       }
     }
   }
@@ -212,47 +215,10 @@ header {
 .layout {
   .content {
     margin: auto;
-    max-width: $wrapper-width;
+    max-width: var(--wrapper-width);
     @media (max-width: 1000px) {
       // padding: 0 20px;
     }
-  }
-}
-
-.layout-sidebar {
-  height: calc(100% - 48px - 2px); //   minus header height minus orange line
-  max-width: $wrapper-sidebar-width;
-  margin: auto;
-  display: flex;
-  &.has-subnav {
-    height: calc(100% - 54px - 32px);
-  }
-  .sidebar {
-    // for flexbox
-    width: 300px;
-    min-width: 300px;
-    background-color: $sidebar-bg;
-    box-shadow: $box-shadow;
-    border-right: 1px solid $border-dim;
-    z-index: 7; // above dark-bg, below header. Also above other content to have box-shadow working
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: overlay;
-    @media (max-width: 800px) {
-      display: none;
-      &.open {
-        display: block;
-        position: fixed;
-        height: calc(100% - 48px);
-        width: 300px;
-      }
-    }
-  }
-  .content {
-    flex: auto;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: overlay;
   }
 }
 
@@ -265,7 +231,7 @@ header {
   float: left;
   margin-right: 10px; // same as between the logo and title
   cursor: pointer;
-  color: $text-dim;
+  color: var(--text-dim);
   font-size: 24px;
   width: 24px; // icons are different widths
   text-align: center;
@@ -295,11 +261,11 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 20px;
-  color: $text-dim;
+  color: var(--text-dim);
 }
 
 .error-page {
-  background: $post-bg;
+  background: var(--post-bg);
   padding: 40px;
   text-align: center;
 }

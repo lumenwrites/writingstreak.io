@@ -6,12 +6,12 @@
   padding: 20px;
   color: white;
   .wrapper {
-    max-width: $wrapper-width;
+    max-width: var(--wrapper-width);
     margin: auto;
   }
   .avatar {
     img {
-      border-radius: $border-radius;
+      border-radius: var(--border-radius);
     }
   }
   h1 {
@@ -26,7 +26,7 @@
     margin-top: 10px;
     padding: 10px 20px;
     border: 1px solid white;
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
     color: white;
     background: none;
     display: block;

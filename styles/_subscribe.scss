@@ -1,19 +1,19 @@
 .subscribe-landing {
-  background: $main-bg;
+  background: var(--main-bg);
   // For some reason form's top margin pushes the whole body down,
   // which adds a scrollbar. No idea why, but this fixes it.
   position: absolute;
   width: 100%;
   .form-card {
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
     max-width: 560px;
     margin: auto;
     margin-top: 70px;
     text-align: center;
     font-size: 16px;
     .header {
-      background: $header-bg;
-      border-radius: $border-radius;
+      background: var(--header-bg);
+      border-radius: var(--border-radius);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       padding: 20px 40px;
@@ -36,8 +36,8 @@
       }
     }
     .description {
-      background: $post-bg;
-      border-radius: $border-radius;
+      background: var(--post-bg);
+      border-radius: var(--border-radius);
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       padding: 40px;
@@ -54,11 +54,11 @@
           outline: none;
           color: white;
           background: #1a202a;
-          box-shadow: inset $box-shadow;
+          box-shadow: inset var(--box-shadow);
           padding-left: 10px;
           &::placeholder {
             /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: $text-dim;
+            color: var(--text-placeholder);
             opacity: 1; /* Firefox */
           }
         }
@@ -66,12 +66,12 @@
           height: 40px;
           float: left;
           width: 100px;
-          background: $orange;
-          border-radius: 0 $border-radius $border-radius 0;
+          background: var(--orange);
+          border-radius: 0 var(--border-radius);
           color: white;
           &.disabled {
             cursor: default;
-            color: $text-dim;
+            color: var(--text-dim);
           }
         }
       }

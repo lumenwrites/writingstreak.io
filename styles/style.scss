@@ -1,116 +1,122 @@
-// Typography
-$base-font-size: 14px;
-$main-font: "Open Sans";
-$logo-font: "Open Sans";
-$headings-font: "Open Sans";
-$main-font: "Inter";
-$headings-font: "Inter";
-$text: #3C4257;
-$text-heading: #3C4257; // #1A1F35; // h1,h2,etc. text dark
-$text-subheading: #4E576A;
-$text-placeholder: #464c61; // for inputs
-$text-dim: #697386; // for tags
-$text-link: $text; // #5469D4;
+// https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
+:root {
+  // Typography
+  --base-font-size: 14px;
+  --main-font: 'Open Sans';
+  --logo-font: 'Open Sans';
+  --headings-font: 'Open Sans';
+  --main-font: 'Inter';
+  --headings-font: 'Inter';
+  --text: #3c4257;
+  --text-heading: #3c4257; // #1A1F35; // h1,h2,etc. text dark
+  --text-subheading: #4e576a;
+  --text-placeholder: #464c61; // for inputs
+  --text-dim: #697386; // for tags
+  --text-link: $text; // #5469D4;
 
-// Big Elements
-$wrapper-width: 750px;
-$wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
-$modal-width: 700px;
-$main-bg:   #FAF4E9; // tan // #f1f2f5; // facebook neutral 
-$header-bg: white;
-$subnav-bg: #E0E6EF;
-$sidebar-bg: white;
-$active-bg: #fafafa;
-$quote-bg: #FCF2EF; // #fafafa;
-$quote-border: #ff6600;
-$panel-bg:  #E0E6EF;
-$code-bg: mix($quote-bg, $panel-bg, 50%); // #f5f5f5;
-$post-bg:   white;
-$modal-bg:  white;
-$footer-bg: #1a202a;
+  // Big Elements
+  --wrapper-width: 750px;
+  --wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
+  --modal-width: 700px;
+  --main-bg: #faf4e9; // tan // #f1f2f5; // facebook neutral
+  --decoration-line: 2px solid #ff6600;
+  --header-bg: white;
+  --subnav-bg: #fafaf9;
+  --sidebar-bg: white;
+  --active-bg: #fafafa;
+  --quote-bg: #fcf2ef; // #fafafa;
+  --quote-border: #ff6600;
+  --panel-bg: #e0e6ef;
+  --code-bg: mix($quote-bg, $panel-bg, 50%); // #f5f5f5;
+  --post-bg: white;
+  --post-footer-bg: #fafafa;
+  --modal-bg: white;
+  --footer-bg: #1a202a;
 
+  // Small Elements
+  --btn-bg: white;
+  --btn-bg-hover: #eee;
+  --btn-cta: #ff6600; //#DA552F;// #1977f2; //Facebook Blue
+  --border: #e3e8ee; //#464c61;
+  --border-dim: #f6f7f8;
+  --border-radius: 3px;
+  --input-bg: white; //#262c3b; // lighter in header
+  --input-border: var(--border);
+  --input-bg-subnav: white;
+  --input-border-subnav: var(--border);
+  --scrollbar-thumb: rgba(110, 110, 110, 0.2);
+  // Colors
+  --orange: #da552f;
+  --blue: #478dc0;
+  --box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
+}
 
-// Small Elements
-$btn-bg: white;
-$btn-bg-hover: #eee;
-$btn-cta:#ff6600; //#DA552F;// #1977f2; //Facebook Blue
-$border: #E3E8EE; //#464c61;
-$border-dim: #f6f7f8;
-$border-radius: 3px;
-$input-bg: white; //#262c3b; // lighter in header
-$input-border: $border;
-//$input-bg-dark: #181d29; // darker in post
-$scrollbar-thumb: rgba(110, 110, 110, 0.2);
-// Colors
-$orange: #DA552F;
-$blue: #478dc0;
-$box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
+[data-theme='dark'] {
+  // Typography
+  --base-font-size: 14px;
+  --main-font: 'Muli';
+  --headings-font: 'Muli';
+  --logo-font: 'Open Sans';
+  --text: white;
+  --text-heading: white;
+  --text-subheading: white;
+  --text-placeholder: #444d6d; // for inputs
+  --text-dim: #667399; // for tags
+  --text-link: #478dc0;
 
+  // Big Elements
+  --wrapper-width: 750px;
+  --wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
+  --modal-width: 700px;
+  --main-bg: #202631;
+  --modal-bg: #262d3b;
+  --decoration-line: none;
+  --header-bg: #333b4f;
+  --subnav-bg: #333b4f;
+  --sidebar-bg: #262d3b;
+  --active-bg: #384260; // active sidebar element
+  --panel-bg: #333b4f;
+  --footer-bg: #1a202a;
+  --post-bg: #262d3b;
+  --post-footer-bg: #262d3b;
+  --quote-bg: #353d4d;
+  --quote-border: #ff572f;
 
-// Dark Theme
-// // Typography
-// $base-font-size: 14px;
-// $main-font: "Muli";
-// $headings-font: "Muli";
-// $logo-font: "Open Sans";
-// $text: white;
-// $text-heading: white;
-// $text-subheading: white;
-// $text-placeholder: #464c61; // for inputs
-// $text-dim: #667399; // for tags
-// $text-link: #478dc0;
+  // Small Elements
+  --btn-bg: #333b4f;
+  --btn-bg-hover: #384260;
+  --btn-cta: #404f74;
+  --panel-bg: #343c4e;
+  --code-bg: #1f2532;
+  --border: #667399;
+  --border-dim: #66739949;
+  --border-width: 1px;
+  --border-radius: 5px;
+  --input-bg: #181d29;
+  --input-bg-subnav: #262c3b; 
+  --input-border-subnav: #6673995b;
+  --input-border: var(--input-bg);
+  --scrollbar-thumb: #383d4c;
+  --scrollbar-track: var(--main-bg);
+  --footer-bg: #181d29;
 
-// // Big Elements
-// $wrapper-width: 750px;
-// $wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
-// $modal-width: 700px;
-// $main-bg:   #202631;
-// $modal-bg:  #262d3b;
-// $header-bg: #333B4F;
-// $subnav-bg: #333B4F;
-// $sidebar-bg: #262d3b;
-// $active-bg: #384260; // active sidebar element
-// $panel-bg:  #333B4F;
-// $footer-bg: #1a202a;
-// $post-bg:   #262d3b;
-// $quote-bg: #353d4d;
-// $quote-border: #ff572f;
+  --box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
+}
 
-// // Small Elements
-// $btn-bg: #333B4F;
-// $btn-bg-hover: #384260;
-// $btn-cta:#478dc0;
-// $panel-bg: #343c4e;
-// $code-bg: #1f2532;
-// $border: #667399; //#464c61;
-// $border-dim: #32384d60;
-// $border-width: 1px;
-// $border-radius: 3px;
-// $input-bg: #181d29; 
-// $input-border: $input-bg;
-// //$input-bg-dark: #181d29; // darker in post //#262c3b; // lighter in header
-// $scrollbar-thumb: #383d4c;
-// $footer-bg: #181D29;
-
-// // Colors
-// $orange: #DA552F;
-// $blue: #478dc0;
-// $box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
-
-@import "./_fonts.scss";
-@import "./_reset.scss";
-@import "./_helpers.scss";
-@import "./_global.scss";
-@import "./_typography.scss";
-@import "./_elements.scss";
-@import "./_code.scss";
-@import "./_layout.scss";
-@import "./_browse.scss";
-@import "./_post.scss";
-@import "./_subscribe.scss";
-@import "./_landing.scss";
-@import "./_payments.scss";
-@import "./_ctas.scss";
-@import "./_users.scss";
-@import "./_comments.scss";
-@import "./_edit.scss";
+@import './_fonts.scss';
+@import './_reset.scss';
+@import './_helpers.scss';
+@import './_global.scss';
+@import './_typography.scss';
+@import './_elements.scss';
+@import './_code.scss';
+@import './_layout.scss';
+@import './_browse.scss';
+@import './_post.scss';
+@import './_subscribe.scss';
+@import './_landing.scss';
+@import './_payments.scss';
+@import './_ctas.scss';
+@import './_users.scss';
+@import './_comments.scss';
+@import './_edit.scss';

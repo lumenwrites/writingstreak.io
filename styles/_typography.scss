@@ -4,7 +4,7 @@ h3,
 h4,
 h5 {
   margin-top: 1em;
-  color: $text-heading;
+  color: var(--text-heading);
   & + p,
   & + ul,
   & + img,
@@ -20,7 +20,7 @@ h2 {
 h1,
 h2,
 h3 {
-  font-family: $headings-font;
+  font-family: var(--headings-font);
   font-weight: bold;
 }
 
@@ -32,8 +32,8 @@ h2 {
 }
 h3 {
   font-size: 1.2em;
-  // border-bottom: 1px solid $border;
-  // color: $text-subheading;
+  // border-bottom: 1px solid var(--border);
+  // color: var(--text-subheading);
   // color: #d95650; //#DE544A;
   font-weight: bold;
 }
@@ -82,21 +82,21 @@ p {
 }
 a {
   cursor: pointer;
-  color: $text-link;
+  color: var(--text-link);
   &:hover,
   &:active,
   &:focus {
-    color: $text-link;
+    color: var(--text-link);
   }
   // svg path {
-  //   fill: $text-link;
+  //   fill: var(--text-link);
   // }
 }
 
 .post a {
   font-weight: bold;
   text-decoration: underline;
-  color: $text;
+  color: var(--text);
 }
 
 b,
@@ -139,12 +139,12 @@ li p {
 hr {
   border: none;
   margin: 4px 0 4px 0;
-  border-top: 1px solid $border;
+  border-top: 1px solid var(--border);
 }
 
 blockquote {
-  border-left: 3px solid $quote-border;
-  background: $quote-bg;
+  border-left: 3px solid var(--quote-border);
+  background: var(--quote-bg);
   margin-top: 1em;
   padding: 10px;
 
@@ -160,7 +160,7 @@ table {
 table,
 th,
 td {
-  border: 1px solid $border;
+  border: 1px solid var(--border);
   padding: 10px;
 }
 thead {

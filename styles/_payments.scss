@@ -9,10 +9,10 @@
   }
   .stripe-card {
     background: #181d29;
-    outline: 1px solid $input-bg; //$border; // border adds to height here for some reason, but not for inputs
+    outline: 1px solid var(--input-bg); //var(--border); // border adds to height here for some reason, but not for inputs
     padding: 0 12px;
     margin-top: 10px;
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
     box-sizing: border-box;
   }
   .discount {
@@ -26,9 +26,9 @@
   }
   .discount-offers {
     // font-size: 0.85em;
-    color: $text-dim;
+    color: var(--text-dim);
     h3 {
-      color: $text-dim;
+      color: var(--text-dim);
     }
     ul {
       margin-top: 0;
@@ -39,8 +39,8 @@
 // Purchase CTA
 .post .content-locked {
   text-align: center;
-  border: 1px solid $border;
-  border-radius: $border-radius;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
   padding: 40px;
 
   .btn-cta-landing {

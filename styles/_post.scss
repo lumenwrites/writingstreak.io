@@ -4,10 +4,10 @@
   @media (max-width: 640px) {
     padding: 20px 10px 40px 10px; // 30px footer + 20px
   }
-  background: $post-bg;
-  box-shadow: $box-shadow;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
+  background: var(--post-bg);
+  box-shadow: var(--box-shadow);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
   overflow: hidden; // hide rounded footer corners
   font-size: 17px;
   text-align: justify;
@@ -101,8 +101,8 @@
     .title {
       font-size: 1em;
       font-weight: bold;
-      border: 1px solid $border;
-      background: $quote-bg;
+      border: 1px solid var(--border);
+      background: var(--quote-bg);
       cursor: pointer;
       margin-top: 10px;
       padding: 4px 0;
@@ -115,8 +115,8 @@
       }
     }
     .body {
-      border: 1px solid $border;
-      background: $quote-bg;
+      border: 1px solid var(--border);
+      background: var(--quote-bg);
       border-top: none;
       padding: 0 20px;
       *:first-child {
@@ -158,13 +158,13 @@
     display: block;
     margin-top: 1em;
     padding: 10px 20px;
-    background: $btn-bg;
+    background: var(--btn-bg);
     text-decoration: none;
-    border-radius: $border-radius;
-    border: 1px solid $border;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border);
     font-size: 14px;
     &:hover {
-      background: $btn-bg-hover;
+      background: var(--btn-bg-hover);
     }
     h2 {
       text-align: left;
@@ -178,9 +178,9 @@
 }
 .related-posts {
   margin-top: 10px;
-  // background: $post-bg;
-  // box-shadow: $box-shadow;
-  // border-radius: $border-radius;
+  // background: var(--post-bg);
+  // box-shadow: var(--box-shadow);
+  // border-radius: var(--border-radius);
   // padding: 20px;
   .post-card {
     margin-top: 5px;
@@ -192,8 +192,8 @@
   h2 {
     text-align: left;
     font-size: 1em;
-    // @media (max-width: $wrapper-width) {
-    //   padding: 0 20px;
+    // @media (max-width: var(--wrapper-width) {
+    //   padding: 0 20px);
     // }
   }
 }
@@ -211,13 +211,13 @@
     .prev,
     .next {
       padding: 12px;
-      background: $btn-bg;
+      background: var(--btn-bg);
       text-decoration: none;
       &:hover {
-        background: $btn-bg-hover;
+        background: var(--btn-bg-hover);
       }
-      border-radius: $border-radius;
-      border: 1px solid $border;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -252,22 +252,22 @@
   .section {
     .section-title {
       margin-top: 20px;
-      border-bottom: 1px solid $border-dim;
+      border-bottom: 1px solid var(--border-dim);
       padding: 8px 20px;
-      color: $text-subheading;
+      color: var(--text-subheading);
       text-transform: uppercase;
       font-weight: bold;
     }
     .chapter {
       display: block;
-      border-bottom: 1px solid $border-dim;
+      border-bottom: 1px solid var(--border-dim);
       padding: 8px 0px 8px 20px; // indentation on the right
-      color: $text-dim;
+      color: var(--text-dim);
       &.active {
         font-weight: bold;
-        border-left: 2px solid $orange;
-        color: $text-heading; //$text-link;
-        background: $active-bg;
+        border-left: 2px solid var(--orange);
+        color: var(--text-heading); //var(--text-link);
+        background: var(--active-bg);
       }
       position: relative;
       .preview,
@@ -283,12 +283,12 @@
         background: #caf5c9;
         color: #0b825d;
         padding: 0 8px;
-        border-radius: $border-radius;
+        border-radius: var(--border-radius);
         font-weight: normal;
       }
       .draft {
-        background: $panel-bg;
-        color: $text-dim;
+        background: var(--panel-bg);
+        color: var(--text-dim);
       }
     }
   }

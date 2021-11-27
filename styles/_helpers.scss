@@ -19,5 +19,5 @@
 .paddings-20 { padding:20px; }
 .paddings-8 { padding:8px; }
 .small-text { font-size: 12px; }
-.dim { color: $text-dim;}
+.dim { color: var(--text-dim);}
 .nobreak { -webkit-column-break-inside: avoid; } /* don't break column */

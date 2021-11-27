@@ -11,14 +11,19 @@ import LoginModal from 'components/Users/LoginModal'
 import SubmitPostModal from 'components/CTAs/SubmitPostModal'
 import DefaultHead from 'components/Layout/DefaultHead'
 
+import { useEffect } from 'react'
+
 function App({ Component, pageProps }) {
+  useEffect(() => {
+    document.querySelector('body').dataset.theme = 'dark1'
+  })
   return (
     <PlausibleProvider domain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_DOMAIN}>
       <CombinedContextsProvider>
         <DefaultHead />
         <Component {...pageProps} />
         <LoginModal />
-        <SubmitPostModal/>
+        <SubmitPostModal />
       </CombinedContextsProvider>
     </PlausibleProvider>
   )

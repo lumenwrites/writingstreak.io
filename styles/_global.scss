@@ -2,19 +2,16 @@ html {
   // For automatically smoothly scrolling to comments (and headers!)
   // Doesn't seem to impact mouse scrolling
   // Doesnt work because it impacts clicking on posts
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 html,
 body {
-  color: $text;
-  background: $main-bg;
-  font-family: $main-font;
-  // font-weight: 100;
+  color: var(--text);
+  background: var(--main-bg);
+  font-family: var(--main-font);
+  font-size: var(--base-font-size);
   font-weight: normal;
-  margin: 0;
-  height: 100%;
-  font-size: $base-font-size;
 }
 #__next {
   height: 100%;
@@ -28,16 +25,15 @@ body {
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background-color: transparent;
+  background-color: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-corner {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: $scrollbar-thumb;
+  background-color: var(--scrollbar-thumb);
   border: 2px solid transparent !important;
   border-radius: 4px;
   background-clip: content-box;
 }
-
