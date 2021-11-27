@@ -23,9 +23,9 @@ export default function browse({ posts, tagSlug, username }) {
       {/* <AdBoxes/> */}
       <SubscribeBox />
       <Head>
-        <title>lumenwrites</title>
-        <meta property="og:title" content={`lumenwrites`} key="ogtitle" />
-        <meta name="twitter:title" content={`lumenwrites`} key="ogtitle" />
+        <title>lumen | nexy</title>
+        <meta property="og:title" content={`lumen | nexy`} key="ogtitle" />
+        <meta name="twitter:title" content={`lumen | nexy`} key="ogtitle" />
         <meta
           property="og:description"
           content={
