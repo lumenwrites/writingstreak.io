@@ -3,13 +3,13 @@ import PostFeed from 'components/Posts/PostFeed'
 import AdBoxes from 'components/CTAs/AdBoxes'
 import Subnav from 'components/Layout/Subnav'
 import Pagination from 'components/Posts/Pagination'
-import TagHeader from 'components/Layout/TagHeader'
+import ProfileHeader from 'components/Users/ProfileHeader'
 import SubscribeBox from 'components/CTAs/SubscribeBox'
 
 export default function browse({ posts }) {
   return (
     <Layout>
-      {/* <TagHeader /> */}
+      <ProfileHeader />
       {/* <Subnav /> */}
       <PostFeed posts={posts} />
       {/* <Pagination postCount={123}/> */}

@@ -1,7 +1,7 @@
 // @ts-nocheck
 import prisma from 'prisma/prismaClient'
 
-export async function getPosts({ username, published, tagSlug, searchString, skip, take }) {
+export async function getPosts({ username, published, tagSlug, searchString, sort, skip, take }) {
   console.log('Get posts')
   // Filter posts by user (to show them on their profile)
   let author
@@ -24,21 +24,29 @@ export async function getPosts({ username, published, tagSlug, searchString, ski
     ],
   } : {}
 
+  let orderBy = [{ rank: 'desc' }]
+  if (sort === 'new') orderBy = [{ createdAt: 'desc' }]
+  if (sort === 'top') orderBy = [{ score: 'desc' }]
+
   const allFilters = {
     authorId: author?.id,
     published: published,
     ...search,
     ...tagFilter,
   }
-
   const [posts, postCount] = await prisma.$transaction([
     prisma.post.findMany({
       where: allFilters,
-      orderBy: [{ rank: 'desc' }], //rank: 'desc' //score: 'desc'
+      orderBy: orderBy, //rank: 'desc' //score: 'desc'
       take, skip,
       include: {
         tags: true,
         author: {
+          select: {
+            username: true
+          }
+        },
+        upvoters: {
           select: {
             username: true
           }

@@ -10,6 +10,7 @@ import rehypePrism from 'rehype-prism-plus' // syntax highlighting, allows you t
 
 
 export async function markdownToHtml(markdown) {
+  console.log(`Processing markdown ${markdown}`)
   const html = await unified()
     .use(remarkParse)
     .use(remarkRehype)
@@ -20,6 +21,6 @@ export async function markdownToHtml(markdown) {
     .use(rehypeSanitize)
     .use(rehypeStringify)
     .process(markdown)
-  // console.log(html)
+  console.log("Rendered markdown to html", html)
   return html.value.toString()
 }

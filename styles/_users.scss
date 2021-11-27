@@ -1,61 +1,56 @@
 .profile-header {
-  @extend .card;
-  position: relative;
-  padding-bottom: calc(29px + 10px);
+  margin-top: 0;
+  background: url('/img/bg-no-frame.png');
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url('/img/bg-no-frame.png');
+  text-align: center;
+  padding: 20px;
+  color: white;
+  .wrapper {
+    max-width: $wrapper-width;
+    margin: auto;
+  }
   .avatar {
-    float: left;
-    margin-right: 10px;
     img {
       border-radius: $border-radius;
     }
   }
   h1 {
-    text-align: left;
+    color: white;
+    margin-top: 10px;
   }
-  .profile-footer {
-    width: 100%;
-    // display: flex;
-    // align-items: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 29px; // 1px border makes a difference for some reason
-    padding: 0 10px;
-    font-size: 11px;
-    color: #384260;
-    background: #fafafa;
-    border-top: 1px solid $border-dim;
-    .bio-links {
-      float: right;
-      display: flex;
-      align-items: center;
-      height: 28px;
-      .bio-link {
-        display: flex;
-        align-items: center;
-        float: left;
-        margin-left: 15px;
-        color: $text-dim;
-        height: 20px; //make it more clickable
-        min-width: 20px;
-        svg {
-          margin-right: 2px;
-        }
-        &:hover {
-          color: $text;
-        }
-      }
-      .tag {
-        display: flex;
-        align-items: center;
-        background: $panel-bg;
-        color: $text-dim;
-        background: $btn-cta;
+  .buttons {
+    float: right;
+  }
+  .btn-follow {
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: $border-radius;
+    color: white;
+    background: none;
+    display: block;
+    svg {
+      color: white;
+      margin-left: 10px;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background: rgba(238, 238, 238, 0.1);
+      color: white;
+    }
+  }
+  .bio-links {
+    margin: auto;
+    margin-top: 10px;
+    .bio-link {
+      margin: 0 5px;
+      color: rgba(255, 255, 255, 0.75);
+      height: 20px; //make it more clickable
+      width: 20px;
+      &:hover {
         color: white;
-        border-radius: 2px;
-        height: 20px;
-        padding: 0px 8px;
       }
     }
   }

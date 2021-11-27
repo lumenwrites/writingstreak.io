@@ -64,6 +64,7 @@ async function main() {
       // Random author
       author: { connect: { id: userIds[0] } }, // userIds[Math.floor(Math.random() * userIds.length)]
       // Random upvoters
+      score: Math.floor(Math.random() * 500),
       upvoters: {
         connect: [
           { id: userIds[Math.floor(Math.random() * userIds.length)] },
@@ -100,6 +101,9 @@ async function main() {
         // Random upvoters
         upvoters: {
           connect: [
+            { id: userIds[Math.floor(Math.random() * userIds.length)] },
+            { id: userIds[Math.floor(Math.random() * userIds.length)] },
+            { id: userIds[Math.floor(Math.random() * userIds.length)] },
             { id: userIds[Math.floor(Math.random() * userIds.length)] },
             { id: userIds[Math.floor(Math.random() * userIds.length)] }
           ]

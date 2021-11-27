@@ -97,20 +97,28 @@ header {
   }
 }
 .tag-header {
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-radius: 0;
-  h1 {
+  background: #fafafa;
+  padding: 20px;
+  background-image: linear-gradient(45deg, #d31f4d, #fab41e);
+  .wrapper {
+    max-width: $wrapper-width;
+    margin: auto;
     // display: flex;
     // align-items: center;
-    text-align: center;
+    // justify-content: space-between;
   }
-  border-top: 3px solid $btn-cta;
+  h1 {
+    // text-align: left;
+    // float: left;
+    margin: 0;
+    color: white;
+  }
   .btn {
+    margin: 0;
     margin-left: 10px;
+    background: none;
+    color: white;
+    border: 1px solid white;
   }
 }
 .subnav-wrapper {
@@ -135,7 +143,7 @@ header {
     }
     .menu,
     .menu-handle {
-      width: 70px;
+      width: 90px;
       .item {
         margin: 0;
       }
@@ -187,11 +195,17 @@ header {
       margin-top: 0;
       background: #f6f7f8;
     }
-    svg {
+    .search-button {
       position: absolute;
       right: 10px;
-      top: calc(50% - 7px);
+      width: 24px;
+      height: 24px;
+      top: calc(50% - 12px);
       color: rgba($text-dim, 0.5);
+      border-radius: 50%;
+      &:hover {
+        background: $border;
+      }
     }
   }
 }

@@ -56,6 +56,7 @@ model Post {
   comments Comment[] @relation("PostComments")
 
   rank Float @default(0)
+  score Int @default(0) // to sort posts by score I could just count upvoters, but prisma doesn't support that yet, so I keep track of it manually
   views Int @default(0)
   upvoters User[] @relation("UserUpvotedPosts")
   downvoters User[] @relation("UserDownvotedPosts")
