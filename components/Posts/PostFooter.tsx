@@ -4,12 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function PostFooter({ post }) {
   const router = useRouter()
-
+  // When I'm viewing the post, I want clicking on tag to redirect to /
+  let { postSlug, ...baseQuery } = router.query
+  let pathname = router.pathname
+  if (postSlug) pathname = '/'
   return (
     <div className="post-footer">
       <div className="tags">
-      {post.tags.map((tag) => (
-          <a className="tag" key={tag.slug} onClick={() => router.push({ query: { ...router.query, tag: tag.slug } })}>
+        {post.tags.map((tag) => (
+          <a className="tag" key={tag.slug} onClick={() => router.push({ query: { ...baseQuery, tag: tag.slug }, pathname })}>
             {tag.name}
           </a>
         ))}
