@@ -6,6 +6,7 @@ import ProfileHeader from 'components/Users/ProfileHeader'
 import TagHeader from 'components/Layout/TagHeader'
 import SubscribeBox from 'components/CTAs/SubscribeBox'
 import AdBoxes from 'components/CTAs/AdBoxes'
+import Head from 'next/head'
 
 export default function browse({ posts, tagSlug, username }) {
   return (
@@ -21,6 +22,26 @@ export default function browse({ posts, tagSlug, username }) {
       {/* <Pagination postCount={123}/> */}
       {/* <AdBoxes/> */}
       <SubscribeBox />
+      <Head>
+        <title>lumenwrites</title>
+        <meta property="og:title" content={`lumenwrites`} key="ogtitle" />
+        <meta name="twitter:title" content={`lumenwrites`} key="ogtitle" />
+        <meta
+          property="og:description"
+          content={
+            'Startup Founder, Web Developer, Writer. I write about things that gratify my intellectual curiosity.'
+          }
+          key="ogdesc"
+        />
+        <meta
+          name="twitter:description"
+          content={
+            'Startup Founder, Web Developer, Writer. I write about things that gratify my intellectual curiosity.'
+          }
+        />
+        <meta property="og:image" content={`https://nexy.io/img/social-lumen.png`} key="ogimage" />
+        <meta name="twitter:image" content={`https://nexy.io/img/social-lumen.png`} />
+      </Head>
       <br />
     </Layout>
   )
