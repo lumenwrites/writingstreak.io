@@ -9,12 +9,12 @@ import PostFooter from 'components/Posts/PostFooter'
 import Comments from 'components/Comments/Comments'
 
 export default function Post({ post }) {
+  console.log('post', post)
   return (
     <Layout>
       <div className="post blog-post">
         <h1 className="h1-header orange">{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
-        {/* {post.body} */}
         <PostFooter post={post} />
         <Head>
           <title>{post.title}</title>
@@ -22,8 +22,8 @@ export default function Post({ post }) {
           <meta name="twitter:title" content={`${post.title}`} key="ogtitle" />
           <meta property="og:description" content={post.description} key="ogdesc" />
           <meta name="twitter:description" content={post.description} />
-          {post.social && <meta property="og:image" content={`${config.domain}${post.social}`} key="ogimage" />}
-          {post.social && <meta name="twitter:image" content={`${config.domain}${post.social}`} />}
+          {post.socialImage && <meta property="og:image" content={`${config.domain}${post.socialImage}`} key="ogimage" />}
+          {post.socialImage && <meta name="twitter:image" content={`${config.domain}${post.socialImage}`} />}
         </Head>
       </div>
       {/* <AdBoxes /> */}

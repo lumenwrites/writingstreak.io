@@ -52,6 +52,8 @@ model Post {
   sequence Sequence? @relation("SequencePosts", fields: [sequenceId], references: [id])
   sequenceId String?
   tags Tag[]
+  // socialImage SocialImage? @relation("PostSocialImage")
+  socialImage String?
   
   comments Comment[] @relation("PostComments")
 
@@ -113,3 +115,11 @@ model Sequence {
   name String
   slug String @unique
 }
+
+// model SocialImage {
+//   id String @id @default(cuid())
+//   post Post @relation("PostSocialImage", fields: [postId], references: [id])
+//   postId String
+//   name String
+//   url String
+// }

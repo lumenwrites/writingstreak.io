@@ -72,11 +72,12 @@ async function main() {
       // Random upvoters
       score: randomScore,
       upvoters: { connect: upvoters },
+      rank: 1000 - i, // Posts are manually sorted. // Math.random(),
+      views: Math.floor(Math.random() * 100),
       sequence: { connect: { id: 'startup-notes' } },
       // Connect to the tags I've just created
       tags: { connect: markdownPost.tags.map(tag => ({ id: tag.slug })) },
-      rank: 1000 - i, // Posts are manually sorted. // Math.random(),
-      views: Math.floor(Math.random() * 100),
+      socialImage: markdownPost.social, // { create: { name: "social-image", url: markdownPost.social }, },
     }
 
     const createdPost = await prisma.post.create({ data: post })

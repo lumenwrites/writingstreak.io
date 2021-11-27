@@ -17,6 +17,11 @@ export async function getPost({ slug }) {
           username: true
         }
       },
+      // socialImage: {
+      //   select: {
+      //     url: true
+      //   }
+      // },
       comments: {
         select: {
           id: true,
