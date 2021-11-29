@@ -8,13 +8,13 @@ import HomeHeader from 'components/CTAs/HomeHeader'
 import SubscribeBox from 'components/CTAs/SubscribeBox'
 import AdBoxes from 'components/CTAs/AdBoxes'
 
-export default function browse({ posts, tagSlug, username }) {
+export default function browse({ posts, postCount, username }) {
   return (
     <Layout subnav={<Subnav />}>
       <PostFeed posts={posts} />
-      {/* <Pagination postCount={123}/> */}
-      {/* <AdBoxes/> */}
       <SubscribeBox />
+      <Pagination postCount={postCount} />
+      <AdBoxes/>
       <br />
     </Layout>
   )

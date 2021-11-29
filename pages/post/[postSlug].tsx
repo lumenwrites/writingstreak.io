@@ -26,7 +26,7 @@ export default function Post({ post }) {
           {post.socialImage && <meta name="twitter:image" content={`${config.domain}${post.socialImage}`} />}
         </Head>
       </div>
-      {/* <AdBoxes /> */}
+      <AdBoxes />
       <SubscribeBox/>
       <Comments post={post}/>
       <br />

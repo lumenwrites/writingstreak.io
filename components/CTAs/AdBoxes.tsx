@@ -4,22 +4,22 @@ export default function AdBoxes() {
   return (
     <div className="post-grid showcase-boxes">
       <AdBox
-        title="Prompts App"
-        description="A large collection of prompts that will help you to write or improvise adventures. Adventure ideas, antagonists, settings, challenges - everything you need!"
-        href="https://perchance.org/adventure-prompts"
-        image={'/img/writing-desk.jpg'}
+        title="Join our Discord community"
+        description="We are makers - startup founders, developers, designers, writers, people who use technology to build cool projects and turn them into profitable businesses."
+        href="https://discord.gg/RS3PxFXBuz"
+        image={'/showcase-boxes/discord.png'}
       />
       <AdBox
-        title="Adventure Writing Academy"
-        description="Learn to Create Awesome Adventures for Tabletop Roleplaying Games! Read the course that summarizes everything I have learned about creating adventures."
-        href="/course/first-person-shooter"
-        image={'/img/valley.jpg'}
+        title="Your Project Here"
+        description="Want to share your project with a community of smart people interested in startups and technology? Send me an email - lumenwrites@gmail.com"
+        href="mailto:lumenwrites@gmail.com"
+        image={'/showcase-boxes/your-project-here.png'}
       />
       <AdBox
-        title="Adventure Writers&apos; Room"
-        description="Join our Discord community! We are a group of people who love creating adventures for tabletop roleplaying games, we help each other to brainstorm ideas and create stories for our players to enjoy."
-        href="https://discord.gg/JZmXfWD85D"
-        image={'/img/logo-book.png'}
+        title="Follow us on Twitter"
+        description="Receive updates on this project and our best posts, as well as insightful ideas and actionable advice on building and growing your projects."
+        href="https://twitter.com/lumenwrites"
+        image={'/showcase-boxes/twitter.png'}
       />
     </div>
   )
@@ -28,8 +28,10 @@ export default function AdBoxes() {
 var AdBox = ({ title, description, href, image }) => {
   // showcase-box because when it's named ad-box it gets blocked by ad blockers
   return (
-    <a className="post-card showcase-box" href={href} target="_blank" rel="noopener noreferrer">
-      <Image src={image} width={320} height={180} layout="responsive" objectFit="cover" />
+    <a className="card showcase-box" href={href} target="_blank" rel="noopener noreferrer">
+      <div className="thumbnail-image">
+        <Image src={image} width={320} height={180} layout="responsive" objectFit="cover" />
+      </div>
       {/* <div className="image-wrapper">
         <div className="thumbnail" style={{ background: `url('${image}')` }} />
       </div> */}
