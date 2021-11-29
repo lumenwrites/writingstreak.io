@@ -95,7 +95,14 @@
 }
 
 .showcase-boxes {
-  
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 130px;
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
   // padding-bottom: 20px; // space to the bottom of the page
   .showcase-box {
     padding: 0;

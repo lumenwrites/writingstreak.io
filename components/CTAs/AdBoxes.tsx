@@ -2,18 +2,24 @@ import Image from 'next/image'
 
 export default function AdBoxes() {
   return (
-    <div className="post-grid showcase-boxes">
+    <div className="showcase-boxes">
       <AdBox
         title="Join our Discord community"
         description="We are makers - startup founders, developers, designers, writers, people who use technology to build cool projects and turn them into profitable businesses."
         href="https://discord.gg/RS3PxFXBuz"
         image={'/showcase-boxes/discord.png'}
       />
-      <AdBox
+      {/* <AdBox
         title="Your Project Here"
         description="Want to share your project with a community of smart people interested in startups and technology? Send me an email - lumenwrites@gmail.com"
         href="mailto:lumenwrites@gmail.com"
         image={'/showcase-boxes/your-project-here.png'}
+      /> */}
+      <AdBox
+        title="Submit your Article"
+        description="Learn more about writing for nexy - share your knowledge, spread your ideas, grow your audience."
+        href="/write"
+        image={'/showcase-boxes/write-for-us.png'}
       />
       <AdBox
         title="Follow us on Twitter"
