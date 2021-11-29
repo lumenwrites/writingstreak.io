@@ -56,7 +56,7 @@ export async function getServerSideProps({ req, query }) {
   const { posts, postCount } = await getPosts({
     published: true,
     searchString: search,
-    username: username[0].replace('@',''),
+    username: username,
     tagSlug: tag,
     sort: sort,
     skip: config.postsPerPage * (parseInt(query.page?.toString()) - 1 || 0),
