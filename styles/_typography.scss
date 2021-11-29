@@ -8,7 +8,8 @@ h5 {
   & + p,
   & + ul,
   & + img,
-  & + blockquote {
+  & + blockquote,
+  & + * {
     // first pagagraph after the header
     margin-top: 5px;
   }
@@ -34,7 +35,7 @@ h3 {
   font-size: 1.2em;
   // border-bottom: 1px solid var(--border);
   // color: var(--text-subheading);
-  // color: #d95650; //#DE544A;
+  color: #d95650; //#DE544A;
   font-weight: bold;
 }
 h4 {
@@ -45,15 +46,19 @@ h5 {
   font-size: 1em;
 }
 // Header links
+
 h1,
 h2,
 h3,
 h4,
 h5 {
   position: relative;
-  .header-link {
+  a {
+    color: red!important;
+    font-weight: normal;
+    text-decoration: none;
     margin-right: 10px;
-    visibility: hidden;
+    // visibility: hidden;
     cursor: pointer;
     position: absolute;
     width: 100%;
@@ -62,7 +67,7 @@ h5 {
     text-align: left;
     height: 32px;
   }
-  .header-link::after {
+  a::after {
     content: ' ';
     font-weight: bold;
   }
@@ -70,10 +75,6 @@ h5 {
     .header-link {
       visibility: visible;
     }
-  }
-  a {
-    font-weight: normal;
-    text-decoration: none;
   }
 }
 

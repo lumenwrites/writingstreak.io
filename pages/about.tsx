@@ -9,6 +9,7 @@ export default function Page({ post }) {
   return (
     <Layout>
       <div className="post page">
+        <h1 className="h1-header orange">{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
         <Head>
           <title>
@@ -35,7 +36,7 @@ import pages from 'backend/json/out/pages.json'
 import { markdownToHtml } from 'backend/markdown'
 
 export async function getStaticProps({ params }) {
-  let page = pages.find((page) => page.slug == 'about-nexy')
+  let page = pages.find((page) => page.slug == 'about')
   page.body = await markdownToHtml(page.body)
   console.log('[pageSlug]', page.title, page.body)
   return { props: { post: page } }

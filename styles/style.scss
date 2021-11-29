@@ -12,7 +12,7 @@
   --text-subheading: #4e576a;
   --text-placeholder: #464c61; // for inputs
   --text-dim: #697386; // for tags
-  --text-link: $text; // #5469D4;
+  --text-link: var(--text); // #5469D4;
 
   // Big Elements
   --wrapper-width: 750px;
@@ -27,7 +27,7 @@
   --quote-bg: #fcf2ef; // #fafafa;
   --quote-border: #ff6600;
   --panel-bg: #e0e6ef;
-  --code-bg: mix($quote-bg, $panel-bg, 50%); // #f5f5f5;
+  --code-bg: #EEECEF; //mix(var(--quote-bg), var(--panel-bg), 50%); // #f5f5f5;
   --post-bg: white;
   --post-footer-bg: #fafafa;
   --modal-bg: white;

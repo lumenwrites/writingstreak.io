@@ -15,7 +15,7 @@ import { useEffect } from 'react'
 
 function App({ Component, pageProps }) {
   useEffect(() => {
-    document.querySelector('body').dataset.theme = 'dark1'
+    document.querySelector('html').dataset.theme = 'dark1'
   })
   return (
     <PlausibleProvider domain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_DOMAIN}>
