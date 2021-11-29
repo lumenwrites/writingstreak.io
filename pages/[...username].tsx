@@ -52,7 +52,7 @@ import config from 'config.json'
 
 export async function getServerSideProps({ req, query }) {
   const { username, sort, tag, search } = query
-  console.log('username', username)
+  // console.log('username', username)
   const { posts, postCount } = await getPosts({
     published: true,
     searchString: search,
