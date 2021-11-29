@@ -12,9 +12,9 @@ export default function browse({ posts, postCount, username }) {
   return (
     <Layout subnav={<Subnav />}>
       <PostFeed posts={posts} />
-      <SubscribeBox />
       <Pagination postCount={postCount} />
       <AdBoxes/>
+      <SubscribeBox />
       <br />
     </Layout>
   )
