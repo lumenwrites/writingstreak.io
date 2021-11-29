@@ -36,8 +36,18 @@ import pages from 'backend/json/out/pages.json'
 import { markdownToHtml } from 'backend/markdown'
 
 export async function getStaticProps({ params }) {
-  let page = pages.find((page) => page.slug == 'about')
+  let page = pages.find((page) => page.slug == params.pageSlug)
   page.body = await markdownToHtml(page.body)
   console.log('[pageSlug]', page.title, page.body)
   return { props: { post: page } }
+}
+
+export async function getStaticPaths() {
+  // console.log('getStaticPaths', posts)
+  return {
+    paths: pages.map((page) => ({
+      params: { pageSlug: page.slug },
+    })),
+    fallback: false,
+  }
 }

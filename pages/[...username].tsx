@@ -52,10 +52,11 @@ import config from 'config.json'
 
 export async function getServerSideProps({ req, query }) {
   const { username, sort, tag, search } = query
+  console.log('username', username)
   const { posts, postCount } = await getPosts({
     published: true,
     searchString: search,
-    username: username,
+    username: username[0].replace('@',''),
     tagSlug: tag,
     sort: sort,
     skip: config.postsPerPage * (parseInt(query.page?.toString()) - 1 || 0),

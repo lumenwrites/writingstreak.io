@@ -38,7 +38,8 @@ export default function PostFooter({ post }) {
             <FontAwesomeIcon icon={['fas', 'calendar']} />
             {date}
           </div> */}
-          <Link href={`/${post.author.username}`} className="tag">
+          <Link className="tag" href="[...username]" as={`@${post.author.username}`}>
+          {/* href={`/@${post.author.username}`} className="tag"> */}
             <FontAwesomeIcon icon={['fas', 'user']} />
             {post.author.username}
           </Link>
