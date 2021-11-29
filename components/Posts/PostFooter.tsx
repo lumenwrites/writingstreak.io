@@ -38,11 +38,11 @@ export default function PostFooter({ post }) {
             <FontAwesomeIcon icon={['fas', 'calendar']} />
             {date}
           </div> */}
-          <a className="tag" href={`/@${post.author.username}`}>
+          <Link className="tag" href={`/@${post.author.username}`}>
           {/* href={`/@${post.author.username}`} className="tag"> */}
             <FontAwesomeIcon icon={['fas', 'user']} />
             {post.author.username}
-          </a>
+          </Link>
           <UpvoteButton post={post} />
           <Link href={`/post/${post.slug}#comments`} className="tag" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={['fas', 'comment-alt']} />
