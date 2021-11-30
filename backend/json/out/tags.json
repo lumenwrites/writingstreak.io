@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Startup",
+    "slug": "startup",
+    "description": ""
+  },
+  {
+    "name": "Programming",
+    "slug": "programming",
+    "description": ""
+  },
+  {
+    "name": "Design",
+    "slug": "design",
+    "description": ""
+  },
+  {
+    "name": "Marketing",
+    "slug": "marketing",
+    "description": ""
+  },
+  {
+    "name": "Writing",
+    "slug": "writing",
+    "description": ""
+  },
+  {
+    "name": "Technology",
+    "slug": "technology",
+    "description": ""
+  },
+  {
+    "name": "Rationality",
+    "slug": "rationality",
+    "description": ""
+  },
+  {
+    "name": "Creativity",
+    "slug": "Creativity",
+    "description": ""
+  },
+  {
+    "name": "Productivity",
+    "slug": "productivity",
+    "description": ""
+  },
+  {
+    "name": "Ideas",
+    "slug": "ideas",
+    "description": ""
+  },
+  {
+    "name": "Computer Science",
+    "slug": "computer-science",
+    "description": ""
+  },
+  {
+    "name": "Web Development",
+    "slug": "webdev",
+    "description": ""
+  },
+  {
+    "name": "Game Development",
+    "slug": "gamedev",
+    "description": ""
+  },
+  {
+    "name": "Machine Learning",
+    "slug": "machine-learning",
+    "description": ""
+  },
+  {
+    "name": "Artificial Intelligence",
+    "slug": "ai",
+    "description": ""
+  },
+  {
+    "name": "Career Advice",
+    "slug": "career",
+    "description": ""
+  },
+  {
+    "name": "Freelance",
+    "slug": "freelance",
+    "description": ""
+  }
+]

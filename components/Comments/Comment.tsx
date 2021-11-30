@@ -18,7 +18,7 @@ export default function Comment({ comment, post, setComments }) {
       commentRef.current.scrollIntoView()
     }
   }
-
+  // console.log('Render comment')
   if (!expanded) {
     return (
       <div className="comment collapsed" id={comment.id} ref={commentRef} onClick={toggleCollapsed}>
