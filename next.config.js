@@ -3,8 +3,8 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/:username(@[a-zA-Z0-9]+)/:id*',
-        destination: "/user/:username/:id*",
+        source: "/@:username",
+        destination: "/user/:username",
       }
     ]
   }
