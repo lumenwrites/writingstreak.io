@@ -79,6 +79,8 @@ import {
   faLink,
   faCamera,
   faSave,
+  faPlus,
+  faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -97,6 +99,10 @@ library.add(
   // faYoutube,
   faDiscord,
   faTwitter,
+  // User Profile
+  faGlobeAmericas,
+  faEnvelope,
+
   // Header icons
   // faSignInAlt,
   // faSignOutAlt,
@@ -104,7 +110,7 @@ library.add(
   // Comments
   faPlusSquare,
   faMinusSquare,
-  
+
   // Editor icons
   faHeading,
   faQuoteRight,
@@ -117,4 +123,7 @@ library.add(
   faLink,
   faCamera,
   faSave,
+  faPlus, // floating menu
+  faTimes, //delete tag
+  faEllipsisH,
 )

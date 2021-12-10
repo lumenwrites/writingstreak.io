@@ -47,7 +47,7 @@ export default function MyFloatingMenu({ editor }) {
             Code Block
           </div>
           <div className="btn item" onClick={() => editor.chain().focus().setHorizontalRule().run()}>
-            <FontAwesomeIcon icon={['fas', 'grip-lines']} />
+            <FontAwesomeIcon icon={['fas', 'ellipsis-h']} />
             Separator
           </div>
         </div>
