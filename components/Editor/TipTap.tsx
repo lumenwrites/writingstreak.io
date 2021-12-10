@@ -19,7 +19,6 @@ import Link from '@tiptap/extension-link'
 // import CodeBlockComponent from 'components/Editor/Blocks/CodeBlockComponent'
 // import lowlight from 'lowlight'
 
-import Menu from 'components/Editor/Menu'
 import MyBubbleMenu from './MyBubbleMenu'
 import MyFloatingMenu from './MyFloatingMenu'
 import TwitterFooter from './TwitterFooter'

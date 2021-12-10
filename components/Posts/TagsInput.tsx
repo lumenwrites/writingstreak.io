@@ -1,11 +1,11 @@
-import { useState, useRef } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import slugify from "slugify"
+import { useState, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import slugify from 'slugify'
 
-export default function TagsInput({ allTags, tags, setTags, customTags = false, placeholder = "Add up to 5 tags..." }) {
-  const [val, setVal] = useState("")
+export default function TagsInput({ allTags, tags, setTags, customTags = false, placeholder = 'Add up to 5 tags...' }) {
+  const [val, setVal] = useState('')
   const inputRef = useRef(null)
-  
+
   // Remove already selected tags from the list
   let listTags = allTags.filter((tag) => !tags.some((t) => t.slug === tag.slug))
   // Search through tags
@@ -13,15 +13,15 @@ export default function TagsInput({ allTags, tags, setTags, customTags = false, 
 
   function handleChange(e) {
     const lastChar = e.target.value.slice(-1)
-    if (lastChar === ",") return
+    if (lastChar === ',') return
     setVal(e.target.value)
   }
   function handleKeyDown(e) {
     // Remove previous tag
-    if (e.key === "Backspace" && val.length === 0) {
+    if (e.key === 'Backspace' && val.length === 0) {
       setTags((prev) => [...prev].splice(0, prev.length - 1))
     }
-    if (e.key === "," || e.key === "Enter" || e.key === "Tab") {
+    if (e.key === ',' || e.key === 'Enter' || e.key === 'Tab') {
       e.preventDefault()
       if (customTags) {
         addTag({
@@ -43,15 +43,15 @@ export default function TagsInput({ allTags, tags, setTags, customTags = false, 
     if (tags.find((t) => t.slug === tag.slug)) return
 
     setTags((prev) => [...prev, tag])
-    setVal("")
+    setVal('')
     inputRef?.current?.focus()
   }
   function renderAllTags() {
     if (listTags.length === 0) {
-      return <div className="tag-item">No tags matching this search.</div>
+      return <div className="btn item">No tags matching this search.</div>
     }
     return listTags.map((tag, i) => (
-      <div className={`tag-item`} key={tag.slug} onClick={() => addTag(tag)}>
+      <div className={`btn item`} key={tag.slug} onClick={() => addTag(tag)}>
         {tag.name}
       </div>
     ))
@@ -59,14 +59,28 @@ export default function TagsInput({ allTags, tags, setTags, customTags = false, 
 
   return (
     <div className="tags-input">
-      {tags.map((tag, i) => (
-        <div className="tag" key={tag.slug} onClick={() => removeTag(tag)}>
-          {tag.name}
-          <FontAwesomeIcon icon={["fas", "times"]} />
+      <div className="tags">
+        {tags.map((tag, i) => (
+          <div className="tag" key={tag.slug} onClick={() => removeTag(tag)}>
+            {tag.name}
+            <FontAwesomeIcon icon={['fas', 'times']} />
+          </div>
+        ))}
+      </div>
+      {tags.length < 5 && (
+        <div className="input-wrapper">
+          <div className="dropdown">
+            <input
+              ref={inputRef}
+              placeholder={placeholder}
+              value={val}
+              onChange={handleChange}
+              onKeyDown={handleKeyDown}
+            />
+            <div className="menu">{renderAllTags()}</div>
+          </div>
         </div>
-      ))}
-      {tags.length < 5 && <input ref={inputRef} placeholder={placeholder} value={val} onChange={handleChange} onKeyDown={handleKeyDown} />}
-      {tags.length < 5 && <div className="tags-list">{renderAllTags()}</div>}
+      )}
       {/*  value={val} onChange={handleChange}  */}
     </div>
   )

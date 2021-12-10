@@ -145,7 +145,7 @@
     overflow-y: auto;
     background-color: var(--post-bg);
     //border: 1px solid var(--border);
-    border-radius: 0 0 var(--border-radius);
+    border-radius: var(--border-radius);
     box-shadow: var(--box-shadow); // 0 1px 2px rgb(0 0 0 / 20%); //0 1px 4px rgba(0, 0, 0, 0.04));
     &.left {
       right: 0;
@@ -347,6 +347,9 @@ input {
   border: 1px solid var(--input-border);
   border-radius: var(--border-radius);
   padding-left: 12px;
+  &:focus {
+    outline: none;
+  }
   &::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-family: var(--main-font);
