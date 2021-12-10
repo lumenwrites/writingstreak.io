@@ -2,12 +2,10 @@
 :root {
   // Typography
   --base-font-size: 14px;
-  --main-font: 'Open Sans';
   --logo-font: 'Open Sans';
-  --headings-font: 'Open Sans';
   --main-font: 'Inter';
   --headings-font: 'Inter';
-  --text: #3c4257;
+  --text: #3c4257; // #582323; //#3c4257;
   --text-heading: #3c4257; // #1A1F35; // h1,h2,etc. text dark
   --text-subheading: #4e576a;
   --text-placeholder: #464c61; // for inputs
@@ -15,19 +13,20 @@
   --text-link: var(--text); // #5469D4;
 
   // Big Elements
-  --wrapper-width: 750px;
+  --wrapper-width: 750px; // 870px; //750px
   --wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
   --modal-width: 700px;
-  --main-bg: #faf4e9; // tan // #f1f2f5; // facebook neutral
+  --main-bg: #faf4e9; //#F8ECDB; // #faf4e9 #f5e4cd
   --decoration-line: 2px solid #ff6600;
-  --header-bg: white;
+  --header-bg: white; //#fff7e8; //white;
   --subnav-bg: #fafaf9;
   --sidebar-bg: white;
   --active-bg: #fafafa;
   --quote-bg: #fcf2ef; // #fafafa;
   --quote-border: #ff6600;
   --panel-bg: #e0e6ef;
-  --code-bg: #EEECEF; //mix(var(--quote-bg), var(--panel-bg), 50%); // #f5f5f5;
+  --tag-bg: #e0e6ef;
+  --code-bg: #eeecef; //mix(var(--quote-bg), var(--panel-bg), 50%); // #f5f5f5;
   --post-bg: white;
   --post-footer-bg: #fafafa;
   --modal-bg: white;
@@ -39,7 +38,7 @@
   --btn-cta: #ff6600; //#DA552F;// #1977f2; //Facebook Blue
   --border: #e3e8ee; //#464c61;
   --border-dim: #f6f7f8;
-  --border-radius: 3px;
+  --border-radius: 6px;
   --input-bg: white; //#262c3b; // lighter in header
   --input-border: var(--border);
   --input-bg-subnav: white;
@@ -50,7 +49,33 @@
   --blue: #478dc0;
   --box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
 }
-
+[data-theme='wst'] {
+  // --main-font: 'RobotoSlab'; // 'Inter'
+  // --headings-font: 'RobotoSlab';
+  .write {
+    --text: #582323;
+    --text-dim: #7c5a49; // rgba(141, 110, 95, 0.8);
+    --text-placeholder: #7c5a49b9;
+    --header-bg: #fff7e8;
+    --tag-bg: hsl(30deg 40% 90%);
+    --post-footer-bg: #f7f5f1;
+  }
+  // --main-bg: #f8ecdb; // #faf4e9 #f5e4cd
+  --header-bg: white; //#fff7e8;
+  --panel-bg: #f1e9da;
+  --day-bg: #fffaf1;
+  // --quote-bg: white;
+  --border: rgba(98, 24, 24, 0.2);
+  // 
+  // 
+  .btn svg {
+    // color: var(--text);
+  }
+  // Minor tweaks
+  ::marker {
+    // font-size: 18px;
+  }
+}
 [data-theme='dark'] {
   // Typography
   --base-font-size: 14px;
@@ -93,7 +118,7 @@
   --border-width: 1px;
   --border-radius: 5px;
   --input-bg: #181d29;
-  --input-bg-subnav: #262c3b; 
+  --input-bg-subnav: #262c3b;
   --input-border-subnav: #6673995b;
   --input-border: var(--input-bg);
   --scrollbar-thumb: #383d4c;
@@ -113,10 +138,9 @@
 @import './_layout.scss';
 @import './_browse.scss';
 @import './_post.scss';
+@import './_comments.scss';
 @import './_subscribe.scss';
-@import './_landing.scss';
-@import './_payments.scss';
 @import './_ctas.scss';
 @import './_users.scss';
-@import './_comments.scss';
-@import './_edit.scss';
+@import './_editor.scss';
+@import './_landing.scss';

@@ -41,7 +41,7 @@ model Post {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   published Boolean  @default(false)
-  canonicalUrl String
+  canonicalUrl String?
 
   title String
   body String

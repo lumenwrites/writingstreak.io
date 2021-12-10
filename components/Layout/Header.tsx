@@ -19,16 +19,16 @@ export default function Header({ className }) {
           nexy
         </Link>
         <nav>
-          {user?.username && (
+          {/* {user?.username && (
             <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`submit-post`)}>
               Submit Post
             </a>
-          )}
+          )} */}
           <Link href={`/about`} className="btn btn-nav">
             {/* <FontAwesomeIcon icon={['fas', 'info-circle']} /> */}
             About
           </Link>
-          {/* <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`login`)}>
+          {/* <a className="btn btn-nav" onClick={() => toggleModal(`login`)}>
             <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
             Login
           </a> */}

@@ -1,3 +1,92 @@
+.text {
+  font-size: 18px;
+  padding: 20px 40px;
+  @media (max-width: 640px) {
+    padding: 20px 10px 40px 10px; // 30px footer + 20px
+  }
+  text-align: justify;
+  @media (max-width: 640px) {
+    text-align: unset;
+  }
+  .post-header-image {
+    margin: -40px -60px 0 -60px;
+    max-width: calc(100% + 120px); // for images
+    max-height: none;
+    @media (max-width: 640px) {
+      margin: -20px -20px 0 -20px;
+      width: calc(100% + 40px) !important; // important because I want to override react player's defaults
+      max-width: calc(100% + 40px); // for images
+    }
+  }
+  :first-child {
+    margin-top: 0;
+  }
+  .post-title {
+    padding: 30px 60px;
+    margin: -20px -40px 20px -40px;
+    border: none;
+    border-radius: 0;
+    input {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5em;
+      background: none;
+      color: white;
+      border: none;
+      outline: none;
+      margin: 0;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+      &::placeholder {
+        color: white; //var(--text);
+        opacity: 0.25; //rgba(255, 255, 255, 0.5);
+        font-weight: bold;
+      }
+    }
+    &.orange {
+      background-image: linear-gradient(45deg, #d31f4d, #fab41e);
+      color: white;
+    }
+    &.orange-pattern {
+      background: url('/img/orange-triangles.jpg'), linear-gradient(45deg, #d31f4d, #fab41e);
+      background-size: cover;
+      color: white;
+    }
+    &.blue {
+      background: #23284b;
+      background-color: #4158d0;
+      background-image: linear-gradient(184deg, rgba(39, 103, 187, 1) 10.4%, rgba(16, 72, 144, 1) 87.7%);
+      color: white;
+    }
+    &.red {
+      background: #ba2b27;
+      background: linear-gradient(15deg, #93291e, #ba2b27);
+      color: white;
+    }
+    &.purple {
+      background-image: linear-gradient(-165deg, rgba(201, 37, 107, 1) 15.4%, rgba(116, 16, 124, 1) 74.7%);
+      color: white;
+    }
+    &.indie-hackers {
+      background-image: linear-gradient(-45deg, #e052a0, #f15c41);
+      color: white;
+    }
+  }
+  .post-title + * {
+    margin-top: 20px;
+  }
+  iframe {
+    width: 100%;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 500px; // for tall narrow images
+    margin: auto;
+  }
+}
 h1,
 h2,
 h3,
@@ -112,6 +201,11 @@ ul {
   padding: 0;
   margin-top: 1em;
   margin-left: 20px;
+}
+::marker {
+  font-size: 22px;
+  line-height: 0px;
+  content: '• ';
 }
 ol {
   margin-top: 0.5em;

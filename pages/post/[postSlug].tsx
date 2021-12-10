@@ -12,8 +12,8 @@ export default function Post({ post }) {
   console.log('post', post)
   return (
     <Layout>
-      <div className="post blog-post">
-        <h1 className="h1-header orange">{post.title}</h1>
+      <div className="post text">
+        <h1 className="post-title orange">{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
         <PostFooter post={post} />
         <Head>

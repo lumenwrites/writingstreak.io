@@ -28,18 +28,14 @@ export default function PostFooter({ post }) {
             {tag.name}
           </a>
         ))}
-        {/* {post.tags.map((tag) => (
-          <Link className="tag" key={tag.slug} href={`/tag/${tag.slug}`}>
-            {tag.name}
-          </Link>
-        ))} */}
         <div className="right">
+          {!post.published && <div className="tag">Draft</div>}
           {/* <div className="tag">
             <FontAwesomeIcon icon={['fas', 'calendar']} />
             {date}
           </div> */}
           <Link className="tag" href={`/@${post.author.username}`}>
-          {/* href={`/@${post.author.username}`} className="tag"> */}
+            {/* href={`/@${post.author.username}`} className="tag"> */}
             <FontAwesomeIcon icon={['fas', 'user']} />
             {post.author.username}
           </Link>

@@ -48,13 +48,18 @@ export default function browse({ posts, tagSlug, username }) {
 }
 
 import { getPosts } from 'prisma/api/posts/get-posts'
+import { getUser } from 'prisma/api/users/get-user'
 import config from 'config.json'
 
 export async function getServerSideProps({ req, query }) {
   const { username, sort, tag, search } = query
-  // console.log('username', username)
+  const user = await getUser(req)
+  let isProfileAuthor = false
+  if (user && query.username === user.username) isProfileAuthor = true
+  // console.log('username', isProfileAuthor, username, user)
+
   const { posts, postCount } = await getPosts({
-    published: true,
+    published: isProfileAuthor ? undefined : true, 
     searchString: search,
     username: username,
     tagSlug: tag,

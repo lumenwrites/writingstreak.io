@@ -12,13 +12,13 @@ header {
     padding: 0;
     min-width: 300px;
     // When screen size reaches the edges of content, I want some space between screen edges and elements in the header
-    @media (max-width: var(--wrapper-width) ){
+    @media (max-width: var(--wrapper-width)) {
       padding: 0 20px;
     }
   }
   &.header-sidebar .wrapper {
     max-width: var(--wrapper-sidebar-width);
-    @media (max-width: var(--wrapper-sidebar-width) ){
+    @media (max-width: var(--wrapper-sidebar-width)) {
       padding: 0 20px;
     }
   }
@@ -213,9 +213,11 @@ header {
   }
 }
 .layout {
+  // height: calc(100% - 50px); // minus header height
   .content {
     margin: auto;
     max-width: var(--wrapper-width);
+    // height: 100%;
     @media (max-width: 1000px) {
       // padding: 0 20px;
     }

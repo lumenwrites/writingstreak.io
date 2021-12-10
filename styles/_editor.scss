@@ -1,0 +1,336 @@
+.editor {
+  margin-top: 10px;
+  background: var(--post-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  text-align: justify;
+  z-index: 2; // above the tags input
+  position: relative;
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+.tags-input {
+  color: var(--text);
+  background: var(--input-bg);
+  box-shadow: var(--box-shadow);
+  padding: 0px 40px;
+  width: 100%;
+  // margin-top: 12px;
+  height: 32px;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  background: var(--post-footer-bg);
+  border-top: 1px solid var(--border-dim);
+  // border-radius: var(--border-radius);
+  display: flex;
+  .tags {
+    padding-left: 2px;
+  }
+  .tag {
+    white-space: nowrap;
+    margin: 2px;
+    background: var(--tag-bg);
+    color: var(--text-dim);
+    //font-size: 0.8em;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 5px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+
+    svg {
+      margin: 0 2px 0 5px;
+      //font-size: 0.8em;
+      color: var(--text-dim);
+    }
+  }
+  input {
+    margin: 0;
+    border: none;
+    //font-size: 0.8em;
+    //outline: 1px solid var(--border);
+    background: var(--post-footer-bg);
+    height: 30px;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      font-family: var(--main-font);
+      color: var(--text-placeholder);
+      font-weight: 100;
+      opacity: 1; /* Firefox */
+      opacity: 80%;
+    }
+  }
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text-placeholder);
+    // font-weight: 100;
+    opacity: 1; /* Firefox */
+    opacity: 80%;
+  }
+  position: relative;
+  .tags-list {
+    position: absolute;
+    z-index: 20;
+    top: 29px;
+    //account for borders
+    left: -1px;
+    right: -1px;
+    //border: 1px solid var(--border);
+    border-radius: 0 0 var(--border-radius);
+    max-height: 200px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: var(--panel-bg);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+    .tag-item {
+      padding: 4px 12px;
+      cursor: pointer;
+      //font-size: 0.8em;
+      // float: left;
+      // margin: 2px;
+      // background: var(--panel-bg);
+      // height: 26px;
+      // line-height: 26px;
+      // padding: 0 5px;
+      // border-radius: var(--border-radius);
+      &:hover,
+      &.active {
+        background: var(--btn-bg-hover);
+        color: var(--text);
+      }
+    }
+    display: none;
+    &:hover {
+      display: block;
+    }
+  }
+  input:focus + .tags-list {
+    display: block;
+  }
+  .tags:hover + .tags-list {
+    display: block;
+  }
+}
+
+.publish-buttons {
+  margin-top: 10px;
+  margin-bottom: 20px; // some space to the end of the page
+  float: right;
+  .btn {
+    margin-left: 5px;
+    float: left;
+    color: var(--text);
+    background: var(--btn-bg);
+    border: 1px solid var(--border);
+    svg {
+      color: white;
+      color: var(--text);
+    }
+    &:hover {
+      background: var(--btn-bg-hover);
+    }
+  }
+}
+.ProseMirror {
+  min-height: 300px;
+  & + * {
+    margin-top: 20px;
+  }
+}
+
+.ProseMirror-focused {
+  outline: none;
+  border: none;
+}
+/* Placeholder (on every new line) */
+// .ProseMirror .is-editor-empty:first-child::before {
+//   content: attr(data-placeholder);
+//   text-align: center;
+//   color: #ced4da;
+//   pointer-events: none;
+//   height: 0;
+// }
+.ProseMirror p.is-editor-empty:first-child::before,
+.ProseMirror h1.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+h1.is-empty {
+  position: relative;
+  &::before {
+    // position: absolute;
+    display: block;
+    width: 100%;
+    content: attr(data-placeholder);
+    color: rgba(255, 255, 255, 0.25);
+    // text-align: left;
+    // margin-left: 50%;
+    text-align: center;
+    pointer-events: none;
+    height: 0;
+  }
+}
+
+.bubble-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9); //#0d0d0dbe;
+  padding: 5px;
+  border-radius: var(--border-radius);
+
+  button {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    border: 1px solid var(--border);
+    border: none;
+    border-radius: var(--border-radius);
+    // font-size: 0.9rem;
+    font-size: 14px;
+    color: white;
+    opacity: 0.8;
+    &:hover,
+    &.is-active {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.15);
+      color: #478dc0; // #d95650;
+    }
+    &:disabled {
+      cursor: default;
+      color: var(--text-dim);
+      opacity: 0.8;
+      background: none;
+    }
+  }
+  .small-h {
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .separator {
+    display: block;
+    margin-right: 5px;
+    height: 15px;
+    width: 1px;
+    opacity: 0.5;
+    background: #d9dce0; //var(--text-dim);
+    float: left;
+  }
+}
+
+.floating-menu {
+  font-size: 14px;
+  // background: white;
+  .handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--text);
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+    background: none;
+    width: 25px;
+    height: 25px;
+  }
+  .menu {
+    top: 0;
+  }
+}
+
+// Image Capturing
+.twitter-footer {
+  width: 100%;
+  display: flex;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  padding: 10px 40px;
+  color: #697386;
+  font-weight: bold;
+  background: var(--post-footer-bg);
+  box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 20%);
+  border-top: 1px solid var(--border-dim);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  // above the shadow
+  z-index: 5;
+  position: relative;
+  .website,
+  .twitter {
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 2px;
+    }
+  }
+  .website {
+    svg {
+      margin-top: 1px;
+      margin-right: 4px;
+    }
+  }
+  .twitter {
+    svg {
+      margin-top: 2px;
+    }
+  }
+}
+.position-image {
+  &.capturing,
+  &.capturing-cropped {
+    // When capturing, twitter image needs to add extra padding, for that it needs extra width
+    width: 870px;
+    // Keep the image in center, so it looks like everything stays in the same place
+    position: absolute;
+    left: calc(50% - 870px / 2);
+    .twitter-image {
+      // Add padding, remove tags input, add twitter image footer
+      padding: 10px 60px;
+      background: var(--main-bg);
+      .editor {
+        margin: 0;
+      }
+      .tags-input {
+        display: none;
+      }
+      .twitter-footer {
+        display: flex;
+      }
+      // outline: 1px solid white;
+    }
+  }
+  &.capturing-cropped {
+    .cropped-image {
+      width: 870px;
+      height: 455px;
+      overflow: hidden;
+      .twitter-image {
+        width: 870px;
+        height: 455px;
+        overflow: hidden;
+      }
+    }
+  }
+}

@@ -3,6 +3,8 @@ html {
   // Doesn't seem to impact mouse scrolling
   // Doesnt work because it impacts clicking on posts
   // scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: overlay;
 }
 
 html,
@@ -12,6 +14,7 @@ body {
   font-family: var(--main-font);
   font-size: var(--base-font-size);
   font-weight: normal;
+  // height: 100%;
 }
 #__next {
   height: 100%;
