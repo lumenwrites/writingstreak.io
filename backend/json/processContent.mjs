@@ -3,6 +3,7 @@ import slugify from 'slugify'
 import { join } from 'path'
 import { readFileSync, readdirSync, writeFileSync } from 'fs'
 import config from '../../config.json'
+import { markdownToHtml } from './markdown.mjs'
 
 export async function getPosts(postsdir) {
   let posts = []
@@ -34,7 +35,7 @@ export async function getPosts(postsdir) {
       social: frontmatter.social || frontmatter.thumbnail || null,
       comments: frontmatter.comments || null,
       relatedPosts: frontmatter.relatedPosts || null,
-      body: content,
+      body: await markdownToHtml(content),
     }
     posts.push(post)
     console.log('Processed post:', post.title)

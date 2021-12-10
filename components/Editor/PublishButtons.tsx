@@ -43,7 +43,7 @@ function CaptureImages({title}) {
     positionImage.classList.add('capturing-cropped')
     const image = await domtoimage.toJpeg(croppedImage, { quality: 0.95 })
     positionImage.classList.remove('capturing-cropped')
-    saveAs(image, `${title}.jpg`)
+    saveAs(image, `${title} Social.jpg`)
   }
   return (
     <>

@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CommentForm from './CommentForm'
-import { markdownToHtml } from 'backend/markdown'
 
 export default function Comment({ comment, post, setComments }) {
   const router = useRouter()

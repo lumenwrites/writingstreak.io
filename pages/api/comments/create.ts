@@ -1,7 +1,6 @@
 
 import prisma from 'prisma/prismaClient'
 import handler from "backend/handler"
-import { markdownToHtml } from 'backend/markdown'
 
 async function createComment(req, res) {
   try {
@@ -27,8 +26,6 @@ async function createComment(req, res) {
         }
       }
     })
-    // I return comment with extra data and parsed markdown so that I could immediately add it in the frontend
-    createdComment.body = await markdownToHtml(createdComment.body)
     res.json({ createdComment })
   } catch (error) {
     console.log('[comments/create] error', error)
