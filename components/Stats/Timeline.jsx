@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorInfo } from 'context/EditorContext'
 import { generateTimeline, largeNumberFormat } from './utils'
+import { calculateStreak, calculateHabitStrength } from './utils'
 
 export default function Timeline() {
   const { editorInfo, setEditorInfo } = useEditorInfo()
@@ -27,6 +28,13 @@ export default function Timeline() {
         writingTime,
       }))
     }
+
+    const prefs = {
+      writingDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    }
+    const streak = calculateStreak(data.days, prefs)
+    const { habitStrength, completedDays } = calculateHabitStrength(data.days, prefs)
+    setEditorInfo((prev) => ({ ...prev, streak, habitStrength, completedDays }))
 
     return data.days
   }

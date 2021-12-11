@@ -1,3 +1,8 @@
+## Books
+- Rationality: Great Mental Models, Art of X, 
+- Startups: Make, Rework, 
+- Writing: Art of Nonfiction, PG
+
 ## HN/IH/LW/SSC/Devto
 - [Top Hacker News](https://hn.algolia.com/)
 - [Top Ask HN](https://hn.algolia.com/ask-hn)

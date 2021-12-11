@@ -92,12 +92,12 @@ async function main() {
   const start = moment().subtract(numberOfDays, 'days') // 30 days ago
   const days = []
   for (var d = start; start.diff(end, 'days') <= 0; d.add(1, 'days')) {
-    if (Math.random() < 0.25) continue //25% chance of missing a day
+    if (Math.random() < 0.15) continue //25% chance of missing a day
     const day = {
       id: d.format('YYYY-MM-DD'),
       date: d.format('YYYY-MM-DD'),
       author: { connect: { id: 'lumen' } },
-      wordCount: Math.floor(Math.random() * 1000),
+      wordCount: Math.floor(Math.random() * 2000),
       targetWordCount: 250,
       writingTime: Math.floor(Math.random() * 24) * 5,
     }

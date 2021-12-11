@@ -46,6 +46,49 @@ export function generateTimeline(savedDays, numberOfDays = 30) {
 }
 
 
+export function calculateStreak(days, prefs) {
+  var currentStreak = 0
+  const start = moment()
+  const end = moment().subtract(days.length, 'days')
+  /* Loop backwards through dates */
+  for (var d = start; start.diff(end, 'days') >= 0; d.subtract(1, 'days')) {
+    const day = days.find(day => day.date == d.format('YYYY-MM-DD'))
+    const wroteToday = day && day.wordCount >= day.targetWordCount
+    const isToday = d.format('YYYY-MM-DD') === moment().format('YYYY-MM-DD')
+    const isWritingDay = prefs.writingDays.some(wd => wd === dateToWeekday(d))
+    // console.log(d.format('YYYY-MM-DD'), day, { wroteToday, isToday, currentStreak } )
+    if (wroteToday) {
+      currentStreak += 1
+    } else {
+      if (isWritingDay && !isToday) break // Missed a day, streak is over
+      // If it's not a writing day, it's fine to not write.
+      // I don't increment the streak but I don't break it either.
+    }
+  }
+  return currentStreak
+}
+
+export function calculateHabitStrength(days, prefs) {
+  var completedDays = 0
+  const start = moment()
+  const end = moment().subtract(30, 'days')
+  var totalWritingDaysThisMonth = 0
+  /* Loop backwards through dates */
+  for (var d = start; start.diff(end, 'days') >= 0; d.subtract(1, 'days')) {
+    const day = days.find(day => day.date == d.format('YYYY-MM-DD'))
+    const wroteToday = day && day.wordCount > day.targetWordCount
+    const isWritingDay = prefs.writingDays.some(wd => wd === dateToWeekday(d))
+    if (wroteToday) {
+      completedDays += 1
+    }
+    if (isWritingDay) {
+      totalWritingDaysThisMonth += 1
+    }
+  }
+  const habitStrength = (completedDays / totalWritingDaysThisMonth)
+  return { completedDays, habitStrength }
+}
+
 // Number formatter
 // https://stackoverflow.com/questions/9461621/format-a-number-as-2-5k-if-a-thousand-or-more-otherwise-900
 export function largeNumberFormat(num, digits) {
@@ -59,7 +102,7 @@ export function largeNumberFormat(num, digits) {
     { value: 1e18, symbol: "E" }
   ];
   const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
-  var item = lookup.slice().reverse().find(function(item) {
+  var item = lookup.slice().reverse().find(function (item) {
     return num >= item.value;
   });
   return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";
