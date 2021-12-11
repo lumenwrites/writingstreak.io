@@ -22,7 +22,7 @@ function generateEmptyDays(numberOfDays = 30) {
       weekday: dateToWeekday(d),
       wordCount: 0,
       targetWordCount: 100, // doesn't matter what it is
-      time: 0,
+      writingTime: 0,
     })
   }
   return days

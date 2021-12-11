@@ -36,7 +36,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
-  border: 2px solid transparent !important;
+  border: 2px solid transparent;
   border-radius: 4px;
   background-clip: content-box;
 }

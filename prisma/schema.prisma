@@ -22,6 +22,7 @@ model User {
   twitter String?
 
   posts Post[] @relation("UserPosts")
+  days Day[] @relation("UserDays")
   upvotedPosts Post[] @relation("UserUpvotedPosts")
   downvotedPosts Post[] @relation("UserDownvotedPosts")
 
@@ -115,6 +116,23 @@ model Sequence {
   name String
   slug String @unique
 }
+
+model Day {
+  id String @id @default(cuid())
+  date String // DateTime @default(now())
+  targetWordCount Int @default(250)
+  wordCount Int @default(0)
+  writingTime Int @default(0)
+  // Edited posts? Changes?
+
+  author User @relation("UserDays", fields: [authorId], references: [id])
+  authorId String // In the field authorId we will store [id] of the User
+
+  @@unique([authorId, date])
+  // Edited posts
+  // comments Comment[] @relation("PostComments")
+}
+
 
 // model SocialImage {
 //   id String @id @default(cuid())

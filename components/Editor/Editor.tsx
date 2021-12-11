@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 
 import EditorHeader from './EditorHeader'
 import TipTap from './TipTap'
-import TagsInput from 'components/Posts/TagsInput'
+import TagsInput from 'components/Editor/TagsInput'
 import PublishButtons from './PublishButtons'
 import TwitterFooter from './TwitterFooter'
 import ImageCaptureWrappers from './ImageCaptureWrappers'
@@ -27,23 +27,33 @@ export default function Editor({ post }) {
         html: editor.getHTML(),
         title: post.title,
         tags: post.tags,
+        // wordCount: editor.state.doc.textContent.split(' ').length,
+        // healthLeft: Math.min(prev.healthLeft + 5, 100),
       }))
     }
   }
   function onUpdate({ editor }) {
-    setEditorInfo((prev) => ({ ...prev, html: editor.getHTML() }))
     // Save timer. Reset timer as I type, save when I stop for a second.
-    clearInterval(saveTimer.current)
+    // clearInterval(saveTimer.current)
     setSaved(false)
-    saveTimer.current = setInterval(() => {
-      document.getElementById('save-post')?.click()
-      setSaved(true)
-      clearInterval(saveTimer.current)
-    }, 2000)
+    // saveTimer.current = setInterval(() => {
+    //   document.getElementById('save-post')?.click()
+    //   setSaved(true)
+    //   clearInterval(saveTimer.current)
+    // }, 2000)
+
+    // Update info and stats
+    setEditorInfo((prev) => ({
+      ...prev,
+      html: editor.getHTML(),
+      wordCount: editor.state.doc.textContent.split(' ').filter((w) => (w.trim().length ? true : false)).length,
+      healthLeft: Math.min(prev.healthLeft + 5, 100),
+    }))
+    document.getElementById('timeline').scrollLeft = 99999
   }
   return (
     <>
-      <EditorHeader/>
+      <EditorHeader />
       <div className="wrapper">
         <ImageCaptureWrappers>
           <div className="editor text">

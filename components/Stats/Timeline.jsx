@@ -1,5 +1,6 @@
+import axios from 'axios'
 import moment from 'moment'
-import { useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorInfo } from 'context/EditorContext'
@@ -7,15 +8,26 @@ import { generateTimeline } from './utils'
 
 export default function Timeline() {
   const { editorInfo } = useEditorInfo()
-  const timelineRef = useRef()
+  const [timeline, setTimeline] = useState([])
+  // On first load, fetch saved days, generate 30 day timeline
+  async function fetchStats() {
+    const { data } = await axios.get('/api/stats/get-days')
+    console.log('savedDays', data.days)
+    setTimeline(generateTimeline(data.days))
+    return data.days
+  }
   useEffect(() => {
-    timelineRef.current.scrollLeft = 99999
+    fetchStats()
   }, [])
-  let timeline = generateTimeline([])
+  // Scroll when timeline changes
+  useEffect(() => {
+    document.getElementById('timeline').scrollLeft = 99999
+  }, [timeline])
+  console.log('timeline', timeline)
   /* Render currently open doc's stats in place of it's date */
-  timeline = timeline.map((d) => {
+  const timelineWithCurrentDayStats = timeline.map((d) => {
+    return d
     if (d.date === moment().format('YYYY-MM-DD')) {
-      //doc.date
       return { ...d, wordCount: editorInfo.wordCount, writingTime: editorInfo.writingTime, active: true }
     } else {
       return d
@@ -24,9 +36,9 @@ export default function Timeline() {
   return (
     <div className="timeline-with-fade">
       <div className="fade" />
-      <div ref={timelineRef} className="timeline">
+      <div className="timeline" id="timeline">
         <div className="days-wrapper">
-          {timeline.map((day) => (
+          {timelineWithCurrentDayStats.map((day) => (
             <Day key={day.date} day={day} />
           ))}
         </div>

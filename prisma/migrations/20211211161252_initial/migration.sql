@@ -21,12 +21,13 @@ CREATE TABLE "Post" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "published" BOOLEAN NOT NULL DEFAULT false,
-    "canonicalUrl" TEXT NOT NULL,
+    "canonicalUrl" TEXT,
     "title" TEXT NOT NULL,
     "body" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "authorId" TEXT NOT NULL,
     "sequenceId" TEXT,
+    "socialImage" TEXT,
     "rank" DOUBLE PRECISION NOT NULL DEFAULT 0,
     "score" INTEGER NOT NULL DEFAULT 0,
     "views" INTEGER NOT NULL DEFAULT 0,
@@ -64,6 +65,18 @@ CREATE TABLE "Sequence" (
     "slug" TEXT NOT NULL,
 
     CONSTRAINT "Sequence_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Day" (
+    "id" TEXT NOT NULL,
+    "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "targetWordCount" INTEGER NOT NULL DEFAULT 250,
+    "wordCount" INTEGER NOT NULL DEFAULT 0,
+    "writingTime" INTEGER NOT NULL DEFAULT 0,
+    "authorId" TEXT NOT NULL,
+
+    CONSTRAINT "Day_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -155,6 +168,9 @@ ALTER TABLE "Comment" ADD CONSTRAINT "Comment_postId_fkey" FOREIGN KEY ("postId"
 
 -- AddForeignKey
 ALTER TABLE "Comment" ADD CONSTRAINT "Comment_parentId_fkey" FOREIGN KEY ("parentId") REFERENCES "Comment"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Day" ADD CONSTRAINT "Day_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "_UserUpvotedPosts" ADD FOREIGN KEY ("A") REFERENCES "Post"("id") ON DELETE CASCADE ON UPDATE CASCADE;

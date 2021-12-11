@@ -62,9 +62,16 @@ function UpdatePostButtons({ post, saved }) {
       tags: editorInfo.tags,
       published,
     }
-    console.log('Updating Post', updatedPost)
-    const { data } = await axios.post('/api/posts/update', updatedPost)
-    console.log('Updated Post', data)
+    const { data: savedPost } = await axios.post('/api/posts/update', updatedPost)
+    console.log('Updated Post', savedPost)
+    console.log('Saving stats')
+    const day = {
+      targetWordCount: editorInfo.targetWordCount,
+      wordCount: editorInfo.wordCount,
+      writingTime: editorInfo.writingTime,
+    }
+    const { data: savedDay } = await axios.post('/api/stats/save-day', day)
+    console.log('Saved stats', savedDay)
   }
   async function togglePublished() {
     // setEditorInfo((prev) => { })

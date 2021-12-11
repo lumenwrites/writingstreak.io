@@ -1,4 +1,16 @@
 .editor-header {
+  --text: #582323;
+  --text-dim: #7c5a49; // rgba(141, 110, 95, 0.8);
+  --text-placeholder: #7c5a49b9;
+  --header-bg: #fff7e8;
+  --tag-bg: hsl(30deg 40% 90%);
+  --post-footer-bg: #f7f5f1;
+  --panel-bg: #f1e9da;
+  --day-bg: #fffaf1;
+  --border: rgba(98, 24, 24, 0.2);
+}
+
+.editor-header {
   background: var(--header-bg);
   box-shadow: var(--box-shadow);
   position: fixed;
@@ -92,6 +104,8 @@
   float: left;
   position: relative;
   height: 40px;
+  height: 45px;
+  margin-bottom: -5px;
   .fade {
     position: absolute;
     content: ' ';
@@ -106,17 +120,22 @@
 }
 .timeline {
   // background: var(--panel-bg);
+  height: 45px;
   margin-right: 5px;
   overflow-y: hidden;
   overflow-x: scroll;
   &::-webkit-scrollbar {
     display: none;
-    height: 4px;
+    height: 5px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--border);
+    background-color: #93593859; // var(--border);
     border: none;
-    border-top: 1px solid transparent;
+    margin: 0;
+    // border-top: 1px solid transparent;
+    // I want grabbing cursor, but it doesn't work
+    cursor: -webkit-grabbing;
+    cursor: pointer;
   }
   &:hover::-webkit-scrollbar {
     display: block;
@@ -166,6 +185,7 @@
       .stat {
         font-size: 12px;
         height: 15px;
+        width: 40px; // to stay consistent, fit with 3 digit numbers
         line-height: 15px;
         svg {
           color: var(--text-dim);
@@ -194,7 +214,7 @@
 }
 .timer {
   width: 40px;
-  height: 40px;
+  // height: 40px;
   margin-right: 5px;
   float: left;
   cursor: pointer;
