@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function TwitterFooter() {
   return (
-    <div className="twitter-footer">
+    <div className="social-image-footer">
       <div className="website">
         <FontAwesomeIcon icon={['fas', 'globe-americas']} />
         lumenwrites.io

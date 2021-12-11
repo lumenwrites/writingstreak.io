@@ -219,7 +219,7 @@ h1.is-empty {
 }
 
 // Image Capturing
-.twitter-footer {
+.social-image-footer {
   width: 100%;
   display: flex;
   display: none;
@@ -265,7 +265,7 @@ h1.is-empty {
     // Keep the image in center, so it looks like everything stays in the same place
     position: absolute;
     left: calc(50% - 870px / 2);
-    .twitter-image {
+    .render-image {
       // Add padding, remove tags input, add twitter image footer
       padding: 10px 60px;
       background: var(--main-bg);
@@ -275,7 +275,7 @@ h1.is-empty {
       .tags-input {
         display: none;
       }
-      .twitter-footer {
+      .social-image-footer {
         display: flex;
       }
       // outline: 1px solid white;
@@ -286,7 +286,7 @@ h1.is-empty {
       width: 870px;
       height: 455px;
       overflow: hidden;
-      .twitter-image {
+      .render-image {
         width: 870px;
         height: 455px;
         overflow: hidden;

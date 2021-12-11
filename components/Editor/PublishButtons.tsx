@@ -137,7 +137,7 @@ function CaptureImages() {
 
   async function captureTwitterImage() {
     const positionImage = document.getElementById('position-image')
-    const twitterImage = document.getElementById('twitter-image')
+    const twitterImage = document.getElementById('render-image')
     positionImage.classList.add('capturing')
     const image = await domtoimage.toJpeg(twitterImage, { quality: 0.95 })
     positionImage.classList.remove('capturing')
