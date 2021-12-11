@@ -166,6 +166,7 @@
       overflow: hidden;
       display: inherit; //otherwise there are weird margins for some reason?
       cursor: pointer;
+      text-align: left;
       &:hover,
       &.active {
         background: var(--btn-bg-hover);

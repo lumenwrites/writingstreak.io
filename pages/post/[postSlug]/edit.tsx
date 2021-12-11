@@ -17,6 +17,7 @@ import { getPost } from 'prisma/api/posts/get-post'
 
 export async function getServerSideProps({ params }) {
   // const allTags = await getAllTags()
+  // TODO: make sure I'm the post's author, if I'm not - redirect away
   const post = await getPost({ slug: params.postSlug })
   return { props: { post } }
 }

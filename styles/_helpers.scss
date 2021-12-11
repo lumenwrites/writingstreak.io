@@ -21,3 +21,15 @@
 .small-text { font-size: 12px; }
 .dim { color: var(--text-dim);}
 .nobreak { -webkit-column-break-inside: avoid; } /* don't break column */
+.center-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.fill-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}

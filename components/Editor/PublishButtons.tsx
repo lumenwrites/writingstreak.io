@@ -8,25 +8,56 @@ export default function PublishButtons({ post, title, editor, tags }) {
   if (!editor) return null
   return (
     <div className="publish-buttons">
-      {/* <CaptureImages title={title} />
-      <Stats editor={editor} />
-      <button className="btn btn-cta">
-        <FontAwesomeIcon icon={['fas', 'cog']} />
-      </button> */}
-      {post ? (
-        <UpdatePostButtons post={post} title={title} editor={editor} tags={tags} />
-      ) : (
-        <CreatePostButtons title={title} editor={editor} tags={tags} />
-      )}
+      <div className="left">
+        <div className="dropdown">
+          <button className="btn menu-handle">
+            <FontAwesomeIcon icon={['fas', 'cog']} />
+          </button>
+          <div className="menu">
+            <CaptureImages title={title} />
+            <DeletePostButtons post={post} />
+          </div>
+        </div>
+      </div>
+      <div className="right">
+        {/* <Stats editor={editor} /> */}
+        {post ? (
+          <UpdatePostButtons post={post} title={title} editor={editor} tags={tags} />
+        ) : (
+          <CreatePostButtons title={title} editor={editor} tags={tags} />
+        )}
+      </div>
     </div>
   )
 }
+
+function CreatePostButtons({ title, editor, tags }) {
+  const router = useRouter()
+  async function createPost() {
+    const post = {
+      title: title,
+      body: editor.getHTML(),
+      description: descriptionFromHTML(editor.getHTML()),
+      tags: tags,
+    }
+    const { data } = await axios.post('/api/posts/create', post)
+    console.log('Created Post', data)
+    router.push(`/post/${data.post.slug}/edit`)
+  }
+  return (
+    <button className="btn btn-cta" onClick={createPost}>
+      Create Post
+    </button>
+  )
+}
+
 function UpdatePostButtons({ post, title, editor, tags }) {
   async function updatePost(published) {
     const updatedPost = {
       slug: post.slug,
       title: title,
       body: editor.getHTML(),
+      description: descriptionFromHTML(editor.getHTML()),
       tags: tags,
       published,
     }
@@ -51,21 +82,18 @@ function UpdatePostButtons({ post, title, editor, tags }) {
   )
 }
 
-function CreatePostButtons({ title, editor, tags }) {
+function DeletePostButtons({ post }) {
   const router = useRouter()
-  async function createPost() {
-    const post = {
-      title: title,
-      body: editor.getHTML(),
-      tags: tags,
-    }
-    const { data } = await axios.post('/api/posts/create', post)
-    console.log('Created Post', data)
-    router.push(`/post/${data.post.slug}/edit`)
+  async function deletePost() {
+    console.log('Deleting Post', post.slug)
+    const { data } = await axios.post('/api/posts/delete', { slug: post.slug })
+    console.log('Deleted Post', data)
+    router.push(`/`)
   }
   return (
-    <button className="btn btn-cta" onClick={createPost}>
-      Create Post
+    <button className="btn item" onClick={deletePost}>
+      <FontAwesomeIcon icon={['fas', 'trash-alt']} />
+      Delete Post
     </button>
   )
 }
@@ -107,14 +135,22 @@ function CaptureImages({ title }) {
   }
   return (
     <>
-      <button className="btn btn-cta" onClick={captureTwitterImage}>
+      <button className="btn item" onClick={captureTwitterImage}>
         <FontAwesomeIcon icon={['fas', 'camera']} />
-        Save Twitter Image
+        Twitter Image
       </button>
-      <button className="btn btn-cta" onClick={captureSocialImage}>
+      <button className="btn item" onClick={captureSocialImage}>
         <FontAwesomeIcon icon={['fas', 'camera']} />
-        Save Social Image
+        Social Image
       </button>
     </>
   )
+}
+
+function descriptionFromHTML(html) {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = html
+  const firstElement = wrapper.firstChild as HTMLElement
+  let description = firstElement.innerText.substring(0, 140)
+  return description
 }

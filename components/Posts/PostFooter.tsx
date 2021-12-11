@@ -9,6 +9,8 @@ import { useAuth } from 'context/AuthContext'
 
 export default function PostFooter({ post }) {
   const router = useRouter()
+  const { user } = useAuth()
+  const isPostAuthor = post.author.username == user?.username
   // When I'm viewing the post, I want clicking on tag to redirect to /
   let { postSlug, ...baseQuery } = router.query
   let pathname = router.pathname
@@ -30,6 +32,12 @@ export default function PostFooter({ post }) {
         ))}
         <div className="right">
           {!post.published && <div className="tag">Draft</div>}
+          {isPostAuthor && (
+            <Link className="tag" href={`/post/${post.slug}/edit`}>
+              <FontAwesomeIcon icon={['fas', 'edit']} />
+              Edit
+            </Link>
+          )}
           {/* <div className="tag">
             <FontAwesomeIcon icon={['fas', 'calendar']} />
             {date}

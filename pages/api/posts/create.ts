@@ -5,12 +5,12 @@ import handler from "backend/handler"
 
 async function createPost(req, res) {
   try {
-    const { title, body, tags } = req.body
+    const { title, body, description, tags } = req.body
     const post = await prisma.post.create({
       data: {
         title: title,
         body: body,
-        description: "description here",
+        description: description,
         slug: `${slugify(title, { lower: true, strict: true })}-${cuid()}`,
         author: { connect: { id: req.user.id } },
         tags: { connect: tags?.map(t => ({ slug: t.slug })) },

@@ -131,4 +131,6 @@ library.add(
   faPenSquare, //for word counter
   faCog,
   faPaperPlane,
+  faTrashAlt,
+  faEdit
 )

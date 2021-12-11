@@ -41,7 +41,7 @@
       padding: 0 5px;
       cursor: pointer;
       border-radius: var(--border-radius);
-  
+
       svg {
         margin: 0 2px 0 5px;
         //font-size: 0.8em;
@@ -61,8 +61,6 @@
     }
   }
 
- 
-
   input:focus + .tags-list {
     display: block;
   }
@@ -74,9 +72,8 @@
 .publish-buttons {
   margin-top: 10px;
   margin-bottom: 20px; // some space to the end of the page
-  float: right;
+  // float: right;
   .btn {
-    margin-left: 5px;
     float: left;
     color: var(--text);
     background: var(--btn-bg);
@@ -87,6 +84,18 @@
     }
     &:hover {
       background: var(--btn-bg-hover);
+    }
+  }
+  .right {
+    .btn {
+      margin-left: 5px;
+      margin-right: 0;
+    }
+  }
+  .menu-handle {
+    text-align: center;
+    svg {
+      margin: 0;
     }
   }
 }
