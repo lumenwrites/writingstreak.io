@@ -1,4 +1,5 @@
 // @ts-nocheck
+import moment from 'moment'
 import { PrismaClient, Prisma } from '@prisma/client'
 import { hash } from 'bcryptjs'
 import slugify from 'slugify'
@@ -10,6 +11,7 @@ const prisma = new PrismaClient()
 async function main() {
   console.log(`Seeding the db...`)
   await prisma.comment.deleteMany()
+  await prisma.day.deleteMany()
   await prisma.post.deleteMany()
   await prisma.tag.deleteMany()
   await prisma.sequence.deleteMany()
@@ -84,6 +86,24 @@ async function main() {
     postIds.push(createdPost.id)
     console.log(`Created post: ${createdPost.slug}`)
   }
+
+  const numberOfDays = 90
+  const end = moment() // today
+  const start = moment().subtract(numberOfDays, 'days') // 30 days ago
+  const days = []
+  for (var d = start; start.diff(end, 'days') <= 0; d.add(1, 'days')) {
+    if (Math.random() < 0.25) continue //25% chance of missing a day
+    const day = {
+      id: d.format('YYYY-MM-DD'),
+      date: d.format('YYYY-MM-DD'),
+      author: { connect: { id: 'lumen' } },
+      wordCount: Math.floor(Math.random() * 1000),
+      targetWordCount: 250,
+      writingTime: Math.floor(Math.random() * 24) * 5,
+    }
+    const createdDay = await prisma.day.create({ data: day })
+  }
+
   let comments = []
   let posComs = [...positiveComments]
   posComs = posComs.sort(() => Math.random() - 0.5) // shuffle

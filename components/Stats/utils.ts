@@ -20,8 +20,8 @@ function generateEmptyDays(numberOfDays = 30) {
     days.push({
       date: d.format('YYYY-MM-DD'),
       weekday: dateToWeekday(d),
-      wordCount: 0,
       targetWordCount: 100, // doesn't matter what it is
+      wordCount: 0,
       writingTime: 0,
     })
   }
@@ -30,15 +30,37 @@ function generateEmptyDays(numberOfDays = 30) {
 
 /* Load saved days into calendar */
 export function generateTimeline(savedDays, numberOfDays = 30) {
+  console.log(`Generating Timeline, loading ${savedDays.length} days into timeilne`)
   const emptyDays = generateEmptyDays(numberOfDays) // last 30 days to render
   let timeline = []
   for (let emptyDay of emptyDays) {
     const savedDay = savedDays.find(d => d.date === emptyDay.date)
     if (savedDay) {
-      timeline.push(savedDay)
+      const weekday = dateToWeekday(moment(savedDay.date))
+      timeline.push({ ...savedDay, weekday })
     } else {
       timeline.push(emptyDay)
     }
   }
   return timeline
+}
+
+
+// Number formatter
+// https://stackoverflow.com/questions/9461621/format-a-number-as-2-5k-if-a-thousand-or-more-otherwise-900
+export function largeNumberFormat(num, digits) {
+  const lookup = [
+    { value: 1, symbol: "" },
+    { value: 1e3, symbol: "K" },
+    { value: 1e6, symbol: "M" },
+    { value: 1e9, symbol: "G" },
+    { value: 1e12, symbol: "T" },
+    { value: 1e15, symbol: "P" },
+    { value: 1e18, symbol: "E" }
+  ];
+  const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+  var item = lookup.slice().reverse().find(function(item) {
+    return num >= item.value;
+  });
+  return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";
 }

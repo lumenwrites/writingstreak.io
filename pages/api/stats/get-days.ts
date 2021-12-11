@@ -6,7 +6,9 @@ async function getDays(req, res) {
     const days = await prisma.day.findMany({
       where: {
         authorId: req.user.id,
-      }
+      },
+      orderBy: [{ date: 'desc' }],
+      take: 31,
     })
     res.json({ days })
   } catch (error) {

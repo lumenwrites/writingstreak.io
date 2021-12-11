@@ -4,16 +4,30 @@ import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorInfo } from 'context/EditorContext'
-import { generateTimeline } from './utils'
+import { generateTimeline, largeNumberFormat } from './utils'
 
 export default function Timeline() {
-  const { editorInfo } = useEditorInfo()
+  const { editorInfo, setEditorInfo } = useEditorInfo()
   const [timeline, setTimeline] = useState([])
-  // On first load, fetch saved days, generate 30 day timeline
+
   async function fetchStats() {
+    // On first load, fetch saved days, generate 30 day timeline
     const { data } = await axios.get('/api/stats/get-days')
-    console.log('savedDays', data.days)
     setTimeline(generateTimeline(data.days))
+    // console.log('Fetched days', data.days)
+    if (!data.days.length) return
+    const lastDay = data.days[0]
+    if (moment().format('YYYY-MM-DD') === lastDay.date) {
+      console.log("Loading today's stats into state", lastDay)
+      const { targetWordCount, wordCount, writingTime } = lastDay
+      setEditorInfo((prev) => ({
+        ...prev,
+        targetWordCount,
+        wordCount,
+        writingTime,
+      }))
+    }
+
     return data.days
   }
   useEffect(() => {
@@ -21,12 +35,11 @@ export default function Timeline() {
   }, [])
   // Scroll when timeline changes
   useEffect(() => {
+    console.log('scroll')
     document.getElementById('timeline').scrollLeft = 99999
-  }, [timeline])
-  console.log('timeline', timeline)
+  }, [timeline, editorInfo])
   /* Render currently open doc's stats in place of it's date */
   const timelineWithCurrentDayStats = timeline.map((d) => {
-    return d
     if (d.date === moment().format('YYYY-MM-DD')) {
       return { ...d, wordCount: editorInfo.wordCount, writingTime: editorInfo.writingTime, active: true }
     } else {
@@ -49,6 +62,7 @@ export default function Timeline() {
 
 function Day({ day }) {
   const progress = day.wordCount / 250
+  const isBlank = day.wordCount === 0 && day.writingTime === 0
   return (
     <div className="day">
       <div className="day-name-date">
@@ -59,16 +73,18 @@ function Day({ day }) {
           </div>
         </RoundProgressBar>
       </div>
-      <div className="day-stats">
-        <div className="stat">
-          <FontAwesomeIcon icon={['fas', 'pen-square']} />
-          {day.wordCount}
+      {!isBlank && (
+        <div className="day-stats">
+          <div className="stat">
+            <FontAwesomeIcon icon={['fas', 'pen-square']} />
+            {largeNumberFormat(day.wordCount, 1)}
+          </div>
+          <div className="stat">
+            <FontAwesomeIcon icon={['fas', 'clock']} />
+            {day.writingTime}
+          </div>
         </div>
-        <div className="stat">
-          <FontAwesomeIcon icon={['fas', 'clock']} />
-          {day.writingTime}
-        </div>
-      </div>
+      )}
     </div>
   )
 }
