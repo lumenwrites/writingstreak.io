@@ -83,9 +83,17 @@ import {
   faEllipsisH,
   faPenSquare,
   faPaperPlane,
+  faPlay,
+  faStop,
+  faArrowCircleUp,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
+  // Menu
+  faBars,
+  faArrowCircleUp, // Upgrade
+  faSignInAlt,
+  faSignOutAlt,
   // Post Footer Icons
   faUser,
   faArrowUp,
@@ -132,5 +140,9 @@ library.add(
   faCog,
   faPaperPlane,
   faTrashAlt,
-  faEdit
+  faEdit,
+  // Stats icons
+  faHeart,
+  faPlay,
+  faStop,
 )
