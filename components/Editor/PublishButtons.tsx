@@ -3,9 +3,9 @@ import { useRouter } from 'next/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import domtoimage from 'retina-dom-to-image'
 import { saveAs } from 'file-saver'
+import { useEditorInfo } from 'context/EditorContext'
 
-export default function PublishButtons({ post, title, editor, tags }) {
-  if (!editor) return null
+export default function PublishButtons({ post, saved }) {
   return (
     <div className="publish-buttons">
       <div className="left">
@@ -14,31 +14,31 @@ export default function PublishButtons({ post, title, editor, tags }) {
             <FontAwesomeIcon icon={['fas', 'cog']} />
           </button>
           <div className="menu">
-            <CaptureImages title={title} />
+            <CaptureImages />
             <DeletePostButtons post={post} />
           </div>
         </div>
       </div>
       <div className="right">
-        {/* <Stats editor={editor} /> */}
         {post ? (
-          <UpdatePostButtons post={post} title={title} editor={editor} tags={tags} />
+          <UpdatePostButtons post={post} saved={saved} />
         ) : (
-          <CreatePostButtons title={title} editor={editor} tags={tags} />
+          <CreatePostButtons />
         )}
       </div>
     </div>
   )
 }
 
-function CreatePostButtons({ title, editor, tags }) {
+function CreatePostButtons() {
+  const { editorInfo, setEditorInfo } = useEditorInfo()
   const router = useRouter()
   async function createPost() {
     const post = {
-      title: title,
-      body: editor.getHTML(),
-      description: descriptionFromHTML(editor.getHTML()),
-      tags: tags,
+      title: editorInfo.title,
+      body: editorInfo.html,
+      description: descriptionFromHTML(editorInfo.html),
+      tags: editorInfo.tags,
     }
     const { data } = await axios.post('/api/posts/create', post)
     console.log('Created Post', data)
@@ -51,14 +51,15 @@ function CreatePostButtons({ title, editor, tags }) {
   )
 }
 
-function UpdatePostButtons({ post, title, editor, tags }) {
+function UpdatePostButtons({ post, saved }) {
+  const { editorInfo, setEditorInfo } = useEditorInfo()
   async function updatePost(published) {
     const updatedPost = {
       slug: post.slug,
-      title: title,
-      body: editor.getHTML(),
-      description: descriptionFromHTML(editor.getHTML()),
-      tags: tags,
+      title: editorInfo.title,
+      body: editorInfo.html,
+      description: descriptionFromHTML(editorInfo.html),
+      tags: editorInfo.tags,
       published,
     }
     console.log('Updating Post', updatedPost)
@@ -66,6 +67,8 @@ function UpdatePostButtons({ post, title, editor, tags }) {
     console.log('Updated Post', data)
   }
   async function togglePublished() {
+    // setEditorInfo((prev) => { })
+    console.log('unpublish', editorInfo)
     await updatePost(!post.published)
     window.location.reload()
   }
@@ -74,10 +77,17 @@ function UpdatePostButtons({ post, title, editor, tags }) {
       <button className="btn btn-cta" onClick={togglePublished}>
         {post.published ? 'Unpublish' : 'Publish'}
       </button>
-      <button className="btn btn-cta" onClick={() => updatePost(post.published)}>
-        <FontAwesomeIcon icon={['fas', 'save']} />
-        Save Post
-      </button>
+      {saved ? (
+        <button className="btn btn-cta disabled" disabled>
+          <FontAwesomeIcon icon={['fas', 'save']} />
+          Saved
+        </button>
+      ) : (
+        <button className="btn btn-cta" onClick={() => updatePost(post.published)} id="save-post">
+          <FontAwesomeIcon icon={['fas', 'save']} />
+          Save Post
+        </button>
+      )}
     </>
   )
 }
@@ -98,32 +108,34 @@ function DeletePostButtons({ post }) {
   )
 }
 
-function Stats({ editor }) {
-  const wordCount = editor.state.doc.textContent.split(' ').length
-  const height = document.getElementById('twitter-image').clientHeight + 20 // +20 because on rendering theres extra padding
-  const imageSizeLeft = Math.floor((height / 1160) * 100)
-  return (
-    <>
-      <div className="btn">
-        <FontAwesomeIcon icon={['fas', 'pen-square']} />
-        {wordCount}
-      </div>
-      <div className="btn">
-        <FontAwesomeIcon icon={['fas', 'camera']} />
-        {imageSizeLeft}%
-      </div>
-    </>
-  )
-}
+// function Stats({ editor }) {
+//   const wordCount = editor.state.doc.textContent.split(' ').length
+//   const height = document.getElementById('twitter-image').clientHeight + 20 // +20 because on rendering theres extra padding
+//   const imageSizeLeft = Math.floor((height / 1160) * 100)
+//   return (
+//     <>
+//       <div className="btn">
+//         <FontAwesomeIcon icon={['fas', 'pen-square']} />
+//         {wordCount}
+//       </div>
+//       <div className="btn">
+//         <FontAwesomeIcon icon={['fas', 'camera']} />
+//         {imageSizeLeft}%
+//       </div>
+//     </>
+//   )
+// }
 
-function CaptureImages({ title }) {
+function CaptureImages() {
+  const { editorInfo, setEditorInfo } = useEditorInfo()
+
   async function captureTwitterImage() {
     const positionImage = document.getElementById('position-image')
     const twitterImage = document.getElementById('twitter-image')
     positionImage.classList.add('capturing')
     const image = await domtoimage.toJpeg(twitterImage, { quality: 0.95 })
     positionImage.classList.remove('capturing')
-    saveAs(image, `${title}.jpg`)
+    saveAs(image, `${editorInfo.title}.jpg`)
   }
   async function captureSocialImage() {
     const positionImage = document.getElementById('position-image')
@@ -131,7 +143,7 @@ function CaptureImages({ title }) {
     positionImage.classList.add('capturing-cropped')
     const image = await domtoimage.toJpeg(croppedImage, { quality: 0.95 })
     positionImage.classList.remove('capturing-cropped')
-    saveAs(image, `${title} Social.jpg`)
+    saveAs(image, `${editorInfo.title} Social.jpg`)
   }
   return (
     <>

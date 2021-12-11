@@ -3,8 +3,9 @@ import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import slugify from 'slugify'
 
-export default function TagsInput({ tags, setTags, customTags = false, placeholder = 'Add up to 5 tags...' }) {
+export default function TagsInput({ initialTags, onChange, customTags = false, placeholder = 'Add up to 5 tags...' }) {
   const [allTags, setAllTags] = useState([])
+  const [tags, setTags] = useState(initialTags)
   const [val, setVal] = useState('')
   const inputRef = useRef(null)
   async function fetchAllTags() {
@@ -14,6 +15,13 @@ export default function TagsInput({ tags, setTags, customTags = false, placehold
   useEffect(() => {
     fetchAllTags()
   }, [])
+  // This component takes care of tags in its own state.
+  // When the tags change I just call a function of the parent component,
+  // Send it the new tags, and it does whatever
+  useEffect(() => {
+    onChange(tags)
+  }, [tags])
+
   // Remove already selected tags from the list
   let listTags = allTags.filter((tag) => !tags.some((t) => t.slug === tag.slug))
   // Search through tags

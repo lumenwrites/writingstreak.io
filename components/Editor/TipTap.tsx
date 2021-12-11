@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react'
-import { useEditor, EditorContent, ReactNodeViewRenderer, BubbleMenu } from '@tiptap/react'
+import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
+import Document from '@tiptap/extension-document'
 import Highlight from '@tiptap/extension-highlight'
 import Typography from '@tiptap/extension-typography'
-import Document from '@tiptap/extension-document'
 import Placeholder from '@tiptap/extension-placeholder'
 import Paragraph from '@tiptap/extension-paragraph'
 import Text from '@tiptap/extension-text'
@@ -11,30 +10,25 @@ import Image from '@tiptap/extension-image'
 import TextAlign from '@tiptap/extension-text-align'
 import Underline from '@tiptap/extension-underline'
 import Dropcursor from '@tiptap/extension-dropcursor'
-// import FloatingMenu from '@tiptap/extension-floating-menu'
 import TextStyle from '@tiptap/extension-text-style'
 import { Color } from '@tiptap/extension-color'
 import Link from '@tiptap/extension-link'
-// import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
-// import CodeBlockComponent from 'components/Editor/Blocks/CodeBlockComponent'
-// import lowlight from 'lowlight'
 
+// Custom Elements
 import MyBubbleMenu from './MyBubbleMenu'
 import MyFloatingMenu from './MyFloatingMenu'
-import TwitterFooter from './TwitterFooter'
-import TagsInput from 'components/Posts/TagsInput'
-
+// Custom Nodes
 import CustomHeading from './Nodes/CustomHeading'
-import PublishButtons from './PublishButtons'
-
+// Custom Document
 const CustomDocument = Document.extend({
   content: 'heading block*',
 })
 
-export default function TipTap({post}) {
-  const [title, setTitle] = useState(post ? post.title : "")
-  const [tags, setTags] = useState(post.tags)
+import { useEditorInfo } from 'context/EditorContext'
 
+export default function TipTap({ content, onUpdate, onCreate }) {
+  const { editorInfo, setEditorInfo } = useEditorInfo()
+  
   const editor = useEditor({
     extensions: [
       // CustomDocument,
@@ -45,7 +39,6 @@ export default function TipTap({post}) {
         paragraph: false,
         text: false,
         dropcursor: false,
-        // floatingmenu: false,
       }),
       Placeholder.configure({
         placeholder: ({ node }) => {
@@ -55,7 +48,6 @@ export default function TipTap({post}) {
           return 'Write something...'
         },
       }),
-      Highlight,
       TextAlign.configure({
         types: ['heading', 'paragraph'],
       }),
@@ -69,18 +61,10 @@ export default function TipTap({post}) {
         openOnClick: true,
         linkOnPaste: true,
       }),
-      // FloatingMenu.configure({
-      //   // element: typeof window !== 'undefined' ? document.querySelector('.menu') : undefined,
-      //   shouldShow: ({ editor, view, state, oldState }) => {
-      //     // show the floating within any paragraph
-      //     return true // editor.isActive('paragraph')
-      //   },
-      // }),
-      // CodeBlockLowlight.extend({
-      //   addNodeView() {
-      //     return ReactNodeViewRenderer(CodeBlockComponent)
-      //   },
-      // }).configure({ lowlight }),
+      Color.configure({
+        types: ['textStyle'],
+      }),
+      Highlight,
       Typography,
       Paragraph,
       Text,
@@ -88,74 +72,21 @@ export default function TipTap({post}) {
       Dropcursor,
       CustomHeading,
       TextStyle,
-      Color.configure({
-        types: ['textStyle'],
-      }),
     ],
-    content: post ? post.body : "",
-    // content: typeof window !== 'undefined' ? localStorage.getItem('savedPost') : {},
-    onUpdate: ({ editor }) => {
-      const html = editor.getHTML()
-      const savedPost = { title, html }
-      localStorage.setItem('savedPost', JSON.stringify(savedPost))
+    content,
+    onCreate: ({ editor }) => {
+      onCreate({editor})
     },
-    onTransaction({ editor, transaction }) {
-      // const cursorPos = transaction.curSelection.$anchor.pos
-      // window.scrollTo(0, cursorPos);
+    onUpdate: ({ editor }) => {
+      onUpdate({editor})
     },
   })
-  function titleChange(e) {
-    setTitle(e.target.value)
-    const savedPost = { title: e.target.value, html: editor.getHTML() }
-    localStorage.setItem('savedPost', JSON.stringify(savedPost))
-  }
 
   return (
     <>
-      <div className="wrapper">
-        <ImageCaptureWrappers>
-          <div className="editor text">
-            <div className="post-title orange">
-              <input placeholder="Title..." value={title} onChange={titleChange} />
-            </div>
-            <EditorContent className="tiptap" editor={editor} />
-            <MyBubbleMenu editor={editor} />
-            <MyFloatingMenu editor={editor} />
-          </div>
-          <TagsInput tags={tags} setTags={setTags} />
-          <TwitterFooter />
-        </ImageCaptureWrappers>
-        <PublishButtons post={post} title={title} editor={editor} tags={tags} />
-        <br />
-        <div id="bottom-of-the-page" />
-      </div>
+      <EditorContent className="tiptap" editor={editor} />
+      <MyBubbleMenu editor={editor} />
+      <MyFloatingMenu editor={editor} />
     </>
   )
 }
-
-function ImageCaptureWrappers({ children }) {
-  return (
-    <div className="position-image capturing1" id="position-image">
-      <div className="cropped-image" id="cropped-image">
-        <div className="twitter-image" id="twitter-image">
-          {children}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const allTags = [
-  {
-    name: 'Writing',
-    slug: 'writing',
-  },
-  {
-    name: 'Startup',
-    slug: 'startup',
-  },
-  {
-    name: 'Creativity',
-    slug: 'creativity',
-  },
-]
