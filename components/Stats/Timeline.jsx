@@ -18,7 +18,7 @@ export default function Timeline() {
     if (!data.days.length) return
     const lastDay = data.days[0]
     if (moment().format('YYYY-MM-DD') === lastDay.date) {
-      console.log("Loading today's stats into state", lastDay)
+      // console.log("Loading today's stats into state", lastDay.date)
       const { targetWordCount, wordCount, writingTime } = lastDay
       setEditorInfo((prev) => ({
         ...prev,
@@ -35,7 +35,6 @@ export default function Timeline() {
   }, [])
   // Scroll when timeline changes
   useEffect(() => {
-    console.log('scroll')
     document.getElementById('timeline').scrollLeft = 99999
   }, [timeline, editorInfo])
   /* Render currently open doc's stats in place of it's date */

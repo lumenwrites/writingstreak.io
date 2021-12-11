@@ -30,7 +30,7 @@ function generateEmptyDays(numberOfDays = 30) {
 
 /* Load saved days into calendar */
 export function generateTimeline(savedDays, numberOfDays = 30) {
-  console.log(`Generating Timeline, loading ${savedDays.length} days into timeilne`)
+  // console.log(`Generating Timeline, loading ${savedDays.length} days into timeilne`)
   const emptyDays = generateEmptyDays(numberOfDays) // last 30 days to render
   let timeline = []
   for (let emptyDay of emptyDays) {

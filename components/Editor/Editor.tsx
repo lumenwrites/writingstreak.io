@@ -34,13 +34,13 @@ export default function Editor({ post }) {
   }
   function onUpdate({ editor }) {
     // Save timer. Reset timer as I type, save when I stop for a second.
-    // clearInterval(saveTimer.current)
+    clearInterval(saveTimer.current)
     setSaved(false)
-    // saveTimer.current = setInterval(() => {
-    //   document.getElementById('save-post')?.click()
-    //   setSaved(true)
-    //   clearInterval(saveTimer.current)
-    // }, 2000)
+    saveTimer.current = setInterval(() => {
+      document.getElementById('save-post')?.click()
+      setSaved(true)
+      clearInterval(saveTimer.current)
+    }, 2000)
 
     // Update info and stats
     setEditorInfo((prev) => ({
@@ -49,7 +49,6 @@ export default function Editor({ post }) {
       wordCount: editor.state.doc.textContent.split(' ').filter((w) => (w.trim().length ? true : false)).length,
       healthLeft: Math.min(prev.healthLeft + 5, 100),
     }))
-    document.getElementById('timeline').scrollLeft = 99999
   }
   return (
     <>

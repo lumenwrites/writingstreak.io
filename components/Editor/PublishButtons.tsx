@@ -64,7 +64,6 @@ function UpdatePostButtons({ post, saved }) {
     }
     const { data: savedPost } = await axios.post('/api/posts/update', updatedPost)
     console.log('Updated Post', savedPost)
-    console.log('Saving stats')
     const day = {
       targetWordCount: editorInfo.targetWordCount,
       wordCount: editorInfo.wordCount,
