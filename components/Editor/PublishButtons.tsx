@@ -1,34 +1,94 @@
 import axios from 'axios'
+import { useRouter } from 'next/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import domtoimage from 'retina-dom-to-image'
 import { saveAs } from 'file-saver'
 
-export default function PublishButtons({ title, editor, tags }) {
+export default function PublishButtons({ post, title, editor, tags }) {
+  if (!editor) return null
+  return (
+    <div className="publish-buttons">
+      {/* <CaptureImages title={title} />
+      <Stats editor={editor} />
+      <button className="btn btn-cta">
+        <FontAwesomeIcon icon={['fas', 'cog']} />
+      </button> */}
+      {post ? (
+        <UpdatePostButtons post={post} title={title} editor={editor} tags={tags} />
+      ) : (
+        <CreatePostButtons title={title} editor={editor} tags={tags} />
+      )}
+    </div>
+  )
+}
+function UpdatePostButtons({ post, title, editor, tags }) {
+  async function updatePost(published) {
+    const updatedPost = {
+      slug: post.slug,
+      title: title,
+      body: editor.getHTML(),
+      tags: tags,
+      published,
+    }
+    const { data } = await axios.post('/api/posts/update', updatedPost)
+    console.log('Updated Post', updatedPost)
+    // router.push(`/post/${data.post.slug}`)
+  }
+  async function togglePublished() {
+    await updatePost(!post.published)
+    window.location.reload()
+  }
+  return (
+    <>
+      <button className="btn btn-cta" onClick={togglePublished}>
+        {post.published ? 'Unpublish' : 'Publish'}
+      </button>
+      <button className="btn btn-cta" onClick={updatePost}>
+        <FontAwesomeIcon icon={['fas', 'save']} />
+        Save Post
+      </button>
+    </>
+  )
+}
+
+function CreatePostButtons({ title, editor, tags }) {
+  const router = useRouter()
   async function createPost() {
     const post = {
       title: title,
       body: editor.getHTML(),
-      tags: tags
+      tags: tags,
     }
-    console.log('submitting post', post)
     const { data } = await axios.post('/api/posts/create', post)
     console.log('Created Post', data)
-    // router.push(`/post/${data.post.slug}`)
+    router.push(`/post/${data.post.slug}/edit`)
   }
-
   return (
-    <div className="publish-buttons">
-      <CaptureImages title={title}/>
-      <button className="btn btn-cta" onClick={createPost}>
-        <FontAwesomeIcon icon={['fas', 'save']} />
-        Save
-      </button>
-      <button className="btn btn-cta">Publish</button>
-    </div>
+    <button className="btn btn-cta" onClick={createPost}>
+      Create Post
+    </button>
   )
 }
 
-function CaptureImages({title}) {
+function Stats({ editor }) {
+  const wordCount = editor.state.doc.textContent.split(' ').length
+  const height = document.getElementById('twitter-image').clientHeight + 20 // +20 because on rendering theres extra padding
+  const imageSizeLeft = Math.floor((height / 1160) * 100)
+  return (
+    <>
+      <div className="btn">
+        <FontAwesomeIcon icon={['fas', 'pen-square']} />
+        {wordCount}
+      </div>
+      <div className="btn">
+        <FontAwesomeIcon icon={['fas', 'camera']} />
+        {imageSizeLeft}%
+      </div>
+    </>
+  )
+}
+
+function CaptureImages({ title }) {
   async function captureTwitterImage() {
     const positionImage = document.getElementById('position-image')
     const twitterImage = document.getElementById('twitter-image')

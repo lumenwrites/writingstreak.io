@@ -81,6 +81,8 @@ import {
   faSave,
   faPlus,
   faEllipsisH,
+  faPenSquare,
+  faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -126,4 +128,7 @@ library.add(
   faPlus, // floating menu
   faTimes, //delete tag
   faEllipsisH,
+  faPenSquare, //for word counter
+  faCog,
+  faPaperPlane,
 )

@@ -31,9 +31,8 @@ const CustomDocument = Document.extend({
   content: 'heading block*',
 })
 
-export default function TipTap() {
-  const loadedPost = JSON.parse(localStorage.getItem('savedPost')) || { title: '', html: '' }
-  const [title, setTitle] = useState(loadedPost.title)
+export default function TipTap({post}) {
+  const [title, setTitle] = useState(post ? post.title : "")
   const [tags, setTags] = useState([{ name: 'Writing', slug: 'writing' }])
 
   const editor = useEditor({
@@ -93,12 +92,16 @@ export default function TipTap() {
         types: ['textStyle'],
       }),
     ],
-    content: loadedPost.html,
+    content: post ? post.body : "",
     // content: typeof window !== 'undefined' ? localStorage.getItem('savedPost') : {},
     onUpdate: ({ editor }) => {
       const html = editor.getHTML()
       const savedPost = { title, html }
       localStorage.setItem('savedPost', JSON.stringify(savedPost))
+    },
+    onTransaction({ editor, transaction }) {
+      // const cursorPos = transaction.curSelection.$anchor.pos
+      // window.scrollTo(0, cursorPos);
     },
   })
   function titleChange(e) {
@@ -122,8 +125,9 @@ export default function TipTap() {
           <TagsInput allTags={allTags} tags={tags} setTags={setTags} />
           <TwitterFooter />
         </ImageCaptureWrappers>
-        <PublishButtons title={title} editor={editor} tags={tags} />
+        <PublishButtons post={post} title={title} editor={editor} tags={tags} />
         <br />
+        <div id="bottom-of-the-page" />
       </div>
     </>
   )
