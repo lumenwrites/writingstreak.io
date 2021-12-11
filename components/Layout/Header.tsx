@@ -16,26 +16,19 @@ export default function Header({ className }) {
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />
           </div>
-          nexy
+          <b>writing</b>streak
         </Link>
         <nav>
-          {/* {user?.username && (
-            <a className="btn btn-nav btn-cta" onClick={() => toggleModal(`submit-post`)}>
-              Submit Post
-            </a>
-          )} */}
-          <Link href={`/about`} className="btn btn-nav">
-            {/* <FontAwesomeIcon icon={['fas', 'info-circle']} /> */}
-            About
-          </Link>
-          {/* <a className="btn btn-nav" onClick={() => toggleModal(`login`)}>
+          {user?.username && (
+            <Link href={`/post/create`} className="btn btn-nav">
+              Write
+            </Link>
+          )}
+          <a className="btn btn-nav" onClick={() => toggleModal(`login`)}>
             <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
             Login
-          </a> */}
+          </a>
           {/*  
-          <Link href={`/post/create`} className="btn btn-nav">
-            Create Post
-          </Link>
           <div className="notifications" onClick={() => toggleModal(`login`)}>
             <FontAwesomeIcon icon={['far', 'bell']} />
           </div>

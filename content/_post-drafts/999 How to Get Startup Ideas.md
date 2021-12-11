@@ -5,7 +5,36 @@ description: This is my collection of notes on how to come up with startup ideas
 draft: true
 ---
 
-# How to Come Up With Startup Ideas
+# How to Get Startup Ideas
+
+
+4 parts of the idea:
+- Target audience - people who have the problem you're trying to solve
+- Your product or service - solution you can build (or learn how to build).
+- Marketing strategy - a way to put your product in front of the people who need it.
+
+
+## Target Audience
+- People who have money.
+- People who have a problem.
+
+## Product
+- Can build or learn how to build.
+- Is valuable enough for people to pay money for.
+- I care enough about to be motivated to work on it.
+
+Save time or money.
+
+## Marketing Strategy
+Content marketing, ads.
+
+## Scaling
+code and media.
+
+TA
+Rich
+Save time/money
+
 This is my collection of notes on inventing startup ideas.
 
 You can't invent the idea by brute force, just by thinking real hard. You can live the kind of life that leads to ideas, and makes you into the kind of person who has ideas:
@@ -88,3 +117,5 @@ Talk to people and see which solvable problems they have.
 Or find an app with a great idea they didnt max out for some reason. 
 Thats how you get ideas if you dont have your own.
 If this helps me make money doing what I love - Ill take it.
+
+https://www.indiehackers.com/post/how-to-brainstorm-great-business-ideas-ab51c3d51c

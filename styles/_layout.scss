@@ -1,3 +1,7 @@
+.wrapper {
+  max-width: var(--wrapper-width);
+  margin: auto;
+}
 header {
   background: var(--header-bg);
   box-shadow: var(--box-shadow);
@@ -7,8 +11,6 @@ header {
   border-top: var(--decoration-line);
   box-sizing: border-box;
   .wrapper {
-    max-width: var(--wrapper-width);
-    margin: auto;
     padding: 0;
     min-width: 300px;
     // When screen size reaches the edges of content, I want some space between screen edges and elements in the header

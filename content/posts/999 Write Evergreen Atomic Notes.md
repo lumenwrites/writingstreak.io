@@ -1,6 +1,6 @@
 ---
-title: Write Evergreen Atomic Posts
-slug: evergreen-atomic-posts
+title: Write Evergreen Atomic Notes
+slug: evergreen-atomic-notes
 description: Turn your notes into posts that are useful, easy to write, easy to discover,  fun to read, and add up to productive output.
 social: /illustrations/post/evergreen-atomic-posts/social.png
 tags: ["Writing", "Obsidian"]
@@ -9,11 +9,11 @@ comments: https://twitter.com/lumenwrites/status/1461358100657545227
 draft: false
 ---
 
-<h1 className="h1-header orange">Write Evergreen Atomic Posts</h1>
+<h1 className="h1-header orange">Write Evergreen Atomic Notes</h1>
 
 Most people take only transient notes - simply jotting down things they want to remember. This is very ineffective. The problem is that such notes are disorganized, difficult to search through and discover later on. You will never *actually* get around to rereading most of your notes, so they will never be useful to you (or anybody else) again. They are also unlikely to lead to creating valuable output.
 
-The solution - **Write Evergreen Atomic Posts**:
+The solution - **Write Evergreen Atomic Notes**:
 - **Evergreen** - organize your notes into posts which are designed to evolve and accumulate over time.
 - **Atomic** - each post is brief (under 300 words), and focused on one specific idea, trying to encapsulate the entirety of that idea as well as possible. 
 - **Posts** - posts are published on your blog, organized using tags, easy to search through, and useful for other people.

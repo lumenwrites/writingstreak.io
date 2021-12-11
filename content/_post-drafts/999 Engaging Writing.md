@@ -43,5 +43,41 @@ And by the way:
 
 concrete examples
 
+Another important thing is writing is to treat everything like a story.
+
+For example, you could say "Statistic Y shows Z is true." That's boring and dry. OR you could say "I was wondering about X. Can I really live longer if I just... and so I looked into this and this, then I thought, could it be B? But no, that doesn't fit, because... but wait! Z seems to fit... etc."
+
+Take the reader through the story of your discovery/dilemma/thesis! Makes it much more human.
+
+
+
 Action Checklisr
 - Add jokes
+
+- Specific vivid metaphor. First, picture a monkey. A monkey dressed like a little pirate, if that helps you. We'll call him Slappy. Now, imagine you get four more monkeys. We'll call them Tito, Bubbles, Marcel and ShitTosser. Imagine personalities for each of them now. Maybe one is aggressive, one is affectionate, one is quiet, the other just throws shit all the time. But they're all your personal monkey friends. Now imagine a hundred monkeys.
+   It's like this: which would upset you more, your best friend dying, or a dozen kids across town getting killed because their bus collided with a truck hauling killer bees?
+   "LEARN TO FUCKING DRIVE, FUCKER!!" Try to imagine acting like that in a smaller group. Like if you're standing in an elevator with two friends and a coworker, and the friend goes to hit a button and accidentally punches the wrong one. Would you lean over, your mouth two inches from her ear, and scream "LEARN TO OPERATE THE FUCKING ELEVATOR BUTTONS, SHITCAMEL!!"
+   That's why you get that weird feeling of anonymous invincibility when you're sitting in a large crowd, screaming curses at a football player you'd never dare say to his face.
+   Strangely enough, if the kindly lone toy making guy made enough toys and hired enough people and expanded to enough shops, we'd eventually stop seeing it as a toy-making shop and start seeing it as the fiery Orc factories of Mordor.
+- Set up and break the pattern. family and neighbors, and then maybe some classmates or coworkers or church or suicide cult.
+- Story/example. Russert's dad used to take half an hour to carefully box up any broken glass before taking it to the trash. Why? Because "The trash guy might cut his hands."
+- Coin the term. The Monkeysphere (dunbar's number).
+- Push emotional buttons.
+- Know problems cannot be solved with clever slogans and over-simplified step-by-step programs. You can do that by following these simple steps.
+- ?? That brain, of course, was human. Probably from a homeless man they snatched off the streets.
+- So, we don't think of him as a person. We think of him as The Thing That Makes The Trash Go Away.
+- I mean, they're not people. They're teachers
+- Oh, not much. It's just the one single reason society doesn't work.
+- You may have a list of rationalizations long enough to circle the Earth, 
+- so they taught us to get a personal idea of a God in our heads who says, "No matter who you hurt, you're really hurting me. Also, I can crush you like a grape."
+- is an inhuman soul-grinding greed machine
+- Now, the cold truth is this Bin Laden is just as desperately in need of a bullet to the skull as the raving four-color caricature on some redneck's T-shirt. The key to understanding people like him, though, is realizing that we are the caricature on his T-shirt.
+- Then watch that same kid at work, as he drops a hamburger patty on the floor, picks it up, and slaps in on a bun and serves it to a customer. In that one dropped burger he has everything he needs to understand those black-hearted politicians and corporate bosses.
+- This is why they rarely go to war, though when they do it is widely thought to be hilarious
+- For the monkeys it was a confused, comical, tree-humping disaster.
+- That man, of course, was German philosopher Hans Capitalism. Then, some time in the Third Century, French philosopher Pierre "Frenchy" LaFrench invented racism.
+- Even Gandhi may have had hotel rooms and dead hookers in his past.
+SSC:
+- You tried Carol Dweck’s Growth Mindset, but the replication crisis crushed your faith. You tried Mike Cernovich’s Gorilla Mindset, but your neighbors all took out restraining orders against you. And yet, without a mindset, what separates you from the beasts? 
+- through long years of hard labor in the rationality mines
+-  This is the bias that explains why your political opponents continue to be your political opponents, instead of converting to your obviously superior beliefs.

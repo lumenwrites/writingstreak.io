@@ -8,10 +8,8 @@ const EditorNoSSR = dynamic(() => import('../../components/Editor/Editor'), { ss
 
 export default function Home() {
   return (
-    <Layout>
-      <EditorInfoContextProvider>
-        <EditorNoSSR post={null} />
-      </EditorInfoContextProvider>
-    </Layout>
+    <EditorInfoContextProvider>
+      <EditorNoSSR post={null} />
+    </EditorInfoContextProvider>
   )
 }

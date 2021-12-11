@@ -4,7 +4,7 @@ slug: writing-like-product
 description: When you're writing blog posts or courses, think of yourself as a startup founder building a product.
 social: /illustrations/post/writing-like-product/social.png
 tags: ["Writing"]
-relatedPosts: ["evergreen-atomic-posts"]
+relatedPosts: ["evergreen-atomic-notes"]
 comments: https://twitter.com/lumenwrites/status/1461464185364172804
 draft: false
 ---

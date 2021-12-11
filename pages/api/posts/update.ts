@@ -3,7 +3,6 @@ import handler from "backend/handler"
 
 async function updatePost(req, res) {
   const { slug, title, body, description, tags, published } = req.body
-  console.log('updatingPost', tags)
   const updatedPost = await prisma.post.update({
     where: { slug },
     data: {

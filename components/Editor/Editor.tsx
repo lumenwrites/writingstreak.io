@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
+import EditorHeader from './EditorHeader'
 import TipTap from './TipTap'
 import TagsInput from 'components/Posts/TagsInput'
 import PublishButtons from './PublishButtons'
@@ -13,10 +14,10 @@ export default function Editor({ post }) {
   const [saved, setSaved] = useState(true)
 
   function titleChange(e) {
-    setEditorInfo((prev) => ({...prev, title: e.target.value}))
+    setEditorInfo((prev) => ({ ...prev, title: e.target.value }))
   }
   function tagsChange(tags) {
-    setEditorInfo((prev) => ({...prev, tags}))
+    setEditorInfo((prev) => ({ ...prev, tags }))
   }
   function onCreate({ editor }) {
     // Once the editor has loaded post's contents and rendered, put its value into state
@@ -25,12 +26,12 @@ export default function Editor({ post }) {
         ...prev,
         html: editor.getHTML(),
         title: post.title,
-        tags: post.tags
+        tags: post.tags,
       }))
     }
   }
   function onUpdate({ editor }) {
-    setEditorInfo((prev) => ({...prev, html: editor.getHTML()}))
+    setEditorInfo((prev) => ({ ...prev, html: editor.getHTML() }))
     // Save timer. Reset timer as I type, save when I stop for a second.
     clearInterval(saveTimer.current)
     setSaved(false)
@@ -41,20 +42,23 @@ export default function Editor({ post }) {
     }, 2000)
   }
   return (
-    <div className="wrapper">
-      <ImageCaptureWrappers>
-        <div className="editor text">
-          <div className="post-title orange">
-            <input placeholder="Title..." value={editorInfo.title} onChange={titleChange} />
+    <>
+      <EditorHeader/>
+      <div className="wrapper">
+        <ImageCaptureWrappers>
+          <div className="editor text">
+            <div className="post-title orange">
+              <input placeholder="Title..." value={editorInfo.title} onChange={titleChange} />
+            </div>
+            <TipTap content={post ? post.body : ''} onUpdate={onUpdate} onCreate={onCreate} />
           </div>
-          <TipTap content={post ? post.body : ''} onUpdate={onUpdate} onCreate={onCreate}/>
-        </div>
-        <TagsInput initialTags={post ? post.tags : []} onChange={tagsChange} />
-        <TwitterFooter />
-      </ImageCaptureWrappers>
-      <PublishButtons post={post} saved={saved} />
-      <br />
-      <div id="bottom-of-the-page" />
-    </div>
+          <TagsInput initialTags={post ? post.tags : []} onChange={tagsChange} />
+          <TwitterFooter />
+        </ImageCaptureWrappers>
+        <PublishButtons post={post} saved={saved} />
+        <br />
+        <div id="bottom-of-the-page" />
+      </div>
+    </>
   )
 }
