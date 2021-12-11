@@ -345,8 +345,9 @@ input {
   font-size: 1em;
   width: 100%;
   margin-top: 10px;
+  // Combination of height: 32px and padding: 12px breaks line height in safari
   height: 32px;
-  padding: 12px;
+  padding: 0 12px;
   line-height: 24px;
   // float: left;
   border: 1px solid var(--input-border);

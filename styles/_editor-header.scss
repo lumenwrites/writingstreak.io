@@ -114,7 +114,9 @@
     bottom: 0;
     width: 5px;
     background: red;
-    background: linear-gradient(90deg, var(--header-bg), transparent);
+    // In Safari, transparent registers as black, making gradient look wrong
+    // So I'm transitioning into a color identical to header-bg, but with 0 opacity
+    background: linear-gradient(90deg, var(--header-bg), #fff7e800);
     z-index: 1;
   }
 }
