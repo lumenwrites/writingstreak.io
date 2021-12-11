@@ -37,7 +37,7 @@ export default function MyFloatingMenu({ editor }) {
         <div className="handle">
           <FontAwesomeIcon icon={['fas', 'plus']} />
         </div>
-        <div className="menu">
+        <div className="menu up">
           <div className="btn item" onClick={addImage}>
             <FontAwesomeIcon icon={['fas', 'image']} />
             Image

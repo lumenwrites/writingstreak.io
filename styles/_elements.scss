@@ -151,6 +151,10 @@
       right: 0;
       left: auto;
     }
+    &.up {
+      top: auto;
+      bottom: 100%;
+    }
     z-index: 20;
     .label {
       padding-left: 8px; // like button

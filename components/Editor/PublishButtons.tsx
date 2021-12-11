@@ -13,7 +13,7 @@ export default function PublishButtons({ post, saved }) {
           <button className="btn menu-handle">
             <FontAwesomeIcon icon={['fas', 'cog']} />
           </button>
-          <div className="menu">
+          <div className="menu up">
             <CaptureImages />
             <DeletePostButtons post={post} />
           </div>
