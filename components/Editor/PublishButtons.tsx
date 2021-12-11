@@ -30,9 +30,9 @@ function UpdatePostButtons({ post, title, editor, tags }) {
       tags: tags,
       published,
     }
+    console.log('Updating Post', updatedPost)
     const { data } = await axios.post('/api/posts/update', updatedPost)
-    console.log('Updated Post', updatedPost)
-    // router.push(`/post/${data.post.slug}`)
+    console.log('Updated Post', data)
   }
   async function togglePublished() {
     await updatePost(!post.published)
@@ -43,7 +43,7 @@ function UpdatePostButtons({ post, title, editor, tags }) {
       <button className="btn btn-cta" onClick={togglePublished}>
         {post.published ? 'Unpublish' : 'Publish'}
       </button>
-      <button className="btn btn-cta" onClick={updatePost}>
+      <button className="btn btn-cta" onClick={() => updatePost(post.published)}>
         <FontAwesomeIcon icon={['fas', 'save']} />
         Save Post
       </button>

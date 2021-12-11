@@ -33,7 +33,7 @@ const CustomDocument = Document.extend({
 
 export default function TipTap({post}) {
   const [title, setTitle] = useState(post ? post.title : "")
-  const [tags, setTags] = useState([{ name: 'Writing', slug: 'writing' }])
+  const [tags, setTags] = useState(post.tags)
 
   const editor = useEditor({
     extensions: [
@@ -122,7 +122,7 @@ export default function TipTap({post}) {
             <MyBubbleMenu editor={editor} />
             <MyFloatingMenu editor={editor} />
           </div>
-          <TagsInput allTags={allTags} tags={tags} setTags={setTags} />
+          <TagsInput tags={tags} setTags={setTags} />
           <TwitterFooter />
         </ImageCaptureWrappers>
         <PublishButtons post={post} title={title} editor={editor} tags={tags} />

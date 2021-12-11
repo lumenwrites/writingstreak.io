@@ -8,7 +8,7 @@ const TipTapNoSSR = dynamic(() => import('../../components/Editor/TipTap'), { ss
 export default function Home() {
   return (
     <Layout>
-      <TipTapNoSSR />
+      <TipTapNoSSR post={null} />
     </Layout>
   )
 }

@@ -1,11 +1,19 @@
-import { useState, useRef } from 'react'
+import axios from 'axios'
+import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import slugify from 'slugify'
 
-export default function TagsInput({ allTags, tags, setTags, customTags = false, placeholder = 'Add up to 5 tags...' }) {
+export default function TagsInput({ tags, setTags, customTags = false, placeholder = 'Add up to 5 tags...' }) {
+  const [allTags, setAllTags] = useState([])
   const [val, setVal] = useState('')
   const inputRef = useRef(null)
-
+  async function fetchAllTags() {
+    const { data } = await axios.get('/api/posts/get-all-tags')
+    setAllTags(data.allTags)
+  }
+  useEffect(() => {
+    fetchAllTags()
+  }, [])
   // Remove already selected tags from the list
   let listTags = allTags.filter((tag) => !tags.some((t) => t.slug === tag.slug))
   // Search through tags
