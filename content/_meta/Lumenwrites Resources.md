@@ -49,7 +49,16 @@ Tech
 Design
 [/r/web_design](https://reddit.com/r/web_design)  
 [/r/UserExperience](https://reddit.com/r/UserExperience)
+
 ## Top Tweets
+### Writers
+- [Dickie Bush](https://mobile.twitter.com/search?q=from%3Adickiebush%20min_retweets%3A100&src=typed_query&f=top)
+- [Nicolas Cole](https://mobile.twitter.com/search?q=from%3ANicolascole77%20min_retweets%3A100&src=typed_query&f=top)
+- [David Perell](https://mobile.twitter.com/search?q=from%3Adavid_perell%20min_retweets%3A100&src=typed_query&f=top)
+- [Tiago Forte](https://mobile.twitter.com/search?q=from%3Afortelabs%20min_retweets%3A100&src=typed_query&f=top)
+Atomic Essays, 10+ retweets:
+https://twitter.com/search?q=(%23ship30for30)%20min_retweets%3A10&src=typed_query&f=image
+### Startup
 - [sama](https://mobile.twitter.com/search?q=from%3Asama%20min_retweets%3A100&src=typed_query&f=top)
 - [paulg](https://mobile.twitter.com/search?q=from%3Apaulg%20min_retweets%3A100&src=typed_query&f=top)
 - [naval](https://mobile.twitter.com/search?q=from%3Anaval%20min_retweets%3A100&src=typed_query&f=top)
@@ -64,7 +73,9 @@ Design
 - [juliagalef](https://mobile.twitter.com/search?q=from%3Ajuliagalef%20min_retweets%3A100&src=typed_query&f=top)
 - [csallen](https://mobile.twitter.com/search?q=from%3Acsallen%20min_retweets%3A100&src=typed_query&f=top)
 - [RyanHoliday](https://mobile.twitter.com/search?q=from%3ARyanHoliday%20min_retweets%3A100&src=typed_query&f=top)
-- 
+- [Nathan Barry]
+https://twitter.com/nathanbarry?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+
 https://twitter.com/PatFlynn
 https://twitter.com/ericries
 http://www.twitter.com/neilpatel

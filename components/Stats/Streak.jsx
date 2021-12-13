@@ -4,7 +4,7 @@ import { useEditorInfo } from 'context/EditorContext'
 
 export default function Streak() {
   const { editorInfo, setEditorInfo } = useEditorInfo()
-  console.log('habit strength', editorInfo.habitStrength)
+  // console.log('habit strength', editorInfo.habitStrength)
   return (
     <div className="streak">
       <RoundProgressBar progress={editorInfo.habitStrength * 100}>

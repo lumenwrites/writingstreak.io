@@ -1,3 +1,14 @@
+
+# Sources
+Collect and summarize insights from:
+- My >> notes.
+- Poscasts (Indie Hackers).
+- Audiobooks.
+- Pirated Courses.
+- Instapaper.
+- My backlog of books.
+- My collection of devto/HN/IH/LW/SSC/reddit posts.
+// Perell/Bush/etc tweet threads.
 # Content Buckets
 ## Startups/Business
 - Basics. Startup School. SaaS. Indie Hackers. 
@@ -14,11 +25,19 @@
 - Productivity. Learning. Motivation.
 - Rationality and Decision Making.
 - Creativity. Ideas. Original thinking.
+## Writing for Startup Founders
+Making money with writing.
 ## Engaging with community
 - Questions to the community.
 - AMA. Answering questions.
 - Offering Feedback.
 
+## Twitter Threads
+[Dickie Bush](https://mobile.twitter.com/search?q=from%3Adickiebush%20min_retweets%3A100&src=typed_query&f=top)
+
+[Nicolas Cole](https://mobile.twitter.com/search?q=from%3ANicolascole77%20min_retweets%3A100&src=typed_query&f=top)
+[David Perell](https://mobile.twitter.com/search?q=from%3Adavid_perell%20min_retweets%3A100&src=typed_query&f=top)
+[Tiago Forte](https://mobile.twitter.com/search?q=from%3Afortelabs%20min_retweets%3A100&src=typed_query&f=top)
 
 ## Ask HN
 ### Actual Post Ideas

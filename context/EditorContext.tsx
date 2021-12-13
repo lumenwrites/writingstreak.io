@@ -11,10 +11,11 @@ const EditorInfoContext = createContext({
     writingTime: 0,
     healthLeft: 100,
     secondsLeft: 0,
-    height: 0,
     streak: 0,
     habitStrength: 0,
     completedDays: 0,
+    height: 0,
+    lastPressedKey: "",
   },
   setEditorInfo: (editorInfo) => {},
 })
@@ -33,10 +34,11 @@ export function EditorInfoContextProvider({ children }) {
     writingTime: 0,
     healthLeft: 100,
     secondsLeft: 0,
-    height: 0,
     streak: 0,
     habitStrength: 0,
     completedDays: 0,
+    height: 0,
+    lastPressedKey: "",
   })
   const context = { editorInfo, setEditorInfo }
 

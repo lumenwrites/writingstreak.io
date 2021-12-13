@@ -26,9 +26,9 @@ const CustomDocument = Document.extend({
 
 import { useEditorInfo } from 'context/EditorContext'
 
-export default function TipTap({ content, onUpdate, onCreate }) {
+export default function TipTap({ content, onUpdate, onCreate, keyDown }) {
   const { editorInfo, setEditorInfo } = useEditorInfo()
-  
+
   const editor = useEditor({
     extensions: [
       // CustomDocument,
@@ -75,10 +75,24 @@ export default function TipTap({ content, onUpdate, onCreate }) {
     ],
     content,
     onCreate: ({ editor }) => {
-      onCreate({editor})
+      onCreate({ editor })
     },
     onUpdate: ({ editor }) => {
-      onUpdate({editor})
+      onUpdate({ editor })
+    },
+    // https://prosemirror.net/docs/ref/#view.EditorProps
+    // https://tiptap.dev/api/editor/#editor-props
+    // https://stackoverflow.com/questions/68814136/tiptap-vuejs-how-to-detect-a-keypress
+    editorProps: {
+      attributes: {
+        class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto focus:outline-none',
+      },
+      handleDOMEvents: { 
+        keydown: (view, event) => {
+          keyDown(view, event)
+          return false;
+        }
+      },
     },
   })
 

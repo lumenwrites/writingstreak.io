@@ -33,6 +33,7 @@ export default function Editor({ post }) {
     }
   }
   function onUpdate({ editor }) {
+    // console.log('Update', editor)
     // Save timer. Reset timer as I type, save when I stop for a second.
     clearInterval(saveTimer.current)
     setSaved(false)
@@ -46,9 +47,17 @@ export default function Editor({ post }) {
     setEditorInfo((prev) => ({
       ...prev,
       html: editor.getHTML(),
-      wordCount: editor.state.doc.textContent.split(' ').filter((w) => (w.trim().length ? true : false)).length,
+      // wordCount: editor.state.doc.textContent.split(' ').filter((w) => (w.trim().length ? true : false)).length,
       healthLeft: Math.min(prev.healthLeft + 5, 100),
     }))
+  }
+  function keyDown(view, event) {
+    setEditorInfo((prev) => {
+      if (event.key === " " && prev.lastPressedKey !== " ") {
+        return { ...prev, lastPressedKey: event.key, wordCount: prev.wordCount + 1 }
+      }
+      return { ...prev, lastPressedKey: event.key }
+    })
   }
   return (
     <>
@@ -59,7 +68,7 @@ export default function Editor({ post }) {
             <div className="post-title orange">
               <input placeholder="Title..." value={editorInfo.title} onChange={titleChange} />
             </div>
-            <TipTap content={post ? post.body : ''} onUpdate={onUpdate} onCreate={onCreate} />
+            <TipTap content={post ? post.body : ''} onUpdate={onUpdate} onCreate={onCreate} keyDown={keyDown} />
           </div>
           <TagsInput initialTags={post ? post.tags : []} onChange={tagsChange} />
           <TwitterFooter />
