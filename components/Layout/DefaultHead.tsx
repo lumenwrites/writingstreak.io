@@ -11,7 +11,7 @@ export default function DefaultHead() {
       <meta property="og:title" content={config.title} key="ogtitle" />
       <meta property="og:site_name" content={config.title} key="ogsitename" />
       <meta property="og:description" content={config.description} key="ogdesc" />
-      <meta property="og:image" content={config.previewImage} key="ogimage" />
+      <meta property="og:image" content={config.socialImage} key="ogimage" />
       {/* <meta property="og:url" content={config.currentURL} key="ogurl" /> */}
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" key="twcard" />
@@ -19,7 +19,7 @@ export default function DefaultHead() {
       <meta name="twitter:creator" content={config.twitterCreator} key="twhandle" />
       <meta name="twitter:site" content={config.twitterSite} />
       <meta name="twitter:description" content={config.description} />
-      <meta name="twitter:image" content={config.previewImage} />
+      <meta name="twitter:image" content={config.socialImage} />
     </Head>
   )
 }
