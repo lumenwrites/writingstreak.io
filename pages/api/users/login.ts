@@ -13,8 +13,8 @@ async function login(req, res) {
     const token = jwt.encode({email: user.email}, process.env.JWT_SECRET)
     res.json({ token })
   } catch (error) {
-    console.log(error)
-    res.json({ error })
+    console.log(JSON.stringify(error, null, 2))
+    res.json({ error: "Login error." })
   }
 }
 

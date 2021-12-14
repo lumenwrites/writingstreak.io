@@ -17,6 +17,11 @@ model User {
   email         String @unique
   password String
 
+  // Stripe
+  stripe_customer_id String @default("")
+  // stripe_subscription_id String @default("")
+  // stripe_current_period_end String @default("")
+
   bio String?
   website String?
   twitter String?

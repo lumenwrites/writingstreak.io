@@ -77,6 +77,14 @@
   .post-title + * {
     margin-top: 20px;
   }
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  a.btn {
+    font-weight: normal;
+    text-decoration: none;
+  }
   iframe {
     width: 100%;
   }
@@ -143,7 +151,7 @@ h4,
 h5 {
   position: relative;
   a {
-    color: red!important;
+    color: red !important;
     font-weight: normal;
     text-decoration: none;
     margin-right: 10px;

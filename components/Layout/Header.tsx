@@ -24,10 +24,15 @@ export default function Header({ className }) {
               Write
             </Link>
           )}
-          <a className="btn btn-nav" onClick={() => toggleModal(`login`)}>
-            <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
-            Login
-          </a>
+          {user?.username ? (
+            <MainMenu />
+          ) : (
+            <a className="btn btn-nav" onClick={() => toggleModal(`login`)}>
+              <FontAwesomeIcon icon={['fas', 'sign-in-alt']} />
+              Login
+            </a>
+          )}
+
           {/*  
           <div className="notifications" onClick={() => toggleModal(`login`)}>
             <FontAwesomeIcon icon={['far', 'bell']} />
@@ -41,16 +46,24 @@ export default function Header({ className }) {
   )
 }
 
-function DropdownMenu() {
+function MainMenu() {
+  const { user } = useAuth()
   return (
     <div className="dropdown">
-      <Link href="/" className="avatar">
+      <div className="btn btn-nav menu-handle">
+        <FontAwesomeIcon icon={['fas', 'bars']} />
+      </div>
+      {/* <Link href="/" className="avatar">
         <Image src="/img/avatar.png" width={32} height={32} />
-      </Link>
+      </Link> */}
       <div className="menu left">
-        <Link className="btn item" href={`/`}>
+        <Link className="btn item" href="/user/settings">
           <FontAwesomeIcon icon={['fas', 'cog']} />
           Settings
+        </Link>
+        <Link href={`/@${user.username}`} className="btn item">
+          <FontAwesomeIcon icon={['fas', 'user']} />
+          My Profile
         </Link>
         <Link className="btn item" href={`/`}>
           <FontAwesomeIcon icon={['fas', 'info-circle']} />

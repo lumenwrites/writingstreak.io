@@ -23,37 +23,18 @@
     margin: auto;
     max-width: var(--wrapper-width);
   }
-  .dropdown {
-    .menu-handle {
-      text-align: center;
-      width: 130px;
-      margin-right: 0;
-    }
-    .menu {
-      width: 130px;
-      max-height: 400px;
-      right: 0;
-      left: auto;
-    }
-    svg {
-      margin-right: 5px;
-    }
-    .item {
-      text-align: left;
-    }
-  }
+
   .main-menu {
     .menu-handle {
+      text-align: center;
+      margin-right: 0;
       width: 40px;
-      // TODO: why is the icon slightly off center?
-      // @extend .center-content;
-      // text-align: center;
       svg {
         margin: 0;
       }
     }
     .menu {
-      width: 150px;
+      width: 170px;
       max-height: 400px;
       border-radius: var(--border-radius);
       svg {

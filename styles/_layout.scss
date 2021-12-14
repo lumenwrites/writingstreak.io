@@ -51,37 +51,36 @@ header {
   nav {
     float: right;
     height: 32px;
-    .sorting {
-      .menu,
-      .menu-handle {
-        width: 70px;
-      }
-    }
     .btn-nav {
       display: block;
       float: left;
     }
-    .avatar {
-      float: left;
-      margin-left: 10px;
-      // border: 1px solid var(--border);
-      // border-radius: var(--border-radius);
-      width: 32px;
-      height: 32px;
+    .menu-handle {
+      svg {
+        margin: 0;
+      }
     }
-    .notifications {
-      color: var(--text);
-      font-size: 20px;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      float: left;
-      margin-left: 10px;
-      border: 1px solid var(--border);
-      border-radius: var(--border-radius);
-    }
+    // .avatar {
+    //   float: left;
+    //   margin-left: 10px;
+    //   // border: 1px solid var(--border);
+    //   // border-radius: var(--border-radius);
+    //   width: 32px;
+    //   height: 32px;
+    // }
+    // .notifications {
+    //   color: var(--text);
+    //   font-size: 20px;
+    //   width: 32px;
+    //   height: 32px;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   float: left;
+    //   margin-left: 10px;
+    //   border: 1px solid var(--border);
+    //   border-radius: var(--border-radius);
+    // }
     @media (max-width: 500px) {
       // display: none; // for now just hiding it
       float: left;

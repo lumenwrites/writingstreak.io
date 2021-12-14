@@ -5,7 +5,7 @@
   "twitterSite": "@lumenwrites",
   "socialImage": "https://nexy.io/img/social.png",
   "domain": "https://nexy.io",
-  "devDomain": "http://localhost:3050/",
+  "devDomain": "http://localhost:3080/",
   "contentdir": "/Users/ray/Obsidian/Website/websites/lumenwrites",
   "subscribeCTA": "Subscribe to our weekly newsletter, receive updates on new posts:",
   "subscribeTwitterLink": "https://twitter.com/lumenwrites",

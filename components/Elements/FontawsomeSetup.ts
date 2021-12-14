@@ -94,6 +94,7 @@ library.add(
   faArrowCircleUp, // Upgrade
   faSignInAlt,
   faSignOutAlt,
+  faInfoCircle, // About
   // Post Footer Icons
   faUser,
   faArrowUp,

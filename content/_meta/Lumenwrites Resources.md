@@ -56,6 +56,7 @@ Design
 - [Nicolas Cole](https://mobile.twitter.com/search?q=from%3ANicolascole77%20min_retweets%3A100&src=typed_query&f=top)
 - [David Perell](https://mobile.twitter.com/search?q=from%3Adavid_perell%20min_retweets%3A100&src=typed_query&f=top)
 - [Tiago Forte](https://mobile.twitter.com/search?q=from%3Afortelabs%20min_retweets%3A100&src=typed_query&f=top)
+- [Andy Matuschak](https://mobile.twitter.com/search?q=from%3Aandy_matuschak%20min_retweets%3A100&src=typed_query&f=top)
 Atomic Essays, 10+ retweets:
 https://twitter.com/search?q=(%23ship30for30)%20min_retweets%3A10&src=typed_query&f=image
 ### Startup
@@ -75,6 +76,7 @@ https://twitter.com/search?q=(%23ship30for30)%20min_retweets%3A10&src=typed_quer
 - [RyanHoliday](https://mobile.twitter.com/search?q=from%3ARyanHoliday%20min_retweets%3A100&src=typed_query&f=top)
 - [Nathan Barry]
 https://twitter.com/nathanbarry?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+Sam Parr (the hustle)
 
 https://twitter.com/PatFlynn
 https://twitter.com/ericries

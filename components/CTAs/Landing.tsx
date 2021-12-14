@@ -47,7 +47,8 @@ function SignupCTA() {
   return (
     <div className="centered">
       <div className="btn btn-cta-landing" onClick={() => toggleModal(`login`)}>
-        Try it for Free
+        Get started for Free
+        {/* Try it for free. (First 30 days are Free). */}
       </div>
       {/* <div className="btn btn-login" onClick={() => toggleModal(`login`)}>
         Login

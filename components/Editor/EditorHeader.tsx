@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import { useAuth } from 'context/AuthContext'
+
 import Link from 'components/Elements/Link'
 import Timer from 'components/Stats/Timer'
 import Timeline from 'components/Stats/Timeline'
 import Streak from 'components/Stats/Streak'
-
 
 export default function EditorHeader() {
   return (
@@ -13,31 +14,33 @@ export default function EditorHeader() {
         <Streak />
         <Timeline />
         <Timer />
-        <MainMenu/>
+        <MainMenu />
       </div>
     </div>
   )
 }
 
 function MainMenu() {
+  const { user } = useAuth()
+
   return (
     <div className="dropdown main-menu">
       <button className="btn menu-handle">
         <FontAwesomeIcon icon={['fas', 'bars']} />
       </button>
-      <div className="menu">
-        <Link href={`/@lumen`} className="btn item">
+      <div className="menu left">
+        <Link href={`/@${user.username}`} className="btn item">
           <FontAwesomeIcon icon={['fas', 'user']} />
           My Profile
         </Link>
-        <button className="btn item" onClick={() => {}}>
+        <a className="btn item" href="/api/payments/create-checkout-session">
           <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
-          Upgrade ($15)
-        </button>
-        <button className="btn item" onClick={() => {}}>
+          Upgrade ($20/mo)
+        </a>
+        <Link href="/user/settings" className="btn item">
           <FontAwesomeIcon icon={['fas', 'cog']} />
           Settings
-        </button>
+        </Link>
       </div>
     </div>
   )

@@ -8,6 +8,8 @@ import PlausibleProvider from 'next-plausible'
 // Both modals have to be here, because they're useful in index.tsx as well as paywalled course pages
 // and index.tsx isn't wrapped in layout
 import LoginModal from 'components/Users/LoginModal'
+// import PurchaseModal from 'components/Payments/PurchaseModal'
+import CheckoutModal from 'components/Payments/CheckoutModal'
 import SubmitPostModal from 'components/CTAs/SubmitPostModal'
 import DefaultHead from 'components/Layout/DefaultHead'
 
@@ -22,6 +24,7 @@ function App({ Component, pageProps }) {
       <CombinedContextsProvider>
         <DefaultHead />
         <Component {...pageProps} />
+        <CheckoutModal />
         <LoginModal />
         <SubmitPostModal />
       </CombinedContextsProvider>

@@ -1,61 +1,12 @@
-.purchase-modal {
-  .btn-cta-landing {
-    font-size: 14px;
-  }
-  // Now purchase modal is embedded in post, and In eed to undo post styling.
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  .stripe-card {
-    background: #181d29;
-    outline: 1px solid var(--input-bg); //var(--border); // border adds to height here for some reason, but not for inputs
-    padding: 0 12px;
-    margin-top: 10px;
-    border-radius: var(--border-radius);
-    box-sizing: border-box;
-  }
-  .discount {
-    outline: none;
-    &.success {
-      border: 1px solid green;
-    }
-    &.fail {
-      border: 1px solid red;
-    }
-  }
-  .discount-offers {
-    // font-size: 0.85em;
-    color: var(--text-dim);
-    h3 {
-      color: var(--text-dim);
-    }
-    ul {
-      margin-top: 0;
-    }
-  }
-}
-
-// Purchase CTA
-.post .content-locked {
-  text-align: center;
-  border: 1px solid var(--border);
-  border-radius: var(--border-radius);
-  padding: 40px;
-
-  .btn-cta-landing {
-    // because post's link styles override this.
-    color: white;
-    text-decoration: none;
-  }
-  .btn-login {
+.paywall {
+  @extend .card;
+  padding: 20px 40px;
+  .btn-cta {
     display: block;
-    width: 240px;
-    margin: auto;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #ff6500, #f84200);
+    text-align: center;
+    margin:auto;
     margin-top: 10px;
-    svg {
-      color: white;
-      margin-left: 10px;
-    }
   }
 }

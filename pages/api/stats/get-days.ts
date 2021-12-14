@@ -3,12 +3,14 @@ import prisma from 'prisma/prismaClient'
 
 async function getDays(req, res) {
   try {
+    const { username, numberOfDays } = req.body
+    const author = await prisma.user.findUnique({ where: { username } })
     const days = await prisma.day.findMany({
       where: {
-        authorId: req.user.id,
+        authorId: author.id,
       },
       orderBy: [{ date: 'desc' }],
-      take: 31,
+      take: numberOfDays, //31
     })
     res.json({ days })
   } catch (error) {
@@ -17,5 +19,5 @@ async function getDays(req, res) {
   }
 }
 
-export default handler().get(getDays)
+export default handler().post(getDays)
 
