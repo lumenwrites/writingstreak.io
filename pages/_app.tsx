@@ -12,6 +12,7 @@ import LoginModal from 'components/Users/LoginModal'
 import CheckoutModal from 'components/Payments/CheckoutModal'
 import SubmitPostModal from 'components/CTAs/SubmitPostModal'
 import DefaultHead from 'components/Layout/DefaultHead'
+import ReactTooltip from 'react-tooltip'
 
 import { useEffect } from 'react'
 
@@ -27,6 +28,7 @@ function App({ Component, pageProps }) {
         <CheckoutModal />
         <LoginModal />
         <SubmitPostModal />
+        <ReactTooltip effect="solid" />
       </CombinedContextsProvider>
     </PlausibleProvider>
   )

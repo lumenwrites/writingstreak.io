@@ -7,6 +7,7 @@ import { useAuth } from 'context/AuthContext'
 import { useRouter } from 'next/router'
 import { generateTimeline, largeNumberFormat } from './utils'
 import { capitalize } from 'utils/textUtils'
+import ReactTooltip from 'react-tooltip'
 
 export default function Heatmap() {
   const router = useRouter()
@@ -15,6 +16,7 @@ export default function Heatmap() {
     const { username } = router.query
     const { data } = await axios.post('/api/stats/get-days', { username })
     setDays(data.days)
+    ReactTooltip.rebuild()
   }
   useEffect(() => {
     fetchStats()
@@ -27,7 +29,7 @@ export default function Heatmap() {
     <div className="heatmap">
       <CalendarHeatmap
         values={timeline}
-        endDate={moment().subtract(1, 'days')}
+        endDate={moment().subtract(0, 'days')}
         startDate={moment().subtract(1, 'years')}
         showOutOfRangeDays={false}
         classForValue={valueToClass}
@@ -38,6 +40,7 @@ export default function Heatmap() {
 }
 
 function valueToTooltip(value) {
+  if (!value.date) return null // for out fo range days
   const dateName =
     `${capitalize(value.weekday)} ` +
     `${value.date.slice(-2)}, ` +
@@ -52,16 +55,17 @@ function valueToTooltip(value) {
 }
 
 function valueToClass(value) {
+  if (!value) return null // for out fo range days
   var className = ''
   const { wordCount, targetWordCount } = value
   if (wordCount > targetWordCount) {
     className += 'win '
   }
-  if (wordCount && wordCount < targetWordCount) {
-    console.log('not win')
+  if (wordCount) {
+    className += 'wrote '
   }
   /* Turn 0-1000 into 0-10 for 10 classes */
-  const brightness = wordCount < 1000 ? Math.floor(wordCount / 100) : 10
+  const brightness = wordCount < 2000 ? Math.floor(wordCount / 200) : 10
   className += `brightness-${brightness}`
   return className
 }
