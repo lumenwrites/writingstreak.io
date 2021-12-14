@@ -7,11 +7,11 @@ import Paywall from 'components/Payments/Paywall'
 const EditorNoSSR = dynamic(() => import('../../components/Editor/Editor'), { ssr: false })
 
 export default function CreatePost() {
-  return (
-    <Layout>
-      <Paywall />
-    </Layout>
-  )
+  // return (
+  //   <Layout>
+  //     <Paywall />
+  //   </Layout>
+  // )
   return (
     <EditorInfoContextProvider>
       <EditorNoSSR post={null} />

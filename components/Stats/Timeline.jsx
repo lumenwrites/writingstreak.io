@@ -13,7 +13,7 @@ export default function Timeline() {
 
   async function fetchStats() {
     // On first load, fetch saved days, generate 30 day timeline
-    const { data } = await axios.get('/api/stats/get-days')
+    const { data } = await axios.post('/api/stats/get-days', { numberOfDays: 31 })
     setTimeline(generateTimeline(data.days))
     // console.log('Fetched days', data.days)
     if (!data.days.length) return
