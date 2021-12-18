@@ -10,9 +10,9 @@ export default function Settings({ user }) {
       <Tabs tabs={['Account Settings', 'Writing Settings']}>
         <div className="settings text">
           <h1>Account Settings</h1>
-          <ManageSubscription />
-          <AccountSettings />
-          <ProfileSettings />
+          <ManageSubscription user={ user }/>
+          <AccountSettings user={ user }/>
+          <ProfileSettings user={ user }/>
         </div>
         <div className="settings text">
           <h1>Writing Settings</h1>
@@ -30,33 +30,44 @@ export default function Settings({ user }) {
   )
 }
 
-function AccountSettings() {
+function AccountSettings({ user }) {
+  const [info, setInfo] = useState(user)
+  console.log('user', user)
+  function changeInfo(e) {
+      let { value, name } = e.target;
+      setInfo((prev) => ({...prev, [name]: value }))
+  }
   return (
     <>
       <h4>Account</h4>
-      <input placeholder="Username..." />
-      <input placeholder="Email..." />
+      <input placeholder="Username..." name="username" value={info.username} onChange={changeInfo} />
+      <input placeholder="Email..." name="email" value={info.email} onChange={changeInfo} />
       {/* <input placeholder="Change password..." /> */}
       <button className="btn btn-cta right">Save</button>
       <div className="clearfix" />
     </>
   )
 }
-function ProfileSettings() {
-  const { bio, website } = useAuth()
+function ProfileSettings({ user }) {
+  const [info, setInfo] = useState(user)
+  console.log('user', user)
+  function changeInfo(e) {
+      let { value, name } = e.target;
+      setInfo((prev) => ({...prev, [name]: value }))
+  }
   return (
     <>
       <h4>Your Profile</h4>
       <Link href="/@lumen">https://writingstreak.io/@lumen</Link>
-      <input placeholder="Bio..." value={bio} />
-      <input placeholder="Website..." value={website} />
+      <input placeholder="Bio..." name="bio" value={info.bio} onChange={changeInfo} />
+      <input placeholder="Website..." name="website" value={info.website} onChange={changeInfo} />
       {/* <input placeholder="Twitter..." /> */}
       <button className="btn btn-cta right">Save</button>
       <div className="clearfix" />
     </>
   )
 }
-function ManageSubscription() {
+function ManageSubscription({ user }) {
   return (
     <>
       <h4>Billing</h4>

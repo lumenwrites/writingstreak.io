@@ -15,16 +15,16 @@ model User {
 
   username      String @unique
   email         String @unique
-  password String
+  password      String
 
   // Stripe
-  stripe_customer_id String @default("")
+  stripe_customer_id  String @default("")
   // stripe_subscription_id String @default("")
   // stripe_current_period_end String @default("")
 
-  bio String?
-  website String?
-  twitter String?
+  bio                 String? @default("")
+  website             String? @default("")
+  twitter             String? @default("")
 
   posts Post[] @relation("UserPosts")
   days Day[] @relation("UserDays")
