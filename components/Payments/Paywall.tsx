@@ -8,13 +8,13 @@ export default function Paywall() {
   return (
     <div className="paywall text">
       <h1>Your free trial has expired</h1>
-      <p>Upgrade your subscription to continue using Writing Streak</p>
-      <a className="btn btn-cta" href="/api/payments/create-checkout-session">
+      <p>Upgrade your subscription to continue using Writing Streak:</p>
+      <a className="btn btn-cta-landing" href="/api/payments/create-checkout-session">
         <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
         Upgrade ($20/mo)
       </a>
       <p>
-        (you can still see and edit all of your old posts on your <Link href={`/@${user.username}`}>profile</Link>).
+        (you can still see and edit all your old posts on your <Link href={`/@${user.username}`}>profile</Link>).
       </p>
     </div>
   )

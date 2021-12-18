@@ -104,19 +104,11 @@ function WritingDays() {
 }
 
 import { getUser } from 'prisma/api/users/get-user'
+
 export async function getServerSideProps({ req, res, query }) {
   const user = await getUser(req)
-  if (!user) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/',
-      },
-      props: {},
-    }
-  }
-  if (user) {
-    const { username, email, bio, website } = user
-    return { props: { user: { username, email, bio, website } } }
-  }
+  if (!user) return { redirect: { permanent: false, destination: '/' }, props: {} }
+
+  const { username, email, bio, website } = user
+  return { props: { user: { username, email, bio, website } } }
 }

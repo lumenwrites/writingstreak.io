@@ -14,11 +14,13 @@ export default function Home({ post }) {
   )
 }
 
+import { getUser } from 'prisma/api/users/get-user'
 import { getPost } from 'prisma/api/posts/get-post'
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ req, params }) {
   // const allTags = await getAllTags()
-  // TODO: make sure I'm the post's author, if I'm not - redirect away
   const post = await getPost({ slug: params.postSlug })
+  const user = await getUser(req)
+  if (!user || post.author.username !== user.username) return { redirect: { permanent: false, destination: '/' }, props: {} }
   return { props: { post } }
 }

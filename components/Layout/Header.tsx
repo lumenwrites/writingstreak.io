@@ -20,10 +20,13 @@ export default function Header({ className }) {
         </Link>
         <nav>
           {user?.username && (
-            <Link href={`/post/create`} className="btn btn-nav">
+            <Link href={`/`} className="btn btn-nav">
               Write
             </Link>
           )}
+          <Link href={`/browse`} className="btn btn-nav">
+            Community
+          </Link>
           {user?.username ? (
             <MainMenu />
           ) : (

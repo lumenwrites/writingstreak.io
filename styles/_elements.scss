@@ -67,7 +67,8 @@
   margin-top: 20px;
   width: 240px;
   background: linear-gradient(to bottom, #ff6500, #f84200);
-  background: var(--btn-cta);
+  // background: var(--btn-cta);
+  text-align: center;
   padding: 10px 20px;
   text-decoration: none;
   svg {
