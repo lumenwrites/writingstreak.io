@@ -13,9 +13,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    // for prisma:seed to work
-    // I changed it from this: "module": "esnext" to this: "module": "commonjs"
-    //"module": "esnext",
+    // for prisma:seed to work I changed "module": "esnext", to  "module": "commonjs",
     // https://stackoverflow.com/questions/59162625/syntaxerror-unexpected-token-export-in-nodejs-project-with-typescript-and-web
     "module": "commonjs",
     "moduleResolution": "node",

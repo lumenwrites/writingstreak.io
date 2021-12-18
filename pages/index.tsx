@@ -1,38 +1,24 @@
-import Layout from 'components/Layout/Layout'
-import PostFeed from 'components/Posts/PostFeed'
-import Subnav from 'components/Layout/Subnav'
-import Pagination from 'components/Posts/Pagination'
-import ProfileHeader from 'components/Users/ProfileHeader'
-import TagHeader from 'components/Layout/TagHeader'
-import HomeHeader from 'components/CTAs/HomeHeader'
-import SubscribeBox from 'components/CTAs/SubscribeBox'
-import AdBoxes from 'components/CTAs/AdBoxes'
+import Editor from 'components/Editor/Editor'
+import Landing from 'components/CTAs/Landing'
+import CreatePost from './post/create'
 
-export default function browse({ posts, postCount, username }) {
-  return (
-    <Layout subnav={<Subnav />}>
-      <PostFeed posts={posts} />
-      <Pagination postCount={postCount} />
-      <AdBoxes/>
-      <SubscribeBox />
-      <br />
-    </Layout>
-  )
+export default function Index({ username, copy }) {
+  if (username) {
+    return <Editor post={null} />
+  }
+  return <Landing copy={copy} />
 }
 
-import { getPosts } from 'prisma/api/posts/get-posts'
-import config from 'config.json'
 
-export async function getServerSideProps({ req, query }) {
-  const { username, sort, tag, search } = query
-  const { posts, postCount } = await getPosts({
-    published: true,
-    searchString: search,
-    username: username,
-    tagSlug: tag,
-    sort: sort,
-    skip: config.postsPerPage * (parseInt(query.page?.toString()) - 1 || 0),
-    take: config.postsPerPage,
-  })
-  return { props: { posts, postCount, username } }
+import pages from 'backend/json/out/pages.json'
+import { getUser } from 'prisma/api/users/get-user'
+
+export async function getServerSideProps({ params, req }) {
+  const user = await getUser(req)
+  if (!user) {
+    const copy = pages.find(p => p.slug === 'writing-streak-landing')
+    return { props: { copy } }
+  }
+  return { props: { username: user.username } }
 }
+

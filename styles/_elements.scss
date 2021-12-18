@@ -85,6 +85,15 @@
   }
 }
 
+// .btn-cta {
+//   display: block;
+//   padding: 10px 20px;
+//   background: linear-gradient(to bottom, #ff6500, #f84200);
+//   text-align: center;
+//   margin:auto;
+//   margin-top: 10px;
+// }
+
 .btn-large {
   padding: 4px 16px;
   height: 40px; // for spinner
@@ -117,7 +126,9 @@
   background: var(--post-bg);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     margin: 0;
   }
 }
@@ -480,6 +491,32 @@ svg {
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+}
+
+.tabs {
+  margin-top: 10px;
+  display: flex;
+  background: var(--btn-bg-hover);
+  box-shadow: var(--box-shadow);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  .tab {
+    padding: 10px;
+    color: var(--text-dim);
+    border-left: 1px solid var(--border);
+    width: 100%;
+    &:first-child {
+      border-left: none;
+    }
+    &.active {
+      color: var(--text);
+      background: var(--subnav-bg);
+      font-weight: bold;
     }
   }
 }

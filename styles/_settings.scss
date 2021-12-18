@@ -1,3 +1,56 @@
+.writing-days {
+  --text: #582323;
+  --text-dim: #7c5a49; // rgba(141, 110, 95, 0.8);
+  --text-placeholder: #7c5a49b9;
+  --header-bg: #fff7e8;
+  --tag-bg: hsl(30deg 40% 90%);
+  --post-footer-bg: #f7f5f1;
+  --panel-bg: #f1e9da;
+  --day-bg: #fffaf1;
+  --border: rgba(98, 24, 24, 0.2);
+}
+
 .settings {
-  @extend .card;
+  padding: 20px 40px;
+  background: red;
+  background: var(--post-bg);
+  box-shadow: var(--box-shadow);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  font-size: 14px;
+  h1:first-child {
+    margin: 0;
+  }
+  p {
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .writing-days {
+    margin-top: 10px;
+    float: left;
+    .writing-day {
+      height: 40px;
+      width: 40px;
+      margin-right: 5px;
+      font-size: 14px;
+      float: left;
+      border-radius: var(--border-radius);
+      background: var(--panel-bg);
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+
+      color: var(--text-dim);
+      opacity: 0.75;
+      border: none;
+      &.active {
+        color: var(--text);
+        border: 1px solid var(--border);
+        opacity: 1;
+      }
+    }
+  }
+  .btn {
+    margin-top: 10px;
+  }
 }

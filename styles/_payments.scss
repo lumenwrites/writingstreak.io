@@ -1,12 +1,4 @@
 .paywall {
   @extend .card;
   padding: 20px 40px;
-  .btn-cta {
-    display: block;
-    padding: 10px 20px;
-    background: linear-gradient(to bottom, #ff6500, #f84200);
-    text-align: center;
-    margin:auto;
-    margin-top: 10px;
-  }
 }

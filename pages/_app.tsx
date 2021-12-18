@@ -28,7 +28,7 @@ function App({ Component, pageProps }) {
         <CheckoutModal />
         <LoginModal />
         <SubmitPostModal />
-        <ReactTooltip effect="solid" />
+        {/* <ReactTooltip effect="solid" /> */}
       </CombinedContextsProvider>
     </PlausibleProvider>
   )

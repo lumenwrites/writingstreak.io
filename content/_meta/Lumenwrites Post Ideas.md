@@ -1,3 +1,15 @@
+# Sources
+- Ive got 3 twitter writers worth of of content.
+- Ive got the mega course with 50+ writing subjects for atomic essays.
+- Ive got tiago/perell courses, and ship30 book.
+- There are writing/blogging/copywriting subreddits.
+- Theres everything on IH/HN/LW/SSC/PG/AR related to writing.
+# Process
+>> Now I:
+- Proactively look at my content sources, reword, my own thoughts/angle.
+- Convert books/courses, pick them apart into tweets/threads/essays.
+- Organize my own >> notes, turn them into.
+- Passively consume audiobooks/podcasts/instapaper, share notes/reactions.
 
 # Sources
 Collect and summarize insights from:
