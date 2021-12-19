@@ -20,7 +20,7 @@ export default function PublishButtons() {
           </div>
         </div>
       </div>
-      <div className="right">{editorValues.post ? <UpdatePostButtons /> : <CreatePostButtons />}</div>
+      <div className="right">{editorValues.postSlug ? <UpdatePostButtons /> : <CreatePostButtons />}</div>
     </div>
   )
 }
@@ -59,7 +59,7 @@ function UpdatePostButtons() {
 
   async function updatePost(published) {
     const updatedPost = {
-      slug: editorValues.post.slug,
+      slug: editorValues.postSlug,
       title: editorValues.title,
       body: editorValues.html,
       description: descriptionFromHTML(editorValues.html),
@@ -78,13 +78,13 @@ function UpdatePostButtons() {
   }
 
   async function togglePublished() {
-    await updatePost(!editorValues.post.published)
-    setValue('published', !editorValues.post.published)
+    await updatePost(!editorValues.published)
+    setValue('published', !editorValues.published)
   }
   return (
     <>
       <button className="btn btn-cta" onClick={togglePublished}>
-        {editorValues.post.published ? 'Unpublish' : 'Publish'}
+        {editorValues.published ? 'Unpublish' : 'Publish'}
       </button>
       {editorValues.saved ? (
         <button className="btn btn-cta disabled" disabled>
@@ -92,7 +92,7 @@ function UpdatePostButtons() {
           Saved
         </button>
       ) : (
-        <button className="btn btn-cta" onClick={() => updatePost(editorValues.post.published)} id="save-post">
+        <button className="btn btn-cta" onClick={() => updatePost(editorValues.published)} id="save-post">
           <FontAwesomeIcon icon={['fas', 'save']} />
           Save Post
         </button>
@@ -105,8 +105,8 @@ function DeletePostButtons() {
   const { editorValues, setValue, setValues } = useEditorContext()
   const router = useRouter()
   async function deletePost() {
-    console.log('Deleting Post', editorValues.post.slug)
-    const { data } = await axios.post('/api/posts/delete', { slug: editorValues.post.slug })
+    console.log('Deleting Post', editorValues.postSlug)
+    const { data } = await axios.post('/api/posts/delete', { slug: editorValues.postSlug })
     console.log('Deleted Post', data)
     router.push(`/`)
   }

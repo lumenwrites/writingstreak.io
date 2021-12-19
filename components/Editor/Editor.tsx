@@ -1,3 +1,4 @@
+import moment from 'moment'
 import { useState, useEffect, useRef, useContext, createContext } from 'react'
 
 import EditorHeader from './EditorHeader'
@@ -17,8 +18,11 @@ export function useEditorContext() {
   return useContext(EditorContext)
 }
 
-export default function Editor({ post, user }) {
+export default function Editor({ post, user, days }) {
   const saveTimer = useRef(null)
+  const lastSavedDay = days[0]
+  const doLoadTodaysStatsFromDb = moment().format('YYYY-MM-DD') === lastSavedDay.date
+  // All initial stats are fetched in create.tsx and edit.tsx
   const [editorValues, setValues] = useState({
     title: '',
     html: '',
@@ -26,15 +30,21 @@ export default function Editor({ post, user }) {
     height: 0,
     lastPressedKey: '',
     saved: true,
-    post: post,
+    // So I could save the post in PublishButtons
+    postSlug: post ? post.slug : undefined, 
     published: post ? post.published : false,
     // Streak
     streak: 0,
     habitStrength: 0,
     completedDays: 0,
+    // Timeline
+    // Last 30 days to render into the timeline
+    days: days, 
+    // Writing stats inside of the rightmost day in the timeline update interactively as I type
+    // If I already wrote today and saved the post/stats into the db, I load them in. Otherwise I start at 0.
+    wordCount: doLoadTodaysStatsFromDb ? lastSavedDay.wordCount : 0,
+    writingTime: doLoadTodaysStatsFromDb ? lastSavedDay.writingTime : 0,
     // Timer
-    wordCount: 0,
-    writingTime: 0,
     healthLeft: 100,
     secondsLeft: 0,
     // Settings
@@ -51,15 +61,14 @@ export default function Editor({ post, user }) {
   }
 
   function onCreate({ editor }) {
-    // Once the editor has loaded post's contents and rendered, put its value into state
+    // To edit the post in edit.tsx, load the post into the editor.
+    // In create.tsx post is null, so editor remains blank.
     if (post) {
       setValues((prev) => ({
         ...prev,
         html: editor.getHTML(),
         title: post.title,
         tags: post.tags,
-        // wordCount: editor.state.doc.textContent.split(' ').length,
-        // healthLeft: Math.min(prev.healthLeft + 5, 100),
       }))
     }
   }

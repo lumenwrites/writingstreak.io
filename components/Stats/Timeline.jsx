@@ -5,50 +5,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
 import { generateTimeline, largeNumberFormat } from './utils'
-import { calculateStreak, calculateHabitStrength } from './utils'
+
 
 export default function Timeline() {
   const { editorValues, setValue, setValues } = useEditorContext()
-  const [timeline, setTimeline] = useState([])
-
-  async function fetchStats() {
-    // On first load, fetch saved days, generate 30 day timeline
-    const { data } = await axios.post('/api/stats/get-days', { numberOfDays: 31 })
-    setTimeline(generateTimeline(data.days))
-    // console.log('Fetched days', data.days)
-    if (!data.days.length) return
-    const lastDay = data.days[0]
-    if (moment().format('YYYY-MM-DD') === lastDay.date) {
-      // console.log("Loading today's stats into state", lastDay.date)
-      const { targetWordCount, wordCount, writingTime } = lastDay
-      setValues((prev) => ({
-        ...prev,
-        targetWordCount,
-        wordCount,
-        writingTime,
-      }))
-    }
-
-    const prefs = {
-      writingDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    }
-    const streak = calculateStreak(data.days, prefs)
-    const { habitStrength, completedDays } = calculateHabitStrength(data.days, prefs)
-    setValues((prev) => ({ ...prev, streak, habitStrength, completedDays }))
-
-    return data.days
-  }
+  const [timeline, setTimeline] = useState(
+    generateTimeline(editorValues.days) // fetched in edit.tsx and create.tsx, passed down here through the editor context
+  )
   useEffect(() => {
-    fetchStats()
-  }, [])
-  // Scroll when timeline changes
-  useEffect(() => {
+    // Scroll when timeline changes
     document.getElementById('timeline').scrollLeft = 99999
   }, [timeline, editorValues])
   /* Render currently open doc's stats in place of it's date */
   const timelineWithCurrentDayStats = timeline.map((d) => {
     if (d.date === moment().format('YYYY-MM-DD')) {
-      return { ...d, wordCount: editorValues.wordCount, writingTime: editorValues.writingTime, active: true }
+      return { ...d, wordCount: editorValues.wordCount, writingTime: editorValues.writingTime }
     } else {
       return d
     }

@@ -46,7 +46,7 @@ export function generateTimeline(savedDays, numberOfDays = 30) {
 }
 
 
-export function calculateStreak(days, prefs) {
+export function calculateStreak(days, writingDays) {
   var currentStreak = 0
   const start = moment()
   const end = moment().subtract(days.length, 'days')
@@ -55,7 +55,7 @@ export function calculateStreak(days, prefs) {
     const day = days.find(day => day.date == d.format('YYYY-MM-DD'))
     const wroteToday = day && day.wordCount >= day.targetWordCount
     const isToday = d.format('YYYY-MM-DD') === moment().format('YYYY-MM-DD')
-    const isWritingDay = prefs.writingDays.some(wd => wd === dateToWeekday(d))
+    const isWritingDay = writingDays.some(wd => wd === dateToWeekday(d))
     // console.log(d.format('YYYY-MM-DD'), day, { wroteToday, isToday, currentStreak } )
     if (wroteToday) {
       currentStreak += 1
@@ -68,7 +68,7 @@ export function calculateStreak(days, prefs) {
   return currentStreak
 }
 
-export function calculateHabitStrength(days, prefs) {
+export function calculateHabitStrength(days, writingDays) {
   var completedDays = 0
   const start = moment()
   const end = moment().subtract(30, 'days')
@@ -77,7 +77,7 @@ export function calculateHabitStrength(days, prefs) {
   for (var d = start; start.diff(end, 'days') >= 0; d.subtract(1, 'days')) {
     const day = days.find(day => day.date == d.format('YYYY-MM-DD'))
     const wroteToday = day && day.wordCount > day.targetWordCount
-    const isWritingDay = prefs.writingDays.some(wd => wd === dateToWeekday(d))
+    const isWritingDay = writingDays.some(wd => wd === dateToWeekday(d))
     if (wroteToday) {
       completedDays += 1
     }
