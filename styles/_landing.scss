@@ -9,7 +9,7 @@
   background-position-y: 100%;
   background-size: cover;
   text-align: left;
-  padding: 20px 60px;
+  padding: 40px 60px;
   @media (max-width: 500px) {
     padding: 40px 20px;
   }
@@ -19,6 +19,7 @@
     color: white;
   }
   h1 {
+    margin: 0;
     font-size: 2.35em;
   }
   h2 {

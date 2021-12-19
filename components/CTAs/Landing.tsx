@@ -34,8 +34,8 @@ export default function Landing({ copy }) {
         <meta property="og:title" content={`${config.title}`} key="ogtitle" />
         <meta property="og:description" content={config.description} key="ogdesc" />
         <meta name="twitter:description" content={config.description} />
-        <meta property="og:image" content={`${config.domain}${config.socialImage}`} key="ogimage" />
-        <meta name="twitter:image" content={`${config.domain}${config.socialImage}`} />
+        <meta property="og:image" content={`${config.socialImage}`} key="ogimage" />
+        <meta name="twitter:image" content={`${config.socialImage}`} />
       </Head>
       {/* <Subscribe /> */}
     </Layout>

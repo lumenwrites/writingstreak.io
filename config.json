@@ -1,10 +1,10 @@
 {
   "title": "Writing Streak",
-  "description": "A community of makers. Sharing our knowledge, talking about anything that gratifies our intellectual curiosity.",
+  "description": "A powerful tool will help you to develop a daily writing habit, become prolific, and master the art of writing in a fun and engaging way.",
   "twitterCreator": "@lumenwrites",
   "twitterSite": "@lumenwrites",
-  "socialImage": "https://nexy.io/img/social.png",
-  "domain": "https://nexy.io",
+  "socialImage": "https://writingstreak.vercel.app/img/social.png",
+  "domain": "https://writingstreak.vercel.app",
   "devDomain": "http://localhost:3080/",
   "contentdir": "/Users/ray/Obsidian/Website/websites/lumenwrites",
   "subscribeCTA": "Subscribe to our weekly newsletter, receive updates on our best posts:",
