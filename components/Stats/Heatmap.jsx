@@ -9,22 +9,8 @@ import { generateTimeline, largeNumberFormat } from './utils'
 import { capitalize } from 'utils/textUtils'
 import ReactTooltip from 'react-tooltip'
 
-export default function Heatmap() {
-  const router = useRouter()
-  const [days, setDays] = useState([])
-  async function fetchStats() {
-    const { username } = router.query
-    const { data } = await axios.post('/api/stats/get-days', { username })
-    setDays(data.days)
-    ReactTooltip.rebuild()
-  }
-  useEffect(() => {
-    fetchStats()
-  }, [])
-
-  if (!days?.length) return null
+export default function Heatmap({ days }) {
   const timeline = generateTimeline(days, 366)
-  console.log('timeline', timeline)
   return (
     <div className="heatmap">
       <CalendarHeatmap

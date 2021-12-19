@@ -8,12 +8,12 @@ import SubscribeBox from 'components/CTAs/SubscribeBox'
 import AdBoxes from 'components/CTAs/AdBoxes'
 import Head from 'next/head'
 
-export default function browse({ posts, tagSlug, username }) {
+export default function browse({ posts, profile, days }) {
   return (
     <Layout
       subnav={
         <>
-          <ProfileHeader />
+          <ProfileHeader profile={profile} days={days} />
           <Subnav />
         </>
       }
@@ -49,17 +49,28 @@ export default function browse({ posts, tagSlug, username }) {
 
 import { getPosts } from 'prisma/api/posts/get-posts'
 import { getUser } from 'prisma/api/users/get-user'
+import { getProfile } from 'prisma/api/users/get-profile'
+import { getDays } from 'prisma/api/stats/get-days'
+
 import config from 'config.json'
 
 export async function getServerSideProps({ req, query }) {
-  const { username, sort, tag, search } = query
+  const { sort, tag, search } = query
   const user = await getUser(req)
-  let isProfileAuthor = false
-  if (user && query.username === user.username) isProfileAuthor = true
-  // console.log('username', isProfileAuthor, username, user)
+  const profile = await getProfile(query.username)
 
+  // Redirect to / if the profile not found
+  if (!profile) return { redirect: { permanent: false, destination: '/' }, props: {} }
+
+  // For Profile Header
+  const { bio, website, twitter, username } = profile
+  const days = await getDays(profile, 360)
+
+  // If the logged in user is looking at his own profile, show them drafts as well
+  let isProfileAuthor = false
+  if (user && profile.username === user.username) isProfileAuthor = true
   const { posts, postCount } = await getPosts({
-    published: isProfileAuthor ? undefined : true, 
+    published: isProfileAuthor ? undefined : true,
     searchString: search,
     username: username,
     tagSlug: tag,
@@ -67,5 +78,5 @@ export async function getServerSideProps({ req, query }) {
     skip: config.postsPerPage * (parseInt(query.page?.toString()) - 1 || 0),
     take: config.postsPerPage,
   })
-  return { props: { posts, postCount, username } }
+  return { props: { posts, postCount, days, profile: { bio, website, twitter, username } } }
 }

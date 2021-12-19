@@ -9,13 +9,12 @@ import { generateTimeline, largeNumberFormat } from './utils'
 
 export default function Timeline() {
   const { editorValues, setValue, setValues } = useEditorContext()
-  const [timeline, setTimeline] = useState(
-    generateTimeline(editorValues.days) // fetched in edit.tsx and create.tsx, passed down here through the editor context
-  )
   useEffect(() => {
     // Scroll when timeline changes
     document.getElementById('timeline').scrollLeft = 99999
-  }, [timeline, editorValues])
+  }, [editorValues])
+  // Days are fetched in edit.tsx and create.tsx, passed down here through the editor context
+  const timeline = generateTimeline(editorValues.days) 
   /* Render currently open doc's stats in place of it's date */
   const timelineWithCurrentDayStats = timeline.map((d) => {
     if (d.date === moment().format('YYYY-MM-DD')) {
