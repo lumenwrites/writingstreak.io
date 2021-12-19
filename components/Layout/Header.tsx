@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -35,13 +36,6 @@ export default function Header({ className }) {
               Login
             </a>
           )}
-
-          {/*  
-          <div className="notifications" onClick={() => toggleModal(`login`)}>
-            <FontAwesomeIcon icon={['far', 'bell']} />
-          </div>
-          <DropdownMenu />
-          */}
         </nav>
         <div className="clearfix" />
       </div>
@@ -51,14 +45,15 @@ export default function Header({ className }) {
 
 function MainMenu() {
   const { user } = useAuth()
+  function handleLogout() {
+    Cookies.remove('token', { path: '/'})
+    window.location.href = '/'
+  }
   return (
     <div className="dropdown">
       <div className="btn btn-nav menu-handle">
         <FontAwesomeIcon icon={['fas', 'bars']} />
       </div>
-      {/* <Link href="/" className="avatar">
-        <Image src="/img/avatar.png" width={32} height={32} />
-      </Link> */}
       <div className="menu left">
         <Link className="btn item" href="/user/settings">
           <FontAwesomeIcon icon={['fas', 'cog']} />
@@ -68,14 +63,14 @@ function MainMenu() {
           <FontAwesomeIcon icon={['fas', 'user']} />
           My Profile
         </Link>
-        <Link className="btn item" href={`/`}>
+        {/* <Link className="btn item" href={`/`}>
           <FontAwesomeIcon icon={['fas', 'info-circle']} />
           About
-        </Link>
-        <Link className="btn item" href={`/`}>
+        </Link> */}
+        <button className="btn item" onClick={handleLogout}>
           <FontAwesomeIcon icon={['fas', 'sign-out-alt']} />
           Logout
-        </Link>
+        </button>
       </div>
     </div>
   )

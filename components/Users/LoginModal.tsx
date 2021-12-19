@@ -34,6 +34,7 @@ export default function LoginModal() {
     fetchUser() // refetch user
     setStatus({ state: '', message: '' })
     toggleModal('login')
+    window.location.href = '/post/create'
   }
 
   async function handleLogin(e) {
@@ -47,6 +48,7 @@ export default function LoginModal() {
     fetchUser() // refetch user
     setStatus({ state: '', message: '' })
     toggleModal('login')
+    window.location.href = '/post/create'
   }
 
   return (

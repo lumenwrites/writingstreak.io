@@ -16,10 +16,12 @@ export function AuthContextProvider({ children }) {
   async function fetchUser() {
     const res = await axios.get('/api/users/me')
     console.log('[AuthContext] Fetched user', res.data.user)
-    const { username } = res.data.user
-    setUser({ username })
+    if (res.data.user) {
+      const { username } = res.data.user
+      setUser({ username })
+    }
   }
-  
+
   // Fetch the user when the app loads
   useEffect(() => {
     fetchUser()

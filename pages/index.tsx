@@ -29,5 +29,4 @@ export async function getServerSideProps({ params, req }) {
   if (user) {
     return { redirect: { permanent: false, destination: '/post/create' }, props: {} }
   }
-  // return { props: { username: user.username } }
 }
