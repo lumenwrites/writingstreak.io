@@ -22,9 +22,15 @@ model User {
   // stripe_subscription_id String @default("")
   // stripe_current_period_end String @default("")
 
+  // Profile Settings
   bio                 String? @default("")
   website             String? @default("")
   twitter             String? @default("")
+  // Writing Settings
+  writingDays         String[] // @default(["Mon", "Tue", "Wed", "Thu", "Fri"])
+  targetWordcount     Int @default(250)
+  sprintPace          String @default("Medium")
+  sprintDuration      Int @default(20)
 
   posts Post[] @relation("UserPosts")
   days Day[] @relation("UserDays")

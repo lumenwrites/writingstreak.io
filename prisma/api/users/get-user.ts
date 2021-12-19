@@ -7,6 +7,7 @@ import jwt from 'jwt-simple'
 export async function getUser(req) {
   if (!req.cookies.token) return false
   var decodedToken = jwt.decode(req.cookies.token, process.env.JWT_SECRET)
+  // console.log(decodedToken)
   const user = await prisma.user.findUnique({ where: { email: decodedToken.email } })
   if (user) return user
   return false

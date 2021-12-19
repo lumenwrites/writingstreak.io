@@ -21,6 +21,6 @@ export async function getServerSideProps({ req, params }) {
   // const allTags = await getAllTags()
   const post = await getPost({ slug: params.postSlug })
   const user = await getUser(req)
-  if (!user || post.author.username !== user.username) return { redirect: { permanent: false, destination: '/' }, props: {} }
+  if (!user || !post || post.author.username !== user.username) return { redirect: { permanent: false, destination: '/' }, props: {} }
   return { props: { post } }
 }

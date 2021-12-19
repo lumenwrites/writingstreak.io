@@ -18,12 +18,21 @@
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   font-size: 14px;
+  text-align: left;
   h1:first-child {
     margin: 0;
   }
   p {
     font-size: 14px;
     color: var(--text-dim);
+  }
+  .dropdown {
+    .menu-handle {
+      margin-right: 10px;
+    }
+    .menu-handle, .menu {
+      width: 80px;
+    }
   }
   .writing-days {
     margin-top: 10px;

@@ -5,7 +5,11 @@ export async function getPosts({ username, published, tagSlug, searchString, sor
   console.log(`Get posts. Sorting: ${sort}`)
   // Filter posts by user (to show them on their profile)
   let author
-  if (username) author = await prisma.user.findUnique({ where: { username } })
+  if (username) {
+    author = await prisma.user.findUnique({ where: { username } })
+    // If someone is at the profile page (@lumen12), but the link is wrong, I return null
+    if (!author) return { posts: [], postCount: 0}
+  }
   // Filter by tag
   const tagFilter = tagSlug ? {
     tags: { some: { slug: tagSlug } }

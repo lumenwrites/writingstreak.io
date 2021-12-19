@@ -1,73 +1,98 @@
-import { useState } from 'react'
+import axios from 'axios'
+import slugify from 'slugify'
+import { useState, useEffect, createContext, useContext } from 'react'
 import Link from 'components/Elements/Link'
 import Layout from 'components/Layout/Layout'
 import Tabs from 'components/Elements/Tabs'
-import { useAuth } from 'context/AuthContext'
+
+const SettingsContext = createContext({
+  settings: {} as any,
+  updateSetting: (name, value) => {},
+  updateInput: (e) => {},
+  saveSettings: () => {},
+})
 
 export default function Settings({ user }) {
+  const [settings, setSettings] = useState({
+    id: user.id,
+    username: user.username,
+    email: user.email,
+    bio: user.bio,
+    website: user.website,
+    // Writing settings
+    writingDays: user.writingDays,
+    targetWordcount: user.targetWordcount,
+    sprintPace: user.sprintPace,
+    sprintDuration: user.sprintDuration,
+  })
+  function updateSetting(name, value) {
+    setSettings((prev) => ({ ...prev, [name]: value }))
+  }
+  function updateInput(e) {
+    let { value, name } = e.target
+    setSettings((prev) => ({ ...prev, [name]: value }))
+  }
+  async function saveSettings() {
+    // console.log('Saving settings to server', settings)
+    const { data } = await axios.post('/api/users/update-settings', settings)
+    console.log('Saved settings to server', data)
+    // If I changed username, I want to refetch it.
+    window.location.reload()
+  }
   return (
     <Layout>
-      <Tabs tabs={['Account Settings', 'Writing Settings']}>
-        <div className="settings text">
-          <h1>Account Settings</h1>
-          <ManageSubscription user={ user }/>
-          <AccountSettings user={ user }/>
-          <ProfileSettings user={ user }/>
-        </div>
-        <div className="settings text">
-          <h1>Writing Settings</h1>
-          <h4>Writing Sprint</h4>
-          <p>Sprint pace and duration.</p>
-          <h4>Daily word count goal</h4>
-          <p>How many words per day you intend to write.</p>
-          <input type="number" value={250} onChange={() => {}} />
-          <WritingDays />
-          <h4>Email Reminders</h4>
-          <p>Send email reminders when it's time to write:</p>
-        </div>
-      </Tabs>
+      <SettingsContext.Provider value={{ settings, updateSetting, saveSettings, updateInput }}>
+        <Tabs tabs={['Account Settings', 'Writing Settings']} open={1}>
+          <div className="settings text">
+            <h1>Account Settings</h1>
+            <ManageSubscription />
+            {/* <AccountSettings /> */}
+            <ProfileSettings />
+          </div>
+          <div className="settings text">
+            <WritingSettings />
+          </div>
+        </Tabs>
+      </SettingsContext.Provider>
     </Layout>
   )
 }
 
-function AccountSettings({ user }) {
-  const [info, setInfo] = useState(user)
-  console.log('user', user)
-  function changeInfo(e) {
-      let { value, name } = e.target;
-      setInfo((prev) => ({...prev, [name]: value }))
-  }
-  return (
-    <>
-      <h4>Account</h4>
-      <input placeholder="Username..." name="username" value={info.username} onChange={changeInfo} />
-      <input placeholder="Email..." name="email" value={info.email} onChange={changeInfo} />
-      {/* <input placeholder="Change password..." /> */}
-      <button className="btn btn-cta right">Save</button>
-      <div className="clearfix" />
-    </>
-  )
-}
-function ProfileSettings({ user }) {
-  const [info, setInfo] = useState(user)
-  console.log('user', user)
-  function changeInfo(e) {
-      let { value, name } = e.target;
-      setInfo((prev) => ({...prev, [name]: value }))
+// function AccountSettings() {
+//   const { settings, updateInput, saveSettings } = useContext(SettingsContext)
+//   return (
+//     <>
+//       <h4>Account</h4>
+//       {/* <input placeholder="Email..." value={settings.email} name="email" onChange={updateInput} /> */}
+//       {/* <input placeholder="Change password..." /> */}
+//       <button className="btn btn-cta right" onClick={saveSettings}>
+//         Save
+//       </button>
+//       <div className="clearfix" />
+//     </>
+//   )
+// }
+function ProfileSettings() {
+  const { settings, updateSetting, updateInput, saveSettings } = useContext(SettingsContext)
+  function updateUsername(e) {
+    updateSetting('username', slugify(e.target.value, { lower: true, strict: true }))
   }
   return (
     <>
       <h4>Your Profile</h4>
-      <Link href="/@lumen">https://writingstreak.io/@lumen</Link>
-      <input placeholder="Bio..." name="bio" value={info.bio} onChange={changeInfo} />
-      <input placeholder="Website..." name="website" value={info.website} onChange={changeInfo} />
+      <Link href={`/@${settings.username}`}>https://writingstreak.io/@{settings.username}</Link>
+      <input placeholder="Username..." value={settings.username} name="username" onChange={updateUsername} />
+      <input placeholder="Bio..." name="bio" value={settings.bio} onChange={updateInput} />
+      <input placeholder="Website..." name="website" value={settings.website} onChange={updateInput} />
       {/* <input placeholder="Twitter..." /> */}
-      <button className="btn btn-cta right">Save</button>
+      <button className="btn btn-cta right" onClick={saveSettings}>
+        Save
+      </button>
       <div className="clearfix" />
     </>
   )
 }
-function ManageSubscription({ user }) {
+function ManageSubscription() {
   return (
     <>
       <h4>Billing</h4>
@@ -79,16 +104,79 @@ function ManageSubscription({ user }) {
     </>
   )
 }
-function WritingDays() {
-  const [writingDays, setWritingDays] = useState(['Mon', 'Tue', 'Wed', 'Thu', 'Fri'])
-  const names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
+function WritingSettings() {
+  const { settings, updateSetting, updateInput, saveSettings } = useContext(SettingsContext)
+  return (
+    <div>
+      <h1>Writing Settings</h1>
+      <h4>Writing Sprint</h4>
+      <p>Sprint pace and duration.</p>
+      <div className="dropdown sprint-pace">
+        <div className="btn menu-handle">{settings.sprintPace}</div>
+        <div className="menu">
+          <button className="btn item" onClick={() => updateSetting('sprintPace', 'None')}>
+            None
+          </button>
+          <button className="btn item" onClick={() => updateSetting('sprintPace', 'Slow')}>
+            Slow
+          </button>
+          <button className="btn item" onClick={() => updateSetting('sprintPace', 'Medium')}>
+            Medium
+          </button>
+          <button className="btn item" onClick={() => updateSetting('sprintPace', 'Fast')}>
+            Fast
+          </button>
+        </div>
+      </div>
+      <div className="dropdown sprint-duration">
+        <div className="btn menu-handle">{settings.sprintDuration} min</div>
+        <div className="menu">
+          {[5, 10, 15, 20, 30].map((duration) => (
+            <button key={duration} className="btn item" onClick={() => updateSetting('sprintDuration', duration)}>
+              {duration} min
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="clearfix" />
+      <h4>Daily wordcount goal</h4>
+      <p>How many words per day you intend to write.</p>
+      <input
+        type="number"
+        placeholder="Wordcount..."
+        name="targetWordcount"
+        value={settings.targetWordcount}
+        onChange={(e) => updateSetting('targetWordcount', parseInt(e.target.value))}
+      />
+      <WritingDays />
+      <button className="btn btn-cta right" onClick={saveSettings}>
+        Save
+      </button>
+      <div className="clearfix" />
+      {/* <h4>Email Reminders</h4>
+      <p>Send email reminders when it's time to write:</p> */}
+    </div>
+  )
+}
+
+function WritingDays() {
+  const { settings, updateSetting, updateInput, saveSettings } = useContext(SettingsContext)
+  const [writingDays, setWritingDays] = useState(settings.writingDays)
+  const names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  useEffect(() => {
+       updateSetting('writingDays', writingDays)
+  }, [writingDays])
   function toggleDay(name) {
-    if (writingDays.includes(name)) {
-      setWritingDays((prev) => prev.filter((d) => d !== name))
-    } else {
-      setWritingDays((prev) => [...prev, name])
-    }
+    setWritingDays((prev) => {
+      let updatedDays
+      if (prev.includes(name)) {
+        updatedDays = prev.filter((d) => d !== name)
+      } else {
+        updatedDays = [...prev, name]
+      }
+      return updatedDays
+    })
   }
 
   return (
@@ -119,7 +207,8 @@ import { getUser } from 'prisma/api/users/get-user'
 export async function getServerSideProps({ req, res, query }) {
   const user = await getUser(req)
   if (!user) return { redirect: { permanent: false, destination: '/' }, props: {} }
-
-  const { username, email, bio, website } = user
-  return { props: { user: { username, email, bio, website } } }
+  const { id, username, email, bio, website, writingDays, targetWordcount, sprintPace, sprintDuration } = user
+  return {
+    props: { user: { id, username, email, bio, website, writingDays, targetWordcount, sprintPace, sprintDuration } },
+  }
 }
