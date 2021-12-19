@@ -4,7 +4,7 @@ import CreatePost from './post/create'
 import Paywall from 'components/Payments/Paywall'
 
 export default function Index({ username, copy }) {
-  if (false) {
+  if (false) { // if subscription has expired - return the paywall
     return (
       <Layout>
         <Paywall />
@@ -22,14 +22,12 @@ import { getUser } from 'prisma/api/users/get-user'
 
 export async function getServerSideProps({ params, req }) {
   const user = await getUser(req)
-  if (!user || true) {
+  if (!user) {
     const copy = pages.find((p) => p.slug === 'writing-streak-landing')
-    console.log('Copy', copy)
     return { props: { copy } }
   }
   if (user) {
     return { redirect: { permanent: false, destination: '/post/create' }, props: {} }
   }
-  // if logged in and authed - redirect to /post/create
-  return { props: { username: user.username } }
+  // return { props: { username: user.username } }
 }
