@@ -19,6 +19,7 @@ export default function Settings({ user }) {
     email: user.email,
     bio: user.bio,
     website: user.website,
+    twitter: user.twitter,
     // Writing settings
     writingDays: user.writingDays,
     targetWordcount: user.targetWordcount,
@@ -84,6 +85,7 @@ function ProfileSettings() {
       <input placeholder="Username..." value={settings.username} name="username" onChange={updateUsername} />
       <input placeholder="Bio..." name="bio" value={settings.bio} onChange={updateInput} />
       <input placeholder="Website..." name="website" value={settings.website} onChange={updateInput} />
+      <input placeholder="Twitter..." name="twitter" value={settings.twitter} onChange={updateInput} />
       {/* <input placeholder="Twitter..." /> */}
       <button className="btn btn-cta right" onClick={saveSettings}>
         Save
@@ -207,8 +209,8 @@ import { getUser } from 'prisma/api/users/get-user'
 export async function getServerSideProps({ req, res, query }) {
   const user = await getUser(req)
   if (!user) return { redirect: { permanent: false, destination: '/' }, props: {} }
-  const { id, username, email, bio, website, writingDays, targetWordcount, sprintPace, sprintDuration } = user
+  const { id, username, email, bio, website, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } = user
   return {
-    props: { user: { id, username, email, bio, website, writingDays, targetWordcount, sprintPace, sprintDuration } },
+    props: { user: { id, username, email, bio, website, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } },
   }
 }

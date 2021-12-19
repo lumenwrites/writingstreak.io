@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import domtoimage from 'retina-dom-to-image'
 import { saveAs } from 'file-saver'
 import { useEditorContext } from 'components/Editor/Editor'
+import Link from 'components/Elements/Link'
 
 export default function PublishButtons() {
   const { editorValues, setValue } = useEditorContext()
@@ -83,9 +84,21 @@ function UpdatePostButtons() {
   }
   return (
     <>
-      <button className="btn btn-cta" onClick={togglePublished}>
-        {editorValues.published ? 'Unpublish' : 'Publish'}
-      </button>
+      {editorValues.published ? (
+        <>
+          <button className="btn btn-cta" onClick={togglePublished}>
+            Unpublish
+          </button>
+          <a className="btn btn-cta" href={`/post/${editorValues.postSlug}`} target="_blank" rel="noopener noreferrer">
+            View
+          </a>
+        </>
+      ) : (
+        <button className="btn btn-cta" onClick={togglePublished}>
+          Publish
+        </button>
+      )}
+
       {editorValues.saved ? (
         <button className="btn btn-cta disabled" disabled>
           <FontAwesomeIcon icon={['fas', 'save']} />
