@@ -35,7 +35,7 @@ function valueToTooltip(value) {
   const tip = `${dateName} <br/>` + `Words: ${value.wordCount || 0} <br/>` + `Minutes: ${value.writingTime} <br/>`
   return {
     'data-html': true,
-    'data-place': 'right',
+    'data-place': 'left',
     'data-tip': tip,
   }
 }

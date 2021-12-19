@@ -93,7 +93,7 @@ export default function TagsInput({ initialTags, onChange, customTags = false, p
               onChange={handleChange}
               onKeyDown={handleKeyDown}
             />
-            <div className="menu">{renderAllTags()}</div>
+            <div className="menu up">{renderAllTags()}</div>
           </div>
         </div>
       )}

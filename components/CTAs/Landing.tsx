@@ -23,7 +23,7 @@ export default function Landing({ copy }) {
           <SignupCTA />
         </div>
 
-        <div className="copy text" dangerouslySetInnerHTML={{ __html: copy.html }} />
+        <div className="copy text" dangerouslySetInnerHTML={{ __html: copy.body }} />
 
         <footer>
           <SignupCTA />

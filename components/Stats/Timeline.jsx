@@ -6,7 +6,6 @@ import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
 import { generateTimeline, largeNumberFormat } from './utils'
 
-
 export default function Timeline() {
   const { editorValues, setValue, setValues } = useEditorContext()
   useEffect(() => {
@@ -14,7 +13,7 @@ export default function Timeline() {
     document.getElementById('timeline').scrollLeft = 99999
   }, [editorValues])
   // Days are fetched in edit.tsx and create.tsx, passed down here through the editor context
-  const timeline = generateTimeline(editorValues.days) 
+  const timeline = generateTimeline(editorValues.days)
   /* Render currently open doc's stats in place of it's date */
   const timelineWithCurrentDayStats = timeline.map((d) => {
     if (d.date === moment().format('YYYY-MM-DD')) {
@@ -41,7 +40,15 @@ function Day({ day }) {
   const progress = day.wordCount / 250
   const isBlank = day.wordCount === 0 && day.writingTime === 0
   return (
-    <div className="day">
+    <div
+      className="day"
+      data-multiline={true}
+      data-place="left"
+      data-tip={
+        `You wrote ${day.wordCount} words (${Math.floor(progress*100)}% of your daily goal),<br/>` +
+        `and completed ${day.writingTime} minutes of focused writing. `
+      }
+    >
       <div className="day-name-date">
         <RoundProgressBar progress={progress * 100}>
           <div className="name-date">

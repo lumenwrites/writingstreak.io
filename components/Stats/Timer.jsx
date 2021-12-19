@@ -11,7 +11,7 @@ export default function Timer() {
   const timer = useRef(null)
 
   function startTimer() {
-    setValue('secondsLeft', editorValues.sprintDuration)
+    setValue('secondsLeft', editorValues.sprintDuration * 60)
     setValue('healthLeft', 100)
     /* Start countdown */
     timer.current = setInterval(() => {
@@ -21,7 +21,10 @@ export default function Timer() {
         if (updatedSecondsLeft < 0.1) {
           console.log('Sprint complete')
           stopTimer()
-          setValues((prev) => ({ ...prev, writingTime: prev.writingTime + Math.floor(editorValues.sprintDuration / 60) }))
+          setValues((prev) => ({
+            ...prev,
+            writingTime: prev.writingTime + Math.floor(editorValues.sprintDuration / 60),
+          }))
         }
         if (updatedHealthLeft < 0.1) {
           console.log('Sprint lost')
@@ -46,7 +49,15 @@ export default function Timer() {
   return (
     <>
       <HealthBar />
-      <div className="timer">
+      <div
+        className="timer"
+        data-place="left"
+        data-multiline={true}
+        data-tip={
+          `Write without interruptions for ${editorValues.sprintDuration} minutes (until the time runs out). <br/>` +
+          `You can edit the duration in settings.`
+        }
+      >
         <RoundProgressBar progress={progress * 100}>
           {editorValues.secondsLeft > 0 ? (
             <div className="time">
@@ -76,7 +87,15 @@ function HealthBar() {
     return null //<div className="healthbar-placeholder" />
   }
   return (
-    <div className="healthbar">
+    <div
+      className="healthbar"
+      data-place="left"
+      data-multiline={true}
+      data-tip={
+        `Remaining health. Increases as you type, decreases when you stop. <br/>` +
+        `Change speed or turn it off in settings.`
+      }
+    >
       <div className="progress" style={{ height: `${fill}%` }}>
         <FontAwesomeIcon icon={['fas', 'heart']} />
       </div>

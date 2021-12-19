@@ -24,6 +24,9 @@ async function main() {
       username: seedUser.username,
       email: seedUser.email,
       password: await hash(seedUser.password, 10),
+      bio: seedUser.bio || "",
+      website: seedUser.website || "",
+      twitter: seedUser.twitter || "",
     }
     const createdUser = await prisma.user.create({ data: user })
     userIds.push(createdUser.id)
@@ -52,6 +55,7 @@ async function main() {
         create: {
           id: tag.slug,
           name: tag.name,
+          // slugify(tag.name, { lower: true, strict: true }),
           slug: tag.slug,
         },
       })

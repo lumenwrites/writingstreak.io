@@ -17,6 +17,6 @@ export async function getServerSideProps({ req, params }) {
     return { redirect: { permanent: false, destination: '/' }, props: {} }
   }
   const { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } = user
-  const days = await getDays(user, 31)
-  return { props: { user: { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration, days } } }
+  const days = await getDays(user, 41)
+  return { props: { user: { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration }, days } }
 }

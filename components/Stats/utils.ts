@@ -47,6 +47,7 @@ export function generateTimeline(savedDays, numberOfDays = 30) {
 
 
 export function calculateStreak(days, writingDays) {
+  console.log('Calculating streak')
   var currentStreak = 0
   const start = moment()
   const end = moment().subtract(days.length, 'days')
@@ -61,6 +62,7 @@ export function calculateStreak(days, writingDays) {
       currentStreak += 1
     } else {
       if (isWritingDay && !isToday) break // Missed a day, streak is over
+      return currentStreak // For some reason break doesn't work, have to use return
       // If it's not a writing day, it's fine to not write.
       // I don't increment the streak but I don't break it either.
     }
@@ -86,6 +88,7 @@ export function calculateHabitStrength(days, writingDays) {
     }
   }
   const habitStrength = (completedDays / totalWritingDaysThisMonth)
+  console.log('completedDays', completedDays)
   return { completedDays, habitStrength }
 }
 
