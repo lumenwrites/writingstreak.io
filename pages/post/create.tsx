@@ -1,15 +1,19 @@
 import dynamic from 'next/dynamic'
-import Layout from 'components/Layout/Layout'
-import { EditorInfoContextProvider } from 'context/EditorContext'
 
-// import TipTap from 'components/Editor/TipTap'
 // https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
 const EditorNoSSR = dynamic(() => import('../../components/Editor/Editor'), { ssr: false })
 
-export default function CreatePost() {
-  return (
-    <EditorInfoContextProvider>
-      <EditorNoSSR post={null} />
-    </EditorInfoContextProvider>
-  )
+export default function EditPost({ user }) {
+  return <EditorNoSSR post={null} user={user} />
+}
+
+import { getUser } from 'prisma/api/users/get-user'
+
+export async function getServerSideProps({ req, params }) {
+  const user = await getUser(req)
+  if (!user) {
+    return { redirect: { permanent: false, destination: '/' }, props: {} }
+  }
+  const { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } = user
+  return { props: { user: { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } } }
 }

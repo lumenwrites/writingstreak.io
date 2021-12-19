@@ -24,11 +24,7 @@ const CustomDocument = Document.extend({
   content: 'heading block*',
 })
 
-import { useEditorInfo } from 'context/EditorContext'
-
 export default function TipTap({ content, onUpdate, onCreate, keyDown }) {
-  const { editorInfo, setEditorInfo } = useEditorInfo()
-
   const editor = useEditor({
     extensions: [
       // CustomDocument,

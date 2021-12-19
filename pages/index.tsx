@@ -11,9 +11,9 @@ export default function Index({ username, copy }) {
       </Layout>
     )
   }
-  if (username) {
-    return <CreatePost />
-  }
+  // if (username) {
+  //   return <CreatePost />
+  // }
   return <Landing copy={copy} />
 }
 
@@ -26,5 +26,6 @@ export async function getServerSideProps({ params, req }) {
     const copy = pages.find((p) => p.slug === 'writing-streak-landing')
     return { props: { copy } }
   }
+  // if logged in and authed - redirect to /post/create
   return { props: { username: user.username } }
 }

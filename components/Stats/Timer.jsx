@@ -1,30 +1,27 @@
 import { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
-import { useEditorInfo } from 'context/EditorContext'
+import { useEditorContext } from 'components/Editor/Editor'
+
 // Prefs
-const { sprintDuration, sprintPace } = { sprintDuration: 60, sprintPace: 'Medium' }
 const paces = { None: 0, Slow: 0.15, Medium: 0.7, Fast: 1.2 }
-const pace = paces[sprintPace]
 
 export default function Timer() {
-  const { editorInfo, setEditorInfo } = useEditorInfo()
-  // const [secondsLeft, setSecondsLeft] = useState(0)
-  // const [healthLeft, setHealthLeft] = useState(100)
+  const { editorValues, setValue, setValues } = useEditorContext()
   const timer = useRef(null)
 
   function startTimer() {
-    setEditorInfo((prev) => ({ ...prev, secondsLeft: sprintDuration }))
-    setEditorInfo((prev) => ({ ...prev, healthLeft: 100 }))
+    setValue('secondsLeft', editorValues.sprintDuration)
+    setValue('healthLeft', 100)
     /* Start countdown */
     timer.current = setInterval(() => {
-      setEditorInfo((prev) => {
+      setValues((prev) => {
         const updatedSecondsLeft = prev.secondsLeft - 0.1
-        const updatedHealthLeft = prev.healthLeft - pace
+        const updatedHealthLeft = prev.healthLeft - paces[editorValues.sprintPace]
         if (updatedSecondsLeft < 0.1) {
           console.log('Sprint complete')
           stopTimer()
-          setEditorInfo((prev) => ({ ...prev, writingTime: prev.writingTime + Math.floor(sprintDuration / 60) }))
+          setValues((prev) => ({ ...prev, writingTime: prev.writingTime + Math.floor(editorValues.sprintDuration / 60) }))
         }
         if (updatedHealthLeft < 0.1) {
           console.log('Sprint lost')
@@ -37,21 +34,21 @@ export default function Timer() {
 
   function stopTimer() {
     clearInterval(timer.current)
-    setEditorInfo((prev) => ({ ...prev, secondsLeft: 0, healthLeft: 100 }))
+    setValues((prev) => ({ ...prev, secondsLeft: 0, healthLeft: 100 }))
   }
 
-  const minutes = Math.floor(editorInfo.secondsLeft / 60)
+  const minutes = Math.floor(editorValues.secondsLeft / 60)
     .toString()
     .padStart(2, '0')
-  const seconds = (Math.floor(editorInfo.secondsLeft) - minutes * 60).toString().padStart(2, '0')
+  const seconds = (Math.floor(editorValues.secondsLeft) - minutes * 60).toString().padStart(2, '0')
   let progress = 1
-  if (editorInfo.secondsLeft) progress = editorInfo.secondsLeft / sprintDuration
+  if (editorValues.secondsLeft) progress = editorValues.secondsLeft / editorValues.sprintDuration
   return (
     <>
-      <HealthBar progress={editorInfo.healthLeft} />
+      <HealthBar />
       <div className="timer">
         <RoundProgressBar progress={progress * 100}>
-          {editorInfo.secondsLeft > 0 ? (
+          {editorValues.secondsLeft > 0 ? (
             <div className="time">
               <div className="minutes-seconds">
                 {minutes}:{seconds}
@@ -71,10 +68,11 @@ export default function Timer() {
   )
 }
 
-function HealthBar({ progress }) {
-  let fill = Math.floor(progress)
+function HealthBar() {
+  const { editorValues, setValue, setValues } = useEditorContext()
+  let fill = Math.floor(editorValues.healthLeft)
   if (fill === 0) fill = 100
-  if (sprintPace === 'None') {
+  if (editorValues.sprintPace === 'None') {
     return null //<div className="healthbar-placeholder" />
   }
   return (

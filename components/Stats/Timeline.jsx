@@ -3,12 +3,12 @@ import moment from 'moment'
 import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
-import { useEditorInfo } from 'context/EditorContext'
+import { useEditorContext } from 'components/Editor/Editor'
 import { generateTimeline, largeNumberFormat } from './utils'
 import { calculateStreak, calculateHabitStrength } from './utils'
 
 export default function Timeline() {
-  const { editorInfo, setEditorInfo } = useEditorInfo()
+  const { editorValues, setValue, setValues } = useEditorContext()
   const [timeline, setTimeline] = useState([])
 
   async function fetchStats() {
@@ -21,7 +21,7 @@ export default function Timeline() {
     if (moment().format('YYYY-MM-DD') === lastDay.date) {
       // console.log("Loading today's stats into state", lastDay.date)
       const { targetWordCount, wordCount, writingTime } = lastDay
-      setEditorInfo((prev) => ({
+      setValues((prev) => ({
         ...prev,
         targetWordCount,
         wordCount,
@@ -34,7 +34,7 @@ export default function Timeline() {
     }
     const streak = calculateStreak(data.days, prefs)
     const { habitStrength, completedDays } = calculateHabitStrength(data.days, prefs)
-    setEditorInfo((prev) => ({ ...prev, streak, habitStrength, completedDays }))
+    setValues((prev) => ({ ...prev, streak, habitStrength, completedDays }))
 
     return data.days
   }
@@ -44,11 +44,11 @@ export default function Timeline() {
   // Scroll when timeline changes
   useEffect(() => {
     document.getElementById('timeline').scrollLeft = 99999
-  }, [timeline, editorInfo])
+  }, [timeline, editorValues])
   /* Render currently open doc's stats in place of it's date */
   const timelineWithCurrentDayStats = timeline.map((d) => {
     if (d.date === moment().format('YYYY-MM-DD')) {
-      return { ...d, wordCount: editorInfo.wordCount, writingTime: editorInfo.writingTime, active: true }
+      return { ...d, wordCount: editorValues.wordCount, writingTime: editorValues.writingTime, active: true }
     } else {
       return d
     }

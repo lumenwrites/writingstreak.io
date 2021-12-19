@@ -42,7 +42,7 @@ export default function Settings({ user }) {
   return (
     <Layout>
       <SettingsContext.Provider value={{ settings, updateSetting, saveSettings, updateInput }}>
-        <Tabs tabs={['Account Settings', 'Writing Settings']} open={1}>
+        <Tabs tabs={['Account Settings', 'Writing Settings']}>
           <div className="settings text">
             <h1>Account Settings</h1>
             <ManageSubscription />
@@ -141,7 +141,7 @@ function WritingSettings() {
       </div>
       <div className="clearfix" />
       <h4>Daily wordcount goal</h4>
-      <p>How many words per day you intend to write.</p>
+      <p>The number of words per day you intend to write.</p>
       <input
         type="number"
         placeholder="Wordcount..."

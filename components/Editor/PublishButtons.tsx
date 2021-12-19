@@ -3,9 +3,10 @@ import { useRouter } from 'next/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import domtoimage from 'retina-dom-to-image'
 import { saveAs } from 'file-saver'
-import { useEditorInfo } from 'context/EditorContext'
+import { useEditorContext } from 'components/Editor/Editor'
 
-export default function PublishButtons({ post, saved }) {
+export default function PublishButtons() {
+  const { editorValues, setValue } = useEditorContext()
   return (
     <div className="publish-buttons">
       <div className="left">
@@ -15,33 +16,35 @@ export default function PublishButtons({ post, saved }) {
           </button>
           <div className="menu up">
             <CaptureImages />
-            <DeletePostButtons post={post} />
+            <DeletePostButtons />
           </div>
         </div>
       </div>
-      <div className="right">
-        {post ? (
-          <UpdatePostButtons post={post} saved={saved} />
-        ) : (
-          <CreatePostButtons />
-        )}
-      </div>
+      <div className="right">{editorValues.post ? <UpdatePostButtons /> : <CreatePostButtons />}</div>
     </div>
   )
 }
 
 function CreatePostButtons() {
-  const { editorInfo, setEditorInfo } = useEditorInfo()
+  const { editorValues, setValue } = useEditorContext()
   const router = useRouter()
+
   async function createPost() {
     const post = {
-      title: editorInfo.title,
-      body: editorInfo.html,
-      description: descriptionFromHTML(editorInfo.html),
-      tags: editorInfo.tags,
+      title: editorValues.title,
+      body: editorValues.html,
+      description: descriptionFromHTML(editorValues.html),
+      tags: editorValues.tags,
     }
     const { data } = await axios.post('/api/posts/create', post)
     console.log('Created Post', data)
+    const day = {
+      targetWordCount: editorValues.targetWordCount,
+      wordCount: editorValues.wordCount,
+      writingTime: editorValues.writingTime,
+    }
+    const { data: savedDay } = await axios.post('/api/stats/save-day', day)
+    console.log('Saved stats', savedDay)
     router.push(`/post/${data.post.slug}/edit`)
   }
   return (
@@ -51,45 +54,45 @@ function CreatePostButtons() {
   )
 }
 
-function UpdatePostButtons({ post, saved }) {
-  const { editorInfo, setEditorInfo } = useEditorInfo()
+function UpdatePostButtons() {
+  const { editorValues, setValue, setValues } = useEditorContext()
+
   async function updatePost(published) {
     const updatedPost = {
-      slug: post.slug,
-      title: editorInfo.title,
-      body: editorInfo.html,
-      description: descriptionFromHTML(editorInfo.html),
-      tags: editorInfo.tags,
+      slug: editorValues.post.slug,
+      title: editorValues.title,
+      body: editorValues.html,
+      description: descriptionFromHTML(editorValues.html),
+      tags: editorValues.tags,
       published,
     }
     const { data: savedPost } = await axios.post('/api/posts/update', updatedPost)
     console.log('Updated Post', savedPost)
     const day = {
-      targetWordCount: editorInfo.targetWordCount,
-      wordCount: editorInfo.wordCount,
-      writingTime: editorInfo.writingTime,
+      targetWordCount: editorValues.targetWordCount,
+      wordCount: editorValues.wordCount,
+      writingTime: editorValues.writingTime,
     }
     const { data: savedDay } = await axios.post('/api/stats/save-day', day)
     console.log('Saved stats', savedDay)
   }
+
   async function togglePublished() {
-    // setEditorInfo((prev) => { })
-    console.log('unpublish', editorInfo)
-    await updatePost(!post.published)
-    window.location.reload()
+    await updatePost(!editorValues.post.published)
+    setValue('published', !editorValues.post.published)
   }
   return (
     <>
       <button className="btn btn-cta" onClick={togglePublished}>
-        {post.published ? 'Unpublish' : 'Publish'}
+        {editorValues.post.published ? 'Unpublish' : 'Publish'}
       </button>
-      {saved ? (
+      {editorValues.saved ? (
         <button className="btn btn-cta disabled" disabled>
           <FontAwesomeIcon icon={['fas', 'save']} />
           Saved
         </button>
       ) : (
-        <button className="btn btn-cta" onClick={() => updatePost(post.published)} id="save-post">
+        <button className="btn btn-cta" onClick={() => updatePost(editorValues.post.published)} id="save-post">
           <FontAwesomeIcon icon={['fas', 'save']} />
           Save Post
         </button>
@@ -98,11 +101,12 @@ function UpdatePostButtons({ post, saved }) {
   )
 }
 
-function DeletePostButtons({ post }) {
+function DeletePostButtons() {
+  const { editorValues, setValue, setValues } = useEditorContext()
   const router = useRouter()
   async function deletePost() {
-    console.log('Deleting Post', post.slug)
-    const { data } = await axios.post('/api/posts/delete', { slug: post.slug })
+    console.log('Deleting Post', editorValues.post.slug)
+    const { data } = await axios.post('/api/posts/delete', { slug: editorValues.post.slug })
     console.log('Deleted Post', data)
     router.push(`/`)
   }
@@ -114,26 +118,8 @@ function DeletePostButtons({ post }) {
   )
 }
 
-// function Stats({ editor }) {
-//   const wordCount = editor.state.doc.textContent.split(' ').length
-//   const height = document.getElementById('twitter-image').clientHeight + 20 // +20 because on rendering theres extra padding
-//   const imageSizeLeft = Math.floor((height / 1160) * 100)
-//   return (
-//     <>
-//       <div className="btn">
-//         <FontAwesomeIcon icon={['fas', 'pen-square']} />
-//         {wordCount}
-//       </div>
-//       <div className="btn">
-//         <FontAwesomeIcon icon={['fas', 'camera']} />
-//         {imageSizeLeft}%
-//       </div>
-//     </>
-//   )
-// }
-
 function CaptureImages() {
-  const { editorInfo, setEditorInfo } = useEditorInfo()
+  const { editorValues, setValue, setValues } = useEditorContext()
 
   async function captureTwitterImage() {
     const positionImage = document.getElementById('position-image')
@@ -141,7 +127,7 @@ function CaptureImages() {
     positionImage.classList.add('capturing')
     const image = await domtoimage.toJpeg(twitterImage, { quality: 0.95 })
     positionImage.classList.remove('capturing')
-    saveAs(image, `${editorInfo.title}.jpg`)
+    saveAs(image, `${editorValues.title}.jpg`)
   }
   async function captureSocialImage() {
     const positionImage = document.getElementById('position-image')
@@ -149,7 +135,7 @@ function CaptureImages() {
     positionImage.classList.add('capturing-cropped')
     const image = await domtoimage.toJpeg(croppedImage, { quality: 0.95 })
     positionImage.classList.remove('capturing-cropped')
-    saveAs(image, `${editorInfo.title} Social.jpg`)
+    saveAs(image, `${editorValues.title} Social.jpg`)
   }
   return (
     <>
