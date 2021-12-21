@@ -18,8 +18,12 @@ model User {
   password      String
 
   // Stripe
-  stripe_customer_id  String @default("")
-  // stripe_subscription_id String @default("")
+  // Saved by subscription-success.tsx when the user is redirected from checkout to thankyou page
+  // Used to be able to open the customer portal in create-customer-portal-session
+  stripeSessionId  String @default("")
+  // In the same file, session id is used to fetch the customer id
+  stripeCustomerId  String @default("")
+  stripeSubscriptionId String @default("")
   // stripe_current_period_end String @default("")
 
   // Profile Settings

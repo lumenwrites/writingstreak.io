@@ -1,4 +1,5 @@
 import handler from 'backend/handler'
+import prisma from 'prisma/prismaClient'
 import config from 'config.json'
 
 const dev = process.env.NODE_ENV === 'development'
@@ -8,17 +9,13 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET)
 
 async function CreateCheckoutSession(req, res) {
   try {
-    // For demonstration purposes, we're using the Checkout session to retrieve the customer ID.
-    // Typically this is stored alongside the authenticated user in your database.
-    // Checkout returns session id:
-    const session_id = "cs_test_a19tuJ3G0hcqH8LOKziDWTEJOj29pvdVbxZFeVD6NwurpgvpErw1IDllU7"
-    const checkoutSession = await stripe.checkout.sessions.retrieve(session_id)
-    console.log('customer', checkoutSession.customer)
+    // https://stripe.com/docs/billing/quickstart
+    // stripeCustomerId is saved in subscription-success after the user completes checkout and returns to the thank you page
+    // Now I can use this customerId to let them edit their subscription
     const portalSession = await stripe.billingPortal.sessions.create({
-      customer: checkoutSession.customer,
-      return_url: `${domain}/`, //settings
+      customer: req.user.stripeCustomerId,
+      return_url: `${domain}/user/settings`,
     })
-
     res.redirect(303, portalSession.url)
   } catch (error) {
     console.log(error)

@@ -8,6 +8,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET)
 
 async function CreateCheckoutSession(req, res) {
   try {
+    // https://stripe.com/docs/billing/quickstart
     const session = await stripe.checkout.sessions.create({
       billing_address_collection: 'auto',
       line_items: [
@@ -18,8 +19,8 @@ async function CreateCheckoutSession(req, res) {
       ],
       mode: 'subscription',
       customer_email: req.user.email,
-      success_url: `${domain}?success=true&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${domain}?canceled=true`,
+      success_url: `${domain}/payments/thankyou?success=true&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${domain}/payments/cancelled?canceled=true`,
     });
   
     res.redirect(303, session.url);
