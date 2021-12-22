@@ -20,10 +20,9 @@ async function Success(req, res) {
         stripeSubscriptionId: checkoutSession.subscription,
       },
     })
-    const { subscriptionStatus, stripeCustomerId, stripeSubscriptionId, stripeSessionId } = updatedUser
+    const { subscriptionStatus, stripeCustomerId, stripeSubscriptionId } = updatedUser
     console.log('Completed checkout, returned to thankyou page, successfully stored data about the stripe subscription', stripeCustomerId)
-
-    res.json({ subscriptionStatus, stripeCustomerId, stripeSubscriptionId, stripeSessionId })
+    res.json({ subscriptionStatus, stripeCustomerId, stripeSubscriptionId })
   } catch (error) {
     console.log(error, JSON.stringify(error, null, 2))
     res.json({ error: "Error." })
