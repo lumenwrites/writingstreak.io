@@ -19,7 +19,7 @@ async function CreateCheckoutSession(req, res) {
       ],
       mode: 'subscription',
       customer_email: req.user.email,
-      success_url: `${domain}/payments/thankyou?success=true&session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${domain}/api/payments/subscription-success?success=true&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${domain}/payments/cancelled?canceled=true`,
     });
   

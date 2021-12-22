@@ -15,7 +15,9 @@
     "copyContent": "rm -rf ./content && mkdir ./content && cp -R ~/Obsidian/Main/websites/writingstreak/ ./content",
     "processContent:prod": "NODE_ENV=production node --experimental-json-modules ./backend/json/processContent.mjs",
     "processContent:dev": "NODE_ENV=development nodemon --experimental-json-modules --watch /Users/ray/Obsidian/Main/websites/writingstreak/ -e mjs,md ./backend/json/processContent.mjs",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "stripe:login": "stripe login",
+    "stripe:forwardWebhooks": "stripe listen --forward-to localhost:3080/api/payments/webhooks"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

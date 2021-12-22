@@ -19,8 +19,8 @@ model User {
 
   // Stripe
   subscriptionStatus      SubscriptionStatus @default(FREE)
-  stripeCustomerId        String @default("")
-  stripeSubscriptionId    String @default("")
+  stripeCustomerId        String? @unique // unique so that webhooks could find user by stripe customer id
+  stripeSubscriptionId    String?  //@default("")
 
   // Profile Settings
   bio                 String? @default("")

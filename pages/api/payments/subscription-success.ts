@@ -7,7 +7,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET)
 
 async function Success(req, res) {
   try {
-    const { session_id } = req.body
+    const { success, session_id } = req.query
     // Use the session_id returned after the checkout process to fetch stripe customer id and subscription id
     const checkoutSession = await stripe.checkout.sessions.retrieve(session_id)
     // Retreive subscription info: https://stripe.com/docs/api/subscriptions/retrieve?lang=node
@@ -21,13 +21,14 @@ async function Success(req, res) {
       },
     })
     const { subscriptionStatus, stripeCustomerId, stripeSubscriptionId } = updatedUser
-    console.log('Completed checkout, returned to thankyou page, successfully stored data about the stripe subscription', stripeCustomerId)
-    res.json({ subscriptionStatus, stripeCustomerId, stripeSubscriptionId })
+    console.log('[subscription-success] Completed checkout, redirected here, stored stripe data', stripeCustomerId)
+    // res.json({ subscriptionStatus, stripeCustomerId, stripeSubscriptionId })
+    res.redirect(303, '/payments/thankyou');
   } catch (error) {
     console.log(error, JSON.stringify(error, null, 2))
     res.json({ error: "Error." })
   }
 }
 
-export default handler().post(Success)
+export default handler().get(Success)
 

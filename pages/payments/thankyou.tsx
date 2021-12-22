@@ -1,19 +1,7 @@
-import axios from 'axios'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Link from 'components/Elements/Link'
 import Layout from 'components/Layout/Layout'
 
 export default function ThankYou() {
-  const router = useRouter()
-  async function saveSessionId(session_id) {
-    const { data } = await axios.post('/api/payments/subscription-success', { session_id })
-    console.log('Saved session id', data)
-  }
-  useEffect(() => {
-    const { success, session_id } = router.query
-    if (session_id) saveSessionId(session_id)
-  }, [router])
   return (
     <Layout>
       <div className="post text thankyou">
