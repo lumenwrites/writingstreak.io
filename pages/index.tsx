@@ -13,7 +13,7 @@ export async function getServerSideProps({ params, req }) {
   const user = await getUser(req)
   if (!user) {
     // If logged out - display landing page
-    const copy = pages.find((p) => p.slug === 'writing-streak-landing')
+    const copy = pages.find((p) => p.slug === 'landing')
     return { props: { copy } }
   }
   if (user.subscriptionStatus === 'FREE' && user.trialExpired) {

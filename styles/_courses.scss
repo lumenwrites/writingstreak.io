@@ -1,0 +1,175 @@
+.course-layout {
+  --wrapper-width: 1000px;
+  --sidebar-bg: white;
+}
+.course-layout {
+  height: calc(100% - 48px - 2px); //minus header height minus orange line
+  max-width: var(--wrapper-width);
+  margin: auto;
+  display: flex;
+  &.has-subnav {
+    height: calc(100% - 54px - 32px);
+  }
+  .sidebar {
+    // for flexbox
+    width: 300px;
+    min-width: 300px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    z-index: 7; // above dark-bg, below header. Also above other content to have box-shadow working
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    @media (max-width: 800px) {
+      display: none;
+      &.open {
+        display: block;
+        position: fixed;
+        height: calc(100% - 48px);
+        width: 300px;
+      }
+    }
+  }
+  .content {
+    flex: auto;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: overlay;
+  }
+}
+
+.course-chapter {
+  background: var(--post-bg);
+  box-shadow: var(--box-shadow);
+  padding: 60px 20px;
+  min-height: 100%;
+  // Prev-next
+  position: relative;
+  padding-bottom: calc(20px + 46px + 20px); // padding, height of prev-next, margin above prev-next
+  h1,
+  h2,
+  h3 {
+    text-align: left;
+  }
+  .prev-next {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+
+    margin-top: 5px;
+    .prev,
+    .next {
+      padding: 12px;
+      background: var(--btn-bg);
+      text-decoration: none;
+      &:hover {
+        background: var(--btn-bg-hover);
+      }
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border);
+      font-weight: normal;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: calc(50% - 2px);
+      line-height: 20px;
+      svg {
+        height: 20px;
+      }
+    }
+    .prev {
+      float: left;
+      text-align: right;
+      svg {
+        float: left;
+        margin-right: 5px;
+      }
+    }
+    .next {
+      float: right;
+      text-align: left;
+      svg {
+        float: right;
+        margin-left: 5px;
+      }
+    }
+    .blank {
+      flex: 0 0 50%;
+    }
+  }
+}
+.chapters {
+  .section {
+    .section-title {
+      margin-top: 20px;
+      border-bottom: 1px solid var(--border-dim);
+      padding: 8px 20px;
+      color: var(--text-subheading);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .chapter {
+      display: block;
+      border-bottom: 1px solid var(--border-dim);
+      padding: 8px 0px 8px 20px; // indentation on the right
+      color: var(--text-dim);
+      &.active {
+        font-weight: bold;
+        border-left: 2px solid var(--orange);
+        color: var(--text-heading); //var(--text-link);
+        background: var(--active-bg);
+      }
+      position: relative;
+      .preview,
+      .draft {
+        position: absolute;
+        right: 10px;
+        top: 4px;
+        font-size: 0.8em;
+        height: 28px;
+        line-height: 28px;
+        background: #ff6600;
+        color: white;
+        background: #caf5c9;
+        color: #0b825d;
+        padding: 0 8px;
+        border-radius: var(--border-radius);
+        font-weight: normal;
+      }
+      .draft {
+        background: var(--panel-bg);
+        color: var(--text-dim);
+      }
+    }
+  }
+}
+.page {
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
+.content-locked {
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 40px;
+
+  .btn-cta-landing {
+    // because post's link styles override this.
+    color: white;
+    text-decoration: none;
+  }
+  .btn-login {
+    display: block;
+    width: 240px;
+    margin: auto;
+    margin-top: 10px;
+    svg {
+      color: white;
+      margin-left: 10px;
+    }
+  }
+}

@@ -89,10 +89,10 @@ function UpdatePostButtons() {
     <>
       {editorValues.published ? (
         <>
-          <button className="btn btn-cta" onClick={togglePublished}>
+          <button className="btn" onClick={togglePublished}>
             Unpublish
           </button>
-          <a className="btn btn-cta" href={`/post/${editorValues.postSlug}`} target="_blank" rel="noopener noreferrer">
+          <a className="btn" href={`/post/${editorValues.postSlug}`} target="_blank" rel="noopener noreferrer">
             View
           </a>
         </>
