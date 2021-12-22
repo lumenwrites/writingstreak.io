@@ -1,4 +1,4 @@
-import nextConnect from "next-connect"
+import moment from 'moment'
 import prisma from 'prisma/prismaClient'
 import jwt from 'jwt-simple'
 
@@ -8,7 +8,13 @@ export async function getUser(req) {
   if (!req.cookies.token) return false
   var decodedToken = jwt.decode(req.cookies.token, process.env.JWT_SECRET)
   // console.log(decodedToken)
-  const user = await prisma.user.findUnique({ where: { email: decodedToken.email } })
-  if (user) return user
-  return false
+  let user = await prisma.user.findUnique({ where: { email: decodedToken.email } })
+  if (!user) return false
+  const { subscriptionStatus, createdAt } = user
+  const trialStart = moment(createdAt)
+  const now = moment()
+  const duration = now.diff(trialStart, 'days', true)
+  const trialExpired = duration > 30
+  const userWithTrialStatus = {...user, trialExpired}
+  return userWithTrialStatus
 }

@@ -13,8 +13,10 @@ import { getDays } from 'prisma/api/stats/get-days'
 
 export async function getServerSideProps({ req, params }) {
   const user = await getUser(req)
-  if (!user) {
-    return { redirect: { permanent: false, destination: '/' }, props: {} }
+  if (!user) return { redirect: { permanent: false, destination: '/' }, props: {} }
+  if (user.subscriptionStatus === 'FREE' && user.trialExpired) {
+    // If trial expired - redirect to paywall
+    return { redirect: { permanent: false, destination: '/payments/trial-expired' }, props: {} }
   }
   const { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } = user
   const days = await getDays(user, 41)

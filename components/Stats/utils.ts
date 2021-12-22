@@ -47,7 +47,7 @@ export function generateTimeline(savedDays, numberOfDays = 30) {
 
 
 export function calculateStreak(days, writingDays) {
-  console.log('Calculating streak')
+  // console.log('Calculating streak')
   var currentStreak = 0
   const start = moment()
   const end = moment().subtract(days.length, 'days')
@@ -88,7 +88,7 @@ export function calculateHabitStrength(days, writingDays) {
     }
   }
   const habitStrength = (completedDays / totalWritingDaysThisMonth)
-  console.log('completedDays', completedDays)
+  // console.log('completedDays', completedDays)
   return { completedDays, habitStrength }
 }
 

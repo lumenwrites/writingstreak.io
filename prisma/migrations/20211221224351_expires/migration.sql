@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN     "subscriptionExpires" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

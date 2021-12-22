@@ -46,7 +46,7 @@ export default function Header({ className }) {
 function MainMenu() {
   const { user } = useAuth()
   function handleLogout() {
-    Cookies.remove('token', { path: '/'})
+    Cookies.remove('token', { path: '/' })
     window.location.href = '/'
   }
   return (
@@ -55,13 +55,13 @@ function MainMenu() {
         <FontAwesomeIcon icon={['fas', 'bars']} />
       </div>
       <div className="menu left">
-        <Link className="btn item" href="/user/settings">
-          <FontAwesomeIcon icon={['fas', 'cog']} />
-          Settings
-        </Link>
         <Link href={`/@${user.username}`} className="btn item">
           <FontAwesomeIcon icon={['fas', 'user']} />
           My Profile
+        </Link>
+        <Link className="btn item" href="/user/settings">
+          <FontAwesomeIcon icon={['fas', 'cog']} />
+          Settings
         </Link>
         {/* <Link className="btn item" href={`/`}>
           <FontAwesomeIcon icon={['fas', 'info-circle']} />

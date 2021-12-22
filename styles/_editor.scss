@@ -75,16 +75,6 @@
   // float: right;
   .btn {
     float: left;
-    color: var(--text);
-    background: var(--btn-bg);
-    border: 1px solid var(--border);
-    svg {
-      color: white;
-      color: var(--text);
-    }
-    &:hover {
-      background: var(--btn-bg-hover);
-    }
   }
   .right {
     .btn {

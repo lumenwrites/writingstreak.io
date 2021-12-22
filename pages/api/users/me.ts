@@ -5,9 +5,9 @@ import handler from "backend/handler"
 async function getUser(req, res) {
   try {
     if (!req.user) return res.json({ data: "Not logged in." })
-    const { username, email, bio, website } = req.user
+    const { username, subscriptionStatus, createdAt } = req.user
     res.json({
-      user: { username, email, bio, website }
+      user: { username, subscriptionStatus, createdAt }
     })
   } catch (error) {
     console.log(error)

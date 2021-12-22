@@ -1,5 +1,6 @@
 import axios from 'axios'
 import slugify from 'slugify'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, createContext, useContext } from 'react'
 import Link from 'components/Elements/Link'
 import Layout from 'components/Layout/Layout'
@@ -15,6 +16,7 @@ const SettingsContext = createContext({
 export default function Settings({ user }) {
   const [settings, setSettings] = useState({
     id: user.id,
+    subscriptionStatus: user.subscriptionStatus,
     username: user.username,
     email: user.email,
     bio: user.bio,
@@ -95,13 +97,21 @@ function ProfileSettings() {
   )
 }
 function ManageSubscription() {
+  const { settings } = useContext(SettingsContext)
   return (
     <>
       <h4>Billing</h4>
       <p>Upgrade your account, cancel, pause, or renew subscription, update payment method.</p>
-      <a className="btn btn-cta right" href="/api/payments/create-customer-portal-session">
-        Manage my Subscription
-      </a>
+      {settings.subscriptionStatus === 'FREE' || settings.subscriptionStatus === 'LIFETIME_FREE' ? (
+        <a className="btn btn-cta right" href="/api/payments/create-checkout-session">
+          <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
+          Upgrade my Subscription ($20/mo)
+        </a>
+      ) : (
+        <a className="btn btn-cta right" href="/api/payments/create-customer-portal-session">
+          Manage my Subscription
+        </a>
+      )}
       <div className="clearfix" />
     </>
   )
@@ -167,7 +177,7 @@ function WritingDays() {
   const [writingDays, setWritingDays] = useState(settings.writingDays)
   const names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   useEffect(() => {
-       updateSetting('writingDays', writingDays)
+    updateSetting('writingDays', writingDays)
   }, [writingDays])
   function toggleDay(name) {
     setWritingDays((prev) => {
@@ -209,8 +219,34 @@ import { getUser } from 'prisma/api/users/get-user'
 export async function getServerSideProps({ req, res, query }) {
   const user = await getUser(req)
   if (!user) return { redirect: { permanent: false, destination: '/' }, props: {} }
-  const { id, username, email, bio, website, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } = user
+  const {
+    id,
+    subscriptionStatus,
+    username,
+    email,
+    bio,
+    website,
+    twitter,
+    writingDays,
+    targetWordcount,
+    sprintPace,
+    sprintDuration,
+  } = user
   return {
-    props: { user: { id, username, email, bio, website, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } },
+    props: {
+      user: {
+        id,
+        subscriptionStatus,
+        username,
+        email,
+        bio,
+        website,
+        twitter,
+        writingDays,
+        targetWordcount,
+        sprintPace,
+        sprintDuration,
+      },
+    },
   }
 }

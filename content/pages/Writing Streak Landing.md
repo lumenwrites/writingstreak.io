@@ -69,32 +69,7 @@ Now it's time to start writing - create an account, and begin your writing strea
 
 You can use this tool for free for the first month - that will be enough to write for 30 days and establish your writing habit. If you end up enjoying our app and community and want to continue - you can subscribe to the premium version for $20/mo.
 
----
-
-### Discounts
-I am offering significant discounts to people who regularly post high quality articles in our community, give others great feedback that helps them to get better, or share this project with their own audience to help me to promote this app. Send me an email if you're interested.
-
-Get a 50% discount if:
-- You publish 10 high quality articles about writing, and share them on social media.
-- Your posts and comments gain 500 upvotes in total.
-- You have an audience of more than 5000 people and you share with them an honest review of this project.
-- You're a teacher and you want your students to use this app for your course - I can offer discounts for multiple student accounts.
-
-Also if you want to become an affiliate and make some money by helping me to promote this project - let me know.
-
 ### Contact, questions, and feedback
 If you have any questions or feedback - send me an email to **lumenwrites@gmail.com**. 
 
 This project is still in active development. If you notice any issues - let me know about them, it will really help me to fix them quickly. If you can think of a feature that would make this tool more useful for you and others - it's likely that I'll be able to add it to the app. Don't hesitate to contact me!
-
-
-<-- 
-viral incentives and quality content incentives.
-10 most active users of the month (leaderboard) get the next month for free.
-Get to the top 10 in our leaderboard? Get the app for free. Get 1000 karma - get a half price discount. Share it on social media to your community - same thing.
-figure our how to quantify what I mean by "quality posts" or "great feedback".
-If you post 10 high quality articles about writing, you get 50% discount.
-If you post x and do y - you get a free lifetime account.
-If you have an audience of more than 5000 people and share with them - an honest review of this project - you get a free lifetime account.
-I can also offer free lifetime accounts to people who are exceptionally helpful to this project, if you have good ideas - let me know.
--->

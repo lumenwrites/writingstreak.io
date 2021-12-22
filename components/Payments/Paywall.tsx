@@ -14,7 +14,7 @@ export default function Paywall() {
         Upgrade ($20/mo)
       </a>
       <p>
-        (you can still see and edit all your old posts on your <Link href={`/@${user.username}`}>profile</Link>).
+        (you can still see and edit all your posts on your <Link href={`/@${user.username}`}>profile</Link>).
       </p>
     </div>
   )

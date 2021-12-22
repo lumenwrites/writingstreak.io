@@ -16,15 +16,12 @@ async function signUp(req, res) {
   try {
     const { username, email, password } = req.body
     const hashedPassword = await bcrypt.hash(password, 10)
-    // const { stripe_customer_id, stripe_subscription_id, stripe_current_period_end } = await setUpStripe(email)
     const user = await prisma.user.create({
       data: {
         username,
         email,
         password: hashedPassword,
-        // stripe_customer_id,
-        // stripe_subscription_id,
-        // stripe_current_period_end
+        writingDays: ["Mon", "Tue", "Wed", "Thu", "Fri"] // prisma doesn't allow you to set the default arrays, so I do it here
       },
     })
     const token = jwt.encode({ email: user.email }, process.env.JWT_SECRET)
@@ -43,21 +40,26 @@ async function signUp(req, res) {
   }
 }
 
-async function setUpStripe(email) {
-  // Create a new stripe customer
-  const customer = await stripe.customers.create({ email })
-  // Create subscription https://stripe.com/docs/billing/subscriptions/build-subscription?ui=elements#create-subscription
-  const subscription = await stripe.subscriptions.create({
-    customer: customer.id,
-    items: [{ price: process.env.PRICE_ID }],
-    payment_behavior: 'default_incomplete',
-    expand: ['latest_invoice.payment_intent'], // ???
-  })
-  return {
-    stripe_customer_id: customer.id,
-    stripe_subscription_id: subscription.id,
-    stripe_current_period_end: subscription.current_period_end
-  }
-}
+// Set trial to expire 31 days from now
+// var subscriptionExpires = new Date();
+// subscriptionExpires.setDate(subscriptionExpires.getDate() + 31);
 
-export default handler().post(signUp)
+// const { stripe_customer_id, stripe_subscription_id, stripe_current_period_end } = await setUpStripe(email)
+// async function setUpStripe(email) {
+//   // Create a new stripe customer
+//   const customer = await stripe.customers.create({ email })
+//   // Create subscription https://stripe.com/docs/billing/subscriptions/build-subscription?ui=elements#create-subscription
+//   const subscription = await stripe.subscriptions.create({
+//     customer: customer.id,
+//     items: [{ price: process.env.PRICE_ID }],
+//     payment_behavior: 'default_incomplete',
+//     expand: ['latest_invoice.payment_intent'], // ???
+//   })
+//   return {
+//     stripe_customer_id: customer.id,
+//     stripe_subscription_id: subscription.id,
+//     stripe_current_period_end: subscription.current_period_end
+//   }
+// }
+
+// export default handler().post(signUp)

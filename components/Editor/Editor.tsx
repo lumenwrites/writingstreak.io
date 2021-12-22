@@ -31,7 +31,7 @@ export default function Editor({ post, user, days }) {
     lastPressedKey: '',
     saved: true,
     // So I could save the post in PublishButtons
-    postSlug: post ? post.slug : undefined, 
+    postSlug: post ? post.slug : undefined,
     published: post ? post.published : false,
     // Streak
     streak: 0,
@@ -39,7 +39,7 @@ export default function Editor({ post, user, days }) {
     completedDays: 0,
     // Timeline
     // Last 30 days to render into the timeline
-    days: days, 
+    days: days,
     // Writing stats inside of the rightmost day in the timeline update interactively as I type
     // If I already wrote today and saved the post/stats into the db, I load them in. Otherwise I start at 0.
     wordCount: doLoadTodaysStatsFromDb ? lastSavedDay.wordCount : 0,
@@ -73,15 +73,7 @@ export default function Editor({ post, user, days }) {
     }
   }
   function onUpdate({ editor }) {
-    // Save timer. Reset timer as I type, save when I stop for a second.
-    clearInterval(saveTimer.current)
-    setValue('saved', false)
-    saveTimer.current = setInterval(() => {
-      document.getElementById('save-post')?.click()
-      setValue('saved', true)
-      clearInterval(saveTimer.current)
-    }, 2000)
-
+    startSaveTimer()
     // Update info and stats
     setValues((prev) => ({
       ...prev,
@@ -97,16 +89,36 @@ export default function Editor({ post, user, days }) {
       return { ...prev, lastPressedKey: event.key }
     })
   }
+  function startSaveTimer() {
+    // Save timer. Reset timer as I type, save when I stop for a second.
+    clearInterval(saveTimer.current)
+    setValue('saved', false)
+    saveTimer.current = setInterval(() => {
+      document.getElementById('save-post')?.click()
+      setValue('saved', true)
+      clearInterval(saveTimer.current)
+    }, 2000)
+  }
+  function updateTitle(e) {
+    setValue('title', e.target.value)
+    startSaveTimer()
+  }
+  function updateTags(tags) {
+    setValue('tags', tags)
+    startSaveTimer()
+  }
   return (
     <EditorContext.Provider value={{ editorValues, setValue, setValues }}>
       <EditorHeader />
       <div className="wrapper">
         <ImageCaptureWrappers>
           <div className="editor text">
-            <Title />
+            <div className="post-title orange">
+              <input placeholder="Title..." value={editorValues.title} onChange={updateTitle} />
+            </div>
             <TipTap content={post ? post.body : ''} onUpdate={onUpdate} onCreate={onCreate} keyDown={keyDown} />
           </div>
-          <TagsInput initialTags={post ? post.tags : []} onChange={(tags) => setValue('tags', tags)} />
+          <TagsInput initialTags={post ? post.tags : []} onChange={updateTags} />
           <TwitterFooter />
         </ImageCaptureWrappers>
         <PublishButtons />
@@ -114,14 +126,5 @@ export default function Editor({ post, user, days }) {
         <div id="bottom-of-the-page" />
       </div>
     </EditorContext.Provider>
-  )
-}
-
-function Title() {
-  const { editorValues, setValue } = useEditorContext()
-  return (
-    <div className="post-title orange">
-      <input placeholder="Title..." value={editorValues.title} onChange={(e) => setValue('title', e.target.value)} />
-    </div>
   )
 }

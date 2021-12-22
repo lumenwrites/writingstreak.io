@@ -1,6 +1,7 @@
+
+import axios from 'axios'
 import { createContext, useState, useEffect } from 'react'
 import { useContext } from 'react'
-import axios from 'axios'
 
 const AuthContext = createContext({
   user: {} as any,
@@ -12,13 +13,13 @@ export function useAuth() {
 }
 
 export function AuthContextProvider({ children }) {
-  const [user, setUser] = useState({ username: '' })
+  const [user, setUser] = useState({ username: '', subscriptionStatus: ''})
   async function fetchUser() {
     const res = await axios.get('/api/users/me')
     console.log('[AuthContext] Fetched user', res.data.user)
     if (res.data.user) {
-      const { username } = res.data.user
-      setUser({ username })
+      const { username, subscriptionStatus } = res.data.user
+      setUser({ username, subscriptionStatus })
     }
   }
 

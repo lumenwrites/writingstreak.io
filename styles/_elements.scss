@@ -29,6 +29,8 @@
   &.disabled {
     cursor: default;
     color: var(--text-dim);
+    background: var(--panel-bg);
+    opacity: 0.75;
   }
 
   &.full-width {

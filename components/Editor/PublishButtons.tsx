@@ -5,6 +5,7 @@ import domtoimage from 'retina-dom-to-image'
 import { saveAs } from 'file-saver'
 import { useEditorContext } from 'components/Editor/Editor'
 import Link from 'components/Elements/Link'
+import { useAuth } from 'context/AuthContext'
 
 export default function PublishButtons() {
   const { editorValues, setValue } = useEditorContext()
@@ -56,6 +57,8 @@ function CreatePostButtons() {
 }
 
 function UpdatePostButtons() {
+  const { user } = useAuth()
+  console.log('Display publish button', user)
   const { editorValues, setValue, setValues } = useEditorContext()
 
   async function updatePost(published) {
@@ -77,11 +80,11 @@ function UpdatePostButtons() {
     const { data: savedDay } = await axios.post('/api/stats/save-day', day)
     console.log('Saved stats', savedDay)
   }
-
   async function togglePublished() {
     await updatePost(!editorValues.published)
     setValue('published', !editorValues.published)
   }
+
   return (
     <>
       {editorValues.published ? (
@@ -93,19 +96,23 @@ function UpdatePostButtons() {
             View
           </a>
         </>
+      ) : user.subscriptionStatus === 'FREE' ? (
+        <a className="btn" href="/api/payments/create-checkout-session">
+          Upgrade account to publish on our community
+        </a>
       ) : (
-        <button className="btn btn-cta" onClick={togglePublished}>
+        <button className="btn" onClick={togglePublished}>
           Publish
         </button>
       )}
 
       {editorValues.saved ? (
-        <button className="btn btn-cta disabled" disabled>
+        <button className="btn disabled" disabled>
           <FontAwesomeIcon icon={['fas', 'save']} />
           Saved
         </button>
       ) : (
-        <button className="btn btn-cta" onClick={() => updatePost(editorValues.published)} id="save-post">
+        <button className="btn" onClick={() => updatePost(editorValues.published)} id="save-post">
           <FontAwesomeIcon icon={['fas', 'save']} />
           Save Post
         </button>
