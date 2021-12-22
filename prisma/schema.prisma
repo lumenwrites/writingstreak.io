@@ -19,6 +19,7 @@ model User {
 
   // Stripe
   subscriptionStatus      SubscriptionStatus @default(FREE)
+  subscriptionExpires     DateTime @default(dbgenerated("NOW() + interval '1 month'"))
   stripeCustomerId        String? @unique // unique so that webhooks could find user by stripe customer id
   stripeSubscriptionId    String?  //@default("")
 

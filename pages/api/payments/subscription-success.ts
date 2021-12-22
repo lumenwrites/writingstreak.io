@@ -12,6 +12,8 @@ async function Success(req, res) {
     const checkoutSession = await stripe.checkout.sessions.retrieve(session_id)
     // Retreive subscription info: https://stripe.com/docs/api/subscriptions/retrieve?lang=node
     const subscription = await stripe.subscriptions.retrieve(checkoutSession.subscription)
+    // TODO Gotta verify if it's active, and if not - redirect the user to cancelled?
+    // Like, if subscription fails because of wrong credit card or insufficient funds: https://stripe.com/docs/billing/subscriptions/overview
     const updatedUser = await prisma.user.update({
       where: { id: req.user.id },
       data: {
