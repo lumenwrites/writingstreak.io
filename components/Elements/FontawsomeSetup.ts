@@ -86,6 +86,8 @@ import {
   faPlay,
   faStop,
   faArrowCircleUp,
+  faUsers,
+  faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -95,6 +97,9 @@ library.add(
   faSignInAlt,
   faSignOutAlt,
   faInfoCircle, // About
+  // Editor Menu
+  faUsers,
+  faGraduationCap,
   // Post Footer Icons
   faUser,
   faArrowUp,

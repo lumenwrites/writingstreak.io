@@ -2,6 +2,12 @@
   --wrapper-width: 1000px;
   --sidebar-bg: white;
 }
+.course-header .wrapper {
+  max-width: 1000px;
+  @media (max-width: 1000px) {
+    padding: 0 20px;
+  } 
+}
 .course-layout {
   height: calc(100% - 48px - 2px); //minus header height minus orange line
   max-width: var(--wrapper-width);
@@ -41,7 +47,7 @@
 .course-chapter {
   background: var(--post-bg);
   box-shadow: var(--box-shadow);
-  padding: 60px 20px;
+  padding: 60px 40px;
   min-height: 100%;
   // Prev-next
   position: relative;

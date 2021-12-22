@@ -67,7 +67,7 @@ This will help you to grow your audience on social media, and start gathering a 
 ### Start writing now!
 Now it's time to start writing - create an account, and begin your writing streak today!
 
-You can use this tool for free for the first month - that will be enough to write for 30 days and establish your writing habit. If you end up enjoying our app and community and want to continue - you can subscribe to the premium version for $20/mo.
+You can use this tool for free for the first month - that will be enough to write for 30 days and establish your writing habit. If you end up enjoying our app and community and want to continue - you can subscribe to the premium version for $20/mo (the price will rise as this project grows and becomes more successful, but people who sign up early keep the cheaper price they signed up for).
 
 ### Contact, questions, and feedback
 If you have any questions or feedback - send me an email to **lumenwrites@gmail.com**. 

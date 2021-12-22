@@ -14,10 +14,17 @@ export default function Landing({ course, user }) {
           <h1>{course.frontmatter.title}</h1>
           <h2>{course.frontmatter.description}</h2>
           <div className="centered">
-            <Link href={course.firstChapterUrl} className="btn btn-cta-landing">
-              Get Started For Free
-              <FontAwesomeIcon icon={['fas', 'arrow-right']} />
-            </Link>
+            {user ? (
+              <Link href={course.firstChapterUrl} className="btn btn-cta-landing">
+                Go To Course
+                <FontAwesomeIcon icon={['fas', 'arrow-right']} />
+              </Link>
+            ) : (
+              <button className="btn btn-cta-landing" onClick={() => toggleModal('login')}>
+                Get Started For Free
+                <FontAwesomeIcon icon={['fas', 'arrow-right']} />
+              </button>
+            )}
           </div>
         </div>
         <div className="copy text">
@@ -26,10 +33,17 @@ export default function Landing({ course, user }) {
         <footer>
           <div className="center-text">
             <div className="centered">
-              <Link href={course.firstChapterUrl} className="btn btn-cta-landing">
-                Get Started For Free
-                <FontAwesomeIcon icon={['fas', 'arrow-right']} />
-              </Link>
+              {user ? (
+                <Link href={course.firstChapterUrl} className="btn btn-cta-landing">
+                  Go To Course
+                  <FontAwesomeIcon icon={['fas', 'arrow-right']} />
+                </Link>
+              ) : (
+                <button className="btn btn-cta-landing" onClick={() => toggleModal('login')}>
+                  Get Started For Free
+                  <FontAwesomeIcon icon={['fas', 'arrow-right']} />
+                </button>
+              )}
             </div>
           </div>
         </footer>

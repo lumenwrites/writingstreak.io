@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "SubscriptionStatus" AS ENUM ('FREE', 'LIFETIME_FREE', 'STANDARD');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
@@ -7,9 +10,16 @@ CREATE TABLE "User" (
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "bio" TEXT,
-    "website" TEXT,
-    "twitter" TEXT,
+    "subscriptionStatus" "SubscriptionStatus" NOT NULL DEFAULT E'FREE',
+    "stripeCustomerId" TEXT NOT NULL DEFAULT E'',
+    "stripeSubscriptionId" TEXT NOT NULL DEFAULT E'',
+    "bio" TEXT DEFAULT E'',
+    "website" TEXT DEFAULT E'',
+    "twitter" TEXT DEFAULT E'',
+    "writingDays" TEXT[],
+    "targetWordcount" INTEGER NOT NULL DEFAULT 250,
+    "sprintPace" TEXT NOT NULL DEFAULT E'Medium',
+    "sprintDuration" INTEGER NOT NULL DEFAULT 20,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -70,7 +80,7 @@ CREATE TABLE "Sequence" (
 -- CreateTable
 CREATE TABLE "Day" (
     "id" TEXT NOT NULL,
-    "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "date" TEXT NOT NULL,
     "targetWordCount" INTEGER NOT NULL DEFAULT 250,
     "wordCount" INTEGER NOT NULL DEFAULT 0,
     "writingTime" INTEGER NOT NULL DEFAULT 0,
@@ -123,6 +133,9 @@ CREATE UNIQUE INDEX "Tag_slug_key" ON "Tag"("slug");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Sequence_slug_key" ON "Sequence"("slug");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Day_authorId_date_key" ON "Day"("authorId", "date");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "_UserUpvotedPosts_AB_unique" ON "_UserUpvotedPosts"("A", "B");

@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { useAuth } from 'context/AuthContext'
@@ -22,7 +23,10 @@ export default function EditorHeader() {
 
 function MainMenu() {
   const { user } = useAuth()
-
+  function handleLogout() {
+    Cookies.remove('token', { path: '/' })
+    window.location.href = '/'
+  }
   return (
     <div className="dropdown main-menu">
       <button className="btn menu-handle">
@@ -33,6 +37,14 @@ function MainMenu() {
           <FontAwesomeIcon icon={['fas', 'user']} />
           My Profile
         </Link>
+        <Link href={`/browse`} className="btn item">
+          <FontAwesomeIcon icon={['fas', 'users']} />
+          Community
+        </Link>
+        {/* <Link href={`/course/novice-to-prolific`} className="btn item">
+          <FontAwesomeIcon icon={['fas', 'graduation-cap']} />
+          Course
+        </Link> */}
         <a className="btn item" href="/api/payments/create-checkout-session">
           <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
           Upgrade ($20/mo)
@@ -41,6 +53,10 @@ function MainMenu() {
           <FontAwesomeIcon icon={['fas', 'cog']} />
           Settings
         </Link>
+        <button className="btn item" onClick={handleLogout}>
+          <FontAwesomeIcon icon={['fas', 'sign-out-alt']} />
+          Logout
+        </button>
       </div>
     </div>
   )

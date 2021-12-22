@@ -1,4 +1,0 @@
--- AlterTable
-ALTER TABLE "User" ALTER COLUMN "bio" SET DEFAULT E'',
-ALTER COLUMN "website" SET DEFAULT E'',
-ALTER COLUMN "twitter" SET DEFAULT E'';
