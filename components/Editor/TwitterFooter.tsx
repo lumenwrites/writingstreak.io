@@ -7,7 +7,7 @@ export default function TwitterFooter() {
     <div className="social-image-footer">
       <div className="website">
         <FontAwesomeIcon icon={['fas', 'globe-americas']} />
-        writingstreak.io/@{editorValues.username}
+        prolificacademy.io/@{editorValues.username}
       </div>
       <div className="twitter">
         <FontAwesomeIcon icon={['fab', 'twitter']} />

@@ -20,6 +20,18 @@
 - Delete post confirmation dialog
 - spinner in post settings, indicate that they have been saved.  
 
+# MVP
+Don't rush to launch:
+- Max out all the minor issues.
+- Maybe do feature parity.
+- All the content. Course, posts, posts buffer, tweets buffer.
+- Have a solid discord.
+- Figure out traction channels and growth strategies.
+- Have tested it by myself until I trust it with my own data.
+- Launch plan.
+- After all this, talk to users and invite some of them personally to try the beta.
+Implement user feedback. Only after all that move domains.
+
 ## Future
 - Stripe integration.
 	- Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
@@ -31,8 +43,7 @@
 	- Emailing the customer when a payment fails
 	You can set up several automatic retries and then cancel:
 	https://stripe.com/docs/billing/subscriptions/overview#settings
-	https://stripe.com/docs/billing/subscriptions/fixed-price#manage-subscription-payment-failure
-	- Terminating access when a subscription is canceled
+	https://stripe.com/docs/billing/subscriptions/fixed-price#manage-subscription-payment-failur	- Terminating access when a subscription is canceled
 	- Handle the subscription pauses/cancellations, trial expirations. 
 	- Update subscription expires date.
 	- Discounts.
@@ -54,7 +65,8 @@ https://tiptap.dev/experiments/linter
 - Sharing incentive. Referral program, or discounts.
 - Upgrade the RDS instance, enable backups.
 - Learn to migrate the db without losing data.
-- Canonical and prominent links - use wst as a tool, write anywhere, use our community for feedback/support, AND get free traffic to your own thing.
+- Export. As markdown, html. Export all data. button in settings.
+- Custom social image url
 - Templates like in typeshare. Essay, fiction, journaling. Guiding questions. Create your own templates.
 - Prompts.
 - Error handling.

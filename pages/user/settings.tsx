@@ -84,7 +84,7 @@ function ProfileSettings() {
     <>
       <h4>Your Profile</h4>
       <p>Username:</p>
-      <a href={`/@${settings.username}`} target="_blank" rel="noopener noreferrer">https://writingstreak.io/@{settings.username}</a>
+      <a href={`/@${settings.username}`} target="_blank" rel="noopener noreferrer">https://prolificacademy.io/@{settings.username}</a>
       <input placeholder="Username..." value={settings.username} name="username" onChange={updateUsername} />
       <p>Bio:</p>
       <input placeholder="Bio..." name="bio" value={settings.bio} onChange={updateInput} />
