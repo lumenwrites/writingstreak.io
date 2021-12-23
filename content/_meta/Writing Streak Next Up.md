@@ -6,12 +6,9 @@
 - Ah, Ill need to handle subscrption cancellations in a separate field. Because if the user has cancelled, I still want them to be able to use it until the end of the trial period.
 - Test failed credit card subscriptioms.
 - Solve the sendgrid issue.
-- Why didn't my custom post descriptions get seeded?
 
 ## Small: 
 - About page with contact info.
-- Edit post description and maybe slug.
-- Canonical urls.
 - Upgrade your account to customize image footer.
 - Best streak
 - Validate username/password when signing up.
@@ -22,7 +19,7 @@
 - Remove the ugly gear icon at the bottom, do something else instead. Or just add "Post Settings" words to it.
 - Delete post confirmation dialog
 - spinner in post settings, indicate that they have been saved.  
-- 
+
 ## Future
 - Stripe integration.
 	- Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
@@ -100,6 +97,7 @@ https://tiptap.dev/experiments/linter
 ## Archive
 # Done
 ## 2021-12-23
+- Post descriptions used to be overwritten on update, but they should only be initially generated when creating a post.
 - Hide the "Upgrade" button in editor menu for upgraded accounts
 - Cleaned up seeding, seeding tags.
 - Rebuilding react tooltip on route change.

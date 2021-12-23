@@ -25,6 +25,7 @@ export default function Post({ post }) {
           <meta name="twitter:description" content={post.socialDescription || post.description} />
           {post.socialImage && <meta property="og:image" content={`${config.domain}${post.socialImage}`} key="ogimage" />}
           {post.socialImage && <meta name="twitter:image" content={`${config.domain}${post.socialImage}`} />}
+          {post.canonicalUrl && <link rel="canonical" href={post.canonicalUrl} />}
         </Head>
       </div>
       <AdBoxes />

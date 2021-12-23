@@ -74,7 +74,6 @@ function UpdatePostButtons() {
       slug: editorValues.postSlug,
       title: editorValues.title,
       body: editorValues.html,
-      description: descriptionFromHTML(editorValues.html),
       tags: editorValues.tags,
       published,
     }
