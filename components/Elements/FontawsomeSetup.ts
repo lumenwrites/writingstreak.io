@@ -104,6 +104,7 @@ library.add(
   faUser,
   faArrowUp,
   faCommentAlt,
+  faLink,
   // Subnav Sorting
   faHotjar,
   faClock,

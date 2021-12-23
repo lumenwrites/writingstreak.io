@@ -237,15 +237,7 @@
     padding: 0;
   }
   .btn {
-    width: 100%;
-    text-align: center;
-    margin-top: 12px;
-  }
-  .google-login {
-    padding: 24px;
-    svg {
-      margin-right: 10px;
-    }
+    margin-top: 10px;
   }
   .disclaimer {
     text-align: center;
@@ -286,7 +278,12 @@
     width: 100%;
   }
 }
-
+.login-modal {
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
 .flex-center {
   position: absolute;
   top: 0;

@@ -83,7 +83,7 @@ function ProfileSettings() {
   return (
     <>
       <h4>Your Profile</h4>
-      <Link href={`/@${settings.username}`}>https://writingstreak.io/@{settings.username}</Link>
+      <a href={`/@${settings.username}`} target="_blank" rel="noopener noreferrer">https://writingstreak.io/@{settings.username}</a>
       <input placeholder="Username..." value={settings.username} name="username" onChange={updateUsername} />
       <input placeholder="Bio..." name="bio" value={settings.bio} onChange={updateInput} />
       <input placeholder="Website..." name="website" value={settings.website} onChange={updateInput} />

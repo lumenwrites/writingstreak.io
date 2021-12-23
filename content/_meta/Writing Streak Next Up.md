@@ -2,10 +2,12 @@
 ## Nextup:
 - Set up established tags.
 
-## Bug:
+## Bug
 - react tooltip doesn't appear if you navigate to the page instead of refreshing
 - Hide the "Upgrade" button in editor menu for upgraded accounts
 - Ah, Ill need to handle subscrption cancellations in a separate field. Because if the user has cancelled, I still want them to be able to use it until the end of the trial period.
+- Test failed credit card subscriptioms.
+- Solve the sendgrid issue.
 
 ## Small: 
 - About page with contact info.
@@ -18,7 +20,8 @@
 - Settings tab should add hashtag to the url to go to the correct tab.
 - Add pointer cursor to the screenshots.
 - learn to do custom emails on vercel domains
-- Remove the ugly gear icon at the bottom, do something else instead.
+- Remove the ugly gear icon at the bottom, do something else instead. Or just add "Post Settings" words to it.
+- Delete post confirmation dialog
 ## Future
 - Stripe integration.
 	- Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
@@ -36,6 +39,9 @@
 	- Update subscription expires date.
 	- Discounts.
 	- Way to raise prices while grandfathering old users.
+- Can I have custom post slugs? That'd be sick.
+- Let users create their own tags?
+- Forum?
 - Password recovery/reset for users who signed up with gmail.
 - Incrntivize feedback and good commenting as much as possible. Give people prominent urls to their profiles if nothing else. Maybe even a follow button. Give people status for writing quality comments, learn from that dude in Forem academy (the tech loaf guy)
 	Affiliate system HypeFury is using: https://firstpromoter.com/
@@ -50,6 +56,7 @@ https://tiptap.dev/experiments/linter
 - Canonical and prominent links - use wst as a tool, write anywhere, use our community for feedback/support, AND get free traffic to your own thing.
 - Templates like in typeshare. Essay, fiction, journaling. Guiding questions. Create your own templates.
 - Prompts.
+- Error handling.
 - Analytics: See the active users. Last logged in field on user, last wrote.
 - Feature parity with wst1:
 	- Burndown chart

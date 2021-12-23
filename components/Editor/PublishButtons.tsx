@@ -6,24 +6,33 @@ import { saveAs } from 'file-saver'
 import { useEditorContext } from 'components/Editor/Editor'
 import Link from 'components/Elements/Link'
 import { useAuth } from 'context/AuthContext'
+import { useModal } from 'context/ModalContext'
+import PostSettingsModal from './PostSettingsModal'
 
 export default function PublishButtons() {
   const { editorValues, setValue } = useEditorContext()
   return (
-    <div className="publish-buttons">
-      <div className="left">
-        <div className="dropdown">
-          <button className="btn menu-handle">
-            <FontAwesomeIcon icon={['fas', 'cog']} />
-          </button>
-          <div className="menu up">
-            <CaptureImages />
-            <DeletePostButtons />
-          </div>
+    <>
+      <div className="publish-buttons">
+        <div className="left">
+          {editorValues.postSlug && (
+            <div className="dropdown">
+              <button className="btn menu-handle">
+                <FontAwesomeIcon icon={['fas', 'cog']} />
+              </button>
+              <div className="menu up">
+                <PostSettings />
+                <CaptureImages />
+                <DeletePostButtons />
+              </div>
+            </div>
+          )}
         </div>
+        <div className="right">{editorValues.postSlug ? <UpdatePostButtons /> : <CreatePostButtons />}</div>
+        <div className="clearfix" />
       </div>
-      <div className="right">{editorValues.postSlug ? <UpdatePostButtons /> : <CreatePostButtons />}</div>
-    </div>
+      <PostSettingsModal />
+    </>
   )
 }
 
@@ -58,7 +67,6 @@ function CreatePostButtons() {
 
 function UpdatePostButtons() {
   const { user } = useAuth()
-  console.log('Display publish button', user)
   const { editorValues, setValue, setValues } = useEditorContext()
 
   async function updatePost(published) {
@@ -121,6 +129,16 @@ function UpdatePostButtons() {
   )
 }
 
+function PostSettings() {
+  const { toggleModal } = useModal()
+  return (
+    <button className="btn item" onClick={() => toggleModal('post-settings')}>
+      <FontAwesomeIcon icon={['fas', 'cog']} />
+      Post Settings
+    </button>
+  )
+}
+
 function DeletePostButtons() {
   const { editorValues, setValue, setValues } = useEditorContext()
   const router = useRouter()
@@ -161,12 +179,12 @@ function CaptureImages() {
     <>
       <button className="btn item" onClick={captureTwitterImage}>
         <FontAwesomeIcon icon={['fas', 'camera']} />
-        Twitter Image
+        Save as Image
       </button>
-      <button className="btn item" onClick={captureSocialImage}>
+      {/* <button className="btn item" onClick={captureSocialImage}>
         <FontAwesomeIcon icon={['fas', 'camera']} />
         Social Image
-      </button>
+      </button> */}
     </>
   )
 }

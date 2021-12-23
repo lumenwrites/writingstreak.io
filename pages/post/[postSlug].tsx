@@ -17,11 +17,12 @@ export default function Post({ post }) {
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
         <PostFooter post={post} />
         <Head>
-          <title>{post.title}</title>
-          <meta property="og:title" content={`${post.title}`} key="ogtitle" />
-          <meta name="twitter:title" content={`${post.title}`} key="ogtitle" />
-          <meta property="og:description" content={post.description} key="ogdesc" />
-          <meta name="twitter:description" content={post.description} />
+          <title>{post.socialTitle || post.title}</title>
+          <meta property="og:title" content={`${post.socialTitle || post.title}`} key="ogtitle" />
+          <meta name="twitter:title" content={`${post.socialTitle || post.title}`} key="ogtitle" />
+          <meta name="description" content={post.socialDescription || post.description} />
+          <meta property="og:description" content={post.socialDescription || post.description} key="ogdesc" />
+          <meta name="twitter:description" content={post.socialDescription || post.description} />
           {post.socialImage && <meta property="og:image" content={`${config.domain}${post.socialImage}`} key="ogimage" />}
           {post.socialImage && <meta name="twitter:image" content={`${config.domain}${post.socialImage}`} />}
         </Head>

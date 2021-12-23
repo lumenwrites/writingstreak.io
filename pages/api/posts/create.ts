@@ -11,7 +11,7 @@ async function createPost(req, res) {
         title: title,
         body: body,
         description: description,
-        slug: `${slugify(title, { lower: true, strict: true })}-${cuid()}`,
+        slug: `${slugify(title, { lower: true, strict: true })}-${cuid().substring(0,5)}`,
         author: { connect: { id: req.user.id } },
         tags: { connect: tags?.map(t => ({ slug: t.slug })) },
         upvoters: { connect: { id: req.user.id } },

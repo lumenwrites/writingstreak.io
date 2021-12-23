@@ -89,6 +89,16 @@
     }
   }
 }
+.post-settings {
+  p {
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
 .ProseMirror {
   min-height: 300px;
   & + * {

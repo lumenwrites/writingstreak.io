@@ -18,6 +18,11 @@ export default function PostFooter({ post }) {
 
   const createdAt = new Date(post.createdAt)
   const date = `${createdAt.getFullYear()}-${createdAt.getMonth()}-${createdAt.getDate()}`
+  let canonicalUrl
+  if (post.canonicalUrl) {
+    const domain = new URL(post.canonicalUrl)
+    canonicalUrl = domain.hostname
+  }
   return (
     <div className="post-footer">
       <div className="tags">
@@ -42,6 +47,13 @@ export default function PostFooter({ post }) {
             <FontAwesomeIcon icon={['fas', 'calendar']} />
             {date}
           </div> */}
+          {canonicalUrl && (
+            <a className="tag" href={post.canonicalUrl} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={['fas', 'link']} />
+              {canonicalUrl}
+            </a>
+          )}
+
           <Link className="tag" href={`/@${post.author.username}`}>
             {/* href={`/@${post.author.username}`} className="tag"> */}
             <FontAwesomeIcon icon={['fas', 'user']} />

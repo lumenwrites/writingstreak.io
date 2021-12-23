@@ -33,6 +33,12 @@ export default function Editor({ post, user, days }) {
     // So I could save the post in PublishButtons
     postSlug: post ? post.slug : undefined,
     published: post ? post.published : false,
+    // Post settings
+    description:  post ? post.description : undefined,
+    updatedPostSlug: post ? post.slug : undefined,
+    canonicalUrl: post ? post.canonicalUrl : undefined,
+    socialTitle: post ? post.socialTitle : undefined,
+    socialDescription: post ? post.socialDescription : undefined,
     // Streak
     streak: 0,
     habitStrength: 0,

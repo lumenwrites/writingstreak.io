@@ -12,6 +12,7 @@ This very simple but powerful tool will help you to:
 -   Master the art of writing in a fun and engaging way
 
 Landing
+https://writeofpassage.school
 <-- 
 viral incentives and quality content incentives.
 10 most active users of the month (leaderboard) get the next month for free.
