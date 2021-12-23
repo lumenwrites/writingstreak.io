@@ -28,9 +28,9 @@ export default function Header({ className }) {
           <Link href={`/browse`} className="btn btn-nav">
             Community
           </Link>
-          {/* <Link href={`/course/novice-to-prolific`} className="btn btn-nav">
+          <Link href={`/course/novice-to-prolific`} className="btn btn-nav">
             Course
-          </Link> */}
+          </Link>
           {user?.username ? (
             <MainMenu />
           ) : (

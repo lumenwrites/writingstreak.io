@@ -1,9 +1,3 @@
-Prolific Academy has everything you need for you to become a prolific and successful digital writer:
-- A simple but powerful tool that will help you to develop a daily writing habit and massively increase your writing output.
-- A community of passionate writers who will encourage you to write more and help you get better through feedback and advice.
-- A step-by-step course that will guide you through your first 30 days of writing, and teach you everything you need to become a good and productive writer.
-
-
 Writing Streak is a tool that will help you to write more. It looks like this:
 
 ![](/landing/full-editor.png)

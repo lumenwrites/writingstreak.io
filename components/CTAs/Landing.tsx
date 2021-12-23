@@ -11,14 +11,7 @@ export default function Landing({ copy }) {
       <div className="landing">
         <div className="cta-header">
           <h1>Become a Prolific Digital Writer</h1>
-          <h2>
-            This very simple but powerful tool will help you to:
-            <ul>
-              <li>Develop a daily writing habit</li>
-              <li>Massively increase your writing output</li>
-              <li>Master the art of writing in a fun and engaging way</li>
-            </ul>            
-          </h2>
+          <h2>Master the art of online writing in a fun and engaging way</h2>
 
           <SignupCTA />
         </div>

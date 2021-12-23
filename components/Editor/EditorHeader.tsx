@@ -41,10 +41,10 @@ function MainMenu() {
           <FontAwesomeIcon icon={['fas', 'users']} />
           Community
         </Link>
-        {/* <Link href={`/course/novice-to-prolific`} className="btn item">
+        <Link href={`/course/novice-to-prolific`} className="btn item">
           <FontAwesomeIcon icon={['fas', 'graduation-cap']} />
           Course
-        </Link> */}
+        </Link>
         {user.subscriptionStatus === 'FREE' && (
           <a className="btn item" href="/api/payments/create-checkout-session">
             <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />

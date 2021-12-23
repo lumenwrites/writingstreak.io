@@ -11,8 +11,9 @@ CREATE TABLE "User" (
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "subscriptionStatus" "SubscriptionStatus" NOT NULL DEFAULT E'FREE',
-    "stripeCustomerId" TEXT NOT NULL DEFAULT E'',
-    "stripeSubscriptionId" TEXT NOT NULL DEFAULT E'',
+    "subscriptionExpires" TIMESTAMP(3) NOT NULL DEFAULT NOW() + interval '1 month',
+    "stripeCustomerId" TEXT,
+    "stripeSubscriptionId" TEXT,
     "bio" TEXT DEFAULT E'',
     "website" TEXT DEFAULT E'',
     "twitter" TEXT DEFAULT E'',
@@ -32,6 +33,8 @@ CREATE TABLE "Post" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "published" BOOLEAN NOT NULL DEFAULT false,
     "canonicalUrl" TEXT,
+    "socialTitle" TEXT,
+    "socialDescription" TEXT,
     "title" TEXT NOT NULL,
     "body" TEXT NOT NULL,
     "description" TEXT NOT NULL,
@@ -124,6 +127,9 @@ CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_stripeCustomerId_key" ON "User"("stripeCustomerId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Post_slug_key" ON "Post"("slug");
