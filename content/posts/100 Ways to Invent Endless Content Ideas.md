@@ -3,7 +3,7 @@ title: Ways to Invent Endless Content Ideas
 slug: endless-ideas
 description: This is my collection of ways to come up with an unlimited number of ideas for your blog posts, youtube videos, podcast episodes, articles, and so on.
 social: /illustrations/post/endless-ideas/social.png
-tags: ["Writing", "Ideas"]
+tags: ["Writing"]
 relatedPosts: ["value-arbitrage"]
 comments: https://twitter.com/lumenwrites/status/1461555951035637765
 draft: false

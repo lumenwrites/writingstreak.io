@@ -45,6 +45,9 @@
 - Can I have custom post slugs? That'd be sick.
 - Let users create their own tags?
 - Forum?
+- Sequences
+	- Should be attached to authors, posts
+	- Need a way to rank posts in sequences
 - Password recovery/reset for users who signed up with gmail.
 - Incrntivize feedback and good commenting as much as possible. Give people prominent urls to their profiles if nothing else. Maybe even a follow button. Give people status for writing quality comments, learn from that dude in Forem academy (the tech loaf guy)
 	Affiliate system HypeFury is using: https://firstpromoter.com/
@@ -98,6 +101,9 @@ https://tiptap.dev/experiments/linter
 
 ## Archive
 # Done
+## 2021-12-23
+- Rebuilding react tooltip on route change.
+- Post settings. Custom slug, description, canonical url.
 ## 2021-12-22
 - Webhooks work. When subscription updates, I update customer plan in the db, just in case.
 - Checkout success redirects to api routes, which update the db, and then redirect to the app, which now fetches the freshly updated user.

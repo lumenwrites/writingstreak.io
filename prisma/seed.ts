@@ -1,4 +1,3 @@
-// @ts-nocheck
 import moment from 'moment'
 import { PrismaClient, Prisma } from '@prisma/client'
 import { hash } from 'bcryptjs'
@@ -8,15 +7,7 @@ import processedMarkdownPosts from '../backend/json/out/posts.json'
 
 const prisma = new PrismaClient()
 
-async function main() {
-  console.log(`Seeding the db...`)
-  await prisma.comment.deleteMany()
-  await prisma.day.deleteMany()
-  await prisma.post.deleteMany()
-  await prisma.tag.deleteMany()
-  await prisma.sequence.deleteMany()
-  await prisma.user.deleteMany()
-
+async function SeedUsers(users) {
   let userIds = [] // When I create a post, I connect it to a user id
   for (let seedUser of users) {
     const user = {
@@ -32,6 +23,9 @@ async function main() {
     userIds.push(createdUser.id)
     console.log(`Created user ${createdUser.username} with id: ${createdUser.id}`)
   }
+  return userIds
+}
+async function SeedSequences(sequences) {
   for (let sequence of sequences) {
     const createdSequence = await prisma.sequence.create({
       data: {
@@ -42,25 +36,39 @@ async function main() {
     })
     console.log(`Created sequence: ${createdSequence.slug}`)
   }
+}
+async function SeedTags(tags) {
+  for (let tag of tags) {
+    const createdTag = await prisma.tag.create({
+      data: {
+        id: tag.slug,
+        name: tag.name,
+        slug: tag.slug
+      }
+    })
+    console.log(`Created tag: ${createdTag.slug}`)
+  }
+}
+async function SeedPosts(processedMarkdownPosts, userIds) {
   let postIds = [] // When I create a comment, I connect it to post id
   let i = 0
   for (let markdownPost of processedMarkdownPosts) {
     i += 1
     // post.slug = slugify(post.title, { lower: true, strict: true })
-    for (let tag of markdownPost.tags) {
-      // Create tag if it doesn't exist
-      const createdTag = await prisma.tag.upsert({
-        where: { slug: tag.slug },
-        update: {},
-        create: {
-          id: tag.slug,
-          name: tag.name,
-          // slugify(tag.name, { lower: true, strict: true }),
-          slug: tag.slug,
-        },
-      })
-      console.log(`Created tag: ${createdTag.slug}`)
-    }
+    // for (let tag of markdownPost.tags) {
+    //   // Create tag if it doesn't exist
+    //   const createdTag = await prisma.tag.upsert({
+    //     where: { slug: tag.slug },
+    //     update: {},
+    //     create: {
+    //       id: tag.slug,
+    //       name: tag.name,
+    //       // slugify(tag.name, { lower: true, strict: true }),
+    //       slug: tag.slug,
+    //     },
+    //   })
+    //   console.log(`Created tag: ${createdTag.slug}`)
+    // }
     const randomScore = Math.floor(Math.random() * 5)
     userIds = userIds.sort(() => Math.random() - 0.5) // shuffle
     const upvoters = userIds.slice(0, randomScore).map((userId) => ({ id: userId }))
@@ -85,13 +93,13 @@ async function main() {
       tags: { connect: markdownPost.tags.map(tag => ({ id: tag.slug })) },
       socialImage: markdownPost.social, // { create: { name: "social-image", url: markdownPost.social }, },
     }
-
     const createdPost = await prisma.post.create({ data: post })
     postIds.push(createdPost.id)
     console.log(`Created post: ${createdPost.slug}`)
   }
-
-  const numberOfDays = 90
+  return postIds
+}
+async function SeedDays(numberOfDays = 90) {
   const end = moment() // today
   const start = moment().subtract(numberOfDays, 'days') // 30 days ago
   const days = []
@@ -107,7 +115,9 @@ async function main() {
     }
     const createdDay = await prisma.day.create({ data: day })
   }
+}
 
+async function SeedComments(userIds, postIds) {
   let comments = []
   let posComs = [...positiveComments]
   posComs = posComs.sort(() => Math.random() - 0.5) // shuffle
@@ -169,6 +179,26 @@ async function main() {
     const createdComment = await prisma.comment.create({ data: comment })
     console.log(`Created reply: ${createdComment.id}. Parent: ${createdComment.parentId}`)
   }
+}
+
+async function main() {
+  console.log(`Seeding the db...`)
+  await prisma.comment.deleteMany()
+  await prisma.day.deleteMany()
+  await prisma.post.deleteMany()
+  await prisma.tag.deleteMany()
+  await prisma.sequence.deleteMany()
+  await prisma.user.deleteMany()
+
+  await SeedSequences(sequences)
+  await SeedTags(tags)
+  const userIds = await SeedUsers(users)
+  const postIds = await SeedPosts(processedMarkdownPosts, userIds)
+  await SeedComments(userIds, postIds)
+  await SeedDays(90)
+
+
+
   console.log(`Seeding finished.`)
 }
 
