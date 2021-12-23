@@ -14,15 +14,20 @@ import SubmitPostModal from 'components/CTAs/SubmitPostModal'
 import DefaultHead from 'components/Layout/DefaultHead'
 import ReactTooltip from 'react-tooltip'
 
+import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
 function App({ Component, pageProps }) {
   // Need this for the react-tooltip: https://stackoverflow.com/questions/64079321/react-tooltip-and-next-js-ssr-issue
   const [isMounted, setIsMounted] = useState(false) 
+  const router = useRouter()
   useEffect(() => {
     document.querySelector('html').dataset.theme = 'dark1'
     setIsMounted(true)
   })
+  useEffect(() => {
+    ReactTooltip.rebuild()
+   }, [router])
   return (
     <PlausibleProvider domain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_DOMAIN}>
       <CombinedContextsProvider>

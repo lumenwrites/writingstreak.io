@@ -8,6 +8,7 @@
 - Ah, Ill need to handle subscrption cancellations in a separate field. Because if the user has cancelled, I still want them to be able to use it until the end of the trial period.
 - Test failed credit card subscriptioms.
 - Solve the sendgrid issue.
+- Why didn't my custom post descriptions get seeded?
 
 ## Small: 
 - About page with contact info.
@@ -22,6 +23,8 @@
 - learn to do custom emails on vercel domains
 - Remove the ugly gear icon at the bottom, do something else instead. Or just add "Post Settings" words to it.
 - Delete post confirmation dialog
+- spinner in post settings, indicate that they have been saved.  
+- 
 ## Future
 - Stripe integration.
 	- Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.

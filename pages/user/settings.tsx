@@ -83,10 +83,14 @@ function ProfileSettings() {
   return (
     <>
       <h4>Your Profile</h4>
+      <p>Username:</p>
       <a href={`/@${settings.username}`} target="_blank" rel="noopener noreferrer">https://writingstreak.io/@{settings.username}</a>
       <input placeholder="Username..." value={settings.username} name="username" onChange={updateUsername} />
+      <p>Bio:</p>
       <input placeholder="Bio..." name="bio" value={settings.bio} onChange={updateInput} />
+      <p>Website:</p>
       <input placeholder="Website..." name="website" value={settings.website} onChange={updateInput} />
+      <p>Twitter handle:</p>
       <input placeholder="Twitter..." name="twitter" value={settings.twitter} onChange={updateInput} />
       {/* <input placeholder="Twitter..." /> */}
       <button className="btn btn-cta right" onClick={saveSettings}>
