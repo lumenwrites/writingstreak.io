@@ -3,8 +3,6 @@
 - Set up established tags.
 
 ## Bug
-- react tooltip doesn't appear if you navigate to the page instead of refreshing
-- Hide the "Upgrade" button in editor menu for upgraded accounts
 - Ah, Ill need to handle subscrption cancellations in a separate field. Because if the user has cancelled, I still want them to be able to use it until the end of the trial period.
 - Test failed credit card subscriptioms.
 - Solve the sendgrid issue.
@@ -102,6 +100,8 @@ https://tiptap.dev/experiments/linter
 ## Archive
 # Done
 ## 2021-12-23
+- Hide the "Upgrade" button in editor menu for upgraded accounts
+- Cleaned up seeding, seeding tags.
 - Rebuilding react tooltip on route change.
 - Post settings. Custom slug, description, canonical url.
 ## 2021-12-22

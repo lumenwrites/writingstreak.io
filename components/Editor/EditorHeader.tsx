@@ -45,10 +45,12 @@ function MainMenu() {
           <FontAwesomeIcon icon={['fas', 'graduation-cap']} />
           Course
         </Link> */}
-        <a className="btn item" href="/api/payments/create-checkout-session">
-          <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
-          Upgrade ($20/mo)
-        </a>
+        {user.subscriptionStatus === 'FREE' && (
+          <a className="btn item" href="/api/payments/create-checkout-session">
+            <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
+            Upgrade ($20/mo)
+          </a>
+        )}
         <Link href="/user/settings" className="btn item">
           <FontAwesomeIcon icon={['fas', 'cog']} />
           Settings
