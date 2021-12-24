@@ -1,38 +1,33 @@
 # ToDo 
 ## Next Up
-- Set up established tags.
-- Add custom tags
-
-## Bug
-- I'll need to handle subscription cancellations in a separate field. Because if the user has cancelled, I still want them to be able to use it until the end of the trial period.
-- Test failed credit card subscriptions.
-- Solve the sendgrid issue.
-
-## Small
-
-- Validate username/password when signing up.
-	Add my slugify username validation trick from settings to login form.
 - Settings tab should add hashtag to the url to go to the correct tab.
-- learn to do custom emails on vercel domains
-- Remove the ugly gear icon at the bottom, do something else instead. Or just add "Post Settings" words to it.
+- Let users createtheir own custom tags.
+- Connect posts to days.
+- Validate username/password when signing up.
 - Delete post confirmation dialog
 - spinner in post settings, indicate that they have been saved.  
 
-## MVP
-Don't rush to launch:
-- Max out all the minor issues.
-- Maybe do feature parity.
-- All the content. Course, posts, posts buffer, tweets buffer.
-- Have a solid discord.
-- Figure out traction channels and growth strategies.
-- Have tested it by myself until I trust it with my own data.
-- Launch plan.
-- After all this, talk to users and invite some of them personally to try the beta.
+## Bug
+- Solve the sendgrid issue.
+- learn to do custom emails on vercel domains
+
+## Small
+
+# MVP
+>> Don't rush to launch:
+- Max out all the minor issues. Maybe do feature parity.
+- Create content. Course, posts, posts buffer, tweets buffer.
+- Have a solid discord. r/OnlineBusiness and r/Bloggers if possible.
+// Use it myself until I trust it with my own data.
+// Figure out traction channels and growth strategies.
+// Launch plan.
+// After all this, talk to users and invite some of them personally to try the beta. Reach out to good writers/bloggers, offer them free accounts.
 Implement user feedback. Only after all that move domains.
 
 ## Future
+Habit strength is a meh indicator. Display progress towards the writing goal instead.
 - Stripe integration.
-	- Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
+	- Handle the subscription pauses/cancellations, trial expirations. Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
 	https://stripe.com/docs/billing/subscriptions/overview
 	To resolve these scenarios:
 	Notify the customer.
@@ -42,32 +37,30 @@ Implement user feedback. Only after all that move domains.
 	You can set up several automatic retries and then cancel:
 	https://stripe.com/docs/billing/subscriptions/overview#settings
 	https://stripe.com/docs/billing/subscriptions/fixed-price#manage-subscription-payment-failur	- Terminating access when a subscription is canceled
-	- Handle the subscription pauses/cancellations, trial expirations. 
-	- Update subscription expires date.
 	- Discounts.
 	- Way to raise prices while grandfathering old users.
-- Can I have custom post slugs? That'd be sick.
-- Let users create their own tags?
 - Forum?
 - Sequences
 	- Should be attached to authors, posts
 	- Need a way to rank posts in sequences
-- Password recovery/reset for users who signed up with gmail.
-- Incrntivize feedback and good commenting as much as possible. Give people prominent urls to their profiles if nothing else. Maybe even a follow button. Give people status for writing quality comments, learn from that dude in Forem academy (the tech loaf guy)
-	Affiliate system HypeFury is using: https://firstpromoter.com/
-- Hemingway and grammarly would be sick.
-https://tiptap.dev/experiments/linter
-- Discord server (+ support + course).
-- Leaderboard of the most active users
-- Google/Twitter auth.
-- Sharing incentive. Referral program, or discounts.
-- Upgrade the RDS instance, enable backups.
-- Learn to migrate the db without losing data.
-- Export. As markdown, html. Export all data. button in settings.
-- Custom social image url
-- Templates like in typeshare. Essay, fiction, journaling. Guiding questions. Create your own templates.
-- Prompts.
+- Follow button. 
+- Community
+	- Discord server (+ support + course).
+	- Give people status for writing quality comments, learn from that dude in foster academy (the tech loaf guy).
+	- Leaderboard of the most active users
+	- Daily accountability partner
+- Marketing
+	- Sharing incentive. Referral program, or discounts.
+	- Affiliate system HypeFury is using: https://firstpromoter.com/
+- Auth
+	- Google/Twitter auth.
+	- Password recovery/reset.
+- Database
+	- Upgrade the RDS instance, enable backups.
+	- Learn to migrate the db without losing data.
+	- Export. As markdown, html. Export all data. button in settings.
 - Error handling.
+- Templates like in typeshare. Essay, fiction, journaling. Guiding questions. Create your own templates.
 - Analytics: See the active users. Last logged in field on user, last wrote.
 - Feature parity with wst1:
 	- Burndown chart
@@ -80,18 +73,20 @@ https://tiptap.dev/experiments/linter
 	- Export
 	- Full screen
 	- Hotkeys
-- Mobile app using whatever obsidian people are using.
+	- Prompts.
 - Make it procedural so that I could use the same code for rpga and nexy.
 - Settings
 	- Select dark/bright from a dropdown.
 	- Make website/handle customizable in settings.
 - Editor
 	- Syntax highlighting. Ideally for godot.
+	- Custom social image url
 	- Upload images.
-##Community
-- Daily accountability partner
+	- Hemingway and grammarly would be sick.
+	https://tiptap.dev/experiments/linter
 
 ## Maybe
+// Mobile app using whatever obsidian people are using.
 - Upgrade your account to customize image footer.
 - Best streak
 - Autocreate the post
@@ -109,6 +104,8 @@ https://tiptap.dev/experiments/linter
 ## Archive
 # Done
 ## 2021-12-23
+- Tested failed credit card subscriptions - stripe does everything for me, I don't have to do anything, amazing.
+- Now every time I renew my subscription, subscriptionExpires updates. The benefit of that is that if a user cancels subscription, he'll still keep access to the app until the end of the period.
 - Post descriptions used to be overwritten on update, but they should only be initially generated when creating a post.
 - Hide the "Upgrade" button in editor menu for upgraded accounts
 - Cleaned up seeding, seeding tags.

@@ -45,7 +45,7 @@ export default function Settings({ user }) {
   return (
     <Layout>
       <SettingsContext.Provider value={{ settings, updateSetting, saveSettings, updateInput }}>
-        <Tabs tabs={['Account Settings', 'Writing Settings']}>
+        <Tabs tabTitles={['Account Settings', 'Writing Settings']}>
           <div className="settings text">
             <h1>Account Settings</h1>
             <ManageSubscription />

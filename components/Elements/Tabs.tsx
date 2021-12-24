@@ -1,17 +1,40 @@
-import { useState } from 'react'
+import slugify from 'slugify'
+import { useState, useEffect } from 'react'
 
-export default function Tabs({ tabs, open=0, children }) {
-  const [activeTab, setActiveTab] = useState(open)
+export default function Tabs({ tabTitles, children }) {
+  const tabsWithSlugs = tabTitles.map((t) => ({ name: t, slug: slug(t) }))
+  console.log('tabsWithSlugs[0]', tabsWithSlugs[0])
+  const [activeTab, setActiveTab] = useState(tabsWithSlugs[0]) // slug(tabs[0])
+  useEffect(() => {
+    if (window.location.hash) {
+      const slug = window.location.hash.replace('#', '')
+      selectTab(slug)
+    }
+  }, [])
+  function selectTab(slug) {
+    const activeTab = tabsWithSlugs.find((t) => t.slug === slug)
+    setActiveTab(activeTab)
+    window.location.hash = activeTab.slug
+  }
+  const index = tabsWithSlugs.findIndex(t => t.slug ===activeTab.slug);
   return (
     <div>
       <div className="tabs">
-        {tabs.map((tabTitle, idx) => (
-          <button key={tabTitle} className={`tab ${activeTab === idx ? 'active':''}`} onClick={() => setActiveTab(idx)}>
-            {tabTitle}
+        {tabsWithSlugs.map((tab) => (
+          <button
+            key={tab.slug}
+            className={`tab ${activeTab.slug === tab.slug ? 'active' : ''}`}
+            onClick={() => selectTab(tab.slug)}
+          >
+            {tab.name}
           </button>
         ))}
       </div>
-      {children[activeTab]}
+      {children[index]}
     </div>
   )
+}
+
+function slug(str) {
+  return slugify(str, { lower: true, strict: true })
 }
