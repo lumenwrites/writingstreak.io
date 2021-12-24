@@ -56,7 +56,7 @@ export async function getServerSideProps({ req, query }) {
 
   // For Profile Header
   const { bio, website, twitter, username } = profile
-  const days = await getDays(profile, 360)
+  const days = await getDays(profile, 366)
 
   // If the logged in user is looking at his own profile, show them drafts as well
   let isProfileAuthor = false

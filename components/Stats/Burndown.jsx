@@ -3,65 +3,21 @@ import { LineChart, Line, XAxis, YAxis, Label, CartesianGrid, Tooltip, Legend, R
 import { useEditorContext } from 'components/Editor/Editor'
 import { generateStats, generateDescription, largeNumberFormat } from './utils'
 
-const data = [
-  {
-    name: 'Page A',
-    'Actually Wrote': 4000,
-    'Intended to Write': 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    'Actually Wrote': 3000,
-    'Intended to Write': 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    'Actually Wrote': 2000,
-    'Intended to Write': 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    'Actually Wrote': 2780,
-    'Intended to Write': 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    'Actually Wrote': 1890,
-    'Intended to Write': 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    'Actually Wrote': 2390,
-    'Intended to Write': 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    'Actually Wrote': 3490,
-    'Intended to Write': 4300,
-    amt: 2100,
-  },
-]
-
-const prefs = {
-  startDate: '2021-12-01',
-  endDate: '2022-01-01',
-  writingGoal: 20000,
-  writingDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-}
+// const prefs = {
+//   startDate: '2021-12-01',
+//   endDate: '2022-01-01',
+//   writingGoal: 20000,
+//   writingDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+// }
 
 export default function Burndown() {
   const { editorValues, setValue, setValues } = useEditorContext()
-  const stats = generateStats(editorValues.days, prefs)
+  const { startDate, endDate, writingGoal, writingDays } = editorValues
+  const stats = generateStats(editorValues.days, { startDate, endDate, writingGoal, writingDays })
   return (
     <div>
       <Chart data={stats.data} />
-      <div className="center-text" dangerouslySetInnerHTML={{ __html: generateDescription(stats, prefs) }} />
+      <div className="center-text" dangerouslySetInnerHTML={{ __html: generateDescription(stats, { endDate }) }} />
     </div>
   )
 }

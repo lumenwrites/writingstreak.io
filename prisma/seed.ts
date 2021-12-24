@@ -18,6 +18,7 @@ async function SeedUsers(users) {
       bio: seedUser.bio || "",
       website: seedUser.website || "",
       twitter: seedUser.twitter || "",
+      writingDays: ["Mon", "Tue", "Wed", "Thu", "Fri"]
     }
     const createdUser = await prisma.user.create({ data: user })
     userIds.push(createdUser.id)

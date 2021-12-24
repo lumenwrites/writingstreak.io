@@ -20,7 +20,7 @@ export async function getServerSideProps({ req, params }) {
   if (!user || !post || post.author.username !== user.username) {
     return { redirect: { permanent: false, destination: '/' }, props: {} }
   }
-  const { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } = user
-  const days = await getDays(user, 31)
-  return { props: { post, days, user: { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration } } }
+  const { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration, startDate, endDate, writingGoal } = user
+  const days = await getDays(user, 366)
+  return { props: { post, days, user: { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration, startDate, endDate, writingGoal } } }
 }

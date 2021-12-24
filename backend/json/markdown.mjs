@@ -16,7 +16,7 @@ export async function markdownToHtml(markdown) {
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeCodeTitles)
-    .use(rehypeAutolinkHeadings)
+    // .use(rehypeAutolinkHeadings)
     .use(rehypePrism)
     .use(rehypeSanitize)
     .use(rehypeStringify)

@@ -19,6 +19,16 @@ Above the editor you see your timeline - a calendar of your last 30 writing days
 
 Each day shows you how many words you wrote, how close you are to accomplishing your daily goal, and how many minutes you have spent in an uninterrupted flow.
 
+### Achieve your Writing Goals
+The progress bar around your writing streak represents your progress towards your writing goal. If you click on it, you will see a chart:
+
+![](/landing/burndown.png)
+
+It shows you how many words you need to write per day in order to reach your writing goal by the a certain date. The faint line represents the ideal word count you should be reaching, the bold line represents what you actually wrote in practice.
+
+By default, your goal is to write 5000 words during the next month (250 words per day * 20 workdays). If you're up for a more ambitious challenge - go to the settings and adjust the numbers accordingly. But remember, writing a little bit every day, consistently, is more important than aiming for high daily word counts - succeed at a simple and attainable goal first, take on more difficult challenges later.
+
+
 ### Focused writing with Writing Sprints
 The best way to become a productive writer is to learn how to get into the writing "flow" (a state where 100% of your attention is focused on writing), and stay in that state for uninterrupted stretches of time, with short breaks in-between.
 

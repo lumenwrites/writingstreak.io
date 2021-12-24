@@ -60,6 +60,9 @@ export default function Editor({ post, user, days }) {
     writingDays: user.writingDays,
     sprintPace: user.sprintPace,
     sprintDuration: user.sprintDuration,
+    startDate: user.startDate,
+    endDate: user.endDate,
+    writingGoal: user.writingGoal,
   })
 
   function setValue(name, value) {
