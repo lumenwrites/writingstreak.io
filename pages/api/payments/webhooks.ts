@@ -1,5 +1,5 @@
 // https://stripe.com/docs/billing/quickstart
-
+import moment from 'moment'
 import prisma from 'prisma/prismaClient'
 import handler from "backend/handler"
 import { sendEmail } from 'backend/sendgrid'
@@ -42,6 +42,7 @@ async function handleSubscriptionUpdated(subscription) {
       where: { email: customer.email },
       data: {
         subscriptionStatus: SubscriptionStatus.STANDARD,
+        subscriptionExpires: moment.unix(subscription.current_period_end).toDate(),
         stripeCustomerId: subscription.customer,
         stripeSubscriptionId: subscription.id,
       },

@@ -1,13 +1,16 @@
 .cta-header {
-  background: url('/img/valley-cropped.png');
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)), url('/img/writing-desk.jpg');
-  background-image: linear-gradient(184deg, rgba(39, 103, 187, 1) 10.4%, rgba(16, 72, 144, 1) 87.7%);
-  background-image: linear-gradient(-165deg, rgba(201, 37, 107, 1) 15.4%, rgba(116, 16, 124, 1) 74.7%);
-  // background: url('/img/ubuntu-orange.jpg');
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)), url('/img/orange-bg-3.jpeg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), linear-gradient(45deg, #d31f4d, #fab41e);
-  background-position-y: 100%;
-  background-size: cover;
+  // background: url('/img/valley-cropped.png');
+  // background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)), url('/img/writing-desk.jpg');
+  // background-image: linear-gradient(184deg, rgba(39, 103, 187, 1) 10.4%, rgba(16, 72, 144, 1) 87.7%);
+  // background-image: linear-gradient(-165deg, rgba(201, 37, 107, 1) 15.4%, rgba(116, 16, 124, 1) 74.7%);
+  // // background: url('/img/ubuntu-orange.jpg');
+  // background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)), url('/img/orange-bg-3.jpeg');
+  // background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), linear-gradient(45deg, #d31f4d, #fab41e);
+  // background-position-y: 100%;
+  // background-size: cover;
+  background-image: linear-gradient(45deg, #d31f4d, #fab41e);
+  background-image: linear-gradient(45deg, #c50032, #ffae00);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), linear-gradient(45deg, #c50032, #ffae00);
   text-align: left;
   padding: 40px 60px;
   @media (max-width: 500px) {
@@ -33,6 +36,14 @@
   .btn-cta-landing {
     // border: 1px solid white;
     box-shadow: 0 0 2px 0px rgb(0 0 0 / 20%);
+    // background: linear-gradient(to bottom, #ff6500, #f84200);
+    // background: linear-gradient(to bottom, #FF8C12, #FC4500);
+    background: linear-gradient(to bottom, #ff7909, #fc4500);
+    &:hover {
+      background: linear-gradient(to bottom, #ff7c0e, #ff4b07);
+      background: linear-gradient(to bottom, #ff8925, #ff591a);
+    }
+    // background: linear-gradient(to bottom, #ffb224, #ff4700);
     text-align: center;
   }
 }

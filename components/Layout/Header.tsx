@@ -17,7 +17,7 @@ export default function Header({ className }) {
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />
           </div>
-          <b>prolific</b>academy
+          <b>writing</b>streak
         </Link>
         <nav>
           {user?.username && (
@@ -28,9 +28,12 @@ export default function Header({ className }) {
           <Link href={`/browse`} className="btn btn-nav">
             Community
           </Link>
-          <Link href={`/course/novice-to-prolific`} className="btn btn-nav">
+          {/* <Link href={`/about`} className="btn btn-nav">
+            About
+          </Link> */}
+          {/* <Link href={`/course/novice-to-prolific`} className="btn btn-nav">
             Course
-          </Link>
+          </Link> */}
           {user?.username ? (
             <MainMenu />
           ) : (

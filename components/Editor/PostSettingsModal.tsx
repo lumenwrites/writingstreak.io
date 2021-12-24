@@ -29,7 +29,7 @@ export default function PostSettingsModal() {
       <h4>Url and Description</h4>
       <p>Your post url will look like this:</p>
       <a href={`/post/${editorValues.updatedPostSlug}`} target="_blank" rel="noopener noreferrer">
-        https://prolificacademy.io/post/{editorValues.updatedPostSlug}
+        https://writingstreak.io/post/{editorValues.updatedPostSlug}
       </a>
       <input
         placeholder="Custom post url..."

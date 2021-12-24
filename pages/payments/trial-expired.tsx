@@ -14,7 +14,7 @@ import { getUser } from 'prisma/api/users/get-user'
 export async function getServerSideProps({ req, params }) {
   const user = await getUser(req)
   if (!user) return { redirect: { permanent: false, destination: '/' }, props: {} }
-  if (user.subscriptionStatus !== 'FREE' || !user.trialExpired) {
+  if (user.subscriptionStatus !== 'FREE' || !user.subscriptionExpired) {
     // If trial has not expired - redirect to /
     return { redirect: { permanent: false, destination: '/' }, props: {} }
   }

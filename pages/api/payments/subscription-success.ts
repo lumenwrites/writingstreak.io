@@ -19,6 +19,7 @@ async function Success(req, res) {
       where: { id: req.user.id },
       data: {
         subscriptionStatus: subscription.status === 'active' ? SubscriptionStatus.STANDARD : undefined,
+        subscriptionExpires: subscription.status === 'active' ? moment.unix(subscription.current_period_end).toDate() : undefined,
         stripeCustomerId: checkoutSession.customer,
         stripeSubscriptionId: checkoutSession.subscription,
       },

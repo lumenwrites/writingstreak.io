@@ -8,7 +8,7 @@ export default function Page({ post }) {
   // console.log('post.frontmatter.thumbnail', `${config.domain}${post.frontmatter.thumbnail}`)
   return (
     <Layout>
-      <div className="post page">
+      <div className="post text">
         <h1 className="h1-header orange">{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
         <Head>

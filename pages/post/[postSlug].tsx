@@ -28,7 +28,7 @@ export default function Post({ post }) {
           {post.canonicalUrl && <link rel="canonical" href={post.canonicalUrl} />}
         </Head>
       </div>
-      <AdBoxes />
+      {/* <AdBoxes /> */}
       <SubscribeBox/>
       <Comments post={post}/>
       <br />

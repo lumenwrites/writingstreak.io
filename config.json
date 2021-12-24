@@ -1,5 +1,5 @@
 {
-  "title": "Prolific Academy",
+  "title": "Writing Streak",
   "description": "A powerful tool will help you to develop a daily writing habit, become prolific, and master the art of writing in a fun and engaging way.",
   "twitterCreator": "@lumenwrites",
   "twitterSite": "@lumenwrites",
@@ -7,7 +7,7 @@
   "domain": "https://writingstreak.vercel.app",
   "devDomain": "http://localhost:3080",
   "contentdir": "/Users/ray/Obsidian/Main/websites/writingstreak",
-  "subscribeCTA": "Subscribe to our weekly newsletter, receive updates on our best posts:",
+  "subscribeCTA": "The ultimate guide to writing online and growing your audience - free 7-day email course:",
   "subscribeTwitterLink": "https://twitter.com/lumenwrites",
   "subscribeDiscordLink": "https://discord.gg/RS3PxFXBuz",
   "subscribeYoutubeLink": "https://youtube.com/c/lumenwrites",

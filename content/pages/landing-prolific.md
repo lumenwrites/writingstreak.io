@@ -1,8 +1,15 @@
+Prolific Academy has everything you need for you to become a prolific and successful digital writer:
+- A step-by-step course that will guide you through your first 30 days of writing, and teach you everything you need to become a good and productive writer.
+- Simple but powerful tool that will help you to develop a daily writing habit and massively increase your writing output.
+- A community of passionate writers who will encourage you to write more and help you get better through feedback and advice.
+
+### Step-by-step guide to your first days of online writing
+
+### Develop your daily writing habit with Writing Streak
 Writing Streak is a tool that will help you to write more. It looks like this:
 
 ![](/landing/full-editor.png)
 
-### Develop your daily writing habit
 The best way to become a successful writer is to develop a daily writing habit, and the best way to accomplish that is to take on a 30-Day Writing Challenge - commit to writing every day for the next 30 days.
 
 At the top-left corner of the app you see your Writing Streak:
@@ -70,8 +77,6 @@ Now it's time to start writing - create an account, and begin your writing strea
 You can use this tool for free for the first month - that will be enough to write for 30 days and establish your writing habit. If you end up enjoying our app and community and want to continue - you can subscribe to the premium version for $20/mo (the price will rise as this project grows and becomes more successful, but people who sign up early keep the cheaper price they signed up for).
 
 ### Contact, questions, and feedback
-If you have any questions or feedback - send me an email:
-
-**lumenwrites@gmail.com**. 
+If you have any questions or feedback - send me an email to **lumenwrites@gmail.com**. 
 
 This project is still in active development. If you notice any issues - let me know about them, it will really help me to fix them quickly. If you can think of a feature that would make this tool more useful for you and others - it's likely that I'll be able to add it to the app. Don't hesitate to contact me!

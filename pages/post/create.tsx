@@ -14,7 +14,7 @@ import { getDays } from 'prisma/api/stats/get-days'
 export async function getServerSideProps({ req, params }) {
   const user = await getUser(req)
   if (!user) return { redirect: { permanent: false, destination: '/' }, props: {} }
-  if (user.subscriptionStatus === 'FREE' && user.trialExpired) {
+  if (user.subscriptionStatus === 'FREE' && user.subscriptionExpired) {
     // If trial expired - redirect to paywall
     return { redirect: { permanent: false, destination: '/payments/trial-expired' }, props: {} }
   }

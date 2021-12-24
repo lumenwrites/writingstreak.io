@@ -16,7 +16,7 @@ export async function getServerSideProps({ params, req }) {
     const copy = pages.find((p) => p.slug === 'landing')
     return { props: { copy } }
   }
-  if (user.subscriptionStatus === 'FREE' && user.trialExpired) {
+  if (user.subscriptionStatus === 'FREE' && user.subscriptionExpired) {
     // If trial expired - redirect to paywall
     return { redirect: { permanent: false, destination: '/payments/trial-expired' }, props: {} }
   }

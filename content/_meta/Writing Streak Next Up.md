@@ -1,26 +1,24 @@
 # ToDo 
-## Nextup:
+## Next Up
 - Set up established tags.
+- Add custom tags
 
 ## Bug
-- Ah, Ill need to handle subscrption cancellations in a separate field. Because if the user has cancelled, I still want them to be able to use it until the end of the trial period.
-- Test failed credit card subscriptioms.
+- I'll need to handle subscription cancellations in a separate field. Because if the user has cancelled, I still want them to be able to use it until the end of the trial period.
+- Test failed credit card subscriptions.
 - Solve the sendgrid issue.
 
-## Small: 
-- About page with contact info.
-- Upgrade your account to customize image footer.
-- Best streak
+## Small
+
 - Validate username/password when signing up.
-	Add my slugify username vaildation trick from settings to login form.
+	Add my slugify username validation trick from settings to login form.
 - Settings tab should add hashtag to the url to go to the correct tab.
-- Add pointer cursor to the screenshots.
 - learn to do custom emails on vercel domains
 - Remove the ugly gear icon at the bottom, do something else instead. Or just add "Post Settings" words to it.
 - Delete post confirmation dialog
 - spinner in post settings, indicate that they have been saved.  
 
-# MVP
+## MVP
 Don't rush to launch:
 - Max out all the minor issues.
 - Maybe do feature parity.
@@ -94,6 +92,8 @@ https://tiptap.dev/experiments/linter
 - Daily accountability partner
 
 ## Maybe
+- Upgrade your account to customize image footer.
+- Best streak
 - Autocreate the post
 - Migrate the old database.
 	- Learn to turn slate into html.

@@ -10,11 +10,14 @@ export async function getUser(req) {
   // console.log(decodedToken)
   let user = await prisma.user.findUnique({ where: { email: decodedToken.email } })
   if (!user) return false
-  const { subscriptionStatus, createdAt } = user
+  const { subscriptionStatus, createdAt, subscriptionExpires } = user
   const trialStart = moment(createdAt)
   const now = moment()
-  const duration = now.diff(trialStart, 'days', true)
-  const trialExpired = duration > 30
-  const userWithTrialStatus = {...user, trialExpired}
+  // const duration = now.diff(trialStart, 'days', true)
+  // const trialExpired = duration > 30
+  const daysUntilSubscriptionExpires = moment(subscriptionExpires).diff(now, 'days', true)
+  console.log('[getUser] daysUntilSubscriptionExpires', daysUntilSubscriptionExpires)
+  const subscriptionExpired = daysUntilSubscriptionExpires < 0
+  const userWithTrialStatus = { ...user, subscriptionExpired }
   return userWithTrialStatus
 }
