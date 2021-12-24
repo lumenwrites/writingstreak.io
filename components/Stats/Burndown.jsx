@@ -49,9 +49,9 @@ const data = [
 ]
 
 const prefs = {
-  startDate: '2021-12-15',
+  startDate: '2021-12-01',
   endDate: '2022-01-01',
-  writingGoal: 10000,
+  writingGoal: 20000,
   writingDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
 }
 
@@ -113,7 +113,7 @@ function Chart({ data }) {
         <Line
           dataKey="Intended to Write"
           strokeOpacity={opacities['Intended to Write']}
-          stroke="#7c5a4990"
+          stroke="#7c5a49c8"
           strokeWidth={2}
           dot={{ r: 0 }}
           strokeDasharray="5 5"

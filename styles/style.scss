@@ -15,7 +15,7 @@
   // Big Elements
   --wrapper-width: 750px; // 870px; //750px
   --wrapper-sidebar-width: 1000px; // 700 for content, 300 for sidebar
-  --modal-width: 700px;
+  --modal-width: var(--wrapper-width);
   --main-bg: #faf4e9; //#F8ECDB; // #faf4e9 #f5e4cd
   --decoration-line: 2px solid #ff6600;
   --header-bg: white; //#fff7e8; //white;
