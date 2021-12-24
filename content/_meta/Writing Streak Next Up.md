@@ -1,7 +1,5 @@
 # ToDo 
 ## Next Up
-- Settings tab should add hashtag to the url to go to the correct tab.
-- Let users createtheir own custom tags.
 - Connect posts to days.
 - Validate username/password when signing up.
 - Delete post confirmation dialog
@@ -103,6 +101,9 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 
 ## Archive
 # Done
+## 2021-12-24
+- Allow users to create custom tags.
+- Remember which tab is open using hashtags.
 ## 2021-12-23
 - Tested failed credit card subscriptions - stripe does everything for me, I don't have to do anything, amazing.
 - Now every time I renew my subscription, subscriptionExpires updates. The benefit of that is that if a user cancels subscription, he'll still keep access to the app until the end of the period.

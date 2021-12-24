@@ -23,24 +23,16 @@ export default function browse({ posts, profile, days }) {
       {/* <AdBoxes/> */}
       <SubscribeBox />
       <Head>
-        <title>lumen's blog at nexy</title>
-        <meta property="og:title" content={`lumen's blog at nexy`} key="ogtitle" />
-        <meta name="twitter:title" content={`lumen's blog at nexy`} key="ogtitle" />
-        <meta
-          property="og:description"
-          content={
-            'Startup Founder, Web Developer, Writer. I write about things that gratify my intellectual curiosity.'
-          }
-          key="ogdesc"
-        />
-        <meta
-          name="twitter:description"
-          content={
-            'Startup Founder, Web Developer, Writer. I write about things that gratify my intellectual curiosity.'
-          }
-        />
-        <meta property="og:image" content={`https://nexy.io/img/social-lumen.png`} key="ogimage" />
-        <meta name="twitter:image" content={`https://nexy.io/img/social-lumen.png`} />
+        <title>
+          {profile.username}'s blog at {config.title}
+        </title>
+        <meta property="og:title" content={`${profile.username}'s blog at ${config.title}`} key="ogtitle" />
+        <meta name="twitter:title" content={`${profile.username}'s blog at ${config.title}`} key="ogtitle" />
+        <meta name="description" content={profile.bio} />
+        <meta property="og:description" content={profile.bio} key="ogdesc" />
+        <meta name="twitter:description" content={profile.bio} />
+        {/* <meta property="og:image" content={`https://nexy.io/img/social-lumen.png`} key="ogimage" />
+        <meta name="twitter:image" content={`https://nexy.io/img/social-lumen.png`} /> */}
       </Head>
       <br />
     </Layout>

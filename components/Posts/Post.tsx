@@ -12,6 +12,7 @@ export default function Post({ post }) {
           {post.title} | {config.title}
         </title>
         <meta property="og:title" content={`${post.title} | ${config.title}`} key="ogtitle" />
+        <meta name="description" content={post.description} />
         <meta property="og:description" content={post.description} key="ogdesc" />
         <meta name="twitter:description" content={post.description} />
         {post.thumbnail && (

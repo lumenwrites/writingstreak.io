@@ -24,7 +24,7 @@ export default function browse({ posts, tagSlug, username }) {
       <SubscribeBox />
       <Head>
         <title>lumen's blog at nexy</title>
-        <meta property="og:title" content={`lumen's blog at nexy`} key="ogtitle" />
+        <meta property="og:title" content={`lumen's blog at ${config.title}`} key="ogtitle" />
         <meta name="twitter:title" content={`lumen's blog at nexy`} key="ogtitle" />
         <meta
           property="og:description"

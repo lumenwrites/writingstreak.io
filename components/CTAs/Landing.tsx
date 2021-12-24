@@ -32,6 +32,7 @@ export default function Landing({ copy }) {
       <Head>
         <title>{config.title}</title>
         <meta property="og:title" content={`${config.title}`} key="ogtitle" />
+        <meta name="description" content={config.description} />
         <meta property="og:description" content={config.description} key="ogdesc" />
         <meta name="twitter:description" content={config.description} />
         <meta property="og:image" content={`${config.socialImage}`} key="ogimage" />
