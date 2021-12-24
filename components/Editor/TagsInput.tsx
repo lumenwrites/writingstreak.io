@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import slugify from 'slugify'
 
-export default function TagsInput({ initialTags, onChange, customTags = false, placeholder = 'Add up to 5 tags...' }) {
+export default function TagsInput({ initialTags, onChange, customTags = true, placeholder = 'Add up to 5 tags...' }) {
   const [allTags, setAllTags] = useState([])
   const [tags, setTags] = useState(initialTags)
   const [val, setVal] = useState('')
