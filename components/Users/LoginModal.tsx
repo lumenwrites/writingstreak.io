@@ -21,12 +21,43 @@ export default function LoginModal() {
   const { toggleModal } = useModal()
   const [status, setStatus] = useState({ state: '', message: '' })
 
+  function validate(username, email, password) {
+    const missingFields = !username?.trim() || !email?.trim() || !password?.trim()
+    if (missingFields) {
+      setStatus({ state: 'error', message: 'Provide username, email, and password.' })
+      return false
+    }
+    var usernameRegex = /^([a-z0-9]|[-._](?![-._])){4,20}$/
+    if (!usernameRegex.test(username)) {
+      setStatus({
+        state: 'error',
+        message: 'Username must have between 4 and 20 characters, must not contain special characters or spaces.',
+      })
+      return false
+    }
+    var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (!emailRegex.test(email)) {
+      setStatus({
+        state: 'error',
+        message: 'Please enter a valid email.',
+      })
+      return false
+    }
+    if (password.trim().length < 3) {
+      setStatus({
+        state: 'error',
+        message: 'Password must be longer than 3 characters.',
+      })
+      return false
+    }
+    return true
+  }
+
   async function handleJoin(e) {
     e.preventDefault()
     setStatus({ state: 'join-loading', message: '' })
     const { username, email, password } = joinInputs
-    const missingFields = !username?.trim() || !email?.trim() || !password?.trim()
-    if (missingFields) return setStatus({ state: 'error', message: "Provide username, email, and password." })
+    if (!validate(username, email, password)) return false
     const { data } = await axios.post('/api/users/signup', { username, email, password })
     console.log('[Login Modal] Join response', data)
     if (data.error) return setStatus({ state: 'error', message: data.error })
@@ -107,3 +138,5 @@ export default function LoginModal() {
     </Modal>
   )
 }
+
+// https://stackoverflow.com/questions/60792074/validate-username-with-regex-in-javascript

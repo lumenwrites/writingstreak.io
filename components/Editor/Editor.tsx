@@ -21,7 +21,7 @@ export function useEditorContext() {
 export default function Editor({ post, user, days }) {
   const saveTimer = useRef(null)
   const lastSavedDay = days[0]
-  const doLoadTodaysStatsFromDb = moment().format('YYYY-MM-DD') === lastSavedDay.date
+  const doLoadTodaysStatsFromDb = lastSavedDay && moment().format('YYYY-MM-DD') === lastSavedDay.date
   // All initial stats are fetched in create.tsx and edit.tsx
   const [editorValues, setValues] = useState({
     title: '',

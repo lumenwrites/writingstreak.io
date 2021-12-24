@@ -2,8 +2,7 @@
 ## Next Up
 - Connect posts to days.
 - Validate username/password when signing up.
-- Delete post confirmation dialog
-- spinner in post settings, indicate that they have been saved.  
+- Spinner in post settings, indicate that they have been saved.  
 
 ## Bug
 - Solve the sendgrid issue.
@@ -102,6 +101,8 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 ## Archive
 # Done
 ## 2021-12-24
+- Delete post confirmation dialog
+- Fixed userprofile meta
 - Allow users to create custom tags.
 - Remember which tab is open using hashtags.
 ## 2021-12-23
