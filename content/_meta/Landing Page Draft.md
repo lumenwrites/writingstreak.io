@@ -18,3 +18,6 @@ This very simple but powerful tool will help you to:
 <li>Master the art of writing in a fun and engaging way</li>
 </ul>
 
+
+Your first goal is to write 5000 words during the next month (250 words per day * 20 workdays). If you're up for a more ambitious challenge - go to settings and adjust the numbers accordingly. But remember, writing a little bit every day is more important than [...]
+ 

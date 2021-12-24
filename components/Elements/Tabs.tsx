@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 
 export default function Tabs({ tabTitles, children }) {
   const tabsWithSlugs = tabTitles.map((t) => ({ name: t, slug: slug(t) }))
-  console.log('tabsWithSlugs[0]', tabsWithSlugs[0])
   const [activeTab, setActiveTab] = useState(tabsWithSlugs[0]) // slug(tabs[0])
   useEffect(() => {
     if (window.location.hash) {

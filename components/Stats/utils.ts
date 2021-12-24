@@ -110,3 +110,101 @@ export function largeNumberFormat(num, digits) {
   });
   return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";
 }
+
+
+function countWritingDays(prefs) {
+  var start = moment(prefs.startDate)
+  var end = moment(prefs.endDate)
+  var numberOfWritingDays = 0
+  var daysPast = 0
+  var daysLeft = 0
+  /* Count total number of writing days, how many past, how many left. */
+  for (var d = start; start.diff(end, 'days') <= 0; d.add(1, 'days')) {
+    const isWritingDay = prefs.writingDays.some((wd) => wd === dateToWeekday(d))
+    if (!isWritingDay) continue
+    numberOfWritingDays += 1
+    if (moment().diff(d) > 0) {
+      daysPast += 1
+    } else {
+      daysLeft += 1
+    }
+  }
+  return { numberOfWritingDays, daysPast, daysLeft }
+}
+
+export function generateStats(savedDays, prefs) {
+  let totalWordsWritten = 0
+  var start = moment(prefs.startDate)
+  var end = moment(prefs.endDate)
+  for (var d = start; start.diff(end, 'days') <= 0; d.add(1, 'days')) {
+    const day = savedDays.find((day) => day.date == d.format('YYYY-MM-DD'))
+    if (day) totalWordsWritten += day.wordCount
+  }
+
+  const { numberOfWritingDays, daysPast, daysLeft } = countWritingDays(prefs)
+  const wordsLeftToWrite = Math.max(prefs.writingGoal - totalWordsWritten, 0)
+  const intendedToWritePerDay = Math.ceil(prefs.writingGoal / numberOfWritingDays)
+  const actuallyWrotePerDay = Math.floor(totalWordsWritten / daysPast)
+  const shouldWritePerDayToSucceed = Math.floor(wordsLeftToWrite / daysLeft)
+  const data = generateChartData(savedDays, prefs, intendedToWritePerDay)
+
+  const stats = {
+    writingGoal: prefs.writingGoal,
+    totalWordsWritten,
+    wordsLeftToWrite,
+    intendedToWritePerDay,
+    actuallyWrotePerDay,
+    shouldWritePerDayToSucceed,
+    daysPast, daysLeft,
+    data
+  }
+  return stats
+}
+
+export function generateChartData(savedDays, prefs, intendedToWritePerDay) {
+  var start = moment(prefs.startDate)
+  var end = moment(prefs.endDate)
+  let data = []
+  // Adding up the total number of words that were written by this day (or should've been written)
+  let actuallyWroteCounter = 0
+  let intendedToWriteCounter = 0
+  for (var d = start; start.diff(end, 'days') <= 0; d.add(1, 'days')) {
+    let dataPoint = {
+      name: `${dateToWeekday(d)} ${d.format('DD')}`, // Wed 13
+    }
+    // Intended to write chart. Goes up only on writing days, on weekends it's flat.
+    const isWritingDay = prefs.writingDays.some((wd) => wd === dateToWeekday(d))
+    if (isWritingDay) intendedToWriteCounter += intendedToWritePerDay
+    dataPoint['Intended to Write'] = intendedToWriteCounter
+    // Actually wrote chart. If there's a saved day, add up the words I wrote.
+    const day = savedDays.find((day) => day.date == d.format('YYYY-MM-DD'))
+    if (day) actuallyWroteCounter += day.wordCount
+    if (moment().diff(d) > 0) dataPoint['Actually Wrote'] = actuallyWroteCounter
+    data.push(dataPoint)
+  }
+  return data
+}
+
+export function generateDescription(stats, prefs) {
+  var description = `You wrote ${stats.totalWordsWritten} out of ${stats.writingGoal} words, `
+  description += `${stats.wordsLeftToWrite} left to write. <br/> `
+  const totalDaysLeft = moment(prefs.endDate).diff(moment(), 'days')
+
+  if (stats.wordsLeftToWrite <= 0) {
+    description += `You have completed your goal! Set a new one in settings.`
+    return description
+  }
+  if (totalDaysLeft < 0 && stats.wordsLeftToWrite) {
+    description += `Deadline has past. Set a new goal in settings. `
+    return description
+  }
+  if (stats.daysLeft == 0) {
+    description += `Deadline is today! `
+  }
+
+  if (stats.daysLeft && stats.wordsLeftToWrite) {
+    description += `${stats.daysLeft} days left, ` + `to succeed you need to write ${stats.shouldWritePerDayToSucceed} words per day.`
+  }
+
+  return description
+}

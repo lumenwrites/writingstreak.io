@@ -9,7 +9,6 @@ import PlausibleProvider from 'next-plausible'
 // and index.tsx isn't wrapped in layout
 import LoginModal from 'components/Users/LoginModal'
 // import PurchaseModal from 'components/Payments/PurchaseModal'
-import CheckoutModal from 'components/Payments/CheckoutModal'
 import SubmitPostModal from 'components/CTAs/SubmitPostModal'
 import DefaultHead from 'components/Layout/DefaultHead'
 import ReactTooltip from 'react-tooltip'
@@ -33,7 +32,6 @@ function App({ Component, pageProps }) {
       <CombinedContextsProvider>
         <DefaultHead />
         <Component {...pageProps} />
-        <CheckoutModal />
         <LoginModal />
         <SubmitPostModal />
         {isMounted && <ReactTooltip effect="solid" />}

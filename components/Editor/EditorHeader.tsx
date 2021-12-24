@@ -7,17 +7,21 @@ import Link from 'components/Elements/Link'
 import Timer from 'components/Stats/Timer'
 import Timeline from 'components/Stats/Timeline'
 import Streak from 'components/Stats/Streak'
+import StatsModal from 'components/Stats/StatsModal'
 
 export default function EditorHeader() {
   return (
-    <div className="editor-header">
-      <div className="editor-header-wrapper">
-        <Streak />
-        <Timeline />
-        <Timer />
-        <MainMenu />
+    <>
+      <div className="editor-header">
+        <div className="editor-header-wrapper">
+          <Streak />
+          <Timeline />
+          <Timer />
+          <MainMenu />
+        </div>
       </div>
-    </div>
+      <StatsModal />
+    </>
   )
 }
 

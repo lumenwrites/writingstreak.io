@@ -295,3 +295,12 @@
     }
   }
 }
+
+.stats-modal {
+  svg {
+    width: auto;// Undo this from _elements. Initially fontawesome icons are huge, before js loads. This should fix that.
+  }
+  .burndown {
+
+  }
+}

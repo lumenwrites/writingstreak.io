@@ -1,8 +1,11 @@
 # ToDo 
 ## Next Up
 - Connect posts to days.
-- Validate username/password when signing up.
+Click on day modal:
+Created: list of posts
+Edited: list of posts
 - Spinner in post settings, indicate that they have been saved.  
+
 
 ## Bug
 - Solve the sendgrid issue.
@@ -11,7 +14,7 @@
 ## Small
 
 # MVP
->> Don't rush to launch:
+Don't rush to launch:
 - Max out all the minor issues. Maybe do feature parity.
 - Create content. Course, posts, posts buffer, tweets buffer.
 - Have a solid discord. r/OnlineBusiness and r/Bloggers if possible.
@@ -22,6 +25,12 @@
 Implement user feedback. Only after all that move domains.
 
 ## Future
+>> 3 extra things wst could be:
+- Hemingway/grammarly (editing mode).
+- Prolific Academy (30 days course, subscription community).
+- Foster. Collab editing. If I can figure out how that works.
+
+
 Habit strength is a meh indicator. Display progress towards the writing goal instead.
 - Stripe integration.
 	- Handle the subscription pauses/cancellations, trial expirations. Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
@@ -101,8 +110,10 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 ## Archive
 # Done
 ## 2021-12-24
+- Submit support request to ImprovMX
+- Validate username/password when signing up. Fixed signup bug.
 - Delete post confirmation dialog
-- Fixed userprofile meta
+- Fixed user profile meta.
 - Allow users to create custom tags.
 - Remember which tab is open using hashtags.
 ## 2021-12-23
