@@ -10,10 +10,10 @@ const BurndownNoSSR = dynamic(() => import('./Burndown'), { ssr: false })
 
 export default function StatsModal() {
   const { toggleModal } = useModal()
-  
+
   return (
     <Modal name={`stats`} className={'stats-modal'}>
-      <h1>Modal Title</h1>
+      <h1>Progress towards your writing goal</h1>
       <BurndownNoSSR />
     </Modal>
   )

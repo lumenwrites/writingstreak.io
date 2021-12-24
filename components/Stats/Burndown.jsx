@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, Label, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { useEditorContext } from 'components/Editor/Editor'
 import { generateStats, generateDescription, largeNumberFormat } from './utils'
 
@@ -49,9 +49,9 @@ const data = [
 ]
 
 const prefs = {
-  startDate: '2021-12-24',
-  endDate: '2022-01-20',
-  writingGoal: 1500,
+  startDate: '2021-12-15',
+  endDate: '2022-01-01',
+  writingGoal: 10000,
   writingDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
 }
 
@@ -61,7 +61,7 @@ export default function Burndown() {
   return (
     <div>
       <Chart data={stats.data} />
-      <div dangerouslySetInnerHTML={{ __html: generateDescription(stats, prefs) }} />
+      <div className="center-text" dangerouslySetInnerHTML={{ __html: generateDescription(stats, prefs) }} />
     </div>
   )
 }
@@ -74,12 +74,12 @@ function Chart({ data }) {
 
   function handleMouseEnter(o) {
     const { dataKey } = o
-    setOpacities((prev) => ({ ...prev, [dataKey]: 1 }))
+    // setOpacities((prev) => ({ ...prev, [dataKey]: 1 }))
   }
 
   function handleMouseLeave(o) {
     const { dataKey } = o
-    setOpacities((prev) => ({ ...prev, [dataKey]: 0.5 }))
+    // setOpacities((prev) => ({ ...prev, [dataKey]: 0.5 }))
   }
   const interval = data.length > 30 ? 6 : 0
   return (
@@ -87,7 +87,20 @@ function Chart({ data }) {
       <LineChart width={500} height={300} data={data}>
         <CartesianGrid stroke="#58232311" />
         <XAxis dataKey="name" interval={interval} angle={-45} dx={-15} dy={15} height={55} />
-        <YAxis type="number" tickFormatter={tick => { return largeNumberFormat(tick, 1) }} />
+        <YAxis
+          type="number"
+          tickFormatter={(tick) => {
+            return largeNumberFormat(tick, 1)
+          }}
+          width={40}
+        >
+          <Label
+            value="Words Written"
+            position="insideLeft"
+            angle={-90}
+            style={{ textAnchor: 'middle', fontSize: '90%', fill: '#3c4257' }}
+          />
+        </YAxis>
         <Tooltip />
         <Legend onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
         <Line
