@@ -1,0 +1,103 @@
+.date-pickers {
+  margin-top: 10px;
+}
+.date-picker {
+  width: 50%;
+  float: left;
+  .date-picker-button {
+    width: 100%;
+    float: left;
+    padding: 8px;
+    background: var(--subnav-bg);
+    outline: 1px solid var(--border);
+    cursor: pointer;
+    text-align: center;
+  }
+  // // Container
+  // .react-datepicker {
+  //   border-radius: 0;
+  //   border: none;
+  //   outline: 1px solid var(--border);
+  // }
+  // .react-datepicker__triangle {
+  //   display: none;
+  // }
+  // .react-datepicker-popper[data-placement^='bottom'] {
+  //   margin: 0;
+  // }
+  // .react-datepicker__month-container {
+  //   //  background: ${props => props.theme.background3};
+  // }
+  // // Header
+  // .react-datepicker__day-name,
+  // .react-datepicker__current-month {
+  //   //  font-family: ${props => props.theme.fontFamily}!important;
+  //   //  color: ${props => props.theme.textColor};
+  //   //  margin:0;
+  // }
+  // .react-datepicker__header {
+  //   border-radius: 0;
+  //   border: none;
+  //   //  background: ${props => props.theme.background2};
+  //   //  border-bottom: ${props => props.theme.border };
+  // }
+  // .react-datepicker__navigation--previous {
+  //   //  border-right-color: ${props => props.theme.dim};
+  //   outline: none;
+  //   &:hover {
+  //     //  border-right-color: ${props => props.theme.textColor};
+  //   }
+  // }
+  // .react-datepicker__navigation--next {
+  //   //  border-left-color: ${props => props.theme.dim};
+  //   outline: none;
+  //   &:hover {
+  //     //  border-left-color: ${props => props.theme.textColor};
+  //   }
+  // }
+  // // Day
+  // .react-datepicker__day {
+  //   //  color: ${props => props.theme.textColor};
+  //   border-radius: 0;
+  //   margin: 0;
+  //   &:hover {
+  //     //  background-color: ${props => props.theme.background1};
+  //     border-radius: 0;
+  //   }
+  // }
+  // .react-datepicker__day--selected,
+  // .react-datepicker__day--keyboard-selected {
+  //   //  background-color: ${props => props.theme.background1};
+  //   &:hover {
+  //     //  background-color: ${props => props.theme.background1};
+  //   }
+  // }
+
+  // .react-datepicker__day--today {
+  //   //  color: ${props => props.theme.textColor};
+  // }
+
+  // .react-datepicker__day--range-start,
+  // .react-datepicker__day--range-end {
+  //   //  background-color: ${props => props.theme.background1};
+  //   //  border: ${props => props.theme.border };
+  // }
+  // .react-datepicker__day--in-range,
+  // .react-datepicker__day--in-selecting-range,
+  // .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range) {
+  //   //  background-color: ${props => props.theme.background1};
+  // }
+
+  // // Range is already selected, now I'm moving cursor to make it smaller
+  // // This makes unselected days look like normal days.
+  // .react-datepicker__month--selecting-range
+  //   .react-datepicker__day--in-range:not(.react-datepicker__day--in-selecting-range) {
+  //   //  background-color: ${props => props.theme.background3};
+  // }
+  // .react-datepicker__day--disabled {
+  //   //  color: ${props => props.theme.dim};
+  //   &:hover {
+  //     //  background-color: ${props => props.theme.background3};
+  //   }
+  // }
+}

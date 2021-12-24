@@ -1,10 +1,13 @@
 import axios from 'axios'
+import moment from 'moment'
 import slugify from 'slugify'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, createContext, useContext } from 'react'
 import Link from 'components/Elements/Link'
 import Layout from 'components/Layout/Layout'
 import Tabs from 'components/Elements/Tabs'
+import DatePicker from 'components/Elements/DatePicker'
+import { countWritingDays } from 'components/Stats/utils'
 
 const SettingsContext = createContext({
   settings: {} as any,
@@ -27,6 +30,9 @@ export default function Settings({ user }) {
     targetWordcount: user.targetWordcount,
     sprintPace: user.sprintPace,
     sprintDuration: user.sprintDuration,
+    startDate: moment(user.startDate).toDate(),
+    endDate: moment(user.endDate).toDate(),
+    writingGoal: user.writingGoal,
   })
   function updateSetting(name, value) {
     setSettings((prev) => ({ ...prev, [name]: value }))
@@ -84,7 +90,9 @@ function ProfileSettings() {
     <>
       <h4>Your Profile</h4>
       <p>Username:</p>
-      <a href={`/@${settings.username}`} target="_blank" rel="noopener noreferrer">https://writingstreak.io/@{settings.username}</a>
+      <a href={`/@${settings.username}`} target="_blank" rel="noopener noreferrer">
+        https://writingstreak.io/@{settings.username}
+      </a>
       <input placeholder="Username..." value={settings.username} name="username" onChange={updateUsername} />
       <p>Bio:</p>
       <input placeholder="Bio..." name="bio" value={settings.bio} onChange={updateInput} />
@@ -126,6 +134,32 @@ function WritingSettings() {
   return (
     <div>
       <h1>Writing Settings</h1>
+      <WritingDays />
+      <h4>Daily wordcount goal</h4>
+      <p>The number of words per day you intend to write.</p>
+      <input
+        type="number"
+        placeholder="Wordcount..."
+        name="targetWordcount"
+        value={settings.targetWordcount}
+        onChange={(e) => updateSetting('targetWordcount', parseInt(e.target.value))}
+      />
+      <WritingSprint />
+      <WritingGoal />
+      <button className="btn btn-cta right" onClick={saveSettings}>
+        Save
+      </button>
+      <div className="clearfix" />
+      {/* <h4>Email Reminders</h4>
+      <p>Send email reminders when it's time to write:</p> */}
+    </div>
+  )
+}
+
+function WritingSprint() {
+  const { settings, updateSetting, updateInput, saveSettings } = useContext(SettingsContext)
+  return (
+    <div>
       <h4>Writing Sprint</h4>
       <p>Sprint pace and duration.</p>
       <div className="dropdown sprint-pace">
@@ -156,22 +190,50 @@ function WritingSettings() {
         </div>
       </div>
       <div className="clearfix" />
-      <h4>Daily wordcount goal</h4>
-      <p>The number of words per day you intend to write.</p>
+    </div>
+  )
+}
+function WritingGoal() {
+  const { settings, updateSetting, updateInput, saveSettings } = useContext(SettingsContext)
+  const { startDate, endDate, writingGoal, writingDays } = settings
+  console.log('Selected start date', startDate)
+  console.log('Selected end date', endDate)
+  const correctedEndDate = moment(endDate).isAfter(moment(startDate))
+    ? endDate
+    : moment(startDate).add(1, 'days').toDate()
+  const { numberOfWritingDays } = countWritingDays({ startDate, endDate, writingDays })
+  const intendedToWritePerDay = Math.ceil(writingGoal / Math.max(numberOfWritingDays, 1) ) // TODO - off by 1 error when there's 0 writing days inbetween
+  return (
+    <div>
+      <h4>Your long-term writing goal</h4>
+      <p>Set the number of words you want to write:</p>
       <input
+        placeholder="Writing goal..."
         type="number"
-        placeholder="Wordcount..."
-        name="targetWordcount"
-        value={settings.targetWordcount}
-        onChange={(e) => updateSetting('targetWordcount', parseInt(e.target.value))}
+        name="writingGoal"
+        value={settings.writingGoal}
+        onChange={(e) => updateSetting('writingGoal', parseInt(e.target.value))}
       />
-      <WritingDays />
-      <button className="btn btn-cta right" onClick={saveSettings}>
-        Save
-      </button>
-      <div className="clearfix" />
-      {/* <h4>Email Reminders</h4>
-      <p>Send email reminders when it's time to write:</p> */}
+      <p>Select the date you start writing, and your deadline:</p>
+      <div className="date-pickers">
+        <DatePicker
+          selectsStart
+          selected={startDate}
+          startDate={startDate}
+          endDate={correctedEndDate}
+          onChange={(date) => updateSetting('startDate', date)}
+        />
+        <DatePicker
+          selectsEnd
+          selected={correctedEndDate}
+          minDate={startDate}
+          startDate={startDate}
+          endDate={correctedEndDate}
+          onChange={(date) => updateSetting('endDate', date)}
+        />
+        <div className="clearfix" />
+      </div>
+      <p>To accomplish this goal in time, you will need to write {intendedToWritePerDay} words per day.</p>
     </div>
   )
 }
@@ -196,7 +258,7 @@ function WritingDays() {
   }
 
   return (
-    <>
+    <div>
       <h4>Writing days</h4>
       <p>
         The days of the week when you intend to write (not writing during the inactive days won't count against your
@@ -214,7 +276,7 @@ function WritingDays() {
         ))}
       </div>
       <div className="clearfix" />
-    </>
+    </div>
   )
 }
 
@@ -235,6 +297,9 @@ export async function getServerSideProps({ req, res, query }) {
     targetWordcount,
     sprintPace,
     sprintDuration,
+    startDate,
+    endDate,
+    writingGoal,
   } = user
   return {
     props: {
@@ -250,6 +315,9 @@ export async function getServerSideProps({ req, res, query }) {
         targetWordcount,
         sprintPace,
         sprintDuration,
+        startDate,
+        endDate,
+        writingGoal,
       },
     },
   }

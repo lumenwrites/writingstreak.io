@@ -112,12 +112,12 @@ export function largeNumberFormat(num, digits) {
 }
 
 
-function countWritingDays(prefs) {
-  var start = moment(prefs.startDate)
-  var end = moment(prefs.endDate)
-  var numberOfWritingDays = 0
-  var daysPast = 0
-  var daysLeft = 0
+export function countWritingDays(prefs) {
+  let start = moment(prefs.startDate)
+  let end = moment(prefs.endDate)
+  let numberOfWritingDays = 0
+  let daysPast = 0
+  let daysLeft = 0
   /* Count total number of writing days, how many past, how many left. */
   for (var d = start; start.diff(end, 'days') <= 0; d.add(1, 'days')) {
     const isWritingDay = prefs.writingDays.some((wd) => wd === dateToWeekday(d))
@@ -143,7 +143,7 @@ export function generateStats(savedDays, prefs) {
 
   const { numberOfWritingDays, daysPast, daysLeft } = countWritingDays(prefs)
   const wordsLeftToWrite = Math.max(prefs.writingGoal - totalWordsWritten, 0)
-  const intendedToWritePerDay = Math.ceil(prefs.writingGoal / numberOfWritingDays)
+  const intendedToWritePerDay = Math.ceil(prefs.writingGoal / Math.max(numberOfWritingDays, 1) ) // TODO - off by 1 error when there's 0 writing days inbetween
   const actuallyWrotePerDay = Math.floor(totalWordsWritten / daysPast)
   const shouldWritePerDayToSucceed = Math.floor(wordsLeftToWrite / daysLeft)
   const data = generateChartData(savedDays, prefs, intendedToWritePerDay)
@@ -175,7 +175,7 @@ export function generateChartData(savedDays, prefs, intendedToWritePerDay) {
     // Intended to write chart. Goes up only on writing days, on weekends it's flat.
     const isWritingDay = prefs.writingDays.some((wd) => wd === dateToWeekday(d))
     if (isWritingDay) intendedToWriteCounter += intendedToWritePerDay
-    dataPoint['Intended to Write'] = intendedToWriteCounter
+    dataPoint['Need to Write'] = intendedToWriteCounter
     // Actually wrote chart. If there's a saved day, add up the words I wrote.
     const day = savedDays.find((day) => day.date == d.format('YYYY-MM-DD'))
     if (day) actuallyWroteCounter += day.wordCount

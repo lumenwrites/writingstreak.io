@@ -18,7 +18,10 @@ async function SeedUsers(users) {
       bio: seedUser.bio || "",
       website: seedUser.website || "",
       twitter: seedUser.twitter || "",
-      writingDays: ["Mon", "Tue", "Wed", "Thu", "Fri"]
+      writingDays: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      writingGoal: 5000,
+      startDate: moment().subtract(15, "days").toDate(),
+      endDate: moment().add(5, "days").toDate(),
     }
     const createdUser = await prisma.user.create({ data: user })
     userIds.push(createdUser.id)
@@ -105,13 +108,13 @@ async function SeedDays(numberOfDays = 90) {
   const start = moment().subtract(numberOfDays, 'days') // 30 days ago
   const days = []
   for (var d = start; start.diff(end, 'days') <= 0; d.add(1, 'days')) {
-    if (Math.random() < 0.15) continue //25% chance of missing a day
+    if (Math.random() < 0.05) continue //25% chance of missing a day
     const day = {
       id: d.format('YYYY-MM-DD'),
       date: d.format('YYYY-MM-DD'),
       author: { connect: { id: 'lumen' } },
-      wordCount: Math.floor(Math.random() * 2000),
-      targetWordCount: 250,
+      wordCount: Math.floor(Math.random() * 300),
+      targetWordCount: 5,
       writingTime: Math.floor(Math.random() * 24) * 5,
     }
     const createdDay = await prisma.day.create({ data: day })

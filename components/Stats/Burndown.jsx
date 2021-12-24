@@ -37,7 +37,7 @@ function Chart({ data }) {
     const { dataKey } = o
     // setOpacities((prev) => ({ ...prev, [dataKey]: 0.5 }))
   }
-  const interval = data.length > 30 ? 6 : 0
+  const interval = data.length > 32 ? 6 : 0
   return (
     <ResponsiveContainer width="100%" height={450}>
       <LineChart width={500} height={300} data={data}>
@@ -54,11 +54,12 @@ function Chart({ data }) {
             value="Words Written"
             position="insideLeft"
             angle={-90}
-            style={{ textAnchor: 'middle', fontSize: '90%', fill: '#3c4257' }}
+            dx={-5}
+            style={{ textAnchor: 'middle', fontSize: '90%', fill: '#7c5a49bc' }}
           />
         </YAxis>
         <Tooltip />
-        <Legend onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+        {/* <Legend onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} /> */}
         <Line
           dataKey="Actually Wrote"
           strokeOpacity={opacities['Actually Wrote']}
@@ -67,7 +68,7 @@ function Chart({ data }) {
           activeDot={{ r: 5 }}
         />
         <Line
-          dataKey="Intended to Write"
+          dataKey="Need to Write"
           strokeOpacity={opacities['Intended to Write']}
           stroke="#7c5a49c8"
           strokeWidth={2}

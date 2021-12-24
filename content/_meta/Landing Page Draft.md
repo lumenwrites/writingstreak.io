@@ -20,4 +20,5 @@ This very simple but powerful tool will help you to:
 
 
 Your first goal is to write 5000 words during the next month (250 words per day * 20 workdays). If you're up for a more ambitious challenge - go to settings and adjust the numbers accordingly. But remember, writing a little bit every day is more important than [...]
- 
+
+  The app can automatically send you email reminders when it's time to write, and give you some writing prompts and writing lessons that will help you get started.

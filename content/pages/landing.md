@@ -9,9 +9,9 @@ At the top-left corner of the app you see your Writing Streak:
 
 ![](/landing/writing-streak.png)
 
-It counts how many days in a row you successfully wrote enough words to achieve your writing goal. Your purpose is to make this number grow as high as possible by never breaking your streak.
+It counts how many days in a row you have successfully achieved your daily word count goal. Your purpose is to make this number grow as high as possible by never breaking your streak.
 
-I recommend setting a challenging but attainable goal - write 5 days per week (Monday through Friday), at least 250 words evey day. Strive to do it at the same time every day and get into a routine. The app can automatically send you email reminders when it's time to write, and give you some writing prompts and writing lessons that will help you get started.
+I recommend setting a challenging but attainable goal - write 5 days per week (Monday through Friday), at least 250 words every day. Strive to do it at the same time every day and get into a routine.
 
 Above the editor you see your timeline - a calendar of your last 30 writing days:
 
@@ -24,7 +24,7 @@ The progress bar around your writing streak represents your progress towards you
 
 ![](/landing/burndown.png)
 
-It shows you how many words you need to write per day in order to reach your writing goal by the a certain date. The faint line represents the ideal word count you should be reaching, the bold line represents what you actually wrote in practice.
+It shows you how many words you need to write per day in order to reach your writing goal before the deadline you have set for yourself. The faint line represents the ideal word count you should be reaching, the bold line represents what you actually wrote in practice.
 
 By default, your goal is to write 5000 words during the next month (250 words per day * 20 workdays). If you're up for a more ambitious challenge - go to the settings and adjust the numbers accordingly. But remember, writing a little bit every day, consistently, is more important than aiming for high daily word counts - succeed at a simple and attainable goal first, take on more difficult challenges later.
 
