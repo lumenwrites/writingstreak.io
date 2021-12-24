@@ -13,7 +13,7 @@ export function useModal() {
 // Wrap it around components that should have access to this context
 export function ModalContextProvider({ children }) {
   // This hook is used to actually save the modal state and change it
-  const [modal, setModal] = useState("post-settings1") // purchase1 subscribe login1
+  const [modal, setModal] = useState("delete-post1") //post-settings1 purchase1 subscribe login1
   
   function toggleModal(modalName) {
     if (modal === modalName) {

@@ -6,6 +6,7 @@ import { saveAs } from 'file-saver'
 import { useEditorContext } from 'components/Editor/Editor'
 import Link from 'components/Elements/Link'
 import { useAuth } from 'context/AuthContext'
+import Modal from 'components/Elements/Modal'
 import { useModal } from 'context/ModalContext'
 import PostSettingsModal from './PostSettingsModal'
 
@@ -32,6 +33,7 @@ export default function PublishButtons() {
         <div className="clearfix" />
       </div>
       <PostSettingsModal />
+      <DeletePostModal />
     </>
   )
 }
@@ -139,19 +141,41 @@ function PostSettings() {
 }
 
 function DeletePostButtons() {
+  const { toggleModal } = useModal()
+  return (
+    <button className="btn item" onClick={() => toggleModal('delete-post')}>
+      <FontAwesomeIcon icon={['fas', 'trash-alt']} />
+      Delete Post
+    </button>
+  )
+}
+
+
+
+function DeletePostModal() {
+  const { toggleModal } = useModal()
+  const { user } = useAuth()
   const { editorValues, setValue, setValues } = useEditorContext()
   const router = useRouter()
   async function deletePost() {
     console.log('Deleting Post', editorValues.postSlug)
     const { data } = await axios.post('/api/posts/delete', { slug: editorValues.postSlug })
     console.log('Deleted Post', data)
-    router.push(`/`)
+    toggleModal('')
+    router.push(`/@${user.username}`)
   }
   return (
-    <button className="btn item" onClick={deletePost}>
-      <FontAwesomeIcon icon={['fas', 'trash-alt']} />
-      Delete Post
-    </button>
+    <Modal name={`delete-post`} className={'delete-modal narrow'}>
+      <h1>Are you sure you want to delete the post?</h1>
+      <div className="right">
+        <button className="btn" onClick={() => toggleModal('')}>
+          Cancel
+        </button>
+        <button className="btn btn-cta margin-left-5" onClick={deletePost}>
+          Delete
+        </button>
+      </div>
+    </Modal>
   )
 }
 
