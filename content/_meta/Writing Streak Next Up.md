@@ -6,13 +6,15 @@ Created: list of posts
 Edited: list of posts
 - Spinner in post settings, indicate that they have been saved.  
 - I gotta learn to run scripts on my db that aren't just "seed".
+- Add typewriter mode and blurred mode in settings? Or hotkeys?
+- Production keys. Stripe, convertkit.
 
 ## Bug
 - Solve the sendgrid issue.
 
 ## Small
 
-# MVP
+## MVP
 Don't rush to launch:
 - Max out all the minor issues. Maybe do feature parity.
 - Create content. Course, posts, posts buffer, tweets buffer.
@@ -30,7 +32,6 @@ Implement user feedback. Only after all that move domains.
 - Foster. Collab editing. If I can figure out how that works.
 // My own r/WritingPrompts
 
-Habit strength is a meh indicator. Display progress towards the writing goal instead.
 - Stripe integration.
 	- Handle the subscription pauses/cancellations, trial expirations. Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
 	https://stripe.com/docs/billing/subscriptions/overview
@@ -42,9 +43,9 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 	You can set up several automatic retries and then cancel:
 	https://stripe.com/docs/billing/subscriptions/overview#settings
 	https://stripe.com/docs/billing/subscriptions/fixed-price#manage-subscription-payment-failur	- Terminating access when a subscription is canceled
-	- Discounts.
 	- Way to raise prices while grandfathering old users.
-- Forum?
+- Forum? Tag?
+- Categories? Fiction/nonfiction? And tags are in these categories?
 - Sequences
 	- Should be attached to authors, posts
 	- Need a way to rank posts in sequences
@@ -55,17 +56,14 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 	- Leaderboard of the most active users
 	- Daily accountability partner
 - Marketing
-	- Sharing incentive. Referral program, or discounts.
 	- Affiliate system HypeFury is using: https://firstpromoter.com/
 - Auth
-	- Google/Twitter auth.
 	- Password recovery/reset.
 - Database
 	- Upgrade the RDS instance, enable backups.
 	- Learn to migrate the db without losing data.
 	- Export. As markdown, html. Export all data. button in settings.
-- Error handling.
-- Templates like in typeshare. Essay, fiction, journaling. Guiding questions. Create your own templates.
+- Correct error handling.
 - Analytics: See the active users. Last logged in field on user, last wrote.
 - Feature parity with wst1:
 	- Burndown chart
@@ -99,12 +97,14 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 - Upgrade your account to customize image footer.
 - Best streak
 - Autocreate the post
+- Google/Twitter auth. - google doesn't have username, twitter doesn't have email.
 - Migrate the old database.
 	- Learn to turn slate into html.
 	- Use their email before @ as their username
 
 ## Fast
 - Split CSS into modules.
+- Minimize the number of rerenders
 
 ## Clean
 ## Question
@@ -113,13 +113,14 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 ## Archive
 # Done
 ## 2021-12-25
+- Stripe event verification works.
 - I could use canonical url to customize the twitter image url!!
 - for timeline generation, limit the number of days to 30. For graph, limit to how many fit in the graph, or change interval
 - Add "deadline has passed" warning in settings.
 - Stripe promotion codes work.
 - Improved the landing page a bit. Cleaner, pricing and sharing incentive.
 - Writing streak and chart now interactively display todays words.
-- Better way to load toady's stats into the timeline
+- Better way to load today's stats into the timeline
 - Add pretty react number inputs with words placeholder in them.
 ## 2021-12-24
 - Figured out improvmx domain forwarding.

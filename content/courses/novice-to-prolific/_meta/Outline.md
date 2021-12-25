@@ -14,3 +14,6 @@ Buy in, how amazing it is to be writing online, age of leverage. get them excite
 ### Taking your writing to the next level
 
 ### Marketing and growing your audience
+
+## Resources
+- Templates like in typeshare. Essay, fiction, journaling. Guiding questions. Create your own templates.

@@ -45,8 +45,8 @@ function CreatePostButtons() {
   async function createPost() {
     const post = {
       title: editorValues.title,
-      body: editorValues.html,
-      description: descriptionFromHTML(editorValues.html),
+      body: editorValues.editor.getHTML(),
+      description: descriptionFromHTML(editorValues.editor.getHTML()),
       tags: editorValues.tags,
     }
     const { data } = await axios.post('/api/posts/create', post)
@@ -75,7 +75,7 @@ function UpdatePostButtons() {
     const updatedPost = {
       slug: editorValues.postSlug,
       title: editorValues.title,
-      body: editorValues.html,
+      body: editorValues.editor.getHTML(),
       tags: editorValues.tags,
       published,
     }

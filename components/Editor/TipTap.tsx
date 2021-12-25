@@ -91,7 +91,6 @@ export default function TipTap({ content, onUpdate, onCreate, keyDown }) {
       },
     },
   })
-
   return (
     <>
       <EditorContent className="tiptap" editor={editor} />

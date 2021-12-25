@@ -24,11 +24,12 @@ export default function Editor({ post, user, days }) {
   const doLoadTodaysStatsFromDb = lastSavedDay && moment().format('YYYY-MM-DD') === lastSavedDay.date
   // All initial stats are fetched in create.tsx and edit.tsx
   const [editorValues, setValues] = useState({
-    title: '',
-    html: '',
-    tags: [],
-    height: 0,
+    title: post ? post.title : '',
+    tags: post ? post.tags : [],
+    editor: null,
     lastPressedKey: '',
+    // html: '',
+    // height: 0,
     saved: true,
     // So I could save the post in PublishButtons
     postSlug: post ? post.slug : undefined,
@@ -70,38 +71,28 @@ export default function Editor({ post, user, days }) {
   }
 
   function onCreate({ editor }) {
-    // To edit the post in edit.tsx, load the post into the editor.
-    // In create.tsx post is null, so editor remains blank.
-    if (post) {
-      setValues((prev) => ({
-        ...prev,
-        html: editor.getHTML(),
-        title: post.title,
-        tags: post.tags,
-      }))
-    }
+    // Save editor in state, used in PublishButtons to get the HTML value and save it to server
+    setValues((prev) => ({...prev, editor}))
   }
   function onUpdate({ editor }) {
-    startSaveTimer()
-    // Update info and stats
-    setValues((prev) => ({
-      ...prev,
-      html: editor.getHTML(),
-      healthLeft: Math.min(prev.healthLeft + 5, 100),
-    }))
   }
   function keyDown(view, event) {
+    // Causes rerender
     setValues((prev) => {
-      if (event.key === ' ' && prev.lastPressedKey !== ' ') {
-        return { ...prev, lastPressedKey: event.key, wordCount: prev.wordCount + 1 }
-      }
-      return { ...prev, lastPressedKey: event.key }
+      startSaveTimer(prev.saved)
+      const healthLeft = Math.min(prev.healthLeft + 5, 100)
+      // Increment wordcount when I press space after a word
+      let wordCount = prev.wordCount
+      if (event.key === ' ' && prev.lastPressedKey !== ' ') wordCount += 1
+      return { ...prev, lastPressedKey: event.key, wordCount, healthLeft }
     })
   }
-  function startSaveTimer() {
+  function startSaveTimer(saved) {
     // Save timer. Reset timer as I type, save when I stop for a second.
     clearInterval(saveTimer.current)
-    setValue('saved', false)
+    // Set saved to false only once, when it's true, to minimize rerenders.
+    // Timer can't access editorValues.saved correctly (it'll always be the old value), so I have to pass it.
+    if (saved) setValue('saved', false)
     saveTimer.current = setInterval(() => {
       document.getElementById('save-post')?.click()
       setValue('saved', true)
@@ -110,11 +101,11 @@ export default function Editor({ post, user, days }) {
   }
   function updateTitle(e) {
     setValue('title', e.target.value)
-    startSaveTimer()
+    startSaveTimer(editorValues.saved)
   }
   function updateTags(tags) {
     setValue('tags', tags)
-    startSaveTimer()
+    startSaveTimer(editorValues.saved)
   }
   return (
     <EditorContext.Provider value={{ editorValues, setValue, setValues }}>

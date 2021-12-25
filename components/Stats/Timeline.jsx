@@ -14,7 +14,7 @@ export default function Timeline() {
   }, [editorValues])
   // Days are fetched in edit.tsx and create.tsx, passed down here through the editor context
   const daysWithTodaysStats = loadTodayIntoSavedDays(editorValues)
-  const timeline = generateTimeline(daysWithTodaysStats.splice(0,32))
+  const timeline = generateTimeline(daysWithTodaysStats.splice(0, 32))
   return (
     <div className="timeline-with-fade">
       <div className="fade" />
