@@ -1,15 +1,7 @@
 # ToDo 
-- Plug the realtime today's stats, like in the timeline, so that it's interactive.  
-- Settings calendars
 - Progress bar above the chart.
-- Make sure to fetch all the days, not just the last 30.
-- Deal with opacities.
-- Add a calendar why not.
-- Writing streak shows progress towards the goal.
-- Auto set the goal when the user creates an account.
-- Days dates should be set as datetime
-- off by 1 error in the chart.  
-- what does amt mean?  
+
+
 - make sure post title isnt empty
 - Add "deadline has passed" warning in settings.
 - Add pretty react number inputs with words placeholder in them.
@@ -107,6 +99,7 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 	https://tiptap.dev/experiments/linter
 
 ## Maybe
+- Days dates should be set as datetime?
 // Mobile app using whatever obsidian people are using.
 - Upgrade your account to customize image footer.
 - Best streak
@@ -124,6 +117,9 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 
 ## Archive
 # Done
+## 2021-12-25
+- Writing streak and chart now interactively display todays words.
+- Better way to load toady's stats into the timeline 
 ## 2021-12-24
 - Figured out improvmx domain forwarding.
 - Implemented and perfected the charts, implemented long-term writing goal settings, long-term writing goal is displayed in writing streak progress bar and tooltip. Added to the landing page too.

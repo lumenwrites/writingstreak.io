@@ -14,80 +14,60 @@
 **Writing Streak will help you to overcome these obstacles:**
 
 - A simple but **powerful app** will help you to develop a daily writing habit and massively increase your writing output.
+- A **step-by-step course** will guide you through your first 30 days of writing, and teach you a reliable writing process which will ensure that you'll never run out of ideas and never get stuck in a writer's block.
 - Our **supportive community** will encourage you to write more and help you get better through feedback and advice.
 
-<!-- - A **step-by-step course** will guide you through your first 30 days of writing, and teach you a reliable writing process which will ensure that you'll never run out of ideas and never get stuck in a writer's block. -->
 
 ### Develop your daily writing habit
 Writing Streak is a tool that will help you to write more. It looks like this:
 
 ![](/landing/full-editor.png)
 
-Its main purpose is to help you to begin and maintain your writing streak. At the top-left corner you see your **writing streak counter** - it shows you how many days in a row you have successfully achieved your daily word count goal:
+It's main purpose is to The best way to become a prolific writer is to develop a daily writing habit, and the best way to accomplish that is to begin and maintain a writing streak:
+
+- Decide how many words per day you intend to write.
+- Mark every day you succeed at reaching that goal.
+- Keep it up until it turns into a natural part of your daily life.
+
+At the top-left corner of the app you see your Writing Streak:
 
 ![](/landing/writing-streak.png)
 
-Your objective is to make this number grow as high as possible by never breaking your streak.
+It counts how many days in a row you have successfully achieved your daily word count goal. Your purpose is to make this number grow as high as possible by never breaking your streak.
 
-> I recommend taking on a **30-Day Writing Challenge**:  
-> - Commit to writing 5 days per week (Monday through Friday).  
-> - At least 250 words every day.  
-> - For the next 30 days.  
->
-> Strive to write at the same time every day, ideally in the morning - get used to beginning each day with writing!
+I recommend taking on a 30-Day Writing Challenge - commit to writing 5 days per week (Monday through Friday), at least 250 words every day, for the next 30 days. Strive to write at the same time every day, ideally in the morning, get into a routine, get used to beginning each day with writing. This is a challenging yet attainable goal, and it is the best thing you can do for yourself as a writer.
 
-Above the editor you see your writing timeline:
+
+### Achieve your Writing Goals
+You should also set long-term writing goals (with specific deadlines), so that your daily writing adds up to a larger purpose.
+
+The progress bar around your writing streak represents your progress towards your writing goal. If you click on it, you will see a chart:
+
+![](/landing/burndown.png)
+
+It shows you how many words you need to write per day in order to reach your writing goal before the deadline you have set for yourself. The dotted line represents the ideal word count you should be reaching, the solid line represents how many words you actually wrote in practice. To stay on track, you need to make sure that the solid line stays above the dotted line.
+
+By default, your goal is to write 5000 words during the next month (250 words per day * 20 workdays). If you're up for a more ambitious challenge - go to the settings and adjust the numbers accordingly. But remember, writing a little bit every day, consistently, is more important than aiming for the high daily word counts - succeed at a simple and attainable goal first, take on more difficult challenges later.
+
+### Your writing Timeline
+Above the editor you see your timeline - a calendar of your last 30 writing days:
 
 ![](/landing/writing-day.png)
 
 Each day shows you how many words you wrote, how close you are to accomplishing your daily goal, and how many minutes you have spent in an uninterrupted writing flow.
 
 ### Focused writing with Writing Sprints
-
-> Writing flow is a state where 100% of your attention is focused on writing. You will become much more productive if you learn to stay the flow for multiple uninterrupted stretches of time, with short breaks in-between.
+The best way to become a more productive writer is to learn how to get into the writing "flow" (a state where 100% of your attention is focused on writing), and stay in that state for uninterrupted stretches of time, with short breaks in-between.
 
 In the top-right corner you see a timer. Set it for 20 minutes, write without interruptions, then take a 10 minute break and repeat.
 ![](/landing/timer.png)
 
-There are two biggest obstacles that the writers face when they try to enter the flow - overthinking and distractions. To overcome both, use the Writing Sprints feature:
+There are two biggest obstacles that the writers face when they try to enter the flow - overthinking and distractions. To overcome both, and turn the process of writing into a fun game, use the sprints feature:
 ![](/landing/healthbar.png)
 
-Sprints turn writing into a game:
-- When you start the timer, your health bar begins to decrease, and the only way to refill it is to keep typing.
-- If you get distracted or stop to think or edit for too long - your health will run out and you will lose the sprint.
-- If you manage to keep writing for the whole duration of the sprint without running out of health - you win, and the time gets added to your "focused time" stat for the day.
+When you start your timer, your health bar begins to decrease, and the only way to refill it is to keep typing. If you get distracted or stop to think or edit for too long - your health runs out and you lose the sprint. If you manage to keep writing for the whole duration of the sprint without running out of health - you win, and the time gets added to your "focused time" stat for the day.
 
-> Strive to gradually increase your focused writing time. Start with a 20 minute writing session every morning, once you get used to it - add one more.
-
-### Achieve your Writing Goals
-Set long-term writing goals (with specific deadlines), so that your daily writing adds up to a larger purpose. The progress bar around your writing streak counter represents your progress towards your writing goal. If you click on it, you will see a chart:
-
-![](/landing/burndown.png)
-
-- The dotted line represents the ideal word count you should be reaching to achieve your goal on time.
-- The solid line represents how many words you actually wrote on any given day.
-- To stay on track, you need to make sure that the solid line stays above the dotted line.
-
-> Your goal is to write 5000 words during the next month:  
-250 words per day * 20 workdays.
->
-> If you're up for a more ambitious challenge - go to the settings and adjust the numbers accordingly.
->
-> But remember, writing a little bit every day, consistently, is more important than aiming for the high daily word counts - succeed at a simple and attainable goal first, take on more difficult challenges later.
-
-<!--
-
-### Novice to Prolific - your guide to developing a Writing Habit
-![](/landing/course.png)
-- Begin writing online even if you've never done it before.
-- Figure out what content people want to read, and plan out a high-leverage content strategy.
-- Learn a simple step-by-step process for outlining, writing, formatting, and publishing high quality posts.
-- Develop a reliable writing system that helps you to write regularly, never run out of ideas, and never stuck in a writer's block.
-- Take your writing to the next level - make it engaging, insightful, and fun to read.
-- Create a marketing strategy, promote your posts, and build your audience (even if you're starting from scratch).
-- Prompts and action steps
-
--->
+Strive to gradually increase your focused writing time, remember - you improve what you measure. Start with a 20 minute writing session every morning, once you get used to it - add one more. Keep striving for more daily focused writing sessions as long as it keeps you challenged, but not overwhelmed.
 
 ### Accountability
 Once you have committed to writing regularly, have set an attainable goal, and have learned to write in the flow, the only way to fail is to lose motivation and quit. To prevent that - find someone who will keep you accountable.
@@ -126,7 +106,7 @@ This will help you to grow your audience on social media, and start gathering a 
 ### Start writing now!
 Now it's time to start writing - create an account, and begin your writing streak today!
 
-You can use this tool for free for the first month - that will be enough to write for 30 days and establish your writing habit. If you end up enjoying our app and community and want to continue - you can subscribe to the premium version for $20/mo (the price will rise as this project grows and becomes more successful, but people who sign up early will keep the cheaper price they signed up for).
+You can use this tool for free for the first month - that will be enough to write for 30 days and establish your writing habit. If you end up enjoying our app and community and want to continue - you can subscribe to the premium version for $20/mo (the price will rise as this project grows and becomes more successful, but people who sign up early keep the cheaper price they signed up for).
 
 ### Contact, questions, and feedback
 If you have any questions or feedback - send me an email:

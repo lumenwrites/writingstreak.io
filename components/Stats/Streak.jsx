@@ -1,17 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
-import { calculateStreak, calculateHabitStrength } from './utils'
+import { calculateStreak } from './utils'
 import { generateStats, loadTodayIntoSavedDays } from './utils'
 import { useModal } from 'context/ModalContext'
-import moment from 'moment'
-
 
 export default function Streak() {
   const { toggleModal } = useModal()
   const { editorValues, setValue } = useEditorContext()
   const streak = calculateStreak(editorValues.days, editorValues.writingDays)
-  const { habitStrength, completedDays } = calculateHabitStrength(editorValues.days, editorValues.writingDays)
   const { startDate, endDate, writingGoal, writingDays } = editorValues
   const daysWithTodaysStats = loadTodayIntoSavedDays(editorValues)
   const stats = generateStats(daysWithTodaysStats, { startDate, endDate, writingGoal, writingDays })

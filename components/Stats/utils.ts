@@ -199,7 +199,6 @@ export function generateChartData(savedDays, prefs, intendedToWritePerDay) {
     if (moment().diff(d, 'days') + 1 > 0) dataPoint['Actually Wrote'] = actuallyWroteCounter
     data.push(dataPoint)
   }
-  console.log('data', data)
   return data
 }
 

@@ -14,7 +14,6 @@ export default function Burndown() {
   const { editorValues, setValue, setValues } = useEditorContext()
   const { startDate, endDate, writingGoal, writingDays } = editorValues
   const daysWithTodaysStats = loadTodayIntoSavedDays(editorValues)
-  console.log('Burndown', daysWithTodaysStats[0])
   const stats = generateStats(daysWithTodaysStats, { startDate, endDate, writingGoal, writingDays })
   return (
     <div>

@@ -18,7 +18,7 @@ export async function markdownToHtml(markdown) {
     .use(rehypeCodeTitles)
     // .use(rehypeAutolinkHeadings)
     .use(rehypePrism)
-    .use(rehypeSanitize)
+    // .use(rehypeSanitize)
     .use(rehypeStringify)
     .process(markdown)
   // console.log("Rendered markdown to html", html)

@@ -12,12 +12,15 @@ export default function Landing({ copy }) {
         <div className="cta-header">
           <h1>Become a Prolific Writer</h1>
           <h2>
-            This very simple but powerful tool will help you to:
+            Writing Streak is a simple but powerful tool that will help you to master the art of writing in a fun and
+            engaging way
             <ul>
+              <li>Overcome writer's block</li>
               <li>Develop a daily writing habit</li>
               <li>Massively increase your writing output</li>
-              <li>Master the art of writing in a fun and engaging way</li>
-            </ul>            
+              {/* <li>Overcome the writer's block and never run out of ideas</li> */}
+              <li>Share your work with the community of writers and receive feedback</li>
+            </ul>
           </h2>
 
           <SignupCTA />

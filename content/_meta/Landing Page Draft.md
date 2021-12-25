@@ -1,3 +1,41 @@
+ It would enable you to create books and courses, build your audience, become a better thinker.
+ ## Hit on benefits of writing
+ You know that developing a daily writing habit is one of the most valuable things you can do for your career.
+ Writing is the fuel for all other mediums:
+
+-   Want to make a film? _Write_.
+-   Want to sell products? _Write_.
+-   Want to record a song? _Write_.
+-   Want to author a book? _Write_.
+-   Want to present a speech? _Write_.
+-   Want to produce a podcast? _Write_.
+-   Want to teach an online course? _Write_.
+-   Want to shoot a compelling video? _Write_.
+
+What if you _finally_ wrote that book?
+
+What if you _finally_ launched that course?
+lern faster
+
+## Hit on challenges
+You’ve tried to build a writing habit before. You wrote for a while but then you fell off the bandwagon. You know if you had a regular writing practice it would boost your career, but you can’t seem to get it to stick. You know you should write, but you just don’t get around to doing it. It’s time to change that.
+“Setting aside time every day to write and sticking to it is difficult.”
+So long as writing is a thing you “try” to do every day whenever you can, you’re going to have trouble.
+facing the blinking cursor on a blank page is daunting.
+It’s so easy to put off writing for later, but you know how it goes: “later” becomes “never”, and then you don’t write.
+Procrastination will ensure you never get words on the page.
+You know you should write, but you don’t. You feel stuck and don’t know where to begin even trying to build a writing habit.
+Then there’s your chronic case of perfectionism. It’s a challenge to get words out of your head and, when you do, they’re the wrong words.
+You wish you could come up with the right words.
+Part of the problem is not knowing the right way to practice, but it’s also not knowing what to talk about.
+No idea what to write about?
+This is ridiculous. Why is writing so hard? Why do I have nothing to say the moment I sit down to write?
+How is it you can feel inspired and still be unable to write a single word?
+It’s so frustrating.
+At this point, you wish someone else would just tell you what to write about. At least then you’d have clear direction.
+
+You need a reliable writing system so you can produce consistent results.
+ 
 # Become a Prolific Writer
 Master the art of online writing in a fun and engaging way:
 - A simple but powerful tool that will help you to develop a daily writing habit and massively increase your writing output.
@@ -18,6 +56,32 @@ This very simple but powerful tool will help you to:
 <li>Master the art of writing in a fun and engaging way</li>
 </ul>
 
+## This very simple but powerful tool will help you to:
+
+-   Develop a daily writing habit
+-   Massively increase your writing output
+-   Master the art of writing in a fun and engaging way
+
+
+## Master the art of writing in a fun and engaging way:
+
+- Develop a daily writing habit
+- Massively increase your writing output
+- Overcome the writer's block and never run out of ideas
+- Share your work with the community of writers, receive feedback and advice.
+
+          <h1>Become a Prolific Writer</h1>
+          <h2>
+            This very simple but powerful tool will help you to:
+            <ul>
+              <li>Develop a daily writing habit</li>
+              <li>Massively increase your writing output</li>
+              <li>Master the art of writing in a fun and engaging way</li>
+            </ul>            
+          </h2>
+
+Become a better writer. feedback and advice.
+Grow your audience.
 
 Your first goal is to write 5000 words during the next month (250 words per day * 20 workdays). If you're up for a more ambitious challenge - go to settings and adjust the numbers accordingly. But remember, writing a little bit every day is more important than [...]
 
