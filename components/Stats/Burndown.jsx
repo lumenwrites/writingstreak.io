@@ -38,12 +38,14 @@ function Chart({ data }) {
     const { dataKey } = o
     // setOpacities((prev) => ({ ...prev, [dataKey]: 0.5 }))
   }
-  const interval = data.length > 32 ? 6 : 0
+  let interval = 0
+  if (data.length > 32) interval = 6
+  if (data.length > 100) interval = 31
   return (
     <ResponsiveContainer width="100%" height={450}>
       <LineChart width={500} height={300} data={data}>
         <CartesianGrid stroke="#58232311" />
-        <XAxis dataKey="name" interval={interval} angle={-45} dx={-15} dy={15} height={55} />
+        <XAxis dataKey={data.length > 100 ? "month" : "name"} interval={interval} angle={-45} dx={-15} dy={15} height={55} />
         <YAxis
           type="number"
           tickFormatter={(tick) => {
@@ -66,7 +68,7 @@ function Chart({ data }) {
           strokeOpacity={opacities['Actually Wrote']}
           stroke="#582323"
           strokeWidth={2}
-          activeDot={{ r: 5 }}
+          activeDot={{ r: data.length > 100 ? 0 : 5 }}
         />
         <Line
           dataKey="Need to Write"

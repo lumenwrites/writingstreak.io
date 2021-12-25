@@ -1,6 +1,5 @@
 # ToDo 
 ## Next Up
-- Add pretty react number inputs with words placeholder in them.
 - Connect posts to days.
 Click on day modal:
 Created: list of posts
@@ -121,7 +120,8 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 - Stripe promotion codes work.
 - Improved the landing page a bit. Cleaner, pricing and sharing incentive.
 - Writing streak and chart now interactively display todays words.
-- Better way to load toady's stats into the timeline 
+- Better way to load toady's stats into the timeline
+- Add pretty react number inputs with words placeholder in them.
 ## 2021-12-24
 - Figured out improvmx domain forwarding.
 - Implemented and perfected the charts, implemented long-term writing goal settings, long-term writing goal is displayed in writing streak progress bar and tooltip. Added to the landing page too.

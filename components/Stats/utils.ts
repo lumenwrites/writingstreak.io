@@ -187,6 +187,7 @@ export function generateChartData(savedDays, prefs, intendedToWritePerDay) {
   for (var d = start; start.diff(end, 'days') <= 0; d.add(1, 'days')) {
     let dataPoint = {
       name: `${dateToWeekday(d)} ${d.format('DD')}`, // Wed 13
+      month: `${d.format('MMM DD')}` // Jan 23
     }
     // Intended to write chart. Goes up only on writing days, on weekends it's flat.
     const isWritingDay = prefs.writingDays.some((wd) => wd === dateToWeekday(d))
