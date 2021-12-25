@@ -1,3 +1,5 @@
+// To verify events you have to pass it raw body. https://github.com/hoangvvo/next-connect/issues/169#issuecomment-1001022287
+import { buffer, } from 'micro'
 // https://stripe.com/docs/billing/quickstart
 import moment from 'moment'
 import prisma from 'prisma/prismaClient'
@@ -8,10 +10,10 @@ import { SubscriptionStatus } from "@prisma/client" // https://stackoverflow.com
 const stripe = require('stripe')(process.env.STRIPE_SECRET)
 
 async function webhooks(req, res) {
-  const event = req.body
+  const event = await verifyEvent(req, res)
+  if (!event) res.status(400).end() // returns false if verification has failed
+  // const event = req.body
   console.log('[webhooks] event', event.type)
-  // const event = verifyEvent(req, res)
-  // if (!event) res.status(400).end() // returns false if verification has failed
   let customer, subscription, status
   // Handle the event
   switch (event.type) {
@@ -71,34 +73,34 @@ export default handler().post(webhooks)
 //   // handleSubscriptionCreated(subscription);
 //   break;
 
-// export const config = {
-//   api: {
-//     bodyParser: false
-//   }
-// }
-// export default webhooks 
+async function verifyEvent(req, res) {
+  const rawBody = await buffer(req)
+  let event
+  // console.log('[webhooks verifyEvent]')
+  const endpointSecret = process.env.WEBHOOK_ENDPOINT_SECRET;
+  // Only verify the event if you have an endpoint secret defined.
+  // Otherwise use the basic event deserialized with JSON.parse
+  if (endpointSecret) {
+    // Get the signature sent by Stripe
+    const signature = req.headers['stripe-signature'];
+    // console.log('endpointSecret', endpointSecret)
+    // console.log('signature', signature)
+    try {
+      event = stripe.webhooks.constructEvent(
+        rawBody,
+        signature,
+        endpointSecret
+      );
+    } catch (err) {
+      console.log(`Webhook signature verification failed.`, err.message);
+      return false
+    }
+  }
+  return event
+}
 
-// function verifyEvent(req, res) {
-//   let event = req.body
-//   console.log('[webhooks verifyEvent]', event)
-//   const endpointSecret = process.env.WEBHOOK_ENDPOINT_SECRET;
-//   // Only verify the event if you have an endpoint secret defined.
-//   // Otherwise use the basic event deserialized with JSON.parse
-//   if (endpointSecret) {
-//     // Get the signature sent by Stripe
-//     const signature = req.headers['stripe-signature'];
-//     console.log('endpointSecret', endpointSecret)
-//     console.log('signature', signature)
-//     try {
-//       event = stripe.webhooks.constructEvent(
-//         req.body,
-//         signature,
-//         endpointSecret
-//       );
-//     } catch (err) {
-//       console.log(`Webhook signature verification failed.`, err.message);
-//       return false
-//     }
-//   }
-//   return event
-// }
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+}

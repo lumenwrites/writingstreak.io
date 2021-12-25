@@ -13,6 +13,20 @@
     font-weight: bold;
     text-decoration: underline;
   }
+  //Blurred text
+  &.blurred {
+    p,
+    a,
+    h1,
+    h2,
+    h2,
+    h3,
+    h4,
+    span {
+      color: transparent;
+      text-shadow: 0 0 25px var(--text);
+    }
+  }
 }
 .tags-input {
   color: var(--text);

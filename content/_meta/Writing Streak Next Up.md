@@ -5,12 +5,10 @@ Click on day modal:
 Created: list of posts
 Edited: list of posts
 - Spinner in post settings, indicate that they have been saved.  
-- I could use canonical url to customize the url!!
 - I gotta learn to run scripts on my db that aren't just "seed".
 
 ## Bug
 - Solve the sendgrid issue.
-- learn to do custom emails on vercel domains
 
 ## Small
 
@@ -115,6 +113,7 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 ## Archive
 # Done
 ## 2021-12-25
+- I could use canonical url to customize the twitter image url!!
 - for timeline generation, limit the number of days to 30. For graph, limit to how many fit in the graph, or change interval
 - Add "deadline has passed" warning in settings.
 - Stripe promotion codes work.
