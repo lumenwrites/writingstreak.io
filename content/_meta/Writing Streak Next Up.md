@@ -1,7 +1,5 @@
 # ToDo 
 ## Next Up
-- Stripe discounts.
-- Add "deadline has passed" warning in settings.
 - Add pretty react number inputs with words placeholder in them.
 - Connect posts to days.
 Click on day modal:
@@ -119,7 +117,9 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 ## Archive
 # Done
 ## 2021-12-25
-- Improved the landing page a bit.
+- Add "deadline has passed" warning in settings.
+- Stripe promotion codes work.
+- Improved the landing page a bit. Cleaner, pricing and sharing incentive.
 - Writing streak and chart now interactively display todays words.
 - Better way to load toady's stats into the timeline 
 ## 2021-12-24

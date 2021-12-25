@@ -1,12 +1,15 @@
 import axios from 'axios'
 import moment from 'moment'
 import slugify from 'slugify'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, createContext, useContext } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import DatePicker from 'components/Elements/DatePicker'
+import NumberFormat from 'react-number-format'
+
 import Link from 'components/Elements/Link'
 import Layout from 'components/Layout/Layout'
 import Tabs from 'components/Elements/Tabs'
-import DatePicker from 'components/Elements/DatePicker'
+
 import { countWritingDays } from 'components/Stats/utils'
 
 const SettingsContext = createContext({
@@ -137,12 +140,13 @@ function WritingSettings() {
       <WritingDays />
       <h4>Daily wordcount goal</h4>
       <p>The number of words per day you intend to write.</p>
-      <input
-        type="number"
-        placeholder="Wordcount..."
-        name="targetWordcount"
+      <NumberFormat
         value={settings.targetWordcount}
-        onChange={(e) => updateSetting('targetWordcount', parseInt(e.target.value))}
+        suffix=" words"
+        placeholder="250 words"
+        thousandSeparator={true}
+        renderText={(value) => <div>{value} words</div>}
+        onValueChange={({ value }) => updateSetting('targetWordcount', parseInt(value))}
       />
       <WritingSprint />
       <WritingGoal />
@@ -202,17 +206,20 @@ function WritingGoal() {
     ? endDate
     : moment(startDate).add(1, 'days').toDate()
   const { numberOfWritingDays } = countWritingDays({ startDate, endDate, writingDays })
-  const intendedToWritePerDay = Math.ceil(writingGoal / Math.max(numberOfWritingDays, 1) ) // TODO - off by 1 error when there's 0 writing days inbetween
+  const intendedToWritePerDay = Math.ceil(writingGoal / Math.max(numberOfWritingDays, 1)) // TODO - off by 1 error when there's 0 writing days inbetween
+  let description = `To accomplish this goal in time, you will need to write ${intendedToWritePerDay} words per day.`
+  if (moment(endDate).isBefore(moment())) description = `Deadline has passed.`
   return (
     <div>
       <h4>Your long-term writing goal</h4>
       <p>Set the number of words you want to write:</p>
-      <input
-        placeholder="Writing goal..."
-        type="number"
-        name="writingGoal"
+      <NumberFormat
         value={settings.writingGoal}
-        onChange={(e) => updateSetting('writingGoal', parseInt(e.target.value))}
+        suffix=" words"
+        placeholder="5000 words"
+        thousandSeparator={true}
+        renderText={(value) => <div>{value} words</div>}
+        onValueChange={({ value }) => updateSetting('writingGoal', parseInt(value))}
       />
       <p>Select the date you start writing, and your deadline:</p>
       <div className="date-pickers">
@@ -233,7 +240,7 @@ function WritingGoal() {
         />
         <div className="clearfix" />
       </div>
-      <p>To accomplish this goal in time, you will need to write {intendedToWritePerDay} words per day.</p>
+      <p>{description}</p>
     </div>
   )
 }
