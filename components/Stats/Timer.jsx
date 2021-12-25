@@ -16,8 +16,8 @@ export default function Timer() {
     /* Start countdown */
     timer.current = setInterval(() => {
       setValues((prev) => {
-        const updatedSecondsLeft = prev.secondsLeft - 0.1
-        const updatedHealthLeft = prev.healthLeft - paces[editorValues.sprintPace]
+        const updatedSecondsLeft = prev.secondsLeft - 1 // -0.1 when I run every 100 ms
+        const updatedHealthLeft = prev.healthLeft - paces[editorValues.sprintPace] * 10 // I'm running timer once per second now
         if (updatedSecondsLeft < 0.1) {
           console.log('Sprint complete')
           stopTimer()
@@ -32,7 +32,7 @@ export default function Timer() {
         }
         return { ...prev, secondsLeft: updatedSecondsLeft, healthLeft: updatedHealthLeft }
       })
-    }, 100)
+    }, 1000)
   }
 
   function stopTimer() {

@@ -46,6 +46,7 @@ Implement user feedback. Only after all that move domains.
 	- Way to raise prices while grandfathering old users.
 - Forum? Tag?
 - Categories? Fiction/nonfiction? And tags are in these categories?
+- Email notifications on comments.
 - Sequences
 	- Should be attached to authors, posts
 	- Need a way to rank posts in sequences
@@ -66,12 +67,10 @@ Implement user feedback. Only after all that move domains.
 - Correct error handling.
 - Analytics: See the active users. Last logged in field on user, last wrote.
 - Feature parity with wst1:
-	- Burndown chart
 	- Email reminders when it's time to write
 	- Typewriter mode.
 	- Blur text
 	- Simple Writing (use only 1000 most common words)
-	- Prompts
 	- Dark theme.
 	- Export
 	- Full screen
@@ -104,7 +103,7 @@ Implement user feedback. Only after all that move domains.
 
 ## Fast
 - Split CSS into modules.
-- Minimize the number of rerenders
+
 
 ## Clean
 ## Question
@@ -113,6 +112,8 @@ Implement user feedback. Only after all that move domains.
 ## Archive
 # Done
 ## 2021-12-25
+- Old wst is now running at old.writingstreak.io. Notification is done.
+- Removed extra rerenders by putting all state updates in one place.
 - Stripe event verification works.
 - I could use canonical url to customize the twitter image url!!
 - for timeline generation, limit the number of days to 30. For graph, limit to how many fit in the graph, or change interval

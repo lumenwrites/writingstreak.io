@@ -513,3 +513,20 @@ svg {
     }
   }
 }
+
+.old-notification {
+  padding: 10px;
+  background: var(--subnav-bg);
+  text-align: center;
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  position: relative;
+  .close-button {
+    @extend .center-content;
+    float: right;
+    height: 20px;
+    width: 20px;
+  }
+}

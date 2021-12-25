@@ -73,6 +73,9 @@ export default function TipTap({ content, onUpdate, onCreate, keyDown }) {
     onCreate: ({ editor }) => {
       onCreate({ editor })
     },
+    onTransaction({ editor, transaction }) {
+      // console.log('transition', transaction)
+    },
     onUpdate: ({ editor }) => {
       onUpdate({ editor })
     },

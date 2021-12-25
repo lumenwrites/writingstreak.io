@@ -24,13 +24,22 @@ Writing Streak is a tool that will help you to write more. It looks like this:
 ![](/landing/full-editor.png)
 
 ### Develop your daily writing habit
-The best way to become a prolific writer is to develop a daily writing habit, and the best way to do that is to commit to writing every day without breaking your streak.
+The best way to become a prolific writer is to develop a daily writing habit, and the best way to accomplish that is to begin and maintain a writing streak:
+
+- Set a specific daily word count goal.
+- Keep track of how many days in a row you successfully reach that goal.
+- Make this number grow as high as possible by never breaking your streak.
+- Keep it up until writing becomes a natural part of your daily life.
 
 At the top-left corner of the app you see your Writing Streak:
 
 ![](/landing/writing-streak.png)
 
-Your purpose is to make this number grow as high as possible by never breaking your streak.
+Above the editor you see your writing timeline:
+
+![](/landing/writing-day.png)
+
+Each day shows you how many words you wrote, how close you are to accomplishing your daily goal, and how many minutes you have spent in an uninterrupted writing flow.
 
 > I recommend taking on a **30-Day Writing Challenge**:  
 > - Commit to writing 5 days per week (Monday through Friday).  
@@ -38,12 +47,6 @@ Your purpose is to make this number grow as high as possible by never breaking y
 > - For the next 30 days.  
 >
 > Strive to write at the same time every day, ideally in the morning - get used to beginning each day with writing!
-
-Above the editor you see your writing timeline:
-
-![](/landing/writing-day.png)
-
-Each day shows you how many words you wrote, how close you are to accomplishing your daily goal, and how many minutes you have spent in an uninterrupted writing flow.
 
 ### Focused writing with Writing Sprints
 You will become much more productive if you learn to get into the writing "flow" (a state where 100% of your attention is focused on writing), and stay in that state for uninterrupted stretches of time, with short breaks in-between.

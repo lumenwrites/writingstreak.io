@@ -24,12 +24,10 @@ export default function Editor({ post, user, days }) {
   const doLoadTodaysStatsFromDb = lastSavedDay && moment().format('YYYY-MM-DD') === lastSavedDay.date
   // All initial stats are fetched in create.tsx and edit.tsx
   const [editorValues, setValues] = useState({
+    editor: null,
     title: post ? post.title : '',
     tags: post ? post.tags : [],
-    editor: null,
     lastPressedKey: '',
-    // html: '',
-    // height: 0,
     saved: true,
     // So I could save the post in PublishButtons
     postSlug: post ? post.slug : undefined,
@@ -77,6 +75,7 @@ export default function Editor({ post, user, days }) {
   function onUpdate({ editor }) {
   }
   function keyDown(view, event) {
+    // if (event.key === 'Backspace' || event.key === 'Delete') return event.preventDefault()
     // Causes rerender
     setValues((prev) => {
       startSaveTimer(prev.saved)
