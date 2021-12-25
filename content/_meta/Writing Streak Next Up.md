@@ -1,5 +1,6 @@
 # ToDo 
 ## Next Up
+- Stripe discounts.
 - Add "deadline has passed" warning in settings.
 - Add pretty react number inputs with words placeholder in them.
 - Connect posts to days.
@@ -7,7 +8,9 @@ Click on day modal:
 Created: list of posts
 Edited: list of posts
 - Spinner in post settings, indicate that they have been saved.  
-
+- for timeline generation, limit the number of days to 30. For graph, limit to how many fit in the graph, or change interval
+- I could use canonical url to customize the url!!
+- I gotta learn to run scripts on my db that arent just "seed".
 
 ## Bug
 - Solve the sendgrid issue.
@@ -95,6 +98,7 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 
 ## Maybe
 - make sure post title Isn't empty
+- Maybe calendar should mark published days as well,
 - Progress bar above the chart.
 - Days dates should be set as datetime?
 // Mobile app using whatever obsidian people are using.

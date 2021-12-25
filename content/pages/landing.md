@@ -62,7 +62,7 @@ Sprints turn writing into a game:
 > Strive to gradually increase your focused writing time. Start with a 20 minute writing session every morning, once you get used to it - add one more.
 
 ### Achieve your Writing Goals
-Set long-term writing goals with specific deadlines, so that your daily writing adds up to a larger purpose. 
+Set long-term writing goals with specific deadlines, so that your daily writing adds up to a larger purpose.
 
 ![](/landing/burndown.png)
 
@@ -70,8 +70,8 @@ Set long-term writing goals with specific deadlines, so that your daily writing 
 - The solid line represents how many words you actually wrote on any given day.
 - To stay on track, you need to make sure that the solid line stays above the dotted line.
 
-> Your goal is to write 5000 words during the next month:  
-250 words per day * 20 workdays.
+> Your first goal is to write 5000 words during the next month:  
+250 words per day * 20 workdays = 5000 words.
 >
 > If you're up for a more ambitious challenge - go to the settings and adjust the numbers accordingly.
 >

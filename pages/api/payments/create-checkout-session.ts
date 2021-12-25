@@ -18,6 +18,8 @@ async function CreateCheckoutSession(req, res) {
         },
       ],
       mode: 'subscription',
+      // https://stripe.com/docs/billing/subscriptions/coupons/codes#adding-promotion-codes-to-checkout
+      allow_promotion_codes: true,
       customer_email: req.user.email,
       success_url: `${domain}/api/payments/subscription-success?success=true&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${domain}/payments/cancelled?canceled=true`,

@@ -55,7 +55,7 @@ export default function Timer() {
         data-multiline={true}
         data-tip={
           `Write without interruptions for ${editorValues.sprintDuration} minutes (until the time runs out). <br/>` +
-          `You can edit the duration in settings.`
+          `You can edit the duration in the settings.`
         }
       >
         <RoundProgressBar progress={progress * 100}>
@@ -93,7 +93,7 @@ function HealthBar() {
       data-multiline={true}
       data-tip={
         `Remaining health. Increases as you type, decreases when you stop. <br/>` +
-        `Change speed or turn it off in settings.`
+        `Change the speed or turn it off in the settings.`
       }
     >
       <div className="progress" style={{ height: `${fill}%` }}>
