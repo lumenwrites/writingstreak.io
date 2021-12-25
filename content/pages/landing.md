@@ -1,3 +1,4 @@
+<!--
 **You know that developing a daily writing habit is one of the most valuable things you can do for your career:**
 - Finally finish that book, screenplay, or a course you've been working on.
 - Build your reputation, become a well-known expert in your field.
@@ -13,12 +14,13 @@
 
 **Writing Streak will help you to overcome these obstacles:**
 
-- A simple but **powerful app** will help you to develop a daily writing habit and massively increase your writing output.
+- A **simple but powerful app** will help you to develop a daily writing habit and massively increase your writing output.
 - Our **supportive community** will encourage you to write more and help you get better through feedback and advice.
 
 <!-- - A **step-by-step course** will guide you through your first 30 days of writing, and teach you a reliable writing process which will ensure that you'll never run out of ideas and never get stuck in a writer's block. -->
 
-### Develop your daily writing habit
+<!-- ### Develop your daily writing habit -->
+
 Writing Streak is a tool that will help you to write more. It looks like this:
 
 ![](/landing/full-editor.png)
