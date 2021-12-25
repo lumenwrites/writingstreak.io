@@ -19,7 +19,6 @@ export default function Landing({ copy }) {
               <li>Master the art of writing in a fun and engaging way</li>
             </ul>
           </h2>
-
           {/* <h2>
             Writing Streak is a simple but powerful tool that will help you to master the art of writing in a fun and
             engaging way
