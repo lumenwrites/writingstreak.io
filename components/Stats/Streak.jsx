@@ -2,8 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
 import { calculateStreak, calculateHabitStrength } from './utils'
-import { generateStats } from './utils'
+import { generateStats, loadTodayIntoSavedDays } from './utils'
 import { useModal } from 'context/ModalContext'
+import moment from 'moment'
+
 
 export default function Streak() {
   const { toggleModal } = useModal()
@@ -11,7 +13,8 @@ export default function Streak() {
   const streak = calculateStreak(editorValues.days, editorValues.writingDays)
   const { habitStrength, completedDays } = calculateHabitStrength(editorValues.days, editorValues.writingDays)
   const { startDate, endDate, writingGoal, writingDays } = editorValues
-  const stats = generateStats(editorValues.days, { startDate, endDate, writingGoal, writingDays })
+  const daysWithTodaysStats = loadTodayIntoSavedDays(editorValues)
+  const stats = generateStats(daysWithTodaysStats, { startDate, endDate, writingGoal, writingDays })
   const goalProgressDescription = `You wrote ${stats.totalWordsWritten} out of ${stats.writingGoal} words towards your long-term goal.`
   const progress = Math.min((stats.totalWordsWritten / stats.writingGoal) * 100, 100)
   return (

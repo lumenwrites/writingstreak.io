@@ -28,6 +28,22 @@ function generateEmptyDays(numberOfDays = 30) {
   return days
 }
 
+export function loadTodayIntoSavedDays(editorValues) {
+  let daysWithTodaysStats = [...editorValues.days]
+  const today = {
+    date: moment().format('YYYY-MM-DD'),
+    wordCount: editorValues.wordCount,
+    writingTime: editorValues.writingTime,
+    targetWordcount: editorValues.targetWordcount,
+  }
+  if (today.date !== daysWithTodaysStats[0].date) {
+    daysWithTodaysStats.unshift(today)
+  } else {
+    daysWithTodaysStats[0] = {...daysWithTodaysStats[0], ...today}
+  }
+  return daysWithTodaysStats
+}
+
 /* Load saved days into calendar */
 export function generateTimeline(savedDays, numberOfDays = 30) {
   // console.log(`Generating Timeline, loading ${savedDays.length} days into timeilne`)
@@ -62,7 +78,7 @@ export function calculateStreak(days, writingDays) {
       currentStreak += 1
     } else {
       if (isWritingDay && !isToday) break // Missed a day, streak is over
-      return currentStreak // For some reason break doesn't work, have to use return
+      // if (isWritingDay && !isToday) return currentStreak // For some reason break doesn't work, have to use return
       // If it's not a writing day, it's fine to not write.
       // I don't increment the streak but I don't break it either.
     }
@@ -179,9 +195,11 @@ export function generateChartData(savedDays, prefs, intendedToWritePerDay) {
     // Actually wrote chart. If there's a saved day, add up the words I wrote.
     const day = savedDays.find((day) => day.date == d.format('YYYY-MM-DD'))
     if (day) actuallyWroteCounter += day.wordCount
-    if (moment().diff(d) > 0) dataPoint['Actually Wrote'] = actuallyWroteCounter
+    // Chart all the days up to and including today. + 1 to include today, off by 1 error.
+    if (moment().diff(d, 'days') + 1 > 0) dataPoint['Actually Wrote'] = actuallyWroteCounter
     data.push(dataPoint)
   }
+  console.log('data', data)
   return data
 }
 

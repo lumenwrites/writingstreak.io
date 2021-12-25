@@ -1,4 +1,19 @@
 # ToDo 
+- Plug the realtime today's stats, like in the timeline, so that it's interactive.  
+- Settings calendars
+- Progress bar above the chart.
+- Make sure to fetch all the days, not just the last 30.
+- Deal with opacities.
+- Add a calendar why not.
+- Writing streak shows progress towards the goal.
+- Auto set the goal when the user creates an account.
+- Days dates should be set as datetime
+- off by 1 error in the chart.  
+- what does amt mean?  
+- make sure post title isnt empty
+- Add "deadline has passed" warning in settings.
+- Add pretty react number inputs with words placeholder in them.
+
 ## Next Up
 - Connect posts to days.
 Click on day modal:
@@ -29,7 +44,7 @@ Implement user feedback. Only after all that move domains.
 - Hemingway/grammarly (editing mode).
 - Prolific Academy (30 days course, subscription community).
 - Foster. Collab editing. If I can figure out how that works.
-
+// My own r/WritingPrompts
 
 Habit strength is a meh indicator. Display progress towards the writing goal instead.
 - Stripe integration.
@@ -110,6 +125,8 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 ## Archive
 # Done
 ## 2021-12-24
+- Figured out improvmx domain forwarding.
+- Implemented and perfected the charts, implemented long-term writing goal settings, long-term writing goal is displayed in writing streak progress bar and tooltip. Added to the landing page too.
 - Submit support request to ImprovMX
 - Validate username/password when signing up. Fixed signup bug.
 - Delete post confirmation dialog

@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
-import { generateTimeline, largeNumberFormat } from './utils'
+import { loadTodayIntoSavedDays, generateTimeline, largeNumberFormat } from './utils'
 
 export default function Timeline() {
   const { editorValues, setValue, setValues } = useEditorContext()
@@ -13,21 +13,14 @@ export default function Timeline() {
     document.getElementById('timeline').scrollLeft = 99999
   }, [editorValues])
   // Days are fetched in edit.tsx and create.tsx, passed down here through the editor context
-  const timeline = generateTimeline(editorValues.days)
-  /* Render currently open doc's stats in place of it's date */
-  const timelineWithCurrentDayStats = timeline.map((d) => {
-    if (d.date === moment().format('YYYY-MM-DD')) {
-      return { ...d, wordCount: editorValues.wordCount, writingTime: editorValues.writingTime }
-    } else {
-      return d
-    }
-  })
+  const daysWithTodaysStats = loadTodayIntoSavedDays(editorValues)
+  const timeline = generateTimeline(daysWithTodaysStats)
   return (
     <div className="timeline-with-fade">
       <div className="fade" />
       <div className="timeline" id="timeline">
         <div className="days-wrapper">
-          {timelineWithCurrentDayStats.map((day) => (
+          {timeline.map((day) => (
             <Day key={day.date} day={day} />
           ))}
         </div>
@@ -45,7 +38,7 @@ function Day({ day }) {
       data-multiline={true}
       data-place="left"
       data-tip={
-        `You wrote ${day.wordCount} words (${Math.floor(progress*100)}% of your daily goal),<br/>` +
+        `You wrote ${day.wordCount} words (${Math.floor(progress * 100)}% of your daily goal),<br/>` +
         `and completed ${day.writingTime} minutes of focused writing. `
       }
     >

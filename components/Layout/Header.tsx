@@ -17,7 +17,7 @@ export default function Header({ className }) {
           <div className="logo-image">
             <Image src="/logo.png" width={32} height={32} />
           </div>
-          <b>writing</b>streak
+          <b>fiction</b>hub
         </Link>
         <nav>
           {user?.username && (

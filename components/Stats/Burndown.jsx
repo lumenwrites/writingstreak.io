@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, Label, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { useEditorContext } from 'components/Editor/Editor'
-import { generateStats, generateDescription, largeNumberFormat } from './utils'
+import { loadTodayIntoSavedDays, generateStats, generateDescription, largeNumberFormat } from './utils'
 
 // const prefs = {
 //   startDate: '2021-12-01',
@@ -13,7 +13,9 @@ import { generateStats, generateDescription, largeNumberFormat } from './utils'
 export default function Burndown() {
   const { editorValues, setValue, setValues } = useEditorContext()
   const { startDate, endDate, writingGoal, writingDays } = editorValues
-  const stats = generateStats(editorValues.days, { startDate, endDate, writingGoal, writingDays })
+  const daysWithTodaysStats = loadTodayIntoSavedDays(editorValues)
+  console.log('Burndown', daysWithTodaysStats[0])
+  const stats = generateStats(daysWithTodaysStats, { startDate, endDate, writingGoal, writingDays })
   return (
     <div>
       <Chart data={stats.data} />
