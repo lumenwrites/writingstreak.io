@@ -19,18 +19,17 @@
 
 <!-- - A **step-by-step course** will guide you through your first 30 days of writing, and teach you a reliable writing process which will ensure that you'll never run out of ideas and never get stuck in a writer's block. -->
 
+<!-- ### Develop your daily writing habit -->
+
 Writing Streak is a tool that will help you to write more. It looks like this:
 
 ![](/landing/full-editor.png)
 
-### Develop your daily writing habit
-The best way to become a prolific writer is to develop a daily writing habit, and the best way to do that is to commit to writing every day without breaking your streak.
-
-At the top-left corner of the app you see your Writing Streak:
+Its main purpose is to help you to begin and maintain your writing streak. At the top-left corner you see your **writing streak counter** - it shows you how many days in a row you have successfully achieved your daily word count goal:
 
 ![](/landing/writing-streak.png)
 
-Your purpose is to make this number grow as high as possible by never breaking your streak.
+Your objective is to make this number grow as high as possible by never breaking your streak.
 
 > I recommend taking on a **30-Day Writing Challenge**:  
 > - Commit to writing 5 days per week (Monday through Friday).  
@@ -46,12 +45,13 @@ Above the editor you see your writing timeline:
 Each day shows you how many words you wrote, how close you are to accomplishing your daily goal, and how many minutes you have spent in an uninterrupted writing flow.
 
 ### Focused writing with Writing Sprints
-You will become much more productive if you learn to get into the writing "flow" (a state where 100% of your attention is focused on writing), and stay in that state for uninterrupted stretches of time, with short breaks in-between.
+
+> Writing flow is a state where 100% of your attention is focused on writing. You will become much more productive if you learn to stay the flow for multiple uninterrupted stretches of time, with short breaks in-between.
 
 In the top-right corner you see a timer. Set it for 20 minutes, write without interruptions, then take a 10 minute break and repeat.
 ![](/landing/timer.png)
 
-Writer who tries to enter the flow faces two biggest obstacles: overthinking and distractions. To overcome both, use the Writing Sprints feature:
+There are two biggest obstacles that the writers face when they try to enter the flow - overthinking and distractions. To overcome both, use the Writing Sprints feature:
 ![](/landing/healthbar.png)
 
 Sprints turn writing into a game:
@@ -62,7 +62,7 @@ Sprints turn writing into a game:
 > Strive to gradually increase your focused writing time. Start with a 20 minute writing session every morning, once you get used to it - add one more.
 
 ### Achieve your Writing Goals
-Set long-term writing goals with specific deadlines, so that your daily writing adds up to a larger purpose. 
+Set long-term writing goals (with specific deadlines), so that your daily writing adds up to a larger purpose. The progress bar around your writing streak counter represents your progress towards your writing goal. If you click on it, you will see a chart:
 
 ![](/landing/burndown.png)
 
@@ -128,25 +128,11 @@ This will help you to grow your audience on social media, and start gathering a 
 ### Start writing now!
 Now it's time to start writing - create an account, and begin your writing streak today!
 
----
-
-### Pricing and Discounts
-You can use Writing Streak for **free for the first month** - that will be enough to write for 30 days and establish your writing habit. 
-
-If enjoy this app and want to continue using it - you can **subscribe to the premium version for $20 per month** (the price will rise as this project grows and becomes more successful, but people who sign up early will keep the cheaper price they signed up for).
-
-To the first 100 subscribers I can offer a **50% discount**. 
-
-To get a discount:
-- Write an honest review of Writing Streak and share it on your social media.
-- Email me a link to your post. In your email, also send me some feedback - list top 3 things I could do to make this app more useful for you.
-- I will send you a discount code. You can enter it in the checkout form to sign up for a $10/mo subscription.
+You can use this tool for free for the first month - that will be enough to write for 30 days and establish your writing habit. If you end up enjoying our app and community and want to continue - you can subscribe to the premium version for $20/mo (the price will rise as this project grows and becomes more successful, but people who sign up early will keep the cheaper price they signed up for).
 
 ### Contact, questions, and feedback
 If you have any questions or feedback - send me an email:
 
 **lumenwrites@gmail.com**. 
-
-You can also [join our Discord](https://discord.gg/Mc4HKUsuK9) and talk to me there.
 
 This project is still in active development. If you notice any issues - let me know about them, it will really help me to fix them quickly. If you can think of a feature that would make this tool more useful for you and others - it's likely that I'll be able to add it to the app. Don't hesitate to contact me!

@@ -1,12 +1,7 @@
 # ToDo 
-- Progress bar above the chart.
-
-
-- make sure post title isnt empty
+## Next Up
 - Add "deadline has passed" warning in settings.
 - Add pretty react number inputs with words placeholder in them.
-
-## Next Up
 - Connect posts to days.
 Click on day modal:
 Created: list of posts
@@ -99,6 +94,8 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 	https://tiptap.dev/experiments/linter
 
 ## Maybe
+- make sure post title Isn't empty
+- Progress bar above the chart.
 - Days dates should be set as datetime?
 // Mobile app using whatever obsidian people are using.
 - Upgrade your account to customize image footer.
@@ -118,6 +115,7 @@ Habit strength is a meh indicator. Display progress towards the writing goal ins
 ## Archive
 # Done
 ## 2021-12-25
+- Improved the landing page a bit.
 - Writing streak and chart now interactively display todays words.
 - Better way to load toady's stats into the timeline 
 ## 2021-12-24

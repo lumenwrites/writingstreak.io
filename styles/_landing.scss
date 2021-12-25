@@ -47,6 +47,11 @@
     text-align: center;
   }
 }
+.copy {
+  p:first-child {
+    margin-top: 0;
+  }
+}
 .btn-login {
   color: white;
   border: 1px solid white;
