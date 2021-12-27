@@ -4,7 +4,7 @@ import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
 
 // Prefs
-const paces = { None: 0, Slow: 0.15, Medium: 0.7, Fast: 1.2 }
+const paces = { None: 0, Slow: 0.15, Medium: 0.5, Fast: 1 }
 
 export default function Timer() {
   const { editorValues, setValue, setValues } = useEditorContext()
@@ -21,10 +21,7 @@ export default function Timer() {
         if (updatedSecondsLeft < 0.1) {
           console.log('Sprint complete')
           stopTimer()
-          setValues((prev) => ({
-            ...prev,
-            writingTime: prev.writingTime + Math.floor(editorValues.sprintDuration / 60),
-          }))
+          setValues((prev) => ({ ...prev, writingTime: prev.writingTime + Math.floor(editorValues.sprintDuration) }))
         }
         if (updatedHealthLeft < 0.1) {
           console.log('Sprint lost')
@@ -45,7 +42,8 @@ export default function Timer() {
     .padStart(2, '0')
   const seconds = (Math.floor(editorValues.secondsLeft) - minutes * 60).toString().padStart(2, '0')
   let progress = 1
-  if (editorValues.secondsLeft) progress = editorValues.secondsLeft / editorValues.sprintDuration
+  if (editorValues.secondsLeft) progress = editorValues.secondsLeft / (editorValues.sprintDuration * 60)
+  console.log('[timer render]')
   return (
     <>
       <HealthBar />
@@ -84,7 +82,7 @@ function HealthBar() {
   let fill = Math.floor(editorValues.healthLeft)
   if (fill === 0) fill = 100
   if (editorValues.sprintPace === 'None') {
-    return null //<div className="healthbar-placeholder" />
+    return <div className="healthbar-placeholder" />
   }
   return (
     <div

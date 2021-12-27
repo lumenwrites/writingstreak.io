@@ -30,14 +30,13 @@ function generateEmptyDays(numberOfDays = 30) {
 
 export function loadTodayIntoSavedDays(editorValues) {
   let daysWithTodaysStats = [...editorValues.days]
-  if (!daysWithTodaysStats.length) return [] // user is new, has no days
   const today = {
     date: moment().format('YYYY-MM-DD'),
     wordCount: editorValues.wordCount,
     writingTime: editorValues.writingTime,
     targetWordcount: editorValues.targetWordcount,
   }
-  if (today.date !== daysWithTodaysStats[0].date) {
+  if (today.date !== daysWithTodaysStats[0]?.date) {
     daysWithTodaysStats.unshift(today)
   } else {
     daysWithTodaysStats[0] = {...daysWithTodaysStats[0], ...today}

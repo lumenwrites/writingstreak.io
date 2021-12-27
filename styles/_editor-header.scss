@@ -236,6 +236,11 @@
     }
   }
 }
+.healthbar-placeholder {
+  width: 12px;
+  height: 40px;
+  float: left;
+}
 .healthbar {
   float: left;
   border: 1px solid var(--border);

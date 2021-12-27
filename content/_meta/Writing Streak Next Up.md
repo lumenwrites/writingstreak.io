@@ -9,7 +9,7 @@ Edited: list of posts
 - Add typewriter mode and blurred mode in settings? Or hotkeys?
 - Production keys. Stripe, convertkit.
 - I should definitely try to implement editor in slate, and see if I can switch them if needed.
-
+- Dev and prod migrations
 
 ## Bug
 - Solve the sendgrid issue.

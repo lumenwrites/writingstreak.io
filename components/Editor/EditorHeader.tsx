@@ -37,6 +37,10 @@ function MainMenu() {
         <FontAwesomeIcon icon={['fas', 'bars']} />
       </button>
       <div className="menu left">
+        <Link href={`/post/create`} className="btn item">
+          <FontAwesomeIcon icon={['fas', 'pen-square']} />
+          New Post
+        </Link>
         <Link href={`/@${user.username}`} className="btn item">
           <FontAwesomeIcon icon={['fas', 'user']} />
           My Profile

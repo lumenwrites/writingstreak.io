@@ -162,6 +162,12 @@ function WritingSettings() {
 
 function WritingSprint() {
   const { settings, updateSetting, updateInput, saveSettings } = useContext(SettingsContext)
+  let description = ""
+  if (settings.sprintPace === 'None') description = 'Healthbar is disabled, write at your own pace.'
+  if (settings.sprintPace === 'Slow') description = 'You lose the sprint if you stop typing for 60 seconds.'
+  if (settings.sprintPace === 'Medium') description = 'You lose the sprint if you stop typing for 20 seconds.'
+  if (settings.sprintPace === 'Fast') description = 'You lose the sprint if you stop typing for 10 seconds.'
+
   return (
     <div>
       <h4>Writing Sprint</h4>
@@ -194,6 +200,7 @@ function WritingSprint() {
         </div>
       </div>
       <div className="clearfix" />
+      <p>{description}</p>
     </div>
   )
 }

@@ -83,6 +83,7 @@ export default function Editor({ post, user, days }) {
       // Increment wordcount when I press space after a word
       let wordCount = prev.wordCount
       if (event.key === ' ' && prev.lastPressedKey !== ' ') wordCount += 1
+      console.log('state', editorValues)
       return { ...prev, lastPressedKey: event.key, wordCount, healthLeft }
     })
   }
