@@ -193,7 +193,8 @@ async function main() {
   await prisma.tag.deleteMany()
   await prisma.sequence.deleteMany()
   await prisma.user.deleteMany()
-
+  console.log('Dumped db, returning')
+  return
   await SeedSequences(sequences)
   await SeedTags(tags)
   const userIds = await SeedUsers(users)

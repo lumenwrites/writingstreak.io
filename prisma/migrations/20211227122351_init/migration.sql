@@ -21,6 +21,9 @@ CREATE TABLE "User" (
     "targetWordcount" INTEGER NOT NULL DEFAULT 250,
     "sprintPace" TEXT NOT NULL DEFAULT E'Medium',
     "sprintDuration" INTEGER NOT NULL DEFAULT 20,
+    "startDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "endDate" TIMESTAMP(3) NOT NULL DEFAULT NOW() + interval '1 month',
+    "writingGoal" INTEGER NOT NULL DEFAULT 5000,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );

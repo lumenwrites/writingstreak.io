@@ -42,10 +42,10 @@ export default function MyFloatingMenu({ editor }) {
             <FontAwesomeIcon icon={['fas', 'image']} />
             Image
           </div>
-          <div onClick={() => editor.chain().focus().setCodeBlock().run()} className="btn item">
+          {/* <div onClick={() => editor.chain().focus().setCodeBlock().run()} className="btn item">
             <FontAwesomeIcon icon={['fas', 'code']} />
             Code Block
-          </div>
+          </div> */}
           <div className="btn item" onClick={() => editor.chain().focus().setHorizontalRule().run()}>
             <FontAwesomeIcon icon={['fas', 'ellipsis-h']} />
             Separator

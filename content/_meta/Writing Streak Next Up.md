@@ -8,64 +8,121 @@ Edited: list of posts
 - I gotta learn to run scripts on my db that aren't just "seed".
 - Add typewriter mode and blurred mode in settings? Or hotkeys?
 - Production keys. Stripe, convertkit.
+- I should definitely try to implement editor in slate, and see if I can switch them if needed.
+
 
 ## Bug
 - Solve the sendgrid issue.
 
 ## Small
+- Manually enter wordcount and time if you write something in another editor.
+	(in Day modal) https://app.writinganalytics.co/new-words
+- Tutorial in the editor.
+- Gorgeous landing page like in writinganalytics.
+
+## Open Questions
+- How can I make the community good?
+How do I make content good if it's daily writing?
+Accountability buddies?
+- Best audience to seed the community?
+- Fiction vs nonfiction?
+- How can you track changes?
+Revisions - do you just store an array of old htmls, potentially naming them?
+And then you do the diff and just show what changed?
+https://prosemirror.net/examples/track/
 
 ## MVP
+What do I REALLY need to launch?
+- Confidence in my ability to edit and modify the database without losing data.
+- Seed content. Aka my own writing habit.
+- Some plan for the community, and people I want to seed it with.
 Don't rush to launch:
 - Max out all the minor issues. Maybe do feature parity.
 - Create content. Course, posts, posts buffer, tweets buffer.
 - Have a solid discord. r/OnlineBusiness and r/Bloggers if possible.
-// Use it myself until I trust it with my own data.
+// Use it myself until I trust it with my own data. Develop my own habit.
 // Figure out traction channels and growth strategies.
 // Launch plan.
 // After all this, talk to users and invite some of them personally to try the beta. Reach out to good writers/bloggers, offer them free accounts.
 Implement user feedback. Only after all that move domains.
 
-## Future
->> 3 extra things wst could be:
-- Hemingway/grammarly (editing mode).
-- Prolific Academy (30 days course, subscription community).
-- Foster. Collab editing. If I can figure out how that works.
-// My own r/WritingPrompts
-
-- Stripe integration.
-	- Handle the subscription pauses/cancellations, trial expirations. Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
-	https://stripe.com/docs/billing/subscriptions/overview
-	To resolve these scenarios:
-	Notify the customer.
-	Collect new payment information and confirm the payment intent.
-	Update the default payment method on the subscription.
-	- Emailing the customer when a payment fails
-	You can set up several automatic retries and then cancel:
-	https://stripe.com/docs/billing/subscriptions/overview#settings
-	https://stripe.com/docs/billing/subscriptions/fixed-price#manage-subscription-payment-failur	- Terminating access when a subscription is canceled
-	- Way to raise prices while grandfathering old users.
-- Forum? Tag?
-- Categories? Fiction/nonfiction? And tags are in these categories?
-- Email notifications on comments.
+## Futue
 - Sequences
-	- Should be attached to authors, posts
-	- Need a way to rank posts in sequences
-- Follow button. 
+	- Should be attached to authors, posts.
+	- Need a way to sort posts in sequences
+- Draft versioning and tracking changes.
+	Keep all previous versions of the post.
+	See the diff.
+	Go back to the original.
+	Tracking changes - total words added and removed, per time,
+- Hemingway/grammarly (editing mode).
+	Readability - Highlight sentences that are hard or very hard to read
+	Passive Voice - Highlight passive voice as in crisis {was averted}
+	Adverbs - Highlight adverbs like {quickly} or {loudly}
+	Style - Highlight phrases that can be simplified like {a number of}
+	Duplicate Words - Highlight duplicate words words
+	Highlight custom words
+	https://tiptap.dev/experiments/linter
+- Prolific Academy (30 days course, subscription community).
+- Foster. Collab editing. Use what they do to improve community.
+- Stripe integration.
+	- Handle the subscription pauses/cancellations, trial expirations. 
+		Handle failed subscriptions because of insufficient funds. Simply in subscription-success redirect the user to "Something went wrong" or "Invalid payment" page.
+		https://stripe.com/docs/billing/subscriptions/overview
+		To resolve these scenarios:
+		Notify the customer.
+		Collect new payment information and confirm the payment intent.
+		Update the default payment method on the subscription.
+		- Emailing the customer when a payment fails
+		You can set up several automatic retries and then cancel:
+		https://stripe.com/docs/billing/subscriptions/overview#settings
+		https://stripe.com/docs/billing/subscriptions/fixed-price#manage-subscription-payment-failur	
+		- Terminating access when a subscription is canceled
+	- Way to raise prices while grandfathering old users.
+	- Yearly membership (cheaper).
+	- Integrated into my website instead of using checkout.
 - Community
+	- Follow button. Following list in /browse. Useful for nexy anyway.
 	- Discord server (+ support + course).
 	- Give people status for writing quality comments, learn from that dude in foster academy (the tech loaf guy).
 	- Leaderboard of the most active users
-	- Daily accountability partner
+	- Daily accountability partner. Writingbuddies discord channel.
+	- Forum tag?
+	- Categories? Fiction/nonfiction? And tags are in these categories?
+	- Email notifications on comments.
 - Marketing
-	- Affiliate system HypeFury is using: https://firstpromoter.com/
-- Auth
-	- Password recovery/reset.
+	- Affiliate program.
+	https://www.writinganalytics.co/affiliates/
+	https://firstpromoter.com/
+	- Free writing tools.
+		- Word counter
+		https://www.writinganalytics.co/word-counter/
+		- Writing quotes
+		https://www.writinganalytics.co/quotes/
+		- Writing planner
+		https://www.writinganalytics.co/writing-planner/
+		How long does it take to write a book?
+		Goal, start date, deadline, writing days.
 - Database
 	- Upgrade the RDS instance, enable backups.
 	- Learn to migrate the db without losing data.
 	- Export. As markdown, html. Export all data. button in settings.
-- Correct error handling.
-- Analytics: See the active users. Last logged in field on user, last wrote.
+- Technical/clean
+	- Correct error handling.
+- Auth
+	- Password recovery/reset.
+	- Verify email.
+- Settings
+	- Change password.
+	- Select dark/light theme from a dropdown.
+	- Email: receive product updates, notifications on your personal activity, personalized reports on your activity. Daily writing prompts and writing reminders.
+	- First day of the week (sunday/monday).
+	- Download all your data.
+- Editor
+	- Functional and styled code blocks. Syntax highlighting. Ideally for godot.
+	- Custom social image url
+	- Upload images.
+	- Hemingway and grammarly would be sick.
 - Feature parity with wst1:
 	- Email reminders when it's time to write
 	- Typewriter mode.
@@ -76,27 +133,58 @@ Implement user feedback. Only after all that move domains.
 	- Full screen
 	- Hotkeys
 	- Prompts.
-- Make it procedural so that I could use the same code for rpga and nexy.
-- Settings
-	- Select dark/bright from a dropdown.
-	- Make website/handle customizable in settings.
-- Editor
-	- Syntax highlighting. Ideally for godot.
-	- Custom social image url
-	- Upload images.
-	- Hemingway and grammarly would be sick.
-	https://tiptap.dev/experiments/linter
+- Writing Analytics:
+	https://www.writinganalytics.co/
+	- Writing vs revision sessions?
+	- Current streak, longest streak. 
+	   Writing speed in words per hour.
+	- Pretty badges.
+	https://app.writinganalytics.co/overview
+	- Automatically track time and focus in the editor 
+	  (stop when you don't tab away elsewhere).	
+	- Writing session stats.
+	https://app.writinganalytics.co/session/61c7912e95f14600126d278d
+		- Time spent.
+		- Words written.
+		- Words per minute.
+		- Words over time chart.
+		- Changes. How many words written, how many deleted.
+		Tracked over time
+		- Engagement. Your focus over time.
+		- Stats. Characters, sentences, paragraphs, pages(??).
+		- Readability. Word length, sentence length, readability score, reading time.
+	- Pretty project dashboard
+		Average speed in words per hour.
+		Average session length.
+		Average wordcount per day/week/month/year
+		Average writing time per day/week/month/year
+		Highlights
+			- Longest streak.
+			- Best writing day.
+			- Longest day.
+			- Top speed.
+			- Ernest Hemingway Days ?
+			- Stephen King Days
+			- Recent entries/changes?
+			- Total words chart.  This month/year/etc.
+	- Charts he's using: https://gionkunz.github.io/chartist-js/
 
+- Other
+	- Make it procedural so that I could use the same code for rpga and nexy.	
+	
 ## Maybe
+- You can save every few seconds into local storage, and every minute to server
 - make sure post title Isn't empty
 - Maybe calendar should mark published days as well,
 - Progress bar above the chart.
 - Days dates should be set as datetime?
 // Mobile app using whatever obsidian people are using.
+// My own r/WritingPrompts
 - Upgrade your account to customize image footer.
 - Best streak
 - Autocreate the post
 - Google/Twitter auth. - google doesn't have username, twitter doesn't have email.
+- Analytics: See the active users. Last logged in field on user, last wrote.
 - Migrate the old database.
 	- Learn to turn slate into html.
 	- Use their email before @ as their username

@@ -121,7 +121,7 @@ Once you're done writing your post, you can share it with our friendly and suppo
 ### Build your audience
 Like on Reddit, the posts in our community can get upvoted, and the most popular ones rise to the top. The best posts receive the most attention, discussion, and feedback. Keep publishing to build your reputation and grow your audience!
 
-If you already have a website - you can still write and publish here, your posts here will link to the posts on your website, sending you some traffic and a SEO boost. There's no better way to get your blog posts noticed than sharing them with the community of passionate writers.
+If you already have a website - you can still write and publish here, your posts here will link to the posts on your website, sending you some traffic and a SEO boost. There's no better way to get your blog posts noticed than sharing them with the community of passionate writers. The best articles are also sent out to the mailing list of our readers, and shared on our social media accounts.
 
 Share your work on social media as well. Our editor also has a feature that allows you to export your posts as images. Export your post, and publish it on Twitter:
 ![](/landing/tweet.png)
