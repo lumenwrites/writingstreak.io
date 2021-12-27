@@ -35,4 +35,3 @@ async function Success(req, res) {
 }
 
 export default handler().get(Success)
-

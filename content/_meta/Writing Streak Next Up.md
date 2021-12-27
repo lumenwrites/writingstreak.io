@@ -199,6 +199,11 @@ Implement user feedback. Only after all that move domains.
 
 ## Archive
 # Done
+## 2021-12-27
+- Timer progress bar and adding time to timeline fixed (minor bugs around dividing by 60).
+- Explanations what writing paces mean. Healthbar placeholder for 'None' pace.
+- Max-height on the editor prevents it from reaching the bottom of the page, that's all I needed.
+- Empty days stats throwing errors or not rendering fixed.
 ## 2021-12-25
 - Old wst is now running at old.writingstreak.io. Notification is done.
 - Removed extra rerenders by putting all state updates in one place.
