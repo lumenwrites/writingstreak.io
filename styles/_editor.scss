@@ -9,6 +9,9 @@
   text-align: justify;
   z-index: 2; // above the tags input
   position: relative;
+  // Scroll editor before I reach the bottom of the page.
+  max-height: 500px;
+  overflow: overlay;
   a {
     font-weight: bold;
     text-decoration: underline;

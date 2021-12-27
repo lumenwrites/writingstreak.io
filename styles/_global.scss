@@ -18,6 +18,9 @@ body {
 }
 #__next {
   height: 100%;
+  // Margin-top on editor wrapper causes next to move down
+  // https://stackoverflow.com/questions/1762539/margin-on-child-element-moves-parent-element
+  display: flow-root;
 }
 
 ::-webkit-scrollbar {
