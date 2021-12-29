@@ -2,10 +2,17 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import Modal from 'components/Elements/Modal'
 import { useEditorContext } from 'components/Editor/Editor'
+import { useState } from 'react'
+import MessagePanel from 'components/Elements/MessagePanel'
 
 export default function PostSettingsModal() {
   const { editorValues, setValue } = useEditorContext()
+  const [saved, setSaved] = useState(false)
   const router = useRouter()
+  function updateValue(key, value) {
+    setValue(key, value)
+    setSaved(false)
+  }
   async function updatePost() {
     const updatedPost = {
       slug: editorValues.postSlug,
@@ -21,10 +28,12 @@ export default function PostSettingsModal() {
       window.location.href = `/post/${res.updatedPost.slug}/edit`
     }
     console.log('Updated Post', res.updatedPost)
+    setSaved(true)
   }
 
   return (
     <Modal name={`post-settings`} className={'narrow post-settings'}>
+      {/* <MessagePanel type='success' message={ saved ? 'Settings saved.' : ''}/> */}
       <h1>Post Settings</h1>
       <h4>Url and Description</h4>
       <p>Your post url will look like this:</p>
@@ -34,13 +43,13 @@ export default function PostSettingsModal() {
       <input
         placeholder="Custom post url..."
         value={editorValues.updatedPostSlug || undefined}
-        onChange={(e) => setValue('updatedPostSlug', e.target.value)}
+        onChange={(e) => updateValue('updatedPostSlug', e.target.value)}
       />
       <p>Description for the community browse page:</p>
       <textarea
         placeholder="Custom description..."
         value={editorValues.description || ''}
-        onChange={(e) => setValue('description', e.target.value)}
+        onChange={(e) => updateValue('description', e.target.value)}
       />
       <h4>Canonical Url</h4>
       <p>
@@ -50,7 +59,7 @@ export default function PostSettingsModal() {
       <input
         placeholder="Canonical url..."
         value={editorValues.canonicalUrl || ''}
-        onChange={(e) => setValue('canonicalUrl', e.target.value)}
+        onChange={(e) => updateValue('canonicalUrl', e.target.value)}
       />
       {/*       
       <hr />
@@ -71,7 +80,7 @@ export default function PostSettingsModal() {
         truncated.)
       </p> */}
       <button className="btn btn-cta right" onClick={updatePost}>
-        Save
+        {saved ? 'Saved' : 'Save'}
       </button>
     </Modal>
   )
