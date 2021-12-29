@@ -33,7 +33,7 @@ export default function Editor({ post, user, days }) {
     postSlug: post ? post.slug : undefined,
     published: post ? post.published : false,
     // Post settings
-    description:  post ? post.description : undefined,
+    description: post ? post.description : undefined,
     updatedPostSlug: post ? post.slug : undefined,
     canonicalUrl: post ? post.canonicalUrl : undefined,
     socialTitle: post ? post.socialTitle : undefined,
@@ -59,6 +59,8 @@ export default function Editor({ post, user, days }) {
     writingDays: user.writingDays,
     sprintPace: user.sprintPace,
     sprintDuration: user.sprintDuration,
+    blurredMode: user.blurredMode,
+    typewriterMode: user.typewriterMode,
     startDate: user.startDate,
     endDate: user.endDate,
     writingGoal: user.writingGoal,
@@ -70,20 +72,25 @@ export default function Editor({ post, user, days }) {
 
   function onCreate({ editor }) {
     // Save editor in state, used in PublishButtons to get the HTML value and save it to server
-    setValues((prev) => ({...prev, editor}))
+    setValues((prev) => ({ ...prev, editor }))
   }
-  function onUpdate({ editor }) {
-  }
+  function onUpdate({ editor }) {}
   function keyDown(view, event) {
-    // if (event.key === 'Backspace' || event.key === 'Delete') return event.preventDefault()
     // Causes rerender
     setValues((prev) => {
+      const typewriterMode = prev.typewriterMode && prev.secondsLeft > 0
+      if (typewriterMode) {
+        if (event.key === 'Backspace' || event.key === 'Delete') {
+          event.preventDefault()
+          return prev
+        } 
+      }
+
       startSaveTimer(prev.saved)
       const healthLeft = Math.min(prev.healthLeft + 5, 100)
       // Increment wordcount when I press space after a word
       let wordCount = prev.wordCount
       if (event.key === ' ' && prev.lastPressedKey !== ' ') wordCount += 1
-      console.log('state', editorValues)
       return { ...prev, lastPressedKey: event.key, wordCount, healthLeft }
     })
   }
@@ -107,12 +114,13 @@ export default function Editor({ post, user, days }) {
     setValue('tags', tags)
     startSaveTimer(editorValues.saved)
   }
+  const blurText = editorValues.blurredMode && editorValues.secondsLeft > 0
   return (
     <EditorContext.Provider value={{ editorValues, setValue, setValues }}>
       <EditorHeader />
       <div className="wrapper">
         <ImageCaptureWrappers>
-          <div className="editor text">
+          <div className={`editor text ${blurText ? 'blurred' : ''}`}>
             <div className="post-title orange">
               <input placeholder="Title..." value={editorValues.title} onChange={updateTitle} />
             </div>

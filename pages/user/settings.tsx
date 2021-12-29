@@ -9,6 +9,7 @@ import NumberFormat from 'react-number-format'
 import Link from 'components/Elements/Link'
 import Layout from 'components/Layout/Layout'
 import Tabs from 'components/Elements/Tabs'
+import Checkbox from 'components/Elements/Checkbox'
 
 import { countWritingDays } from 'components/Stats/utils'
 
@@ -33,6 +34,8 @@ export default function Settings({ user }) {
     targetWordcount: user.targetWordcount,
     sprintPace: user.sprintPace,
     sprintDuration: user.sprintDuration,
+    blurredMode: user.blurredMode,
+    typewriterMode: user.typewriterMode,
     startDate: moment(user.startDate).toDate(),
     endDate: moment(user.endDate).toDate(),
     writingGoal: user.writingGoal,
@@ -162,7 +165,7 @@ function WritingSettings() {
 
 function WritingSprint() {
   const { settings, updateSetting, updateInput, saveSettings } = useContext(SettingsContext)
-  let description = ""
+  let description = ''
   if (settings.sprintPace === 'None') description = 'Healthbar is disabled, write at your own pace.'
   if (settings.sprintPace === 'Slow') description = 'You lose the sprint if you stop typing for 60 seconds.'
   if (settings.sprintPace === 'Medium') description = 'You lose the sprint if you stop typing for 20 seconds.'
@@ -201,6 +204,14 @@ function WritingSprint() {
       </div>
       <div className="clearfix" />
       <p>{description}</p>
+      <hr />
+      <p>Help yourself to separate writing from editing:</p>
+      <Checkbox checked={settings.typewriterMode} onClick={(isChecked) => updateSetting('typewriterMode', isChecked)}>
+        <p>Disable backspace and delete keys during the sprint</p>
+      </Checkbox>
+      <Checkbox checked={settings.blurredMode} onClick={(isChecked) => updateSetting('blurredMode', isChecked)}>
+        <p>Blur the text during the sprint</p>
+      </Checkbox>
     </div>
   )
 }
@@ -314,6 +325,8 @@ export async function getServerSideProps({ req, res, query }) {
     startDate,
     endDate,
     writingGoal,
+    blurredMode,
+    typewriterMode,
   } = user
   return {
     props: {
@@ -332,6 +345,8 @@ export async function getServerSideProps({ req, res, query }) {
         startDate,
         endDate,
         writingGoal,
+        blurredMode,
+        typewriterMode,
       },
     },
   }

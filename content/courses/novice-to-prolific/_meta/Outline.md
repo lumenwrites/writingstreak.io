@@ -1,3 +1,8 @@
+
+
+
+
+
 #curriculum/writing
 - //course overview. build, write, publish.
 Buy in, how amazing it is to be writing online, age of leverage. get them excited about the course, get them excited about the writing, get them inspired.

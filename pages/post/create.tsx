@@ -18,7 +18,36 @@ export async function getServerSideProps({ req, params }) {
     // If trial expired - redirect to paywall
     return { redirect: { permanent: false, destination: '/payments/trial-expired' }, props: {} }
   }
-  const { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration, startDate, endDate, writingGoal } = user
+  const {
+    username,
+    twitter,
+    writingDays,
+    targetWordcount,
+    sprintPace,
+    sprintDuration,
+    blurredMode,
+    typewriterMode,
+    startDate,
+    endDate,
+    writingGoal,
+  } = user
   const days = await getDays(user, 366)
-  return { props: { user: { username, twitter, writingDays, targetWordcount, sprintPace, sprintDuration, startDate, endDate, writingGoal }, days } }
+  return {
+    props: {
+      user: {
+        username,
+        twitter,
+        writingDays,
+        targetWordcount,
+        sprintPace,
+        sprintDuration,
+        blurredMode,
+        typewriterMode,
+        startDate,
+        endDate,
+        writingGoal,
+      },
+      days,
+    },
+  }
 }

@@ -6,10 +6,8 @@ Created: list of posts
 Edited: list of posts
 - Spinner in post settings, indicate that they have been saved.  
 - I gotta learn to run scripts on my db that aren't just "seed".
-- Add typewriter mode and blurred mode in settings? Or hotkeys?
-- Production keys. Stripe, convertkit.
 - I should definitely try to implement editor in slate, and see if I can switch them if needed.
-- Dev and prod migrations
+- Dev and prod migrations separate
 
 ## Bug
 - Solve the sendgrid issue.
@@ -123,6 +121,8 @@ Implement user feedback. Only after all that move domains.
 	- Custom social image url
 	- Upload images.
 	- Hemingway and grammarly would be sick.
+- Templated, You CAN do outlines in wst, you just dont keep them separate, those are called templates. Create a template, edit it as you write. 
+- Backlog of ideas, outliner. Maybe add a backlog of ideas app to wst, if I want it. Maybe it also functions as a simple outliner or something.
 - Feature parity with wst1:
 	- Email reminders when it's time to write
 	- Typewriter mode.
@@ -174,6 +174,7 @@ Implement user feedback. Only after all that move domains.
 	
 ## Maybe
 - You can save every few seconds into local storage, and every minute to server
+- Maybe timer should have a dropdwn where you choose pace and duration.
 - make sure post title Isn't empty
 - Maybe calendar should mark published days as well,
 - Progress bar above the chart.
@@ -199,7 +200,10 @@ Implement user feedback. Only after all that move domains.
 
 ## Archive
 # Done
+## 2021-12-29
+- Typewriter mode and blurred mode.
 ## 2021-12-27
+- Production keys. Stripe, convertkit.
 - Timer progress bar and adding time to timeline fixed (minor bugs around dividing by 60).
 - Explanations what writing paces mean. Healthbar placeholder for 'None' pace.
 - Max-height on the editor prevents it from reaching the bottom of the page, that's all I needed.

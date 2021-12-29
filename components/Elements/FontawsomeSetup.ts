@@ -88,6 +88,7 @@ import {
   faArrowCircleUp,
   faUsers,
   faGraduationCap,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(
@@ -152,4 +153,6 @@ library.add(
   faHeart,
   faPlay,
   faStop,
+  // To sort
+  faCheck
 )

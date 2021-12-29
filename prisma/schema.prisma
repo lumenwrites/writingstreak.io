@@ -32,6 +32,8 @@ model User {
   targetWordcount     Int @default(250)
   sprintPace          String @default("Medium")
   sprintDuration      Int @default(20)
+  blurredMode         Boolean  @default(false)
+  typewriterMode      Boolean  @default(false)
   startDate           DateTime  @default(now())
   endDate             DateTime @default(dbgenerated("NOW() + interval '1 month'"))
   writingGoal         Int @default(5000)
@@ -154,7 +156,7 @@ model Day {
   authorId String // In the field authorId we will store [id] of the User
 
   @@unique([authorId, date])
-  // Edited posts
+  // Edited posts, created posts, diffs somehow?
   // comments Comment[] @relation("PostComments")
 }
 

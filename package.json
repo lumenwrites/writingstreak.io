@@ -9,6 +9,7 @@
     "start": "next start  -p 3080",
     "lint": "next lint",
     "prisma:migrate": "prisma migrate dev --schema ./prisma/schema.prisma",
+    "prisma:push": "prisma db push --schema ./prisma/schema.prisma",
     "prisma:generate": "prisma generate --schema ./prisma/schema.prisma",
     "prisma:seed": "npx prisma db seed",
     "generate": "npm run copyContent && npm run processContent:prod",

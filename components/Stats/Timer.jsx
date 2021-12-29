@@ -43,7 +43,7 @@ export default function Timer() {
   const seconds = (Math.floor(editorValues.secondsLeft) - minutes * 60).toString().padStart(2, '0')
   let progress = 1
   if (editorValues.secondsLeft) progress = editorValues.secondsLeft / (editorValues.sprintDuration * 60)
-  console.log('[timer render]')
+  // console.log('[timer render]')
   return (
     <>
       <HealthBar />

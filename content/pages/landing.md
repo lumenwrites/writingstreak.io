@@ -64,6 +64,13 @@ Sprints turn writing into a game:
 
 > Strive to gradually increase your focused writing time. Start with a 20 minute writing session every morning, once you get used to it - add one more.
 
+### Writing much faster with Typewriter mode
+The biggest reason why people write slowly and get stuck is that they're trying to edit as they write. A surprisingly simple yet powerful way to grearly increase your output (and reduce the stress) is to clearly divide writing and editing into two separate steps. When you write, your job is to just produce words, imperfect and flawed, the raw material you will turn into quality writing when you edit.
+
+That is why Writing Streak has a Typewriter mode - it disables your backspace and delete keys, and removes your ability to edit during your writing sprint. In addition to that, it has a Blurred mode - which blurs your text making you unable to read it until you're done writing.
+
+Use these features to disable the critic/editor side of your brain, leaving you no other choice but to write.
+
 ### Achieve your Writing Goals
 Set long-term writing goals with specific deadlines, so that your daily writing adds up to a larger purpose.
 
