@@ -111,6 +111,8 @@ You can keep your posts private if you want, but the calendar is visible to ever
 
 You can even make a bet with your friend, say that you'll give them $50 if they notice that you've missed some days. That will motivate you to keep going.
 
+Looking for someone to keep you accountable? In [our Discord server](https://discord.gg/Mc4HKUsuK9) we have `#writing-buddies` channel - find another writer, and commit to keeping each other accountable and giving each other feedback.
+
 ### Community
 Once you have successfully developed your writing habit, the next step is to increase your writing quality (notice that you should strive to increase quality only **after** you have learned to write regularly and gained some raw skill of just putting words on the page).
 

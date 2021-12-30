@@ -4,22 +4,22 @@ export default function AdBoxes() {
   return (
     <div className="showcase-boxes">
       <AdBox
-        title="Join the community of Makers"
-        description="Startup founders, developers, designers, writers, people who use technology to build cool projects and turn them into profitable businesses."
-        href="https://discord.gg/RS3PxFXBuz"
+        title="Join our Discord"
+        description="Get to know other Writing Streak users, find writing buddies, form writing groups, exchange writing feedback and advice."
+        href="https://discord.gg/Mc4HKUsuK9"
         image={'/showcase-boxes/discord.png'}
       />
       <AdBox
-        title="Submit your Article"
-        description="Learn more about writing for nexy - share your knowledge, spread your ideas, grow your audience."
-        href="/write"
-        image={'/showcase-boxes/write-for-us.png'}
+        title="Our Ultimate Writing Guide"
+        description="This course that will guide you through your first 30 days of writing and help you to develop a writing habit."
+        href="/course/novice-to-prolific"
+        image={'/showcase-boxes/course.png'}
       />
       <AdBox
-        title="Your Project Here"
-        description="Share your project with a community of smart people interested in startups and technology."
-        href="/advertise"
-        image={'/showcase-boxes/your-project-here.png'}
+        title="Writing Streak on Twitter"
+        description="Follow the twitter account where I share updates on this project as well as practical writing tips and advice."
+        href="https://twitter.com/lumenwrites"
+        image={'/showcase-boxes/twitter.png'}
       />
       {/* <AdBox
         title="Follow us on Twitter"

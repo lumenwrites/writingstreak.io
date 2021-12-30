@@ -1,33 +1,33 @@
 # ToDo 
 ## Next Up
-- Connect posts to days.
-Click on day modal:
-Created: list of posts
-Edited: list of posts
-- Spinner in post settings, indicate that they have been saved.  
-- I gotta learn to run scripts on my db that aren't just "seed".
-- I should definitely try to implement editor in slate, and see if I can switch them if needed.
-- Dev and prod migrations separate
+- Test everything myself. Create a brand new account and click on everything and try using it.
+- Test social cards.
+- Learn to use and mirgrate the database properly.
+	- I gotta learn to run scripts on my db that aren't just "seed".
+	- Dev and prod migrations separate. Auto switch env variables.
+- Seed the content.
+
+- Password reset
+- Fiction/non-fiction categories.
+- Export
 
 ## Bug
 - Solve the sendgrid issue.
 
 ## Small
-- Manually enter wordcount and time if you write something in another editor.
-	(in Day modal) https://app.writinganalytics.co/new-words
-- Tutorial in the editor.
 - Gorgeous landing page like in writinganalytics.
 
 ## Open Questions
+Doesnt work:
+- I dont see myself actually writing about writing every day.
+- I dont see how the community will have quality content.
+- I don't see a clear traction channel.
+
+
 - How can I make the community good?
 How do I make content good if it's daily writing?
 Accountability buddies?
-- Best audience to seed the community?
-- Fiction vs nonfiction?
-- How can you track changes?
-Revisions - do you just store an array of old htmls, potentially naming them?
-And then you do the diff and just show what changed?
-https://prosemirror.net/examples/track/
+- Best audience to seed the community? Fiction vs nonfiction?
 
 ## MVP
 What do I REALLY need to launch?
@@ -61,6 +61,15 @@ Implement user feedback. Only after all that move domains.
 	Duplicate Words - Highlight duplicate words words
 	Highlight custom words
 	https://tiptap.dev/experiments/linter
+- Revisions and edits in days.
+	- Connect posts to days.
+	Click on day modal:
+	Created: list of posts
+	Edited: list of posts
+	- How can you track changes?
+	Revisions - do you just store an array of old htmls, potentially naming them?
+	And then you do the diff and just show what changed?
+	https://prosemirror.net/examples/track/
 - Prolific Academy (30 days course, subscription community).
 - Foster. Collab editing. Use what they do to improve community.
 - Stripe integration.
@@ -80,6 +89,7 @@ Implement user feedback. Only after all that move domains.
 	- Yearly membership (cheaper).
 	- Integrated into my website instead of using checkout.
 - Community
+	- Send email comment notifications
 	- Follow button. Following list in /browse. Useful for nexy anyway.
 	- Discord server (+ support + course).
 	- Give people status for writing quality comments, learn from that dude in foster academy (the tech loaf guy).
@@ -113,23 +123,26 @@ Implement user feedback. Only after all that move domains.
 - Settings
 	- Change password.
 	- Select dark/light theme from a dropdown.
-	- Email: receive product updates, notifications on your personal activity, personalized reports on your activity. Daily writing prompts and writing reminders.
+	- Email settings (separate tab):
+		- Daily writing prompts and writing reminders.
+		- Notifications about the comments on your posts.
+		- Receive product updates, notifications on your personal activity, personalized reports on your activity. 
 	- First day of the week (sunday/monday).
 	- Download all your data.
 - Editor
 	- Functional and styled code blocks. Syntax highlighting. Ideally for godot.
 	- Custom social image url
 	- Upload images.
-	- Hemingway and grammarly would be sick.
+	- Hemingway and Grammarly would be sick.
+	- Manually enter wordcount and time if you write something in another editor.
+	(in Day modal) https://app.writinganalytics.co/new-words
 - Templated, You CAN do outlines in wst, you just dont keep them separate, those are called templates. Create a template, edit it as you write. 
 - Backlog of ideas, outliner. Maybe add a backlog of ideas app to wst, if I want it. Maybe it also functions as a simple outliner or something.
 - Feature parity with wst1:
 	- Email reminders when it's time to write
-	- Typewriter mode.
-	- Blur text
 	- Simple Writing (use only 1000 most common words)
-	- Dark theme.
 	- Export
+	- Dark theme.
 	- Full screen
 	- Hotkeys
 	- Prompts.
@@ -168,11 +181,13 @@ Implement user feedback. Only after all that move domains.
 			- Recent entries/changes?
 			- Total words chart.  This month/year/etc.
 	- Charts he's using: https://gionkunz.github.io/chartist-js/
-
+- I should definitely try to implement editor in slate, and see if I can switch them if needed.
+(When it reaches 1.0)
 - Other
 	- Make it procedural so that I could use the same code for rpga and nexy.	
 	
 ## Maybe
+- Tutorial in the editor.
 - You can save every few seconds into local storage, and every minute to server
 - Maybe timer should have a dropdwn where you choose pace and duration.
 - make sure post title Isn't empty
@@ -200,8 +215,12 @@ Implement user feedback. Only after all that move domains.
 
 ## Archive
 # Done
+## 2021-12-30
+- Point the adboxes to discord, twitter, and course.
+- Discord server is set up.
 ## 2021-12-29
 - Typewriter mode and blurred mode.
+- Post settings saved notification.
 ## 2021-12-27
 - Production keys. Stripe, convertkit.
 - Timer progress bar and adding time to timeline fixed (minor bugs around dividing by 60).
