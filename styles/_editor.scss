@@ -276,7 +276,7 @@ h1.is-empty {
 }
 .position-image {
   &.capturing .editor {
-    max-width: none;
+    max-height: none;
   }
   &.capturing,
   &.capturing-cropped {
