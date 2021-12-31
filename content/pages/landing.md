@@ -159,6 +159,6 @@ If you have any questions or feedback - send me an email:
 
 **lumenwrites@gmail.com**. 
 
-You can also [join our Discord](https://discord.gg/Mc4HKUsuK9) and talk to me there.
+You can also [join our Discord](https://discord.gg/Mc4HKUsuK9) and talk to me there (I'm `lumen#7925`).
 
 This project is still in active development. If you notice any issues - let me know about them, it will really help me to fix them quickly. If you can think of a feature that would make this tool more useful for you and others - it's likely that I'll be able to add it to the app. Don't hesitate to contact me!
