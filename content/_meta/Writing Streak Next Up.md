@@ -11,8 +11,17 @@
 
 - Grammarly pro works automatically. But can I disable it during sprints?
 - I want custom social image urls for posts now.
-- Click
+- Clicking on hot takes me to /, should take me to /browse.
 - did changing post slug unpublish the post?
+
+- Do a typeform notification. Want to help me to improve Writing Streak and get a discount? Fill in this quick survey.
+	- Do you prefer fiction or non-fiction?
+	- What is your favorite feature of wst?
+	- What is the worst part of the app that could be improved?
+	- Is anything confusing?
+	- Any other comments/sugfestions.
+	- How likely are you to recommend it to your friends?
+	- Whatever other customer survey questions make sense.
 
 
 ## Bug

@@ -27,7 +27,7 @@ export default function LoginModal() {
       setStatus({ state: 'error', message: 'Provide username, email, and password.' })
       return false
     }
-    var usernameRegex = /^([a-z0-9]|[-._](?![-._])){4,20}$/
+    var usernameRegex = /^([a-z0-9]|[-._](?![-._])){4,20}$/i
     if (!usernameRegex.test(username)) {
       setStatus({
         state: 'error',
