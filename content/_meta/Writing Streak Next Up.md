@@ -11,6 +11,9 @@
 - Export
 
 - Grammarly pro works automatically. But can I disable it during sprints?
+- I want custom social image urls for posts now.
+- Better social image
+- Run my landing page throuh grammarly.
 
 ## Bug
 - Solve the sendgrid issue.
