@@ -10,6 +10,7 @@
 - Fiction/non-fiction categories.
 - Export
 
+- Grammarly pro works automatically. But can I disable it during sprints?
 
 ## Bug
 - Solve the sendgrid issue.
