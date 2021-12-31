@@ -1,6 +1,5 @@
 # ToDo 
 ## Next Up
-- Test everything myself. Create a brand new account and click on everything and try using it.
 - Test social cards.
 - Learn to use and mirgrate the database properly.
 	- I gotta learn to run scripts on my db that aren't just "seed".
@@ -11,10 +10,6 @@
 - Fiction/non-fiction categories.
 - Export
 
-- Don't forget to change the redirect url in checkout settings when moving the domain
-https://dashboard.stripe.com/settings/billing/portal
-and webhook url probably too
-https://dashboard.stripe.com/webhooks/we_1KBLJrBv3j3mlWEGNeh3vJo6
 
 ## Bug
 - Solve the sendgrid issue.
@@ -220,6 +215,15 @@ Implement user feedback. Only after all that move domains.
 
 ## Archive
 # Done
+## 2021-12-31
+- Tested everything manually, it all seems to work!
+- Don't forget to change the redirect url in checkout settings when moving the domain
+https://dashboard.stripe.com/settings/billing/portal
+and webhook url probably too
+https://dashboard.stripe.com/webhooks/we_1KBLJrBv3j3mlWEGNeh3vJo6
+
+- Deployed Writing Streak on writingstreak.io domain
+- Bought Ship30
 ## 2021-12-30
 - Point the adboxes to discord, twitter, and course.
 - Discord server is set up.
