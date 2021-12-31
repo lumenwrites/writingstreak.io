@@ -11,6 +11,11 @@
 - Fiction/non-fiction categories.
 - Export
 
+- Don't forget to change the redirect url in checkout settings when moving the domain
+https://dashboard.stripe.com/settings/billing/portal
+and webhook url probably too
+https://dashboard.stripe.com/webhooks/we_1KBLJrBv3j3mlWEGNeh3vJo6
+
 ## Bug
 - Solve the sendgrid issue.
 

@@ -193,3 +193,8 @@ $100 to invest in your youtube studio.
 How we manage our time is the key to figuring out how to produce at a high level. And if there's one change I've made in my life it's incorporating something called "batching".
 
 ## Craft Good/Engaging video
+Title - make a promise
+Hook
+Intro
+Value
+CTA
