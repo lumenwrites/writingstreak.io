@@ -12,7 +12,7 @@ export default function OldNotification() {
   return (
     <div className="old-notification">
       {/* <div className="wrapper"> */}
-        This is a new and updated version of Writing Streak. You can still access the old app{' '}
+        This is the new and updated version of Writing Streak. You can still access the old app{' '}
         <a href="https://old.writingstreak.io" target="_blank" rel="noopener noreferrer">
           here
         </a>
