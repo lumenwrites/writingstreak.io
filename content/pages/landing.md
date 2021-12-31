@@ -145,7 +145,7 @@ Now it's time to start writing - create an account, and begin your writing strea
 ### Pricing and Discounts
 You can use Writing Streak for **free for the first month** - that will be enough to write for 30 days and establish your writing habit. 
 
-If you enjoy this app and want to continue using it - you can **subscribe to the premium version for $20 per month** (the price will rise as this project grows and becomes more successful, but people who sign up early will keep the lower price they signed up for).
+If you u enjoy this app and want to continue using it - you can **subscribe to the premium version for $20 per month** (the price will rise as this project grows and becomes more successful, but people who sign up early will keep the lower price they signed up for).
 
 To the first 100 subscribers, I can offer a **50% discount**. 
 

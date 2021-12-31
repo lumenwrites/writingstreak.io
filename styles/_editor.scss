@@ -275,6 +275,9 @@ h1.is-empty {
   }
 }
 .position-image {
+  &.capturing .editor {
+    max-width: none;
+  }
   &.capturing,
   &.capturing-cropped {
     // When capturing, twitter image needs to add extra padding, for that it needs extra width

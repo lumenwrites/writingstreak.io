@@ -9,11 +9,14 @@
     max-width: 560px;
     margin: auto;
     margin-top: 70px;
+    margin-bottom: 40px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: lighter;
     .header {
       background: var(--header-bg);
       border-radius: var(--border-radius);
+      background-image: linear-gradient(45deg, #d31f4d, #fab41e);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       padding: 20px 40px;
@@ -22,11 +25,20 @@
         height: 90px;
         margin: auto;
         margin-top: calc(-45px - 20px); // minus half height minus padding
-        margin-bottom: 10px;
-        padding: 6px;
+        margin-bottom: -10px;
+        // padding: 6px;
         border: 4px solid white;
-        background: #323c4e;
+        background: var(--post-bg);
         border-radius: 50%;
+        overflow: hidden;
+      }
+      h1,
+      p,
+      a {
+        color: white;
+      }
+      a {
+        text-decoration: underline;
       }
       h1 {
         font-weight: bold;
@@ -34,13 +46,21 @@
       p {
         margin-top: 0;
       }
+      .subheader {
+        font-size: 16px;
+        margin-top: 10px;
+      }
     }
     .description {
       background: var(--post-bg);
       border-radius: var(--border-radius);
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      padding: 40px;
+      padding: 20px 40px;
+      text-align: left;
+      p:first-child {
+        margin-top: 0;
+      }
       .form {
         margin-top: 10px;
         input {
@@ -50,10 +70,13 @@
           margin-top: 0;
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
+          // Full-width
+          width: 100%;
+          border-radius: var(--border-radius);
+          font-size: 16px;
+          
           border: none;
           outline: none;
-          color: white;
-          background: #1a202a;
           box-shadow: inset var(--box-shadow);
           padding-left: 10px;
           &::placeholder {
@@ -65,9 +88,16 @@
         .btn-subscribe {
           height: 40px;
           float: left;
-          width: 100px;
           background: var(--orange);
-          border-radius: 0 var(--border-radius);
+          width: 100px;
+          border-radius: 0 var(--border-radius) var(--border-radius) 0;
+          // Full-width
+          margin-top: 10px;
+          width: 100%;
+          border-radius: var(--border-radius);
+          font-weight: bold;
+          font-size: 16px;
+
           color: white;
           &.disabled {
             cursor: default;
@@ -76,9 +106,11 @@
         }
       }
       .disclaimer {
-        margin-top: 10px;
+        margin-top: 20px;
+        // padding-top: 20px;
+        // border-top: 1px solid var(--border);
         font-size: 0.8em;
-        color: #3f4769;
+        color: var(--text-dim);
       }
     }
   }

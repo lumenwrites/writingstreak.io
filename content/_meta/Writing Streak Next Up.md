@@ -1,6 +1,5 @@
 # ToDo 
 ## Next Up
-- Test social cards.
 - Learn to use and mirgrate the database properly.
 	- I gotta learn to run scripts on my db that aren't just "seed".
 	- Dev and prod migrations separate. Auto switch env variables.
@@ -12,8 +11,9 @@
 
 - Grammarly pro works automatically. But can I disable it during sprints?
 - I want custom social image urls for posts now.
-- Better social image
-- Run my landing page throuh grammarly.
+- Click
+- did changing post slug unpublish the post?
+
 
 ## Bug
 - Solve the sendgrid issue.
@@ -191,6 +191,7 @@ Implement user feedback. Only after all that move domains.
 	- Make it procedural so that I could use the same code for rpga and nexy.	
 	
 ## Maybe
+- Better social image
 - Tutorial in the editor.
 - You can save every few seconds into local storage, and every minute to server
 - Maybe timer should have a dropdwn where you choose pace and duration.
@@ -220,6 +221,8 @@ Implement user feedback. Only after all that move domains.
 ## Archive
 # Done
 ## 2021-12-31
+- Ran landing page through grammarly, fixed typos.
+- Test social cards.
 - Tested everything manually, it all seems to work!
 - Don't forget to change the redirect url in checkout settings when moving the domain
 https://dashboard.stripe.com/settings/billing/portal
