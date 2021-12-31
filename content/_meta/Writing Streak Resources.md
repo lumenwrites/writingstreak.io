@@ -1,0 +1,5 @@
+[Seanwes Blog](https://seanwes.com/blog/)
+[Seanwes Search](site:https://seanwes.com/ "back to blog" -lettering)
+[Foster Blog](https://www.foster.co/blog)
+[Nathan Barry Blog](https://nathanbarry.com/blog/)
+[Andy Mauschak](https://publish.obsidian.md/andymatuschak/Andy+Matuschak/_Start+Here)
