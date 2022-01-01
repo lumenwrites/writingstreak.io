@@ -3,7 +3,7 @@ import prisma from 'prisma/prismaClient'
 
 async function getAllTags(req, res) {
   try {
-    const allTags = await prisma.tag.findMany()
+    const allTags = await prisma.tag.findMany({ orderBy: [{ id: 'asc' }] })
     res.json({ allTags })
   } catch (error) {
     console.log(error)
