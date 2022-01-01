@@ -10,7 +10,7 @@ export default function Landing({ copy }) {
     <Layout>
       <div className="landing">
         <div className="cta-header">
-          <h1>Become a Prolific Writer</h1>
+          <h1>Become a Prolific Fiction Writer</h1>
           <h2>
             This very simple but powerful tool will help you to:
             <ul>

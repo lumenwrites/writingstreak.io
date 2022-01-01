@@ -23,6 +23,16 @@
 	- How likely are you to recommend it to your friends?
 	- Whatever other customer survey questions make sense.
 
+"Want to help me improve writig streak and get a 50% discount? Fill in this 10 minite survey."
+x days left in your free trial
+
+Fiction (novels, stories, etc)
+Non-fiction (blog posts, articles, tutorials, non-fiction books)
+Diary, Journal
+Email address I should send the discount code to
+Other
+
+https://docs.google.com/forms/d/1Z3fAeUzaFZ9HJJfuY-8mCN0wSF4Ac9BtTHwnv5wHUbk/edit#settings
 
 ## Bug
 - Solve the sendgrid issue.

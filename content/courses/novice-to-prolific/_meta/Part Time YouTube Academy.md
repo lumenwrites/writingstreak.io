@@ -192,9 +192,61 @@ It's gonna sound weird, I taped my mouth for 30 days, and I'm gonna explain why 
 $100 to invest in your youtube studio.
 How we manage our time is the key to figuring out how to produce at a high level. And if there's one change I've made in my life it's incorporating something called "batching".
 
-## Craft Good/Engaging video
+## Invent Your Own Language
+if you give it a name it sounds more legit. using notion as my residence calendar. Just name shit its not that hard.
+build a personal monopoly - become known for your niche. just giving something s name.
+passion economy.
+shiny dime.
+build serendipity vehicle - online networking.
+progressive summarization - just highlighting your notes.
+the birdsong method
+the x method
+
+## Video Structures
 Title - make a promise
 Hook
 Intro
 Value
-CTA
+CTA conclusion - point people to the next post or CTA.
+
+Video/Post Structures/Templates
+- The listicle - x tips, x strategies.  how i built 1m business, how I read 100 books per year (he doesnt), 9 passive income ideas, 8 habits that made me a millionaire (not true)
+- Tripet - 3 main points, 3 subpoints each. Intro, conclusion.
+- Quadtet - 
+- Story
+
+How to decide which digital peoduct to sell
+HOOK - in this video Ill trach you how to come up wih a solid digital product har you can implement over a single weekend
+Intro, hey Im x, I help content creators to monetize their passions by learning how to build products and services without coding
+My 3 step method - The Noise Cutting Method. This is my patented 3 step formula for how you can come up with any business idea, test it and implement it in a single weekend
+- Make a list of ideas
+  cole mines
+  twitter
+  things people aee struggling with, problems to be solve
+  subscribe to mailing lists where people share business idess
+  For example - list of twitter accounts and newsletters
+- Pick ones that are easy to implement.
+  - Cam be done on a weekend
+  - By yourself
+  - with no technical skill
+  for example - heres a list of ideas, heres ones we wouldnt use, heres the ones Id pick
+- Test it quickly
+  no market research focus groups
+  facebook ads
+  google ads
+  dont worry about what you learned in mba, thats not how the world works anymore (controversial, insightful)
+  with about 30 dollars you can test it
+Im only allowed to talk about 3 things, for each thing aim only allowed to talk about 3 subthings.
+Stick to a rigid structure, have someone ask you specific questions.
+Quarted
+- Why we do what we do
+- What are we doing
+- Now
+- Mistakes
+Story:
+- I wanted x but I struggled with it because
+- What are the stakes, how horrible it was, why I couldnt get what I want.these were the problems.
+- What helped me, and then I discovered ego is the enemy
+and heres what i learned from it
+- How it has changed things.  how i was transformed by the experience. Now I can do x.
+
