@@ -5,8 +5,10 @@ export default function TwitterFooter() {
   const { editorValues, setValue } = useEditorContext()
   let url = `writingstreak.io/@${editorValues.username}`
   if (editorValues.canonicalUrl) {
-    const domain = new URL(editorValues.canonicalUrl)
-    url = domain.hostname
+    try {
+      const domain = new URL(editorValues.canonicalUrl)
+      url = domain.hostname
+    } catch(e) {}
   }
   return (
     <div className="social-image-footer">
