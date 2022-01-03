@@ -74,7 +74,9 @@ export default function Editor({ post, user, days }) {
     // Save editor in state, used in PublishButtons to get the HTML value and save it to server
     setValues((prev) => ({ ...prev, editor }))
   }
-  function onUpdate({ editor }) {}
+  function onUpdate({ editor }) {
+    window.onbeforeunload = unsavedAlert
+  }
   function keyDown(view, event) {
     // Causes rerender
     setValues((prev) => {
@@ -83,10 +85,11 @@ export default function Editor({ post, user, days }) {
         if (event.key === 'Backspace' || event.key === 'Delete') {
           event.preventDefault()
           return prev
-        } 
+        }
       }
 
       startSaveTimer(prev.saved)
+
       const healthLeft = Math.min(prev.healthLeft + 2, 105)
       // Increment wordcount when I press space after a word
       let wordCount = prev.wordCount
@@ -109,10 +112,12 @@ export default function Editor({ post, user, days }) {
   function updateTitle(e) {
     setValue('title', e.target.value)
     startSaveTimer(editorValues.saved)
+    window.onbeforeunload = unsavedAlert
   }
   function updateTags(tags) {
     setValue('tags', tags)
     startSaveTimer(editorValues.saved)
+    window.onbeforeunload = unsavedAlert
   }
   const blurText = editorValues.blurredMode && editorValues.secondsLeft > 0
   return (
@@ -135,4 +140,15 @@ export default function Editor({ post, user, days }) {
       </div>
     </EditorContext.Provider>
   )
+}
+
+/* https://stackoverflow.com/questions/10311341*/
+export function unsavedAlert(e) {
+  e = e || window.event
+  // For IE and Firefox prior to version 4
+  if (e) {
+    e.returnValue = 'Changes you made may not be saved.'
+  }
+  // For Safari
+  return 'Changes you made may not be saved.'
 }

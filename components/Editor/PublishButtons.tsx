@@ -59,6 +59,7 @@ function CreatePostButtons() {
     const { data: savedDay } = await axios.post('/api/stats/save-day', day)
     console.log('Saved stats', savedDay)
     router.push(`/post/${data.post.slug}/edit`)
+    window.onbeforeunload = null // turn off unsaved warning
   }
   return (
     <button className="btn btn-cta" onClick={createPost}>
@@ -88,6 +89,7 @@ function UpdatePostButtons() {
     }
     const { data: savedDay } = await axios.post('/api/stats/save-day', day)
     console.log('Saved stats', savedDay)
+    window.onbeforeunload = null // turn off unsaved warning
   }
   async function togglePublished() {
     await updatePost(!editorValues.published)

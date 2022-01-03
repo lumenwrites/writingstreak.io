@@ -34,6 +34,7 @@ Other
 
 https://docs.google.com/forms/d/1Z3fAeUzaFZ9HJJfuY-8mCN0wSF4Ac9BtTHwnv5wHUbk/edit#settings
 
+- Figure out how to release course sections weekly for each person. Then maybe I could have a course that's longer than 2 months.
 ## Bug
 - Solve the sendgrid issue.
 
