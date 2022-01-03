@@ -4,7 +4,7 @@ import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
 
 // Prefs
-const paces = { None: 0, Slow: 0.15, Medium: 0.5, Fast: 7, "Very Fast": 1.2 }
+const paces = { None: 0, Slow: 0.16, Medium: 0.5, Fast: 0.7, "Very Fast": 1.2 }
 
 export default function Timer() {
   const { editorValues, setValue, setValues } = useEditorContext()
@@ -43,7 +43,7 @@ export default function Timer() {
   const seconds = (Math.floor(editorValues.secondsLeft) - minutes * 60).toString().padStart(2, '0')
   let progress = 1
   if (editorValues.secondsLeft) progress = editorValues.secondsLeft / (editorValues.sprintDuration * 60)
-  // console.log('[timer render]')
+  // console.log('[timer render]', editorValues.healthLeft)
   return (
     <>
       <HealthBar />

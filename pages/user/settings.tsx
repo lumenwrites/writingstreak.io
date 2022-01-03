@@ -169,8 +169,8 @@ function WritingSprint() {
   if (settings.sprintPace === 'None') description = 'Healthbar is disabled, write at your own pace.'
   if (settings.sprintPace === 'Slow') description = 'You lose the sprint if you stop typing for 60 seconds.'
   if (settings.sprintPace === 'Medium') description = 'You lose the sprint if you stop typing for 20 seconds.'
-  if (settings.sprintPace === 'Fast') description = 'You lose the sprint if you stop typing for 10 seconds.'
-  if (settings.sprintPace === 'Very Fast') description = 'You lose the sprint if you stop typing for 10 seconds.'
+  if (settings.sprintPace === 'Fast') description = 'You lose the sprint if you stop typing for 14 seconds.'
+  if (settings.sprintPace === 'Very Fast') description = 'You lose the sprint if you stop typing for 8 seconds.'
 
   return (
     <div>
