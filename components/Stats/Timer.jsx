@@ -4,7 +4,23 @@ import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
 
 // Prefs
-const paces = { None: 0, Slow: 0.16, Medium: 0.5, Fast: 0.7, "Very Fast": 1.2 }
+// Pace = How much HP I lose every second = how many characters per second I have to type.
+// Each keystroke adds 2hp, average English word length is 5 characters, so each word adds 10hp.
+// WPS = (pace characters/second) / (10 characters/word)
+// WPM = WPS*60 = (pace / 10) * 60
+// pace = (WPM / 60) * 10
+// Slow       = (10 WPM / 60) * 10 = 1.66
+// Medium     = (30 WPM / 60) * 10 = 5
+// Fast       = (50 WPM / 60) * 10 = 8.3
+// Very Fast  = (70 WPM / 60) * 10 = 11.5
+// There are 100 hitpoints in a healthbar(buffer). So you lose the sprint in
+// Healthbar time = 100 hitpoints / (pace hp/second) 
+// Slow       = 100 / 1.66 = 60
+// Medium     = 100 / 5 = 20
+// Fast       = 100 / 8.2 = 12
+// Very Fast  = 100 / 11.5 = 8
+const paces = { None: 0, Slow: 1.6, Medium: 5, Fast: 8.2, "Very Fast": 11.5 }
+
 
 export default function Timer() {
   const { editorValues, setValue, setValues } = useEditorContext()
@@ -16,8 +32,8 @@ export default function Timer() {
     /* Start countdown */
     timer.current = setInterval(() => {
       setValues((prev) => {
-        const updatedSecondsLeft = prev.secondsLeft - 0.1 // -0.1 when I run every 100 ms
-        const updatedHealthLeft = prev.healthLeft - paces[editorValues.sprintPace]// * 10   I'm running timer once per second now
+        const updatedSecondsLeft = prev.secondsLeft - 1 * 0.1 // Multiplying by 0.1 because the timer runs 10 times per second
+        const updatedHealthLeft = prev.healthLeft - paces[editorValues.sprintPace] * 0.1 // I'm running timer once per second now
         if (updatedSecondsLeft < 0.1) {
           console.log('Sprint complete')
           stopTimer()
