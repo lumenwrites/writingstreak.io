@@ -170,6 +170,7 @@ function WritingSprint() {
   if (settings.sprintPace === 'Slow') description = 'You lose the sprint if you stop typing for 60 seconds.'
   if (settings.sprintPace === 'Medium') description = 'You lose the sprint if you stop typing for 20 seconds.'
   if (settings.sprintPace === 'Fast') description = 'You lose the sprint if you stop typing for 10 seconds.'
+  if (settings.sprintPace === 'Very Fast') description = 'You lose the sprint if you stop typing for 10 seconds.'
 
   return (
     <div>
@@ -189,6 +190,9 @@ function WritingSprint() {
           </button>
           <button className="btn item" onClick={() => updateSetting('sprintPace', 'Fast')}>
             Fast
+          </button>
+          <button className="btn item" onClick={() => updateSetting('sprintPace', 'Very Fast')}>
+            Very Fast
           </button>
         </div>
       </div>

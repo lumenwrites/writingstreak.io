@@ -4,7 +4,7 @@ import RoundProgressBar from 'components/Elements/RoundProgressBar'
 import { useEditorContext } from 'components/Editor/Editor'
 
 // Prefs
-const paces = { None: 0, Slow: 0.15, Medium: 0.5, Fast: 1 }
+const paces = { None: 0, Slow: 0.15, Medium: 0.5, Fast: 7, "Very Fast": 1.2 }
 
 export default function Timer() {
   const { editorValues, setValue, setValues } = useEditorContext()
@@ -16,8 +16,8 @@ export default function Timer() {
     /* Start countdown */
     timer.current = setInterval(() => {
       setValues((prev) => {
-        const updatedSecondsLeft = prev.secondsLeft - 1 // -0.1 when I run every 100 ms
-        const updatedHealthLeft = prev.healthLeft - paces[editorValues.sprintPace] * 10 // I'm running timer once per second now
+        const updatedSecondsLeft = prev.secondsLeft - 0.1 // -0.1 when I run every 100 ms
+        const updatedHealthLeft = prev.healthLeft - paces[editorValues.sprintPace]// * 10   I'm running timer once per second now
         if (updatedSecondsLeft < 0.1) {
           console.log('Sprint complete')
           stopTimer()
@@ -29,7 +29,7 @@ export default function Timer() {
         }
         return { ...prev, secondsLeft: updatedSecondsLeft, healthLeft: updatedHealthLeft }
       })
-    }, 1000)
+    }, 100)
   }
 
   function stopTimer() {

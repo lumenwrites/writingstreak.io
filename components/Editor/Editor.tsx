@@ -87,7 +87,7 @@ export default function Editor({ post, user, days }) {
       }
 
       startSaveTimer(prev.saved)
-      const healthLeft = Math.min(prev.healthLeft + 5, 100)
+      const healthLeft = Math.min(prev.healthLeft + 2, 105)
       // Increment wordcount when I press space after a word
       let wordCount = prev.wordCount
       if (event.key === ' ' && prev.lastPressedKey !== ' ') wordCount += 1
