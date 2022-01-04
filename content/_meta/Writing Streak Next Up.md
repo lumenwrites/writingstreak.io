@@ -7,6 +7,7 @@
 
 - Weird bug about the timer running slower than expected.
 - Publish buttons render 4 times on first load.
+- Show how many days left before the end of the free trial (at least in settings).
 
 - Default slugs are just cuid(), slugify title and set the post slug when the user clicks "Publish".
 - Learn to use and mirgrate the database properly.
@@ -251,7 +252,9 @@ Implement user feedback. Only after all that move domains.
 # Done
 ## 2022-01-03
 - Timer in WPM.
--
+- Autosaving new posts.
+- Doing warnings when window is about to close.
+- Clearly understand what enables/disables the save state.
 ## 2021-12-31
 - Ran landing page through grammarly, fixed typos.
 - Test social cards.

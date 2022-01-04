@@ -69,7 +69,7 @@ export default function Editor({ post, user, days }) {
     endDate: user.endDate,
     writingGoal: user.writingGoal,
   })
-  // useUnsavedChangesWarning(!editorValues.saved)
+  useUnsavedChangesWarning(!editorValues.saved)
 
   function setValue(name, value) {
     setValues((prev) => ({ ...prev, [name]: value }))

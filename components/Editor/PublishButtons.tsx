@@ -104,7 +104,6 @@ function UpdatePostButtons() {
     await updatePost(!editorValues.published)
     setValue('published', !editorValues.published)
   }
-  console.log('render update post button, is saved', editorValues.saved)
   return (
     <>
       {editorValues.published ? (
