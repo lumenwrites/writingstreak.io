@@ -1,5 +1,14 @@
 # ToDo 
 ## Next Up
+- Unsaved Notification when the user navigates away from the page.
+- Save posts to local storage
+ This is a terrible issue to have, I am going to add the notification alerting the user that they have unsaved changes. And find some way to clarify that "Create Post" button simply saves a draft, it doesn't publish a post.
+ Really gotta do the unsaved warning correctly.
+
+- Weird bug about the timer running slower than expected.
+- Publish buttons render 4 times on first load.
+
+- Default slugs are just cuid(), slugify title and set the post slug when the user clicks "Publish".
 - Learn to use and mirgrate the database properly.
 	- I gotta learn to run scripts on my db that aren't just "seed".
 	- Dev and prod migrations separate. Auto switch env variables.
@@ -240,6 +249,9 @@ Implement user feedback. Only after all that move domains.
 
 ## Archive
 # Done
+## 2022-01-03
+- Timer in WPM.
+-
 ## 2021-12-31
 - Ran landing page through grammarly, fixed typos.
 - Test social cards.

@@ -13,12 +13,13 @@ async function createPost(req, res) {
         update: tag,
       }),
     ))
+    console.log('slug', `${slugify(title, { lower: true, strict: true })}-${cuid()}`)
     const post = await prisma.post.create({
       data: {
         title: title,
         body: body,
         description: description,
-        slug: `${slugify(title, { lower: true, strict: true })}-${cuid().substring(0, 5)}`,
+        slug: cuid(), // `${slugify(title, { lower: true, strict: true })}-${cuid()}`,
         author: { connect: { id: req.user.id } },
         tags: { connect: tags?.map(t => ({ slug: t.slug })) },
         upvoters: { connect: { id: req.user.id } },

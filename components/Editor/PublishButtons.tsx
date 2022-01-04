@@ -9,6 +9,7 @@ import { useAuth } from 'context/AuthContext'
 import Modal from 'components/Elements/Modal'
 import { useModal } from 'context/ModalContext'
 import PostSettingsModal from './PostSettingsModal'
+import Router from 'next/router'
 
 export default function PublishButtons() {
   const { editorValues, setValue } = useEditorContext()
@@ -29,7 +30,10 @@ export default function PublishButtons() {
             </div>
           )}
         </div>
-        <div className="right">{editorValues.postSlug ? <UpdatePostButtons /> : <CreatePostButtons />}</div>
+        <div className="right">
+          {/* {!editorValues.saved && <span>Unsaved Changes</span>} */}
+          {editorValues.postSlug ? <UpdatePostButtons /> : <CreatePostButtons />}
+        </div>
         <div className="clearfix" />
       </div>
       <PostSettingsModal />
@@ -49,6 +53,7 @@ function CreatePostButtons() {
       description: descriptionFromHTML(editorValues.editor.getHTML()),
       tags: editorValues.tags,
     }
+    console.log('Creating post', post)
     const { data } = await axios.post('/api/posts/create', post)
     console.log('Created Post', data)
     const day = {
@@ -58,12 +63,16 @@ function CreatePostButtons() {
     }
     const { data: savedDay } = await axios.post('/api/stats/save-day', day)
     console.log('Saved stats', savedDay)
-    router.push(`/post/${data.post.slug}/edit`)
-    window.onbeforeunload = null // turn off unsaved warning
+    // router.push(`/post/${data.post.slug}/edit`)
+    console.log('Not using router')
+    window.onbeforeunload = null
+    window.location.href = `/post/${data.post.slug}/edit`
+    setValue('saved', true)
   }
   return (
-    <button className="btn btn-cta" onClick={createPost}>
-      Create Post
+    <button className="btn btn-cta" onClick={createPost} id="save-post">
+      <FontAwesomeIcon icon={['fas', 'save']} />
+      Save Draft
     </button>
   )
 }
@@ -89,13 +98,13 @@ function UpdatePostButtons() {
     }
     const { data: savedDay } = await axios.post('/api/stats/save-day', day)
     console.log('Saved stats', savedDay)
-    window.onbeforeunload = null // turn off unsaved warning
+    setValue('saved', true)
   }
   async function togglePublished() {
     await updatePost(!editorValues.published)
     setValue('published', !editorValues.published)
   }
-
+  console.log('render update post button, is saved', editorValues.saved)
   return (
     <>
       {editorValues.published ? (
@@ -151,8 +160,6 @@ function DeletePostButtons() {
     </button>
   )
 }
-
-
 
 function DeletePostModal() {
   const { toggleModal } = useModal()
@@ -214,7 +221,7 @@ function CaptureImages() {
   )
 }
 
-function descriptionFromHTML(html) {
+export function descriptionFromHTML(html) {
   const wrapper = document.createElement('div')
   wrapper.innerHTML = html
   const firstElement = wrapper.firstChild as HTMLElement

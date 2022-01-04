@@ -27,7 +27,7 @@ export default function Timer() {
   const timer = useRef(null)
 
   function startTimer() {
-    setValue('secondsLeft', editorValues.sprintDuration * 60)
+    setValue('secondsLeft', 1 * editorValues.sprintDuration * 60)
     setValue('healthLeft', 100)
     /* Start countdown */
     timer.current = setInterval(() => {
