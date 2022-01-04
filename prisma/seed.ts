@@ -114,7 +114,7 @@ async function SeedDays(numberOfDays = 90) {
       date: d.format('YYYY-MM-DD'),
       author: { connect: { id: 'lumen' } },
       wordCount: Math.floor(Math.random() * 300),
-      targetWordCount: 5,
+      targetWordcount: 5,
       writingTime: Math.floor(Math.random() * 24) * 5,
     }
     const createdDay = await prisma.day.create({ data: day })

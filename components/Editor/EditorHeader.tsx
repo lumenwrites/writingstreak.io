@@ -37,18 +37,18 @@ function MainMenu() {
         <FontAwesomeIcon icon={['fas', 'bars']} />
       </button>
       <div className="menu left">
-        <Link href={`/post/create`} className="btn item">
+        <a href={`/post/create`} className="btn item">
           <FontAwesomeIcon icon={['fas', 'pen-square']} />
           New Post
-        </Link>
-        <Link href={`/@${user.username}`} className="btn item">
+        </a>
+        <a href={`/@${user.username}`} className="btn item">
           <FontAwesomeIcon icon={['fas', 'user']} />
           My Profile
-        </Link>
-        <Link href={`/browse`} className="btn item">
+        </a>
+        <a href={`/browse`} className="btn item">
           <FontAwesomeIcon icon={['fas', 'users']} />
           Community
-        </Link>
+        </a>
         {/* <Link href={`/course/novice-to-prolific`} className="btn item">
           <FontAwesomeIcon icon={['fas', 'graduation-cap']} />
           Course
@@ -59,10 +59,10 @@ function MainMenu() {
             Upgrade ($20/mo)
           </a>
         )}
-        <Link href="/user/settings" className="btn item">
+        <a href="/user/settings" className="btn item">
           <FontAwesomeIcon icon={['fas', 'cog']} />
           Settings
-        </Link>
+        </a>
         <button className="btn item" onClick={handleLogout}>
           <FontAwesomeIcon icon={['fas', 'sign-out-alt']} />
           Logout

@@ -6,11 +6,11 @@ import moment from 'moment'
 
 async function saveDay(req, res) {
   try {
-    const { targetWordCount, wordCount, writingTime } = req.body
+    const { targetWordcount, wordCount, writingTime } = req.body
     console.log(moment().format('YYYY-MM-DD').toString())
-    console.log({ targetWordCount, wordCount, writingTime })
+    console.log({ targetWordcount, wordCount, writingTime })
     const data = {
-      targetWordCount,
+      targetWordcount,
       wordCount,
       writingTime,
       author: { connect: { id: req.user.id } },
@@ -24,14 +24,14 @@ async function saveDay(req, res) {
         }
       },
       update: {
-        targetWordCount,
+        targetWordcount,
         wordCount,
         writingTime,
         author: { connect: { id: req.user.id } },
       },
       create: {
         date: moment().format('YYYY-MM-DD'),
-        targetWordCount,
+        targetWordcount,
         wordCount,
         writingTime,
         author: { connect: { id: req.user.id } },

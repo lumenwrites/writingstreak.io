@@ -57,7 +57,7 @@ function CreatePostButtons() {
     const { data } = await axios.post('/api/posts/create', post)
     console.log('Created Post', data)
     const day = {
-      targetWordCount: editorValues.targetWordCount,
+      targetWordcount: editorValues.targetWordcount,
       wordCount: editorValues.wordCount,
       writingTime: editorValues.writingTime,
     }
@@ -92,7 +92,7 @@ function UpdatePostButtons() {
     const { data: savedPost } = await axios.post('/api/posts/update', updatedPost)
     console.log('Updated Post', savedPost)
     const day = {
-      targetWordCount: editorValues.targetWordCount,
+      targetWordcount: editorValues.targetWordcount,
       wordCount: editorValues.wordCount,
       writingTime: editorValues.writingTime,
     }

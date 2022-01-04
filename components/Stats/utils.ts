@@ -20,7 +20,7 @@ function generateEmptyDays(numberOfDays = 30) {
     days.push({
       date: d.format('YYYY-MM-DD'),
       weekday: dateToWeekday(d),
-      targetWordCount: 100, // doesn't matter what it is
+      targetWordcount: 100, // doesn't matter what it is
       wordCount: 0,
       writingTime: 0,
     })
@@ -70,7 +70,7 @@ export function calculateStreak(days, writingDays) {
   /* Loop backwards through dates */
   for (var d = start; start.diff(end, 'days') >= 0; d.subtract(1, 'days')) {
     const day = days.find(day => day.date == d.format('YYYY-MM-DD'))
-    const wroteToday = day && day.wordCount >= day.targetWordCount
+    const wroteToday = day && day.wordCount >= day.targetWordcount
     const isToday = d.format('YYYY-MM-DD') === moment().format('YYYY-MM-DD')
     const isWritingDay = writingDays.some(wd => wd === dateToWeekday(d))
     // console.log(d.format('YYYY-MM-DD'), day, { wroteToday, isToday, currentStreak } )
@@ -94,7 +94,7 @@ export function calculateHabitStrength(days, writingDays) {
   /* Loop backwards through dates */
   for (var d = start; start.diff(end, 'days') >= 0; d.subtract(1, 'days')) {
     const day = days.find(day => day.date == d.format('YYYY-MM-DD'))
-    const wroteToday = day && day.wordCount > day.targetWordCount
+    const wroteToday = day && day.wordCount > day.targetWordcount
     const isWritingDay = writingDays.some(wd => wd === dateToWeekday(d))
     if (wroteToday) {
       completedDays += 1

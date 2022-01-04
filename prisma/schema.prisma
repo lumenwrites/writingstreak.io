@@ -147,7 +147,7 @@ model Sequence {
 model Day {
   id String @id @default(cuid())
   date String // DateTime @default(now())
-  targetWordCount Int @default(250)
+  targetWordcount Int @default(250)
   wordCount Int @default(0)
   writingTime Int @default(0)
   // Edited posts? Changes?

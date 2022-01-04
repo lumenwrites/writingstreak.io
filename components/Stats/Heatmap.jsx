@@ -43,8 +43,8 @@ function valueToTooltip(value) {
 function valueToClass(value) {
   if (!value) return null // for out fo range days
   var className = ''
-  const { wordCount, targetWordCount } = value
-  if (wordCount > targetWordCount) {
+  const { wordCount, targetWordcount } = value
+  if (wordCount > targetWordcount) {
     className += 'win '
   }
   if (wordCount) {

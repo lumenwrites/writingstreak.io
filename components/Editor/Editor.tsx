@@ -59,7 +59,7 @@ export default function Editor({ post, user, days }) {
     // Settings
     username: user.username,
     twitter: user.twitter,
-    targetWordCount: user.targetWordCount,
+    targetWordcount: user.targetWordcount,
     writingDays: user.writingDays,
     sprintPace: user.sprintPace,
     sprintDuration: user.sprintDuration,
