@@ -1,3 +1,10 @@
+
+> ## Looking for a motivated and experienced full-stack web developer?
+> Do you want me to join your company or help you build your own projects?
+> Come take a look at my [portfolio](https://lumenwrites.dev/), and if you find it interesting - send me an email to **lumenwrites@gmail.com**.
+
+---
+
 # Writing Streak
 
 https://writingstreak.io/
@@ -28,11 +35,3 @@ Writing Streak is built with Next.js and React, it communicates with PostgreSQL 
 
 ## Stats
 This project has 5000+ users from organic growth by word of mouth, the most active users use it for 100s days in a row.
-
----
-
-## Looking for a motivated and experienced full-stack web developer?
-
-Do you want me to join your company or help you build your own projects?
-
-Come take a look at my [portfolio](https://lumenwrites.dev/), and if you find it interesting - send me an email to **lumenwrites@gmail.com**.
