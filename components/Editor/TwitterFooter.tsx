@@ -8,7 +8,7 @@ export default function TwitterFooter() {
     try {
       const domain = new URL(editorValues.canonicalUrl)
       url = domain.hostname
-    } catch(e) {}
+    } catch (e) {}
   }
   return (
     <div className="social-image-footer">
@@ -16,9 +16,11 @@ export default function TwitterFooter() {
         <FontAwesomeIcon icon={['fas', 'globe-americas']} />
         {url}
       </div>
-      <div className="twitter">
-        <FontAwesomeIcon icon={['fab', 'twitter']} />@{editorValues.twitter}
-      </div>
+      {editorValues.twitter && (
+        <div className="twitter">
+          <FontAwesomeIcon icon={['fab', 'twitter']} />@{editorValues.twitter}
+        </div>
+      )}
     </div>
   )
 }

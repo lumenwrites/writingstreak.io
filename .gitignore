@@ -36,3 +36,4 @@ yarn-error.log*
 
 wst-old-profiles.json
 /prisma/wst-old-profiles.json
+/assets
