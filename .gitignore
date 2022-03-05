@@ -39,3 +39,5 @@ wst-old-profiles.json
 /assets
 /sample-content
 /content
+/prisma/.env
+/prisma/seeddata.js
