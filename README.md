@@ -35,4 +35,4 @@ This project has 5000+ users from organic growth by word of mouth, the most acti
 
 Do you want me to join your company or help you build your own projects?
 
-Come take a look at my [portfolio](https://lumenwrites.dev/), and send me an email to **lumenwrites@gmail.com**
+Come take a look at my [portfolio](https://lumenwrites.dev/), and if you find it interesting - send me an email to **lumenwrites@gmail.com**.
