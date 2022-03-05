@@ -11,6 +11,6 @@ It tracks the writer's analytics (like daily word counts and the amount of time 
 
 It is also a reddit-like community and a publishing tool the writers can use to publish their work and exchange feedback. The published stories can be upvoted and ranked by "hotness", the posts have nested comments people can use to discuss the author's work and help them make improevments.
 
-Writing Streak is built using Next.js and React, it is hosted on Vercel, and it uses Stripe to accept recurring payments.
+Writing Streak is built with Next.js and React, hosted on Vercel, and it uses Stripe to accept recurring payments.
 
 This project has 5000+ users from organic growth by word of mouth, the most active users use it for 100s days in a row.
