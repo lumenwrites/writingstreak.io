@@ -123,7 +123,7 @@ function ManageSubscription() {
       {settings.subscriptionStatus === 'FREE' || settings.subscriptionStatus === 'LIFETIME_FREE' ? (
         <a className="btn btn-cta right" href="/api/payments/create-checkout-session">
           <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
-          Upgrade my Subscription ($20/mo)
+          Upgrade my Subscription ($10/mo)
         </a>
       ) : (
         <a className="btn btn-cta right" href="/api/payments/create-customer-portal-session">
