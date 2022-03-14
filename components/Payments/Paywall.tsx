@@ -11,7 +11,7 @@ export default function Paywall() {
       <p>Upgrade your subscription to continue using Writing Streak:</p>
       <a className="btn btn-cta-landing" href="/api/payments/create-checkout-session">
         <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
-        Upgrade ($20/mo)
+        Upgrade ($10/mo)
       </a>
       <p>
         (you can still see and edit all your posts on your <Link href={`/@${user.username}`}>profile</Link>).
