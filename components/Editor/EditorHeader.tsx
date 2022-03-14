@@ -56,7 +56,7 @@ function MainMenu() {
         {user.subscriptionStatus === 'FREE' && (
           <a className="btn item" href="/api/payments/create-checkout-session">
             <FontAwesomeIcon icon={['fas', 'arrow-circle-up']} />
-            Upgrade ($20/mo)
+            Upgrade ($10/mo)
           </a>
         )}
         <a href="/user/settings" className="btn item">
