@@ -65,7 +65,7 @@ function PaymentForm() {
     <>
       <PaymentElement />
       <button className="btn btn-cta" onClick={submitForm}>
-        Checkout ($20/mo)
+        Checkout ($10/mo)
       </button>
     </>
   )
