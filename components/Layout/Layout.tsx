@@ -7,7 +7,7 @@ const OldNotification = dynamic(() => import('../Elements/OldNotificaiton'), { s
 export default function Layout({ children, subnav = null }) {
   return (
     <>
-      <OldNotification/>
+      {/* <OldNotification/> */}
       <Header className="header" />
       {subnav}
       <div className="layout">
